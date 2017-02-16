@@ -1,0 +1,47 @@
+// The MIT License (MIT)
+// Copyright © 2017 Ivan Vorobei (hello@ivanvorobei.by)
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
+import UIKit
+
+extension UIBezierPath {
+    
+    func resizeTo(width: CGFloat) {
+        let currentWidth = self.bounds.width
+        let relativeFactor = width / currentWidth
+        self.apply(CGAffineTransform(scaleX: relativeFactor, y: relativeFactor))
+    }
+    
+    func convertToImage(fill: Bool, stroke: Bool, color: UIColor = .black) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: self.bounds.width, height: self.bounds.height), false, 0.0)
+        let context = UIGraphicsGetCurrentContext()
+        context!.setStrokeColor(color.cgColor)
+        context!.setFillColor(color.cgColor)
+        if stroke {
+            self.stroke()
+        }
+        if fill {
+           self.fill()
+        }
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+}
