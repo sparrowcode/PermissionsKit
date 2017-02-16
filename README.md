@@ -3,7 +3,7 @@
 ## About
 Несколько дней проект будет совершенстоваться. Поэтому пока выкладываю в таком виде, в котором есть. Часть функционала появится позже. Если вы гашли ошибку - создаейте претензию или напишите мне
 
-<img src="https://raw.githubusercontent.com/IvanVorobei/RequsetPermission/master/resources/request-permission - mockup_preview.gif" width="600">
+<img src="https://raw.githubusercontent.com/IvanVorobei/RequestPermission/master/resources/request-permission%20-%20mockup_preview.gif" width="600">
 
 ## Requirements
 Xcode 8 and Swift 3. Ready for use on iOS 8+
