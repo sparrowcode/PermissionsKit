@@ -15,12 +15,45 @@ Or via CocoaPods:
 
 ## How to use
 
+Проинициализруйте асистента как проверти в контроллере. Обрашшаю внимание что инициализровать в любом другом блоке может быть небезопасно (читайте подробнее "ссылка на раздел ниже")
+
+	class ViewController: UIViewController {
+    
+    	var permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.init(with: [.Camera, .PhotoLibrary, .Notification])
+
+    	override func viewDidLoad() {
+        	super.viewDidLoad()
+    	}
+	}
+
+Теперь, когда модуль проинициализирован и сконфигурирован нужными разрешениями, мы можем вызвать визуальное представление. Это делается в одну строчку кода
+
+	permissionAssistant.present(on: self)
+
 ##Виды представлений
+
+Вы заметили, что когда инициализировали Assistant - мы выбирали модуль. Вы можете выбрать подходящую вам визуальную состовляющую
 
 В скором времени я добавлю дополнительные виды
 
 ## Attention
 Для корректной работы ARC вам необходимо сохранить объект класса Assistant в течении всей жизни контроллера. Пожалкйста, инициализируйте как проперти контроллреа. В противном случае ARC уничтожит файлы, отвечающие за логику
+
+## Delegates
+Вы можете отслеживать события, связанные с Асистентом и его представлением. Реализуйте протокол SPRequestPermissionEventsDelegate и установите необходимый класс как делегат
+
+	permissionAssistant.eventsDelegate = self
+
+## Кастомизация
+Если вы хотите изменить данные в конкретном модуле (к примеру, текст в верхнем банере) - вам неоходимо реализовать класс, поддерживающий протокол. Например, для модуля Dialog / Interactive вы должны реализовать протокол SPRequestPermissionDialogInteractiveDataSourceInterface. Далее объект класса нужно передать асистенту, в этой строке 
+
+	let permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.init(with: [.Camera, .PhotoLibrary], dataSourceForController: customDataSource())
+
+Если вы хотите написать свой асистент, используя текущий скелет, вы должны использовать 
+
+	let permissionAssistant = SPRequestPermissionAssistant.init(with: [.Camera, .PhotoLibrary], permissionManager: customPermissionManager(), presenterManager: customPresenterManager())
+
+
 
 ## Apps, using Requset-Permission
 Если вы хотите попасть сюда - свяжитесь со мной чкерез почту. Ее вы можете найти ниже
