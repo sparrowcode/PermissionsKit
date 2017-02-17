@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPRequestPermissionDialogInteractiveView: UIView {
+public class SPRequestPermissionDialogInteractiveView: UIView {
     
     let headerView: SPBannerWithTitlesView = SPBannerWithTitlesView()
     let topLabel: UILabel = UILabel()
@@ -33,7 +33,7 @@ class SPRequestPermissionDialogInteractiveView: UIView {
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
@@ -78,7 +78,7 @@ class SPRequestPermissionDialogInteractiveView: UIView {
         self.buttonsContainerView.minSpace = 8
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         self.updateLayoutAndSizes()
     }

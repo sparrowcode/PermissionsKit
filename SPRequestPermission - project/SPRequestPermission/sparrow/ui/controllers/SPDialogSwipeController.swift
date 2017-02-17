@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UIViewController {
+public class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UIViewController {
     
     //MARK: - views
     let dialogView: DialogView
@@ -139,11 +139,11 @@ class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UIViewCon
         super.init(coder: aDecoder)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
     }
@@ -214,7 +214,7 @@ class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UIViewCon
     }
     
     //MARK: - ovveride func
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         animator.removeAllBehaviors()
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { (context) in
@@ -238,7 +238,7 @@ class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UIViewCon
         })
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(self.backgroundView)
         self.view.addSubview(self.bottomView)

@@ -23,7 +23,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.init(with: [.Camera, .PhotoLibrary, .Notification])
+    let permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.create(with: [.Camera, .PhotoLibrary, .Notification])
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -16,14 +16,14 @@ Drop in `Sparrow` folder to your Xcode project (make sure to enable "Copy items 
 
 Or via CocoaPods:
     
-    pod 'Sparrow/Modules/RequsetPermission', :git => 'https://github.com/IvanVorobei/Sparrow.git’
+    pod 'Sparrow/RequestPermission', :git => 'https://github.com/IvanVorobei/Sparrow.git’
 
 ## How to use
 Initialize `Assistant` as a property in controller. Initialization in any other unit may be unsafe ([read more about](#important))
 
 	class ViewController: UIViewController {
     
-    	var permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.init(with: [.Camera, .PhotoLibrary, .Notification])
+    	var permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.create(with: [.Camera, .PhotoLibrary, .Notification])
 
     	override func viewDidLoad() {
         	super.viewDidLoad()

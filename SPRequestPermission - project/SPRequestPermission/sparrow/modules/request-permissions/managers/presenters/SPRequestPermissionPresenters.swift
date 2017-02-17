@@ -21,11 +21,11 @@
 
 import Foundation
 
-struct SPRequestPermissionPresenters {
+public struct SPRequestPermissionPresenters {
     
-    struct dialog {
+    public struct dialog {
         
-        struct interactive {
+        public struct interactive {
             
             static func create(dataSource: SPRequestPermissionDialogInteractiveDataSourceInterface) -> SPRequestPermissionPresenterInterface {
                 let dialogView = SPRequestPermissionDialogInteractiveView.init()
@@ -39,7 +39,7 @@ struct SPRequestPermissionPresenters {
         }
     }
     
-    struct native {
+    public struct native {
         
         static func create() -> SPRequestPermissionPresenterInterface {
             let presenter = SPRequestPermissionNativePresenter()
@@ -47,5 +47,5 @@ struct SPRequestPermissionPresenters {
         }
     }
     
-    struct banner {}
+    public struct banner {}
 }
