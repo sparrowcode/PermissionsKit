@@ -21,18 +21,18 @@
 
 enable_camera = "Enable Camera";
 enable_photoLibrary = "Enable PhotoLibrary";
-enable_notification = "Enable Notofocation";
+enable_notification = "Enable Notification";
 
 hello = "Hello!";
 app_needs_permission = "Application needs permission";
 
-allow_permission_this_help_you = "Allow permission please, this help to you use Application";
+allow_permission_this_help_you = "Allow permission please, This helps to use app";
 
 you_can_manage_permission_in_setting = "You can manage permissions in settings";
 
-swipe_for_hide = "Swipe for hide";
+swipe_for_hide = "Swipe to hide";
 
 cancel = "Cancel";
 settings = "Settings";
 important = "Important";
-permission_denid_go_to_settings = "Permission denid. Please, go to Settings and allow permissions";
+permission_denid_go_to_settings = "Permission denied. Please, go to Settings and allow permissions";
