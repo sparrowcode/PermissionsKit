@@ -80,7 +80,7 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
     }
     
     func didHide(){
-        
+        self.assistantDelegate?.didHide()
     }
 }
 
