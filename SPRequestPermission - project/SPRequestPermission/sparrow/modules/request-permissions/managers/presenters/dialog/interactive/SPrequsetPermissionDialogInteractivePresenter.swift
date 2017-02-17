@@ -31,6 +31,7 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
     private var controls = [SPRequestPermissionTwiceControlInterface]()
     
     func present(on viewController: UIViewController) {
+        self.updatePermissionsStyle()
         self.viewController.present(on: viewController)
     }
     
@@ -39,9 +40,6 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
             let control = self.dataSource.createControlForPermission(permission)
             controls.append(control)
             control.addAction(self, action: #selector(self.actionForControl(sender:)))
-            if assistantDelegate?.isAllowPermission(control.permission) ?? false {
-                control.setSelectedState(animated: false)
-            }
             self.viewController.addControl(control)
         }
     }
@@ -95,6 +93,8 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
             handler: {
                 finished in
                 
+                NotificationCenter.default.addObserver(self, selector: #selector(self.updatePermissionsStyle), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+                
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(
                         URL.init(string: UIApplicationOpenSettingsURLString)!,
@@ -107,6 +107,15 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
         }))
         if let controller = self.viewController as? UIViewController {
             controller.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    @objc private func updatePermissionsStyle() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        for control in controls {
+            if assistantDelegate?.isAllowPermission(control.permission) ?? false {
+                control.setSelectedState(animated: false)
+            }
         }
     }
     
