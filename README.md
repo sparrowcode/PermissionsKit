@@ -1,10 +1,10 @@
 ![](/resources/request-permission - baner.png)
 
 ## Sorry
-Несколько дней проект будет совершенствоваться. Я стараюсь максимально быстро исправлять ошибки и осуществить все задуманные планы. Но на это нужно время. Если вы опасаетесь изменений, но хотели бы использовать проект у себя - подождите совсем немного
+A few days the project will be improved. I'm trying to quickly fix bugs and realize designed plans. But it takes time. If you fear of changes, but would like to use the project, wait quite a bit
 
 ## About
-Модульная работа давно зарекомендовала себя. Этот проект - модуль по управлению разрешениями с визуальной частью и возможностью кастомизации. Красивое диалоговое окно увеличивает шансы на получение разрешения (что важно, когда мы запрашиваем нотификации), а простой управление модулем  экономит часы разработки. Вы можете использовать проект с помощью всего двух строк кода!
+Module work proved long ago. This project is a module for managing permissions with the visual part and the possibility of customization. Beautiful dialog increases chances of obtaining a permit (which is important when we request notification). Simple control of module saves hours of development. You can use the project with just two lines of code!
 
 <img src="https://raw.githubusercontent.com/IvanVorobei/RequestPermission/master/resources/request-permission%20-%20mockup_preview.gif" width="600">
 
@@ -19,7 +19,7 @@ Or via CocoaPods:
     pod 'Sparrow/Modules/RequsetPermission, :git => 'https://github.com/IvanVorobei/Sparrow.git’
 
 ## How to use
-Проинициализруйте `Assistant` как проверти в контроллере. Инициализровать в любом другом блоке может быть небезопасно ([read more about](#important))
+Initialize `Assistant` as a property in controller. Initialization in any other unit may be unsafe ([read more about](#important))
 
 	class ViewController: UIViewController {
     
@@ -30,42 +30,42 @@ Or via CocoaPods:
     	}
 	}
 
-Теперь, когда модуль проинициализирован и сконфигурирован нужными разрешениями, мы можем вызвать визуальное представление. Это делается в одну строчку кода
+Now when the module is initialized and configured with the desired permissions, we can generate a visual representation. This is done in one line of code
 
 	permissionAssistant.present(on: self)
 
-Если вы хотите узнать, получено ли разрешение, вам необходимо вызвать функцию:
+If you want to know if you have received permission, you should call the function:
     
     permissionAssistant.isAllowPermission(.Camera)
 
-## Доступные разрешения
+## Available permissions
 
 ![](/resources/request-permission - permissions.png)
 
-## Виды представлений
-Вы заметили, что когда инициализировали `Assistant` - мы выбирали модуль (`SPRequestPermissionAssistant.modules.dialog.interactive...`). Вы можете выбрать подходящую вам визуальную состовляющую. Все они адаптированы под iPad и iPhone всех экранов и под все ориентации (пока доступно только `dialog/interactive` и `native`, но в скором времени я пополню количество представлений)
+## Types of presentation
+Did you notice that when initialized the `Assistant` - we chose the module (`SPRequestPermissionAssistant.modules.dialog.interactive...`). You can choose an appropriate visual component. They all adapted to the iPad and iPhone for all screens and for all orientations (currently available `dialog/interactive` and `native`, but soon I will add number of presentations)
 
 ![](/resources/request-permission - presenters.png)
 
 ## Important
-Для корректной работы ARC вам необходимо сохранить объект класса `Assistant` в течении всей жизни контроллера-родителя. Инициализируйте Аssistant как проперти контроллреа. В противном случае ARC уничтожит файлы, отвечающие за логику и контроллер не будет реагировать на события
+For correct ARC work you need to save an object of class `Assistant` during the lifetime of parent's controller. Initialize Аssistant as controller's property. Otherwise, ARC will destroy files that is responsible for logic and the controller will not respond to events
 
 ## Delegates
-Чтобы отслеживать события, связанные с `Асистентом` и его представлением, реализуйте протокол `SPRequestPermissionEventsDelegate` и установите необходимый класс как делегат
+To track events associated with `Assistant` and its view, implement the protocol `SPRequestPermissionEventsDelegate` and set the class as delegate
 
 	permissionAssistant.eventsDelegate = self
 
-## Кастомизация
-Если вы хотите изменить данные в конкретном модуле (к примеру, текст в верхнем футере) - вам неоходимо реализовать класс, поддерживающий протокол. Например, для модуля `dialog/interactive` вы должны реализовать протокол `SPRequestPermissionDialogInteractiveDataSourceInterface`. Далее объект класса нужно передать асистенту, в этой строке 
+## Customize
+If you want to change data in a particular module (for example, the text in the top footer) - you should implement a class supporting the protocol. For example, for module `dialog/interactive`, you should implement the protocol `SPRequestPermissionDialogInteractiveDataSourceInterface`. Then the class object needs to be passed to the assistant, in this line
 
 	let permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.init(with: [.Camera, .PhotoLibrary], dataSourceForController: customDataSource())
 
-Если вы хотите написать свой асистент, используя текущий скелет, вы должны использовать более расширенный инициализатор. Соответственно `PresenterManager` и  `PermissionManager` должны реализовать интерфейсы
+If you want to write your assistant, using the current skeleton, you should use a more extended initializer. Accordingly `PresenterManager` and `PermissionManager` must implement the interfaces
 
 	let permissionAssistant = SPRequestPermissionAssistant.init(with: [.Camera, .PhotoLibrary], permissionManager: customPermissionManager(), presenterManager: customPresenterManager())
 
-## Apps, using Requset-Permission
-Мне понравилась идея указывать приложения, которые используют RequestPermission. Чтобы я добавил приложение сюда - свяжитесь со мной через почты (найти ее можно в разделе "Контакты")
+## Apps, using Request-Permission
+I like the idea to specify applications that use the RequestPermission. Please, contact me via email (you can find it in the section "Contacts") so that I added app here
 
 ## License
 RequestPermission is released under the MIT license. Check LICENSE.md for details

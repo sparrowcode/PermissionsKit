@@ -66,17 +66,20 @@ class SPRequestPermissionTwiceControl: UIButton, SPRequestPermissionTwiceControl
     
     func setSelectedState(animated: Bool) {
         self.layer.borderColor = self.normalColor.cgColor
-        UIView.animate(withDuration: 0.4, animations: {
-            self.backgroundColor = self.selectedColor
-        })
+        if animated{
+            UIView.animate(withDuration: 0.4, animations: {
+               self.backgroundColor = self.selectedColor
+            })
+        } else {
+             self.backgroundColor = self.selectedColor
+        }
         var colorForTitle = self.normalColor
         if self.normalColor == UIColor.clear {
             colorForTitle = UIColor.white
         }
         self.setTitleColor(colorForTitle, for: UIControlState.normal)
         self.setTitleColor(colorForTitle.withAlphaComponent(0.62), for: UIControlState.highlighted)
-        self.iconView.setSelectedState(with: self.normalColor)
-        
+        self.iconView.setSelectedState(with: self.normalColor) 
     }
     
     internal func addAction(_ target: Any?, action: Selector) {
