@@ -12,14 +12,14 @@
 Xcode 8 and Swift 3. Ready for use on iOS 8+
 
 ## Integration
-Drop in Sparrow folder to your Xcode project (make sure to enable "Copy items if needed" and "Create groups").
+Drop in `Sparrow` folder to your Xcode project (make sure to enable "Copy items if needed" and "Create groups").
 
 Or via CocoaPods:
     
     pod 'Sparrow/Modules/RequsetPermission, :git => 'https://github.com/IvanVorobei/Sparrow.git’
 
 ## How to use
-Проинициализруйте асистента как проверти в контроллере. Инициализровать в любом другом блоке может быть небезопасно (читайте подробнее "ссылка на раздел ниже")
+Проинициализруйте `Assistant` как проверти в контроллере. Инициализровать в любом другом блоке может быть небезопасно ([read more about](#Important))
 
 	class ViewController: UIViewController {
     
@@ -43,24 +43,24 @@ Or via CocoaPods:
 ![](/resources/request-permission - permissions.png)
 
 ## Виды представлений
-Вы заметили, что когда инициализировали Assistant - мы выбирали модуль. Вы можете выбрать подходящую вам визуальную состовляющую. Все они адаптированы под iPad и iPhone всех экранов и под все ориентации (пока доступно только dialog/interactive и native, но в скором времени я пополню количество представлений)
+Вы заметили, что когда инициализировали `Assistant` - мы выбирали модуль (`SPRequestPermissionAssistant.modules.dialog.interactive...`). Вы можете выбрать подходящую вам визуальную состовляющую. Все они адаптированы под iPad и iPhone всех экранов и под все ориентации (пока доступно только `dialog/interactive` и `native`, но в скором времени я пополню количество представлений)
 
 ![](/resources/request-permission - presenters.png)
 
-## Внимание
-Для корректной работы ARC вам необходимо сохранить объект класса Assistant в течении всей жизни контроллера-родителя. Инициализируйте Аssistant как проперти контроллреа. В противном случае ARC уничтожит файлы, отвечающие за логику и контроллер не будет реагировать на события
+## Important
+Для корректной работы ARC вам необходимо сохранить объект класса `Assistant` в течении всей жизни контроллера-родителя. Инициализируйте Аssistant как проперти контроллреа. В противном случае ARC уничтожит файлы, отвечающие за логику и контроллер не будет реагировать на события
 
 ## Delegates
-Чтобы отслеживать события, связанные с Асистентом и его представлением, реализуйте протокол SPRequestPermissionEventsDelegate и установите необходимый класс как делегат
+Чтобы отслеживать события, связанные с `Асистентом` и его представлением, реализуйте протокол `SPRequestPermissionEventsDelegate` и установите необходимый класс как делегат
 
 	permissionAssistant.eventsDelegate = self
 
 ## Кастомизация
-Если вы хотите изменить данные в конкретном модуле (к примеру, текст в верхнем футере) - вам неоходимо реализовать класс, поддерживающий протокол. Например, для модуля Dialog/Interactive вы должны реализовать протокол SPRequestPermissionDialogInteractiveDataSourceInterface. Далее объект класса нужно передать асистенту, в этой строке 
+Если вы хотите изменить данные в конкретном модуле (к примеру, текст в верхнем футере) - вам неоходимо реализовать класс, поддерживающий протокол. Например, для модуля `dialog/interactive` вы должны реализовать протокол `SPRequestPermissionDialogInteractiveDataSourceInterface`. Далее объект класса нужно передать асистенту, в этой строке 
 
 	let permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.init(with: [.Camera, .PhotoLibrary], dataSourceForController: customDataSource())
 
-Если вы хотите написать свой асистент, используя текущий скелет, вы должны использовать более расширенный инициализатор. Соответственно PresenterManager и  PermissionManager должны реализовать интерфейсы
+Если вы хотите написать свой асистент, используя текущий скелет, вы должны использовать более расширенный инициализатор. Соответственно `PresenterManager` и  `PermissionManager` должны реализовать интерфейсы
 
 	let permissionAssistant = SPRequestPermissionAssistant.init(with: [.Camera, .PhotoLibrary], permissionManager: customPermissionManager(), presenterManager: customPresenterManager())
 
