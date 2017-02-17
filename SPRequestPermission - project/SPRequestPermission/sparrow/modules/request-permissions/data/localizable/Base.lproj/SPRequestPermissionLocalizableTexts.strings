@@ -26,7 +26,7 @@ enable_notification = "Enable Notification";
 hello = "Hello!";
 app_needs_permission = "Application needs permission";
 
-allow_permission_this_help_you = "Allow permission please, This helps to use app";
+allow_permission_this_help_you = "Allow permission please. This helps to use application";
 
 you_can_manage_permission_in_setting = "You can manage permissions in settings";
 
