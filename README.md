@@ -73,7 +73,7 @@ RequestPermission is released under the MIT license. Check LICENSE.md for detail
 ## Other
 ![](/resources/request-permission - powered-by-sparrow.png)
 
-In the project you can find my library [Sparrow](https://github.com/IvanVorobei/Sparrow). It’s a library, на основе которой написан мождуль. К сожалению, чтобы сэкономить время в разработке, я писал RequsetPermission используя эту библиотеку. Не волнуйтесь, внутри только SWift файлы и куча полезных вещей. Может быть вам понарвится) 
+In the project you can find my library [Sparrow](https://github.com/IvanVorobei/Sparrow). It's a library, on which the module is written. Unfortunately, to save time in development, I wrote RequestPermission using this library. Don't worry, within just Swift files and a lot of useful things. Maybe you will like it:)
 
 ## Contact
  
