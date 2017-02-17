@@ -26,7 +26,8 @@ extension SPRequestPermissionData {
     struct views {
         
         static func patternView() -> SPPatternView {
-            let patternView = SPRhombusPatternView.init()
+            let patternView = SPPatternView.init()
+            patternView.setRhombusPattern()
             let color = UIColor.white.withAlphaComponent(0.082)
             patternView.color = color
             patternView.cellWidthFactor = 0.18

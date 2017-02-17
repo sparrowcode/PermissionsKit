@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         SPLaunchAnimation.slideWithParalax(
             disabelParalaxForFirstViewOnLaunchScreenView: false,
-            disabelParalaxForFirstViewOnRootViewController: false,
+            disabelParalaxForFirstViewOnRootViewController: true,
             onWindow: self.window!
         )
         return true

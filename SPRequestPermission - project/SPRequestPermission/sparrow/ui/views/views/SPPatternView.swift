@@ -51,9 +51,6 @@ class SPPatternView: UIView {
     
     private func setPattren() {
         if let pattern = self.pattern {
-            let patternBezierPath = pattern
-            var patternImage = patternBezierPath.convertToImage(fill: false, stroke: true, color: self.color)
-            let relativeFactor = patternBezierPath.bounds.width / patternBezierPath.bounds.height
             var newWidth = self.frame.width * self.cellWidthFactor
             if newWidth < self.cellWidthMin {
                 newWidth = self.cellWidthMin
@@ -63,8 +60,9 @@ class SPPatternView: UIView {
                     newWidth = self.cellWidthMax!
                 }
             }
-            let newHeight = newWidth / relativeFactor
-            patternImage = patternImage.resize(to: CGSize.init(width: newWidth, height: newHeight))
+            let patternBezierPath = pattern
+            patternBezierPath.resizeTo(width: newWidth)
+            let patternImage = patternBezierPath.convertToImage(fill: false, stroke: true, color: self.color)
             self.backgroundColor = UIColor.init(patternImage: patternImage)
         }
     }
@@ -79,10 +77,14 @@ class SPPatternView: UIView {
         }
     }
     
+    init() {
+        super.init(frame: CGRect.zero)
+    }
+    
     init(pattern: UIBezierPath) {
         super.init(frame: CGRect.zero)
         self.pattern = pattern
-        self.setPattren()
+        self.updatePattern(animated: false)
     }
     
     required init?(coder aDecoder: NSCoder) {

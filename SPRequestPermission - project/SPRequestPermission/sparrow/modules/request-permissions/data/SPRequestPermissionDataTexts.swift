@@ -55,7 +55,23 @@ extension SPRequestPermissionData {
         }
         
         static func swipe_for_hide() -> String {
-            return "Swipe for hide"
+            return NSLocalizedString("swipe_for_hide", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+        }
+        
+        static func cancel() -> String {
+            return NSLocalizedString("cancel", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+        }
+        
+        static func settings() -> String {
+            return NSLocalizedString("settings", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+        }
+        
+        static func titleDisablePermissionAlertText() -> String {
+            return NSLocalizedString("important", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+        }
+        
+        static func subtitleDisablePermissionAlertText() -> String {
+            return NSLocalizedString("permission_denid_go_to_settings", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
         }
     }
 }

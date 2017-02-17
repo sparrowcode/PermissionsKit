@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPRequestPermissionDialogInteractiveViewController: SPDialogSwipeController<SPRequestPermissionDialogInteractiveView, UIView>  {
+class SPRequestPermissionDialogInteractiveViewController: SPDialogSwipeController<SPRequestPermissionDialogInteractiveView, UILabel>  {
     
     weak var presenterDelegate: SPRequestPermissionDialogInteractivePresenterDelegate?
     
@@ -35,6 +35,15 @@ class SPRequestPermissionDialogInteractiveViewController: SPDialogSwipeControlle
         self.dialogViewSidesRelativeFactor = 0.667
         self.dialogViewPortraitYtranslationFactor = 0.96
         self.dialogViewLandscapeYtranslationFactor = 1
+        
+        self.bottomView.font = UIFont.init(
+            name: SPRequestPermissionData.fonts.base() + "-Regular",
+            size: 12
+        )
+        self.bottomView.textColor = UIColor.white
+        self.bottomView.setShadowOffsetForLetters(heightOffset: 1, opacity: 0.4)
+        self.bottomView.setCenteringAlignment()
+        self.bottomView.numberOfLines = 0
     }
     
     override func viewDidLoad() {
@@ -89,7 +98,7 @@ extension SPRequestPermissionDialogInteractiveViewController: SPRequestPermissio
     }
     
     func setUnderDialogTitle(_ title: String) {
-        //self.bottomLabel.text = title
+        self.bottomView.text = title
     }
 }
 
