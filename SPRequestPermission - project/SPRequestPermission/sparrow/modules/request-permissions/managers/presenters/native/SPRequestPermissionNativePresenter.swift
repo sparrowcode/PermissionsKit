@@ -21,13 +21,13 @@
 
 import UIKit
 
-class SPRequestPermissionNativePresenter: SPRequestPermissionPresenterInterface {
+public class SPRequestPermissionNativePresenter: SPRequestPermissionPresenterInterface {
     
-    weak var assistantDelegate: SPRequestPermissionAssistantDelegate?
+    weak public var assistantDelegate: SPRequestPermissionAssistantDelegate?
     
     private var permissions = [SPRequestPermissionType]()
     
-    func present(on viewController: UIViewController) {
+    public func present(on viewController: UIViewController) {
         var subPermissions = [SPRequestPermissionType]()
         for permission in permissions {
             if !(assistantDelegate?.isAllowPermission(permission) ?? true) {
@@ -43,7 +43,7 @@ class SPRequestPermissionNativePresenter: SPRequestPermissionPresenterInterface 
         }
     }
     
-    func set(permissions: [SPRequestPermissionType]) {
+    public func set(permissions: [SPRequestPermissionType]) {
         for permission in permissions {
             self.permissions.append(permission)
         }

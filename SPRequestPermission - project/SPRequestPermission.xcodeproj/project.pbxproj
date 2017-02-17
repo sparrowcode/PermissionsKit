@@ -54,7 +54,6 @@
 		F4BF87151E56277D007A01E8 /* SPRequestPermissionAssistantInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF86B41E56277D007A01E8 /* SPRequestPermissionAssistantInterface.swift */; };
 		F4BF87161E56277D007A01E8 /* SPRequestPermissionEventsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF86B51E56277D007A01E8 /* SPRequestPermissionEventsDelegate.swift */; };
 		F4BF87171E56277D007A01E8 /* SPRequestPermissionAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF86B71E56277D007A01E8 /* SPRequestPermissionAssistant.swift */; };
-		F4BF87181E56277D007A01E8 /* SPRequestPermissionAssistantModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF86B81E56277D007A01E8 /* SPRequestPermissionAssistantModules.swift */; };
 		F4BF87191E56277D007A01E8 /* SPRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF86BA1E56277D007A01E8 /* SPRandom.swift */; };
 		F4BF871A1E56277D007A01E8 /* SPDialogSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF86BD1E56277D007A01E8 /* SPDialogSwipeController.swift */; };
 		F4BF871B1E56277D007A01E8 /* SPExtenshionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF86BE1E56277D007A01E8 /* SPExtenshionViewController.swift */; };
@@ -142,7 +141,6 @@
 		F4BF86B41E56277D007A01E8 /* SPRequestPermissionAssistantInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionAssistantInterface.swift; sourceTree = "<group>"; };
 		F4BF86B51E56277D007A01E8 /* SPRequestPermissionEventsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionEventsDelegate.swift; sourceTree = "<group>"; };
 		F4BF86B71E56277D007A01E8 /* SPRequestPermissionAssistant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionAssistant.swift; sourceTree = "<group>"; };
-		F4BF86B81E56277D007A01E8 /* SPRequestPermissionAssistantModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionAssistantModules.swift; sourceTree = "<group>"; };
 		F4BF86BA1E56277D007A01E8 /* SPRandom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRandom.swift; sourceTree = "<group>"; };
 		F4BF86BD1E56277D007A01E8 /* SPDialogSwipeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDialogSwipeController.swift; sourceTree = "<group>"; };
 		F4BF86BE1E56277D007A01E8 /* SPExtenshionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPExtenshionViewController.swift; sourceTree = "<group>"; };
@@ -376,7 +374,6 @@
 				F4BF86B21E56277D007A01E8 /* protocols */,
 				F4BF86B61E56277D007A01E8 /* readme */,
 				F4BF86B71E56277D007A01E8 /* SPRequestPermissionAssistant.swift */,
-				F4BF86B81E56277D007A01E8 /* SPRequestPermissionAssistantModules.swift */,
 			);
 			path = "request-permissions";
 			sourceTree = "<group>";
@@ -874,7 +871,6 @@
 				F4BF87341E56277D007A01E8 /* SPBezierPathFigureIcons.swift in Sources */,
 				F4BF86F41E56277D007A01E8 /* SPBezierPathExtenshion.swift in Sources */,
 				F4BF86F51E56277D007A01E8 /* SPUIColorExtenshion.swift in Sources */,
-				F4BF87181E56277D007A01E8 /* SPRequestPermissionAssistantModules.swift in Sources */,
 				F4BF87311E56277D007A01E8 /* SPPatternView.swift in Sources */,
 				F4BF87101E56277D007A01E8 /* SPRequestPermissionPresenterInterface.swift in Sources */,
 				F4BF871D1E56277D007A01E8 /* SPPageItemsScallingViewController.swift in Sources */,

@@ -21,7 +21,7 @@
 
 import UIKit
 
-protocol SPRequestPermissionPresenterInterface: class {
+public protocol SPRequestPermissionPresenterInterface: class {
     
     weak var assistantDelegate: SPRequestPermissionAssistantDelegate? {get set}
     

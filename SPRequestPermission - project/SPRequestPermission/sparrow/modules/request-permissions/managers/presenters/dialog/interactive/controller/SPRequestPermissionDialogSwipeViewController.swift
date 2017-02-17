@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPRequestPermissionDialogInteractiveViewController: SPDialogSwipeController<SPRequestPermissionDialogInteractiveView, UILabel>  {
+public class SPRequestPermissionDialogInteractiveViewController: SPDialogSwipeController<SPRequestPermissionDialogInteractiveView, UILabel>  {
     
     weak var presenterDelegate: SPRequestPermissionDialogInteractivePresenterDelegate?
     
@@ -46,7 +46,7 @@ class SPRequestPermissionDialogInteractiveViewController: SPDialogSwipeControlle
         self.bottomView.numberOfLines = 0
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         self.dialogView.backgroundColor = UIColor.white
     }
@@ -55,7 +55,7 @@ class SPRequestPermissionDialogInteractiveViewController: SPDialogSwipeControlle
         super.init(coder: aDecoder)
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { (context) in
             self.dialogView.layoutIfNeeded()

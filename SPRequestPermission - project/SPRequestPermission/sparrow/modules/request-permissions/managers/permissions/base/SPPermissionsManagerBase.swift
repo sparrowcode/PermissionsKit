@@ -21,7 +21,7 @@
 
 import Foundation
 
-enum SPRequestPermissionType {
+public enum SPRequestPermissionType {
     case Camera
     case PhotoLibrary
     case Notification

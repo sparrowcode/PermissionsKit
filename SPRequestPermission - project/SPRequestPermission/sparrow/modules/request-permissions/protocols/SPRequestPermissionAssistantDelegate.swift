@@ -21,7 +21,7 @@
 
 import UIKit
 
-protocol SPRequestPermissionAssistantDelegate: class {
+public protocol SPRequestPermissionAssistantDelegate: class {
     
     func requestPersmisson(_ permission: SPRequestPermissionType, with complectionHandler: @escaping ()->())
     

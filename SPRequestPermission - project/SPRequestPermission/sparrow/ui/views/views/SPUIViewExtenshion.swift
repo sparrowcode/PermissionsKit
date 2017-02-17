@@ -173,12 +173,16 @@ public extension UIView {
         self.layer.shadowRadius = blurRadius
         self.layer.masksToBounds = false
         
-        let theAnimation = CASpringAnimation.init(keyPath: "shadowPath")
-        theAnimation.damping = 0.85
-        theAnimation.duration = CFTimeInterval(duration)
-        theAnimation.fromValue = layer.shadowPath
-        theAnimation.toValue = shadowPath.cgPath
-        self.layer.add(theAnimation, forKey: "shadowPath")
+        if #available(iOS 9.0, *) {
+            let theAnimation = CASpringAnimation.init(keyPath: "shadowPath")
+            theAnimation.damping = 0.85
+            theAnimation.duration = CFTimeInterval(duration)
+            theAnimation.fromValue = layer.shadowPath
+            theAnimation.toValue = shadowPath.cgPath
+            self.layer.add(theAnimation, forKey: "shadowPath")
+        } else {
+            // Fallback on earlier versions
+        }
         self.layer.shadowPath = shadowPath.cgPath;
     }
 }

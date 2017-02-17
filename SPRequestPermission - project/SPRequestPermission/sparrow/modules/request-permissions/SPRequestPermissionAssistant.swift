@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPRequestPermissionAssistant: SPRequestPermissionAssistantInterface, SPRequestPermissionAssistantDelegate {
+public class SPRequestPermissionAssistant: SPRequestPermissionAssistantInterface, SPRequestPermissionAssistantDelegate {
     
     private var permissions: [SPRequestPermissionType]
     
@@ -43,7 +43,7 @@ class SPRequestPermissionAssistant: SPRequestPermissionAssistantInterface, SPReq
         self.presenterManager.present(on: viewController)
     }
     
-    func requestPersmisson(_ permission: SPRequestPermissionType, with complectionHandler: @escaping ()->()) {
+    public func requestPersmisson(_ permission: SPRequestPermissionType, with complectionHandler: @escaping ()->()) {
         self.permissionManager.requestPermission(permission, withComlectionHandler: {
             [unowned self] in
             self.eventsDelegate?.didSelectedPermission(permission: permission)
@@ -56,11 +56,11 @@ class SPRequestPermissionAssistant: SPRequestPermissionAssistantInterface, SPReq
         })
     }
     
-    func isAllowPermission(_ permission: SPRequestPermissionType) -> Bool {
+    public func isAllowPermission(_ permission: SPRequestPermissionType) -> Bool {
         return self.permissionManager.isAuthorizedPermission(permission)
     }
     
-    func isAllowPermissions() -> Bool {
+    public func isAllowPermissions() -> Bool {
         for permission in self.permissions {
             guard self.permissionManager.isAuthorizedPermission(permission) else {
                 return false
@@ -69,7 +69,41 @@ class SPRequestPermissionAssistant: SPRequestPermissionAssistantInterface, SPReq
         return true
     }
     
-    internal func didHide() {
+    public func didHide() {
         self.eventsDelegate?.didHide()
+    }
+    
+    //MARK: - Modules
+    public struct modules {
+        
+        public struct dialog {
+            
+            public struct interactive {
+                
+                static func create(with permissions: [SPRequestPermissionType], dataSourceForController dataSource: SPRequestPermissionDialogInteractiveDataSourceInterface = SPRequestPermissionDialogInteractiveDataSource()) -> SPRequestPermissionAssistantInterface {
+                    let permissionManager = SPPermissionsManagers.base()
+                    let presenterManager = SPRequestPermissionPresenters.dialog.interactive.create(dataSource: dataSource)
+                    let assistant = SPRequestPermissionAssistant.init(
+                        with: permissions,
+                        permissionManager: permissionManager,
+                        presenterManager: presenterManager
+                    )
+                    return assistant
+                }
+            }
+        }
+        
+        public struct native {
+            static func create(with permissions: [SPRequestPermissionType]) -> SPRequestPermissionAssistantInterface {
+                let permissionManager = SPPermissionsManagers.base()
+                let presenterManager = SPRequestPermissionPresenters.native.create()
+                let assistant = SPRequestPermissionAssistant.init(
+                    with: permissions,
+                    permissionManager: permissionManager,
+                    presenterManager: presenterManager
+                )
+                return assistant
+            }
+        }
     }
 }
