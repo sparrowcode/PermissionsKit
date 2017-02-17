@@ -122,7 +122,7 @@ class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UIViewCon
     var velocity: CGFloat = 0.85
     
     //MARK: - delegates
-    var delegate: SPDialogSwipeControllerDelegate?
+    weak var delegate: SPDialogSwipeControllerDelegate?
     
     private var isShowBottomView: Bool {
         return (bottomView.frame.origin.y + bottomView.frame.height) < (self.view.frame.height)
