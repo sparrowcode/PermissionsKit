@@ -16,7 +16,7 @@ Drop in `Sparrow` folder to your Xcode project (make sure to enable "Copy items 
 
 Or via CocoaPods:
     
-    pod 'Sparrow/Modules/RequsetPermission, :git => 'https://github.com/IvanVorobei/Sparrow.git’
+    pod 'Sparrow/Modules/RequsetPermission', :git => 'https://github.com/IvanVorobei/Sparrow.git’
 
 ## How to use
 Initialize `Assistant` as a property in controller. Initialization in any other unit may be unsafe ([read more about](#important))
