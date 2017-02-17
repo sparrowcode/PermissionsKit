@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4ACA1C21E57841B002BE309 /* SPRequestPermissionNativePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ACA1C11E57841B002BE309 /* SPRequestPermissionNativePresenter.swift */; };
 		F4BF85871E56274E007A01E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF85861E56274E007A01E8 /* AppDelegate.swift */; };
 		F4BF85891E56274E007A01E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF85881E56274E007A01E8 /* ViewController.swift */; };
 		F4BF858C1E56274E007A01E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4BF858A1E56274E007A01E8 /* Main.storyboard */; };
@@ -90,6 +91,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4ACA1C11E57841B002BE309 /* SPRequestPermissionNativePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionNativePresenter.swift; sourceTree = "<group>"; };
 		F4BF85831E56274E007A01E8 /* SPRequestPermission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPRequestPermission.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BF85861E56274E007A01E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4BF85881E56274E007A01E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 		F4BF86AB1E56277D007A01E8 /* native */ = {
 			isa = PBXGroup;
 			children = (
+				F4ACA1C11E57841B002BE309 /* SPRequestPermissionNativePresenter.swift */,
 			);
 			path = native;
 			sourceTree = "<group>";
@@ -831,6 +834,7 @@
 				F4BF87251E56277D007A01E8 /* SPSegmentedControl.swift in Sources */,
 				F4BF870F1E56277D007A01E8 /* SPRequestPermissionDialogInteractiveView.swift in Sources */,
 				F4BF87351E56277D007A01E8 /* SPBezierPathFigureLogos.swift in Sources */,
+				F4ACA1C21E57841B002BE309 /* SPRequestPermissionNativePresenter.swift in Sources */,
 				F4BF87231E56277D007A01E8 /* SPSegmentControlProtocol.swift in Sources */,
 				F4BF872A1E56277D007A01E8 /* SPParallaxTableViewCell.swift in Sources */,
 				F4BF86FC1E56277D007A01E8 /* SPInternetConnection.swift in Sources */,
@@ -1071,6 +1075,7 @@
 				F4BF85971E56274E007A01E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

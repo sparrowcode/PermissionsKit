@@ -115,6 +115,8 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
         for control in controls {
             if assistantDelegate?.isAllowPermission(control.permission) ?? false {
                 control.setSelectedState(animated: false)
+            } else {
+                control.setNormalState(animated: false)
             }
         }
     }

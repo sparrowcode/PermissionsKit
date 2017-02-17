@@ -31,7 +31,7 @@ extension SPRequestPermissionAssistant {
                 
                 static func `init`(with permissions: [SPRequestPermissionType], dataSourceForController dataSource: SPRequestPermissionDialogInteractiveDataSourceInterface = SPRequestPermissionDialogInteractiveDataSource()) -> SPRequestPermissionAssistantInterface {
                     let permissionManager = SPPermissionsManagers.base()
-                    let presenterManager = SPRequestPermissionPresenters.dialog.interactive.init(dataSource: dataSource)
+                    let presenterManager = SPRequestPermissionPresenters.dialog.interactive.create(dataSource: dataSource)
                     let assistant = SPRequestPermissionAssistant.init(
                         with: permissions,
                         permissionManager: permissionManager,
@@ -43,8 +43,15 @@ extension SPRequestPermissionAssistant {
         }
         
         struct native {
-            static func `init`(with permission: SPRequestPermissionType) {
-                
+            static func `init`(with permissions: [SPRequestPermissionType]) -> SPRequestPermissionAssistantInterface {
+                let permissionManager = SPPermissionsManagers.base()
+                let presenterManager = SPRequestPermissionPresenters.native.create()
+                let assistant = SPRequestPermissionAssistant.init(
+                    with: permissions,
+                    permissionManager: permissionManager,
+                    presenterManager: presenterManager
+                )
+                return assistant
             }
         }
     }

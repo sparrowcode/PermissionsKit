@@ -23,7 +23,7 @@ import UIKit
 
 protocol SPRequestPermissionPresenterInterface: class {
     
-    var assistantDelegate: SPRequestPermissionAssistantDelegate? {get set}
+    weak var assistantDelegate: SPRequestPermissionAssistantDelegate? {get set}
     
     func present(on viewController: UIViewController)
     
