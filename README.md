@@ -19,7 +19,7 @@ Or via CocoaPods:
     pod 'Sparrow/Modules/RequsetPermission, :git => 'https://github.com/IvanVorobei/Sparrow.git’
 
 ## How to use
-Проинициализруйте `Assistant` как проверти в контроллере. Инициализровать в любом другом блоке может быть небезопасно ([read more about](## Important))
+Проинициализруйте `Assistant` как проверти в контроллере. Инициализровать в любом другом блоке может быть небезопасно ([read more about](#important))
 
 	class ViewController: UIViewController {
     
