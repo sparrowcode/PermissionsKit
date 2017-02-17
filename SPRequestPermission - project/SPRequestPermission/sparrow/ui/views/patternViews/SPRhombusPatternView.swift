@@ -21,13 +21,11 @@
 
 import UIKit
 
-class SPRhombusPatternView: SPPatternView {
+extension SPPatternView {
     
-    init() {
-        super.init(pattern: SPBezierPathFigure.patterns.rhombus())
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    func setRhombusPattern() {
+        self.pattern = SPBezierPathFigure.patterns.rhombus()
     }
 }
+
+

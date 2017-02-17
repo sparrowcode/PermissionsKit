@@ -26,6 +26,13 @@ enable_notification = "Уведомления";
 hello = "Привет!";
 app_needs_permission = "Приложению необходимы разрешения";
 
-allow_permission_this_help_you = "Для нормальной работы разрешите доступ приложению к некоторым разрешениям";
+allow_permission_this_help_you = "Для нормальной работы одобрите разрешения";
 
-you_can_manage_permission_in_setting = "Не беспокойтесь, вы сможете изменить решение в настройках";
+you_can_manage_permission_in_setting = "Вы можете изменить решение в настройках";
+
+swipe_for_hide = "Смахните чтобы скрыть";
+
+cancel = "Отмена";
+settings = "Настройки";
+important = "Важно";
+permission_denid_go_to_settings = "Разрешение заблокированно. Пожалуйста, перейдите в настройки и разрешите доступ приложению";

@@ -21,9 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man in orange" translatesAutoresizingMaskIntoConstraints="NO" id="acv-VH-vLp">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uug-Kf-m9e" customClass="SPPatternView" customModule="SPRequestPermission" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6u-Ru-WKX">
                                 <rect key="frame" x="0.0" y="605" width="375" height="42"/>
                                 <constraints>
@@ -42,22 +43,22 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.63700000000000001" blue="0.91000000000000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="acv-VH-vLp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EYV-ne-GCh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uug-Kf-m9e" secondAttribute="bottom" id="HR0-28-Lm2"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="D6u-Ru-WKX" secondAttribute="bottom" constant="20" id="Kvs-yq-lYJ"/>
-                            <constraint firstAttribute="trailing" secondItem="acv-VH-vLp" secondAttribute="trailing" id="PMd-f7-hz4"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="acv-VH-vLp" secondAttribute="bottom" id="ZCV-7a-IXz"/>
-                            <constraint firstItem="acv-VH-vLp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hX4-Xv-Pqm"/>
+                            <constraint firstItem="uug-Kf-m9e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iO5-ti-RAU"/>
                             <constraint firstItem="D6u-Ru-WKX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="k55-go-sz9"/>
+                            <constraint firstAttribute="trailing" secondItem="uug-Kf-m9e" secondAttribute="trailing" id="lHm-q8-lxO"/>
                             <constraint firstAttribute="trailing" secondItem="D6u-Ru-WKX" secondAttribute="trailing" id="nOn-eO-28g"/>
+                            <constraint firstItem="uug-Kf-m9e" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="spH-hN-njx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="patternView" destination="uug-Kf-m9e" id="Uug-Wi-kna"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="man in orange" width="1250" height="887"/>
-    </resources>
 </document>

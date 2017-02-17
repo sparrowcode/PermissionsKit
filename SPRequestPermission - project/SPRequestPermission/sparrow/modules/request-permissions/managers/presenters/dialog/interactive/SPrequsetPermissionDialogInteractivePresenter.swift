@@ -66,6 +66,7 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
                 control.setSelectedState(animated: true)
             } else {
                 control.setNormalState(animated: true)
+                self.showDialogForProtectPermissionOnViewController()
             }
             if self.assistantDelegate?.isAllowPermissions() ?? false {
                 delay(0.21, closure: {
@@ -73,6 +74,40 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
                 })
             }
         })
+    }
+    
+    private func showDialogForProtectPermissionOnViewController() {
+        let alert = UIAlertController.init(
+            title: SPRequestPermissionData.texts.titleDisablePermissionAlertText(),
+            message: SPRequestPermissionData.texts.subtitleDisablePermissionAlertText(),
+            preferredStyle: UIAlertControllerStyle.alert
+        )
+        
+        alert.addAction(UIAlertAction.init(
+            title: SPRequestPermissionData.texts.cancel(),
+            style: UIAlertActionStyle.cancel,
+            handler: nil)
+        )
+        
+        alert.addAction(UIAlertAction.init(
+            title: SPRequestPermissionData.texts.settings(),
+            style: UIAlertActionStyle.default,
+            handler: {
+                finished in
+                
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(
+                        URL.init(string: UIApplicationOpenSettingsURLString)!,
+                        options: [:],
+                        completionHandler: nil
+                    )
+                } else {
+                    UIApplication.shared.openURL(URL.init(string: UIApplicationOpenSettingsURLString)!)
+                }
+        }))
+        if let controller = self.viewController as? UIViewController {
+            controller.present(alert, animated: true, completion: nil)
+        }
     }
     
     func isEnableHide() -> Bool {

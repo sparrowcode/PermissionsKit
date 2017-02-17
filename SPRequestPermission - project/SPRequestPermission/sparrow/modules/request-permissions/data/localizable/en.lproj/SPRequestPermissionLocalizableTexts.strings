@@ -29,3 +29,10 @@ app_needs_permission = "Application needs permission";
 allow_permission_this_help_you = "Allow permission please, this help to you use Application";
 
 you_can_manage_permission_in_setting = "You can manage permissions in settings";
+
+swipe_for_hide = "Swipe for hide";
+
+cancel = "Cancel";
+settings = "Settings";
+important = "Important";
+permission_denid_go_to_settings = "Permission denid. Please, go to Settings and allow permissions";

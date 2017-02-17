@@ -30,7 +30,7 @@ class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UIViewCon
     internal var contentView: UIView = UIView()
     
     //MARK: - UI
-    var backgroundGrade: CGFloat = 0.3
+    var backgroundGrade: CGFloat = 0.25
     var backgroundBlurFactor: CGFloat = 0.017
     var dialogShadowYtranslationFactor: CGFloat = 0.035
     var dialogShadowBlurRadiusFactor: CGFloat = 0.026
@@ -336,7 +336,7 @@ class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UIViewCon
 }
 
 
-protocol SPDialogSwipeControllerDelegate {
+protocol SPDialogSwipeControllerDelegate: class {
     
     var isEnableHideDialogController: Bool {get}
     
