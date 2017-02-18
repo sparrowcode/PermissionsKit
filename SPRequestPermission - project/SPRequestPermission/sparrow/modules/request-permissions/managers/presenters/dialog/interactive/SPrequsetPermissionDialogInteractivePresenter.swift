@@ -37,7 +37,7 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
     
     func set(permissions: [SPRequestPermissionType]) {
         for permission in permissions {
-            let control = self.dataSource.createControlForPermission(permission)
+            let control = self.createControlForPermission(permission)
             controls.append(control)
             control.addAction(self, action: #selector(self.actionForControl(sender:)))
             self.viewController.addControl(control)
@@ -55,6 +55,17 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
         self.viewController.setBottomTitle(self.dataSource.bottomAdviceTitle())
         self.viewController.setUnderDialogTitle(self.dataSource.underDialogAdviceTitle())
         self.viewController.setHeaderBackgroundView(self.dataSource.headerBackgroundView())
+    }
+    
+    private func createControlForPermission(_ permission: SPRequestPermissionType) -> SPRequestPermissionTwiceControlInterface {
+        return SPRequestPermissionTwiceControl(
+            permissionType: permission,
+            title: self.dataSource.titleForPermissionControl(permission),
+            normalIconImage: self.dataSource.iconForNormalPermissionControl(permission) ,
+            selectedIconImage: self.dataSource.iconForAllowedPermissionControl(permission),
+            normalColor: self.dataSource.secondColor(),
+            selectedColor: self.dataSource.mainColor()
+        )
     }
     
     @objc func actionForControl(sender: AnyObject) {

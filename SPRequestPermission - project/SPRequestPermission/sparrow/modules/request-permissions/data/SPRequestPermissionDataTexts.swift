@@ -27,51 +27,51 @@ extension SPRequestPermissionData {
     
     struct texts {
         static func title() -> String {
-            return NSLocalizedString("hello", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+            return "Hello!"
         }
         
         static func subtitile() -> String {
-            return NSLocalizedString("app_needs_permission", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+            return "Application needs permission"
         }
         
         static func advice() -> String {
-            return NSLocalizedString("allow_permission_this_help_you", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+            return "Allow permission please. This helps to use application"
         }
         
         static func advice_additional() -> String {
-            return NSLocalizedString("you_can_manage_permission_in_setting", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+            return "You can manage permissions in settings"
         }
         
         static func enable_camera() -> String {
-            return NSLocalizedString("enable_camera", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+            return "Enable Camera"
         }
         
         static func enable_photoLibrary() -> String {
-            return NSLocalizedString("enable_photoLibrary", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+            return "Enable PhotoLibrary"
         }
         
         static func enable_notification() -> String {
-            return NSLocalizedString("enable_notification", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+            return "Enable Notification"
         }
         
         static func swipe_for_hide() -> String {
-            return NSLocalizedString("swipe_for_hide", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+            return "Swipe to hide"
         }
         
         static func cancel() -> String {
-            return NSLocalizedString("cancel", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+            return "Cancel"
         }
         
         static func settings() -> String {
-            return NSLocalizedString("settings", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+            return "Settings"
         }
         
         static func titleDisablePermissionAlertText() -> String {
-            return NSLocalizedString("important", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+            return "Important"
         }
         
         static func subtitleDisablePermissionAlertText() -> String {
-            return NSLocalizedString("permission_denid_go_to_settings", tableName: "SPRequestPermissionLocalizableTexts", bundle: Bundle.main, value: "", comment: "")
+            return "Permission denied. Please, go to Settings and allow permissions"
         }
     }
 }

@@ -21,7 +21,7 @@
 
 import UIKit
 
-protocol SPRequestPermissionAssistantInterface {
+public protocol SPRequestPermissionAssistantInterface {
     
     var eventsDelegate: SPRequestPermissionEventsDelegate? {get set}
     

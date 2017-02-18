@@ -28,7 +28,7 @@ public class SPRequestPermissionAssistant: SPRequestPermissionAssistantInterface
     private let permissionManager: SPPermissionManagerInterface
     private let presenterManager: SPRequestPermissionPresenterInterface
     
-    weak var eventsDelegate: SPRequestPermissionEventsDelegate?
+    weak public var eventsDelegate: SPRequestPermissionEventsDelegate?
     
     init(with permissions: [SPRequestPermissionType], permissionManager: SPPermissionManagerInterface, presenterManager: SPRequestPermissionPresenterInterface) {
         self.permissions = permissions
@@ -39,7 +39,7 @@ public class SPRequestPermissionAssistant: SPRequestPermissionAssistantInterface
         self.presenterManager.set(permissions: permissions)
     }
     
-    func present(on viewController: UIViewController) {
+    public func present(on viewController: UIViewController) {
         self.presenterManager.present(on: viewController)
     }
     
@@ -80,7 +80,7 @@ public class SPRequestPermissionAssistant: SPRequestPermissionAssistantInterface
             
             public struct interactive {
                 
-                static func create(with permissions: [SPRequestPermissionType], dataSourceForController dataSource: SPRequestPermissionDialogInteractiveDataSourceInterface = SPRequestPermissionDialogInteractiveDataSource()) -> SPRequestPermissionAssistantInterface {
+                public static func create(with permissions: [SPRequestPermissionType], dataSourceForController dataSource: SPRequestPermissionDialogInteractiveDataSourceInterface = SPRequestPermissionDialogInteractiveDataSource()) -> SPRequestPermissionAssistantInterface {
                     let permissionManager = SPPermissionsManagers.base()
                     let presenterManager = SPRequestPermissionPresenters.dialog.interactive.create(dataSource: dataSource)
                     let assistant = SPRequestPermissionAssistant.init(
@@ -94,7 +94,7 @@ public class SPRequestPermissionAssistant: SPRequestPermissionAssistantInterface
         }
         
         public struct native {
-            static func create(with permissions: [SPRequestPermissionType]) -> SPRequestPermissionAssistantInterface {
+            public static func create(with permissions: [SPRequestPermissionType]) -> SPRequestPermissionAssistantInterface {
                 let permissionManager = SPPermissionsManagers.base()
                 let presenterManager = SPRequestPermissionPresenters.native.create()
                 let assistant = SPRequestPermissionAssistant.init(
