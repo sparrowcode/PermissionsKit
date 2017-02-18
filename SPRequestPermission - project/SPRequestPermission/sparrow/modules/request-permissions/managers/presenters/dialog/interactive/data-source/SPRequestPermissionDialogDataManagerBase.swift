@@ -23,39 +23,40 @@ import UIKit
 
 public class SPRequestPermissionDialogInteractiveDataSource: SPRequestPermissionDialogInteractiveDataSourceInterface {
     
-    func createControlForPermission(_ permission: SPRequestPermissionType) -> SPRequestPermissionTwiceControlInterface {
-
-        var normalIconBezierPath = UIBezierPath()
-        var title = String()
-        
+    public func iconForNormalPermissionControl(_ permission: SPRequestPermissionType) -> UIImage {
+        var iconBezierPath = UIBezierPath()
+        let requestWidth: CGFloat = 100
         switch permission {
         case .Camera:
-            normalIconBezierPath = SPBezierPathFigure.icons.camera(width: 100)
-            title = SPRequestPermissionData.texts.enable_camera()
+            iconBezierPath = SPBezierPathFigure.icons.camera(width: requestWidth)
         case .PhotoLibrary:
-            normalIconBezierPath = SPBezierPathFigure.icons.photo_library(width: 100)
-            title = SPRequestPermissionData.texts.enable_photoLibrary()
+            iconBezierPath = SPBezierPathFigure.icons.photo_library(width: requestWidth)
         case .Notification:
-            normalIconBezierPath = SPBezierPathFigure.icons.notification(width: 100)
-            title = SPRequestPermissionData.texts.enable_notification()
+            iconBezierPath = SPBezierPathFigure.icons.notification(width: requestWidth)
         }
-        
-        let normalImage = normalIconBezierPath.convertToImage(fill: true, stroke: false, color: UIColor.black)
-
-        let checkedBezierPath  = SPBezierPathFigure.icons.checked(width: 100)
-        let checkedImage = checkedBezierPath.convertToImage(fill: true, stroke: false, color: UIColor.black)
-        
-        return SPRequestPermissionTwiceControl(
-            permissionType: permission,
-            title: title,
-            normalIconImage: normalImage ,
-            selectedIconImage: checkedImage,
-            normalColor: self.secondColor(),
-            selectedColor: self.mainColor()
-        )
+        return iconBezierPath.convertToImage(fill: true, stroke: false, color: UIColor.black)
     }
     
-    func headerBackgroundView() -> UIView {
+    public func iconForAllowedPermissionControl(_ permission: SPRequestPermissionType) -> UIImage {
+        let requestWidth: CGFloat = 100
+        let checkedBezierPath  = SPBezierPathFigure.icons.checked(width: requestWidth)
+        return checkedBezierPath.convertToImage(fill: true, stroke: false, color: UIColor.black)
+    }
+    
+    public func titleForPermissionControl(_ permission: SPRequestPermissionType) -> String {
+        var title = String()
+        switch permission {
+        case .Camera:
+            title = SPRequestPermissionData.texts.enable_camera()
+        case .PhotoLibrary:
+            title = SPRequestPermissionData.texts.enable_photoLibrary()
+        case .Notification:
+            title = SPRequestPermissionData.texts.enable_notification()
+        }
+        return title
+    }
+    
+    public func headerBackgroundView() -> UIView {
         let patternView = SPRequestPermissionData.views.patternView()
         let gradientView = SPGradientWithPictureView.init()
         gradientView.setGradient(
@@ -68,31 +69,31 @@ public class SPRequestPermissionDialogInteractiveDataSource: SPRequestPermission
         return gradientView
     }
     
-    func headerTitle() -> String {
+    public func headerTitle() -> String {
         return SPRequestPermissionData.texts.title()
     }
     
-    func headerSubtitle() -> String {
+    public func headerSubtitle() -> String {
         return SPRequestPermissionData.texts.subtitile()
     }
     
-    func topAdviceTitle() -> String {
+    public func topAdviceTitle() -> String {
         return SPRequestPermissionData.texts.advice()
     }
     
-    func bottomAdviceTitle() -> String {
+    public func bottomAdviceTitle() -> String {
         return SPRequestPermissionData.texts.advice_additional()
     }
     
-    func underDialogAdviceTitle() -> String {
+    public func underDialogAdviceTitle() -> String {
         return SPRequestPermissionData.texts.swipe_for_hide()
     }
     
-    func mainColor() -> UIColor {
+    public func mainColor() -> UIColor {
         return UIColor.init(hex: "#27AEE8")
     }
     
-    func secondColor() -> UIColor {
+    public func secondColor() -> UIColor {
         return UIColor.white
     }
 }

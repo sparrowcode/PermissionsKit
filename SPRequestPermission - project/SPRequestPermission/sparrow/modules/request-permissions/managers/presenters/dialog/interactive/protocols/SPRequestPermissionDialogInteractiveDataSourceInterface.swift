@@ -21,9 +21,11 @@
 
 import UIKit
 
-protocol SPRequestPermissionDialogInteractiveDataSourceInterface {
+public protocol SPRequestPermissionDialogInteractiveDataSourceInterface {
     
-    func createControlForPermission(_ permission: SPRequestPermissionType) -> SPRequestPermissionTwiceControlInterface
+    func iconForNormalPermissionControl(_ permission: SPRequestPermissionType) -> UIImage
+    func iconForAllowedPermissionControl(_ permission: SPRequestPermissionType) -> UIImage
+    func titleForPermissionControl(_ permission: SPRequestPermissionType) -> String
     
     func headerBackgroundView() -> UIView
     

@@ -21,7 +21,7 @@
 
 import UIKit
 
-protocol SPRequestPermissionTwiceControlInterface {
+public protocol SPRequestPermissionTwiceControlInterface {
     
     var permission: SPRequestPermissionType {get set}
     

@@ -21,7 +21,7 @@
 
 import Foundation
 
-protocol SPRequestPermissionEventsDelegate: class {
+public protocol SPRequestPermissionEventsDelegate: class {
     
     func didHide()
     
