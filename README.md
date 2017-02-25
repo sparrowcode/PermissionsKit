@@ -1,8 +1,5 @@
 ![](/resources/request-permission - baner.png)
 
-## Sorry
-A few days the project will be improved. I'm trying to quickly fix bugs and realize designed plans. But it takes time. If you fear of changes, but would like to use the project, wait quite a bit
-
 ## About
 Module work proved long ago. This project is a module for managing permissions with the visual part and the possibility of customization. Beautiful dialog increases chances of obtaining a permit (which is important when we request notification). Simple control of module saves hours of development. You can use the project with just two lines of code!
 
