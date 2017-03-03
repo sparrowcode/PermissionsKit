@@ -22,6 +22,8 @@
 import AVFoundation
 import UserNotifications
 import Photos
+import MapKit
+import EventKit
 
 class SPCameraPermission: SPPermissionInterface {
     
@@ -86,6 +88,77 @@ class SPPhotoLibraryPermission: SPPermissionInterface {
                 complectionHandler()
             }
         })
+    }
+}
+
+class SPMicrophonePermission: SPPermissionInterface {
+    
+    func isAuthorized() -> Bool {
+        if AVAudioSession.sharedInstance().recordPermission() == .granted {
+            return true
+        }
+        return false
+    }
+    
+    func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        AVAudioSession.sharedInstance().requestRecordPermission {
+            granted in
+            DispatchQueue.main.async {
+                complectionHandler()
+            }
+        }
+    }
+}
+
+
+class SPCalendarPermission: SPPermissionInterface {
+    
+    func isAuthorized() -> Bool {
+        let status = EKEventStore.authorizationStatus(for: EKEntityType.event)
+        switch (status) {
+        case EKAuthorizationStatus.authorized:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        let eventStore = EKEventStore()
+        eventStore.requestAccess(to: EKEntityType.event, completion: {
+            (accessGranted: Bool, error: Error?) in
+            DispatchQueue.main.async {
+                complectionHandler()
+            }
+        })
+    }
+}
+
+class SPLocationPermission: SPPermissionInterface {
+    
+    func isAuthorized() -> Bool {
+        let status = CLLocationManager.authorizationStatus()
+        if status == .authorizedAlways {
+            return true
+        }
+        if status == .authorizedWhenInUse {
+            return true
+        }
+        return false
+    }
+    
+    func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        
+        if SPRequestPermissionLocationHandler.shared == nil {
+            SPRequestPermissionLocationHandler.shared = SPRequestPermissionLocationHandler()
+        }
+        
+        SPRequestPermissionLocationHandler.shared!.requestPermission { (authorized) in
+            DispatchQueue.main.async {
+                complectionHandler()
+                SPRequestPermissionLocationHandler.shared = nil
+            }
+        }
     }
 }
 

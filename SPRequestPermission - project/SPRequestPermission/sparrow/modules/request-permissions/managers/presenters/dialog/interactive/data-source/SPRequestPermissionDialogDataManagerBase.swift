@@ -21,25 +21,33 @@
 
 import UIKit
 
-public class SPRequestPermissionDialogInteractiveDataSource: SPRequestPermissionDialogInteractiveDataSourceInterface {
+open class SPRequestPermissionDialogInteractiveDataSource: SPRequestPermissionDialogInteractiveDataSourceInterface {
     
     public func iconForNormalPermissionControl(_ permission: SPRequestPermissionType) -> UIImage {
         var iconBezierPath = UIBezierPath()
         let requestWidth: CGFloat = 100
         switch permission {
         case .Camera:
-            iconBezierPath = SPBezierPathFigure.icons.camera(width: requestWidth)
+            iconBezierPath = SPBezierPathFigure.icons.camera()
         case .PhotoLibrary:
-            iconBezierPath = SPBezierPathFigure.icons.photo_library(width: requestWidth)
+            iconBezierPath = SPBezierPathFigure.icons.photo_library()
         case .Notification:
-            iconBezierPath = SPBezierPathFigure.icons.notification(width: requestWidth)
+            iconBezierPath = SPBezierPathFigure.icons.notification()
+        case .Microphone:
+            iconBezierPath = SPBezierPathFigure.icons.microphone()
+        case .Calendar:
+            iconBezierPath = SPBezierPathFigure.icons.calendar()
+        case .Location:
+            iconBezierPath = SPBezierPathFigure.icons.location()
         }
+        iconBezierPath.resizeTo(width: requestWidth)
         return iconBezierPath.convertToImage(fill: true, stroke: false, color: UIColor.black)
     }
     
     public func iconForAllowedPermissionControl(_ permission: SPRequestPermissionType) -> UIImage {
         let requestWidth: CGFloat = 100
-        let checkedBezierPath  = SPBezierPathFigure.icons.checked(width: requestWidth)
+        let checkedBezierPath  = SPBezierPathFigure.icons.checked()
+        checkedBezierPath.resizeTo(width: requestWidth)
         return checkedBezierPath.convertToImage(fill: true, stroke: false, color: UIColor.black)
     }
     
@@ -52,6 +60,12 @@ public class SPRequestPermissionDialogInteractiveDataSource: SPRequestPermission
             title = SPRequestPermissionData.texts.enable_photoLibrary()
         case .Notification:
             title = SPRequestPermissionData.texts.enable_notification()
+        case .Microphone:
+            title = SPRequestPermissionData.texts.enable_microphone()
+        case .Calendar:
+            title = SPRequestPermissionData.texts.enable_calendar()
+        case .Location:
+            title = SPRequestPermissionData.texts.enable_location()
         }
         return title
     }
