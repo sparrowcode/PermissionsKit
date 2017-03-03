@@ -25,6 +25,9 @@ public enum SPRequestPermissionType {
     case Camera
     case PhotoLibrary
     case Notification
+    case Microphone
+    case Calendar
+    case Location
 }
 
 class SPPermissionsManagerBase: SPPermissionManagerInterface {
@@ -49,6 +52,12 @@ class SPPermissionsManagerBase: SPPermissionManagerInterface {
             return SPPhotoLibraryPermission()
         case .Notification:
             return SPNotificationPermission()
+        case .Microphone:
+            return SPMicrophonePermission()
+        case .Calendar:
+            return SPCalendarPermission()
+        case .Location:
+            return SPLocationPermission()
         }
     }
 }

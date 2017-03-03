@@ -54,6 +54,18 @@ extension SPRequestPermissionData {
             return "Enable Notification"
         }
         
+        static func enable_microphone() -> String {
+            return "Enable Microphone"
+        }
+        
+        static func enable_calendar() -> String {
+            return "Enable Calendar"
+        }
+        
+        static func enable_location() -> String {
+            return "Enable Location"
+        }
+        
         static func swipe_for_hide() -> String {
             return "Swipe to hide"
         }

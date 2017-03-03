@@ -19,13 +19,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import UIKit
+import Foundation
 
-extension SPPatternView {
+typealias SPRequestPermissionAuthorizationHandlerCompletionBlock = (Bool) -> Void
+
+protocol SPRequestPermissionAuthorizationHandlerInterface {
     
-    open func setRhombusPattern() {
-        self.pattern = SPBezierPathFigure.patterns.rhombus()
-    }
+    func requestPermission(_ complectionHandler: @escaping SPRequestPermissionAuthorizationHandlerCompletionBlock)
+
 }
-
-
