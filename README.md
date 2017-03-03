@@ -33,7 +33,7 @@ Now when the module is initialized and configured with the desired permissions, 
 
 If you want to know if you have received permission, you should call the function:
     
-    permissionAssistant.isAllowPermission(.Camera)
+    let isAvailableCamera = permissionAssistant.isAllowPermission(.Camera)
 
 ## Available permissions
 
