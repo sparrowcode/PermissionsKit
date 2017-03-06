@@ -45,5 +45,15 @@
 	<string>For Example</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>For Example</string>
+	<key>NSLocationUsageDescription</key>
+	<string>For Example</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>For Example</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>For Example</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>For Example</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>For Example</string>
 </dict>
 </plist>
