@@ -45,3 +45,14 @@ extension UIBezierPath {
         return image!
     }
 }
+
+public struct SPBezierPath {
+    
+    public static func setContext() {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 1, height: 1), false, 0)
+    }
+    
+    public static func endContext() {
+        UIGraphicsEndImageContext()
+    }
+}

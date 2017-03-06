@@ -29,6 +29,7 @@ public extension SPBezierPathFigure {
 extension SPBezierPathFigure.icons {
 
     static func checked(color: UIColor = .black) -> UIBezierPath {
+        SPBezierPath.setContext()
         let fillColor = color
         let frame = CGRect(x: 0, y: 0, width: 327, height: 251)
         let bezierPath = UIBezierPath()
@@ -53,10 +54,12 @@ extension SPBezierPathFigure.icons {
         bezierPath.usesEvenOddFillRule = true
         fillColor.setFill()
         bezierPath.fill()
+        SPBezierPath.endContext()
         return bezierPath
     }
     
     static func camera(color: UIColor = .black) -> UIBezierPath {
+        SPBezierPath.setContext()
         let color = color
         let bezier3Path = UIBezierPath()
         bezier3Path.move(to: CGPoint(x: 456.5, y: 80.68))
@@ -103,10 +106,12 @@ extension SPBezierPathFigure.icons {
         bezier3Path.close()
         color.setFill()
         bezier3Path.fill()
+        SPBezierPath.endContext()
         return bezier3Path
     }
     
     static func photo_library(color: UIColor = .black) -> UIBezierPath {
+        SPBezierPath.setContext()
         let fillColor4 = color
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 0, y: 42.21))
@@ -149,10 +154,12 @@ extension SPBezierPathFigure.icons {
         bezierPath.usesEvenOddFillRule = true
         fillColor4.setFill()
         bezierPath.fill()
+        SPBezierPath.endContext()
         return bezierPath
     }
     
     static func notification(color: UIColor = .black) -> UIBezierPath {
+        SPBezierPath.setContext()
         let fillColor = color
         let bezier2Path = UIBezierPath()
         bezier2Path.move(to: CGPoint(x: 0, y: 323))
@@ -181,10 +188,12 @@ extension SPBezierPathFigure.icons {
         bezier2Path.close()
         fillColor.setFill()
         bezier2Path.fill()
+        SPBezierPath.endContext()
         return bezier2Path
     }
     
     static func microphone(color: UIColor = .black) -> UIBezierPath {
+        SPBezierPath.setContext()
         let fillColor = color
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 24.01, y: 40.8))
@@ -209,10 +218,12 @@ extension SPBezierPathFigure.icons {
         bezierPath.usesEvenOddFillRule = true
         fillColor.setFill()
         bezierPath.fill()
+        SPBezierPath.endContext()
         return bezierPath
     }
     
     static func calendar(color: UIColor = .black) -> UIBezierPath {
+        SPBezierPath.setContext()
         let fillColor = color
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 10.8, y: 1.02))
@@ -332,10 +343,12 @@ extension SPBezierPathFigure.icons {
         bezierPath.close()
         fillColor.setFill()
         bezierPath.fill()
+        SPBezierPath.endContext()
         return bezierPath
     }
     
     static func location(color: UIColor = .black) -> UIBezierPath {
+        SPBezierPath.setContext()
         let fillColor = color
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 58.24, y: 2.14))
@@ -354,6 +367,7 @@ extension SPBezierPathFigure.icons {
         bezierPath.usesEvenOddFillRule = true
         fillColor.setFill()
         bezierPath.fill()
+        SPBezierPath.endContext()
         return bezierPath
     }
 }

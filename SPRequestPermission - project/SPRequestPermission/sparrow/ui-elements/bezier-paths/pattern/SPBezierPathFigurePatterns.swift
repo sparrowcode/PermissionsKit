@@ -26,6 +26,7 @@ public extension SPBezierPathFigure {
     struct patterns {
         
         static func rhombus(color: UIColor = .black) -> UIBezierPath {
+            SPBezierPath.setContext()
             let strokeColor = color
             let bezierPath = UIBezierPath()
             bezierPath.move(to: CGPoint(x: 72.67, y: 49.96))
@@ -56,6 +57,7 @@ public extension SPBezierPathFigure {
             bezierPath.lineWidth = 1
             bezierPath.lineCapStyle = .square
             bezierPath.stroke()
+            SPBezierPath.endContext()
             return bezierPath
         }
     }

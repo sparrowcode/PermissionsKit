@@ -27,7 +27,9 @@ extension SPRequestPermissionData {
         
         static func patternView() -> SPPatternView {
             let patternView = SPPatternView.init()
+            UIGraphicsBeginImageContext(CGSize(width: 0, height: 0))
             patternView.setRhombusPattern()
+            UIGraphicsEndImageContext()
             let color = UIColor.white.withAlphaComponent(0.082)
             patternView.color = color
             patternView.cellWidthFactor = 0.18
