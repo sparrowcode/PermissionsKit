@@ -29,5 +29,7 @@ public protocol SPRequestPermissionAssistantDelegate: class {
     
     func isAllowPermissions() -> Bool
     
+    func denidedPermission() -> [SPRequestPermissionType]
+    
     func didHide()
 }
