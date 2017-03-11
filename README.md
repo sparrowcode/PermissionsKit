@@ -12,29 +12,29 @@ Xcode 8 and Swift 3. Ready for use on iOS 8+
 Drop in `Sparrow` folder to your Xcode project (make sure to enable "Copy items if needed" and "Create groups").
 
 Or via CocoaPods:
-    
-    pod 'Sparrow/Modules/RequestPermission', :git => 'https://github.com/IvanVorobei/Sparrow.git’
-
+```ruby
+pod 'Sparrow/Modules/RequestPermission', :git => 'https://github.com/IvanVorobei/Sparrow.git’
+```
 ## How to use
 Initialize `Assistant` as a property in controller. Initialization in any other unit may be unsafe ([read more about](#important))
+```swift
+class ViewController: UIViewController {
 
-	class ViewController: UIViewController {
-    
-    	var permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.create(with: [.Camera, .PhotoLibrary, .Notification])
+    var permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.create(with: [.Camera, .PhotoLibrary, .Notification])
 
-    	override func viewDidLoad() {
-        	super.viewDidLoad()
-    	}
-	}
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+```
 Now when the module is initialized and configured with the desired permissions, we can generate a visual representation. This is done in one line of code
-
-	permissionAssistant.present(on: self)
-
+```swift
+permissionAssistant.present(on: self)
+```
 If you want to know if you have received permission, you should call the function:
-    
-    let isAvailableCamera = permissionAssistant.isAllowPermission(.Camera)
-
+```swift
+let isAvailableCamera = permissionAssistant.isAllowPermission(.Camera)
+```
 ## Available permissions
 
 ![](/resources/request-permission - permissions.png)
@@ -49,18 +49,18 @@ For correct ARC work you need to save an object of class `Assistant` during the 
 
 ## Delegates
 To track events associated with `Assistant` and its view, implement the protocol `SPRequestPermissionEventsDelegate` and set the class as delegate
-
-	permissionAssistant.eventsDelegate = self
-
+```swift
+permissionAssistant.eventsDelegate = self
+```
 ## Customize
 If you want to change data in a particular module (for example, the text in the top footer) - you should implement a class supporting the protocol. For example, for module `dialog/interactive`, you should implement the protocol `SPRequestPermissionDialogInteractiveDataSourceInterface`. Then the class object needs to be passed to the assistant, in this line
-
-	let permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.init(with: [.Camera, .PhotoLibrary], dataSourceForController: customDataSource())
-
+```swift
+let permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.init(with: [.Camera, .PhotoLibrary], dataSourceForController: customDataSource())
+```
 If you want to write your assistant, using the current skeleton, you should use a more extended initializer. Accordingly `PresenterManager` and `PermissionManager` must implement the interfaces
-
-	let permissionAssistant = SPRequestPermissionAssistant.init(with: [.Camera, .PhotoLibrary], permissionManager: customPermissionManager(), presenterManager: customPresenterManager())
-
+```swift
+let permissionAssistant = SPRequestPermissionAssistant.init(with: [.Camera, .PhotoLibrary], permissionManager: customPermissionManager(), presenterManager: customPresenterManager())
+```
 ## Apps, using Request-Permission
 I like the idea to specify applications that use the RequestPermission. Please, contact me via email (you can find it in the section "Contacts") so that I added app here
 
