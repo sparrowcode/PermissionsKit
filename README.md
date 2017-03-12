@@ -76,7 +76,7 @@ In the project you can find my library [Sparrow](https://github.com/IvanVorobei/
  
 [https://hello.ivanvorobei.by](https://hello.ivanvorobei.by)
 
-[https://ivanvorobei.by](https://hello.ivanvorobei.by)
+[https://ivanvorobei.by](https://hello.ivanvorobei.by) 
 
 hello@ivanvorobei.by
 
