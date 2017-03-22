@@ -73,12 +73,10 @@ open class SPRequestPermissionDialogInteractiveDataSource: SPRequestPermissionDi
     public func headerBackgroundView() -> UIView {
         let patternView = SPRequestPermissionData.views.patternView()
         let gradientView = SPGradientWithPictureView.init()
-        gradientView.setGradient(
-            from: SPRequestPermissionData.colors.gradient.dark.lightColor(),
-            to: SPRequestPermissionData.colors.gradient.dark.darkColor(),
-            startPoint: CGPoint.init(x: 0.5, y: 0),
-            endPoint: CGPoint.init(x: 0.5, y: 1)
-        )
+        gradientView.startColor = SPRequestPermissionData.colors.gradient.dark.lightColor()
+        gradientView.endColor = SPRequestPermissionData.colors.gradient.dark.darkColor()
+        gradientView.startColorPoint = CGPoint.init(x: 0.5, y: 0)
+        gradientView.endColorPoint = CGPoint.init(x: 0.5, y: 1)
         gradientView.pictureView = patternView
         return gradientView
     }

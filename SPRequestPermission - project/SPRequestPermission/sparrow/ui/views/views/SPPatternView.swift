@@ -21,29 +21,29 @@
 
 import UIKit
 
-open class SPPatternView: UIView {
+class SPPatternView: UIView {
     
-    open var color: UIColor = UIColor.black {
+    var color: UIColor = UIColor.black {
         didSet {
             self.updatePattern(animated: false)
         }
     }
-    open var cellWidthFactor: CGFloat = 0.2 {
+    var cellWidthFactor: CGFloat = 0.2 {
         didSet {
             self.updatePattern(animated: false)
         }
     }
-    open var cellWidthMin: CGFloat = 50 {
+    var cellWidthMin: CGFloat = 50 {
         didSet {
             self.updatePattern(animated: false)
         }
     }
-    open var cellWidthMax: CGFloat? {
+    var cellWidthMax: CGFloat? {
         didSet {
             self.updatePattern(animated: false)
         }
     }
-    open var pattern: UIBezierPath? {
+    var pattern: UIBezierPath? {
         didSet {
             self.updatePattern(animated: false)
         }
@@ -67,7 +67,7 @@ open class SPPatternView: UIView {
         }
     }
     
-    open func updatePattern(animated: Bool) {
+    func updatePattern(animated: Bool) {
         if animated {
             SPAnimation.animate(0.3, animations: {
                 self.setPattren()
@@ -77,21 +77,21 @@ open class SPPatternView: UIView {
         }
     }
     
-    public init() {
+    init() {
         super.init(frame: CGRect.zero)
     }
     
-    public init(pattern: UIBezierPath) {
+    init(pattern: UIBezierPath) {
         super.init(frame: CGRect.zero)
         self.pattern = pattern
         self.updatePattern(animated: false)
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override open func layoutSubviews() {
+    override func layoutSubviews() {
         super.layoutSubviews()
         self.updatePattern(animated: true)
     }
