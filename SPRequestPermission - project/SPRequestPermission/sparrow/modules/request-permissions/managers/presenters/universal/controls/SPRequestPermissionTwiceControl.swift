@@ -142,18 +142,32 @@ class SPRequestPermissionIconView: UIView {
         self.imageView?.layer.rasterizationScale = UIScreen.main.scale
         self.imageView?.layer.add(rotationAnimation, forKey: nil)
         
-        let blurView = SPBlurView.init()
+        var blurView = UIView()
+        
+        if #available(iOS 9, *) {
+            blurView = SPBlurView()
+        }
+        
         blurView.backgroundColor = UIColor.clear
         self.addSubview(blurView)
         blurView.frame = CGRect.init(x: 0, y: 0, width: self.frame.height, height: self.frame.height)
         blurView.center = (self.imageView?.center)!
         
         SPAnimation.animate(0.1, animations: {
-            blurView.setBlurRadius(1.2)
+            if #available(iOS 9, *) {
+                if let view = blurView as? SPBlurView {
+                    view.setBlurRadius(1.2)
+                }
+            }
+            
         }, options: UIViewAnimationOptions.curveEaseIn,
            withComplection: {
             SPAnimation.animate(0.1, animations: {
-                blurView.setBlurRadius(0)
+                if #available(iOS 9, *) {
+                    if let view = blurView as? SPBlurView {
+                        view.setBlurRadius(0)
+                    }
+                }
             }, options: UIViewAnimationOptions.curveEaseOut,
                withComplection: {
                 finished in

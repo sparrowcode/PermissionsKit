@@ -370,4 +370,37 @@ extension SPBezierPathFigure.icons {
         SPBezierPath.endContext()
         return bezierPath
     }
+    
+    static func cancel(color: UIColor = .black) -> UIBezierPath {
+        //// Color Declarations
+        let fillColor = color
+        SPBezierPath.setContext()
+        //// Bezier Drawing
+        let bezierPath = UIBezierPath()
+        bezierPath.move(to: CGPoint(x: 71.45, y: 2.29))
+        bezierPath.addCurve(to: CGPoint(x: 65.23, y: 2.29), controlPoint1: CGPoint(x: 69.72, y: 0.57), controlPoint2: CGPoint(x: 66.95, y: 0.57))
+        bezierPath.addLine(to: CGPoint(x: 37.37, y: 30.15))
+        bezierPath.addLine(to: CGPoint(x: 9.51, y: 2.29))
+        bezierPath.addCurve(to: CGPoint(x: 3.29, y: 2.29), controlPoint1: CGPoint(x: 7.79, y: 0.57), controlPoint2: CGPoint(x: 5.02, y: 0.57))
+        bezierPath.addCurve(to: CGPoint(x: 3.29, y: 8.51), controlPoint1: CGPoint(x: 1.57, y: 4.02), controlPoint2: CGPoint(x: 1.57, y: 6.79))
+        bezierPath.addLine(to: CGPoint(x: 31.15, y: 36.37))
+        bezierPath.addLine(to: CGPoint(x: 3.29, y: 64.23))
+        bezierPath.addCurve(to: CGPoint(x: 3.29, y: 70.45), controlPoint1: CGPoint(x: 1.57, y: 65.95), controlPoint2: CGPoint(x: 1.57, y: 68.72))
+        bezierPath.addCurve(to: CGPoint(x: 6.39, y: 71.75), controlPoint1: CGPoint(x: 4.14, y: 71.29), controlPoint2: CGPoint(x: 5.28, y: 71.75))
+        bezierPath.addCurve(to: CGPoint(x: 9.48, y: 70.45), controlPoint1: CGPoint(x: 7.49, y: 71.75), controlPoint2: CGPoint(x: 8.63, y: 71.32))
+        bezierPath.addLine(to: CGPoint(x: 37.34, y: 42.59))
+        bezierPath.addLine(to: CGPoint(x: 65.2, y: 70.45))
+        bezierPath.addCurve(to: CGPoint(x: 68.29, y: 71.75), controlPoint1: CGPoint(x: 66.04, y: 71.29), controlPoint2: CGPoint(x: 67.18, y: 71.75))
+        bezierPath.addCurve(to: CGPoint(x: 71.38, y: 70.45), controlPoint1: CGPoint(x: 69.43, y: 71.75), controlPoint2: CGPoint(x: 70.54, y: 71.32))
+        bezierPath.addCurve(to: CGPoint(x: 71.38, y: 64.23), controlPoint1: CGPoint(x: 73.11, y: 68.72), controlPoint2: CGPoint(x: 73.11, y: 65.95))
+        bezierPath.addLine(to: CGPoint(x: 43.59, y: 36.37))
+        bezierPath.addLine(to: CGPoint(x: 71.45, y: 8.51))
+        bezierPath.addCurve(to: CGPoint(x: 71.45, y: 2.29), controlPoint1: CGPoint(x: 73.17, y: 6.79), controlPoint2: CGPoint(x: 73.17, y: 4.02))
+        bezierPath.close()
+        bezierPath.usesEvenOddFillRule = true
+        fillColor.setFill()
+        bezierPath.fill()
+        SPBezierPath.endContext()
+        return bezierPath
+    }
 }

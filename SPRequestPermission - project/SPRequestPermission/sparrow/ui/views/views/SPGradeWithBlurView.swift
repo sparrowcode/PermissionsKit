@@ -24,10 +24,16 @@ import UIKit
 class SPGradeWithBlurView: UIView {
     
     private var gradeView: UIView = UIView()
-    private var blurView: SPBlurView = SPBlurView()
+    private var blurView: UIView = UIView()
+    //private var blurView: SPBlurView = SPBlurView()
     
     init(gradeColor: UIColor = UIColor.black, gradeAlphaFactor: CGFloat = 0.1, blurRadius: CGFloat = 3) {
         super.init(frame: CGRect.zero)
+        
+        if #available(iOS 9, *) {
+            self.blurView = SPBlurView()
+        }
+        
         self.layer.masksToBounds = true
         self.addSubview(gradeView)
         self.addSubview(blurView)
@@ -48,7 +54,11 @@ class SPGradeWithBlurView: UIView {
     }
     
     func setBlurRadius(_ radius: CGFloat) {
-        self.blurView.setBlurRadius(radius)
+        if #available(iOS 9, *) {
+            if let blurView = self.blurView as? SPBlurView {
+                blurView.setBlurRadius(radius)
+            }
+        }
     }
     
     func setGradeAlpha(_ alpha: CGFloat, blurRaius: CGFloat) {

@@ -23,22 +23,19 @@ import UIKit
 
 public extension UILabel {
     
-    func setShadowOffsetForLetters(blurRadius: CGFloat = 0, widthOffset: Double = 0, heightOffset: Double = 0, opacity: Float = 0.4) {
+    func setShadowOffsetForLetters(blurRadius: CGFloat = 0, widthOffset: CGFloat = 0, heightOffset: CGFloat, opacity: CGFloat) {
         self.layer.shadowRadius = blurRadius
         self.layer.shadowOffset = CGSize(
             width: widthOffset,
             height: heightOffset
         )
-        self.layer.shadowOpacity = opacity
+        self.layer.shadowOpacity = Float(opacity)
     }
     
-    func setShadowOffsetFactorForLetters(blurRadius: CGFloat = 0, widthOffsetFactor: Double = 0, heightOffsetFactor: Double = 0.03, opacity: Float = 0.4) {
-        self.layer.shadowRadius = blurRadius
-        self.layer.shadowOffset = CGSize(
-            width: widthOffsetFactor * Double(self.frame.width),
-            height: heightOffsetFactor * Double(self.frame.height)
-        )
-        self.layer.shadowOpacity = opacity
+    func setShadowOffsetFactorForLetters(blurRadius: CGFloat = 0, widthOffsetFactor: CGFloat = 0, heightOffsetFactor: CGFloat, opacity: CGFloat) {
+        let widthOffset = widthOffsetFactor * self.frame.width
+        let heightOffset = heightOffsetFactor * self.frame.height
+        self.setShadowOffsetForLetters(blurRadius: blurRadius, widthOffset: widthOffset, heightOffset: heightOffset, opacity: opacity)
     }
     
     func setCenteringAlignment() {

@@ -21,8 +21,28 @@
 
 import UIKit
 
-// MARK: - resizeByWidth
+// MARK: - layout
 public extension UIView {
+    
+    func rounded() {
+        self.layer.cornerRadius = self.getMinSideSize() / 2
+    }
+    
+    func getBootomYPosition() -> CGFloat {
+        return self.frame.origin.y + self.frame.height
+    }
+    
+    func getMinSideSize() -> CGFloat {
+        return min(self.frame.width, self.frame.height)
+    }
+    
+    func widthLessThanLength() -> Bool {
+        return self.bounds.width < self.bounds.height
+    }
+    
+    func setEqualsFrameFromBounds(_ view: UIView) {
+        self.frame = view.bounds
+    }
     
     func resize(to width: CGFloat) {
         let relativeFactor = self.frame.width / self.frame.height
@@ -36,12 +56,36 @@ public extension UIView {
 }
 
 public extension UIImage {
+    
     func resize(to size: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0);
         self.draw(in: CGRect(origin: CGPoint.zero, size: CGSize(width: size.width, height: size.height)))
         let resizeImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return resizeImage
+    }
+}
+
+public extension UIView {
+    
+    func setParalax(amountFactor: CGFloat) {
+        let amount = self.getMinSideSize() * amountFactor
+        self.setParalax(amount: amount)
+    }
+    
+    func setParalax(amount: CGFloat) {
+        self.motionEffects.removeAll()
+        let horizontal = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+        horizontal.minimumRelativeValue = -amount
+        horizontal.maximumRelativeValue = amount
+        
+        let vertical = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+        vertical.minimumRelativeValue = -amount
+        vertical.maximumRelativeValue = amount
+        
+        let group = UIMotionEffectGroup()
+        group.motionEffects = [horizontal, vertical]
+        self.addMotionEffect(group)
     }
 }
 
@@ -66,13 +110,14 @@ public extension UIView {
         return gradeView
     }
     
-    func updateShadow(
-        xTranslationFactor: CGFloat = 0,
-        yTranslationFactor: CGFloat = 0.04,
-        widthRelativeFactor: CGFloat = 0.8,
-        heightRelativeFactor: CGFloat = 1,
-        blurRadiusFactor: CGFloat = 0.024,
-        shadowOpacity: CGFloat = 0.35
+    func setShadow(
+        xTranslationFactor: CGFloat,
+        yTranslationFactor: CGFloat,
+        widthRelativeFactor: CGFloat,
+        heightRelativeFactor: CGFloat,
+        blurRadiusFactor: CGFloat,
+        shadowOpacity: CGFloat,
+        cornerRadiusFactor: CGFloat = 0
     ) {
         let shadowWidth = self.frame.width * widthRelativeFactor
         let shadowHeight = self.frame.height * heightRelativeFactor
@@ -80,16 +125,14 @@ public extension UIView {
         let xTranslation = (self.frame.width - shadowWidth) / 2 + (self.frame.width * xTranslationFactor)
         let yTranslation = (self.frame.height - shadowHeight) / 2 + (self.frame.height * yTranslationFactor)
         
-        let shadowPath = UIBezierPath.init(rect:
-            CGRect.init(
-                x: xTranslation,
-                y: yTranslation,
-                width: shadowWidth,
-                height: shadowHeight
-            )
+        let cornerRadius = self.getMinSideSize() * cornerRadiusFactor
+        
+        let shadowPath = UIBezierPath.init(
+            roundedRect: CGRect.init(x: xTranslation, y: yTranslation, width: shadowWidth, height: shadowHeight),
+            cornerRadius: cornerRadius
         )
         
-        let blurRadius = min(self.frame.width, self.frame.height) * blurRadiusFactor
+        let blurRadius = self.getMinSideSize() * blurRadiusFactor
         
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize.zero
@@ -99,7 +142,7 @@ public extension UIView {
         self.layer.shadowPath = shadowPath.cgPath;
     }
     
-    func setShadow(
+    /*func setShadow(
         xTranslationFactor: CGFloat = 0,
         yTranslationFactor: CGFloat = 0.1,
         widthRelativeFactor: CGFloat = 0.8,
@@ -184,6 +227,6 @@ public extension UIView {
             // Fallback on earlier versions
         }
         self.layer.shadowPath = shadowPath.cgPath;
-    }
+    }*/
 }
 

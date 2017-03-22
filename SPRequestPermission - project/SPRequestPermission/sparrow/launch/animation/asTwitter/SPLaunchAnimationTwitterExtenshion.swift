@@ -37,7 +37,7 @@ public extension SPLaunchAnimation {
     static private let delay: Double = 1
     //options animations grade view and root view
     static private let delayHidyingGradeView: TimeInterval = 1.4
-    static private let durationHidingGradeView: TimeInterval = 0.095
+    static private let durationHidyingGradeView: TimeInterval = 0.095
     static private let delayScalingRootView: TimeInterval = 1.4
     static private let durationScalingRootView: TimeInterval = 0.45
     //timing function for scale twitter to front
@@ -112,7 +112,7 @@ public extension SPLaunchAnimation {
         rootViewController.view.layer.mask?.add(scaleAnimation, forKey: "maskScaleAnimation")
         
         UIView.animate(
-            withDuration: self.durationHidingGradeView,
+            withDuration: self.durationHidyingGradeView,
             delay: self.delayHidyingGradeView,
             options: [.curveEaseInOut],
             animations: {
@@ -214,7 +214,7 @@ public extension SPLaunchAnimation {
         rootViewController.view.layer.mask?.add(scaleAnimation, forKey: "maskScaleAnimation")
         
         UIView.animate(
-            withDuration: self.durationHidingGradeView,
+            withDuration: self.durationHidyingGradeView,
             delay: self.delayHidyingGradeView,
             options: [.curveEaseInOut],
             animations: {

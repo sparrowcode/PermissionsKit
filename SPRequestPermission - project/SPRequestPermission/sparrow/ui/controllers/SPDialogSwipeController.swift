@@ -51,7 +51,10 @@ public class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UI
         
         var widthArea = self.view.frame.width * self.dialogViewWidthRelativeFactor
         var heightArea = self.view.frame.height * self.dialogViewHeightRelativeFactor
-        let isPortraitLayout: Bool = UIScreen.main.bounds.width < UIScreen.main.bounds.height
+        var isPortraitLayout: Bool = UIScreen.main.bounds.width < UIScreen.main.bounds.height
+        if self.view.bounds != UIScreen.main.bounds {
+            isPortraitLayout = self.view.frame.width < self.view.frame.height
+        }
         if isPortraitLayout {
             widthArea = self.view.frame.width * self.dialogViewWidthRelativeFactor
             heightArea = self.view.frame.height * self.dialogViewHeightRelativeFactor
@@ -69,7 +72,6 @@ public class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UI
             prepareHeight = heightArea
             prepareWidth = heightArea * self.dialogViewSidesRelativeFactor
         }
-        
         if isPortraitLayout {
             return CGSize.init(width: prepareWidth, height: prepareHeight)
         } else {
@@ -280,7 +282,7 @@ public class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UI
     }
     
     private func updateContentViewShadow(yTranslationFactor: CGFloat, blurRadiusFactor: CGFloat, opacity: CGFloat) {
-        self.contentView.updateShadow(
+        self.contentView.setShadow(
             xTranslationFactor: 0,
             yTranslationFactor: yTranslationFactor,
             widthRelativeFactor: self.dialogShadowWidthRelativeFactor,

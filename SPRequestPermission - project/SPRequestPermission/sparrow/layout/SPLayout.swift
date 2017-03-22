@@ -21,37 +21,23 @@
 
 import UIKit
 
-@available(iOS 9, *)
-public class SPBlurView: UIVisualEffectView {
+class SPLayout {
     
-    private let blurEffect: UIBlurEffect
-    open var blurRadius: CGFloat {
-        return blurEffect.value(forKeyPath: "blurRadius") as! CGFloat
-    }
-    
-    public convenience init() {
-        self.init(withRadius: 0)
-    }
-    
-    public init(withRadius radius: CGFloat) {
-        let customBlurClass: AnyObject.Type = NSClassFromString("_UICustomBlurEffect")!
-        let customBlurObject: NSObject.Type = customBlurClass as! NSObject.Type
-        self.blurEffect = customBlurObject.init() as! UIBlurEffect
-        self.blurEffect.setValue(1.0, forKeyPath: "scale")
-        self.blurEffect.setValue(radius, forKeyPath: "blurRadius")
-        super.init(effect: radius == 0 ? nil : self.blurEffect)
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    open func setBlurRadius(_ radius: CGFloat) {
-        guard radius != blurRadius else {
-            return
+    static func sizeWith(widthFactor: CGFloat, maxWidth: CGFloat, heightFactor: CGFloat, maxHeight: CGFloat, relativeSideFactor: CGFloat, from relativeSize: CGSize) -> CGSize {
+        
+        var widthArea = relativeSize.width * widthFactor
+        var heightArea = relativeSize.height * heightFactor
+        
+        widthArea.setIfMore(when: maxWidth)
+        heightArea.setIfMore(when: maxHeight)
+        
+        var prepareWidth = widthArea
+        var prepareHeight = widthArea / relativeSideFactor
+        if prepareHeight > heightArea {
+            prepareHeight = heightArea
+            prepareWidth = heightArea * relativeSideFactor
         }
-        blurEffect.setValue(radius, forKeyPath: "blurRadius")
-        self.effect = blurEffect
+        return CGSize.init(width: prepareWidth, height: prepareHeight)
     }
+    
 }
-

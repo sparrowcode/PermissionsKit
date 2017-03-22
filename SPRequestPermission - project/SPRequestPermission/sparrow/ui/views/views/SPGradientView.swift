@@ -23,23 +23,17 @@ import UIKit
 
 public class SPGradientView: UIView {
     
+    var startColor: UIColor = UIColor.white { didSet { self.updateGradient() }}
+    var endColor: UIColor = UIColor.black { didSet { self.updateGradient() }}
+    
+    var startColorPoint: CGPoint = CGPoint.zero { didSet { self.updateGradient() }}
+    var endColorPoint: CGPoint = CGPoint.zero { didSet { self.updateGradient() }}
+    
     fileprivate var gradient: CAGradientLayer!
     
-    init() {
+    public init() {
         super.init(frame: CGRect.zero)
         commonInit()
-    }
-    
-    init(from fromColor: UIColor, toColor: UIColor) {
-        super.init(frame: CGRect.zero)
-        self.commonInit()
-        self.setGradient(from: fromColor, to: toColor)
-    }
-    
-    init(frame: CGRect, from fromColor: UIColor, to toColor: UIColor) {
-        super.init(frame: frame)
-        self.commonInit()
-        self.setGradient(from: fromColor, to: toColor)
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -47,33 +41,55 @@ public class SPGradientView: UIView {
         self.commonInit()
     }
     
-    fileprivate func commonInit() {
-        self.gradient = CAGradientLayer();
-        self.layer.insertSublayer(self.gradient, at: 0)
+    public func setStartColorPosition(_ position: Position) {
+        self.startColorPoint = getPointForPosition(position)
     }
     
-    func setGradient(from fromColor: UIColor,
-                     to toColor: UIColor,
-                     startPoint: CGPoint = CGPoint(x: 0.0, y: 0.0),
-                     endPoint: CGPoint = CGPoint(x: 1.0, y: 1.0)) {
-        self.gradient.removeFromSuperlayer()
+    public func setEndColorPosition(_ position: Position) {
+        self.endColorPoint = getPointForPosition(position)
+    }
+    
+    private func commonInit() {
         self.gradient = CAGradientLayer()
-        self.gradient!.colors = [fromColor.cgColor, toColor.cgColor]
-        self.gradient!.locations = [0.0, 1.0]
-        self.gradient!.startPoint = startPoint
-        
-        self.gradient!.endPoint = endPoint
-        self.gradient!.frame = CGRect(x: 0.0, y: 0.0, width: self.frame.size.width, height: self.frame.size.height)
         self.layer.insertSublayer(self.gradient!, at: 0)
     }
     
-    public override func layoutSubviews() {
-        super.layoutSubviews()
+    private func updateGradient() {
+        self.gradient!.colors = [startColor.cgColor, endColor.cgColor]
+        self.gradient!.locations = [0.0, 1.0]
+        self.gradient!.startPoint = self.startColorPoint
+        self.gradient!.endPoint = self.endColorPoint
     }
     
     override public func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
         self.gradient.frame = self.bounds
+    }
+    
+    public enum Position {
+        case TopLeft
+        case TopCenter
+        case TopRight
+        case BottomLeft
+        case BottomCenter
+        case BottomRight
+    }
+    
+    private func getPointForPosition(_ position: Position) -> CGPoint {
+        switch position {
+        case .TopLeft:
+            return CGPoint.init(x: 0, y: 0)
+        case .TopCenter:
+            return CGPoint.init(x: 0.5, y: 0)
+        case .TopRight:
+            return CGPoint.init(x: 1, y: 0)
+        case .BottomLeft:
+            return CGPoint.init(x: 0, y: 1)
+        case .BottomCenter:
+            return CGPoint.init(x: 0.5, y: 1)
+        case .BottomRight:
+            return CGPoint.init(x: 1, y: 1)
+        }
     }
 }
 
