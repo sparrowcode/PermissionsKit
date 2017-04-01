@@ -24,6 +24,7 @@ import UserNotifications
 import Photos
 import MapKit
 import EventKit
+import Contacts
 
 class SPCameraPermission: SPPermissionInterface {
     
@@ -64,8 +65,25 @@ class SPNotificationPermission: SPPermissionInterface {
                     complectionHandler()
                 }
             }
-        } else {
-            //TODO: Fallback on earlier versions
+        } // iOS 9 support
+        else if #available(iOS 9, *) {
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+            DispatchQueue.main.async {
+                complectionHandler()
+            }
+        }
+            // iOS 8 support
+        else if #available(iOS 8, *) {
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+            DispatchQueue.main.async {
+                complectionHandler()
+            }
+        }
+            // iOS 7 support
+        else {
+            DispatchQueue.main.async {
+                complectionHandler()
+            }
         }
         UIApplication.shared.registerForRemoteNotifications()
     }
@@ -160,5 +178,47 @@ class SPLocationPermission: SPPermissionInterface {
             }
         }
     }
+}
+
+class SPContactsPermission: SPPermissionInterface {
+    
+    func isAuthorized() -> Bool {
+        if #available(iOS 9.0, *) {
+            let status = CNContactStore.authorizationStatus(for: .contacts)
+            if status == .authorized {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            let status = ABAddressBookGetAuthorizationStatus()
+            if status == .authorized {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+    }
+    
+    func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        if #available(iOS 9.0, *) {
+           let store = CNContactStore()
+            store.requestAccess(for: .contacts, completionHandler: { (granted, error) in
+                DispatchQueue.main.async {
+                    complectionHandler()
+                }
+            })
+        } else {
+            let addressBookRef: ABAddressBook = ABAddressBookCreateWithOptions(nil, nil).takeRetainedValue()
+            ABAddressBookRequestAccessWithCompletion(addressBookRef) {
+                (granted: Bool, error: CFError!) in
+                DispatchQueue.main.async() {
+                    complectionHandler()
+                }
+            }
+        }
+    }
+    
 }
 

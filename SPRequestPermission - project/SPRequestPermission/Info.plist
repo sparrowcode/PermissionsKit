@@ -55,5 +55,7 @@
 	<string>For Example</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>For Example</string>
+	<key>NSContactsUsageDescription</key>
+	<string>For Example</string>
 </dict>
 </plist>
