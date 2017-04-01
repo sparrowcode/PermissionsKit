@@ -41,7 +41,10 @@ open class SPRequestPermissionDialogInteractiveDataSource: NSObject, SPRequestPe
             iconBezierPath = SPBezierPathFigure.icons.location()
         case .Contacts:
             iconBezierPath = SPBezierPathFigure.icons.contacts()
+        case .Reminders:
+            iconBezierPath = SPBezierPathFigure.icons.reminders()
         }
+
         iconBezierPath.resizeTo(width: requestWidth)
         return iconBezierPath.convertToImage(fill: true, stroke: false, color: UIColor.black)
     }
@@ -70,6 +73,8 @@ open class SPRequestPermissionDialogInteractiveDataSource: NSObject, SPRequestPe
             title = SPRequestPermissionData.texts.enable_location()
         case .Contacts:
             title = SPRequestPermissionData.texts.enable_contacts()
+        case .Reminders:
+            title = SPRequestPermissionData.texts.enable_reminedrs()
         }
         return title
     }

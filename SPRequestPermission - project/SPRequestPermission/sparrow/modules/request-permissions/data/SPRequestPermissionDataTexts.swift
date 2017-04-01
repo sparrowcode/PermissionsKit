@@ -70,6 +70,10 @@ extension SPRequestPermissionData {
             return "Enable Contacts"
         }
         
+        static func enable_reminedrs() -> String {
+            return "Enable Reminedrs"
+        }
+        
         static func swipe_for_hide() -> String {
             return "Swipe to hide"
         }
