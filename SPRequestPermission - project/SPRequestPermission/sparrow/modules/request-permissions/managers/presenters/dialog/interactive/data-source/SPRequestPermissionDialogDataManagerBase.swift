@@ -21,9 +21,9 @@
 
 import UIKit
 
-open class SPRequestPermissionDialogInteractiveDataSource: SPRequestPermissionDialogInteractiveDataSourceInterface {
+open class SPRequestPermissionDialogInteractiveDataSource: NSObject, SPRequestPermissionDialogInteractiveDataSourceInterface {
     
-    public func iconForNormalPermissionControl(_ permission: SPRequestPermissionType) -> UIImage {
+    open func iconForNormalPermissionControl(_ permission: SPRequestPermissionType) -> UIImage {
         var iconBezierPath = UIBezierPath()
         let requestWidth: CGFloat = 100
         switch permission {
@@ -39,19 +39,21 @@ open class SPRequestPermissionDialogInteractiveDataSource: SPRequestPermissionDi
             iconBezierPath = SPBezierPathFigure.icons.calendar()
         case .Location:
             iconBezierPath = SPBezierPathFigure.icons.location()
+        case .Contacts:
+            iconBezierPath = SPBezierPathFigure.icons.contacts()
         }
         iconBezierPath.resizeTo(width: requestWidth)
         return iconBezierPath.convertToImage(fill: true, stroke: false, color: UIColor.black)
     }
     
-    public func iconForAllowedPermissionControl(_ permission: SPRequestPermissionType) -> UIImage {
+    open func iconForAllowedPermissionControl(_ permission: SPRequestPermissionType) -> UIImage {
         let requestWidth: CGFloat = 100
         let checkedBezierPath  = SPBezierPathFigure.icons.checked()
         checkedBezierPath.resizeTo(width: requestWidth)
         return checkedBezierPath.convertToImage(fill: true, stroke: false, color: UIColor.black)
     }
     
-    public func titleForPermissionControl(_ permission: SPRequestPermissionType) -> String {
+    open func titleForPermissionControl(_ permission: SPRequestPermissionType) -> String {
         var title = String()
         switch permission {
         case .Camera:
@@ -66,11 +68,13 @@ open class SPRequestPermissionDialogInteractiveDataSource: SPRequestPermissionDi
             title = SPRequestPermissionData.texts.enable_calendar()
         case .Location:
             title = SPRequestPermissionData.texts.enable_location()
+        case .Contacts:
+            title = SPRequestPermissionData.texts.enable_contacts()
         }
         return title
     }
     
-    public func headerBackgroundView() -> UIView {
+    open func headerBackgroundView() -> UIView {
         let patternView = SPRequestPermissionData.views.patternView()
         let gradientView = SPGradientWithPictureView.init()
         gradientView.startColor = SPRequestPermissionData.colors.gradient.dark.lightColor()
@@ -81,31 +85,31 @@ open class SPRequestPermissionDialogInteractiveDataSource: SPRequestPermissionDi
         return gradientView
     }
     
-    public func headerTitle() -> String {
+    open func headerTitle() -> String {
         return SPRequestPermissionData.texts.title()
     }
     
-    public func headerSubtitle() -> String {
+    open func headerSubtitle() -> String {
         return SPRequestPermissionData.texts.subtitile()
     }
     
-    public func topAdviceTitle() -> String {
+    open func topAdviceTitle() -> String {
         return SPRequestPermissionData.texts.advice()
     }
     
-    public func bottomAdviceTitle() -> String {
+    open func bottomAdviceTitle() -> String {
         return SPRequestPermissionData.texts.advice_additional()
     }
     
-    public func underDialogAdviceTitle() -> String {
+    open func underDialogAdviceTitle() -> String {
         return SPRequestPermissionData.texts.swipe_for_hide()
     }
     
-    public func mainColor() -> UIColor {
+    open func mainColor() -> UIColor {
         return UIColor.init(hex: "#27AEE8")
     }
     
-    public func secondColor() -> UIColor {
+    open func secondColor() -> UIColor {
         return UIColor.white
     }
 }

@@ -135,7 +135,7 @@ class SPRequestPermissionIconView: UIView {
         
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
         rotationAnimation.fromValue = 0.0
-        rotationAnimation.toValue = M_PI * 2
+        rotationAnimation.toValue = Double.pi * 2
         rotationAnimation.duration = 0.18
         rotationAnimation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
         self.imageView?.layer.shouldRasterize = true

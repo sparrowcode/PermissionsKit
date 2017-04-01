@@ -66,6 +66,10 @@ extension SPRequestPermissionData {
             return "Enable Location"
         }
         
+        static func enable_contacts() -> String {
+            return "Enable Contacts"
+        }
+        
         static func swipe_for_hide() -> String {
             return "Swipe to hide"
         }
