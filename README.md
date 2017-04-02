@@ -1,7 +1,7 @@
 ![](/resources/request-permission_baner.png)
 
 ## About
-Module work proved long ago. This project is a module for managing permissions with the visual part and the possibility of customization. Beautiful dialog increases chances of obtaining a permit (which is important when we request notification). Simple control of module saves hours of development. You can use the project with just two lines of code!
+Modularize work has proven successful a long time ago. This project is about managing permissions with the customizable visual effects. Beautiful dialog increases the chance of approval (which is important when we request notification). Simple control of this module saves you hours of development. You can start using this project with just two lines of code!
 
 <img src="https://raw.githubusercontent.com/IvanVorobei/RequestPermission/master/resources/request-permission%20-%20mockup_preview.gif" width="600">
 
