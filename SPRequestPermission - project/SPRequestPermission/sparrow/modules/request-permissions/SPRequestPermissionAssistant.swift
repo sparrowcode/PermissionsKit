@@ -69,7 +69,7 @@ public class SPRequestPermissionAssistant: SPRequestPermissionAssistantInterface
         return true
     }
     
-    public func denidedPermission() -> [SPRequestPermissionType] {
+    public func notAllowedPermissions() -> [SPRequestPermissionType] {
         var denidedPermission: [SPRequestPermissionType] = []
         for permission in self.permissions {
             if !self.permissionManager.isAuthorizedPermission(permission) {
