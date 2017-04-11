@@ -1,9 +1,9 @@
-<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/cc5e7bac/resources/request-permission%20-%20baner.svg"/>
+<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/cc5e7bac/resources/request-permission-baner.svg"/>
 
 ## About
 Modularize work has proven successful a long time ago. This project is about managing permissions with the customizable visual effects. Beautiful dialog increases the chance of approval (which is important when we request notification). Simple control of this module saves you hours of development. You can start using this project with just two lines of code!
 
-<img src="https://raw.githubusercontent.com/IvanVorobei/RequestPermission/master/resources/request-permission%20-%20mockup_preview.gif" width="600">
+<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/master/resources/request-permission%20-%20mockup_preview.gif" width="600">
 
 ## Requirements
 Xcode 8 and Swift 3. Ready for use on iOS 8+
@@ -57,10 +57,17 @@ If you want to change data in a particular module (for example, the text in the 
 ```swift
 let permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.init(with: [.Camera, .PhotoLibrary], dataSourceForController: customDataSource())
 ```
+
+Read more about customization data in [wiki](https://github.com/IvanVorobei/RequestPermission/wiki/Customization)
+
 If you want to write your assistant, using the current skeleton, you should use a more extended initializer. Accordingly `PresenterManager` and `PermissionManager` must implement the interfaces
 ```swift
 let permissionAssistant = SPRequestPermissionAssistant.init(with: [.Camera, .PhotoLibrary], permissionManager: customPermissionManager(), presenterManager: customPresenterManager())
 ```
+
+## Questions
+Read [wiki](https://github.com/IvanVorobei/RequestPermission/wiki/Questions). If you can't find answer - contact me via email
+
 ## Apps, using Request-Permission
 I like the idea to specify applications that use the RequestPermission. Please, contact me via email (you can find it in the section "Contacts") so that I added app here
 
