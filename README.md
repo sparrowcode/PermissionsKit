@@ -1,4 +1,4 @@
-<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/cc5e7bac/resources/request-permission-baner.svg"/>
+<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/aed71f0a/resources/request-permission_baner.svg"/>
 
 ## About
 Modularize work has proven successful a long time ago. This project is about managing permissions with the customizable visual effects. Beautiful dialog increases the chance of approval (which is important when we request notification). Simple control of this module saves you hours of development. You can start using this project with just two lines of code!
