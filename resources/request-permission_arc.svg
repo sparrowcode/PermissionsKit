@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1732px" height="1212px" viewBox="0 0 1732 1212" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>scheme</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="scheme">
+            <path d="M586,387.976792 L586,162.912012 C586,151.864695 594.952472,142.909074 605.995642,142.909074 L750.074185,142.909074" id="Path-2" stroke="#657786" stroke-width="7" opacity="0.699999988"></path>
+            <path d="M982,387.976792 L982,162.912012 C982,151.864695 990.952472,142.909074 1001.99564,142.909074 L1146.07419,142.909074" id="Path-2" stroke="#657786" stroke-width="7" opacity="0.699999988" transform="translate(1064.037093, 265.442933) scale(-1, 1) translate(-1064.037093, -265.442933) "></path>
+            <path d="M1144.12602,1075 L1144.12602,663.417456 C1144.12602,652.369345 1153.07849,643.413082 1164.12166,643.413082 L1308.2002,643.413082" id="Path-2" stroke="#657786" stroke-width="7" opacity="0.699999988" transform="translate(1226.163109, 859.206541) scale(-1, 1) rotate(180.000000) translate(-1226.163109, -859.206541) "></path>
+            <path d="M1144.12602,844 L1144.12602,663.414102 C1144.12602,652.367844 1153.07849,643.413082 1164.12166,643.413082 L1308.2002,643.413082" id="Path-2" stroke="#657786" stroke-width="7" opacity="0.699999988" transform="translate(1226.163109, 743.706541) scale(-1, 1) rotate(180.000000) translate(-1226.163109, -743.706541) "></path>
+            <path d="M424.126016,897 L424.126016,663.417486 C424.126016,652.369359 433.078488,643.413082 444.121658,643.413082 L588.200201,643.413082" id="Path-2" stroke="#657786" stroke-width="7" opacity="0.699999988" transform="translate(506.163109, 770.206541) rotate(180.000000) translate(-506.163109, -770.206541) "></path>
+            <path d="M424.126016,1006 L424.126016,666.423646 C424.126016,655.374536 433.078488,646.417462 444.121658,646.417462 L588.200201,646.417462" id="Path-2" stroke="#657786" stroke-width="7" opacity="0.699999988" transform="translate(506.163109, 826.208731) rotate(180.000000) translate(-506.163109, -826.208731) "></path>
+            <path d="M424.126016,796 L424.126016,663.419941 C424.126016,652.370458 433.078488,643.413082 444.121658,643.413082 L588.200201,643.413082" id="Path-2" stroke="#657786" stroke-width="7" opacity="0.699999988" transform="translate(506.163109, 719.706541) rotate(180.000000) translate(-506.163109, -719.706541) "></path>
+            <g id="Group" transform="translate(726.000000, 54.000000)">
+                <rect id="Rectangle-2" fill="#00A3E8" x="0" y="0" width="281" height="182" rx="6"></rect>
+                <text id="Assistant" font-family="AvenirNext-DemiBold, Avenir Next" font-size="34" font-weight="500" letter-spacing="2.00999999" fill="#FFFFFF">
+                    <tspan x="62.5633876" y="99">Assistan</tspan>
+                    <tspan x="207.095388" y="99">t</tspan>
+                </text>
+            </g>
+            <text id="Main-Object" font-family="AvenirNext-DemiBold, Avenir Next" font-size="24" font-weight="500" letter-spacing="0.300000012" fill="#657786">
+                <tspan x="796.662" y="278">Main Object</tspan>
+            </text>
+            <g id="Group-2" transform="translate(1001.000000, 378.000000)">
+                <g id="Group">
+                    <rect id="Rectangle-2" fill="#00A3E8" x="0" y="0" width="281" height="182" rx="6"></rect>
+                    <text id="Presenter" font-family="AvenirNext-DemiBold, Avenir Next" font-size="34" font-weight="500" letter-spacing="2.00999999" fill="#FFFFFF">
+                        <tspan x="57.4103876" y="102">Presenter</tspan>
+                    </text>
+                </g>
+                <text id="Manager-of-Views" font-family="AvenirNext-DemiBold, Avenir Next" font-size="24" font-weight="500" letter-spacing="0.300000012" fill="#657786">
+                    <tspan x="38.7059999" y="224">Manager of View</tspan>
+                    <tspan x="232.638" y="224">s</tspan>
+                </text>
+            </g>
+            <g id="Group-3" transform="translate(450.000000, 378.000000)">
+                <g id="Group">
+                    <rect id="Rectangle-2" fill="#00A3E8" x="0" y="0" width="281" height="182" rx="6"></rect>
+                    <text id="Permissions-Manager" font-family="AvenirNext-DemiBold, Avenir Next" font-size="34" font-weight="500" line-spacing="42" letter-spacing="2.00999999" fill="#FFFFFF">
+                        <tspan x="35" y="84">Permissions</tspan>
+                        <tspan x="60.457" y="126">Manager</tspan>
+                    </text>
+                </g>
+                <text id="Manager-of-Permissio" font-family="AvenirNext-DemiBold, Avenir Next" font-size="24" font-weight="500" letter-spacing="0.300000012" fill="#657786">
+                    <tspan x="4.44399987" y="224">Manager of Permissions</tspan>
+                </text>
+            </g>
+            <g id="Group" transform="translate(1202.000000, 745.000000)">
+                <rect id="Rectangle-2" fill="#00A3E8" x="0" y="0" width="281" height="182" rx="6"></rect>
+                <text id="Data-Source" font-family="AvenirNext-DemiBold, Avenir Next" font-size="34" font-weight="500" letter-spacing="2.00999999" fill="#FFFFFF">
+                    <tspan x="99.2913876" y="82">Data </tspan>
+                    <tspan x="80.6213876" y="128">Source</tspan>
+                </text>
+            </g>
+            <g id="Group" transform="translate(1202.000000, 972.000000)">
+                <rect id="Rectangle-2" fill="#00A3E8" x="0" y="0" width="281" height="182" rx="6"></rect>
+                <text id="View-Controller" font-family="AvenirNext-DemiBold, Avenir Next" font-size="34" font-weight="500" letter-spacing="2.00999999" fill="#FFFFFF">
+                    <tspan x="97.8123876" y="79">View </tspan>
+                    <tspan x="51.5773876" y="125">Controller</tspan>
+                </text>
+            </g>
+            <g id="Group-5" transform="translate(225.000000, 744.000000)">
+                <g id="Group">
+                    <rect id="Rectangle-2" fill="#00A3E8" x="0" y="0.5" width="281" height="87" rx="6"></rect>
+                    <text id="Permission" font-family="AvenirNext-DemiBold, Avenir Next" font-size="34" font-weight="500" letter-spacing="2.00999999" fill="#FFFFFF">
+                        <tspan x="45.7463876" y="57">Permission</tspan>
+                    </text>
+                </g>
+                <g id="Group" transform="translate(0.000000, 103.000000)">
+                    <rect id="Rectangle-2" fill="#00A3E8" x="0" y="0.5" width="281" height="87" rx="6"></rect>
+                    <text id="Permission" font-family="AvenirNext-DemiBold, Avenir Next" font-size="34" font-weight="500" letter-spacing="2.00999999" fill="#FFFFFF">
+                        <tspan x="45.7463876" y="57">Permission</tspan>
+                    </text>
+                </g>
+                <g id="Group" transform="translate(0.000000, 206.000000)">
+                    <rect id="Rectangle-2" fill="#00A3E8" x="0" y="0.5" width="281" height="87" rx="6"></rect>
+                    <text id="Permission" font-family="AvenirNext-DemiBold, Avenir Next" font-size="34" font-weight="500" letter-spacing="2.00999999" fill="#FFFFFF">
+                        <tspan x="45.7463876" y="57">Permission</tspan>
+                    </text>
+                </g>
+                <g id="Group-4" transform="translate(121.000000, 312.000000)" fill="#00A3E8">
+                    <ellipse id="Oval-2" cx="4.5" cy="4.5" rx="4.5" ry="4.5"></ellipse>
+                    <circle id="Oval-2" cx="19.5" cy="4.5" r="4.5"></circle>
+                    <ellipse id="Oval-2" cx="34.5" cy="4.5" rx="4.5" ry="4.5"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
