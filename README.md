@@ -37,7 +37,7 @@ let isAvailableCamera = permissionAssistant.isAllowPermission(.Camera)
 ```
 ## Available permissions
 
-<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/5f41cbb2/resources/request-permission_permissions.svg"/>
+<img src="https://github.com/IvanVorobei/RequestPermission/blob/master/resources/request-permission_permissions.svg"/>
 
 ## Types of presentation
 Did you notice that when initialized the `Assistant` - we chose the module (`SPRequestPermissionAssistant.modules.dialog.interactive...`). You can choose an appropriate visual component. They all adapted to the iPad and iPhone for all screens and for all orientations (currently available `dialog/interactive` and `native`, but soon I will add number of presentations)
