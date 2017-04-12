@@ -14,9 +14,9 @@
                         <text id="simple-permissions-m" font-family="AvenirNext-Medium, Avenir Next" font-size="37" font-weight="400" letter-spacing="2.11428571" fill="#657786">
                             <tspan x="0" y="149">simple permissions management </tspan>
                         </text>
-                        <text id="Request-Permission" font-family="AvenirNext-DemiBold, Avenir Next" font-size="95" font-weight="500" letter-spacing="0.899999976" fill="#00A3E8">
+                        <text id="Request-Permission" font-family="AvenirNext-DemiBold, Avenir Next" font-size="95" font-weight="500" letter-spacing="1" fill="#00A3E8">
                             <tspan x="0" y="95">Request Permissio</tspan>
-                            <tspan x="815.2" y="95">n</tspan>
+                            <tspan x="816.9" y="95">n</tspan>
                         </text>
                     </g>
                 </g>
