@@ -75,7 +75,7 @@ I like the idea to specify applications that use the RequestPermission. Please, 
 RequestPermission is released under the MIT license. Check LICENSE.md for details
 
 ## Other
-<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/c325272d/resources/request-permission_powered-by-sparrow.svg"/>
+<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/3b3d00c5/resources/request-permission_powered-by-sparrow.svg"/>
 
 In the project you can find my library [Sparrow](https://github.com/IvanVorobei/Sparrow). It's a library, on which the module is written. Unfortunately, to save time in development, I wrote RequestPermission using this library. Don't worry, within just Swift files and a lot of useful things. Maybe you will like it:)
 
