@@ -212,7 +212,7 @@ class SPContactsPermission: SPPermissionInterface {
         } else {
             let addressBookRef: ABAddressBook = ABAddressBookCreateWithOptions(nil, nil).takeRetainedValue()
             ABAddressBookRequestAccessWithCompletion(addressBookRef) {
-                (granted: Bool, error: CFError!) in
+                (granted: Bool, error: CFError?) in
                 DispatchQueue.main.async() {
                     complectionHandler()
                 }
