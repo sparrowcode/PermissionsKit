@@ -54,6 +54,11 @@ class SPRequestPermissionTwiceControl: UIButton, SPRequestPermissionTwiceControl
         self.setTitleColor(self.selectedColor.withAlphaComponent(0.62), for: UIControlState.highlighted)
         self.addSubview(self.iconView)
         self.titleLabel?.font = UIFont.init(name: SPRequestPermissionData.fonts.base() + "-Medium", size: 14)
+        if UIScreen.main.bounds.width < 335 {
+            self.titleLabel?.font = UIFont.init(name: SPRequestPermissionData.fonts.base() + "-Medium", size: 12)
+        }
+        self.titleLabel?.minimumScaleFactor = 0.5
+        self.titleLabel?.adjustsFontSizeToFitWidth = true
         self.setNormalState(animated: false)
     }
     
