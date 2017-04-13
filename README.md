@@ -1,9 +1,9 @@
-<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/349e5204/resources/request-permission_baner.svg"/>
+<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/e85814ac/resources/request-permission_baner.svg"/>
 
 ## About
 This project is about managing permissions with the customizable visual effects. Beautiful dialog increases the chance of approval (which is important when we request notification). Simple control of this module saves you hours of development. You can start using this project with just two lines of code and easy customization!
 
-<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/master/resources/request-permission%20-%20mockup_preview.gif" width="600">
+<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/e85814ac/resources/request-permission%20-%20mockup_preview.gif" width="600">
 
 ## Requirements
 Xcode 8 and Swift 3. Ready for use on iOS 8+
@@ -37,12 +37,12 @@ let isAvailableCamera = permissionAssistant.isAllowPermission(.Camera)
 ```
 ## Available permissions
 
-<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/a0c08270/resources/request-permission_permissions.svg"/>
+<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/e85814ac/resources/request-permission_permissions.svg"/>
 
 ## Types of presentation
 Did you notice that when initialized the `Assistant` - we chose the module (`SPRequestPermissionAssistant.modules.dialog.interactive...`). You can choose an appropriate visual component. They all adapted to the iPad and iPhone for all screens and for all orientations (currently available `dialog/interactive` and `native`, but soon I will add number of presentations)
 
-![](/resources/request-permission_presenters.png)
+<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/e85814ac/resources/request-permission_presenters.png"/>
 
 ## Important
 For correct ARC work you need to save an object of class `Assistant` during the lifetime of parent's controller. Initialize Аssistant as controller's property. Otherwise, ARC will destroy files that is responsible for logic and the controller will not respond to events
@@ -75,7 +75,7 @@ I like the idea to specify applications that use the RequestPermission. Please, 
 RequestPermission is released under the MIT license. Check LICENSE.md for details
 
 ## Other
-<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/3b3d00c5/resources/request-permission_powered-by-sparrow.svg"/>
+<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/e85814ac/resources/powered_by_sparrow.svg"/>
 
 In the project you can find my library [Sparrow](https://github.com/IvanVorobei/Sparrow). It's a library, on which the module is written. Unfortunately, to save time in development, I wrote RequestPermission using this library. Don't worry, within just Swift files and a lot of useful things. Maybe you will like it:)
 
