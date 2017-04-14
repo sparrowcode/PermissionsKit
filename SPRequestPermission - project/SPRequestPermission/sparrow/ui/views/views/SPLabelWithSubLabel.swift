@@ -26,6 +26,7 @@ class SPLabelWithSubLabelView: UIView {
     let additionalLabel: UILabel = UILabel()
     let mainLabel: UILabel = UILabel()
     
+    var onTopView: KindView = .main
     var relativeHeightFactor: CGFloat = 0.758
     
     init() {
@@ -50,8 +51,18 @@ class SPLabelWithSubLabelView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.additionalLabel.frame = CGRect.init(x: 0, y: 0, width: self.frame.width, height: self.frame.height * (1 - self.relativeHeightFactor))
-        self.mainLabel.frame = CGRect.init(x: 0, y: self.additionalLabel.frame.height, width: self.frame.width, height: self.frame.height * self.relativeHeightFactor)
+        if self.onTopView == .main {
+            self.mainLabel.frame = CGRect.init(x: 0, y: 0, width: self.frame.width, height: self.frame.height * self.relativeHeightFactor)
+            self.additionalLabel.frame = CGRect.init(x: 0, y: self.mainLabel.frame.height, width: self.frame.width, height: self.frame.height * (1 - self.relativeHeightFactor))   
+        } else {
+            self.additionalLabel.frame = CGRect.init(x: 0, y: 0, width: self.frame.width, height: self.frame.height * (1 - self.relativeHeightFactor))
+            self.mainLabel.frame = CGRect.init(x: 0, y: self.additionalLabel.frame.height, width: self.frame.width, height: self.frame.height * self.relativeHeightFactor)
+        }
+    }
+    
+    enum KindView {
+        case main
+        case additional
     }
 }
 

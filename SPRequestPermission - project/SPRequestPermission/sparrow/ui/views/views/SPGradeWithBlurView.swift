@@ -23,26 +23,27 @@ import UIKit
 
 class SPGradeWithBlurView: UIView {
     
-    private var gradeView: UIView = UIView()
-    private var blurView: UIView = UIView()
-    //private var blurView: SPBlurView = SPBlurView()
+    internal var gradeView: UIView = UIView()
+    internal var blurView: UIView = UIView()
     
     init(gradeColor: UIColor = UIColor.black, gradeAlphaFactor: CGFloat = 0.1, blurRadius: CGFloat = 3) {
         super.init(frame: CGRect.zero)
-        
-        if #available(iOS 9, *) {
-            self.blurView = SPBlurView()
-        }
-        
-        self.layer.masksToBounds = true
-        self.addSubview(gradeView)
-        self.addSubview(blurView)
         self.setGradeColor(gradeColor)
         self.setGradeAlpha(gradeAlphaFactor, blurRaius: blurRadius)
+        self.commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func commonInit() {
+        if #available(iOS 9, *) {
+            self.blurView = SPBlurView()
+        }
+        self.layer.masksToBounds = true
+        self.addSubview(gradeView)
+        self.addSubview(blurView)
     }
     
     func setGradeColor(_ color: UIColor) {

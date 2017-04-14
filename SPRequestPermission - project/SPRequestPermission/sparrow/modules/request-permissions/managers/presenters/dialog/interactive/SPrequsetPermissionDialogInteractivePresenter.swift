@@ -55,7 +55,7 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
         self.viewController.setTopTitle(self.dataSource.topAdviceTitle())
         self.viewController.setBottomTitle(self.dataSource.bottomAdviceTitle())
         self.viewController.setUnderDialogTitle(self.dataSource.underDialogAdviceTitle())
-        self.viewController.setHeaderBackgroundView(self.dataSource.headerBackgroundView())
+        //self.viewController.setHeaderBackgroundView(self.dataSource.headerBackgroundView())
     }
     
     private func createControlForPermission(_ permission: SPRequestPermissionType) -> SPRequestPermissionTwiceControlInterface {
