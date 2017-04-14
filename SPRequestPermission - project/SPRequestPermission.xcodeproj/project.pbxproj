@@ -7,90 +7,90 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F492EB771E993F2C00346448 /* SPAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAE81E993F2C00346448 /* SPAnimation.swift */; };
-		F492EB781E993F2C00346448 /* SPAnimationAlpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAE91E993F2C00346448 /* SPAnimationAlpha.swift */; };
-		F492EB791E993F2C00346448 /* SPAnimationSpring.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAEA1E993F2C00346448 /* SPAnimationSpring.swift */; };
-		F492EB7A1E993F2C00346448 /* SPAnimationUpward.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAEB1E993F2C00346448 /* SPAnimationUpward.swift */; };
-		F492EB7B1E993F2C00346448 /* SPArrayExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAED1E993F2C00346448 /* SPArrayExtenshion.swift */; };
-		F492EB7C1E993F2C00346448 /* SPAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAEF1E993F2C00346448 /* SPAudioPlayer.swift */; };
-		F492EB7D1E993F2C00346448 /* SPBezierPathExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAF11E993F2C00346448 /* SPBezierPathExtenshion.swift */; };
-		F492EB7E1E993F2C00346448 /* SPUIColorExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAF31E993F2C00346448 /* SPUIColorExtenshion.swift */; };
-		F492EB7F1E993F2C00346448 /* NSLayoutConstraintExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAF51E993F2C00346448 /* NSLayoutConstraintExtenshion.swift */; };
-		F492EB801E993F2C00346448 /* SPConstraintsAssistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAF61E993F2C00346448 /* SPConstraintsAssistent.swift */; };
-		F492EB811E993F2C00346448 /* SPDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAF81E993F2C00346448 /* SPDelay.swift */; };
-		F492EB821E993F2C00346448 /* SPDeviceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAFA1E993F2C00346448 /* SPDeviceOrientation.swift */; };
-		F492EB831E993F2C00346448 /* SPUIDeviceExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAFB1E993F2C00346448 /* SPUIDeviceExtenshion.swift */; };
-		F492EB841E993F2C00346448 /* SPUIScreenExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAFC1E993F2C00346448 /* SPUIScreenExtenshion.swift */; };
-		F492EB851E993F2C00346448 /* SPUIFontExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EAFE1E993F2C00346448 /* SPUIFontExtenshion.swift */; };
-		F492EB861E993F2C00346448 /* SPUIImageExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB001E993F2C00346448 /* SPUIImageExtenshion.swift */; };
-		F492EB871E993F2C00346448 /* SPInternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB021E993F2C00346448 /* SPInternetConnection.swift */; };
-		F492EB881E993F2C00346448 /* SPLaunchAnimationTwitterExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB061E993F2C00346448 /* SPLaunchAnimationTwitterExtenshion.swift */; };
-		F492EB891E993F2C00346448 /* SPLaunchAnimationSlideExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB081E993F2C00346448 /* SPLaunchAnimationSlideExtenshion.swift */; };
-		F492EB8A1E993F2C00346448 /* SPLaunchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB091E993F2C00346448 /* SPLaunchAnimation.swift */; };
-		F492EB8B1E993F2C00346448 /* SPLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB0B1E993F2C00346448 /* SPLayout.swift */; };
-		F492EB8C1E993F2C00346448 /* SPRequestPermissionDataColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB101E993F2C00346448 /* SPRequestPermissionDataColors.swift */; };
-		F492EB8D1E993F2C00346448 /* SPRequestPermissionDataFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB111E993F2C00346448 /* SPRequestPermissionDataFonts.swift */; };
-		F492EB8E1E993F2C00346448 /* SPRequestPermissionDataTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB121E993F2C00346448 /* SPRequestPermissionDataTexts.swift */; };
-		F492EB8F1E993F2C00346448 /* SPRequestPermissionDataViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB131E993F2C00346448 /* SPRequestPermissionDataViews.swift */; };
-		F492EB901E993F2C00346448 /* SPRequestPermissionAuthorizationHandlerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB181E993F2C00346448 /* SPRequestPermissionAuthorizationHandlerInterface.swift */; };
-		F492EB911E993F2C00346448 /* SPRequestPermissionLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB191E993F2C00346448 /* SPRequestPermissionLocationHandler.swift */; };
-		F492EB921E993F2C00346448 /* SPPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB1A1E993F2C00346448 /* SPPermissions.swift */; };
-		F492EB931E993F2C00346448 /* SPPermissionsManagerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB1B1E993F2C00346448 /* SPPermissionsManagerBase.swift */; };
-		F492EB941E993F2C00346448 /* SPPermissionsManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB1C1E993F2C00346448 /* SPPermissionsManagers.swift */; };
-		F492EB951E993F2C00346448 /* SPRequestPermissionManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB1D1E993F2C00346448 /* SPRequestPermissionManagerInterface.swift */; };
-		F492EB961E993F2C00346448 /* SPRequestPermissionDialogSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB231E993F2C00346448 /* SPRequestPermissionDialogSwipeViewController.swift */; };
-		F492EB971E993F2C00346448 /* SPRequestPermissionDialogDataManagerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB251E993F2C00346448 /* SPRequestPermissionDialogDataManagerBase.swift */; };
-		F492EB981E993F2C00346448 /* SPRequestPermissionDialogInteractiveDataSourceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB271E993F2C00346448 /* SPRequestPermissionDialogInteractiveDataSourceInterface.swift */; };
-		F492EB991E993F2C00346448 /* SPRequestPermissionDialogInteractivePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB281E993F2C00346448 /* SPRequestPermissionDialogInteractivePresenterDelegate.swift */; };
-		F492EB9A1E993F2C00346448 /* SPRequestPermissionDialogInteractiveViewControllerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB291E993F2C00346448 /* SPRequestPermissionDialogInteractiveViewControllerInterface.swift */; };
-		F492EB9B1E993F2C00346448 /* SPrequsetPermissionDialogInteractivePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB2A1E993F2C00346448 /* SPrequsetPermissionDialogInteractivePresenter.swift */; };
-		F492EB9C1E993F2C00346448 /* SPRequestPermissionDialogInteractiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB2C1E993F2C00346448 /* SPRequestPermissionDialogInteractiveView.swift */; };
-		F492EB9D1E993F2C00346448 /* SPRequestPermissionNativePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB2E1E993F2C00346448 /* SPRequestPermissionNativePresenter.swift */; };
-		F492EB9E1E993F2C00346448 /* SPRequestPermissionPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB2F1E993F2C00346448 /* SPRequestPermissionPresenterInterface.swift */; };
-		F492EB9F1E993F2C00346448 /* SPRequestPermissionPresenters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB301E993F2C00346448 /* SPRequestPermissionPresenters.swift */; };
-		F492EBA01E993F2C00346448 /* SPRequestPermissionTwiceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB331E993F2C00346448 /* SPRequestPermissionTwiceControl.swift */; };
-		F492EBA11E993F2C00346448 /* SPRequestPermissionTwiceControlBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB341E993F2C00346448 /* SPRequestPermissionTwiceControlBase.swift */; };
-		F492EBA21E993F2C00346448 /* SPRequestPermissionAssistantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB361E993F2C00346448 /* SPRequestPermissionAssistantDelegate.swift */; };
-		F492EBA31E993F2C00346448 /* SPRequestPermissionAssistantInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB371E993F2C00346448 /* SPRequestPermissionAssistantInterface.swift */; };
-		F492EBA41E993F2C00346448 /* SPRequestPermissionEventsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB381E993F2C00346448 /* SPRequestPermissionEventsDelegate.swift */; };
-		F492EBA51E993F2C00346448 /* plist_flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB3A1E993F2C00346448 /* plist_flags.swift */; };
-		F492EBA61E993F2C00346448 /* SPRequestPermissionAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB3B1E993F2C00346448 /* SPRequestPermissionAssistant.swift */; };
-		F492EBA71E993F2C00346448 /* SPRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB3D1E993F2C00346448 /* SPRandom.swift */; };
-		F492EBA81E993F2C00346448 /* SPDialogSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB401E993F2C00346448 /* SPDialogSwipeController.swift */; };
-		F492EBA91E993F2C00346448 /* SPExtenshionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB411E993F2C00346448 /* SPExtenshionViewController.swift */; };
-		F492EBAA1E993F2C00346448 /* SPGradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB421E993F2C00346448 /* SPGradientViewController.swift */; };
-		F492EBAB1E993F2C00346448 /* SPPageItemsScallingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB431E993F2C00346448 /* SPPageItemsScallingViewController.swift */; };
-		F492EBAC1E993F2C00346448 /* SPParalaxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB441E993F2C00346448 /* SPParalaxTableViewController.swift */; };
-		F492EBAD1E993F2C00346448 /* SPIconsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB471E993F2C00346448 /* SPIconsButton.swift */; };
-		F492EBAE1E993F2C00346448 /* SPLinesCircleButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB481E993F2C00346448 /* SPLinesCircleButtonsView.swift */; };
-		F492EBAF1E993F2C00346448 /* SPRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB491E993F2C00346448 /* SPRoundButton.swift */; };
-		F492EBB01E993F2C00346448 /* SPSegmentControllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB4C1E993F2C00346448 /* SPSegmentControllCell.swift */; };
-		F492EBB11E993F2C00346448 /* SPSegmentControlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB4D1E993F2C00346448 /* SPSegmentControlProtocol.swift */; };
-		F492EBB21E993F2C00346448 /* SPSegmentControlStyleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB4E1E993F2C00346448 /* SPSegmentControlStyleProtocol.swift */; };
-		F492EBB31E993F2C00346448 /* SPSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB4F1E993F2C00346448 /* SPSegmentedControl.swift */; };
-		F492EBB41E993F2C00346448 /* SPCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB531E993F2C00346448 /* SPCollectionViewCell.swift */; };
-		F492EBB51E993F2C00346448 /* SPPageItemsScalingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB551E993F2C00346448 /* SPPageItemsScalingCollectionView.swift */; };
-		F492EBB61E993F2C00346448 /* SPPageItemsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB571E993F2C00346448 /* SPPageItemsCollectionViewLayout.swift */; };
-		F492EBB71E993F2C00346448 /* SPPageItemsScalingCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB581E993F2C00346448 /* SPPageItemsScalingCollectionLayout.swift */; };
-		F492EBB81E993F2C00346448 /* SPRhombusPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB5A1E993F2C00346448 /* SPRhombusPatternView.swift */; };
-		F492EBB91E993F2C00346448 /* SPParallaxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB5D1E993F2C00346448 /* SPParallaxTableViewCell.swift */; };
-		F492EBBA1E993F2C00346448 /* SPAligmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB5F1E993F2C00346448 /* SPAligmentView.swift */; };
-		F492EBBB1E993F2C00346448 /* SPBannerWithTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB601E993F2C00346448 /* SPBannerWithTitlesView.swift */; };
-		F492EBBC1E993F2C00346448 /* SPBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB611E993F2C00346448 /* SPBlurView.swift */; };
-		F492EBBD1E993F2C00346448 /* SPGradeWithBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB621E993F2C00346448 /* SPGradeWithBlurView.swift */; };
-		F492EBBE1E993F2C00346448 /* SPGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB631E993F2C00346448 /* SPGradientView.swift */; };
-		F492EBBF1E993F2C00346448 /* SPIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB641E993F2C00346448 /* SPIconView.swift */; };
-		F492EBC01E993F2C00346448 /* SPLabelWithSubLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB651E993F2C00346448 /* SPLabelWithSubLabel.swift */; };
-		F492EBC11E993F2C00346448 /* SPPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB661E993F2C00346448 /* SPPatternView.swift */; };
-		F492EBC21E993F2C00346448 /* SPShadowWithMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB671E993F2C00346448 /* SPShadowWithMaskView.swift */; };
-		F492EBC31E993F2D00346448 /* SPUILabelExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB681E993F2C00346448 /* SPUILabelExtenshion.swift */; };
-		F492EBC41E993F2D00346448 /* SPUIViewExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB691E993F2C00346448 /* SPUIViewExtenshion.swift */; };
-		F492EBC51E993F2D00346448 /* SPBezierPathFigureIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB6D1E993F2C00346448 /* SPBezierPathFigureIcons.swift */; };
-		F492EBC61E993F2D00346448 /* SPBezierPathFigureLogos.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB6F1E993F2C00346448 /* SPBezierPathFigureLogos.swift */; };
-		F492EBC71E993F2D00346448 /* SPBezierPathFigurePatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB711E993F2C00346448 /* SPBezierPathFigurePatterns.swift */; };
-		F492EBC81E993F2D00346448 /* SPBezierPathFigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB721E993F2C00346448 /* SPBezierPathFigure.swift */; };
-		F492EBC91E993F2D00346448 /* SPStrideableExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB741E993F2C00346448 /* SPStrideableExtenshion.swift */; };
-		F492EBCA1E993F2D00346448 /* SPSpotlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EB761E993F2C00346448 /* SPSpotlight.swift */; };
+		F46AC2E41EA10C1800A7C4E5 /* SPAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2551EA10C1800A7C4E5 /* SPAnimation.swift */; };
+		F46AC2E51EA10C1800A7C4E5 /* SPAnimationAlpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2561EA10C1800A7C4E5 /* SPAnimationAlpha.swift */; };
+		F46AC2E61EA10C1800A7C4E5 /* SPAnimationSpring.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2571EA10C1800A7C4E5 /* SPAnimationSpring.swift */; };
+		F46AC2E71EA10C1800A7C4E5 /* SPAnimationUpward.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2581EA10C1800A7C4E5 /* SPAnimationUpward.swift */; };
+		F46AC2E81EA10C1800A7C4E5 /* SPArrayExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC25A1EA10C1800A7C4E5 /* SPArrayExtenshion.swift */; };
+		F46AC2E91EA10C1800A7C4E5 /* SPAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC25C1EA10C1800A7C4E5 /* SPAudioPlayer.swift */; };
+		F46AC2EA1EA10C1800A7C4E5 /* SPBezierPathExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC25E1EA10C1800A7C4E5 /* SPBezierPathExtenshion.swift */; };
+		F46AC2EB1EA10C1800A7C4E5 /* SPUIColorExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2601EA10C1800A7C4E5 /* SPUIColorExtenshion.swift */; };
+		F46AC2EC1EA10C1800A7C4E5 /* NSLayoutConstraintExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2621EA10C1800A7C4E5 /* NSLayoutConstraintExtenshion.swift */; };
+		F46AC2ED1EA10C1800A7C4E5 /* SPConstraintsAssistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2631EA10C1800A7C4E5 /* SPConstraintsAssistent.swift */; };
+		F46AC2EE1EA10C1800A7C4E5 /* SPDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2651EA10C1800A7C4E5 /* SPDelay.swift */; };
+		F46AC2EF1EA10C1800A7C4E5 /* SPDeviceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2671EA10C1800A7C4E5 /* SPDeviceOrientation.swift */; };
+		F46AC2F01EA10C1800A7C4E5 /* SPUIDeviceExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2681EA10C1800A7C4E5 /* SPUIDeviceExtenshion.swift */; };
+		F46AC2F11EA10C1800A7C4E5 /* SPUIScreenExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2691EA10C1800A7C4E5 /* SPUIScreenExtenshion.swift */; };
+		F46AC2F21EA10C1800A7C4E5 /* SPUIFontExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC26B1EA10C1800A7C4E5 /* SPUIFontExtenshion.swift */; };
+		F46AC2F31EA10C1800A7C4E5 /* SPUIImageExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC26D1EA10C1800A7C4E5 /* SPUIImageExtenshion.swift */; };
+		F46AC2F41EA10C1800A7C4E5 /* SPInternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC26F1EA10C1800A7C4E5 /* SPInternetConnection.swift */; };
+		F46AC2F51EA10C1800A7C4E5 /* SPLaunchAnimationTwitterExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2731EA10C1800A7C4E5 /* SPLaunchAnimationTwitterExtenshion.swift */; };
+		F46AC2F61EA10C1800A7C4E5 /* SPLaunchAnimationSlideExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2751EA10C1800A7C4E5 /* SPLaunchAnimationSlideExtenshion.swift */; };
+		F46AC2F71EA10C1800A7C4E5 /* SPLaunchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2761EA10C1800A7C4E5 /* SPLaunchAnimation.swift */; };
+		F46AC2F81EA10C1800A7C4E5 /* SPLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2781EA10C1800A7C4E5 /* SPLayout.swift */; };
+		F46AC2F91EA10C1800A7C4E5 /* SPRequestPermissionDataColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC27D1EA10C1800A7C4E5 /* SPRequestPermissionDataColors.swift */; };
+		F46AC2FA1EA10C1800A7C4E5 /* SPRequestPermissionDataFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC27E1EA10C1800A7C4E5 /* SPRequestPermissionDataFonts.swift */; };
+		F46AC2FB1EA10C1800A7C4E5 /* SPRequestPermissionDataTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC27F1EA10C1800A7C4E5 /* SPRequestPermissionDataTexts.swift */; };
+		F46AC2FC1EA10C1800A7C4E5 /* SPRequestPermissionDataViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2801EA10C1800A7C4E5 /* SPRequestPermissionDataViews.swift */; };
+		F46AC2FD1EA10C1800A7C4E5 /* SPRequestPermissionAuthorizationHandlerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2851EA10C1800A7C4E5 /* SPRequestPermissionAuthorizationHandlerInterface.swift */; };
+		F46AC2FE1EA10C1800A7C4E5 /* SPRequestPermissionLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2861EA10C1800A7C4E5 /* SPRequestPermissionLocationHandler.swift */; };
+		F46AC2FF1EA10C1800A7C4E5 /* SPPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2871EA10C1800A7C4E5 /* SPPermissions.swift */; };
+		F46AC3001EA10C1800A7C4E5 /* SPPermissionsManagerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2881EA10C1800A7C4E5 /* SPPermissionsManagerBase.swift */; };
+		F46AC3011EA10C1800A7C4E5 /* SPPermissionsManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2891EA10C1800A7C4E5 /* SPPermissionsManagers.swift */; };
+		F46AC3021EA10C1800A7C4E5 /* SPRequestPermissionManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC28A1EA10C1800A7C4E5 /* SPRequestPermissionManagerInterface.swift */; };
+		F46AC3031EA10C1800A7C4E5 /* SPRequestPermissionDialogSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2901EA10C1800A7C4E5 /* SPRequestPermissionDialogSwipeViewController.swift */; };
+		F46AC3041EA10C1800A7C4E5 /* SPRequestPermissionDialogDataManagerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2921EA10C1800A7C4E5 /* SPRequestPermissionDialogDataManagerBase.swift */; };
+		F46AC3051EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveDataSourceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2941EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveDataSourceInterface.swift */; };
+		F46AC3061EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractivePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2951EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractivePresenterDelegate.swift */; };
+		F46AC3071EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveViewControllerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2961EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveViewControllerInterface.swift */; };
+		F46AC3081EA10C1800A7C4E5 /* SPrequsetPermissionDialogInteractivePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2971EA10C1800A7C4E5 /* SPrequsetPermissionDialogInteractivePresenter.swift */; };
+		F46AC3091EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2991EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveView.swift */; };
+		F46AC30A1EA10C1800A7C4E5 /* SPRequestPermissionNativePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC29B1EA10C1800A7C4E5 /* SPRequestPermissionNativePresenter.swift */; };
+		F46AC30B1EA10C1800A7C4E5 /* SPRequestPermissionPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC29C1EA10C1800A7C4E5 /* SPRequestPermissionPresenterInterface.swift */; };
+		F46AC30C1EA10C1800A7C4E5 /* SPRequestPermissionPresenters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC29D1EA10C1800A7C4E5 /* SPRequestPermissionPresenters.swift */; };
+		F46AC30D1EA10C1800A7C4E5 /* SPRequestPermissionTwiceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2A01EA10C1800A7C4E5 /* SPRequestPermissionTwiceControl.swift */; };
+		F46AC30E1EA10C1800A7C4E5 /* SPRequestPermissionTwiceControlBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2A11EA10C1800A7C4E5 /* SPRequestPermissionTwiceControlBase.swift */; };
+		F46AC30F1EA10C1800A7C4E5 /* SPRequestPermissionAssistantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2A31EA10C1800A7C4E5 /* SPRequestPermissionAssistantDelegate.swift */; };
+		F46AC3101EA10C1800A7C4E5 /* SPRequestPermissionAssistantInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2A41EA10C1800A7C4E5 /* SPRequestPermissionAssistantInterface.swift */; };
+		F46AC3111EA10C1800A7C4E5 /* SPRequestPermissionEventsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2A51EA10C1800A7C4E5 /* SPRequestPermissionEventsDelegate.swift */; };
+		F46AC3121EA10C1800A7C4E5 /* plist_flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2A71EA10C1800A7C4E5 /* plist_flags.swift */; };
+		F46AC3131EA10C1800A7C4E5 /* SPRequestPermissionAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2A81EA10C1800A7C4E5 /* SPRequestPermissionAssistant.swift */; };
+		F46AC3141EA10C1800A7C4E5 /* SPRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2AA1EA10C1800A7C4E5 /* SPRandom.swift */; };
+		F46AC3151EA10C1800A7C4E5 /* SPDialogSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2AD1EA10C1800A7C4E5 /* SPDialogSwipeController.swift */; };
+		F46AC3161EA10C1800A7C4E5 /* SPExtenshionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2AE1EA10C1800A7C4E5 /* SPExtenshionViewController.swift */; };
+		F46AC3171EA10C1800A7C4E5 /* SPGradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2AF1EA10C1800A7C4E5 /* SPGradientViewController.swift */; };
+		F46AC3181EA10C1800A7C4E5 /* SPPageItemsScallingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2B01EA10C1800A7C4E5 /* SPPageItemsScallingViewController.swift */; };
+		F46AC3191EA10C1800A7C4E5 /* SPParalaxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2B11EA10C1800A7C4E5 /* SPParalaxTableViewController.swift */; };
+		F46AC31A1EA10C1800A7C4E5 /* SPIconsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2B41EA10C1800A7C4E5 /* SPIconsButton.swift */; };
+		F46AC31B1EA10C1800A7C4E5 /* SPLinesCircleButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2B51EA10C1800A7C4E5 /* SPLinesCircleButtonsView.swift */; };
+		F46AC31C1EA10C1800A7C4E5 /* SPRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2B61EA10C1800A7C4E5 /* SPRoundButton.swift */; };
+		F46AC31D1EA10C1800A7C4E5 /* SPSegmentControllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2B91EA10C1800A7C4E5 /* SPSegmentControllCell.swift */; };
+		F46AC31E1EA10C1800A7C4E5 /* SPSegmentControlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2BA1EA10C1800A7C4E5 /* SPSegmentControlProtocol.swift */; };
+		F46AC31F1EA10C1800A7C4E5 /* SPSegmentControlStyleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2BB1EA10C1800A7C4E5 /* SPSegmentControlStyleProtocol.swift */; };
+		F46AC3201EA10C1800A7C4E5 /* SPSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2BC1EA10C1800A7C4E5 /* SPSegmentedControl.swift */; };
+		F46AC3211EA10C1800A7C4E5 /* SPCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2C01EA10C1800A7C4E5 /* SPCollectionViewCell.swift */; };
+		F46AC3221EA10C1800A7C4E5 /* SPPageItemsScalingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2C21EA10C1800A7C4E5 /* SPPageItemsScalingCollectionView.swift */; };
+		F46AC3231EA10C1800A7C4E5 /* SPPageItemsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2C41EA10C1800A7C4E5 /* SPPageItemsCollectionViewLayout.swift */; };
+		F46AC3241EA10C1800A7C4E5 /* SPPageItemsScalingCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2C51EA10C1800A7C4E5 /* SPPageItemsScalingCollectionLayout.swift */; };
+		F46AC3251EA10C1800A7C4E5 /* SPRhombusPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2C71EA10C1800A7C4E5 /* SPRhombusPatternView.swift */; };
+		F46AC3261EA10C1800A7C4E5 /* SPParallaxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2CA1EA10C1800A7C4E5 /* SPParallaxTableViewCell.swift */; };
+		F46AC3271EA10C1800A7C4E5 /* SPAligmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2CC1EA10C1800A7C4E5 /* SPAligmentView.swift */; };
+		F46AC3281EA10C1800A7C4E5 /* SPBannerWithTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2CD1EA10C1800A7C4E5 /* SPBannerWithTitlesView.swift */; };
+		F46AC3291EA10C1800A7C4E5 /* SPBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2CE1EA10C1800A7C4E5 /* SPBlurView.swift */; };
+		F46AC32A1EA10C1800A7C4E5 /* SPGradeWithBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2CF1EA10C1800A7C4E5 /* SPGradeWithBlurView.swift */; };
+		F46AC32B1EA10C1800A7C4E5 /* SPGradientGradeWithBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2D01EA10C1800A7C4E5 /* SPGradientGradeWithBlurView.swift */; };
+		F46AC32C1EA10C1800A7C4E5 /* SPGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2D11EA10C1800A7C4E5 /* SPGradientView.swift */; };
+		F46AC32D1EA10C1800A7C4E5 /* SPLabelWithSubLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2D21EA10C1800A7C4E5 /* SPLabelWithSubLabel.swift */; };
+		F46AC32E1EA10C1800A7C4E5 /* SPPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2D31EA10C1800A7C4E5 /* SPPatternView.swift */; };
+		F46AC32F1EA10C1800A7C4E5 /* SPShadowWithMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2D41EA10C1800A7C4E5 /* SPShadowWithMaskView.swift */; };
+		F46AC3301EA10C1800A7C4E5 /* SPUILabelExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2D51EA10C1800A7C4E5 /* SPUILabelExtenshion.swift */; };
+		F46AC3311EA10C1800A7C4E5 /* SPUIViewExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2D61EA10C1800A7C4E5 /* SPUIViewExtenshion.swift */; };
+		F46AC3321EA10C1800A7C4E5 /* SPBezierPathFigureIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2DA1EA10C1800A7C4E5 /* SPBezierPathFigureIcons.swift */; };
+		F46AC3331EA10C1800A7C4E5 /* SPBezierPathFigureLogos.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2DC1EA10C1800A7C4E5 /* SPBezierPathFigureLogos.swift */; };
+		F46AC3341EA10C1800A7C4E5 /* SPBezierPathFigurePatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2DE1EA10C1800A7C4E5 /* SPBezierPathFigurePatterns.swift */; };
+		F46AC3351EA10C1800A7C4E5 /* SPBezierPathFigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2DF1EA10C1800A7C4E5 /* SPBezierPathFigure.swift */; };
+		F46AC3361EA10C1800A7C4E5 /* SPStrideableExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2E11EA10C1800A7C4E5 /* SPStrideableExtenshion.swift */; };
+		F46AC3371EA10C1800A7C4E5 /* SPSpotlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AC2E31EA10C1800A7C4E5 /* SPSpotlight.swift */; };
 		F4BF85871E56274E007A01E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF85861E56274E007A01E8 /* AppDelegate.swift */; };
 		F4BF85891E56274E007A01E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF85881E56274E007A01E8 /* ViewController.swift */; };
 		F4BF858C1E56274E007A01E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4BF858A1E56274E007A01E8 /* Main.storyboard */; };
@@ -99,90 +99,90 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F492EAE81E993F2C00346448 /* SPAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimation.swift; sourceTree = "<group>"; };
-		F492EAE91E993F2C00346448 /* SPAnimationAlpha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimationAlpha.swift; sourceTree = "<group>"; };
-		F492EAEA1E993F2C00346448 /* SPAnimationSpring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimationSpring.swift; sourceTree = "<group>"; };
-		F492EAEB1E993F2C00346448 /* SPAnimationUpward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimationUpward.swift; sourceTree = "<group>"; };
-		F492EAED1E993F2C00346448 /* SPArrayExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPArrayExtenshion.swift; sourceTree = "<group>"; };
-		F492EAEF1E993F2C00346448 /* SPAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAudioPlayer.swift; sourceTree = "<group>"; };
-		F492EAF11E993F2C00346448 /* SPBezierPathExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBezierPathExtenshion.swift; sourceTree = "<group>"; };
-		F492EAF31E993F2C00346448 /* SPUIColorExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIColorExtenshion.swift; sourceTree = "<group>"; };
-		F492EAF51E993F2C00346448 /* NSLayoutConstraintExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtenshion.swift; sourceTree = "<group>"; };
-		F492EAF61E993F2C00346448 /* SPConstraintsAssistent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPConstraintsAssistent.swift; sourceTree = "<group>"; };
-		F492EAF81E993F2C00346448 /* SPDelay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDelay.swift; sourceTree = "<group>"; };
-		F492EAFA1E993F2C00346448 /* SPDeviceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDeviceOrientation.swift; sourceTree = "<group>"; };
-		F492EAFB1E993F2C00346448 /* SPUIDeviceExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIDeviceExtenshion.swift; sourceTree = "<group>"; };
-		F492EAFC1E993F2C00346448 /* SPUIScreenExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIScreenExtenshion.swift; sourceTree = "<group>"; };
-		F492EAFE1E993F2C00346448 /* SPUIFontExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIFontExtenshion.swift; sourceTree = "<group>"; };
-		F492EB001E993F2C00346448 /* SPUIImageExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIImageExtenshion.swift; sourceTree = "<group>"; };
-		F492EB021E993F2C00346448 /* SPInternetConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPInternetConnection.swift; sourceTree = "<group>"; };
-		F492EB061E993F2C00346448 /* SPLaunchAnimationTwitterExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLaunchAnimationTwitterExtenshion.swift; sourceTree = "<group>"; };
-		F492EB081E993F2C00346448 /* SPLaunchAnimationSlideExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLaunchAnimationSlideExtenshion.swift; sourceTree = "<group>"; };
-		F492EB091E993F2C00346448 /* SPLaunchAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLaunchAnimation.swift; sourceTree = "<group>"; };
-		F492EB0B1E993F2C00346448 /* SPLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLayout.swift; sourceTree = "<group>"; };
-		F492EB101E993F2C00346448 /* SPRequestPermissionDataColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDataColors.swift; sourceTree = "<group>"; };
-		F492EB111E993F2C00346448 /* SPRequestPermissionDataFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDataFonts.swift; sourceTree = "<group>"; };
-		F492EB121E993F2C00346448 /* SPRequestPermissionDataTexts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDataTexts.swift; sourceTree = "<group>"; };
-		F492EB131E993F2C00346448 /* SPRequestPermissionDataViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDataViews.swift; sourceTree = "<group>"; };
-		F492EB181E993F2C00346448 /* SPRequestPermissionAuthorizationHandlerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionAuthorizationHandlerInterface.swift; sourceTree = "<group>"; };
-		F492EB191E993F2C00346448 /* SPRequestPermissionLocationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionLocationHandler.swift; sourceTree = "<group>"; };
-		F492EB1A1E993F2C00346448 /* SPPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissions.swift; sourceTree = "<group>"; };
-		F492EB1B1E993F2C00346448 /* SPPermissionsManagerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionsManagerBase.swift; sourceTree = "<group>"; };
-		F492EB1C1E993F2C00346448 /* SPPermissionsManagers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionsManagers.swift; sourceTree = "<group>"; };
-		F492EB1D1E993F2C00346448 /* SPRequestPermissionManagerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionManagerInterface.swift; sourceTree = "<group>"; };
-		F492EB231E993F2C00346448 /* SPRequestPermissionDialogSwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDialogSwipeViewController.swift; sourceTree = "<group>"; };
-		F492EB251E993F2C00346448 /* SPRequestPermissionDialogDataManagerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDialogDataManagerBase.swift; sourceTree = "<group>"; };
-		F492EB271E993F2C00346448 /* SPRequestPermissionDialogInteractiveDataSourceInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDialogInteractiveDataSourceInterface.swift; sourceTree = "<group>"; };
-		F492EB281E993F2C00346448 /* SPRequestPermissionDialogInteractivePresenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDialogInteractivePresenterDelegate.swift; sourceTree = "<group>"; };
-		F492EB291E993F2C00346448 /* SPRequestPermissionDialogInteractiveViewControllerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDialogInteractiveViewControllerInterface.swift; sourceTree = "<group>"; };
-		F492EB2A1E993F2C00346448 /* SPrequsetPermissionDialogInteractivePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPrequsetPermissionDialogInteractivePresenter.swift; sourceTree = "<group>"; };
-		F492EB2C1E993F2C00346448 /* SPRequestPermissionDialogInteractiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDialogInteractiveView.swift; sourceTree = "<group>"; };
-		F492EB2E1E993F2C00346448 /* SPRequestPermissionNativePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionNativePresenter.swift; sourceTree = "<group>"; };
-		F492EB2F1E993F2C00346448 /* SPRequestPermissionPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionPresenterInterface.swift; sourceTree = "<group>"; };
-		F492EB301E993F2C00346448 /* SPRequestPermissionPresenters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionPresenters.swift; sourceTree = "<group>"; };
-		F492EB331E993F2C00346448 /* SPRequestPermissionTwiceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionTwiceControl.swift; sourceTree = "<group>"; };
-		F492EB341E993F2C00346448 /* SPRequestPermissionTwiceControlBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionTwiceControlBase.swift; sourceTree = "<group>"; };
-		F492EB361E993F2C00346448 /* SPRequestPermissionAssistantDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionAssistantDelegate.swift; sourceTree = "<group>"; };
-		F492EB371E993F2C00346448 /* SPRequestPermissionAssistantInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionAssistantInterface.swift; sourceTree = "<group>"; };
-		F492EB381E993F2C00346448 /* SPRequestPermissionEventsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionEventsDelegate.swift; sourceTree = "<group>"; };
-		F492EB3A1E993F2C00346448 /* plist_flags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plist_flags.swift; sourceTree = "<group>"; };
-		F492EB3B1E993F2C00346448 /* SPRequestPermissionAssistant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionAssistant.swift; sourceTree = "<group>"; };
-		F492EB3D1E993F2C00346448 /* SPRandom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRandom.swift; sourceTree = "<group>"; };
-		F492EB401E993F2C00346448 /* SPDialogSwipeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDialogSwipeController.swift; sourceTree = "<group>"; };
-		F492EB411E993F2C00346448 /* SPExtenshionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPExtenshionViewController.swift; sourceTree = "<group>"; };
-		F492EB421E993F2C00346448 /* SPGradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPGradientViewController.swift; sourceTree = "<group>"; };
-		F492EB431E993F2C00346448 /* SPPageItemsScallingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPageItemsScallingViewController.swift; sourceTree = "<group>"; };
-		F492EB441E993F2C00346448 /* SPParalaxTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPParalaxTableViewController.swift; sourceTree = "<group>"; };
-		F492EB471E993F2C00346448 /* SPIconsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPIconsButton.swift; sourceTree = "<group>"; };
-		F492EB481E993F2C00346448 /* SPLinesCircleButtonsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLinesCircleButtonsView.swift; sourceTree = "<group>"; };
-		F492EB491E993F2C00346448 /* SPRoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRoundButton.swift; sourceTree = "<group>"; };
-		F492EB4C1E993F2C00346448 /* SPSegmentControllCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSegmentControllCell.swift; sourceTree = "<group>"; };
-		F492EB4D1E993F2C00346448 /* SPSegmentControlProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSegmentControlProtocol.swift; sourceTree = "<group>"; };
-		F492EB4E1E993F2C00346448 /* SPSegmentControlStyleProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSegmentControlStyleProtocol.swift; sourceTree = "<group>"; };
-		F492EB4F1E993F2C00346448 /* SPSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSegmentedControl.swift; sourceTree = "<group>"; };
-		F492EB531E993F2C00346448 /* SPCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCollectionViewCell.swift; sourceTree = "<group>"; };
-		F492EB551E993F2C00346448 /* SPPageItemsScalingCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPageItemsScalingCollectionView.swift; sourceTree = "<group>"; };
-		F492EB571E993F2C00346448 /* SPPageItemsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPageItemsCollectionViewLayout.swift; sourceTree = "<group>"; };
-		F492EB581E993F2C00346448 /* SPPageItemsScalingCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPageItemsScalingCollectionLayout.swift; sourceTree = "<group>"; };
-		F492EB5A1E993F2C00346448 /* SPRhombusPatternView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRhombusPatternView.swift; sourceTree = "<group>"; };
-		F492EB5D1E993F2C00346448 /* SPParallaxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPParallaxTableViewCell.swift; sourceTree = "<group>"; };
-		F492EB5F1E993F2C00346448 /* SPAligmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAligmentView.swift; sourceTree = "<group>"; };
-		F492EB601E993F2C00346448 /* SPBannerWithTitlesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBannerWithTitlesView.swift; sourceTree = "<group>"; };
-		F492EB611E993F2C00346448 /* SPBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBlurView.swift; sourceTree = "<group>"; };
-		F492EB621E993F2C00346448 /* SPGradeWithBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPGradeWithBlurView.swift; sourceTree = "<group>"; };
-		F492EB631E993F2C00346448 /* SPGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPGradientView.swift; sourceTree = "<group>"; };
-		F492EB641E993F2C00346448 /* SPIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPIconView.swift; sourceTree = "<group>"; };
-		F492EB651E993F2C00346448 /* SPLabelWithSubLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLabelWithSubLabel.swift; sourceTree = "<group>"; };
-		F492EB661E993F2C00346448 /* SPPatternView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPatternView.swift; sourceTree = "<group>"; };
-		F492EB671E993F2C00346448 /* SPShadowWithMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPShadowWithMaskView.swift; sourceTree = "<group>"; };
-		F492EB681E993F2C00346448 /* SPUILabelExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUILabelExtenshion.swift; sourceTree = "<group>"; };
-		F492EB691E993F2C00346448 /* SPUIViewExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIViewExtenshion.swift; sourceTree = "<group>"; };
-		F492EB6D1E993F2C00346448 /* SPBezierPathFigureIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBezierPathFigureIcons.swift; sourceTree = "<group>"; };
-		F492EB6F1E993F2C00346448 /* SPBezierPathFigureLogos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBezierPathFigureLogos.swift; sourceTree = "<group>"; };
-		F492EB711E993F2C00346448 /* SPBezierPathFigurePatterns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBezierPathFigurePatterns.swift; sourceTree = "<group>"; };
-		F492EB721E993F2C00346448 /* SPBezierPathFigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBezierPathFigure.swift; sourceTree = "<group>"; };
-		F492EB741E993F2C00346448 /* SPStrideableExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPStrideableExtenshion.swift; sourceTree = "<group>"; };
-		F492EB761E993F2C00346448 /* SPSpotlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSpotlight.swift; sourceTree = "<group>"; };
+		F46AC2551EA10C1800A7C4E5 /* SPAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimation.swift; sourceTree = "<group>"; };
+		F46AC2561EA10C1800A7C4E5 /* SPAnimationAlpha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimationAlpha.swift; sourceTree = "<group>"; };
+		F46AC2571EA10C1800A7C4E5 /* SPAnimationSpring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimationSpring.swift; sourceTree = "<group>"; };
+		F46AC2581EA10C1800A7C4E5 /* SPAnimationUpward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimationUpward.swift; sourceTree = "<group>"; };
+		F46AC25A1EA10C1800A7C4E5 /* SPArrayExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPArrayExtenshion.swift; sourceTree = "<group>"; };
+		F46AC25C1EA10C1800A7C4E5 /* SPAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAudioPlayer.swift; sourceTree = "<group>"; };
+		F46AC25E1EA10C1800A7C4E5 /* SPBezierPathExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBezierPathExtenshion.swift; sourceTree = "<group>"; };
+		F46AC2601EA10C1800A7C4E5 /* SPUIColorExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIColorExtenshion.swift; sourceTree = "<group>"; };
+		F46AC2621EA10C1800A7C4E5 /* NSLayoutConstraintExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtenshion.swift; sourceTree = "<group>"; };
+		F46AC2631EA10C1800A7C4E5 /* SPConstraintsAssistent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPConstraintsAssistent.swift; sourceTree = "<group>"; };
+		F46AC2651EA10C1800A7C4E5 /* SPDelay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDelay.swift; sourceTree = "<group>"; };
+		F46AC2671EA10C1800A7C4E5 /* SPDeviceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDeviceOrientation.swift; sourceTree = "<group>"; };
+		F46AC2681EA10C1800A7C4E5 /* SPUIDeviceExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIDeviceExtenshion.swift; sourceTree = "<group>"; };
+		F46AC2691EA10C1800A7C4E5 /* SPUIScreenExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIScreenExtenshion.swift; sourceTree = "<group>"; };
+		F46AC26B1EA10C1800A7C4E5 /* SPUIFontExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIFontExtenshion.swift; sourceTree = "<group>"; };
+		F46AC26D1EA10C1800A7C4E5 /* SPUIImageExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIImageExtenshion.swift; sourceTree = "<group>"; };
+		F46AC26F1EA10C1800A7C4E5 /* SPInternetConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPInternetConnection.swift; sourceTree = "<group>"; };
+		F46AC2731EA10C1800A7C4E5 /* SPLaunchAnimationTwitterExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLaunchAnimationTwitterExtenshion.swift; sourceTree = "<group>"; };
+		F46AC2751EA10C1800A7C4E5 /* SPLaunchAnimationSlideExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLaunchAnimationSlideExtenshion.swift; sourceTree = "<group>"; };
+		F46AC2761EA10C1800A7C4E5 /* SPLaunchAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLaunchAnimation.swift; sourceTree = "<group>"; };
+		F46AC2781EA10C1800A7C4E5 /* SPLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLayout.swift; sourceTree = "<group>"; };
+		F46AC27D1EA10C1800A7C4E5 /* SPRequestPermissionDataColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDataColors.swift; sourceTree = "<group>"; };
+		F46AC27E1EA10C1800A7C4E5 /* SPRequestPermissionDataFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDataFonts.swift; sourceTree = "<group>"; };
+		F46AC27F1EA10C1800A7C4E5 /* SPRequestPermissionDataTexts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDataTexts.swift; sourceTree = "<group>"; };
+		F46AC2801EA10C1800A7C4E5 /* SPRequestPermissionDataViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDataViews.swift; sourceTree = "<group>"; };
+		F46AC2851EA10C1800A7C4E5 /* SPRequestPermissionAuthorizationHandlerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionAuthorizationHandlerInterface.swift; sourceTree = "<group>"; };
+		F46AC2861EA10C1800A7C4E5 /* SPRequestPermissionLocationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionLocationHandler.swift; sourceTree = "<group>"; };
+		F46AC2871EA10C1800A7C4E5 /* SPPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissions.swift; sourceTree = "<group>"; };
+		F46AC2881EA10C1800A7C4E5 /* SPPermissionsManagerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionsManagerBase.swift; sourceTree = "<group>"; };
+		F46AC2891EA10C1800A7C4E5 /* SPPermissionsManagers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionsManagers.swift; sourceTree = "<group>"; };
+		F46AC28A1EA10C1800A7C4E5 /* SPRequestPermissionManagerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionManagerInterface.swift; sourceTree = "<group>"; };
+		F46AC2901EA10C1800A7C4E5 /* SPRequestPermissionDialogSwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDialogSwipeViewController.swift; sourceTree = "<group>"; };
+		F46AC2921EA10C1800A7C4E5 /* SPRequestPermissionDialogDataManagerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDialogDataManagerBase.swift; sourceTree = "<group>"; };
+		F46AC2941EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveDataSourceInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDialogInteractiveDataSourceInterface.swift; sourceTree = "<group>"; };
+		F46AC2951EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractivePresenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDialogInteractivePresenterDelegate.swift; sourceTree = "<group>"; };
+		F46AC2961EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveViewControllerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDialogInteractiveViewControllerInterface.swift; sourceTree = "<group>"; };
+		F46AC2971EA10C1800A7C4E5 /* SPrequsetPermissionDialogInteractivePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPrequsetPermissionDialogInteractivePresenter.swift; sourceTree = "<group>"; };
+		F46AC2991EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionDialogInteractiveView.swift; sourceTree = "<group>"; };
+		F46AC29B1EA10C1800A7C4E5 /* SPRequestPermissionNativePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionNativePresenter.swift; sourceTree = "<group>"; };
+		F46AC29C1EA10C1800A7C4E5 /* SPRequestPermissionPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionPresenterInterface.swift; sourceTree = "<group>"; };
+		F46AC29D1EA10C1800A7C4E5 /* SPRequestPermissionPresenters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionPresenters.swift; sourceTree = "<group>"; };
+		F46AC2A01EA10C1800A7C4E5 /* SPRequestPermissionTwiceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionTwiceControl.swift; sourceTree = "<group>"; };
+		F46AC2A11EA10C1800A7C4E5 /* SPRequestPermissionTwiceControlBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionTwiceControlBase.swift; sourceTree = "<group>"; };
+		F46AC2A31EA10C1800A7C4E5 /* SPRequestPermissionAssistantDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionAssistantDelegate.swift; sourceTree = "<group>"; };
+		F46AC2A41EA10C1800A7C4E5 /* SPRequestPermissionAssistantInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionAssistantInterface.swift; sourceTree = "<group>"; };
+		F46AC2A51EA10C1800A7C4E5 /* SPRequestPermissionEventsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionEventsDelegate.swift; sourceTree = "<group>"; };
+		F46AC2A71EA10C1800A7C4E5 /* plist_flags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plist_flags.swift; sourceTree = "<group>"; };
+		F46AC2A81EA10C1800A7C4E5 /* SPRequestPermissionAssistant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionAssistant.swift; sourceTree = "<group>"; };
+		F46AC2AA1EA10C1800A7C4E5 /* SPRandom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRandom.swift; sourceTree = "<group>"; };
+		F46AC2AD1EA10C1800A7C4E5 /* SPDialogSwipeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDialogSwipeController.swift; sourceTree = "<group>"; };
+		F46AC2AE1EA10C1800A7C4E5 /* SPExtenshionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPExtenshionViewController.swift; sourceTree = "<group>"; };
+		F46AC2AF1EA10C1800A7C4E5 /* SPGradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPGradientViewController.swift; sourceTree = "<group>"; };
+		F46AC2B01EA10C1800A7C4E5 /* SPPageItemsScallingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPageItemsScallingViewController.swift; sourceTree = "<group>"; };
+		F46AC2B11EA10C1800A7C4E5 /* SPParalaxTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPParalaxTableViewController.swift; sourceTree = "<group>"; };
+		F46AC2B41EA10C1800A7C4E5 /* SPIconsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPIconsButton.swift; sourceTree = "<group>"; };
+		F46AC2B51EA10C1800A7C4E5 /* SPLinesCircleButtonsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLinesCircleButtonsView.swift; sourceTree = "<group>"; };
+		F46AC2B61EA10C1800A7C4E5 /* SPRoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRoundButton.swift; sourceTree = "<group>"; };
+		F46AC2B91EA10C1800A7C4E5 /* SPSegmentControllCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSegmentControllCell.swift; sourceTree = "<group>"; };
+		F46AC2BA1EA10C1800A7C4E5 /* SPSegmentControlProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSegmentControlProtocol.swift; sourceTree = "<group>"; };
+		F46AC2BB1EA10C1800A7C4E5 /* SPSegmentControlStyleProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSegmentControlStyleProtocol.swift; sourceTree = "<group>"; };
+		F46AC2BC1EA10C1800A7C4E5 /* SPSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSegmentedControl.swift; sourceTree = "<group>"; };
+		F46AC2C01EA10C1800A7C4E5 /* SPCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCollectionViewCell.swift; sourceTree = "<group>"; };
+		F46AC2C21EA10C1800A7C4E5 /* SPPageItemsScalingCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPageItemsScalingCollectionView.swift; sourceTree = "<group>"; };
+		F46AC2C41EA10C1800A7C4E5 /* SPPageItemsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPageItemsCollectionViewLayout.swift; sourceTree = "<group>"; };
+		F46AC2C51EA10C1800A7C4E5 /* SPPageItemsScalingCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPageItemsScalingCollectionLayout.swift; sourceTree = "<group>"; };
+		F46AC2C71EA10C1800A7C4E5 /* SPRhombusPatternView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRhombusPatternView.swift; sourceTree = "<group>"; };
+		F46AC2CA1EA10C1800A7C4E5 /* SPParallaxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPParallaxTableViewCell.swift; sourceTree = "<group>"; };
+		F46AC2CC1EA10C1800A7C4E5 /* SPAligmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAligmentView.swift; sourceTree = "<group>"; };
+		F46AC2CD1EA10C1800A7C4E5 /* SPBannerWithTitlesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBannerWithTitlesView.swift; sourceTree = "<group>"; };
+		F46AC2CE1EA10C1800A7C4E5 /* SPBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBlurView.swift; sourceTree = "<group>"; };
+		F46AC2CF1EA10C1800A7C4E5 /* SPGradeWithBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPGradeWithBlurView.swift; sourceTree = "<group>"; };
+		F46AC2D01EA10C1800A7C4E5 /* SPGradientGradeWithBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPGradientGradeWithBlurView.swift; sourceTree = "<group>"; };
+		F46AC2D11EA10C1800A7C4E5 /* SPGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPGradientView.swift; sourceTree = "<group>"; };
+		F46AC2D21EA10C1800A7C4E5 /* SPLabelWithSubLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLabelWithSubLabel.swift; sourceTree = "<group>"; };
+		F46AC2D31EA10C1800A7C4E5 /* SPPatternView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPatternView.swift; sourceTree = "<group>"; };
+		F46AC2D41EA10C1800A7C4E5 /* SPShadowWithMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPShadowWithMaskView.swift; sourceTree = "<group>"; };
+		F46AC2D51EA10C1800A7C4E5 /* SPUILabelExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUILabelExtenshion.swift; sourceTree = "<group>"; };
+		F46AC2D61EA10C1800A7C4E5 /* SPUIViewExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIViewExtenshion.swift; sourceTree = "<group>"; };
+		F46AC2DA1EA10C1800A7C4E5 /* SPBezierPathFigureIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBezierPathFigureIcons.swift; sourceTree = "<group>"; };
+		F46AC2DC1EA10C1800A7C4E5 /* SPBezierPathFigureLogos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBezierPathFigureLogos.swift; sourceTree = "<group>"; };
+		F46AC2DE1EA10C1800A7C4E5 /* SPBezierPathFigurePatterns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBezierPathFigurePatterns.swift; sourceTree = "<group>"; };
+		F46AC2DF1EA10C1800A7C4E5 /* SPBezierPathFigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBezierPathFigure.swift; sourceTree = "<group>"; };
+		F46AC2E11EA10C1800A7C4E5 /* SPStrideableExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPStrideableExtenshion.swift; sourceTree = "<group>"; };
+		F46AC2E31EA10C1800A7C4E5 /* SPSpotlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSpotlight.swift; sourceTree = "<group>"; };
 		F4BF85831E56274E007A01E8 /* SPRequestPermission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPRequestPermission.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BF85861E56274E007A01E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4BF85881E56274E007A01E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -203,573 +203,573 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F492EAE61E993F2C00346448 /* sparrow */ = {
+		F46AC2531EA10C1800A7C4E5 /* sparrow */ = {
 			isa = PBXGroup;
 			children = (
-				F492EAE71E993F2C00346448 /* animation */,
-				F492EAEC1E993F2C00346448 /* array */,
-				F492EAEE1E993F2C00346448 /* audio */,
-				F492EAF01E993F2C00346448 /* bezierPath */,
-				F492EAF21E993F2C00346448 /* color */,
-				F492EAF41E993F2C00346448 /* constraints */,
-				F492EAF71E993F2C00346448 /* delay */,
-				F492EAF91E993F2C00346448 /* device */,
-				F492EAFD1E993F2C00346448 /* fonts */,
-				F492EAFF1E993F2C00346448 /* image */,
-				F492EB011E993F2C00346448 /* internetConnection */,
-				F492EB031E993F2C00346448 /* launch */,
-				F492EB0A1E993F2C00346448 /* layout */,
-				F492EB0C1E993F2C00346448 /* modules */,
-				F492EB3C1E993F2C00346448 /* random */,
-				F492EB3E1E993F2C00346448 /* ui */,
-				F492EB6A1E993F2C00346448 /* ui-elements */,
-				F492EB731E993F2C00346448 /* value */,
-				F492EB751E993F2C00346448 /* сore-spotlight */,
+				F46AC2541EA10C1800A7C4E5 /* animation */,
+				F46AC2591EA10C1800A7C4E5 /* array */,
+				F46AC25B1EA10C1800A7C4E5 /* audio */,
+				F46AC25D1EA10C1800A7C4E5 /* bezierPath */,
+				F46AC25F1EA10C1800A7C4E5 /* color */,
+				F46AC2611EA10C1800A7C4E5 /* constraints */,
+				F46AC2641EA10C1800A7C4E5 /* delay */,
+				F46AC2661EA10C1800A7C4E5 /* device */,
+				F46AC26A1EA10C1800A7C4E5 /* fonts */,
+				F46AC26C1EA10C1800A7C4E5 /* image */,
+				F46AC26E1EA10C1800A7C4E5 /* internetConnection */,
+				F46AC2701EA10C1800A7C4E5 /* launch */,
+				F46AC2771EA10C1800A7C4E5 /* layout */,
+				F46AC2791EA10C1800A7C4E5 /* modules */,
+				F46AC2A91EA10C1800A7C4E5 /* random */,
+				F46AC2AB1EA10C1800A7C4E5 /* ui */,
+				F46AC2D71EA10C1800A7C4E5 /* ui-elements */,
+				F46AC2E01EA10C1800A7C4E5 /* value */,
+				F46AC2E21EA10C1800A7C4E5 /* сore-spotlight */,
 			);
 			path = sparrow;
 			sourceTree = "<group>";
 		};
-		F492EAE71E993F2C00346448 /* animation */ = {
+		F46AC2541EA10C1800A7C4E5 /* animation */ = {
 			isa = PBXGroup;
 			children = (
-				F492EAE81E993F2C00346448 /* SPAnimation.swift */,
-				F492EAE91E993F2C00346448 /* SPAnimationAlpha.swift */,
-				F492EAEA1E993F2C00346448 /* SPAnimationSpring.swift */,
-				F492EAEB1E993F2C00346448 /* SPAnimationUpward.swift */,
+				F46AC2551EA10C1800A7C4E5 /* SPAnimation.swift */,
+				F46AC2561EA10C1800A7C4E5 /* SPAnimationAlpha.swift */,
+				F46AC2571EA10C1800A7C4E5 /* SPAnimationSpring.swift */,
+				F46AC2581EA10C1800A7C4E5 /* SPAnimationUpward.swift */,
 			);
 			path = animation;
 			sourceTree = "<group>";
 		};
-		F492EAEC1E993F2C00346448 /* array */ = {
+		F46AC2591EA10C1800A7C4E5 /* array */ = {
 			isa = PBXGroup;
 			children = (
-				F492EAED1E993F2C00346448 /* SPArrayExtenshion.swift */,
+				F46AC25A1EA10C1800A7C4E5 /* SPArrayExtenshion.swift */,
 			);
 			path = array;
 			sourceTree = "<group>";
 		};
-		F492EAEE1E993F2C00346448 /* audio */ = {
+		F46AC25B1EA10C1800A7C4E5 /* audio */ = {
 			isa = PBXGroup;
 			children = (
-				F492EAEF1E993F2C00346448 /* SPAudioPlayer.swift */,
+				F46AC25C1EA10C1800A7C4E5 /* SPAudioPlayer.swift */,
 			);
 			path = audio;
 			sourceTree = "<group>";
 		};
-		F492EAF01E993F2C00346448 /* bezierPath */ = {
+		F46AC25D1EA10C1800A7C4E5 /* bezierPath */ = {
 			isa = PBXGroup;
 			children = (
-				F492EAF11E993F2C00346448 /* SPBezierPathExtenshion.swift */,
+				F46AC25E1EA10C1800A7C4E5 /* SPBezierPathExtenshion.swift */,
 			);
 			path = bezierPath;
 			sourceTree = "<group>";
 		};
-		F492EAF21E993F2C00346448 /* color */ = {
+		F46AC25F1EA10C1800A7C4E5 /* color */ = {
 			isa = PBXGroup;
 			children = (
-				F492EAF31E993F2C00346448 /* SPUIColorExtenshion.swift */,
+				F46AC2601EA10C1800A7C4E5 /* SPUIColorExtenshion.swift */,
 			);
 			path = color;
 			sourceTree = "<group>";
 		};
-		F492EAF41E993F2C00346448 /* constraints */ = {
+		F46AC2611EA10C1800A7C4E5 /* constraints */ = {
 			isa = PBXGroup;
 			children = (
-				F492EAF51E993F2C00346448 /* NSLayoutConstraintExtenshion.swift */,
-				F492EAF61E993F2C00346448 /* SPConstraintsAssistent.swift */,
+				F46AC2621EA10C1800A7C4E5 /* NSLayoutConstraintExtenshion.swift */,
+				F46AC2631EA10C1800A7C4E5 /* SPConstraintsAssistent.swift */,
 			);
 			path = constraints;
 			sourceTree = "<group>";
 		};
-		F492EAF71E993F2C00346448 /* delay */ = {
+		F46AC2641EA10C1800A7C4E5 /* delay */ = {
 			isa = PBXGroup;
 			children = (
-				F492EAF81E993F2C00346448 /* SPDelay.swift */,
+				F46AC2651EA10C1800A7C4E5 /* SPDelay.swift */,
 			);
 			path = delay;
 			sourceTree = "<group>";
 		};
-		F492EAF91E993F2C00346448 /* device */ = {
+		F46AC2661EA10C1800A7C4E5 /* device */ = {
 			isa = PBXGroup;
 			children = (
-				F492EAFA1E993F2C00346448 /* SPDeviceOrientation.swift */,
-				F492EAFB1E993F2C00346448 /* SPUIDeviceExtenshion.swift */,
-				F492EAFC1E993F2C00346448 /* SPUIScreenExtenshion.swift */,
+				F46AC2671EA10C1800A7C4E5 /* SPDeviceOrientation.swift */,
+				F46AC2681EA10C1800A7C4E5 /* SPUIDeviceExtenshion.swift */,
+				F46AC2691EA10C1800A7C4E5 /* SPUIScreenExtenshion.swift */,
 			);
 			path = device;
 			sourceTree = "<group>";
 		};
-		F492EAFD1E993F2C00346448 /* fonts */ = {
+		F46AC26A1EA10C1800A7C4E5 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				F492EAFE1E993F2C00346448 /* SPUIFontExtenshion.swift */,
+				F46AC26B1EA10C1800A7C4E5 /* SPUIFontExtenshion.swift */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
 		};
-		F492EAFF1E993F2C00346448 /* image */ = {
+		F46AC26C1EA10C1800A7C4E5 /* image */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB001E993F2C00346448 /* SPUIImageExtenshion.swift */,
+				F46AC26D1EA10C1800A7C4E5 /* SPUIImageExtenshion.swift */,
 			);
 			path = image;
 			sourceTree = "<group>";
 		};
-		F492EB011E993F2C00346448 /* internetConnection */ = {
+		F46AC26E1EA10C1800A7C4E5 /* internetConnection */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB021E993F2C00346448 /* SPInternetConnection.swift */,
+				F46AC26F1EA10C1800A7C4E5 /* SPInternetConnection.swift */,
 			);
 			path = internetConnection;
 			sourceTree = "<group>";
 		};
-		F492EB031E993F2C00346448 /* launch */ = {
+		F46AC2701EA10C1800A7C4E5 /* launch */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB041E993F2C00346448 /* animation */,
+				F46AC2711EA10C1800A7C4E5 /* animation */,
 			);
 			path = launch;
 			sourceTree = "<group>";
 		};
-		F492EB041E993F2C00346448 /* animation */ = {
+		F46AC2711EA10C1800A7C4E5 /* animation */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB051E993F2C00346448 /* asTwitter */,
-				F492EB071E993F2C00346448 /* slide */,
-				F492EB091E993F2C00346448 /* SPLaunchAnimation.swift */,
+				F46AC2721EA10C1800A7C4E5 /* asTwitter */,
+				F46AC2741EA10C1800A7C4E5 /* slide */,
+				F46AC2761EA10C1800A7C4E5 /* SPLaunchAnimation.swift */,
 			);
 			path = animation;
 			sourceTree = "<group>";
 		};
-		F492EB051E993F2C00346448 /* asTwitter */ = {
+		F46AC2721EA10C1800A7C4E5 /* asTwitter */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB061E993F2C00346448 /* SPLaunchAnimationTwitterExtenshion.swift */,
+				F46AC2731EA10C1800A7C4E5 /* SPLaunchAnimationTwitterExtenshion.swift */,
 			);
 			path = asTwitter;
 			sourceTree = "<group>";
 		};
-		F492EB071E993F2C00346448 /* slide */ = {
+		F46AC2741EA10C1800A7C4E5 /* slide */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB081E993F2C00346448 /* SPLaunchAnimationSlideExtenshion.swift */,
+				F46AC2751EA10C1800A7C4E5 /* SPLaunchAnimationSlideExtenshion.swift */,
 			);
 			path = slide;
 			sourceTree = "<group>";
 		};
-		F492EB0A1E993F2C00346448 /* layout */ = {
+		F46AC2771EA10C1800A7C4E5 /* layout */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB0B1E993F2C00346448 /* SPLayout.swift */,
+				F46AC2781EA10C1800A7C4E5 /* SPLayout.swift */,
 			);
 			path = layout;
 			sourceTree = "<group>";
 		};
-		F492EB0C1E993F2C00346448 /* modules */ = {
+		F46AC2791EA10C1800A7C4E5 /* modules */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB0D1E993F2C00346448 /* request-permissions */,
+				F46AC27A1EA10C1800A7C4E5 /* request-permissions */,
 			);
 			path = modules;
 			sourceTree = "<group>";
 		};
-		F492EB0D1E993F2C00346448 /* request-permissions */ = {
+		F46AC27A1EA10C1800A7C4E5 /* request-permissions */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB0E1E993F2C00346448 /* data */,
-				F492EB141E993F2C00346448 /* managers */,
-				F492EB351E993F2C00346448 /* protocols */,
-				F492EB391E993F2C00346448 /* readme */,
-				F492EB3B1E993F2C00346448 /* SPRequestPermissionAssistant.swift */,
+				F46AC27B1EA10C1800A7C4E5 /* data */,
+				F46AC2811EA10C1800A7C4E5 /* managers */,
+				F46AC2A21EA10C1800A7C4E5 /* protocols */,
+				F46AC2A61EA10C1800A7C4E5 /* readme */,
+				F46AC2A81EA10C1800A7C4E5 /* SPRequestPermissionAssistant.swift */,
 			);
 			path = "request-permissions";
 			sourceTree = "<group>";
 		};
-		F492EB0E1E993F2C00346448 /* data */ = {
+		F46AC27B1EA10C1800A7C4E5 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB0F1E993F2C00346448 /* localizable */,
-				F492EB101E993F2C00346448 /* SPRequestPermissionDataColors.swift */,
-				F492EB111E993F2C00346448 /* SPRequestPermissionDataFonts.swift */,
-				F492EB121E993F2C00346448 /* SPRequestPermissionDataTexts.swift */,
-				F492EB131E993F2C00346448 /* SPRequestPermissionDataViews.swift */,
+				F46AC27C1EA10C1800A7C4E5 /* localizable */,
+				F46AC27D1EA10C1800A7C4E5 /* SPRequestPermissionDataColors.swift */,
+				F46AC27E1EA10C1800A7C4E5 /* SPRequestPermissionDataFonts.swift */,
+				F46AC27F1EA10C1800A7C4E5 /* SPRequestPermissionDataTexts.swift */,
+				F46AC2801EA10C1800A7C4E5 /* SPRequestPermissionDataViews.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
 		};
-		F492EB0F1E993F2C00346448 /* localizable */ = {
+		F46AC27C1EA10C1800A7C4E5 /* localizable */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = localizable;
 			sourceTree = "<group>";
 		};
-		F492EB141E993F2C00346448 /* managers */ = {
+		F46AC2811EA10C1800A7C4E5 /* managers */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB151E993F2C00346448 /* permissions */,
-				F492EB1E1E993F2C00346448 /* presenters */,
+				F46AC2821EA10C1800A7C4E5 /* permissions */,
+				F46AC28B1EA10C1800A7C4E5 /* presenters */,
 			);
 			path = managers;
 			sourceTree = "<group>";
 		};
-		F492EB151E993F2C00346448 /* permissions */ = {
+		F46AC2821EA10C1800A7C4E5 /* permissions */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB161E993F2C00346448 /* base */,
-				F492EB1C1E993F2C00346448 /* SPPermissionsManagers.swift */,
-				F492EB1D1E993F2C00346448 /* SPRequestPermissionManagerInterface.swift */,
+				F46AC2831EA10C1800A7C4E5 /* base */,
+				F46AC2891EA10C1800A7C4E5 /* SPPermissionsManagers.swift */,
+				F46AC28A1EA10C1800A7C4E5 /* SPRequestPermissionManagerInterface.swift */,
 			);
 			path = permissions;
 			sourceTree = "<group>";
 		};
-		F492EB161E993F2C00346448 /* base */ = {
+		F46AC2831EA10C1800A7C4E5 /* base */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB171E993F2C00346448 /* handlers */,
-				F492EB1A1E993F2C00346448 /* SPPermissions.swift */,
-				F492EB1B1E993F2C00346448 /* SPPermissionsManagerBase.swift */,
+				F46AC2841EA10C1800A7C4E5 /* handlers */,
+				F46AC2871EA10C1800A7C4E5 /* SPPermissions.swift */,
+				F46AC2881EA10C1800A7C4E5 /* SPPermissionsManagerBase.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
 		};
-		F492EB171E993F2C00346448 /* handlers */ = {
+		F46AC2841EA10C1800A7C4E5 /* handlers */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB181E993F2C00346448 /* SPRequestPermissionAuthorizationHandlerInterface.swift */,
-				F492EB191E993F2C00346448 /* SPRequestPermissionLocationHandler.swift */,
+				F46AC2851EA10C1800A7C4E5 /* SPRequestPermissionAuthorizationHandlerInterface.swift */,
+				F46AC2861EA10C1800A7C4E5 /* SPRequestPermissionLocationHandler.swift */,
 			);
 			path = handlers;
 			sourceTree = "<group>";
 		};
-		F492EB1E1E993F2C00346448 /* presenters */ = {
+		F46AC28B1EA10C1800A7C4E5 /* presenters */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB1F1E993F2C00346448 /* banner */,
-				F492EB201E993F2C00346448 /* dialog */,
-				F492EB2D1E993F2C00346448 /* native */,
-				F492EB2F1E993F2C00346448 /* SPRequestPermissionPresenterInterface.swift */,
-				F492EB301E993F2C00346448 /* SPRequestPermissionPresenters.swift */,
-				F492EB311E993F2C00346448 /* universal */,
+				F46AC28C1EA10C1800A7C4E5 /* banner */,
+				F46AC28D1EA10C1800A7C4E5 /* dialog */,
+				F46AC29A1EA10C1800A7C4E5 /* native */,
+				F46AC29C1EA10C1800A7C4E5 /* SPRequestPermissionPresenterInterface.swift */,
+				F46AC29D1EA10C1800A7C4E5 /* SPRequestPermissionPresenters.swift */,
+				F46AC29E1EA10C1800A7C4E5 /* universal */,
 			);
 			path = presenters;
 			sourceTree = "<group>";
 		};
-		F492EB1F1E993F2C00346448 /* banner */ = {
+		F46AC28C1EA10C1800A7C4E5 /* banner */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = banner;
 			sourceTree = "<group>";
 		};
-		F492EB201E993F2C00346448 /* dialog */ = {
+		F46AC28D1EA10C1800A7C4E5 /* dialog */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB211E993F2C00346448 /* interactive */,
+				F46AC28E1EA10C1800A7C4E5 /* interactive */,
 			);
 			path = dialog;
 			sourceTree = "<group>";
 		};
-		F492EB211E993F2C00346448 /* interactive */ = {
+		F46AC28E1EA10C1800A7C4E5 /* interactive */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB221E993F2C00346448 /* controller */,
-				F492EB241E993F2C00346448 /* data-source */,
-				F492EB261E993F2C00346448 /* protocols */,
-				F492EB2A1E993F2C00346448 /* SPrequsetPermissionDialogInteractivePresenter.swift */,
-				F492EB2B1E993F2C00346448 /* ui */,
+				F46AC28F1EA10C1800A7C4E5 /* controller */,
+				F46AC2911EA10C1800A7C4E5 /* data-source */,
+				F46AC2931EA10C1800A7C4E5 /* protocols */,
+				F46AC2971EA10C1800A7C4E5 /* SPrequsetPermissionDialogInteractivePresenter.swift */,
+				F46AC2981EA10C1800A7C4E5 /* ui */,
 			);
 			path = interactive;
 			sourceTree = "<group>";
 		};
-		F492EB221E993F2C00346448 /* controller */ = {
+		F46AC28F1EA10C1800A7C4E5 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB231E993F2C00346448 /* SPRequestPermissionDialogSwipeViewController.swift */,
+				F46AC2901EA10C1800A7C4E5 /* SPRequestPermissionDialogSwipeViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
 		};
-		F492EB241E993F2C00346448 /* data-source */ = {
+		F46AC2911EA10C1800A7C4E5 /* data-source */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB251E993F2C00346448 /* SPRequestPermissionDialogDataManagerBase.swift */,
+				F46AC2921EA10C1800A7C4E5 /* SPRequestPermissionDialogDataManagerBase.swift */,
 			);
 			path = "data-source";
 			sourceTree = "<group>";
 		};
-		F492EB261E993F2C00346448 /* protocols */ = {
+		F46AC2931EA10C1800A7C4E5 /* protocols */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB271E993F2C00346448 /* SPRequestPermissionDialogInteractiveDataSourceInterface.swift */,
-				F492EB281E993F2C00346448 /* SPRequestPermissionDialogInteractivePresenterDelegate.swift */,
-				F492EB291E993F2C00346448 /* SPRequestPermissionDialogInteractiveViewControllerInterface.swift */,
+				F46AC2941EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveDataSourceInterface.swift */,
+				F46AC2951EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractivePresenterDelegate.swift */,
+				F46AC2961EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveViewControllerInterface.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
 		};
-		F492EB2B1E993F2C00346448 /* ui */ = {
+		F46AC2981EA10C1800A7C4E5 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB2C1E993F2C00346448 /* SPRequestPermissionDialogInteractiveView.swift */,
+				F46AC2991EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
 		};
-		F492EB2D1E993F2C00346448 /* native */ = {
+		F46AC29A1EA10C1800A7C4E5 /* native */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB2E1E993F2C00346448 /* SPRequestPermissionNativePresenter.swift */,
+				F46AC29B1EA10C1800A7C4E5 /* SPRequestPermissionNativePresenter.swift */,
 			);
 			path = native;
 			sourceTree = "<group>";
 		};
-		F492EB311E993F2C00346448 /* universal */ = {
+		F46AC29E1EA10C1800A7C4E5 /* universal */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB321E993F2C00346448 /* controls */,
+				F46AC29F1EA10C1800A7C4E5 /* controls */,
 			);
 			path = universal;
 			sourceTree = "<group>";
 		};
-		F492EB321E993F2C00346448 /* controls */ = {
+		F46AC29F1EA10C1800A7C4E5 /* controls */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB331E993F2C00346448 /* SPRequestPermissionTwiceControl.swift */,
-				F492EB341E993F2C00346448 /* SPRequestPermissionTwiceControlBase.swift */,
+				F46AC2A01EA10C1800A7C4E5 /* SPRequestPermissionTwiceControl.swift */,
+				F46AC2A11EA10C1800A7C4E5 /* SPRequestPermissionTwiceControlBase.swift */,
 			);
 			path = controls;
 			sourceTree = "<group>";
 		};
-		F492EB351E993F2C00346448 /* protocols */ = {
+		F46AC2A21EA10C1800A7C4E5 /* protocols */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB361E993F2C00346448 /* SPRequestPermissionAssistantDelegate.swift */,
-				F492EB371E993F2C00346448 /* SPRequestPermissionAssistantInterface.swift */,
-				F492EB381E993F2C00346448 /* SPRequestPermissionEventsDelegate.swift */,
+				F46AC2A31EA10C1800A7C4E5 /* SPRequestPermissionAssistantDelegate.swift */,
+				F46AC2A41EA10C1800A7C4E5 /* SPRequestPermissionAssistantInterface.swift */,
+				F46AC2A51EA10C1800A7C4E5 /* SPRequestPermissionEventsDelegate.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
 		};
-		F492EB391E993F2C00346448 /* readme */ = {
+		F46AC2A61EA10C1800A7C4E5 /* readme */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB3A1E993F2C00346448 /* plist_flags.swift */,
+				F46AC2A71EA10C1800A7C4E5 /* plist_flags.swift */,
 			);
 			path = readme;
 			sourceTree = "<group>";
 		};
-		F492EB3C1E993F2C00346448 /* random */ = {
+		F46AC2A91EA10C1800A7C4E5 /* random */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB3D1E993F2C00346448 /* SPRandom.swift */,
+				F46AC2AA1EA10C1800A7C4E5 /* SPRandom.swift */,
 			);
 			path = random;
 			sourceTree = "<group>";
 		};
-		F492EB3E1E993F2C00346448 /* ui */ = {
+		F46AC2AB1EA10C1800A7C4E5 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB3F1E993F2C00346448 /* controllers */,
-				F492EB451E993F2C00346448 /* controls */,
-				F492EB501E993F2C00346448 /* views */,
+				F46AC2AC1EA10C1800A7C4E5 /* controllers */,
+				F46AC2B21EA10C1800A7C4E5 /* controls */,
+				F46AC2BD1EA10C1800A7C4E5 /* views */,
 			);
 			path = ui;
 			sourceTree = "<group>";
 		};
-		F492EB3F1E993F2C00346448 /* controllers */ = {
+		F46AC2AC1EA10C1800A7C4E5 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB401E993F2C00346448 /* SPDialogSwipeController.swift */,
-				F492EB411E993F2C00346448 /* SPExtenshionViewController.swift */,
-				F492EB421E993F2C00346448 /* SPGradientViewController.swift */,
-				F492EB431E993F2C00346448 /* SPPageItemsScallingViewController.swift */,
-				F492EB441E993F2C00346448 /* SPParalaxTableViewController.swift */,
+				F46AC2AD1EA10C1800A7C4E5 /* SPDialogSwipeController.swift */,
+				F46AC2AE1EA10C1800A7C4E5 /* SPExtenshionViewController.swift */,
+				F46AC2AF1EA10C1800A7C4E5 /* SPGradientViewController.swift */,
+				F46AC2B01EA10C1800A7C4E5 /* SPPageItemsScallingViewController.swift */,
+				F46AC2B11EA10C1800A7C4E5 /* SPParalaxTableViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
 		};
-		F492EB451E993F2C00346448 /* controls */ = {
+		F46AC2B21EA10C1800A7C4E5 /* controls */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB461E993F2C00346448 /* buttons */,
-				F492EB4A1E993F2C00346448 /* controls */,
-				F492EB4B1E993F2C00346448 /* segmentedControl */,
+				F46AC2B31EA10C1800A7C4E5 /* buttons */,
+				F46AC2B71EA10C1800A7C4E5 /* controls */,
+				F46AC2B81EA10C1800A7C4E5 /* segmentedControl */,
 			);
 			path = controls;
 			sourceTree = "<group>";
 		};
-		F492EB461E993F2C00346448 /* buttons */ = {
+		F46AC2B31EA10C1800A7C4E5 /* buttons */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB471E993F2C00346448 /* SPIconsButton.swift */,
-				F492EB481E993F2C00346448 /* SPLinesCircleButtonsView.swift */,
-				F492EB491E993F2C00346448 /* SPRoundButton.swift */,
+				F46AC2B41EA10C1800A7C4E5 /* SPIconsButton.swift */,
+				F46AC2B51EA10C1800A7C4E5 /* SPLinesCircleButtonsView.swift */,
+				F46AC2B61EA10C1800A7C4E5 /* SPRoundButton.swift */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
 		};
-		F492EB4A1E993F2C00346448 /* controls */ = {
+		F46AC2B71EA10C1800A7C4E5 /* controls */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = controls;
 			sourceTree = "<group>";
 		};
-		F492EB4B1E993F2C00346448 /* segmentedControl */ = {
+		F46AC2B81EA10C1800A7C4E5 /* segmentedControl */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB4C1E993F2C00346448 /* SPSegmentControllCell.swift */,
-				F492EB4D1E993F2C00346448 /* SPSegmentControlProtocol.swift */,
-				F492EB4E1E993F2C00346448 /* SPSegmentControlStyleProtocol.swift */,
-				F492EB4F1E993F2C00346448 /* SPSegmentedControl.swift */,
+				F46AC2B91EA10C1800A7C4E5 /* SPSegmentControllCell.swift */,
+				F46AC2BA1EA10C1800A7C4E5 /* SPSegmentControlProtocol.swift */,
+				F46AC2BB1EA10C1800A7C4E5 /* SPSegmentControlStyleProtocol.swift */,
+				F46AC2BC1EA10C1800A7C4E5 /* SPSegmentedControl.swift */,
 			);
 			path = segmentedControl;
 			sourceTree = "<group>";
 		};
-		F492EB501E993F2C00346448 /* views */ = {
+		F46AC2BD1EA10C1800A7C4E5 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB511E993F2C00346448 /* collectionViews */,
-				F492EB591E993F2C00346448 /* patternViews */,
-				F492EB5B1E993F2C00346448 /* tableViews */,
-				F492EB5E1E993F2C00346448 /* views */,
+				F46AC2BE1EA10C1800A7C4E5 /* collectionViews */,
+				F46AC2C61EA10C1800A7C4E5 /* patternViews */,
+				F46AC2C81EA10C1800A7C4E5 /* tableViews */,
+				F46AC2CB1EA10C1800A7C4E5 /* views */,
 			);
 			path = views;
 			sourceTree = "<group>";
 		};
-		F492EB511E993F2C00346448 /* collectionViews */ = {
+		F46AC2BE1EA10C1800A7C4E5 /* collectionViews */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB521E993F2C00346448 /* cells */,
-				F492EB541E993F2C00346448 /* collectionViews */,
-				F492EB561E993F2C00346448 /* layouts */,
+				F46AC2BF1EA10C1800A7C4E5 /* cells */,
+				F46AC2C11EA10C1800A7C4E5 /* collectionViews */,
+				F46AC2C31EA10C1800A7C4E5 /* layouts */,
 			);
 			path = collectionViews;
 			sourceTree = "<group>";
 		};
-		F492EB521E993F2C00346448 /* cells */ = {
+		F46AC2BF1EA10C1800A7C4E5 /* cells */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB531E993F2C00346448 /* SPCollectionViewCell.swift */,
+				F46AC2C01EA10C1800A7C4E5 /* SPCollectionViewCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
 		};
-		F492EB541E993F2C00346448 /* collectionViews */ = {
+		F46AC2C11EA10C1800A7C4E5 /* collectionViews */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB551E993F2C00346448 /* SPPageItemsScalingCollectionView.swift */,
+				F46AC2C21EA10C1800A7C4E5 /* SPPageItemsScalingCollectionView.swift */,
 			);
 			path = collectionViews;
 			sourceTree = "<group>";
 		};
-		F492EB561E993F2C00346448 /* layouts */ = {
+		F46AC2C31EA10C1800A7C4E5 /* layouts */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB571E993F2C00346448 /* SPPageItemsCollectionViewLayout.swift */,
-				F492EB581E993F2C00346448 /* SPPageItemsScalingCollectionLayout.swift */,
+				F46AC2C41EA10C1800A7C4E5 /* SPPageItemsCollectionViewLayout.swift */,
+				F46AC2C51EA10C1800A7C4E5 /* SPPageItemsScalingCollectionLayout.swift */,
 			);
 			path = layouts;
 			sourceTree = "<group>";
 		};
-		F492EB591E993F2C00346448 /* patternViews */ = {
+		F46AC2C61EA10C1800A7C4E5 /* patternViews */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB5A1E993F2C00346448 /* SPRhombusPatternView.swift */,
+				F46AC2C71EA10C1800A7C4E5 /* SPRhombusPatternView.swift */,
 			);
 			path = patternViews;
 			sourceTree = "<group>";
 		};
-		F492EB5B1E993F2C00346448 /* tableViews */ = {
+		F46AC2C81EA10C1800A7C4E5 /* tableViews */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB5C1E993F2C00346448 /* cell */,
+				F46AC2C91EA10C1800A7C4E5 /* cell */,
 			);
 			path = tableViews;
 			sourceTree = "<group>";
 		};
-		F492EB5C1E993F2C00346448 /* cell */ = {
+		F46AC2C91EA10C1800A7C4E5 /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB5D1E993F2C00346448 /* SPParallaxTableViewCell.swift */,
+				F46AC2CA1EA10C1800A7C4E5 /* SPParallaxTableViewCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
 		};
-		F492EB5E1E993F2C00346448 /* views */ = {
+		F46AC2CB1EA10C1800A7C4E5 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB5F1E993F2C00346448 /* SPAligmentView.swift */,
-				F492EB601E993F2C00346448 /* SPBannerWithTitlesView.swift */,
-				F492EB611E993F2C00346448 /* SPBlurView.swift */,
-				F492EB621E993F2C00346448 /* SPGradeWithBlurView.swift */,
-				F492EB631E993F2C00346448 /* SPGradientView.swift */,
-				F492EB641E993F2C00346448 /* SPIconView.swift */,
-				F492EB651E993F2C00346448 /* SPLabelWithSubLabel.swift */,
-				F492EB661E993F2C00346448 /* SPPatternView.swift */,
-				F492EB671E993F2C00346448 /* SPShadowWithMaskView.swift */,
-				F492EB681E993F2C00346448 /* SPUILabelExtenshion.swift */,
-				F492EB691E993F2C00346448 /* SPUIViewExtenshion.swift */,
+				F46AC2CC1EA10C1800A7C4E5 /* SPAligmentView.swift */,
+				F46AC2CD1EA10C1800A7C4E5 /* SPBannerWithTitlesView.swift */,
+				F46AC2CE1EA10C1800A7C4E5 /* SPBlurView.swift */,
+				F46AC2CF1EA10C1800A7C4E5 /* SPGradeWithBlurView.swift */,
+				F46AC2D01EA10C1800A7C4E5 /* SPGradientGradeWithBlurView.swift */,
+				F46AC2D11EA10C1800A7C4E5 /* SPGradientView.swift */,
+				F46AC2D21EA10C1800A7C4E5 /* SPLabelWithSubLabel.swift */,
+				F46AC2D31EA10C1800A7C4E5 /* SPPatternView.swift */,
+				F46AC2D41EA10C1800A7C4E5 /* SPShadowWithMaskView.swift */,
+				F46AC2D51EA10C1800A7C4E5 /* SPUILabelExtenshion.swift */,
+				F46AC2D61EA10C1800A7C4E5 /* SPUIViewExtenshion.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
 		};
-		F492EB6A1E993F2C00346448 /* ui-elements */ = {
+		F46AC2D71EA10C1800A7C4E5 /* ui-elements */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB6B1E993F2C00346448 /* bezier-paths */,
+				F46AC2D81EA10C1800A7C4E5 /* bezier-paths */,
 			);
 			path = "ui-elements";
 			sourceTree = "<group>";
 		};
-		F492EB6B1E993F2C00346448 /* bezier-paths */ = {
+		F46AC2D81EA10C1800A7C4E5 /* bezier-paths */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB6C1E993F2C00346448 /* icons */,
-				F492EB6E1E993F2C00346448 /* logos */,
-				F492EB701E993F2C00346448 /* pattern */,
-				F492EB721E993F2C00346448 /* SPBezierPathFigure.swift */,
+				F46AC2D91EA10C1800A7C4E5 /* icons */,
+				F46AC2DB1EA10C1800A7C4E5 /* logos */,
+				F46AC2DD1EA10C1800A7C4E5 /* pattern */,
+				F46AC2DF1EA10C1800A7C4E5 /* SPBezierPathFigure.swift */,
 			);
 			path = "bezier-paths";
 			sourceTree = "<group>";
 		};
-		F492EB6C1E993F2C00346448 /* icons */ = {
+		F46AC2D91EA10C1800A7C4E5 /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB6D1E993F2C00346448 /* SPBezierPathFigureIcons.swift */,
+				F46AC2DA1EA10C1800A7C4E5 /* SPBezierPathFigureIcons.swift */,
 			);
 			path = icons;
 			sourceTree = "<group>";
 		};
-		F492EB6E1E993F2C00346448 /* logos */ = {
+		F46AC2DB1EA10C1800A7C4E5 /* logos */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB6F1E993F2C00346448 /* SPBezierPathFigureLogos.swift */,
+				F46AC2DC1EA10C1800A7C4E5 /* SPBezierPathFigureLogos.swift */,
 			);
 			path = logos;
 			sourceTree = "<group>";
 		};
-		F492EB701E993F2C00346448 /* pattern */ = {
+		F46AC2DD1EA10C1800A7C4E5 /* pattern */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB711E993F2C00346448 /* SPBezierPathFigurePatterns.swift */,
+				F46AC2DE1EA10C1800A7C4E5 /* SPBezierPathFigurePatterns.swift */,
 			);
 			path = pattern;
 			sourceTree = "<group>";
 		};
-		F492EB731E993F2C00346448 /* value */ = {
+		F46AC2E01EA10C1800A7C4E5 /* value */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB741E993F2C00346448 /* SPStrideableExtenshion.swift */,
+				F46AC2E11EA10C1800A7C4E5 /* SPStrideableExtenshion.swift */,
 			);
 			path = value;
 			sourceTree = "<group>";
 		};
-		F492EB751E993F2C00346448 /* сore-spotlight */ = {
+		F46AC2E21EA10C1800A7C4E5 /* сore-spotlight */ = {
 			isa = PBXGroup;
 			children = (
-				F492EB761E993F2C00346448 /* SPSpotlight.swift */,
+				F46AC2E31EA10C1800A7C4E5 /* SPSpotlight.swift */,
 			);
 			path = "сore-spotlight";
 			sourceTree = "<group>";
@@ -793,7 +793,7 @@
 		F4BF85851E56274E007A01E8 /* SPRequestPermission */ = {
 			isa = PBXGroup;
 			children = (
-				F492EAE61E993F2C00346448 /* sparrow */,
+				F46AC2531EA10C1800A7C4E5 /* sparrow */,
 				F4BF85861E56274E007A01E8 /* AppDelegate.swift */,
 				F4BF85881E56274E007A01E8 /* ViewController.swift */,
 				F4BF858A1E56274E007A01E8 /* Main.storyboard */,
@@ -878,92 +878,92 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F492EBA51E993F2C00346448 /* plist_flags.swift in Sources */,
-				F492EBB61E993F2C00346448 /* SPPageItemsCollectionViewLayout.swift in Sources */,
-				F492EB851E993F2C00346448 /* SPUIFontExtenshion.swift in Sources */,
-				F492EB801E993F2C00346448 /* SPConstraintsAssistent.swift in Sources */,
-				F492EBA01E993F2C00346448 /* SPRequestPermissionTwiceControl.swift in Sources */,
-				F492EB8F1E993F2C00346448 /* SPRequestPermissionDataViews.swift in Sources */,
-				F492EBC51E993F2D00346448 /* SPBezierPathFigureIcons.swift in Sources */,
-				F492EB941E993F2C00346448 /* SPPermissionsManagers.swift in Sources */,
-				F492EB7C1E993F2C00346448 /* SPAudioPlayer.swift in Sources */,
-				F492EBBD1E993F2C00346448 /* SPGradeWithBlurView.swift in Sources */,
-				F492EBC01E993F2C00346448 /* SPLabelWithSubLabel.swift in Sources */,
+				F46AC3121EA10C1800A7C4E5 /* plist_flags.swift in Sources */,
+				F46AC3231EA10C1800A7C4E5 /* SPPageItemsCollectionViewLayout.swift in Sources */,
+				F46AC2F21EA10C1800A7C4E5 /* SPUIFontExtenshion.swift in Sources */,
+				F46AC2ED1EA10C1800A7C4E5 /* SPConstraintsAssistent.swift in Sources */,
+				F46AC30D1EA10C1800A7C4E5 /* SPRequestPermissionTwiceControl.swift in Sources */,
+				F46AC2FC1EA10C1800A7C4E5 /* SPRequestPermissionDataViews.swift in Sources */,
+				F46AC3321EA10C1800A7C4E5 /* SPBezierPathFigureIcons.swift in Sources */,
+				F46AC3011EA10C1800A7C4E5 /* SPPermissionsManagers.swift in Sources */,
+				F46AC2E91EA10C1800A7C4E5 /* SPAudioPlayer.swift in Sources */,
+				F46AC32A1EA10C1800A7C4E5 /* SPGradeWithBlurView.swift in Sources */,
+				F46AC32D1EA10C1800A7C4E5 /* SPLabelWithSubLabel.swift in Sources */,
 				F4BF85891E56274E007A01E8 /* ViewController.swift in Sources */,
-				F492EBA41E993F2C00346448 /* SPRequestPermissionEventsDelegate.swift in Sources */,
-				F492EBBB1E993F2C00346448 /* SPBannerWithTitlesView.swift in Sources */,
-				F492EBA11E993F2C00346448 /* SPRequestPermissionTwiceControlBase.swift in Sources */,
-				F492EBC11E993F2C00346448 /* SPPatternView.swift in Sources */,
-				F492EBC71E993F2D00346448 /* SPBezierPathFigurePatterns.swift in Sources */,
-				F492EBC31E993F2D00346448 /* SPUILabelExtenshion.swift in Sources */,
-				F492EBB31E993F2C00346448 /* SPSegmentedControl.swift in Sources */,
-				F492EB971E993F2C00346448 /* SPRequestPermissionDialogDataManagerBase.swift in Sources */,
-				F492EB871E993F2C00346448 /* SPInternetConnection.swift in Sources */,
-				F492EBA61E993F2C00346448 /* SPRequestPermissionAssistant.swift in Sources */,
-				F492EBC41E993F2D00346448 /* SPUIViewExtenshion.swift in Sources */,
+				F46AC3111EA10C1800A7C4E5 /* SPRequestPermissionEventsDelegate.swift in Sources */,
+				F46AC3281EA10C1800A7C4E5 /* SPBannerWithTitlesView.swift in Sources */,
+				F46AC30E1EA10C1800A7C4E5 /* SPRequestPermissionTwiceControlBase.swift in Sources */,
+				F46AC32E1EA10C1800A7C4E5 /* SPPatternView.swift in Sources */,
+				F46AC3341EA10C1800A7C4E5 /* SPBezierPathFigurePatterns.swift in Sources */,
+				F46AC3301EA10C1800A7C4E5 /* SPUILabelExtenshion.swift in Sources */,
+				F46AC3201EA10C1800A7C4E5 /* SPSegmentedControl.swift in Sources */,
+				F46AC3041EA10C1800A7C4E5 /* SPRequestPermissionDialogDataManagerBase.swift in Sources */,
+				F46AC2F41EA10C1800A7C4E5 /* SPInternetConnection.swift in Sources */,
+				F46AC3131EA10C1800A7C4E5 /* SPRequestPermissionAssistant.swift in Sources */,
+				F46AC3311EA10C1800A7C4E5 /* SPUIViewExtenshion.swift in Sources */,
 				F4BF85871E56274E007A01E8 /* AppDelegate.swift in Sources */,
-				F492EB9A1E993F2C00346448 /* SPRequestPermissionDialogInteractiveViewControllerInterface.swift in Sources */,
-				F492EB7A1E993F2C00346448 /* SPAnimationUpward.swift in Sources */,
-				F492EB781E993F2C00346448 /* SPAnimationAlpha.swift in Sources */,
-				F492EB7B1E993F2C00346448 /* SPArrayExtenshion.swift in Sources */,
-				F492EBAB1E993F2C00346448 /* SPPageItemsScallingViewController.swift in Sources */,
-				F492EBA31E993F2C00346448 /* SPRequestPermissionAssistantInterface.swift in Sources */,
-				F492EB911E993F2C00346448 /* SPRequestPermissionLocationHandler.swift in Sources */,
-				F492EBB11E993F2C00346448 /* SPSegmentControlProtocol.swift in Sources */,
-				F492EB901E993F2C00346448 /* SPRequestPermissionAuthorizationHandlerInterface.swift in Sources */,
-				F492EB951E993F2C00346448 /* SPRequestPermissionManagerInterface.swift in Sources */,
-				F492EB991E993F2C00346448 /* SPRequestPermissionDialogInteractivePresenterDelegate.swift in Sources */,
-				F492EBC21E993F2C00346448 /* SPShadowWithMaskView.swift in Sources */,
-				F492EBBF1E993F2C00346448 /* SPIconView.swift in Sources */,
-				F492EB821E993F2C00346448 /* SPDeviceOrientation.swift in Sources */,
-				F492EB811E993F2C00346448 /* SPDelay.swift in Sources */,
-				F492EBBC1E993F2C00346448 /* SPBlurView.swift in Sources */,
-				F492EBC91E993F2D00346448 /* SPStrideableExtenshion.swift in Sources */,
-				F492EB891E993F2C00346448 /* SPLaunchAnimationSlideExtenshion.swift in Sources */,
-				F492EBBE1E993F2C00346448 /* SPGradientView.swift in Sources */,
-				F492EBC81E993F2D00346448 /* SPBezierPathFigure.swift in Sources */,
-				F492EB921E993F2C00346448 /* SPPermissions.swift in Sources */,
-				F492EBCA1E993F2D00346448 /* SPSpotlight.swift in Sources */,
-				F492EBAF1E993F2C00346448 /* SPRoundButton.swift in Sources */,
-				F492EB7D1E993F2C00346448 /* SPBezierPathExtenshion.swift in Sources */,
-				F492EB9E1E993F2C00346448 /* SPRequestPermissionPresenterInterface.swift in Sources */,
-				F492EB961E993F2C00346448 /* SPRequestPermissionDialogSwipeViewController.swift in Sources */,
-				F492EB9B1E993F2C00346448 /* SPrequsetPermissionDialogInteractivePresenter.swift in Sources */,
-				F492EBB01E993F2C00346448 /* SPSegmentControllCell.swift in Sources */,
-				F492EBAC1E993F2C00346448 /* SPParalaxTableViewController.swift in Sources */,
-				F492EB7E1E993F2C00346448 /* SPUIColorExtenshion.swift in Sources */,
-				F492EBB51E993F2C00346448 /* SPPageItemsScalingCollectionView.swift in Sources */,
-				F492EB881E993F2C00346448 /* SPLaunchAnimationTwitterExtenshion.swift in Sources */,
-				F492EB841E993F2C00346448 /* SPUIScreenExtenshion.swift in Sources */,
-				F492EB8B1E993F2C00346448 /* SPLayout.swift in Sources */,
-				F492EB861E993F2C00346448 /* SPUIImageExtenshion.swift in Sources */,
-				F492EB791E993F2C00346448 /* SPAnimationSpring.swift in Sources */,
-				F492EBB81E993F2C00346448 /* SPRhombusPatternView.swift in Sources */,
-				F492EB931E993F2C00346448 /* SPPermissionsManagerBase.swift in Sources */,
-				F492EBB71E993F2C00346448 /* SPPageItemsScalingCollectionLayout.swift in Sources */,
-				F492EB9C1E993F2C00346448 /* SPRequestPermissionDialogInteractiveView.swift in Sources */,
-				F492EBA71E993F2C00346448 /* SPRandom.swift in Sources */,
-				F492EB7F1E993F2C00346448 /* NSLayoutConstraintExtenshion.swift in Sources */,
-				F492EB771E993F2C00346448 /* SPAnimation.swift in Sources */,
-				F492EB8A1E993F2C00346448 /* SPLaunchAnimation.swift in Sources */,
-				F492EB8E1E993F2C00346448 /* SPRequestPermissionDataTexts.swift in Sources */,
-				F492EB831E993F2C00346448 /* SPUIDeviceExtenshion.swift in Sources */,
-				F492EBB21E993F2C00346448 /* SPSegmentControlStyleProtocol.swift in Sources */,
-				F492EBAA1E993F2C00346448 /* SPGradientViewController.swift in Sources */,
-				F492EB8D1E993F2C00346448 /* SPRequestPermissionDataFonts.swift in Sources */,
-				F492EBC61E993F2D00346448 /* SPBezierPathFigureLogos.swift in Sources */,
-				F492EB9F1E993F2C00346448 /* SPRequestPermissionPresenters.swift in Sources */,
-				F492EBAD1E993F2C00346448 /* SPIconsButton.swift in Sources */,
-				F492EBA81E993F2C00346448 /* SPDialogSwipeController.swift in Sources */,
-				F492EB8C1E993F2C00346448 /* SPRequestPermissionDataColors.swift in Sources */,
-				F492EBBA1E993F2C00346448 /* SPAligmentView.swift in Sources */,
-				F492EB981E993F2C00346448 /* SPRequestPermissionDialogInteractiveDataSourceInterface.swift in Sources */,
-				F492EB9D1E993F2C00346448 /* SPRequestPermissionNativePresenter.swift in Sources */,
-				F492EBA21E993F2C00346448 /* SPRequestPermissionAssistantDelegate.swift in Sources */,
-				F492EBA91E993F2C00346448 /* SPExtenshionViewController.swift in Sources */,
-				F492EBAE1E993F2C00346448 /* SPLinesCircleButtonsView.swift in Sources */,
-				F492EBB91E993F2C00346448 /* SPParallaxTableViewCell.swift in Sources */,
-				F492EBB41E993F2C00346448 /* SPCollectionViewCell.swift in Sources */,
+				F46AC3071EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveViewControllerInterface.swift in Sources */,
+				F46AC2E71EA10C1800A7C4E5 /* SPAnimationUpward.swift in Sources */,
+				F46AC2E51EA10C1800A7C4E5 /* SPAnimationAlpha.swift in Sources */,
+				F46AC2E81EA10C1800A7C4E5 /* SPArrayExtenshion.swift in Sources */,
+				F46AC3181EA10C1800A7C4E5 /* SPPageItemsScallingViewController.swift in Sources */,
+				F46AC3101EA10C1800A7C4E5 /* SPRequestPermissionAssistantInterface.swift in Sources */,
+				F46AC2FE1EA10C1800A7C4E5 /* SPRequestPermissionLocationHandler.swift in Sources */,
+				F46AC32C1EA10C1800A7C4E5 /* SPGradientView.swift in Sources */,
+				F46AC31E1EA10C1800A7C4E5 /* SPSegmentControlProtocol.swift in Sources */,
+				F46AC2FD1EA10C1800A7C4E5 /* SPRequestPermissionAuthorizationHandlerInterface.swift in Sources */,
+				F46AC3021EA10C1800A7C4E5 /* SPRequestPermissionManagerInterface.swift in Sources */,
+				F46AC32F1EA10C1800A7C4E5 /* SPShadowWithMaskView.swift in Sources */,
+				F46AC3061EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractivePresenterDelegate.swift in Sources */,
+				F46AC2EF1EA10C1800A7C4E5 /* SPDeviceOrientation.swift in Sources */,
+				F46AC2EE1EA10C1800A7C4E5 /* SPDelay.swift in Sources */,
+				F46AC3291EA10C1800A7C4E5 /* SPBlurView.swift in Sources */,
+				F46AC3361EA10C1800A7C4E5 /* SPStrideableExtenshion.swift in Sources */,
+				F46AC2F61EA10C1800A7C4E5 /* SPLaunchAnimationSlideExtenshion.swift in Sources */,
+				F46AC2FF1EA10C1800A7C4E5 /* SPPermissions.swift in Sources */,
+				F46AC3351EA10C1800A7C4E5 /* SPBezierPathFigure.swift in Sources */,
+				F46AC31C1EA10C1800A7C4E5 /* SPRoundButton.swift in Sources */,
+				F46AC3371EA10C1800A7C4E5 /* SPSpotlight.swift in Sources */,
+				F46AC2EA1EA10C1800A7C4E5 /* SPBezierPathExtenshion.swift in Sources */,
+				F46AC30B1EA10C1800A7C4E5 /* SPRequestPermissionPresenterInterface.swift in Sources */,
+				F46AC3031EA10C1800A7C4E5 /* SPRequestPermissionDialogSwipeViewController.swift in Sources */,
+				F46AC3081EA10C1800A7C4E5 /* SPrequsetPermissionDialogInteractivePresenter.swift in Sources */,
+				F46AC31D1EA10C1800A7C4E5 /* SPSegmentControllCell.swift in Sources */,
+				F46AC3191EA10C1800A7C4E5 /* SPParalaxTableViewController.swift in Sources */,
+				F46AC2EB1EA10C1800A7C4E5 /* SPUIColorExtenshion.swift in Sources */,
+				F46AC3221EA10C1800A7C4E5 /* SPPageItemsScalingCollectionView.swift in Sources */,
+				F46AC2F51EA10C1800A7C4E5 /* SPLaunchAnimationTwitterExtenshion.swift in Sources */,
+				F46AC2F11EA10C1800A7C4E5 /* SPUIScreenExtenshion.swift in Sources */,
+				F46AC2F81EA10C1800A7C4E5 /* SPLayout.swift in Sources */,
+				F46AC2F31EA10C1800A7C4E5 /* SPUIImageExtenshion.swift in Sources */,
+				F46AC2E61EA10C1800A7C4E5 /* SPAnimationSpring.swift in Sources */,
+				F46AC3251EA10C1800A7C4E5 /* SPRhombusPatternView.swift in Sources */,
+				F46AC3001EA10C1800A7C4E5 /* SPPermissionsManagerBase.swift in Sources */,
+				F46AC3241EA10C1800A7C4E5 /* SPPageItemsScalingCollectionLayout.swift in Sources */,
+				F46AC3091EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveView.swift in Sources */,
+				F46AC3141EA10C1800A7C4E5 /* SPRandom.swift in Sources */,
+				F46AC2EC1EA10C1800A7C4E5 /* NSLayoutConstraintExtenshion.swift in Sources */,
+				F46AC2E41EA10C1800A7C4E5 /* SPAnimation.swift in Sources */,
+				F46AC2F71EA10C1800A7C4E5 /* SPLaunchAnimation.swift in Sources */,
+				F46AC2FB1EA10C1800A7C4E5 /* SPRequestPermissionDataTexts.swift in Sources */,
+				F46AC2F01EA10C1800A7C4E5 /* SPUIDeviceExtenshion.swift in Sources */,
+				F46AC31F1EA10C1800A7C4E5 /* SPSegmentControlStyleProtocol.swift in Sources */,
+				F46AC3171EA10C1800A7C4E5 /* SPGradientViewController.swift in Sources */,
+				F46AC32B1EA10C1800A7C4E5 /* SPGradientGradeWithBlurView.swift in Sources */,
+				F46AC2FA1EA10C1800A7C4E5 /* SPRequestPermissionDataFonts.swift in Sources */,
+				F46AC3331EA10C1800A7C4E5 /* SPBezierPathFigureLogos.swift in Sources */,
+				F46AC30C1EA10C1800A7C4E5 /* SPRequestPermissionPresenters.swift in Sources */,
+				F46AC31A1EA10C1800A7C4E5 /* SPIconsButton.swift in Sources */,
+				F46AC3151EA10C1800A7C4E5 /* SPDialogSwipeController.swift in Sources */,
+				F46AC2F91EA10C1800A7C4E5 /* SPRequestPermissionDataColors.swift in Sources */,
+				F46AC3271EA10C1800A7C4E5 /* SPAligmentView.swift in Sources */,
+				F46AC3051EA10C1800A7C4E5 /* SPRequestPermissionDialogInteractiveDataSourceInterface.swift in Sources */,
+				F46AC30A1EA10C1800A7C4E5 /* SPRequestPermissionNativePresenter.swift in Sources */,
+				F46AC30F1EA10C1800A7C4E5 /* SPRequestPermissionAssistantDelegate.swift in Sources */,
+				F46AC3161EA10C1800A7C4E5 /* SPExtenshionViewController.swift in Sources */,
+				F46AC31B1EA10C1800A7C4E5 /* SPLinesCircleButtonsView.swift in Sources */,
+				F46AC3261EA10C1800A7C4E5 /* SPParallaxTableViewCell.swift in Sources */,
+				F46AC3211EA10C1800A7C4E5 /* SPCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

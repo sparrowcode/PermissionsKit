@@ -36,7 +36,7 @@ public extension UIView {
         return min(self.frame.width, self.frame.height)
     }
     
-    func widthLessThanLength() -> Bool {
+    func isWidthLessThanHeight() -> Bool {
         return self.bounds.width < self.bounds.height
     }
     
