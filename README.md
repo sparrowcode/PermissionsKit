@@ -65,6 +65,9 @@ If you want to write your assistant, using the current skeleton, you should use 
 let permissionAssistant = SPRequestPermissionAssistant.init(with: [.Camera, .PhotoLibrary], permissionManager: customPermissionManager(), presenterManager: customPresenterManager())
 ```
 
+For russian comunity:
+Я написал [статью](https://habrahabr.ru/post/326620/) на Хабрахабр. Здесь вы найдете наглядное объяснение архитектуры проекта. Полезно, если собираетесь кастомизировать много функционала
+
 ## Questions
 Read [wiki](https://github.com/IvanVorobei/RequestPermission/wiki/Questions). If you can't find answer - contact me via email
 
