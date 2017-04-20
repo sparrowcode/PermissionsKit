@@ -35,3 +35,7 @@
 //NSSpeechRecognitionUsageDescription
 
 //NSVideoSubscriberAccountUsageDescription
+
+//Bacground Mode
+    //key: NSLocationAlwaysUsageDescription
+    //value: location
