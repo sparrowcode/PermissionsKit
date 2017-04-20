@@ -154,40 +154,72 @@ class SPCalendarPermission: SPPermissionInterface {
 
 class SPLocationPermission: SPPermissionInterface {
     
+    var type: SPLocationType
+    
+    enum SPLocationType {
+        case Always
+        case WhenInUse
+        case AlwaysWithBackground
+    }
+    
+    init(type: SPLocationType) {
+        self.type = type
+    }
+    
     func isAuthorized() -> Bool {
         
         let status = CLLocationManager.authorizationStatus()
         
-        if withBackground {
+        switch self.type {
+        case .Always:
             if status == .authorizedAlways {
                 return true
             } else {
                 return false
             }
-        } else {
-            if always {
-                if status == .authorizedAlways {
-                    return true
-                } else {
-                    return false
-                }
+        case .WhenInUse:
+            if status == .authorizedWhenInUse {
+                return true
             } else {
-                if status == .authorizedWhenInUse {
-                    return true
-                } else {
-                    return false
-                }
+                return false
+            }
+        case .AlwaysWithBackground:
+            if status == .authorizedAlways {
+                return true
+            } else {
+                return false
             }
         }
     }
     
-    var always: Bool = true
-    var withBackground: Bool = false
-    
     func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
         
-        if self.withBackground {
+        switch self.type {
+        case .Always:
+            if SPRequestPermissionAlwaysAuthorizationLocationHandler.shared == nil {
+                SPRequestPermissionAlwaysAuthorizationLocationHandler.shared = SPRequestPermissionAlwaysAuthorizationLocationHandler()
+            }
             
+            SPRequestPermissionAlwaysAuthorizationLocationHandler.shared!.requestPermission { (authorized) in
+                DispatchQueue.main.async {
+                    complectionHandler()
+                    SPRequestPermissionAlwaysAuthorizationLocationHandler.shared = nil
+                }
+            }
+            break
+        case .WhenInUse:
+            if SPRequestPermissionWhenInUseAuthorizationLocationHandler.shared == nil {
+                SPRequestPermissionWhenInUseAuthorizationLocationHandler.shared = SPRequestPermissionWhenInUseAuthorizationLocationHandler()
+            }
+            
+            SPRequestPermissionWhenInUseAuthorizationLocationHandler.shared!.requestPermission { (authorized) in
+                DispatchQueue.main.async {
+                    complectionHandler()
+                    SPRequestPermissionWhenInUseAuthorizationLocationHandler.shared = nil
+                }
+            }
+            break
+        case .AlwaysWithBackground:
             if SPRequestPermissionLocationWithBackgroundHandler.shared == nil {
                 SPRequestPermissionLocationWithBackgroundHandler.shared = SPRequestPermissionLocationWithBackgroundHandler()
             }
@@ -198,33 +230,7 @@ class SPLocationPermission: SPPermissionInterface {
                     SPRequestPermissionLocationWithBackgroundHandler.shared = nil
                 }
             }
-        } else {
-            
-            if self.always {
-                print("ALWAYS REQ")
-                if SPRequestPermissionAlwaysAuthorizationLocationHandler.shared == nil {
-                    SPRequestPermissionAlwaysAuthorizationLocationHandler.shared = SPRequestPermissionAlwaysAuthorizationLocationHandler()
-                }
-                
-                SPRequestPermissionAlwaysAuthorizationLocationHandler.shared!.requestPermission { (authorized) in
-                    DispatchQueue.main.async {
-                        complectionHandler()
-                        SPRequestPermissionAlwaysAuthorizationLocationHandler.shared = nil
-                    }
-                }
-            } else {
-                print("NOT ALWAYS REQ")
-                if SPRequestPermissionWhenInUseAuthorizationLocationHandler.shared == nil {
-                    SPRequestPermissionWhenInUseAuthorizationLocationHandler.shared = SPRequestPermissionWhenInUseAuthorizationLocationHandler()
-                }
-                
-                SPRequestPermissionWhenInUseAuthorizationLocationHandler.shared!.requestPermission { (authorized) in
-                    DispatchQueue.main.async {
-                        complectionHandler()
-                        SPRequestPermissionWhenInUseAuthorizationLocationHandler.shared = nil
-                    }
-                }
-            }  
+            break
         }
     }
 }

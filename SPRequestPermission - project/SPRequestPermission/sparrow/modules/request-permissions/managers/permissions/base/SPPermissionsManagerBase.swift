@@ -61,20 +61,11 @@ class SPPermissionsManagerBase: SPPermissionManagerInterface {
         case .Calendar:
             return SPCalendarPermission()
         case .LocationAlways:
-            let permission = SPLocationPermission()
-            permission.always = true
-            permission.withBackground = false
-            return permission
+            return SPLocationPermission(type: SPLocationPermission.SPLocationType.Always)
         case .LocationWhenInUse:
-            let permission = SPLocationPermission()
-            permission.always = false
-            permission.withBackground = false
-            return permission
+            return SPLocationPermission(type: SPLocationPermission.SPLocationType.WhenInUse)
         case .LocationWithBackground:
-            let permission = SPLocationPermission()
-            permission.always = true
-            permission.withBackground = true
-            return permission
+            return SPLocationPermission(type: SPLocationPermission.SPLocationType.AlwaysWithBackground)
         case .Contacts:
             return SPContactsPermission()
         case .Reminders:
