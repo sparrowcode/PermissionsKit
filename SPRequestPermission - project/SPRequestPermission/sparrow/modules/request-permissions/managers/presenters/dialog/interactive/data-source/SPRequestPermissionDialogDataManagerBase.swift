@@ -37,7 +37,11 @@ open class SPRequestPermissionDialogInteractiveDataSource: NSObject, SPRequestPe
             iconBezierPath = SPBezierPathFigure.icons.microphone()
         case .Calendar:
             iconBezierPath = SPBezierPathFigure.icons.calendar()
-        case .Location:
+        case .LocationWhenInUse:
+            iconBezierPath = SPBezierPathFigure.icons.location()
+        case .LocationAlways:
+            iconBezierPath = SPBezierPathFigure.icons.location()
+        case .LocationWithBackground:
             iconBezierPath = SPBezierPathFigure.icons.location()
         case .Contacts:
             iconBezierPath = SPBezierPathFigure.icons.contacts()
@@ -69,7 +73,11 @@ open class SPRequestPermissionDialogInteractiveDataSource: NSObject, SPRequestPe
             title = SPRequestPermissionData.texts.enable_microphone()
         case .Calendar:
             title = SPRequestPermissionData.texts.enable_calendar()
-        case .Location:
+        case .LocationWhenInUse:
+            title = SPRequestPermissionData.texts.enable_location()
+        case .LocationAlways:
+            title = SPRequestPermissionData.texts.enable_location()
+        case .LocationWithBackground:
             title = SPRequestPermissionData.texts.enable_location()
         case .Contacts:
             title = SPRequestPermissionData.texts.enable_contacts()

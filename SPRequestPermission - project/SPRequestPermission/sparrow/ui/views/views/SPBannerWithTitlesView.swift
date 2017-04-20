@@ -63,6 +63,8 @@ class SPBannerWithTitlesView: UIView {
         self.subTitleLabel.textColor = UIColor.white
         self.titleLabel.setShadowOffsetForLetters(blurRadius: 0, widthOffset: 0, heightOffset: 1, opacity: 1)
         self.subTitleLabel.setShadowOffsetForLetters(blurRadius: 0, widthOffset: 0, heightOffset: 1, opacity: 1)
+        self.titleLabel.numberOfLines = 0
+        self.subTitleLabel.numberOfLines = 0
     }
     
     override func layoutSubviews() {
