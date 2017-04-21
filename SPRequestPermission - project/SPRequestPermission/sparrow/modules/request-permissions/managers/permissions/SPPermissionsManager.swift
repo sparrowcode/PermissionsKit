@@ -22,16 +22,16 @@
 import Foundation
 
 public enum SPRequestPermissionType {
-    case Camera
-    case PhotoLibrary
-    case Notification
-    case Microphone
-    case Calendar
-    case LocationAlways
-    case LocationWhenInUse
-    case LocationWithBackground
-    case Contacts
-    case Reminders
+    case camera
+    case photoLibrary
+    case notification
+    case microphone
+    case calendar
+    case locationAlways
+    case locationWhenInUse
+    case locationWithBackground
+    case contacts
+    case reminders
 }
 
 class SPPermissionsManager: SPPermissionsManagerInterface {
@@ -50,25 +50,25 @@ class SPPermissionsManager: SPPermissionsManagerInterface {
 
     private func getManagerForPermission(_ permission: SPRequestPermissionType) -> SPPermissionInterface {
         switch permission {
-        case .Camera:
+        case .camera:
             return SPCameraPermission()
-        case .PhotoLibrary:
+        case .photoLibrary:
             return SPPhotoLibraryPermission()
-        case .Notification:
+        case .notification:
             return SPNotificationPermission()
-        case .Microphone:
+        case .microphone:
             return SPMicrophonePermission()
-        case .Calendar:
+        case .calendar:
             return SPCalendarPermission()
-        case .LocationAlways:
+        case .locationAlways:
             return SPLocationPermission(type: SPLocationPermission.SPLocationType.Always)
-        case .LocationWhenInUse:
+        case .locationWhenInUse:
             return SPLocationPermission(type: SPLocationPermission.SPLocationType.WhenInUse)
-        case .LocationWithBackground:
+        case .locationWithBackground:
             return SPLocationPermission(type: SPLocationPermission.SPLocationType.AlwaysWithBackground)
-        case .Contacts:
+        case .contacts:
             return SPContactsPermission()
-        case .Reminders:
+        case .reminders:
             return SPRemindersPermission()
         }
     }

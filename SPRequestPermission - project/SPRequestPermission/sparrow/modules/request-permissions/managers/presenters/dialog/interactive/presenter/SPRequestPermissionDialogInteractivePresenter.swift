@@ -85,7 +85,7 @@ class SPRequestPermissionDialogInteractivePresenter {
                 self.eventsDelegate?.didDeniedPermission(permission: control.permission)
                 control.setNormalState(animated: true)
                 
-                if !(control.permission == .Notification) {
+                if !(control.permission == .notification) {
                     self.showDialogForProtectPermissionOnViewController()
                 } else {
                     self.isPresentedNotificationRequest = true
@@ -99,7 +99,7 @@ class SPRequestPermissionDialogInteractivePresenter {
                                 }
                             }
                             if denidedPermission.count == 1 {
-                                if denidedPermission[0] == SPRequestPermissionType.Notification {
+                                if denidedPermission[0] == SPRequestPermissionType.notification {
                                     self.viewController.hide()
                                 }
                             }
@@ -113,7 +113,7 @@ class SPRequestPermissionDialogInteractivePresenter {
                             }
                         }
                         if denidedPermission.count == 1 {
-                            if denidedPermission[0] == SPRequestPermissionType.Notification {
+                            if denidedPermission[0] == SPRequestPermissionType.notification {
                                 self.viewController.hide()
                             }
                         }
@@ -142,7 +142,7 @@ class SPRequestPermissionDialogInteractivePresenter {
                     }
                 }
                 if denidedPermission.count == 1 {
-                    if denidedPermission[0] == SPRequestPermissionType.Notification {
+                    if denidedPermission[0] == SPRequestPermissionType.notification {
                         if self.isPresentedNotificationRequest {
                             delay(0.21, closure: {
                                 self.viewController.hide()
