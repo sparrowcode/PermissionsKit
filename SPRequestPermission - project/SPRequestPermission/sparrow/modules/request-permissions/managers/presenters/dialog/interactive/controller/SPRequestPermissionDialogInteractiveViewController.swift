@@ -23,9 +23,9 @@ import UIKit
 
 public class SPRequestPermissionDialogInteractiveViewController: SPDialogSwipeController<SPRequestPermissionDialogInteractiveView, UILabel> {
     
-    public var presenter: SPRequestPermissionDialogInteractivePresenterInterface
+    public var presenter: SPRequestPermissionDialogInteractivePresenterDelegate
     
-    init(presenter: SPRequestPermissionDialogInteractivePresenterInterface) {
+    init(presenter: SPRequestPermissionDialogInteractivePresenterDelegate) {
         self.presenter = presenter
         super.init(dialogView: SPRequestPermissionDialogInteractiveView())
         self.presenter.viewController = self
@@ -111,7 +111,7 @@ extension SPRequestPermissionDialogInteractiveViewController: SPDialogSwipeContr
     }
     
     func didHideDialogController() {
-
+        self.presenter.didHide()
     }
 }
 

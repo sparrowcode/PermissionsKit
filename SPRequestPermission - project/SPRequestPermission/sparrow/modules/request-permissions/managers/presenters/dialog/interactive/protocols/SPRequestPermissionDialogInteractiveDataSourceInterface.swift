@@ -23,20 +23,26 @@ import UIKit
 
 public protocol SPRequestPermissionDialogInteractiveDataSourceInterface {
     
+    //customize permission's buttons
     func iconForNormalPermissionControl(_ permission: SPRequestPermissionType) -> UIImage
     func iconForAllowedPermissionControl(_ permission: SPRequestPermissionType) -> UIImage
     func titleForPermissionControl(_ permission: SPRequestPermissionType) -> String
     
+    //header view in dialog view
     func headerBackgroundView() -> UIView
     
+    //title and subtitle on header view
     func headerTitle() -> String
     func headerSubtitle() -> String
     
+    //title and subtitle on bottom view
     func topAdviceTitle() -> String
     func bottomAdviceTitle() -> String
     
+    //small label with advice ander dialog view (use advice how hide dialog)
     func underDialogAdviceTitle() -> String
     
+    //colorize
     func mainColor() -> UIColor
     func secondColor() -> UIColor
 }

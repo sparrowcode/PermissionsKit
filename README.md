@@ -42,7 +42,7 @@ Did you notice that when initialized the `SPRequestPermission` - we chose the mo
 ## Delegates
 To track events associated with `Assistant` and its view, implement the protocol `SPRequestPermissionEventsDelegate` and set the class as delegate
 ```swift
-	SPRequestPermission.dialog.interactive.present(
+SPRequestPermission.dialog.interactive.present(
         on: self,
         with: [.Camera],
         delegate: self
@@ -51,7 +51,7 @@ To track events associated with `Assistant` and its view, implement the protocol
 ## Customize
 If you want to change data in a particular module (for example, the text in the top footer) - you should implement a class supporting the protocol. For example, for module `dialog/interactive`, you should implement the protocol `SPRequestPermissionDialogInteractiveDataSourceInterface`. Then the class object needs to be passed to creator
 ```swift
-	SPRequestPermission.dialog.interactive.present(
+SPRequestPermission.dialog.interactive.present(
         on: self,
         with: [.Camera],
         dataSource: CustomDataSource()
@@ -60,13 +60,9 @@ If you want to change data in a particular module (for example, the text in the 
 
 Read more about customization data in [wiki](https://github.com/IvanVorobei/RequestPermission/wiki/Customization)
 
-If you want to write your assistant, using the current skeleton, you should use a more extended initializer. Accordingly `PresenterManager` and `PermissionManager` must implement the interfaces
-```swift
-let permissionAssistant = SPRequestPermissionAssistant.init(with: [.Camera, .PhotoLibrary], permissionManager: customPermissionManager(), presenterManager: customPresenterManager())
-```
-
 For russian comunity:
 Я написал [статью](https://habrahabr.ru/post/326620/) на Хабрахабр. Здесь вы найдете наглядное объяснение архитектуры проекта. Полезно, если собираетесь кастомизировать много функционала
+UPD: Архитектура изменена, статья носит ознакомительный характер
 
 ## Questions
 Read [wiki](https://github.com/IvanVorobei/RequestPermission/wiki/Questions). If you can't find answer - contact me via email
