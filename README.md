@@ -43,19 +43,19 @@ Did you notice that when initialized the `SPRequestPermission` - we chose the mo
 To track events associated with `Assistant` and its view, implement the protocol `SPRequestPermissionEventsDelegate` and set the class as delegate
 ```swift
 SPRequestPermission.dialog.interactive.present(
-        on: self,
-        with: [.Camera],
-        delegate: self
-    )
+    on: self,
+    with: [.Camera],
+    delegate: self
+)
 ```
 ## Customize
 If you want to change data in a particular module (for example, the text in the top footer) - you should implement a class supporting the protocol. For example, for module `dialog/interactive`, you should implement the protocol `SPRequestPermissionDialogInteractiveDataSourceInterface`. Then the class object needs to be passed to creator
 ```swift
 SPRequestPermission.dialog.interactive.present(
-        on: self,
-        with: [.Camera],
-        dataSource: CustomDataSource()
-    )
+    on: self,
+    with: [.Camera],
+    dataSource: CustomDataSource()
+)
 ```
 
 Read more about customization data in [wiki](https://github.com/IvanVorobei/RequestPermission/wiki/Customization)
