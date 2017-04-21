@@ -40,7 +40,7 @@ Did you notice that when initialized the `SPRequestPermission` - we chose the mo
 <img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/e85814ac/resources/request-permission_presenters.png"/>
 
 ## Delegates
-To track events associated with `Assistant` and its view, implement the protocol `SPRequestPermissionEventsDelegate` and set the class as delegate
+To track events associated with `SPRequestPermission`, implement the protocol `SPRequestPermissionEventsDelegate` and pass the delegate
 ```swift
 SPRequestPermission.dialog.interactive.present(
     on: self,
@@ -62,6 +62,7 @@ Read more about customization data in [wiki](https://github.com/IvanVorobei/Requ
 
 For russian comunity:
 Я написал [статью](https://habrahabr.ru/post/326620/) на Хабрахабр. Здесь вы найдете наглядное объяснение архитектуры проекта. Полезно, если собираетесь кастомизировать много функционала
+
 UPD: Архитектура изменена, статья носит ознакомительный характер
 
 ## Questions
