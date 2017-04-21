@@ -19,11 +19,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
+import UIKit
 
-protocol SPRequestPermissionDialogInteractivePresenterDelegate: class {
+public protocol SPRequestPermissionDialogInteractivePresenterInterface: class {
     
-    func isEnableHide() -> Bool
+    var eventsDelegate: SPRequestPermissionEventsDelegate? {get set}
     
-    func didHide()
+    weak var viewController: SPRequestPermissionDialogInteractiveViewControllerInterface! {get set}
+    var dataSource: SPRequestPermissionDialogInteractiveDataSourceInterface {get set}
+    var permissionManager: SPPermissionsManagerInterface {get set}
+    
 }

@@ -21,11 +21,9 @@
 
 import UIKit
 
-protocol SPRequestPermissionDialogInteractiveViewControllerInterface {
+public protocol SPRequestPermissionDialogInteractiveViewControllerInterface: class {
     
-    var presenterDelegate: SPRequestPermissionDialogInteractivePresenterDelegate? {get set}
-    
-    func present(on viewController: UIViewController)
+    var presenter: SPRequestPermissionDialogInteractivePresenterInterface {get set}
     
     func hide()
     

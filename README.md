@@ -16,46 +16,46 @@ Or via CocoaPods:
 pod 'Sparrow/Modules/RequestPermission', :git => 'https://github.com/IvanVorobei/Sparrow.git’
 ```
 ## How to use
-Initialize `Assistant` as a property in controller. Initialization in any other unit may be unsafe ([read more about](#important))
+Call `SPRequestPermission` and choose type UI (for example: `dialog/interactive`)
 ```swift
 class ViewController: UIViewController {
 
-    var permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.create(with: [.Camera, .PhotoLibrary, .Notification])
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        SPRequestPermission.dialog.interactive.present(on: self, with: [.Camera])
     }
 }
 ```
-Now when the module is initialized and configured with the desired permissions, we can generate a visual representation. This is done in one line of code
-```swift
-permissionAssistant.present(on: self)
-```
 If you want to know if you have received permission, you should call the function:
 ```swift
-let isAvailableCamera = permissionAssistant.isAllowPermission(.Camera)
+let isAvailableCamera = SPRequestPermission.isAllowPermission(.Camera)
 ```
 ## Available permissions
 
 <img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/e85814ac/resources/request-permission_permissions.svg"/>
 
 ## Types of presentation
-Did you notice that when initialized the `Assistant` - we chose the module (`SPRequestPermissionAssistant.modules.dialog.interactive...`). You can choose an appropriate visual component. They all adapted to the iPad and iPhone for all screens and for all orientations (currently available `dialog/interactive` and `native`, but soon I will add number of presentations)
+Did you notice that when initialized the `SPRequestPermission` - we chose the module (`SPRequestPermission.dialog.interactive...`). You can choose an appropriate visual component. They all adapted to the iPad and iPhone for all screens and for all orientations (currently available `dialog/interactive` and `native`, but soon I will add number of presentations)
 
 <img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/e85814ac/resources/request-permission_presenters.png"/>
-
-## Important
-For correct ARC work you need to save an object of class `Assistant` during the lifetime of parent's controller. Initialize Аssistant as controller's property. Otherwise, ARC will destroy files that is responsible for logic and the controller will not respond to events
 
 ## Delegates
 To track events associated with `Assistant` and its view, implement the protocol `SPRequestPermissionEventsDelegate` and set the class as delegate
 ```swift
-permissionAssistant.eventsDelegate = self
+	SPRequestPermission.dialog.interactive.present(
+        on: self,
+        with: [.Camera],
+        delegate: self
+    )
 ```
 ## Customize
-If you want to change data in a particular module (for example, the text in the top footer) - you should implement a class supporting the protocol. For example, for module `dialog/interactive`, you should implement the protocol `SPRequestPermissionDialogInteractiveDataSourceInterface`. Then the class object needs to be passed to the assistant, in this line
+If you want to change data in a particular module (for example, the text in the top footer) - you should implement a class supporting the protocol. For example, for module `dialog/interactive`, you should implement the protocol `SPRequestPermissionDialogInteractiveDataSourceInterface`. Then the class object needs to be passed to creator
 ```swift
-let permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.init(with: [.Camera, .PhotoLibrary], dataSourceForController: customDataSource())
+	SPRequestPermission.dialog.interactive.present(
+        on: self,
+        with: [.Camera],
+        dataSource: CustomDataSource()
+    )
 ```
 
 Read more about customization data in [wiki](https://github.com/IvanVorobei/RequestPermission/wiki/Customization)

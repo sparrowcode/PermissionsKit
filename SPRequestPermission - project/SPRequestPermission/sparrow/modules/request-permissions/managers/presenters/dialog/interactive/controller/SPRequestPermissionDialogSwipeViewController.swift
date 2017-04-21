@@ -21,12 +21,14 @@
 
 import UIKit
 
-public class SPRequestPermissionDialogInteractiveViewController: SPDialogSwipeController<SPRequestPermissionDialogInteractiveView, UILabel>  {
+public class SPRequestPermissionDialogInteractiveViewController: SPDialogSwipeController<SPRequestPermissionDialogInteractiveView, UILabel> {
     
-    weak var presenterDelegate: SPRequestPermissionDialogInteractivePresenterDelegate?
+    public var presenter: SPRequestPermissionDialogInteractivePresenterInterface
     
-    override init(dialogView: SPRequestPermissionDialogInteractiveView) {
-        super.init(dialogView: dialogView)
+    init(presenter: SPRequestPermissionDialogInteractivePresenterInterface) {
+        self.presenter = presenter
+        super.init(dialogView: SPRequestPermissionDialogInteractiveView())
+        self.presenter.viewController = self
         self.delegate = self
         self.dialogViewMaxWidth = 300
         self.dialogViewMaxHeight = 450
@@ -46,13 +48,13 @@ public class SPRequestPermissionDialogInteractiveViewController: SPDialogSwipeCo
         self.bottomView.numberOfLines = 0
     }
     
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.dialogView.backgroundColor = UIColor.white
-    }
-
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
     }
     
     override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -65,39 +67,39 @@ public class SPRequestPermissionDialogInteractiveViewController: SPDialogSwipeCo
 
 extension SPRequestPermissionDialogInteractiveViewController: SPRequestPermissionDialogInteractiveViewControllerInterface {
     
-    func hide() {
+    public func hide() {
         self.hide(withDialog: true)
     }
     
-    func addControl(_ control: SPRequestPermissionTwiceControlInterface) {
+    public func addControl(_ control: SPRequestPermissionTwiceControlInterface) {
         control.addAsSubviewTo(self.dialogView.buttonsContainerView)
     }
     
-    func setHeaderBackgroundView(_ view: UIView) {
+    public func setHeaderBackgroundView(_ view: UIView) {
         self.dialogView.headerView.setBackgroundView(view)
     }
     
-    func setHeaderTitle(_ title: String) {
+    public func setHeaderTitle(_ title: String) {
         self.dialogView.headerView.titleLabel.text = title
         self.dialogView.layoutSubviews()
     }
     
-    func setHeaderSubtitle(_ title: String) {
+    public func setHeaderSubtitle(_ title: String) {
         self.dialogView.headerView.subTitleLabel.text = title
         self.dialogView.layoutSubviews()
     }
     
-    func setTopTitle(_ title: String) {
+    public func setTopTitle(_ title: String) {
         self.dialogView.topLabel.text = title
         self.dialogView.layoutSubviews()
     }
     
-    func setBottomTitle(_ title: String) {
+    public func setBottomTitle(_ title: String) {
         self.dialogView.bottomLabel.text = title
         self.dialogView.layoutSubviews()
     }
     
-    func setUnderDialogTitle(_ title: String) {
+    public func setUnderDialogTitle(_ title: String) {
         self.bottomView.text = title
     }
 }
@@ -105,11 +107,11 @@ extension SPRequestPermissionDialogInteractiveViewController: SPRequestPermissio
 extension SPRequestPermissionDialogInteractiveViewController: SPDialogSwipeControllerDelegate {
     
     internal var isEnableHideDialogController: Bool {
-        return presenterDelegate?.isEnableHide() ?? true
+        return true
     }
     
     func didHideDialogController() {
-        self.presenterDelegate?.didHide()
+
     }
 }
 
