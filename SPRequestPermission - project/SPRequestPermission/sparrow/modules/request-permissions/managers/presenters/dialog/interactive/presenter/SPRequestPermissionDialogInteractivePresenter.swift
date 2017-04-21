@@ -21,15 +21,15 @@
 
 import UIKit
 
-class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionDialogInteractivePresenterInterface {
-    
-    var permissions: [SPRequestPermissionType] = []
-    private var controls = [SPRequestPermissionTwiceControlInterface]()
+class SPRequestPermissionDialogInteractivePresenter {
     
     var eventsDelegate: SPRequestPermissionEventsDelegate?
     
-    var dataSource: SPRequestPermissionDialogInteractiveDataSourceInterface
-    var permissionManager: SPPermissionsManagerInterface = SPPermissionsManager()
+    private var permissions: [SPRequestPermissionType] = []
+    private var controls = [SPRequestPermissionTwiceControlInterface]()
+
+    private var dataSource: SPRequestPermissionDialogInteractiveDataSourceInterface
+    private var permissionManager: SPPermissionsManagerInterface = SPPermissionsManager()
     weak var viewController: SPRequestPermissionDialogInteractiveViewControllerInterface! {
         didSet {
             self.configureController()
@@ -76,10 +76,13 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionDialogIn
     
     @objc func actionForControl(sender: AnyObject) {
         let control = sender as! SPRequestPermissionTwiceControlInterface
+        self.eventsDelegate?.didSelectedPermission(permission: control.permission)
         permissionManager.requestPermission(control.permission, with: {
             if self.permissionManager.isAuthorizedPermission(control.permission) {
+                self.eventsDelegate?.didAllowPermission(permission: control.permission)
                 control.setSelectedState(animated: true)
             } else {
+                self.eventsDelegate?.didDeniedPermission(permission: control.permission)
                 control.setNormalState(animated: true)
                 
                 if !(control.permission == .Notification) {
@@ -200,5 +203,12 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionDialogIn
                 control.setNormalState(animated: false)
             }
         }
+    }
+}
+
+extension SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionDialogInteractivePresenterDelegate {
+    
+    func didHide() {
+        self.eventsDelegate?.didHide()
     }
 }

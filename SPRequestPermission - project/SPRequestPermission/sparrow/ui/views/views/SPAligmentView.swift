@@ -116,8 +116,8 @@ class SPCenteringAligmentView: SPAligmentView {
         if self.subviews.count == 0 {
             return
         }
-        let itemHeight: CGFloat = self.subviews[0].frame.height
-        let itemWidth: CGFloat = self.subviews[0].frame.width
+        var itemHeight: CGFloat = self.subviews[0].frame.height
+        var itemWidth: CGFloat = self.subviews[0].frame.width
         let countViews: CGFloat = CGFloat(self.subviews.count)
         
         if countViews < 3 {
@@ -128,9 +128,13 @@ class SPCenteringAligmentView: SPAligmentView {
                     self.subviews[0].center.x = self.frame.width / 2
                 case 2:
                     let allFreeSpace = self.frame.width - (itemWidth * countViews)
-                    let space = allFreeSpace / 2
-                    self.subviews[0].frame.origin.x = space / 2
-                    self.subviews[1].frame.origin.x = (space / 2) + itemWidth + space
+                    var space = allFreeSpace / 2
+                    if space < self.minSpace {
+                        space = self.minSpace
+                        itemWidth = (self.frame.width - (space * 2)) / 2
+                    }
+                    self.subviews[0].frame = CGRect.init(x: space / 2, y: self.subviews[0].frame.origin.y, width: itemWidth, height: self.subviews[0].frame.height)
+                    self.subviews[1].frame = CGRect.init(x: space / 2 + itemWidth + space, y: self.subviews[1].frame.origin.y, width: itemWidth, height: self.subviews[1].frame.height)
                 default:
                     break
                 }
@@ -140,9 +144,13 @@ class SPCenteringAligmentView: SPAligmentView {
                     self.subviews[0].center.y = self.frame.height / 2
                 case 2:
                     let allFreeSpace = self.frame.height - (itemHeight * countViews)
-                    let space = allFreeSpace / 2
-                    self.subviews[0].frame.origin.y = space / 2
-                    self.subviews[1].frame.origin.y = (space / 2) + itemHeight + space
+                    var space = allFreeSpace / 2
+                    if space < self.minSpace {
+                        space = self.minSpace
+                        itemHeight = (self.frame.height - (space * 2)) / 2
+                    }
+                    self.subviews[0].frame = CGRect.init(x: self.subviews[0].frame.origin.x, y: space / 2, width: self.subviews[0].frame.width, height: itemHeight)
+                    self.subviews[1].frame = CGRect.init(x: self.subviews[1].frame.origin.x, y: (space / 2) + itemHeight + space, width: self.subviews[1].frame.width, height: itemHeight)
                 default:
                     break
                 }

@@ -21,32 +21,33 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SPRequestPermissionNativePresenter {
     
-    let permissins: [SPRequestPermissionType] = [.Camera, .PhotoLibrary, .Notification]
+    var eventsDelegate: SPRequestPermissionEventsDelegate?
+    
+    private var permissions: [SPRequestPermissionType] = []
+    private var permissionManager: SPPermissionsManagerInterface = SPPermissionsManager()
+    
+    //MARK: - init
+    init(with permissions: [SPRequestPermissionType]) {
+        self.permissions = permissions
+    }
+    
+    func requestPermissions() {
+        for permission in self.permissions {
+            self.eventsDelegate?.didSelectedPermission(permission: permission)
+            self.permissionManager.requestPermission(permission, with: {
+                if self.permissionManager.isAuthorizedPermission(permission) {
+                    self.eventsDelegate?.didAllowPermission(permission: permission)
+                } else {
+                    self.eventsDelegate?.didDeniedPermission(permission: permission)
+                }
+                
+                if self.permissions.last == permission {
+                    self.eventsDelegate?.didHide()
+                }
+            })
+        }
+    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = UIColor.init(hex: "#00A3E8")
-        self.patternView.setRhombusPattern()
-        self.patternView.color = UIColor.white
-        self.patternView.alpha = 0.1
-        self.patternView.cellWidthMax = 70
-    }
-    
-    @IBAction func tapPresentAction(_ sender: Any) {
-        //dialog.interactive
-        SPRequestPermission.dialog.interactive.present(on: self, with: self.permissins)
-        
-        //native
-        //SPRequestPermission.native.present(with: self.permissins)
-    }
-    
-    //Mark: - Other
-    @IBOutlet weak var patternView: SPPatternView!
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
 }
-

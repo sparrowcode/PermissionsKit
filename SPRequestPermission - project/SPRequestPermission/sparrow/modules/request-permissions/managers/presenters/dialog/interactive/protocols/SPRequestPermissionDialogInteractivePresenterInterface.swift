@@ -21,12 +21,9 @@
 
 import UIKit
 
-public protocol SPRequestPermissionDialogInteractivePresenterInterface: class {
-    
-    var eventsDelegate: SPRequestPermissionEventsDelegate? {get set}
+public protocol SPRequestPermissionDialogInteractivePresenterDelegate: class {
     
     weak var viewController: SPRequestPermissionDialogInteractiveViewControllerInterface! {get set}
-    var dataSource: SPRequestPermissionDialogInteractiveDataSourceInterface {get set}
-    var permissionManager: SPPermissionsManagerInterface {get set}
     
+    func didHide()
 }

@@ -23,10 +23,10 @@ import UIKit
 
 public class SPRequestPermissionDialogInteractiveView: UIView {
     
-    let headerView: SPBannerWithTitlesView = SPBannerWithTitlesView()
-    let topLabel: UILabel = UILabel()
-    let buttonsContainerView: SPCenteringAligmentView = SPCenteringAligmentView.init(aliment: .vertical)
-    let bottomLabel: UILabel = UILabel()
+    let headerView = SPTitleWithSubtitleView()
+    let topLabel = UILabel()
+    let buttonsContainerView = SPCenteringAligmentView.init(aliment: .vertical)
+    let bottomLabel = UILabel()
     
     init() {
         super.init(frame: CGRect.zero)
@@ -61,6 +61,8 @@ public class SPRequestPermissionDialogInteractiveView: UIView {
         self.headerView.subTitleLabel.numberOfLines = 0
         self.topLabel.setCenteringAlignment()
         self.topLabel.textColor = UIColor.black.withAlphaComponent(0.65)
+        self.topLabel.minimumScaleFactor = 0.7
+        self.topLabel.adjustsFontSizeToFitWidth = true
         self.topLabel.font = UIFont.init(
             name: SPRequestPermissionData.fonts.base() + "-Regular",
             size: 12
@@ -73,6 +75,9 @@ public class SPRequestPermissionDialogInteractiveView: UIView {
             size: 10
         )
         self.bottomLabel.numberOfLines = 0
+        self.bottomLabel.minimumScaleFactor = 0.7
+        self.bottomLabel.adjustsFontSizeToFitWidth = true
+        
         self.buttonsContainerView.maxItemSideSize = 50
         self.buttonsContainerView.spaceFactor = 0.055
         self.buttonsContainerView.minSpace = 8
