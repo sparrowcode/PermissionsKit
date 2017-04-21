@@ -34,14 +34,14 @@ public enum SPRequestPermissionType {
     case Reminders
 }
 
-class SPPermissionsManagerBase: SPPermissionManagerInterface {
+class SPPermissionsManager: SPPermissionsManagerInterface {
     
     func isAuthorizedPermission(_ permission: SPRequestPermissionType) -> Bool {
         let manager = self.getManagerForPermission(permission)
         return manager.isAuthorized()
     }
     
-    func requestPermission(_ permission: SPRequestPermissionType, withComlectionHandler complectionHandler: @escaping ()->()) {
+    func requestPermission(_ permission: SPRequestPermissionType, with complectionHandler: @escaping ()->()) {
         let manager = self.getManagerForPermission(permission)
         manager.request(withComlectionHandler: {
             complectionHandler()
@@ -74,10 +74,19 @@ class SPPermissionsManagerBase: SPPermissionManagerInterface {
     }
 }
 
-protocol SPPermissionInterface {
+public protocol SPPermissionsManagerInterface {
+    
+    func isAuthorizedPermission(_ permission: SPRequestPermissionType) -> Bool
+    
+    func requestPermission(_ permission: SPRequestPermissionType, with complectionHandler: @escaping ()->())
+}
+
+public protocol SPPermissionInterface {
     
     func isAuthorized() -> Bool
     
     func request(withComlectionHandler complectionHandler: @escaping ()->()?)
 }
+
+
 

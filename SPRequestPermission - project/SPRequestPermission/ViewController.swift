@@ -23,7 +23,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let permissionAssistant = SPRequestPermissionAssistant.modules.dialog.interactive.create(with: [.Camera, .PhotoLibrary, .Contacts])
+    let permissins: [SPRequestPermissionType] = [.Camera, .PhotoLibrary, .Notification]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapPresentAction(_ sender: Any) {
-        permissionAssistant.present(on: self)
+        SPRequestPermission.dialog.interactive.present(on: self, with: self.permissins)
     }
     
     //Mark: - Other

@@ -21,41 +21,44 @@
 
 import UIKit
 
-class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresenterInterface, SPRequestPermissionDialogInteractivePresenterDelegate {
+class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionDialogInteractivePresenterInterface {
     
-    weak var assistantDelegate: SPRequestPermissionAssistantDelegate?
-    
-    private var viewController: SPRequestPermissionDialogInteractiveViewControllerInterface
-    private var dataSource: SPRequestPermissionDialogInteractiveDataSourceInterface
-    
+    var permissions: [SPRequestPermissionType] = []
     private var controls = [SPRequestPermissionTwiceControlInterface]()
     
-    func present(on viewController: UIViewController) {
-        self.updatePermissionsStyle()
-        self.isPresentedNotificationRequest = false
-        self.viewController.present(on: viewController)
-    }
+    var eventsDelegate: SPRequestPermissionEventsDelegate?
     
-    func set(permissions: [SPRequestPermissionType]) {
-        for permission in permissions {
-            let control = self.createControlForPermission(permission)
-            controls.append(control)
-            control.addAction(self, action: #selector(self.actionForControl(sender:)))
-            self.viewController.addControl(control)
+    var dataSource: SPRequestPermissionDialogInteractiveDataSourceInterface
+    var permissionManager: SPPermissionsManagerInterface = SPPermissionsManager()
+    weak var viewController: SPRequestPermissionDialogInteractiveViewControllerInterface! {
+        didSet {
+            self.configureController()
         }
     }
     
-    init(viewController: SPRequestPermissionDialogInteractiveViewControllerInterface, dataSource: SPRequestPermissionDialogInteractiveDataSourceInterface) {
+    //MARK: - init
+    init(with permissions: [SPRequestPermissionType], dataSource: SPRequestPermissionDialogInteractiveDataSourceInterface) {
         self.dataSource = dataSource
-        self.viewController = viewController
-        self.viewController.presenterDelegate = self
+        self.permissions = permissions
+        
+    }
+    
+    private func configureController() {
         self.viewController.setHeaderBackgroundView(self.dataSource.headerBackgroundView())
         self.viewController.setHeaderTitle(self.dataSource.headerTitle())
         self.viewController.setHeaderSubtitle(self.dataSource.headerSubtitle())
         self.viewController.setTopTitle(self.dataSource.topAdviceTitle())
         self.viewController.setBottomTitle(self.dataSource.bottomAdviceTitle())
         self.viewController.setUnderDialogTitle(self.dataSource.underDialogAdviceTitle())
-        //self.viewController.setHeaderBackgroundView(self.dataSource.headerBackgroundView())
+        
+        for permission in permissions {
+            let control = self.createControlForPermission(permission)
+            controls.append(control)
+            control.addAction(self, action: #selector(self.actionForControl(sender:)))
+            self.viewController.addControl(control)
+        }
+        
+        self.updatePermissionsStyle()
     }
     
     private func createControlForPermission(_ permission: SPRequestPermissionType) -> SPRequestPermissionTwiceControlInterface {
@@ -73,12 +76,12 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
     
     @objc func actionForControl(sender: AnyObject) {
         let control = sender as! SPRequestPermissionTwiceControlInterface
-        assistantDelegate?.requestPersmisson(control.permission, with: {
-            if self.assistantDelegate?.isAllowPermission(control.permission) ?? false {
+        permissionManager.requestPermission(control.permission, with: {
+            if self.permissionManager.isAuthorizedPermission(control.permission) {
                 control.setSelectedState(animated: true)
             } else {
                 control.setNormalState(animated: true)
-
+                
                 if !(control.permission == .Notification) {
                     self.showDialogForProtectPermissionOnViewController()
                 } else {
@@ -86,7 +89,12 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
                     
                     if #available(iOS 10.0, *){
                         self.showDialogForProtectPermissionOnViewController(cancelHandler: {
-                            let denidedPermission = self.assistantDelegate!.notAllowedPermissions()
+                            var denidedPermission: [SPRequestPermissionType] = []
+                            for permission in self.permissions {
+                                if !self.permissionManager.isAuthorizedPermission(permission) {
+                                    denidedPermission.append(permission)
+                                }
+                            }
                             if denidedPermission.count == 1 {
                                 if denidedPermission[0] == SPRequestPermissionType.Notification {
                                     self.viewController.hide()
@@ -95,7 +103,12 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
                         })
                     } else {
                         control.setSelectedState(animated: true)
-                        let denidedPermission = self.assistantDelegate!.notAllowedPermissions()
+                        var denidedPermission: [SPRequestPermissionType] = []
+                        for permission in self.permissions {
+                            if !self.permissionManager.isAuthorizedPermission(permission) {
+                                denidedPermission.append(permission)
+                            }
+                        }
                         if denidedPermission.count == 1 {
                             if denidedPermission[0] == SPRequestPermissionType.Notification {
                                 self.viewController.hide()
@@ -107,13 +120,24 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
                 }
                 
             }
-            
-            if self.assistantDelegate?.isAllowPermissions() ?? false {
+            var allPermissionAllowed: Bool = true
+            for permission in self.permissions {
+                if !self.permissionManager.isAuthorizedPermission(permission) {
+                    allPermissionAllowed = false
+                    break
+                }
+            }
+            if allPermissionAllowed {
                 delay(0.21, closure: {
                     self.viewController.hide()
                 })
             } else {
-                let denidedPermission = self.assistantDelegate!.notAllowedPermissions()
+                var denidedPermission: [SPRequestPermissionType] = []
+                for permission in self.permissions {
+                    if !self.permissionManager.isAuthorizedPermission(permission) {
+                        denidedPermission.append(permission)
+                    }
+                }
                 if denidedPermission.count == 1 {
                     if denidedPermission[0] == SPRequestPermissionType.Notification {
                         if self.isPresentedNotificationRequest {
@@ -170,20 +194,11 @@ class SPRequestPermissionDialogInteractivePresenter: SPRequestPermissionPresente
     @objc private func updatePermissionsStyle() {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         for control in controls {
-            if assistantDelegate?.isAllowPermission(control.permission) ?? false {
+            if permissionManager.isAuthorizedPermission(control.permission) {
                 control.setSelectedState(animated: false)
             } else {
                 control.setNormalState(animated: false)
             }
         }
     }
-    
-    func isEnableHide() -> Bool {
-        return true
-    }
-    
-    func didHide(){
-        self.assistantDelegate?.didHide()
-    }
 }
-
