@@ -23,7 +23,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let permissins: [SPRequestPermissionType] = [.Camera, .PhotoLibrary, .Notification]
+    let permissins: [SPRequestPermissionType] = [.camera, .photoLibrary, .notification]
 
     override func viewDidLoad() {
         super.viewDidLoad()

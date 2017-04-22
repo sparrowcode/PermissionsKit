@@ -27,25 +27,25 @@ open class SPRequestPermissionDialogInteractiveDataSource: NSObject, SPRequestPe
         var iconBezierPath = UIBezierPath()
         let requestWidth: CGFloat = 100
         switch permission {
-        case .Camera:
+        case .camera:
             iconBezierPath = SPBezierPathFigure.icons.camera()
-        case .PhotoLibrary:
+        case .photoLibrary:
             iconBezierPath = SPBezierPathFigure.icons.photo_library()
-        case .Notification:
+        case .notification:
             iconBezierPath = SPBezierPathFigure.icons.notification()
-        case .Microphone:
+        case .microphone:
             iconBezierPath = SPBezierPathFigure.icons.microphone()
-        case .Calendar:
+        case .calendar:
             iconBezierPath = SPBezierPathFigure.icons.calendar()
-        case .LocationWhenInUse:
+        case .locationWhenInUse:
             iconBezierPath = SPBezierPathFigure.icons.location()
-        case .LocationAlways:
+        case .locationAlways:
             iconBezierPath = SPBezierPathFigure.icons.location()
-        case .LocationWithBackground:
+        case .locationWithBackground:
             iconBezierPath = SPBezierPathFigure.icons.location()
-        case .Contacts:
+        case .contacts:
             iconBezierPath = SPBezierPathFigure.icons.contacts()
-        case .Reminders:
+        case .reminders:
             iconBezierPath = SPBezierPathFigure.icons.reminders()
         }
 
@@ -63,25 +63,25 @@ open class SPRequestPermissionDialogInteractiveDataSource: NSObject, SPRequestPe
     open func titleForPermissionControl(_ permission: SPRequestPermissionType) -> String {
         var title = String()
         switch permission {
-        case .Camera:
+        case .camera:
             title = SPRequestPermissionData.texts.enable_camera()
-        case .PhotoLibrary:
+        case .photoLibrary:
             title = SPRequestPermissionData.texts.enable_photoLibrary()
-        case .Notification:
+        case .notification:
             title = SPRequestPermissionData.texts.enable_notification()
-        case .Microphone:
+        case .microphone:
             title = SPRequestPermissionData.texts.enable_microphone()
-        case .Calendar:
+        case .calendar:
             title = SPRequestPermissionData.texts.enable_calendar()
-        case .LocationWhenInUse:
+        case .locationWhenInUse:
             title = SPRequestPermissionData.texts.enable_location()
-        case .LocationAlways:
+        case .locationAlways:
             title = SPRequestPermissionData.texts.enable_location()
-        case .LocationWithBackground:
+        case .locationWithBackground:
             title = SPRequestPermissionData.texts.enable_location()
-        case .Contacts:
+        case .contacts:
             title = SPRequestPermissionData.texts.enable_contacts()
-        case .Reminders:
+        case .reminders:
             title = SPRequestPermissionData.texts.enable_reminedrs()
         }
         return title
