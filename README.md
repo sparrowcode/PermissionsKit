@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        SPRequestPermission.dialog.interactive.present(on: self, with: [.Camera])
+        SPRequestPermission.dialog.interactive.present(on: self, with: [.сamera])
     }
 }
 ```
@@ -44,7 +44,7 @@ To track events associated with `SPRequestPermission`, implement the protocol `S
 ```swift
 SPRequestPermission.dialog.interactive.present(
     on: self,
-    with: [.Camera],
+    with: [.сamera],
     delegate: self
 )
 ```
@@ -53,7 +53,7 @@ If you want to change data in a particular module (for example, the text in the 
 ```swift
 SPRequestPermission.dialog.interactive.present(
     on: self,
-    with: [.Camera],
+    with: [.сamera],
     dataSource: CustomDataSource()
 )
 ```
