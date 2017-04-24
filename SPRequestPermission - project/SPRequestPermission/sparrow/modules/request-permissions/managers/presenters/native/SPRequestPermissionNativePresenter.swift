@@ -31,6 +31,7 @@ class SPRequestPermissionNativePresenter {
     //MARK: - init
     init(with permissions: [SPRequestPermissionType]) {
         self.permissions = permissions
+        self.permissions.removeDuplicates()
     }
     
     func requestPermissions() {

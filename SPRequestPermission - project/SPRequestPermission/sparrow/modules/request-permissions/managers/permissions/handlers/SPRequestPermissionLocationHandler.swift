@@ -37,23 +37,40 @@ class SPRequestPermissionAlwaysAuthorizationLocationHandler: NSObject, CLLocatio
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        if whenInUseNotRealChangeStatus {
+            if status == .authorizedWhenInUse {
+                return
+            }
+        }
+        
         if status == .notDetermined {
             return
         }
-        
+
         if let complectionHandler = complectionHandler {
             complectionHandler(isAuthorized())
         }
     }
     
+    private var whenInUseNotRealChangeStatus: Bool = false
+    
     func requestPermission(_ complectionHandler: @escaping SPRequestPermissionAuthorizationHandlerCompletionBlock) {
         self.complectionHandler = complectionHandler
         
         let status = CLLocationManager.authorizationStatus()
-        if status == .notDetermined {
+        
+        switch status {
+        case .notDetermined:
             locationManager.delegate = self
-            locationManager.requestAlwaysAuthorization();
-        } else {
+            locationManager.requestAlwaysAuthorization()
+            break
+        case .authorizedWhenInUse:
+            self.whenInUseNotRealChangeStatus = true
+            locationManager.delegate = self
+            locationManager.requestAlwaysAuthorization()
+            break
+        default:
             complectionHandler(isAuthorized())
         }
     }
@@ -99,7 +116,7 @@ class SPRequestPermissionWhenInUseAuthorizationLocationHandler: NSObject, CLLoca
         self.complectionHandler = complectionHandler
         
         let status = CLLocationManager.authorizationStatus()
-        if status == .notDetermined {
+        if (status == .notDetermined) || (status == .authorizedAlways) {
             locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()
         } else {
@@ -110,8 +127,6 @@ class SPRequestPermissionWhenInUseAuthorizationLocationHandler: NSObject, CLLoca
     func isAuthorized() -> Bool {
         let status = CLLocationManager.authorizationStatus()
         if status == .authorizedWhenInUse {
-            print("SPRequestPermissionWhenInUseAuthorizationLocationHandler return true")
-            print(status == .authorizedAlways)
             return true
         }
         return false
