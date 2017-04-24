@@ -51,7 +51,6 @@ class SPRequestPermissionTwiceControl: UIButton, SPRequestPermissionTwiceControl
     
     private func commonInit() {
         self.layer.borderWidth = 1
-        self.setTitleColor(self.selectedColor.withAlphaComponent(0.62), for: UIControlState.highlighted)
         self.addSubview(self.iconView)
         self.titleLabel?.font = UIFont.init(name: SPRequestPermissionData.fonts.base() + "-Medium", size: 14)
         if UIScreen.main.bounds.width < 335 {
@@ -67,6 +66,8 @@ class SPRequestPermissionTwiceControl: UIButton, SPRequestPermissionTwiceControl
         self.backgroundColor = self.normalColor
         self.setTitleColor(self.selectedColor, for: UIControlState.normal)
         self.iconView.setColor(self.selectedColor)
+        self.iconView.setIconImageView(self.iconView.iconImage!)
+        self.setTitleColor(self.selectedColor.withAlphaComponent(0.62), for: UIControlState.highlighted)
     }
     
     func setSelectedState(animated: Bool) {
@@ -111,9 +112,9 @@ class SPRequestPermissionTwiceControl: UIButton, SPRequestPermissionTwiceControl
 
 class SPRequestPermissionIconView: UIView {
     
-    private var imageView: UIImageView?
-    private var iconImage: UIImage?
-    private var selectedIconImage: UIImage?
+    var imageView: UIImageView?
+    var iconImage: UIImage?
+    var selectedIconImage: UIImage?
 
     init(iconImage: UIImage, selectedIconImage: UIImage) {
         super.init(frame: CGRect.zero)
@@ -190,7 +191,7 @@ class SPRequestPermissionIconView: UIView {
         }, completion: nil)
     }
     
-    private func setIconImageView(_ iconImageView: UIImage) {
+    func setIconImageView(_ iconImageView: UIImage) {
         self.imageView?.image = iconImageView
     }
     

@@ -40,7 +40,7 @@ class SPRequestPermissionDialogInteractivePresenter {
     init(with permissions: [SPRequestPermissionType], dataSource: SPRequestPermissionDialogInteractiveDataSourceInterface) {
         self.dataSource = dataSource
         self.permissions = permissions
-        
+        self.permissions.removeDuplicates()
     }
     
     private func configureController() {
