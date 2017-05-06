@@ -13,7 +13,7 @@ Drop in `Sparrow` folder to your Xcode project (make sure to enable "Copy items 
 
 Or via CocoaPods:
 ```ruby
-pod 'Sparrow/Modules/RequestPermission', :git => 'https://github.com/IvanVorobei/Sparrow.git’
+pod 'Sparrow/Modules/RequestPermission', :git => 'https://github.com/IvanVorobei/Sparrow.git'
 ```
 ## How to use
 Call `SPRequestPermission` and choose type UI (for example: `dialog/interactive`)
