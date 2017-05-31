@@ -38,6 +38,10 @@ public extension UILabel {
         self.setShadowOffsetForLetters(blurRadius: blurRadius, widthOffset: widthOffset, heightOffset: heightOffset, opacity: opacity)
     }
     
+    func removeShadowForLetters() {
+        self.setShadowOffsetForLetters(blurRadius: 0, widthOffset: 0, heightOffset: 0, opacity: 0)
+    }
+    
     func setCenteringAlignment() {
         self.textAlignment = .center
         self.baselineAdjustment = .alignCenters

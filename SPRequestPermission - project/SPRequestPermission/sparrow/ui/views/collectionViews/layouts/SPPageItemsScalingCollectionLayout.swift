@@ -21,6 +21,7 @@
 
 import UIKit
 
+@available(iOS, unavailable)
 public class SPPageItemsScalingCollectionLayout: UICollectionViewFlowLayout {
     
     var itemSideRatio: CGFloat = 0.764

@@ -1,14 +1,6 @@
-//
-//  File.swift
-//  ExchangeRates
-//
-//  Created by Ivan Vorobei on 2/24/17.
-//  Copyright © 2017 Ivan Vorobei. All rights reserved.
-//
-
 import UIKit
 
-class SPPageItemsCollectionViewLayout: UICollectionViewFlowLayout {
+public class SPCollectionViewLayout: UICollectionViewFlowLayout {
     
     var itemSpacingFactor: CGFloat = 0.11
     var minItemSpace: CGFloat = 0
@@ -20,11 +12,14 @@ class SPPageItemsCollectionViewLayout: UICollectionViewFlowLayout {
     
     var cellSideRatio: CGFloat = 1
     var maxWidth: CGFloat = 350
+    var minWidth: CGFloat?
     var widthFactor: CGFloat = 0.9
     var maxHeight: CGFloat = 350
     var heightFactor: CGFloat = 0.9
     
-    var scaleItems: Bool = false
+    var isGradeItems: Bool = false
+    var isScaleItems: Bool = false
+    var isPaging: Bool = false
     
     var pageWidth: CGFloat {
         get {
@@ -47,7 +42,12 @@ class SPPageItemsCollectionViewLayout: UICollectionViewFlowLayout {
         scrollDirection = .horizontal
     }
     
-    public override func targetContentOffset( forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+    public override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        
+        if !self.isPaging {
+            return super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)
+        }
+        
         switch self.scrollDirection {
         case .horizontal:
             let rawPageValue = (self.collectionView!.contentOffset.x) / self.pageWidth
@@ -104,13 +104,16 @@ class SPPageItemsCollectionViewLayout: UICollectionViewFlowLayout {
                 let distanceFromCenter = visibleCenterX - $0.center.x
                 
                 let absDistanceFromCenter = min(abs(distanceFromCenter), self.scalingOffset)
-                if self.scaleItems {
+                
+                if self.isScaleItems {
                     let scale = absDistanceFromCenter * (self.minimumScaleFactor - 1) / self.scalingOffset + 1
                     $0.transform3D = CATransform3DScale(CATransform3DIdentity, scale, scale, 1)
                 }
                 
-                let alpha = absDistanceFromCenter * (self.minimumAlphaFactor - 1) / self.scalingOffset + 1
-                $0.alpha = alpha
+                if self.isGradeItems {
+                    let alpha = absDistanceFromCenter * (self.minimumAlphaFactor - 1) / self.scalingOffset + 1
+                    $0.alpha = alpha
+                }
             }
         case .vertical:
             let visibleRect = CGRect.init(x: contentOffset.x, y: contentOffset.y, width: size.width, height: size.height)
@@ -119,13 +122,15 @@ class SPPageItemsCollectionViewLayout: UICollectionViewFlowLayout {
                 let distanceFromCenter = visibleCenterY - owner.center.y
                 let absDistanceFromCenter = min(abs(distanceFromCenter), self.scalingOffset)
                 
-                if self.scaleItems {
+                if self.isScaleItems {
                     let scale = absDistanceFromCenter * (self.minimumScaleFactor - 1) / self.scalingOffset + 1
                     owner.transform3D = CATransform3DScale(CATransform3DIdentity, scale, scale, 1)
                 }
                 
-                let alpha = absDistanceFromCenter * (self.minimumAlphaFactor - 1) / self.scalingOffset + 1
-                owner.alpha = alpha
+                if self.isGradeItems {
+                    let alpha = absDistanceFromCenter * (self.minimumAlphaFactor - 1) / self.scalingOffset + 1
+                    owner.alpha = alpha
+                }
             }
         }
         return newAttributesArray
@@ -145,6 +150,9 @@ class SPPageItemsCollectionViewLayout: UICollectionViewFlowLayout {
         
         self.itemSize = SPLayout.sizeWith(widthFactor: self.widthFactor, maxWidth: self.maxWidth, heightFactor: self.heightFactor, maxHeight: self.maxHeight, relativeSideFactor: self.cellSideRatio, from: collectionView.bounds.size)
         
+        if self.minWidth != nil {
+            self.itemSize.width.setIfFewer(when: self.minWidth!)
+        }
         
         switch self.scrollDirection {
         case .horizontal:

@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPGradientViewController: UIViewController {
+public class SPGradientViewControllerDEPRICATED: UIViewController {
     
     var gradient: CAGradientLayer?
     

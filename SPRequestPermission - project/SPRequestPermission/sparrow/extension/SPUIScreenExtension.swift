@@ -21,31 +21,13 @@
 
 import UIKit
 
-public class SPParallaxTableViewController: UITableViewController {
+extension UIScreen {
     
-    private var cellHeight: CGFloat = 240
-
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    // MARK: - Table view data source
-    override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        fatalError("need emplementation in subclass")
+    class func getMinSideSize() -> CGFloat {
+        return min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
     }
     
-    override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError("need emplementation in subclass")
-    }
-    
-    override public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.cellHeight
-    }
-    
-    override public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        tableView.visibleCells.forEach { cell in
-            let parallaxCell = cell as! SPParallaxTableViewCell
-            parallaxCell.parallaxOffset(self.tableView)
-        }
+    class func widthLessThanHeight() -> Bool {
+        return UIScreen.main.bounds.width < UIScreen.main.bounds.height
     }
 }

@@ -118,6 +118,22 @@ open class SPRequestPermissionDialogInteractiveDataSource: NSObject, SPRequestPe
         return SPRequestPermissionData.texts.swipe_for_hide()
     }
     
+    open func titleForAlertDenidPermission() -> String {
+        return SPRequestPermissionData.texts.titleForDenidPermission()
+    }
+    
+    open func subtitleForAlertDenidPermission() -> String {
+        return SPRequestPermissionData.texts.subtitleForDenidPermission()
+    }
+
+    open func cancelForAlertDenidPermission() -> String {
+        return SPRequestPermissionData.texts.cancel()
+    }
+    
+    open func settingForAlertDenidPermission() -> String {
+        return SPRequestPermissionData.texts.settings()
+    }
+    
     open func mainColor() -> UIColor {
         return UIColor.init(hex: "#27AEE8")
     }

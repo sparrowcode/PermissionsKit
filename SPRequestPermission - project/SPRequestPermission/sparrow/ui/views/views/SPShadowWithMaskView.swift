@@ -21,9 +21,9 @@
 
 import UIKit
 
-public class SPShadowWithMaskView: UIView {
+public class SPShadowWithMaskView<ContentView: UIView>: UIView {
     
-    public let contentView: UIView = UIView()
+    public let contentView: ContentView = ContentView()
     
     public init() {
         super.init(frame: CGRect.zero)
@@ -43,6 +43,7 @@ public class SPShadowWithMaskView: UIView {
     private func commonInit() {
         self.contentView.layer.masksToBounds = true
         self.layer.masksToBounds = false
+        self.contentView.layer.masksToBounds = true
         self.backgroundColor = UIColor.clear
         self.addSubview(contentView)
         self.updateShadow()

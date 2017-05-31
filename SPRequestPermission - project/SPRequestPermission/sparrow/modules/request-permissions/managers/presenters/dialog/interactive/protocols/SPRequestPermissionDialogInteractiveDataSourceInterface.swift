@@ -42,6 +42,11 @@ public protocol SPRequestPermissionDialogInteractiveDataSourceInterface {
     //small label with advice ander dialog view (use advice how hide dialog)
     func underDialogAdviceTitle() -> String
     
+    func titleForAlertDenidPermission() -> String
+    func subtitleForAlertDenidPermission() -> String
+    func cancelForAlertDenidPermission() -> String
+    func settingForAlertDenidPermission() -> String
+    
     //colorize
     func mainColor() -> UIColor
     func secondColor() -> UIColor

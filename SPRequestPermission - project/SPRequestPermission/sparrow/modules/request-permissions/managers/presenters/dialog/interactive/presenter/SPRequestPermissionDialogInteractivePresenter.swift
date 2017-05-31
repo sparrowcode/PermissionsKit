@@ -157,13 +157,13 @@ class SPRequestPermissionDialogInteractivePresenter {
     
     private func showDialogForProtectPermissionOnViewController(cancelHandler: @escaping ()->() = {}) {
         let alert = UIAlertController.init(
-            title: SPRequestPermissionData.texts.titleDisablePermissionAlertText(),
-            message: SPRequestPermissionData.texts.subtitleDisablePermissionAlertText(),
+            title: dataSource.titleForAlertDenidPermission(),
+            message: dataSource.subtitleForAlertDenidPermission(),
             preferredStyle: UIAlertControllerStyle.alert
         )
         
         alert.addAction(UIAlertAction.init(
-            title: SPRequestPermissionData.texts.cancel(),
+            title: dataSource.cancelForAlertDenidPermission(),
             style: UIAlertActionStyle.cancel,
             handler: {
                 finished in
@@ -172,7 +172,7 @@ class SPRequestPermissionDialogInteractivePresenter {
         )
         
         alert.addAction(UIAlertAction.init(
-            title: SPRequestPermissionData.texts.settings(),
+            title: dataSource.settingForAlertDenidPermission(),
             style: UIAlertActionStyle.default,
             handler: {
                 finished in
