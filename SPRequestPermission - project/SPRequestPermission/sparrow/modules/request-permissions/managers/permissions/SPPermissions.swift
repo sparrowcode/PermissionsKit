@@ -299,3 +299,26 @@ class SPRemindersPermission: SPPermissionInterface {
     }
 }
 
+class SPBluetoothPermission: SPPermissionInterface {
+    
+    func isAuthorized() -> Bool {
+        let status = EKEventStore.authorizationStatus(for: EKEntityType.reminder)
+        switch (status) {
+        case EKAuthorizationStatus.authorized:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        let eventStore = EKEventStore()
+        eventStore.requestAccess(to: EKEntityType.reminder, completion: {
+            (accessGranted: Bool, error: Error?) in
+            DispatchQueue.main.async {
+                complectionHandler()
+            }
+        })
+    }
+}
+

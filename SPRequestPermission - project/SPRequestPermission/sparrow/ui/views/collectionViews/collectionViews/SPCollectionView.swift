@@ -21,31 +21,33 @@
 
 import UIKit
 
-public class SPParallaxTableViewController: UITableViewController {
+public class SPCollectionView: UICollectionView {
     
-    private var cellHeight: CGFloat = 240
-
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    // MARK: - Table view data source
-    override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        fatalError("need emplementation in subclass")
+    var layout = SPCollectionViewLayout()
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
     }
     
-    override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError("need emplementation in subclass")
+    init(frame: CGRect) {
+        super.init(frame: frame, collectionViewLayout: self.layout)
+        commonInit()
     }
     
-    override public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.cellHeight
+    init() {
+        super.init(frame: CGRect.zero, collectionViewLayout: self.layout)
+        commonInit()
     }
     
-    override public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        tableView.visibleCells.forEach { cell in
-            let parallaxCell = cell as! SPParallaxTableViewCell
-            parallaxCell.parallaxOffset(self.tableView)
-        }
+    fileprivate func commonInit() {
+        self.layout.scrollDirection = .vertical
+        self.backgroundColor = UIColor.clear
+        self.collectionViewLayout = self.layout
+        self.decelerationRate = UIScrollViewDecelerationRateFast
+        self.delaysContentTouches = false
+        self.isPagingEnabled = false
+        self.showsHorizontalScrollIndicator = false
+        self.showsVerticalScrollIndicator = false
     }
 }

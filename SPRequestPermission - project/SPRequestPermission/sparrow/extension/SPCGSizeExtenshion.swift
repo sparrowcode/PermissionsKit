@@ -21,31 +21,17 @@
 
 import UIKit
 
-public class SPParallaxTableViewController: UITableViewController {
+extension CGSize {
     
-    private var cellHeight: CGFloat = 240
-
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    // MARK: - Table view data source
-    override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        fatalError("need emplementation in subclass")
+    func resize(newWidth: CGFloat) -> CGSize {
+        let relativeSideSize = self.width / self.height
+        let newHeight = newWidth / relativeSideSize
+        return CGSize.init(width: newWidth, height: newHeight)
     }
     
-    override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError("need emplementation in subclass")
-    }
-    
-    override public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.cellHeight
-    }
-    
-    override public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        tableView.visibleCells.forEach { cell in
-            let parallaxCell = cell as! SPParallaxTableViewCell
-            parallaxCell.parallaxOffset(self.tableView)
-        }
+    func resize(newHeight: CGFloat) -> CGSize {
+        let relativeSideSize = self.width / self.height
+        let newWidth = newHeight * relativeSideSize
+        return CGSize.init(width: newWidth, height: newHeight)
     }
 }

@@ -21,9 +21,11 @@
 
 import UIKit
 
-public class SPPageItemsScallingViewController: SPGradientViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+@available(iOS, unavailable)
+public class SPPageItemsScallingViewController: SPGradientViewControllerDEPRICATED, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var collectionView = SPPageItemsScalingCollectionView()
+    //var collectionView = SPPageItemsScalingCollectionView()
+    var collectionView = SPCollectionView.init()
     
     override public func viewDidLoad() {
         super.viewDidLoad()

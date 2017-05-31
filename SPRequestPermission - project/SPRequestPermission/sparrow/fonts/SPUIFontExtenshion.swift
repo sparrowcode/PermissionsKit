@@ -46,6 +46,8 @@ public extension UIFont {
     
     private static func getBoldTypeNameBy(boldType: BoldType) -> String {
         switch boldType {
+        case .UltraLight:
+            return "-UltraLight"
         case .Light:
             return "-Light"
         case .Medium:
@@ -69,6 +71,7 @@ public extension UIFont {
         case Regular
         case Medium
         case Light
+        case UltraLight
         case Bold
         case DemiBold
         case None

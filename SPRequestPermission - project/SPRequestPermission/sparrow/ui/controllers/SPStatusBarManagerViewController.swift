@@ -21,31 +21,25 @@
 
 import UIKit
 
-public class SPParallaxTableViewController: UITableViewController {
+class SPStatusBarManagerViewController: UIViewController {
     
-    private var cellHeight: CGFloat = 240
-
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    // MARK: - Table view data source
-    override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        fatalError("need emplementation in subclass")
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
-    override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError("need emplementation in subclass")
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
     }
     
-    override public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.cellHeight
-    }
-    
-    override public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        tableView.visibleCells.forEach { cell in
-            let parallaxCell = cell as! SPParallaxTableViewCell
-            parallaxCell.parallaxOffset(self.tableView)
+    private var isHiddenStatusBar: Bool = false {
+        didSet {
+            UIView.animate(withDuration: 0.3) { () -> Void in
+                self.setNeedsStatusBarAppearanceUpdate()
+            }
         }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return isHiddenStatusBar
     }
 }

@@ -48,23 +48,23 @@ public class SPRequestPermissionDialogInteractiveView: UIView {
         self.headerView.backgroundColor  = UIColor.clear
         self.headerView.titleLabel.textColor = UIColor.white
         self.headerView.titleLabel.font = UIFont.init(
-            name: SPRequestPermissionData.fonts.base() + "-Regular",
+            name: SPRequestPermissionData.fonts.base() + "-Medium",
             size: 24
         )
         self.headerView.titleLabel.minimumScaleFactor = 0.5
-        self.headerView.subTitleLabel.textColor = UIColor.white
-        self.headerView.subTitleLabel.font = UIFont.init(
+        self.headerView.subtitleLabel.textColor = UIColor.white
+        self.headerView.subtitleLabel.font = UIFont.init(
             name: SPRequestPermissionData.fonts.base() + "-Medium",
             size: 12
         )
-        self.headerView.subTitleLabel.minimumScaleFactor = 0.5
-        self.headerView.subTitleLabel.numberOfLines = 0
+        self.headerView.subtitleLabel.minimumScaleFactor = 0.5
+        self.headerView.subtitleLabel.numberOfLines = 0
         self.topLabel.setCenteringAlignment()
-        self.topLabel.textColor = UIColor.black.withAlphaComponent(0.65)
+        self.topLabel.textColor = UIColor.black.withAlphaComponent(0.45)
         self.topLabel.minimumScaleFactor = 0.7
         self.topLabel.adjustsFontSizeToFitWidth = true
         self.topLabel.font = UIFont.init(
-            name: SPRequestPermissionData.fonts.base() + "-Regular",
+            name: SPRequestPermissionData.fonts.base() + "-Medium",
             size: 12
         )
         self.topLabel.numberOfLines = 0
@@ -100,8 +100,15 @@ public class SPRequestPermissionDialogInteractiveView: UIView {
         self.topLabel.sizeToFit()
         self.bottomLabel.sizeToFit()
         
+        
+        self.headerView.spaceBetweenText = 3
+        self.headerView.maxTextWidthFactor = 0.5
+        
         if isPortraitLayout {
-            self.headerView.frame = CGRect.init(x: 0, y: 0, width: width, height: heigth * self.getHeadersHeightFactor(countElements: self.buttonsContainerView.subviews.count))
+            self.headerView.frame = CGRect.init(
+                x: 0, y: 0,
+                width: width,
+                height: heigth * self.getHeadersHeightFactor(countElements: self.buttonsContainerView.subviews.count))
             
             self.topLabel.frame = CGRect.init(
                 x: 0, y: self.headerView.frame.height,

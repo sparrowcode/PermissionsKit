@@ -23,29 +23,49 @@ import UIKit
 
 class SPTitleWithSubtitleView: UIView {
     
-    let titleLabel: UILabel = UILabel()
-    let subTitleLabel: UILabel = UILabel()
+    var titleLabel: UILabel = UILabel.init()
+    var subtitleLabel: UILabel = UILabel.init()
     private var backgroundView: UIView = UIView()
     
-    //MARK: layout
-    var titleWidthFactor: CGFloat = 0.8
-    var subTitleWidthFactor: CGFloat = 0.8
+    var maxTextWidthFactor: CGFloat = 1
+    var spaceBetweenText: CGFloat = 0
+    
+    var isShowShadow: Bool = true
     
     init() {
         super.init(frame: CGRect.zero)
-        commonInit()
+        self.commonInit()
     }
     
-    init(title: String, subTitle: String, backgroundView: UIView) {
-        super.init(frame: CGRect.zero)
-        self.titleLabel.text = title
-        self.subTitleLabel.text = subTitle
-        self.backgroundView = backgroundView
-        commonInit()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        self.commonInit()
+    }
+    
+    private func commonInit() {
+        self.backgroundColor = UIColor.clear
+        
+        self.subtitleLabel.text = "Subtitle"
+        self.subtitleLabel.layer.shadowColor = UIColor.black.cgColor
+        self.subtitleLabel.font = UIFont.fonts.AvenirNext(type: .Medium, size: 14)
+        self.subtitleLabel.textColor = UIColor.white
+        self.subtitleLabel.setCenteringAlignment()
+        self.subtitleLabel.numberOfLines = 0
+        self.addSubview(self.subtitleLabel)
+        
+        self.titleLabel.text = "Title"
+        self.titleLabel.font = UIFont.fonts.AvenirNext(type: .DemiBold, size: 25)
+        self.titleLabel.textColor = UIColor.white
+        self.titleLabel.setCenteringAlignment()
+        self.addSubview(self.titleLabel)
+        
+        self.backgroundView.backgroundColor = UIColor.clear
+        self.addSubview(self.backgroundView)
     }
     
     func setBackgroundView(_ view: UIView) {
@@ -53,43 +73,58 @@ class SPTitleWithSubtitleView: UIView {
         self.insertSubview(view, at: 0)
     }
     
-    private func commonInit() {
-        self.addSubview(self.backgroundView)
-        self.addSubview(self.titleLabel)
-        self.addSubview(self.subTitleLabel)
-        self.titleLabel.setCenteringAlignment()
-        self.titleLabel.textColor = UIColor.white
-        self.subTitleLabel.setCenteringAlignment()
-        self.subTitleLabel.textColor = UIColor.white
-        self.titleLabel.setShadowOffsetForLetters(blurRadius: 0, widthOffset: 0, heightOffset: 1, opacity: 1)
-        self.subTitleLabel.setShadowOffsetForLetters(blurRadius: 0, widthOffset: 0, heightOffset: 1, opacity: 1)
-        self.titleLabel.numberOfLines = 0
-        self.subTitleLabel.numberOfLines = 0
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.backgroundView.frame = self.bounds
         
-        let titleWidth = self.frame.width * self.titleWidthFactor
-        let subTitleWidth = self.frame.width * self.subTitleWidthFactor
+        self.backgroundView.setEqualsFrameFromBounds(self)
         
-        self.titleLabel.frame = CGRect.init(x: 0, y: 0, width: titleWidth, height: self.frame.height)
-        self.subTitleLabel.frame = CGRect.init(x: 0, y: 0, width: subTitleWidth, height: self.frame.height)
+        let textWidth = self.frame.width * self.maxTextWidthFactor
         
+        self.titleLabel.setWidth(textWidth)
         self.titleLabel.sizeToFit()
-        self.subTitleLabel.sizeToFit()
         
-        let titleHeight = self.titleLabel.frame.height
-        let subTitleHeight = self.subTitleLabel.frame.height
+        self.subtitleLabel.setWidth(textWidth)
+        self.subtitleLabel.sizeToFit()
         
-        let titleYPosition = (self.frame.height - (titleHeight + subTitleHeight)) / 2
-        let subtitleYPosition = titleYPosition + titleHeight
+        let spaceBetweenText = self.spaceBetweenText
         
-        self.titleLabel.frame = CGRect.init(x: 0, y: titleYPosition, width: titleWidth, height: titleHeight)
+        let allNeedHeight: CGFloat = self.titleLabel.frame.height + self.subtitleLabel.frame.height + spaceBetweenText
+        self.titleLabel.frame.origin.y = (self.frame.height - allNeedHeight) / 2
         self.titleLabel.center.x = self.frame.width / 2
-        self.subTitleLabel.frame = CGRect.init(x: 0, y: subtitleYPosition, width: subTitleWidth, height: subTitleHeight)
-        self.subTitleLabel.center.x = self.frame.width / 2
-        self.backgroundView.frame = self.bounds
+        self.subtitleLabel.frame.origin.y = self.titleLabel.frame.bottomYPosition + spaceBetweenText
+        self.subtitleLabel.center.x = self.frame.width / 2
+
+        if self.isShowShadow {
+            let offset = self.titleLabel.frame.height * 0.03
+            self.titleLabel.setShadowOffsetForLetters(heightOffset: offset, opacity: 0.35)
+            self.subtitleLabel.setShadowOffsetForLetters(heightOffset: offset, opacity: 0.35)
+        } else {
+            self.titleLabel.removeShadowForLetters()
+            self.subtitleLabel.removeShadowForLetters()
+        }
     }
+    
+    //OLD
+    /*
+     
+     override func layoutSubviews() {
+     super.layoutSubviews()
+     
+     self.backgroundView.setEqualsFrameFromBounds(self)
+     
+     let heightFactor: CGFloat = 0.565
+     self.titleLabel.frame = CGRect.init(x: 0, y: 0, width: self.frame.width, height: self.frame.height * heightFactor)
+     
+     self.subtitleLabel.frame = CGRect.init(x: 0, y: (self.titleLabel.frame.origin.y + self.titleLabel.frame.height), width: self.frame.width, height: self.frame.height * (1 - heightFactor))
+     
+     if self.isShowShadow {
+     let offset = self.titleLabel.frame.height * 0.03
+     self.titleLabel.setShadowOffsetForLetters(heightOffset: offset, opacity: 0.35)
+     self.subtitleLabel.setShadowOffsetForLetters(heightOffset: offset, opacity: 0.35)
+     } else {
+     self.titleLabel.removeShadowForLetters()
+     self.subtitleLabel.removeShadowForLetters()
+     }
+     }
+ */
 }

@@ -21,9 +21,11 @@
 
 import UIKit
 
+@available(iOS, unavailable)
 public class SPPageItemsScalingCollectionView: UICollectionView {
     
-    var layout = SPPageItemsScalingCollectionLayout()
+    //var layout = SPPageItemsScalingCollectionLayout()
+    var layout = SPCollectionViewLayout.init()
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -39,10 +41,6 @@ public class SPPageItemsScalingCollectionView: UICollectionView {
         super.init(frame: CGRect.zero, collectionViewLayout: self.layout)
         commonInit()
     }
-}
-
-// MARK: create
-public extension SPPageItemsScalingCollectionView {
     
     fileprivate func commonInit() {
         self.backgroundColor = UIColor.clear

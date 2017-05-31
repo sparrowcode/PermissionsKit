@@ -36,6 +36,6 @@
 
 //NSVideoSubscriberAccountUsageDescription
 
-//Bacground Mode
+//Background Mode
     //key: NSLocationAlwaysUsageDescription
     //value: location

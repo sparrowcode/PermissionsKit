@@ -85,7 +85,7 @@ extension SPRequestPermissionDialogInteractiveViewController: SPRequestPermissio
     }
     
     public func setHeaderSubtitle(_ title: String) {
-        self.dialogView.headerView.subTitleLabel.text = title
+        self.dialogView.headerView.subtitleLabel.text = title
         self.dialogView.layoutSubviews()
     }
     

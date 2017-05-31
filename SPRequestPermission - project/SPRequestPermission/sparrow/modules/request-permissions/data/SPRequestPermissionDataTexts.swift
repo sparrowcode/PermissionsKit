@@ -86,11 +86,11 @@ extension SPRequestPermissionData {
             return "Settings"
         }
         
-        static func titleDisablePermissionAlertText() -> String {
+        static func titleForDenidPermission() -> String {
             return "Important"
         }
         
-        static func subtitleDisablePermissionAlertText() -> String {
+        static func subtitleForDenidPermission() -> String {
             return "Permission denied. Please, go to Settings and allow permissions"
         }
     }

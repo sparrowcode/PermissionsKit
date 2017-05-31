@@ -21,13 +21,15 @@
 
 import UIKit
 
-extension UIScreen {
+extension UIViewController {
     
-    class func getMinSideSize() -> CGFloat {
-        return min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
-    class func widthLessThanLength() -> Bool {
-        return UIScreen.main.bounds.width < UIScreen.main.bounds.height
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
