@@ -6,7 +6,7 @@ This project is about managing permissions with the customizable visual effects.
 <img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/e85814ac/resources/request-permission%20-%20mockup_preview.gif" width="600">
 
 ## Requirements
-Xcode 8 and Swift 3. Ready for use on iOS 8+
+Xcode 9 and Swift 4. Ready for use on iOS 8+
 
 ## Integration
 Drop in `Sparrow` folder to your Xcode project (make sure to enable "Copy items if needed" and "Create groups").
