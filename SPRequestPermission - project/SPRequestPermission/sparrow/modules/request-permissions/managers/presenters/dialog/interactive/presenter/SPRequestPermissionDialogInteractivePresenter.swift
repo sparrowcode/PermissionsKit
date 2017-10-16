@@ -196,12 +196,19 @@ class SPRequestPermissionDialogInteractivePresenter {
     
     @objc private func updatePermissionsStyle() {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        var allPermissionsGranted = true
         for control in controls {
             if permissionManager.isAuthorizedPermission(control.permission) {
                 control.setSelectedState(animated: false)
             } else {
+                allPermissionsGranted = false
                 control.setNormalState(animated: false)
             }
+        }
+        if allPermissionsGranted {
+            delay(0.21, closure: {
+                self.viewController.hide()
+            })
         }
     }
 }
