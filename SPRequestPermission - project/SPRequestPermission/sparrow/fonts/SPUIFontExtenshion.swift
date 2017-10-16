@@ -30,6 +30,14 @@ public extension UIFont {
         }
     }
     
+    public static func system(type: BoldType, size: CGFloat) -> UIFont {
+        if #available(iOS 8.2, *) {
+            return UIFont.systemFont(ofSize: size, weight: self.getBoldTypeBy(boldType: type))
+        } else {
+            return self.createFont(.AvenirNext, boldType: type, size: size)
+        }
+    }
+    
     public static func createFont(_ fontType: FontType, boldType: BoldType, size: CGFloat) -> UIFont {
         return UIFont.init(
             name: self.getFontNameBy(fontType: fontType) + self.getBoldTypeNameBy(boldType: boldType),
@@ -60,6 +68,27 @@ public extension UIFont {
             return "-DemiBold"
         default:
             return "-Regular"
+        }
+    }
+    
+    
+    @available(iOS 8.2, *)
+    private static func getBoldTypeBy(boldType: BoldType) -> UIFont.Weight {
+        switch boldType {
+        case .UltraLight:
+            return UIFont.Weight.ultraLight
+        case .Light:
+            return UIFont.Weight.light
+        case .Medium:
+            return UIFont.Weight.medium
+        case .Regular:
+            return UIFont.Weight.regular
+        case .Bold:
+            return UIFont.Weight.bold
+        case .DemiBold:
+            return UIFont.Weight.semibold
+        default:
+            return UIFont.Weight.regular
         }
     }
     

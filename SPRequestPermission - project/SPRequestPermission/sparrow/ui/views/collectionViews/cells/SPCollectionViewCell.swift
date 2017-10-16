@@ -21,8 +21,34 @@
 
 import UIKit
 
-public class SPCollectionViewCell: UICollectionViewCell {
+public class SPCollectionViewCell<ContentView: UIView>: UICollectionViewCell {
     
+    let view = ContentView.init()
+    var isShowShadow: Bool = false
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = UIColor.clear
+        self.addSubview(view)
+    }
     
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        self.view.setEqualsFrameFromBounds(self)
+        if self.isShowShadow {
+            self.setShadow(
+                xTranslationFactor: 0,
+                yTranslationFactor: 0.07,
+                widthRelativeFactor: 0.78,
+                heightRelativeFactor: 1,
+                blurRadiusFactor: 0.05,
+                shadowOpacity: 0.15,
+                cornerRadiusFactor: 0.05
+            )
+        }
+    }
 }

@@ -49,7 +49,31 @@ public class SPAnimationAlpha {
             })
             del += delayPerItem
         }
+    }
+    
+    static func hideReverseList(_ duration: TimeInterval = durationListAnimation,
+                         views: [UIView],
+                         delayPerItem: TimeInterval = delayPerItem,
+                         withComplection completion: (() -> Void)! = {}) {
         
+        var del: Double = 0
+        let reversedViews = views.reversed()
+        for view in reversedViews {
+            delay(del, closure: {
+                if (view == views.last) {
+                    SPAnimation.animate(duration, animations: {
+                        view.alpha = 0
+                    }, withComplection: {
+                        completion()
+                    })
+                } else {
+                    SPAnimation.animate(duration, animations: {
+                        view.alpha = 0
+                    })
+                }
+            })
+            del += delayPerItem
+        }
     }
     
     static func showList(_ duration: TimeInterval = durationListAnimation,

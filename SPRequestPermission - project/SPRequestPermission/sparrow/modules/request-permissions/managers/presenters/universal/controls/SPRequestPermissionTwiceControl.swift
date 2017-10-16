@@ -176,7 +176,6 @@ class SPRequestPermissionIconView: UIView {
                 }
             }, options: UIViewAnimationOptions.curveEaseOut,
                withComplection: {
-                finished in
                 blurView.removeFromSuperview()
             })
         })

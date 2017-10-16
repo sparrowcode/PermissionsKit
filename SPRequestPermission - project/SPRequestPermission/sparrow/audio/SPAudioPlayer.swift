@@ -52,13 +52,4 @@ public struct SPAudioPlayer {
     func play() {
         player.play()
     }
-    
-    static func notStopBackgroundMusic() {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            
-        }
-    }
 }

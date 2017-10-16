@@ -23,6 +23,10 @@ import UIKit
 
 extension CGRect {
     
+    var bottomXPosition: CGFloat {
+        return self.origin.x + self.width
+    }
+    
     var bottomYPosition: CGFloat {
         return self.origin.y + self.height
     }

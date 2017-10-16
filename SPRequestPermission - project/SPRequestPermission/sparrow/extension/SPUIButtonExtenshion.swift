@@ -30,25 +30,21 @@ extension UIButton {
                             animations: {
                                 self.titleLabel?.alpha = 0
         }, withComplection: {
-            finished in
             self.setTitle(text, for: .normal)
             
             SPAnimation.animate(0.2, animations: {
                 self.titleLabel?.alpha = 1
             }, withComplection: {
-                finished in
                 
                 SPAnimation.animate(0.2, animations: {
                     self.titleLabel?.alpha = 0
                 }, delay: 0.35,
                    withComplection: {
-                    finished in
                     self.setTitle(baseText, for: .normal)
                     
                     SPAnimation.animate(0.2, animations: {
                         self.titleLabel?.alpha = 1
                     }, withComplection: {
-                        finished in
                         completion()
                     })
                 })
@@ -62,17 +58,19 @@ extension UIButton {
                             animations: {
                                 self.titleLabel?.alpha = 0
         }, withComplection: {
-            finished in
             self.setTitle(text, for: .normal)
             
             SPAnimation.animate(0.2, animations: {
                 self.titleLabel?.alpha = 1
-            }, withComplection: {
-                finished in
-                
+            }, withComplection: {   
                 completion()
                 
             })
         })
+    }
+    
+    func setTitleColorForNoramlAndHightlightedStates(color: UIColor) {
+        self.setTitleColor(color, for: .normal)
+        self.setTitleColor(color.withAlphaComponent(0.7), for: .highlighted)
     }
 }

@@ -26,7 +26,7 @@ extension SPRequestPermissionData {
     struct colors {
         
         static func mainColor() -> UIColor {
-            return UIColor.init(hex: "#27AEE8")
+            return SPStyleKit.baseColor()
         }
         
         static func secondColor() -> UIColor {

@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UIViewController {
+public class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: SPStatusBarManagerViewController {
     
     //MARK: - views
     let dialogView: DialogView
@@ -30,8 +30,6 @@ public class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UI
     internal var contentView: UIView = UIView()
     
     //MARK: - UI
-    var backgroundGrade: CGFloat = 0.25
-    var backgroundBlurFactor: CGFloat = 0.017
     var dialogShadowYtranslationFactor: CGFloat = 0.035
     var dialogShadowBlurRadiusFactor: CGFloat = 0.026
     var dialogShadowOpacity: CGFloat = 0.36
@@ -141,15 +139,6 @@ public class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UI
         super.init(coder: aDecoder)
     }
     
-    override public func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override public func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-    
     //MARK: - public func
     func present(on viewController: UIViewController) {
         self.animator.removeAllBehaviors()
@@ -158,16 +147,14 @@ public class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UI
         self.contentView.transform = .identity
         self.modalPresentationStyle = .overCurrentContext
         viewController.present(self, animated: false, completion: {
-            finished in
             self.updateLayoutAndSizes()
             self.updateContentViewShadow(yTranslationFactor: self.dialogShadowYtranslationFactor, blurRadiusFactor: self.dialogShadowBlurRadiusFactor, opacity: self.dialogShadowOpacity)
             self.contentView.center = CGPoint.init(
                 x: self.view.center.x,
                 y: self.view.center.y * 1.2
             )
-            SPAnimation.animate(0.6, animations: {
-                self.updateBackground()
-            })
+            SPHideWindow.dialog.presentWith(view: self.backgroundView)
+
             delay(0.21, closure: {
                 self.snapBehavior = UISnapBehavior(item: self.contentView, snapTo: self.dialogCenteringPoint)
                 self.animator.addBehavior(self.snapBehavior)
@@ -202,12 +189,10 @@ public class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UI
         SPAnimation.animate(0.3, animations: {
             self.bottomView.alpha = 0
         })
-        SPAnimation.animate(0.6, animations: {
+        SPAnimation.animate(SPHideWindow.dialog.duration, animations: {
             self.backgroundView.setGradeAlpha(0, blurRaius: 0)
         }, withComplection: {
-            finished in
             self.dismiss(animated: false, completion: {
-                finished in
                 self.animator.removeAllBehaviors()
                 self.contentView.transform = .identity
                 self.delegate?.didHideDialogController()
@@ -292,10 +277,10 @@ public class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UI
         )
     }
     
-    private func updateBackground() {
+    /*private func updateBackground() {
         let blurRadius = min(self.view.frame.width, self.view.frame.width) * self.backgroundBlurFactor
         self.backgroundView.setGradeAlpha(self.backgroundGrade, blurRaius: blurRadius)
-    }
+    }*/
     
     //MARK: - animator
     var animator = UIDynamicAnimator()
@@ -304,7 +289,7 @@ public class SPDialogSwipeController<DialogView: UIView, BottomView: UIView>: UI
     var snapBehavior : UISnapBehavior!
     
     //MARK: - handle gesture
-    func handleGesture(sender: AnyObject) {
+    @objc func handleGesture(sender: AnyObject) {
         let myView = self.contentView
         let location = sender.location(in: view)
         let boxLocation = sender.location(in: myView)

@@ -21,17 +21,17 @@
 
 import UIKit
 
-class SPStatusBarManagerViewController: UIViewController {
+public class SPStatusBarManagerViewController: UIViewController {
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    override public var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+    override public var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return .slide
     }
     
-    private var isHiddenStatusBar: Bool = false {
+    public var isHiddenStatusBar: Bool = false {
         didSet {
             UIView.animate(withDuration: 0.3) { () -> Void in
                 self.setNeedsStatusBarAppearanceUpdate()
@@ -39,7 +39,7 @@ class SPStatusBarManagerViewController: UIViewController {
         }
     }
     
-    override var prefersStatusBarHidden: Bool {
+    override public var prefersStatusBarHidden: Bool {
         return isHiddenStatusBar
     }
 }

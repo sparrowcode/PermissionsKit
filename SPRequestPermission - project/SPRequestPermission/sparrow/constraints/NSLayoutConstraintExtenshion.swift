@@ -23,7 +23,7 @@ import UIKit
 
 extension NSLayoutConstraint {
 
-    func setMultiplier(multiplier:CGFloat) -> NSLayoutConstraint {
+    /*func setMultiplier(multiplier:CGFloat) -> NSLayoutConstraint {
         NSLayoutConstraint.deactivate([self])
         let newConstraint = NSLayoutConstraint(
             item: firstItem,
@@ -40,5 +40,5 @@ extension NSLayoutConstraint {
         
         NSLayoutConstraint.activate([newConstraint])
         return newConstraint
-    }
+    }*/
 }

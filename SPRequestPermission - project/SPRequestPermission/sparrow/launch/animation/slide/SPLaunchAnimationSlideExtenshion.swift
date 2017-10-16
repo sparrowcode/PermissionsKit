@@ -44,9 +44,11 @@ public extension SPLaunchAnimation {
         var rootViewControllerSubviews = (window.rootViewController?.view.subviews)!
 
         if (disableParalaxForFirstViewOnRootViewController) {
-            rootViewControllerSubviews.removeFirst()
-            rootViewControllerSubviews.removeFirst()
-            rootViewControllerSubviews.removeFirst()
+            if rootViewControllerSubviews.count >= 3 {
+                rootViewControllerSubviews.removeFirst()
+                rootViewControllerSubviews.removeFirst()
+                rootViewControllerSubviews.removeFirst()
+            }
         }
         
         let launchScreenController = UIStoryboard(name: launchScreenStoryboardName, bundle: nil).instantiateInitialViewController()

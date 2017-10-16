@@ -208,7 +208,7 @@ public class SPSegmentedControl: UIControl {
 
 extension SPSegmentedControl: UIGestureRecognizerDelegate {
     
-    func pan(_ gestureRecognizer: UIPanGestureRecognizer!) {
+    @objc func pan(_ gestureRecognizer: UIPanGestureRecognizer!) {
         switch gestureRecognizer.state {
         case .began:
             self.initialIndicatorViewFrame = self.indicatorView.frame
@@ -258,7 +258,7 @@ extension SPSegmentedControl: UIGestureRecognizerDelegate {
         }
     }
     
-    func leftSwipe(_ gestureRecognizer: UISwipeGestureRecognizer!) {
+    @objc func leftSwipe(_ gestureRecognizer: UISwipeGestureRecognizer!) {
         switch gestureRecognizer.state {
         case.ended:
             self.selectedIndex = selectedIndex - 1
@@ -267,7 +267,7 @@ extension SPSegmentedControl: UIGestureRecognizerDelegate {
         }
     }
     
-    func rightSwipe(_ gestureRecognizer: UISwipeGestureRecognizer!) {
+    @objc func rightSwipe(_ gestureRecognizer: UISwipeGestureRecognizer!) {
         switch gestureRecognizer.state {
         case.ended:
             self.selectedIndex = selectedIndex + 1
