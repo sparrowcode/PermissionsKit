@@ -37,8 +37,6 @@ public struct SPRequestPermission {
         }
         return true
     }
-    
-    private init() {}
 }
 
 //MARK: - Modules
@@ -58,13 +56,9 @@ extension SPRequestPermission {
                 presenter.eventsDelegate = delegate
                 let controller = SPRequestPermissionDialogInteractiveViewController.init(presenter: presenter)
                 controller.present(on: viewController)
-
+                
             }
-            
-            private init() {}
         }
-        
-        private init() {}
     }
     
     public struct native {
@@ -75,9 +69,5 @@ extension SPRequestPermission {
             presenter.requestPermissions()
             
         }
-        
-        private init() {}
     }
-    
-    private init() {}
 }

@@ -140,6 +140,63 @@ public class SPCollectionViewLayout: UICollectionViewFlowLayout {
         return true
     }
     
+    var isAllowInsertAnimation: Bool = false
+    var deleteIndexPaths: [IndexPath] = []
+    var insertIndexPaths: [IndexPath] = []
+    
+    public override func prepare(forCollectionViewUpdates updateItems: [UICollectionViewUpdateItem]) {
+        super.prepare(forCollectionViewUpdates: updateItems)
+        for item in updateItems {
+            if item.updateAction == .delete {
+                if item.indexPathBeforeUpdate != nil {
+                    self.deleteIndexPaths.append(item.indexPathBeforeUpdate!)
+                }
+            }
+            
+            if item.updateAction == .insert {
+                if item.indexPathAfterUpdate != nil {
+                    self.insertIndexPaths.append(item.indexPathAfterUpdate!)
+                }
+            }
+        }
+    }
+    
+    public override func finalizeCollectionViewUpdates() {
+        super.finalizeCollectionViewUpdates()
+        self.insertIndexPaths.removeAll()
+        self.deleteIndexPaths.removeAll()
+    }
+    
+    override public func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        
+        let attributes: UICollectionViewLayoutAttributes? = super.initialLayoutAttributesForAppearingItem(at: itemIndexPath)
+        
+        if isAllowInsertAnimation {
+            if self.insertIndexPaths.contains(itemIndexPath) {
+                //attributes?.center = CGPoint.init(x: attributes?.center.x ?? 0, y: 40)
+                attributes?.alpha = 0
+                attributes?.zIndex = 0
+                attributes?.transform = CGAffineTransform.init(scaleX: self.minimumScaleFactor, y: self.minimumScaleFactor)
+            }
+        }
+        
+        return attributes
+    }
+    
+    override public func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        var attributes: UICollectionViewLayoutAttributes?
+        
+        if self.deleteIndexPaths.contains(itemIndexPath) {
+            
+            attributes = self.layoutAttributesForItem(at: itemIndexPath)
+            attributes?.alpha = 0
+            attributes?.zIndex = 0
+            attributes?.transform3D = CATransform3DScale(CATransform3DIdentity, self.minimumScaleFactor, self.minimumScaleFactor, 1)
+        }
+        
+        return attributes
+    }
+    
     override public func prepare() {
         super.prepare()
         guard let collectionView = self.collectionView else {

@@ -29,7 +29,7 @@ public class SPGradientView: UIView {
     var startColorPoint: CGPoint = CGPoint.zero { didSet { self.updateGradient() }}
     var endColorPoint: CGPoint = CGPoint.zero { didSet { self.updateGradient() }}
     
-    fileprivate var gradient: CAGradientLayer!
+    var gradientLayer: CAGradientLayer!
     
     public init() {
         super.init(frame: CGRect.zero)
@@ -50,20 +50,20 @@ public class SPGradientView: UIView {
     }
     
     private func commonInit() {
-        self.gradient = CAGradientLayer()
-        self.layer.insertSublayer(self.gradient!, at: 0)
+        self.gradientLayer = CAGradientLayer()
+        self.layer.insertSublayer(self.gradientLayer!, at: 0)
     }
     
     private func updateGradient() {
-        self.gradient!.colors = [startColor.cgColor, endColor.cgColor]
-        self.gradient!.locations = [0.0, 1.0]
-        self.gradient!.startPoint = self.startColorPoint
-        self.gradient!.endPoint = self.endColorPoint
+        self.gradientLayer!.colors = [startColor.cgColor, endColor.cgColor]
+        self.gradientLayer!.locations = [0.0, 1.0]
+        self.gradientLayer!.startPoint = self.startColorPoint
+        self.gradientLayer!.endPoint = self.endColorPoint
     }
     
     override public func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
-        self.gradient.frame = self.bounds
+        self.gradientLayer.frame = self.bounds
     }
     
     public enum Position {

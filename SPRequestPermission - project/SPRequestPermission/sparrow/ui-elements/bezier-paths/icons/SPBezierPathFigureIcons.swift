@@ -27,6 +27,7 @@ public extension SPBezierPathFigure {
 }
 
 extension SPBezierPathFigure.icons {
+    
 
     static func checked(color: UIColor = .black) -> UIBezierPath {
         SPBezierPath.setContext()
