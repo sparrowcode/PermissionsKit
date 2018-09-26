@@ -51,8 +51,8 @@ public class SPPageItemsScalingCollectionLayout: UICollectionViewFlowLayout {
         let currentPage = (velocity.x > 0.0) ? floor(rawPageValue) : ceil(rawPageValue);
         let nextPage = (velocity.x > 0.0) ? ceil(rawPageValue) : floor(rawPageValue);
         
-        let pannedLessThanAPage = fabs(1 + currentPage - rawPageValue) > 0.5;
-        let flicked = fabs(velocity.x) > 0.3
+        let pannedLessThanAPage = abs(1 + currentPage - rawPageValue) > 0.5;
+        let flicked = abs(velocity.x) > 0.3
         
         var proposedContentOffset = proposedContentOffset
         if (pannedLessThanAPage && flicked) {

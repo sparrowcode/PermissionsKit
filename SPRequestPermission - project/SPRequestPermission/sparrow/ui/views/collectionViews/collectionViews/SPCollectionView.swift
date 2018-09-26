@@ -22,32 +22,32 @@
 import UIKit
 
 public class SPCollectionView: UICollectionView {
-    
-    var layout = SPCollectionViewLayout()
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    init(frame: CGRect) {
-        super.init(frame: frame, collectionViewLayout: self.layout)
-        commonInit()
-    }
-    
-    init() {
-        super.init(frame: CGRect.zero, collectionViewLayout: self.layout)
-        commonInit()
-    }
-    
-    fileprivate func commonInit() {
-        self.layout.scrollDirection = .vertical
-        self.backgroundColor = UIColor.clear
-        self.collectionViewLayout = self.layout
-        self.decelerationRate = UIScrollViewDecelerationRateFast
-        self.delaysContentTouches = false
-        self.isPagingEnabled = false
-        self.showsHorizontalScrollIndicator = false
-        self.showsVerticalScrollIndicator = false
-    }
+  
+  var layout = SPCollectionViewLayout()
+  
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    commonInit()
+  }
+  
+  init(frame: CGRect) {
+    super.init(frame: frame, collectionViewLayout: self.layout)
+    commonInit()
+  }
+  
+  init() {
+    super.init(frame: CGRect.zero, collectionViewLayout: self.layout)
+    commonInit()
+  }
+  
+  fileprivate func commonInit() {
+    self.layout.scrollDirection = .vertical
+    self.backgroundColor = UIColor.clear
+    self.collectionViewLayout = self.layout
+    self.decelerationRate = UIScrollView.DecelerationRate.fast
+    self.delaysContentTouches = false
+    self.isPagingEnabled = false
+    self.showsHorizontalScrollIndicator = false
+    self.showsVerticalScrollIndicator = false
+  }
 }

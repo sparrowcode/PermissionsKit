@@ -22,44 +22,44 @@
 import UIKit
 
 public class SPAnimation {
+  
+  static func animate(_ duration: TimeInterval,
+                      animations: (() -> Void)!,
+                      delay: TimeInterval = 0,
+                      options: UIView.AnimationOptions = [],
+                      withComplection completion: (() -> Void)! = {}) {
     
-    static func animate(_ duration: TimeInterval,
-                        animations: (() -> Void)!,
-                        delay: TimeInterval = 0,
-                        options: UIViewAnimationOptions = [],
-                        withComplection completion: (() -> Void)! = {}) {
-        
-        UIView.animate(
-            withDuration: duration,
-            delay: delay,
-            options: options,
-            animations: {
-                animations()
-            }, completion: { finished in
-                completion()
-        })
-    }
+    UIView.animate(
+      withDuration: duration,
+      delay: delay,
+      options: options,
+      animations: {
+        animations()
+    }, completion: { finished in
+      completion()
+    })
+  }
+  
+  static func animateWithRepeatition(_ duration: TimeInterval,
+                                     animations: (() -> Void)!,
+                                     delay: TimeInterval = 0,
+                                     options: UIView.AnimationOptions = [],
+                                     withComplection completion: (() -> Void)! = {}) {
     
-    static func animateWithRepeatition(_ duration: TimeInterval,
-                                       animations: (() -> Void)!,
-                                       delay: TimeInterval = 0,
-                                       options: UIViewAnimationOptions = [],
-                                       withComplection completion: (() -> Void)! = {}) {
-        
-        var optionsWithRepeatition = options
-        optionsWithRepeatition.insert([.autoreverse, .repeat])
-        
-        self.animate(
-            duration,
-            animations: {
-                animations()
-            },
-            delay:  delay,
-            options: optionsWithRepeatition,
-            withComplection: {
-                completion()
-        })
-    }
+    var optionsWithRepeatition = options
+    optionsWithRepeatition.insert([.autoreverse, .repeat])
+    
+    self.animate(
+      duration,
+      animations: {
+        animations()
+    },
+      delay:  delay,
+      options: optionsWithRepeatition,
+      withComplection: {
+        completion()
+    })
+  }
 }
 
 

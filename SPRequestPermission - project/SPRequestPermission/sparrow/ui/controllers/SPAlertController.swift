@@ -32,7 +32,7 @@ struct SPAlert {
         
         ac.addAction(UIAlertAction.init(
             title: buttonTitle,
-            style: UIAlertActionStyle.default,
+            style: .default,
             handler: { (action) in
                 complection()
         }))

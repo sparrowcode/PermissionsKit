@@ -31,14 +31,14 @@ public extension UIColor {
         var hex:   String = hex
         
         if hex.hasPrefix("#") {
-            let index = hex.characters.index(hex.startIndex, offsetBy: 1)
+            let index = hex.index(hex.startIndex, offsetBy: 1)
             hex = String(hex[index...])
         }
         
         let scanner = Scanner(string: hex)
         var hexValue: CUnsignedLongLong = 0
         if scanner.scanHexInt64(&hexValue) {
-            switch (hex.characters.count) {
+            switch (hex.count) {
             case 3:
                 red   = CGFloat((hexValue & 0xF00) >> 8)       / 15.0
                 green = CGFloat((hexValue & 0x0F0) >> 4)       / 15.0

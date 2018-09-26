@@ -21,13 +21,40 @@
 
 import UIKit
 
-struct SPNativeStyleKit {
+public struct SPNativeStyleKit {
+  
+  struct Colors {
     
-    static func blueColor() -> UIColor {
-        return UIColor.init(hex: "0076FF")
-    }
-    
-    static func grayColor() -> UIColor {
-        return UIColor.init(hex: "9B9B9B")
-    }
+    static let red = UIColor.init(hex: "FF3B30")
+    static let orange = UIColor.init(hex: "FF9500")
+    static let yellow = UIColor.init(hex: "FFCC00")
+    static let green = UIColor.init(hex: "4CD964")
+    static let tealBlue = UIColor.init(hex: "5AC8FA")
+    static let blue = UIColor.init(hex: "007AFF")
+    static let purple = UIColor.init(hex: "5856D6")
+    static let pink = UIColor.init(hex: "FF2D55")
+    static let white = UIColor.init(hex: "FFFFFF")
+    static let customGray = UIColor.init(hex: "EFEFF4")
+    static let lightGray = UIColor.init(hex: "E5E5EA")
+    static let lightGray2 = UIColor.init(hex: "D1D1D6")
+    static let midGray = UIColor.init(hex: "C7C7CC")
+    static let gray = UIColor.init(hex: "8E8E93")
+    static let black = UIColor.init(hex: "000000")
+  }
+  
+  /*static func blueColor() -> UIColor {
+   return UIColor.init(hex: "0076FF")
+   }
+   
+   static func backgroundBlue() -> UIColor {
+   return UIColor.init(hex: "F0F1F6")
+   }
+   
+   static func grayColor() -> UIColor {
+   return UIColor.init(hex: "9B9B9B")
+   }
+   
+   static func lightGrayColor() -> UIColor {
+   return UIColor.init(hex: "B2B2B2")
+   }*/
 }

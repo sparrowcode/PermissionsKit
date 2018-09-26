@@ -22,64 +22,64 @@
 import UIKit
 
 class SPAppStoreActionButton: UIButton {
-    
-    var style: Style = .base {
-        didSet {
-            
-            self.setTitleColorForNoramlAndHightlightedStates(color: self.baseColor)
-            
-            switch self.style {
-            case .base:
-                self.backgroundColor = self.secondColor
-                self.titleLabel?.font = UIFont.system(type: .Bold, size: 14)
-                break
-            case .main:
-                self.backgroundColor = self.baseColor
-                self.layer.borderWidth = 0
-                self.setTitleColorForNoramlAndHightlightedStates(color: UIColor.white)
-                self.titleLabel?.font = UIFont.system(type: .Bold, size: 14)
-                break
-            case .line:
-                self.backgroundColor = UIColor.clear
-                self.layer.borderWidth = 1
-                self.layer.borderColor = self.baseColor.cgColor
-                self.titleLabel?.font = UIFont.system(type: .Medium, size: 14)
-                break
-            }
-        }
+  
+  var style: Style = .base {
+    didSet {
+      
+      self.setTitleColorForNoramlAndHightlightedStates(color: self.baseColor)
+      
+      switch self.style {
+      case .base:
+        self.backgroundColor = self.secondColor
+        self.titleLabel?.font = UIFont.system(type: .Bold, size: 14)
+        break
+      case .main:
+        self.backgroundColor = self.baseColor
+        self.layer.borderWidth = 0
+        self.setTitleColorForNoramlAndHightlightedStates(color: UIColor.white)
+        self.titleLabel?.font = UIFont.system(type: .Bold, size: 14)
+        break
+      case .line:
+        self.backgroundColor = UIColor.clear
+        self.layer.borderWidth = 1
+        self.layer.borderColor = self.baseColor.cgColor
+        self.titleLabel?.font = UIFont.system(type: .Medium, size: 14)
+        break
+      }
     }
-    
-    var baseColor: UIColor = UIColor.init(hex: "0076FF")
-    var secondColor: UIColor = UIColor.init(hex: "F0F1F6")
-    
-    init() {
-        super.init(frame: CGRect.zero)
-        self.commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.commonInit()
-    }
-    
-    private func commonInit() {
-        self.style = .base
-        self.layer.masksToBounds = true
-        self.contentEdgeInsets = UIEdgeInsetsMake(6, 14, 6, 14)
-    }
-    
-    override func setTitle(_ title: String?, for state: UIControlState) {
-        super.setTitle(title?.uppercased(), for: state)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.layer.cornerRadius = self.minSideSize() / 2
-    }
-    
-    enum Style {
-        case base
-        case main
-        case line
-    }
+  }
+  
+  var baseColor: UIColor = UIColor.init(hex: "0076FF")
+  var secondColor: UIColor = UIColor.init(hex: "F0F1F6")
+  
+  init() {
+    super.init(frame: CGRect.zero)
+    self.commonInit()
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    self.commonInit()
+  }
+  
+  private func commonInit() {
+    self.style = .base
+    self.layer.masksToBounds = true
+    self.contentEdgeInsets = UIEdgeInsets(top: 6, left: 15, bottom: 6, right: 15)
+  }
+  
+  override func setTitle(_ title: String?, for state: UIControl.State) {
+    super.setTitle(title?.uppercased(), for: state)
+  }
+  
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    self.rounded()
+  }
+  
+  enum Style {
+    case base
+    case main
+    case line
+  }
 }

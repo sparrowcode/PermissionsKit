@@ -22,52 +22,52 @@
 import UIKit
 
 public class SPAnimationSpring {
+  
+  fileprivate static let spring: CGFloat = 1
+  fileprivate static let velocity: CGFloat = 1
+  
+  static func animate(_ duration: TimeInterval,
+                      animations: (() -> Void)!,
+                      delay: TimeInterval = 0,
+                      spring: CGFloat = spring,
+                      velocity: CGFloat = velocity,
+                      options: UIView.AnimationOptions = [],
+                      withComplection completion: (() -> Void)! = {}) {
     
-    fileprivate static let spring: CGFloat = 1
-    fileprivate static let velocity: CGFloat = 1
+    UIView.animate(
+      withDuration: duration,
+      delay: delay,
+      usingSpringWithDamping: spring,
+      initialSpringVelocity: velocity,
+      options: options,
+      animations: {
+        animations()
+    }, completion: { finished in
+      completion()
+    })
+  }
+  
+  static func animateWithRepeatition(_ duration: TimeInterval,
+                                     animations: (() -> Void)!,
+                                     delay: TimeInterval = 0,
+                                     spring: CGFloat = spring,
+                                     velocity: CGFloat = velocity,
+                                     options: UIView.AnimationOptions = [],
+                                     withComplection completion: (() -> Void)! = {}) {
     
-    static func animate(_ duration: TimeInterval,
-                        animations: (() -> Void)!,
-                        delay: TimeInterval = 0,
-                        spring: CGFloat = spring,
-                        velocity: CGFloat = velocity,
-                        options: UIViewAnimationOptions = [],
-                        withComplection completion: (() -> Void)! = {}) {
-        
-        UIView.animate(
-            withDuration: duration,
-            delay: delay,
-            usingSpringWithDamping: spring,
-            initialSpringVelocity: velocity,
-            options: options,
-            animations: {
-                animations()
-            }, completion: { finished in
-                completion()
-        })
-    }
+    var optionsWithRepeatition = options
+    optionsWithRepeatition.insert([.autoreverse, .repeat])
     
-    static func animateWithRepeatition(_ duration: TimeInterval,
-                                       animations: (() -> Void)!,
-                                       delay: TimeInterval = 0,
-                                       spring: CGFloat = spring,
-                                       velocity: CGFloat = velocity,
-                                       options: UIViewAnimationOptions = [],
-                                       withComplection completion: (() -> Void)! = {}) {
-        
-        var optionsWithRepeatition = options
-        optionsWithRepeatition.insert([.autoreverse, .repeat])
-        
-        UIView.animate(
-            withDuration: duration,
-            delay: delay,
-            usingSpringWithDamping: spring,
-            initialSpringVelocity: velocity,
-            options: optionsWithRepeatition,
-            animations: {
-                animations()
-            }, completion: { finished in
-                completion()
-        })
-    }
+    UIView.animate(
+      withDuration: duration,
+      delay: delay,
+      usingSpringWithDamping: spring,
+      initialSpringVelocity: velocity,
+      options: optionsWithRepeatition,
+      animations: {
+        animations()
+    }, completion: { finished in
+      completion()
+    })
+  }
 }
