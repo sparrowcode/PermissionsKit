@@ -1,4 +1,4 @@
-<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/e85814ac/resources/request-permission_baner.svg"/>
+<img src="https://gitcdn.link/repo/IvanVorobei/RequestPermission/master/resources/request-permission%20-%20baner.jpg"/>
 
 ## New version SOON 
 You can see [video with new design](https://youtu.be/1mDdX7fQRv4). New version realse in this month!
