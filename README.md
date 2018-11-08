@@ -1,5 +1,8 @@
 <img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/e85814ac/resources/request-permission_baner.svg"/>
 
+## New version SOON 
+You can see [video with new design](https://youtu.be/1mDdX7fQRv4). New version realse in this month!
+
 ## About
 This project is about managing permissions with the customizable visual effects. Beautiful dialog increases the chance of approval (which is important when we request notification). Simple control of this module saves you hours of development. You can start using this project with just two lines of code and easy customization!
 
