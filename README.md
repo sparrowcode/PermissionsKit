@@ -60,7 +60,7 @@ SPPermission.Dialog.request(
 ```
 
 ## Apps, using lib
-I like the idea to specify applications that use the RequestPermission. Please, contact me via email (you can find it in the section "Contacts") so that I added app here
+I like the idea to specify applications that use the RequestPermission. Please, contact me via email. You can find it in the section "Contacts" so that I added app here
 
 ## License
 RequestPermission is released under the MIT license. Check LICENSE.md for details
