@@ -7,11 +7,11 @@ Preview GIF loading [4mb]. Please, wait
 
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/fb53d20f152a3e76e053e6af529306611fb794f0/resources/request-permission - mockup_preview.gif" width="500">
 
-<img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/73a65179a7e94362a57b9a36e62ddc365ee512c6/resources/request-permission - donate.svg"/>
+<img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/0a6231530872a29a63b8ad9f111d1a1f6f26375f/resources/request-permission - donate.svg"/>
 
 The project is absolutely free, but but it takes time to support and update it. Your support is very motivating and very important. I often receive emails asking me to update or add functionality. [Small donate](https://money.yandex.ru/to/410012745748312) for a cup of coffee helps to develop the project and make it better
 
-<img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/73a65179a7e94362a57b9a36e62ddc365ee512c6/resources/request-permission - donate.svg"/>
+<img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/0a6231530872a29a63b8ad9f111d1a1f6f26375f/resources/request-permission - donate.svg"/>
 
 ## Requirements
 Swift 4.2. Ready for use on iOS 10+
