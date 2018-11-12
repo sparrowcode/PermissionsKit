@@ -222,6 +222,8 @@ extension SPPermissionDialogController {
             return "Access for save photos in your gallery"
         case .reminders:
             return "Application can create new task"
+        case .speech:
+            return "Allow check you voice"
         }
     }
 }

@@ -174,6 +174,8 @@ class SPPermissionDialogLineView: UIView {
             self.iconView.type = .photoLibrary
         case .reminders:
             self.iconView.type = .calendar
+        case .speech:
+            self.iconView.type = .micro
         }
         self.commonInit()
     }

@@ -71,6 +71,7 @@ public enum SPSeparatorInsetStyle {
     case calendar = 4
     case contacts = 5
     case reminders = 6
+    case speech = 7
     
     var name: String {
         switch self {
@@ -88,6 +89,8 @@ public enum SPSeparatorInsetStyle {
             return "Contacts"
         case .reminders:
             return "Reminders"
+        case .speech:
+            return "Speech"
         }
     }
 }
