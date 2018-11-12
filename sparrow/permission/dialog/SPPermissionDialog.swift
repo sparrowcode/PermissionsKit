@@ -23,7 +23,7 @@ import UIKit
 
 extension SPPermission {
     
-    struct Dialog {
+    public struct Dialog {
         
         static func request(with permissions: [SPPermissionType], on viewController: UIViewController, delegate: SPPermissionDialogDelegate? = nil, dataSource: SPPermissionDialogDataSource? = nil) {
             
