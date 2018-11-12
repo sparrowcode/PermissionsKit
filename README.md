@@ -3,9 +3,8 @@
 ## About
 This project is about managing permissions with the customizable visual effects. Beautiful dialog increases the chance of approval (which is important when we request notification). Simple control of this module saves you hours of development. You can start using this project with just two lines of code and easy customization!
 
-Now project in develop and if you find errors, please let me know. I will make changes promptly
-
 Preview GIF loading [4mb]. Please, wait
+
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/fb53d20f152a3e76e053e6af529306611fb794f0/resources/request-permission - mockup_preview.gif" width="500">
 ## Support the project
 The project is absolutely free, but but it takes time to support and update it. Your support is very motivating and very important. I often receive emails asking me to update or add functionality. [Small donat for a cup of coffee](https://money.yandex.ru/to/410012745748312) helps to develop the project and make it better
