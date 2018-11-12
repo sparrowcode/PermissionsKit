@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600px" height="140px" viewBox="0 0 1600 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>request-permission - donate</title>
+    <desc>Created with Sketch.</desc>
+    <g id="request-permission---donate" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="1600" height="140"></rect>
+        <text id="Donate" font-family="SFProText-Semibold, SF Pro Text" font-size="35" font-weight="500" letter-spacing="-1.1812501" fill="#007AFF">
+            <tspan x="742.028858" y="83">Donate</tspan>
+        </text>
+    </g>
+</svg>
