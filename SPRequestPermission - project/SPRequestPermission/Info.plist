@@ -59,5 +59,7 @@
 	<string>For Example</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>For Example</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>For Example</string>
 </dict>
 </plist>

@@ -74,6 +74,10 @@ extension SPRequestPermissionData {
             return "Enable Reminedrs"
         }
         
+        static func enable_speech() -> String {
+            return "Enable Speech"
+        }
+        
         static func swipe_for_hide() -> String {
             return "Swipe to hide"
         }

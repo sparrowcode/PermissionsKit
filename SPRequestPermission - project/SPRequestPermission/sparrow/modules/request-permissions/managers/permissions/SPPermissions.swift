@@ -25,6 +25,7 @@ import Photos
 import MapKit
 import EventKit
 import Contacts
+import Speech
 
 class SPCameraPermission: SPPermissionInterface {
     
@@ -322,3 +323,22 @@ class SPBluetoothPermission: SPPermissionInterface {
     }
 }
 
+class SPSpeechPermission: SPPermissionInterface {
+    
+    func isAuthorized() -> Bool {
+        guard #available(iOS 10.0, *) else { return false }
+        return SFSpeechRecognizer.authorizationStatus() == .authorized
+    }
+    
+    func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        guard #available(iOS 10.0, *) else {
+            fatalError("ios 10 or higher required")
+        }
+        
+        SFSpeechRecognizer.requestAuthorization { status in
+            DispatchQueue.main.async {
+                complectionHandler()
+            }
+        }
+    }
+}

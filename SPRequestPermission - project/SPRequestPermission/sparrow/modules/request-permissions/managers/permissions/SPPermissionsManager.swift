@@ -32,6 +32,9 @@ public enum SPRequestPermissionType {
     case locationWithBackground
     case contacts
     case reminders
+    
+    @available(iOS 10.0, *)
+    case speech
 }
 
 class SPPermissionsManager: SPPermissionsManagerInterface {
@@ -70,6 +73,8 @@ class SPPermissionsManager: SPPermissionsManagerInterface {
             return SPContactsPermission()
         case .reminders:
             return SPRemindersPermission()
+        case .speech:
+            return SPSpeechPermission()
         }
     }
 }
