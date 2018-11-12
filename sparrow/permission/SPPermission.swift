@@ -29,12 +29,12 @@ import Contacts
 
 public struct SPPermission {
     
-    static func isAllow(_ permission: SPPermissionType) -> Bool {
+    public static func isAllow(_ permission: SPPermissionType) -> Bool {
         let manager = self.getManagerForPermission(permission)
         return manager.isAuthorized()
     }
     
-    static func request(_ permission: SPPermissionType, with complectionHandler: @escaping ()->()) {
+    public static func request(_ permission: SPPermissionType, with complectionHandler: @escaping ()->()) {
         let manager = self.getManagerForPermission(permission)
         manager.request(withComlectionHandler: {
             complectionHandler()
