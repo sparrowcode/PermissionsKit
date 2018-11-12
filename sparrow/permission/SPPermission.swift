@@ -27,7 +27,7 @@ import MapKit
 import EventKit
 import Contacts
 
-struct SPPermission {
+public struct SPPermission {
     
     static func isAllow(_ permission: SPPermissionType) -> Bool {
         let manager = self.getManagerForPermission(permission)

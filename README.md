@@ -3,7 +3,7 @@
 ## About
 This project is about managing permissions with the customizable visual effects. Beautiful dialog increases the chance of approval (which is important when we request notification). Simple control of this module saves you hours of development. You can start using this project with just two lines of code and easy customization!
 
-<img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/fb53d20f152a3e76e053e6af529306611fb794f0/resources/request-permission - mockup_preview.gif" width="800">
+<img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/fb53d20f152a3e76e053e6af529306611fb794f0/resources/request-permission - mockup_preview.gif" width="600">
 
 ## Support the project
 The project is absolutely free, but nevertheless takes time to support and update it. [Small donate](https://money.yandex.ru/to/410012745748312) helps to develop the project and make it better
@@ -35,7 +35,7 @@ let isAvailableCamera = SPRequestPermission.isAllowPermission(.сamera)
 ```
 ## Available permissions
 
-<img src="https://cdn.rawgit.com/IvanVorobei/RequestPermission/e85814ac/resources/request-permission_permissions.svg"/>
+<img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/951477c8e89de55eeeac441102b52b1415c691b7/resources/request-permission_permissions.png"/>
 
 ## Delegates
 To track events (didHide & didAllowPermission) associated with `SPPermission`, implement the protocol `SPPermissionDialogDelegate` and pass the delegate
