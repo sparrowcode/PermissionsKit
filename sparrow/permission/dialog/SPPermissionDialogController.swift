@@ -46,14 +46,14 @@ public class SPPermissionDialogController: SPBaseViewController {
             let view = SPPermissionDialogLineView.init(
                 permission: permission,
                 title: (self.dataSource?.name?(for: permission) ?? permission.name),
-                subtitle: (self.dataSource?.describtion?(for: permission) ?? self.describtion(for: permission)),
+                subtitle: (self.dataSource?.description?(for: permission) ?? self.description(for: permission)),
                 allowTitle: self.dataSource?.allowTitle ?? "Allow",
                 allowedTitle: self.dataSource?.allowedTitle ?? "Allowed"
             )
             view.button.addTarget(self, action: #selector(self.request(with:)), for: .touchUpInside)
             self.areaView.add(view: view)
         }
-        self.areaView.describtionLabel.text = (self.dataSource?.dialogComment ?? "Permissions are necessary for the correct work of the application and the performance of all functions. Push are not required permissions")
+        self.areaView.descriptionLabel.text = (self.dataSource?.dialogComment ?? "Permissions are necessary for the correct work of the application and the performance of all functions. Push are not required permissions")
         self.view.addSubview(self.areaView)
         self.areaView.layer.anchorPoint = CGPoint.init(x: 0.5, y: 0.5)
         
@@ -206,7 +206,7 @@ public class SPPermissionDialogController: SPBaseViewController {
 
 extension SPPermissionDialogController {
     
-    fileprivate func describtion(for permission: SPPermissionType) -> String {
+    fileprivate func description(for permission: SPPermissionType) -> String {
         switch permission {
         case .camera:
             return "Allow app for use camera"

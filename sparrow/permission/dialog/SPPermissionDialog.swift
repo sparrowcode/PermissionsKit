@@ -55,5 +55,5 @@ extension SPPermission {
     @objc optional var allowTitle: String { get }
     @objc optional var allowedTitle: String { get }
     @objc optional func name(for permission: SPPermissionType) -> String?
-    @objc optional func describtion(for permission: SPPermissionType) -> String?
+    @objc optional func description(for permission: SPPermissionType) -> String?
 }
