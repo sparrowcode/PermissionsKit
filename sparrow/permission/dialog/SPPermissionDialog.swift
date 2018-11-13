@@ -54,6 +54,8 @@ extension SPPermission {
     @objc optional var dialogComment: String { get }
     @objc optional var allowTitle: String { get }
     @objc optional var allowedTitle: String { get }
+    @objc optional var bottomComment: String { get }
+    @objc optional var showCloseButton: Bool { get }
     @objc optional func name(for permission: SPPermissionType) -> String?
-    @objc optional func describtion(for permission: SPPermissionType) -> String?
+    @objc optional func description(for permission: SPPermissionType) -> String?
 }

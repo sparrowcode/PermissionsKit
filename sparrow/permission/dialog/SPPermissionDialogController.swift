@@ -26,9 +26,11 @@ public class SPPermissionDialogController: SPBaseViewController {
     weak var delegate: SPPermissionDialogDelegate?
     weak var dataSource: SPPermissionDialogDataSource?
     var permissions: [SPPermissionType]
+    var closeButton = SPSystemIconButton.init(type: .close)
     var areaView = SPPermissionDialogView()
+    var bottomLabel = UILabel()
     var backgroundView = SPGradeBlurView()
-    
+
     init(permissions: [SPPermissionType]) {
         self.permissions = permissions
         super.init(nibName: nil, bundle: nil)
@@ -36,9 +38,25 @@ public class SPPermissionDialogController: SPBaseViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
         self.backgroundView.setGradeAlpha(0, blurRaius: 0)
         self.view.addSubview(self.backgroundView)
+        
+        self.closeButton.backgroundColor = SPNativeStyleKit.Colors.white
+        self.closeButton.widthIconFactor = 0.36
+        self.closeButton.heightIconFactor = 0.36
+        self.closeButton.alpha = 0
+        self.closeButton.target {
+            self.hide(withDialog: true)
+        }
+        self.view.addSubview(self.closeButton)
+        
+        self.bottomLabel.text = (self.dataSource?.bottomComment ?? "")
+        self.bottomLabel.font = UIFont.system(type: .Medium, size: 13)
+        self.bottomLabel.textColor = SPNativeStyleKit.Colors.white
+        self.bottomLabel.numberOfLines = 0
+        self.bottomLabel.setCenteringAlignment()
+        self.bottomLabel.alpha = 0
+        self.view.addSubview(self.bottomLabel)
         
         self.areaView.subtitleLabel.text = (self.dataSource?.dialogSubtitle ?? "Permissions Request").uppercased()
         self.areaView.titleLabel.text = (self.dataSource?.dialogTitle ?? "Need Permissions")
@@ -46,14 +64,14 @@ public class SPPermissionDialogController: SPBaseViewController {
             let view = SPPermissionDialogLineView.init(
                 permission: permission,
                 title: (self.dataSource?.name?(for: permission) ?? permission.name),
-                subtitle: (self.dataSource?.describtion?(for: permission) ?? self.describtion(for: permission)),
+                subtitle: (self.dataSource?.description?(for: permission) ?? self.description(for: permission)),
                 allowTitle: self.dataSource?.allowTitle ?? "Allow",
                 allowedTitle: self.dataSource?.allowedTitle ?? "Allowed"
             )
             view.button.addTarget(self, action: #selector(self.request(with:)), for: .touchUpInside)
             self.areaView.add(view: view)
         }
-        self.areaView.describtionLabel.text = (self.dataSource?.dialogComment ?? "Permissions are necessary for the correct work of the application and the performance of all functions. Push are not required permissions")
+        self.areaView.descriptionLabel.text = (self.dataSource?.dialogComment ?? "Permissions are necessary for the correct work of the application and the performance of all functions. Push are not required permissions")
         self.view.addSubview(self.areaView)
         self.areaView.layer.anchorPoint = CGPoint.init(x: 0.5, y: 0.5)
         
@@ -101,9 +119,14 @@ public class SPPermissionDialogController: SPBaseViewController {
     func present(on viewController: UIViewController) {
         self.animator.removeAllBehaviors()
         self.areaView.alpha = 0
+        self.closeButton.alpha = 0
+        self.bottomLabel.alpha = 0
         self.areaView.transform = .identity
         self.modalPresentationStyle = .overCurrentContext
+        self.modalPresentationCapturesStatusBarAppearance = true
+        self.statusBarType = (viewController.preferredStatusBarStyle == .default) ? .dark : .light
         viewController.present(self, animated: false, completion: {
+            self.isHiddenStatusBar = true
             self.areaView.center = CGPoint.init(
                 x: self.view.center.x,
                 y: self.view.center.y * 1.2
@@ -117,11 +140,22 @@ public class SPPermissionDialogController: SPBaseViewController {
                 SPAnimation.animate(0.3, animations: {
                     self.areaView.alpha = 1
                 })
+                delay(0.2, closure: {
+                    SPAnimation.animate(0.3, animations: {
+                        self.bottomLabel.alpha = 1
+                        if self.dataSource?.showCloseButton ?? false {
+                            self.closeButton.alpha = 1
+                        }
+                    })
+                })
             })
         })
     }
     
     func hide(withDialog: Bool) {
+        delay(0.2, closure: {
+            self.isHiddenStatusBar = false
+        })
         if withDialog {
             SPAnimationSpring.animate(
                 0.4,
@@ -134,7 +168,8 @@ public class SPPermissionDialogController: SPBaseViewController {
                 withComplection: {})
         }
         SPAnimation.animate(0.3, animations: {
-            //self.bottomView.alpha = 0
+            self.bottomLabel.alpha = 0
+            self.closeButton.alpha = 0
         })
         SPAnimation.animate(0.6, animations: {
             self.backgroundView.setGradeAlpha(0, blurRaius: 0)
@@ -150,11 +185,42 @@ public class SPPermissionDialogController: SPBaseViewController {
     override func updateLayout(with size: CGSize) {
         animator.removeAllBehaviors()
         super.updateLayout(with: size)
+        
+        self.closeButton.frame = CGRect.init(x: 0, y: 0, width: 35, height: 35)
+        self.closeButton.frame.bottomXPosition = size.width - 27
+        self.closeButton.frame.origin.y = 23
+        self.closeButton.round()
+        let shadowPath = UIBezierPath.init(
+            roundedRect: CGRect.init(x: 0, y: 9, width: self.closeButton.frame.width, height: self.closeButton.frame.height),
+            cornerRadius: self.closeButton.layer.cornerRadius
+        )
+        self.closeButton.layer.shadowColor = UIColor.black.cgColor
+        self.closeButton.layer.shadowOffset = CGSize.zero
+        self.closeButton.layer.shadowOpacity = Float(0.07)
+        self.closeButton.layer.shadowRadius = 17
+        self.closeButton.layer.masksToBounds = false
+        self.closeButton.layer.shadowPath = shadowPath.cgPath
+        
         self.backgroundView.frame = CGRect.init(origin: .zero, size: size)
         self.areaView.layoutWidth = size.width - 20 * 2
         self.areaView.layoutWidth.setIfMore(when: 380)
         self.areaView.setHeight(self.areaView.layoutHeight)
         self.areaView.center = self.areaCenter
+        
+        var bottomLabelWidth: CGFloat = size.width * 0.4
+        bottomLabelWidth.setIfMore(when: 230)
+        self.bottomLabel.sizeToFit()
+        self.bottomLabel.setWidth(bottomLabelWidth)
+        self.bottomLabel.center.x = size.width / 2
+        self.bottomLabel.frame.bottomYPosition = size.height - self.bottomSafeArea - 30
+        self.bottomLabel.setShadowOffsetForLetters(blurRadius: 3, widthOffset: 0, heightOffset: 0, opacity: 0.18)
+        
+        let bottomLabelAlpha: CGFloat = SPDevice.Orientation.isPortrait ? 1 : 0
+        if self.areaView.alpha == 1 {
+            SPAnimation.animate(0.22, animations: {
+                self.bottomLabel.alpha = bottomLabelAlpha
+            })
+        }
     }
     
     private var areaCenter: CGPoint {
@@ -206,7 +272,7 @@ public class SPPermissionDialogController: SPBaseViewController {
 
 extension SPPermissionDialogController {
     
-    fileprivate func describtion(for permission: SPPermissionType) -> String {
+    fileprivate func description(for permission: SPPermissionType) -> String {
         switch permission {
         case .camera:
             return "Allow app for use camera"
@@ -224,6 +290,12 @@ extension SPPermissionDialogController {
             return "Application can create new task"
         case .speech:
             return "Allow check you voice"
+        case .locationAlways:
+            return "App will can check your location"
+        case .locationWhenInUse:
+            return "App will can check your location"
+        case .locationWithBackground:
+            return "App will can check your location"
         }
     }
 }

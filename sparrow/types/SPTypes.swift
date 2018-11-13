@@ -72,6 +72,9 @@ public enum SPSeparatorInsetStyle {
     case contacts = 5
     case reminders = 6
     case speech = 7
+    case locationAlways = 8
+    case locationWhenInUse = 9
+    case locationWithBackground = 10
     
     var name: String {
         switch self {
@@ -91,6 +94,12 @@ public enum SPSeparatorInsetStyle {
             return "Reminders"
         case .speech:
             return "Speech"
+        case .locationAlways:
+            return "Location"
+        case .locationWhenInUse:
+            return "Location"
+        case .locationWithBackground:
+            return "Location"
         }
     }
 }
