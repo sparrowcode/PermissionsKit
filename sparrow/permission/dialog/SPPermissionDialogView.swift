@@ -26,7 +26,7 @@ class SPPermissionDialogView: UIView {
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
     var views: [SPPermissionDialogLineView] = []
-    let describtionLabel = UILabel()
+    let descriptionLabel = UILabel()
     
     var layoutWidth: CGFloat = 0 {
         didSet {
@@ -67,11 +67,11 @@ class SPPermissionDialogView: UIView {
         self.titleLabel.font = UIFont.system(type: .Bold, size: 27)
         self.addSubview(self.titleLabel)
         
-        self.describtionLabel.text = ""
-        self.describtionLabel.numberOfLines = 0
-        self.describtionLabel.textColor = SPNativeStyleKit.Colors.gray
-        self.describtionLabel.font = UIFont.system(type: .Regular, size: 11)
-        self.addSubview(self.describtionLabel)
+        self.descriptionLabel.text = ""
+        self.descriptionLabel.numberOfLines = 0
+        self.descriptionLabel.textColor = SPNativeStyleKit.Colors.gray
+        self.descriptionLabel.font = UIFont.system(type: .Regular, size: 11)
+        self.addSubview(self.descriptionLabel)
     }
     
     func add(view: SPPermissionDialogLineView) {
@@ -113,15 +113,15 @@ class SPPermissionDialogView: UIView {
         }
         
         if SPDevice.Orientation.isPortrait {
-            self.describtionLabel.frame = CGRect.init(x: self.sideInset, y: currentYPosition + 20, width: self.layoutWidth - self.sideInset * 2, height: 0)
-            self.describtionLabel.sizeToFit()
+            self.descriptionLabel.frame = CGRect.init(x: self.sideInset, y: currentYPosition + 20, width: self.layoutWidth - self.sideInset * 2, height: 0)
+            self.descriptionLabel.sizeToFit()
             SPAnimation.animate(0.2, animations: {
-                self.describtionLabel.alpha = 1
+                self.descriptionLabel.alpha = 1
             })
-            self.layoutHeight = self.describtionLabel.frame.bottomYPosition + 22
+            self.layoutHeight = self.descriptionLabel.frame.bottomYPosition + 22
         } else {
             SPAnimation.animate(0.2, animations: {
-                self.describtionLabel.alpha = 0
+                self.descriptionLabel.alpha = 0
             })
             self.layoutHeight = currentYPosition + 2
         }
@@ -176,6 +176,12 @@ class SPPermissionDialogLineView: UIView {
             self.iconView.type = .calendar
         case .speech:
             self.iconView.type = .micro
+        case .locationWhenInUse:
+            self.iconView.type = .compass
+        case .locationAlways:
+            self.iconView.type = .compass
+        case .locationWithBackground:
+            self.iconView.type = .compass
         }
         self.commonInit()
     }

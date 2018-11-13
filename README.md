@@ -62,6 +62,10 @@ SPPermission.Dialog.request(
 )
 ```
 
+if you want add or remove close button (for close dialog, need swipe it), you need ovveride parametr  `showCloseButton`
+
+<img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/951477c8e89de55eeeac441102b52b1415c691b7/resources/request-permission_permissions.png"/>
+
 ## Apps, using lib
 I like the idea to specify applications that use the RequestPermission. Please, contact me via email. You can find it in the section "Contacts" so that I added app here
 

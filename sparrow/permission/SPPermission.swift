@@ -72,6 +72,12 @@ extension SPPermission {
             return SPRemindersPermission()
         case .speech:
             return SPSpeechPermission()
+        case .locationAlways:
+            return SPLocationPermission(type: SPLocationPermission.SPLocationType.Always)
+        case .locationWhenInUse:
+           return SPLocationPermission(type: SPLocationPermission.SPLocationType.WhenInUse)
+        case .locationWithBackground:
+           return SPLocationPermission(type: SPLocationPermission.SPLocationType.AlwaysWithBackground)
         }
     }
 }
@@ -292,4 +298,88 @@ extension SPPermission {
             }
         }
     }
+    
+    fileprivate struct SPLocationPermission: SPPermissionInterface {
+        
+        var type: SPLocationType
+        
+        enum SPLocationType {
+            case Always
+            case WhenInUse
+            case AlwaysWithBackground
+        }
+        
+        init(type: SPLocationType) {
+            self.type = type
+        }
+        
+        func isAuthorized() -> Bool {
+            
+            let status = CLLocationManager.authorizationStatus()
+            
+            switch self.type {
+            case .Always:
+                if status == .authorizedAlways {
+                    return true
+                } else {
+                    return false
+                }
+            case .WhenInUse:
+                if status == .authorizedWhenInUse {
+                    return true
+                } else {
+                    return false
+                }
+            case .AlwaysWithBackground:
+                if status == .authorizedAlways {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+        
+        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+            
+            switch self.type {
+            case .Always:
+                if SPPermissionAlwaysAuthorizationLocationHandler.shared == nil {
+                    SPPermissionAlwaysAuthorizationLocationHandler.shared = SPPermissionAlwaysAuthorizationLocationHandler()
+                }
+                
+                SPPermissionAlwaysAuthorizationLocationHandler.shared!.requestPermission { (authorized) in
+                    DispatchQueue.main.async {
+                        complectionHandler()
+                        SPPermissionAlwaysAuthorizationLocationHandler.shared = nil
+                    }
+                }
+                break
+            case .WhenInUse:
+                if SPPermissionWhenInUseAuthorizationLocationHandler.shared == nil {
+                    SPPermissionWhenInUseAuthorizationLocationHandler.shared = SPPermissionWhenInUseAuthorizationLocationHandler()
+                }
+                
+                SPPermissionWhenInUseAuthorizationLocationHandler.shared!.requestPermission { (authorized) in
+                    DispatchQueue.main.async {
+                        complectionHandler()
+                        SPPermissionWhenInUseAuthorizationLocationHandler.shared = nil
+                    }
+                }
+                break
+            case .AlwaysWithBackground:
+                if SPPermissionLocationWithBackgroundHandler.shared == nil {
+                    SPPermissionLocationWithBackgroundHandler.shared = SPPermissionLocationWithBackgroundHandler()
+                }
+                
+                SPPermissionLocationWithBackgroundHandler.shared!.requestPermission { (authorized) in
+                    DispatchQueue.main.async {
+                        complectionHandler()
+                        SPPermissionLocationWithBackgroundHandler.shared = nil
+                    }
+                }
+                break
+            }
+        }
+    }
+
 }

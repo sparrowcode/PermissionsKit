@@ -97,6 +97,9 @@ class SPGolubevIconView: UIView {
         case .calendar:
             SPCodeDraw.GolubevIconPack.drawCalendar(frame: rect, resizing: .aspectFit, white: self.whiteColor, light: self.lightColor, medium: self.mediumColor, dark: self.darkColor)
             break
+        case .compass:
+            SPCodeDraw.GolubevIconPack.drawCompass(frame: rect, resizing: .aspectFit, white: self.whiteColor, light: self.lightColor, medium: self.mediumColor, dark: self.darkColor)
+            break
         }
     }
     
@@ -108,6 +111,7 @@ class SPGolubevIconView: UIView {
         case calendar
         case book
         case documents
+        case compass
     }
 }
 
