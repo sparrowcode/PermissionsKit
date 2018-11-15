@@ -21,7 +21,7 @@ Drop in `Sparrow` folder to your Xcode project. Make sure to enable `Copy items 
 
 Or via CocoaPods:
 ```ruby
-pod 'SPRequestPermission'
+pod 'SPPermission'
 ```
 ## How to use
 Call `SPRequestPermission` and use func request(). Also passed controller, on which dialog should present
