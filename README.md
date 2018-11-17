@@ -24,7 +24,7 @@ Or via CocoaPods:
 pod 'SPPermission'
 ```
 ## How to use
-Call `SPRequestPermission` and use func request(). Also passed controller, on which dialog should present
+Call `SPPermission` and use func request(). Also passed controller, on which dialog should present
 ```swift
 class ViewController: UIViewController {
 
@@ -67,10 +67,10 @@ if you want add or remove close button (for close dialog, need swipe it), you ne
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/b3e613295b73be36c8a3d35126d1f7015ef432a8/resources/request-permission - close button.png"/>
 
 ## Apps, using lib
-I like the idea to specify applications that use the RequestPermission. Please, contact me via email. You can find it in the section `Contacts` so that I added app here
+I like the idea to specify applications that use the SPPermission. Please, contact me via email. You can find it in the section `Contacts` so that I added app here
 
 ## License
-RequestPermission is released under the MIT license. Check LICENSE.md for details
+SPPermission is released under the MIT license. Check LICENSE.md for details
 
 ## Contact
 [@ivanvorobei in telegram](https://t.me/ivanvorobei)
