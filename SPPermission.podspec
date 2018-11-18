@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SPPermission"
-  s.version      = "2.0.4"
+  s.version      = "2.0.6"
   s.summary      = "Simpple request permissions with dialog alert"
   s.swift_version = '4.2'
 
@@ -92,8 +92,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "sparrow/**/*.swift"
-  s.exclude_files = "sparrow/**/*.plist"
+  s.source_files  = "sources/sparrow/**/*.swift"
+  s.exclude_files = "sources/sparrow/**/*.plist"
 
   # s.public_header_files = "Classes/**/*.h"
 
