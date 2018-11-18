@@ -17,14 +17,14 @@ The project is absolutely free, but but it takes time to support and update it. 
 Swift 4.2. Ready for use on iOS 10+
 
 ## Integration
-Drop in `Sparrow` folder to your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`
+Drop in `source/sparrow` folder to your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`
 
 Or via CocoaPods:
 ```ruby
 pod 'SPPermission'
 ```
 ## How to use
-Call `SPPermission` and use func request(). Also passed controller, on which dialog should present
+Call `SPPermission` and use func `request()`. Also passed controller, on which dialog should present
 ```swift
 class ViewController: UIViewController {
 
