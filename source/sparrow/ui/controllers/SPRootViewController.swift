@@ -6,7 +6,7 @@ struct SPRootViewController {
         return UIApplication.shared.keyWindow?.rootViewController
     }
     
-    static func set(rootController: UIViewController, animatable: Bool = true) {
+    static func set(_ rootController: UIViewController, animatable: Bool = true) {
         
         rootController.view.frame = UIScreen.main.bounds
         
