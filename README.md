@@ -70,7 +70,7 @@ if you want add or remove close button (for close dialog, need swipe it), you ne
 I like the idea to specify applications that use the SPPermission. Please, contact me via email. You can find it in the section `Contacts` so that I added app here
 
 ## License
-SPPermission is released under the MIT license. Check LICENSE.md for details
+`SPPermission` is released under the MIT license. Check LICENSE.md for details
 
 ## Contact
 [@ivanvorobei in telegram](https://t.me/ivanvorobei)
