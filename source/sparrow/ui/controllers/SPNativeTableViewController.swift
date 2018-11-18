@@ -34,7 +34,6 @@ class SPNativeTableViewController: SPBaseTableViewController {
     let collectionImagesTableViewCellIdentifier: String = "collectionImagesTableViewCellIdentifier"
     let imageTableViewCellIdentifier: String = "imageTableViewCellIdentifier"
     let proposeTableViewCellIdentifier: String = "proposeTableViewCellIdentifier"
-    let subscribtionTableViewCellIdentifier = "subscribtionTableViewCellIdentifier"
     let mengTransformTableViewCell = "mengTransformTableViewCell"
     
     var showTopInsets: Bool = true
@@ -82,7 +81,6 @@ class SPNativeTableViewController: SPBaseTableViewController {
         self.tableView.register(SPCollectionImagesTableViewCell.self, forCellReuseIdentifier: self.collectionImagesTableViewCellIdentifier)
         self.tableView.register(SPImageTableViewCell.self, forCellReuseIdentifier: self.imageTableViewCellIdentifier)
         self.tableView.register(SPProposeTableViewCell.self, forCellReuseIdentifier: self.proposeTableViewCellIdentifier)
-        self.tableView.register(SPSubscribtionTableViewCell.self, forCellReuseIdentifier: self.subscribtionTableViewCellIdentifier)
         self.tableView.register(SPMengTransformTableViewCell.self, forCellReuseIdentifier: self.mengTransformTableViewCell)
         
         self.activityIndicatorView.stopAnimating()
@@ -164,10 +162,6 @@ class SPNativeTableViewController: SPBaseTableViewController {
     
     func dequeueProposeTableViewCell(indexPath: IndexPath) -> SPProposeTableViewCell {
         return tableView.dequeueReusableCell(withIdentifier: self.proposeTableViewCellIdentifier, for: indexPath as IndexPath) as! SPProposeTableViewCell
-    }
-    
-    func dequeueSubscribtionTableViewCell(indexPath: IndexPath) -> SPSubscribtionTableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: self.subscribtionTableViewCellIdentifier, for: indexPath as IndexPath) as! SPSubscribtionTableViewCell
     }
     
     func dequeueMengTransformTableViewCell(indexPath: IndexPath) -> SPMengTransformTableViewCell {
