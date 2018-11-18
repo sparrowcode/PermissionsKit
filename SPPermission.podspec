@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version       = "2.1.1"
   s.summary       = "Simple request permissions with dialog alert"
   s.homepage      = "https://github.com/IvanVorobei/RequestPermission"
-  s.source        = { :git => "https://github.com/IvanVorobei/RequestPermission/RequestPermission.git", :tag => s.version }
+  s.source        = { :git => "https://github.com/IvanVorobei/RequestPermission.git", :tag => s.version }
   s.license       = { :type => "MIT", :file => "LICENSE" }
   
   s.author        = { "Ivan Vorobei" => "ivanvorobei@icloud.com" }
