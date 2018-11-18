@@ -3,7 +3,7 @@
 ## About
 This project is about managing permissions with the customizable visual effects. Beautiful dialog increases the chance of approval (which is important when we request notification). Simple control of this module saves you hours of development. You can start using this project with just two lines of code and easy customization! You can see [how I am designed UI](https://youtu.be/1mDdX7fQRv4) and [how use pod tutorial](https://youtu.be/viFDunOdyBg) on youtube
 
-Preview GIF loading [4mb]. Please, wait
+Preview GIF loading `4mb`. Please, wait
 
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/fb53d20f152a3e76e053e6af529306611fb794f0/resources/request-permission - mockup_preview.gif" width="500">
 
@@ -38,7 +38,7 @@ If you want to know if you have received permission, you should call the functio
 ```swift
 let isAvailableCamera = SPPermission.isAllow(.сamera)
 ```
-## Available Permissions
+## Permissions
 
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/951477c8e89de55eeeac441102b52b1415c691b7/resources/request-permission_permissions.png"/>
 
