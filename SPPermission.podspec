@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SPPermission"
-  s.version      = "2.0.6"
+  s.version      = "2.0.7"
   s.summary      = "Simpple request permissions with dialog alert"
   s.swift_version = '4.2'
 
