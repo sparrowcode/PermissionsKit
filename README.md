@@ -43,7 +43,18 @@ let isAvailableCamera = SPPermission.isAllow(.сamera)
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/951477c8e89de55eeeac441102b52b1415c691b7/resources/request-permission_permissions.png"/>
 
 ## Delegate
-To track events hide & allowed permission associated with `SPPermission`, implement the protocol `SPPermissionDialogDelegate` and pass the delegate
+To track events hide & allowed permission associated with `SPPermission`, implement the protocol `SPPermissionDialogDelegate`
+
+```swift
+@objc public protocol SPPermissionDialogDelegate: class {
+    
+    @objc optional func didHide()
+    @objc optional func didAllow(permission: SPPermissionType)
+}
+```
+
+And pass the delegate to the function:
+
 ```swift
 SPPermission.Dialog.request(
     with: [.calendar, .microphone],
@@ -51,8 +62,27 @@ SPPermission.Dialog.request(
     delegate: self
 )
 ```
-## DataSource
-If you want to change the text, you need to implement the `SPPermissionDialogDataSource` protocol. Redefine the needed parameters to see the changes. In the project you can find an example
+## DataSource & Customization
+If you want to change the text, you need to implement the `SPPermissionDialogDataSource` protocol. Ovveride the needed parameters to see the changes
+
+```swift
+@objc public protocol SPPermissionDialogDataSource: class {
+
+    @objc optional var dialogTitle: String { get }
+    @objc optional var dialogSubtitle: String { get }
+    @objc optional var dialogComment: String { get }
+    @objc optional var allowTitle: String { get }
+    @objc optional var allowedTitle: String { get }
+    @objc optional var bottomComment: String { get }
+    @objc optional var showCloseButton: Bool { get }
+    @objc optional func name(for permission: SPPermissionType) -> String?
+    @objc optional func description(for permission: SPPermissionType) -> String?
+    @objc optional func image(for permission: SPPermissionType) -> UIImage?
+}
+```
+
+And pass the object to the function:
+
 ```swift
 SPPermission.Dialog.request(
     with: [.photoLibrary, .contacts],
@@ -62,9 +92,11 @@ SPPermission.Dialog.request(
 )
 ```
 
-if you want add or remove close button (for close dialog, need swipe it), you need ovveride parametr  `showCloseButton`
+If you want add or remove close button (for close dialog, need swipe it), you need ovveride parametr  `showCloseButton`. How it will look look at the picture below:
 
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/b3e613295b73be36c8a3d35126d1f7015ef432a8/resources/request-permission - close button.png"/>
+
+In the project you can find an example for usage `SPPermissionDialogDataSource`
 
 ## Apps, using lib
 I like the idea to specify applications that use the SPPermission. Please, contact me via email. You can find it in the section `Contacts` so that I added app here
@@ -73,14 +105,10 @@ I like the idea to specify applications that use the SPPermission. Please, conta
 `SPPermission` is released under the MIT license. Check LICENSE.md for details
 
 ## Contact
-[@ivanvorobei in telegram](https://t.me/ivanvorobei)
+If you need develop application or UI, write me to hello@ivanvorobei.by. I am develop design and ios apps. I am use `swift`. If you want to ask for more functionality, you should create a new issue
 
-[https://hello.ivanvorobei.by](https://hello.ivanvorobei.by)
+[https://hello.ivanvorobei.by](https://hello.ivanvorobei.by) & [https://ivanvorobei.by](https://hello.ivanvorobei.by) 
 
-[https://ivanvorobei.by](https://hello.ivanvorobei.by) 
+My apps [in AppStore](https://itunes.apple.com/us/developer/polina-zubarik/id1434528595) & [in AppStore 2](https://itunes.apple.com/us/developer/mikalai-varabei/id1435792103)
 
-hello@ivanvorobei.by
 
-my apps [in AppStore](https://itunes.apple.com/us/developer/polina-zubarik/id1434528595) & [in AppStore 2](https://itunes.apple.com/us/developer/mikalai-varabei/id1435792103)
-
-If you need develop application or nice UI, write me
