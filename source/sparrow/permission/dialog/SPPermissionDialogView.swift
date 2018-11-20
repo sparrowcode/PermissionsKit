@@ -144,6 +144,7 @@ class SPPermissionDialogLineView: UIView {
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
     var iconView: SPGolubevIconView = SPGolubevIconView.init()
+    var imageView = UIImageView()
     var button = SPAppStoreActionButton()
     var separatorView = UIView()
     
@@ -151,7 +152,7 @@ class SPPermissionDialogLineView: UIView {
     private var allowTitle: String
     private var allowedTitle: String
     
-    init(permission: SPPermissionType, title: String, subtitle: String, allowTitle: String, allowedTitle: String) {
+    init(permission: SPPermissionType, title: String, subtitle: String, allowTitle: String, allowedTitle: String, image: UIImage? = nil) {
         self.permission = permission
         self.allowTitle = allowTitle
         self.allowedTitle = allowedTitle
@@ -159,30 +160,40 @@ class SPPermissionDialogLineView: UIView {
         self.titleLabel.text = title
         self.subtitleLabel.text = subtitle
         
-        switch permission {
-        case .calendar:
-            self.iconView.type = .calendar
-        case .camera:
-            self.iconView.type = .camera
-        case .contacts:
-            self.iconView.type = .book
-        case .microphone:
-            self.iconView.type = .micro
-        case .notification:
-            self.iconView.type = .ball
-        case .photoLibrary:
-            self.iconView.type = .photoLibrary
-        case .reminders:
-            self.iconView.type = .calendar
-        case .speech:
-            self.iconView.type = .micro
-        case .locationWhenInUse:
-            self.iconView.type = .compass
-        case .locationAlways:
-            self.iconView.type = .compass
-        case .locationWithBackground:
-            self.iconView.type = .compass
+        self.imageView.isHidden = true
+        
+        if let image = image {
+            self.imageView.contentMode = .scaleAspectFit
+            self.imageView.image = image
+            self.iconView.isHidden = true
+            self.imageView.isHidden = false
+        } else {
+            switch permission {
+            case .calendar:
+                self.iconView.type = .calendar
+            case .camera:
+                self.iconView.type = .camera
+            case .contacts:
+                self.iconView.type = .book
+            case .microphone:
+                self.iconView.type = .micro
+            case .notification:
+                self.iconView.type = .ball
+            case .photoLibrary:
+                self.iconView.type = .photoLibrary
+            case .reminders:
+                self.iconView.type = .calendar
+            case .speech:
+                self.iconView.type = .micro
+            case .locationWhenInUse:
+                self.iconView.type = .compass
+            case .locationAlways:
+                self.iconView.type = .compass
+            case .locationWithBackground:
+                self.iconView.type = .compass
+            }
         }
+        
         self.commonInit()
     }
     
@@ -196,6 +207,8 @@ class SPPermissionDialogLineView: UIView {
     
     private func commonInit() {
         self.backgroundColor = SPNativeStyleKit.Colors.white
+        
+        self.addSubview(self.imageView)
         self.addSubview(self.iconView)
         
         self.titleLabel.numberOfLines = 1
@@ -239,6 +252,8 @@ class SPPermissionDialogLineView: UIView {
         
         self.iconView.frame = CGRect.init(x: 0, y: 0, width: 45, height: 45)
         self.iconView.center.y = self.frame.height / 2
+        
+        self.imageView.frame = self.iconView.frame
         
         self.button.sizeToFit()
         self.button.frame.bottomXPosition = self.frame.width

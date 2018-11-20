@@ -66,7 +66,8 @@ public class SPPermissionDialogController: SPBaseViewController {
                 title: (self.dataSource?.name?(for: permission) ?? permission.name),
                 subtitle: (self.dataSource?.description?(for: permission) ?? self.description(for: permission)),
                 allowTitle: self.dataSource?.allowTitle ?? "Allow",
-                allowedTitle: self.dataSource?.allowedTitle ?? "Allowed"
+                allowedTitle: self.dataSource?.allowedTitle ?? "Allowed",
+                image: self.dataSource?.image?(for: permission)
             )
             view.button.addTarget(self, action: #selector(self.request(with:)), for: .touchUpInside)
             self.areaView.add(view: view)

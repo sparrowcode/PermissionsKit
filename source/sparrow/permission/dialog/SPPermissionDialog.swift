@@ -58,4 +58,5 @@ extension SPPermission {
     @objc optional var showCloseButton: Bool { get }
     @objc optional func name(for permission: SPPermissionType) -> String?
     @objc optional func description(for permission: SPPermissionType) -> String?
+    @objc optional func image(for permission: SPPermissionType) -> UIImage?
 }

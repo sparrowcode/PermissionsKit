@@ -100,4 +100,8 @@ extension ViewController: SPPermissionDialogDataSource {
             return "App will can check your location"
         }
     }
+    
+    func image(for permission: SPPermissionType) -> UIImage? {
+        return nil // default icon
+    }
 }
