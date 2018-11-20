@@ -39,7 +39,7 @@ If you want to know if permission allowed, you should call the function:
 let isAvailableCamera = SPPermission.isAllow(.сamera)
 ```
 
-How customize titles and images you can read [here](#DataSource & Customization)
+How customize titles and images you can read [here](#datasource--customization)
 
 ## Permissions
 
