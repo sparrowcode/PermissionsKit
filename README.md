@@ -39,13 +39,13 @@ If you want to know if permission allowed, you should call the function:
 let isAvailableCamera = SPPermission.isAllow(.сamera)
 ```
 
-How customize titles and images you can read [here](#DataSource&Customization)
+How customize titles and images you can read [here](#DataSource & Customization)
 
 ## Permissions
 
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/951477c8e89de55eeeac441102b52b1415c691b7/resources/request-permission_permissions.png"/>
 
-If you have wishes to add new permissions, create a new issue [here](https://github.com/IvanVorobei/SPPermission/issues)
+If you have want to add new permission, create a new issue [here](https://github.com/IvanVorobei/SPPermission/issues)
 
 ## Delegate
 To track events hide & allowed permission associated with `SPPermission`, implement the protocol `SPPermissionDialogDelegate`
