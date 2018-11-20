@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
 }
 ```
-If you want to know if you have received permission, you should call the function:
+If you want to know if permission allowed, you should call the function:
 ```swift
 let isAvailableCamera = SPPermission.isAllow(.сamera)
 ```
