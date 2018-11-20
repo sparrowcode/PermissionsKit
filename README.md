@@ -99,7 +99,7 @@ If you want add or remove close button (for close dialog, need swipe it), you ne
 In the project you can find an example for usage `SPPermissionDialogDataSource`
 
 ## Apps, using lib
-I like the idea to specify applications that use the SPPermission. Please, contact me via email. You can find it in the section `Contacts` so that I added app here
+I like the idea to specify applications that use the `SPPermission`. Please, contact me via email. You can find it in the section `Contacts` so that I added app here
 
 ## License
 `SPPermission` is released under the MIT license. Check LICENSE.md for details
