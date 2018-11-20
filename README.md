@@ -107,7 +107,7 @@ I like the idea to specify applications that use the SPPermission. Please, conta
 ## Contact
 If you need develop application or UI, write me to hello@ivanvorobei.by. I am develop design and ios apps. I am use `swift`. If you want to ask for more functionality, you should create a new issue
 
-[https://hello.ivanvorobei.by](https://hello.ivanvorobei.by) & [https://ivanvorobei.by](https://hello.ivanvorobei.by) 
+[hello.ivanvorobei.by](https://hello.ivanvorobei.by) & [ivanvorobei.by](https://hello.ivanvorobei.by) 
 
 My apps [in AppStore](https://itunes.apple.com/us/developer/polina-zubarik/id1434528595) & [in AppStore 2](https://itunes.apple.com/us/developer/mikalai-varabei/id1435792103)
 
