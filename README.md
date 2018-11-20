@@ -39,7 +39,7 @@ If you want to know if permission allowed, you should call the function:
 let isAvailableCamera = SPPermission.isAllow(.сamera)
 ```
 
-How customize titles and images you can read [here](#datasource--customization)
+How customize titles and images you can read section [DataSource & Customization](#datasource--customization)
 
 ## Permissions
 
@@ -68,7 +68,7 @@ SPPermission.Dialog.request(
 )
 ```
 ## DataSource & Customization
-If you want to change the text, you need to implement the `SPPermissionDialogDataSource` protocol. Ovveride the needed parameters to see the changes
+If you want to change the text, you need to implement the `SPPermissionDialogDataSource` protocol. Override the needed parameters to see the changes
 
 ```swift
 @objc public protocol SPPermissionDialogDataSource: class {
@@ -97,7 +97,7 @@ SPPermission.Dialog.request(
 )
 ```
 
-If you want add or remove close button (for close dialog, need swipe it), you need ovveride parametr  `showCloseButton`. How it will look look at the picture below:
+If you want add or remove close button (for close dialog, need swipe it), you need override parametr  `showCloseButton`. How it will look look at the picture below:
 
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/b3e613295b73be36c8a3d35126d1f7015ef432a8/resources/request-permission - close button.png"/>
 
