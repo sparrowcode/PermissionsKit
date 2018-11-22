@@ -52,8 +52,7 @@ SPPermission.request(.notification, with: {
 })
 ```
 Notification permission should be tested _only_ on a real device.
-
-If you have want to add new permission, create a new issue [here](https://github.com/IvanVorobei/SPPermission/issues)
+If you want to add new permission, create a new issue [here](https://github.com/IvanVorobei/SPPermission/issues)
 
 ## Delegate
 To track events hide & allowed permission associated with `SPPermission`, implement the protocol `SPPermissionDialogDelegate`
