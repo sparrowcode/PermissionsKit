@@ -25,7 +25,7 @@ class ViewController: SPBaseViewController {
     
     @objc func presentPermissonDialog() {
         SPAnimationAlpha.hideList(views: [self.presentButton, self.changeBackgroundButton])
-        
+
         SPPermission.Dialog.request(
             with: [.camera, .calendar, .microphone, .notification],
             on: self,

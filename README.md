@@ -45,6 +45,14 @@ How customize titles and images you can read section [DataSource & Customization
 
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/951477c8e89de55eeeac441102b52b1415c691b7/resources/request-permission_permissions.png"/>
 
+If you want to request notification (or other permissions) without a dialog, use the function:
+```swift
+SPPermission.request(.notification, with: {
+    //callback
+})
+```
+Please note that notification permission should be tested only on a real device.
+
 If you have want to add new permission, create a new issue [here](https://github.com/IvanVorobei/SPPermission/issues)
 
 ## Delegate
