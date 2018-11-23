@@ -7465,6 +7465,789 @@ public class GolubevIconPack : NSObject {
         context.restoreGState()
 
     }
+    
+    @objc dynamic public class func drawHeadphones(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 1000, height: 1000), resizing: ResizingBehavior = .aspectFit, white: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000), light: UIColor = UIColor(red: 0.769, green: 0.847, blue: 0.984, alpha: 1.000), medium: UIColor = UIColor(red: 0.478, green: 0.663, blue: 0.973, alpha: 1.000), dark: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
+        //// General Declarations
+        let context = UIGraphicsGetCurrentContext()!
+        
+        //// Resize to Target Frame
+        context.saveGState()
+        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 1000, height: 1000), target: targetFrame)
+        context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
+        context.scaleBy(x: resizedFrame.width / 1000, y: resizedFrame.height / 1000)
+        
+        
+        //// Group 2
+        //// Bezier Drawing
+        let bezierPath = UIBezierPath()
+        bezierPath.move(to: CGPoint(x: 663.17, y: 669.21))
+        bezierPath.addLine(to: CGPoint(x: 680.79, y: 629.17))
+        bezierPath.addCurve(to: CGPoint(x: 757.34, y: 599.2), controlPoint1: CGPoint(x: 693.6, y: 599.77), controlPoint2: CGPoint(x: 727.93, y: 586.24))
+        bezierPath.addCurve(to: CGPoint(x: 789.5, y: 634.86), controlPoint1: CGPoint(x: 773.34, y: 606.2), controlPoint2: CGPoint(x: 784.56, y: 619.42))
+        bezierPath.addLine(to: CGPoint(x: 802.75, y: 640.69))
+        bezierPath.addLine(to: CGPoint(x: 678.46, y: 924.59))
+        bezierPath.addLine(to: CGPoint(x: 665.22, y: 918.76))
+        bezierPath.addCurve(to: CGPoint(x: 617.34, y: 919.35), controlPoint1: CGPoint(x: 650.66, y: 925.61), controlPoint2: CGPoint(x: 633.34, y: 926.18))
+        bezierPath.addCurve(to: CGPoint(x: 587.35, y: 842.61), controlPoint1: CGPoint(x: 587.93, y: 906.39), controlPoint2: CGPoint(x: 574.4, y: 872.04))
+        bezierPath.addLine(to: CGPoint(x: 604.82, y: 802.57))
+        bezierPath.addLine(to: CGPoint(x: 634.06, y: 735.89))
+        bezierPath.addLine(to: CGPoint(x: 663.17, y: 669.21))
+        bezierPath.close()
+        bezierPath.usesEvenOddFillRule = true
+        medium.setFill()
+        bezierPath.fill()
+        
+        
+        //// Group 3
+        context.saveGState()
+        context.beginTransparencyLayer(auxiliaryInfo: nil)
+        
+        //// Clip Clip
+        let clipPath = UIBezierPath()
+        clipPath.move(to: CGPoint(x: 616.92, y: 857.07))
+        clipPath.addLine(to: CGPoint(x: 634.37, y: 817.05))
+        clipPath.addLine(to: CGPoint(x: 663.6, y: 750.39))
+        clipPath.addLine(to: CGPoint(x: 692.69, y: 683.73))
+        clipPath.addLine(to: CGPoint(x: 710.31, y: 643.71))
+        clipPath.addCurve(to: CGPoint(x: 773.55, y: 609.88), controlPoint1: CGPoint(x: 721.21, y: 618.67), controlPoint2: CGPoint(x: 747.76, y: 605.31))
+        clipPath.addCurve(to: CGPoint(x: 757.71, y: 599.2), controlPoint1: CGPoint(x: 768.94, y: 605.62), controlPoint2: CGPoint(x: 763.79, y: 601.84))
+        clipPath.addCurve(to: CGPoint(x: 681.22, y: 629.16), controlPoint1: CGPoint(x: 728.33, y: 586.23), controlPoint2: CGPoint(x: 694.01, y: 599.76))
+        clipPath.addLine(to: CGPoint(x: 663.6, y: 669.18))
+        clipPath.addLine(to: CGPoint(x: 634.51, y: 735.83))
+        clipPath.addLine(to: CGPoint(x: 605.28, y: 802.49))
+        clipPath.addLine(to: CGPoint(x: 587.83, y: 842.51))
+        clipPath.addCurve(to: CGPoint(x: 617.8, y: 919.23), controlPoint1: CGPoint(x: 574.89, y: 871.93), controlPoint2: CGPoint(x: 588.41, y: 906.27))
+        clipPath.addCurve(to: CGPoint(x: 630.99, y: 923.07), controlPoint1: CGPoint(x: 622.13, y: 921.08), controlPoint2: CGPoint(x: 626.55, y: 922.27))
+        clipPath.addCurve(to: CGPoint(x: 616.92, y: 857.07), controlPoint1: CGPoint(x: 613.24, y: 906.67), controlPoint2: CGPoint(x: 606.65, y: 880.4))
+        clipPath.close()
+        clipPath.usesEvenOddFillRule = true
+        clipPath.addClip()
+        
+        
+        //// Rectangle Drawing
+        let rectanglePath = UIBezierPath(rect: CGRect(x: 577.92, y: 589.25, width: 200.65, height: 338.8))
+        light.setFill()
+        rectanglePath.fill()
+        
+        
+        context.endTransparencyLayer()
+        context.restoreGState()
+        
+        
+        //// Bezier 34 Drawing
+        let bezier34Path = UIBezierPath()
+        bezier34Path.move(to: CGPoint(x: 690.76, y: 686.15))
+        bezier34Path.addCurve(to: CGPoint(x: 687.85, y: 685.55), controlPoint1: CGPoint(x: 689.78, y: 686.15), controlPoint2: CGPoint(x: 688.8, y: 685.95))
+        bezier34Path.addLine(to: CGPoint(x: 661.21, y: 673.9))
+        bezier34Path.addCurve(to: CGPoint(x: 657.46, y: 664.31), controlPoint1: CGPoint(x: 657.53, y: 672.27), controlPoint2: CGPoint(x: 655.86, y: 667.98))
+        bezier34Path.addCurve(to: CGPoint(x: 667.04, y: 660.56), controlPoint1: CGPoint(x: 659.07, y: 660.62), controlPoint2: CGPoint(x: 663.37, y: 658.94))
+        bezier34Path.addLine(to: CGPoint(x: 693.67, y: 672.22))
+        bezier34Path.addCurve(to: CGPoint(x: 697.42, y: 681.8), controlPoint1: CGPoint(x: 697.37, y: 673.81), controlPoint2: CGPoint(x: 699.05, y: 678.1))
+        bezier34Path.addCurve(to: CGPoint(x: 690.76, y: 686.15), controlPoint1: CGPoint(x: 696.23, y: 684.53), controlPoint2: CGPoint(x: 693.56, y: 686.15))
+        bezier34Path.close()
+        bezier34Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier34Path.fill()
+        
+        
+        //// Bezier 3 Drawing
+        let bezier3Path = UIBezierPath()
+        bezier3Path.move(to: CGPoint(x: 847.27, y: 639.24))
+        bezier3Path.addCurve(to: CGPoint(x: 853.82, y: 644.33), controlPoint1: CGPoint(x: 849.46, y: 640.55), controlPoint2: CGPoint(x: 851.79, y: 642.28))
+        bezier3Path.addLine(to: CGPoint(x: 874.72, y: 657.44))
+        bezier3Path.addCurve(to: CGPoint(x: 762.28, y: 927.95), controlPoint1: CGPoint(x: 857.69, y: 757.31), controlPoint2: CGPoint(x: 820.78, y: 845.82))
+        bezier3Path.addLine(to: CGPoint(x: 744.96, y: 944.98))
+        bezier3Path.addCurve(to: CGPoint(x: 697.23, y: 954.27), controlPoint1: CGPoint(x: 726.18, y: 966.96), controlPoint2: CGPoint(x: 707.71, y: 958.8))
+        bezier3Path.addLine(to: CGPoint(x: 670.6, y: 942.64))
+        bezier3Path.addLine(to: CGPoint(x: 678.46, y: 924.59))
+        bezier3Path.addLine(to: CGPoint(x: 802.75, y: 640.69))
+        bezier3Path.addLine(to: CGPoint(x: 810.75, y: 622.49))
+        bezier3Path.addLine(to: CGPoint(x: 837.38, y: 634.29))
+        bezier3Path.addCurve(to: CGPoint(x: 847.27, y: 639.24), controlPoint1: CGPoint(x: 840.3, y: 635.46), controlPoint2: CGPoint(x: 843.78, y: 637.05))
+        bezier3Path.close()
+        bezier3Path.usesEvenOddFillRule = true
+        light.setFill()
+        bezier3Path.fill()
+        
+        
+        //// Bezier 4 Drawing
+        let bezier4Path = UIBezierPath()
+        bezier4Path.move(to: CGPoint(x: 495.09, y: 71.44))
+        bezier4Path.addCurve(to: CGPoint(x: 169.82, y: 264.93), controlPoint1: CGPoint(x: 308.51, y: 71.44), controlPoint2: CGPoint(x: 215.23, y: 176.56))
+        bezier4Path.addCurve(to: CGPoint(x: 165.16, y: 274.39), controlPoint1: CGPoint(x: 168.22, y: 267.98), controlPoint2: CGPoint(x: 166.62, y: 271.19))
+        bezier4Path.addCurve(to: CGPoint(x: 242, y: 927.95), controlPoint1: CGPoint(x: 73.48, y: 463.36), controlPoint2: CGPoint(x: 105.2, y: 736.21))
+        bezier4Path.addLine(to: CGPoint(x: 218.43, y: 944.98))
+        bezier4Path.addCurve(to: CGPoint(x: 495.09, y: 42.32), controlPoint1: CGPoint(x: -19.52, y: 611.86), controlPoint2: CGPoint(x: 51.93, y: 42.32))
+        bezier4Path.addCurve(to: CGPoint(x: 786, y: 944.98), controlPoint1: CGPoint(x: 938.37, y: 42.32), controlPoint2: CGPoint(x: 1023.8, y: 611.86))
+        bezier4Path.addLine(to: CGPoint(x: 762.28, y: 927.95))
+        bezier4Path.addCurve(to: CGPoint(x: 876.38, y: 648.11), controlPoint1: CGPoint(x: 820.78, y: 845.82), controlPoint2: CGPoint(x: 859.35, y: 747.98))
+        bezier4Path.addCurve(to: CGPoint(x: 830.83, y: 275.99), controlPoint1: CGPoint(x: 898.79, y: 517.51), controlPoint2: CGPoint(x: 884.68, y: 383.29))
+        bezier4Path.addCurve(to: CGPoint(x: 828.64, y: 271.62), controlPoint1: CGPoint(x: 830.11, y: 274.54), controlPoint2: CGPoint(x: 829.38, y: 273.08))
+        bezier4Path.addCurve(to: CGPoint(x: 495.09, y: 71.44), controlPoint1: CGPoint(x: 781.64, y: 180.34), controlPoint2: CGPoint(x: 685.74, y: 71.44))
+        bezier4Path.close()
+        bezier4Path.usesEvenOddFillRule = true
+        light.setFill()
+        bezier4Path.fill()
+        
+        
+        //// Bezier 5 Drawing
+        let bezier5Path = UIBezierPath()
+        bezier5Path.move(to: CGPoint(x: 861.61, y: 649.22))
+        bezier5Path.addCurve(to: CGPoint(x: 718.58, y: 959.48), controlPoint1: CGPoint(x: 844.5, y: 748.66), controlPoint2: CGPoint(x: 786.05, y: 879.38))
+        bezier5Path.addCurve(to: CGPoint(x: 744.96, y: 944.98), controlPoint1: CGPoint(x: 726.71, y: 959.2), controlPoint2: CGPoint(x: 735.79, y: 955.7))
+        bezier5Path.addLine(to: CGPoint(x: 762.28, y: 927.95))
+        bezier5Path.addCurve(to: CGPoint(x: 874.72, y: 657.44), controlPoint1: CGPoint(x: 820.78, y: 845.82), controlPoint2: CGPoint(x: 857.69, y: 757.31))
+        bezier5Path.addLine(to: CGPoint(x: 861.61, y: 649.22))
+        bezier5Path.close()
+        bezier5Path.usesEvenOddFillRule = true
+        medium.setFill()
+        bezier5Path.fill()
+        
+        
+        //// Bezier 6 Drawing
+        let bezier6Path = UIBezierPath()
+        bezier6Path.move(to: CGPoint(x: 324.01, y: 629.17))
+        bezier6Path.addCurve(to: CGPoint(x: 247.47, y: 599.2), controlPoint1: CGPoint(x: 311.21, y: 599.77), controlPoint2: CGPoint(x: 276.86, y: 586.24))
+        bezier6Path.addCurve(to: CGPoint(x: 215.3, y: 634.86), controlPoint1: CGPoint(x: 231.46, y: 606.2), controlPoint2: CGPoint(x: 220.25, y: 619.42))
+        bezier6Path.addLine(to: CGPoint(x: 202.06, y: 640.69))
+        bezier6Path.addLine(to: CGPoint(x: 326.34, y: 924.59))
+        bezier6Path.addLine(to: CGPoint(x: 339.59, y: 918.76))
+        bezier6Path.addCurve(to: CGPoint(x: 387.47, y: 919.35), controlPoint1: CGPoint(x: 354.14, y: 925.61), controlPoint2: CGPoint(x: 371.46, y: 926.18))
+        bezier6Path.addCurve(to: CGPoint(x: 417.45, y: 842.61), controlPoint1: CGPoint(x: 416.87, y: 906.39), controlPoint2: CGPoint(x: 430.4, y: 872.04))
+        bezier6Path.addLine(to: CGPoint(x: 399.98, y: 802.57))
+        bezier6Path.addLine(to: CGPoint(x: 370.73, y: 735.89))
+        bezier6Path.addLine(to: CGPoint(x: 341.63, y: 669.21))
+        bezier6Path.addLine(to: CGPoint(x: 324.01, y: 629.17))
+        bezier6Path.close()
+        bezier6Path.usesEvenOddFillRule = true
+        medium.setFill()
+        bezier6Path.fill()
+        
+        
+        //// Group 4
+        context.saveGState()
+        context.beginTransparencyLayer(auxiliaryInfo: nil)
+        
+        //// Clip Clip 2
+        let clip2Path = UIBezierPath()
+        clip2Path.move(to: CGPoint(x: 388.67, y: 857.07))
+        clip2Path.addLine(to: CGPoint(x: 371.21, y: 817.05))
+        clip2Path.addLine(to: CGPoint(x: 341.98, y: 750.39))
+        clip2Path.addLine(to: CGPoint(x: 312.89, y: 683.73))
+        clip2Path.addLine(to: CGPoint(x: 295.28, y: 643.71))
+        clip2Path.addCurve(to: CGPoint(x: 232.03, y: 609.88), controlPoint1: CGPoint(x: 284.38, y: 618.67), controlPoint2: CGPoint(x: 257.82, y: 605.31))
+        clip2Path.addCurve(to: CGPoint(x: 247.87, y: 599.2), controlPoint1: CGPoint(x: 236.65, y: 605.62), controlPoint2: CGPoint(x: 241.79, y: 601.84))
+        clip2Path.addCurve(to: CGPoint(x: 324.37, y: 629.16), controlPoint1: CGPoint(x: 277.25, y: 586.23), controlPoint2: CGPoint(x: 311.58, y: 599.76))
+        clip2Path.addLine(to: CGPoint(x: 341.98, y: 669.18))
+        clip2Path.addLine(to: CGPoint(x: 371.07, y: 735.83))
+        clip2Path.addLine(to: CGPoint(x: 400.3, y: 802.49))
+        clip2Path.addLine(to: CGPoint(x: 417.75, y: 842.51))
+        clip2Path.addCurve(to: CGPoint(x: 387.79, y: 919.23), controlPoint1: CGPoint(x: 430.69, y: 871.93), controlPoint2: CGPoint(x: 417.17, y: 906.27))
+        clip2Path.addCurve(to: CGPoint(x: 374.6, y: 923.07), controlPoint1: CGPoint(x: 383.46, y: 921.08), controlPoint2: CGPoint(x: 379.04, y: 922.27))
+        clip2Path.addCurve(to: CGPoint(x: 388.67, y: 857.07), controlPoint1: CGPoint(x: 392.35, y: 906.67), controlPoint2: CGPoint(x: 398.93, y: 880.4))
+        clip2Path.close()
+        clip2Path.usesEvenOddFillRule = true
+        clip2Path.addClip()
+        
+        
+        //// Rectangle 2 Drawing
+        let rectangle2Path = UIBezierPath(rect: CGRect(x: 227.03, y: 589.25, width: 200.65, height: 338.8))
+        light.setFill()
+        rectangle2Path.fill()
+        
+        
+        context.endTransparencyLayer()
+        context.restoreGState()
+        
+        
+        //// Group 5
+        context.saveGState()
+        context.beginTransparencyLayer(auxiliaryInfo: nil)
+        
+        //// Clip Clip 3
+        let clip3Path = UIBezierPath()
+        clip3Path.move(to: CGPoint(x: 150.75, y: 644.15))
+        clip3Path.addLine(to: CGPoint(x: 129.82, y: 657.28))
+        clip3Path.addCurve(to: CGPoint(x: 242.43, y: 928.21), controlPoint1: CGPoint(x: 146.87, y: 757.3), controlPoint2: CGPoint(x: 183.84, y: 845.96))
+        clip3Path.addLine(to: CGPoint(x: 259.78, y: 945.27))
+        clip3Path.addCurve(to: CGPoint(x: 307.58, y: 954.58), controlPoint1: CGPoint(x: 278.58, y: 967.28), controlPoint2: CGPoint(x: 297.09, y: 959.11))
+        clip3Path.addLine(to: CGPoint(x: 334.26, y: 942.93))
+        clip3Path.addLine(to: CGPoint(x: 326.38, y: 924.85))
+        clip3Path.addLine(to: CGPoint(x: 201.91, y: 640.5))
+        clip3Path.addLine(to: CGPoint(x: 193.9, y: 622.27))
+        clip3Path.addLine(to: CGPoint(x: 167.22, y: 634.09))
+        clip3Path.addCurve(to: CGPoint(x: 157.31, y: 639.05), controlPoint1: CGPoint(x: 164.3, y: 635.26), controlPoint2: CGPoint(x: 160.81, y: 636.86))
+        clip3Path.addCurve(to: CGPoint(x: 150.75, y: 644.15), controlPoint1: CGPoint(x: 155.12, y: 640.36), controlPoint2: CGPoint(x: 152.79, y: 642.1))
+        clip3Path.close()
+        clip3Path.usesEvenOddFillRule = true
+        clip3Path.addClip()
+        
+        
+        //// Rectangle 3 Drawing
+        let rectangle3Path = UIBezierPath(rect: CGRect(x: 124.83, y: 617.3, width: 214.45, height: 347.6))
+        light.setFill()
+        rectangle3Path.fill()
+        
+        
+        context.endTransparencyLayer()
+        context.restoreGState()
+        
+        
+        //// Bezier 9 Drawing
+        let bezier9Path = UIBezierPath()
+        bezier9Path.move(to: CGPoint(x: 143.18, y: 649.22))
+        bezier9Path.addCurve(to: CGPoint(x: 286.22, y: 959.48), controlPoint1: CGPoint(x: 160.3, y: 748.66), controlPoint2: CGPoint(x: 218.76, y: 879.38))
+        bezier9Path.addCurve(to: CGPoint(x: 259.84, y: 944.98), controlPoint1: CGPoint(x: 278.08, y: 959.2), controlPoint2: CGPoint(x: 269, y: 955.7))
+        bezier9Path.addLine(to: CGPoint(x: 242.52, y: 927.95))
+        bezier9Path.addCurve(to: CGPoint(x: 130.08, y: 657.44), controlPoint1: CGPoint(x: 184.01, y: 845.82), controlPoint2: CGPoint(x: 147.11, y: 757.31))
+        bezier9Path.addLine(to: CGPoint(x: 143.18, y: 649.22))
+        bezier9Path.close()
+        bezier9Path.usesEvenOddFillRule = true
+        medium.setFill()
+        bezier9Path.fill()
+        
+        
+        //// Bezier 10 Drawing
+        let bezier10Path = UIBezierPath()
+        bezier10Path.move(to: CGPoint(x: 495.09, y: 42.32))
+        bezier10Path.addCurve(to: CGPoint(x: 487.81, y: 42.47), controlPoint1: CGPoint(x: 492.63, y: 42.32), controlPoint2: CGPoint(x: 490.25, y: 42.43))
+        bezier10Path.addCurve(to: CGPoint(x: 776.28, y: 937.98), controlPoint1: CGPoint(x: 921.66, y: 48.68), controlPoint2: CGPoint(x: 1006.71, y: 605.83))
+        bezier10Path.addLine(to: CGPoint(x: 786, y: 944.98))
+        bezier10Path.addCurve(to: CGPoint(x: 495.09, y: 42.32), controlPoint1: CGPoint(x: 1023.8, y: 611.86), controlPoint2: CGPoint(x: 938.38, y: 42.32))
+        bezier10Path.close()
+        bezier10Path.usesEvenOddFillRule = true
+        white.setFill()
+        bezier10Path.fill()
+        
+        
+        //// Bezier 11 Drawing
+        let bezier11Path = UIBezierPath()
+        bezier11Path.move(to: CGPoint(x: 502.36, y: 42.47))
+        bezier11Path.addCurve(to: CGPoint(x: 495.09, y: 42.32), controlPoint1: CGPoint(x: 499.93, y: 42.43), controlPoint2: CGPoint(x: 497.55, y: 42.32))
+        bezier11Path.addCurve(to: CGPoint(x: 218.43, y: 944.98), controlPoint1: CGPoint(x: 51.93, y: 42.32), controlPoint2: CGPoint(x: -19.52, y: 611.86))
+        bezier11Path.addLine(to: CGPoint(x: 228.13, y: 937.95))
+        bezier11Path.addCurve(to: CGPoint(x: 502.36, y: 42.47), controlPoint1: CGPoint(x: -2.61, y: 605.8), controlPoint2: CGPoint(x: 68.81, y: 48.68))
+        bezier11Path.close()
+        bezier11Path.usesEvenOddFillRule = true
+        white.setFill()
+        bezier11Path.fill()
+        
+        
+        //// Group 6
+        context.saveGState()
+        context.beginTransparencyLayer(auxiliaryInfo: nil)
+        
+        //// Clip Clip 4
+        let clip4Path = UIBezierPath()
+        clip4Path.move(to: CGPoint(x: 187.66, y: 285.29))
+        clip4Path.addLine(to: CGPoint(x: 167.3, y: 275.54))
+        clip4Path.addLine(to: CGPoint(x: 165.41, y: 274.67))
+        clip4Path.addCurve(to: CGPoint(x: 170.06, y: 265.21), controlPoint1: CGPoint(x: 166.87, y: 271.47), controlPoint2: CGPoint(x: 168.46, y: 268.27))
+        clip4Path.addCurve(to: CGPoint(x: 495.17, y: 71.88), controlPoint1: CGPoint(x: 215.45, y: 176.91), controlPoint2: CGPoint(x: 308.69, y: 71.88))
+        clip4Path.addCurve(to: CGPoint(x: 828.56, y: 271.9), controlPoint1: CGPoint(x: 685.72, y: 71.88), controlPoint2: CGPoint(x: 781.58, y: 180.69))
+        clip4Path.addCurve(to: CGPoint(x: 830.74, y: 276.26), controlPoint1: CGPoint(x: 829.29, y: 273.36), controlPoint2: CGPoint(x: 830.02, y: 274.82))
+        clip4Path.addLine(to: CGPoint(x: 802.67, y: 285.28))
+        clip4Path.addCurve(to: CGPoint(x: 495.17, y: 100.97), controlPoint1: CGPoint(x: 759.46, y: 201.21), controlPoint2: CGPoint(x: 671.02, y: 100.97))
+        clip4Path.addCurve(to: CGPoint(x: 187.66, y: 285.29), controlPoint1: CGPoint(x: 319.45, y: 100.97), controlPoint2: CGPoint(x: 231.01, y: 201.21))
+        clip4Path.close()
+        clip4Path.usesEvenOddFillRule = true
+        clip4Path.addClip()
+        
+        
+        //// Rectangle 4 Drawing
+        let rectangle4Path = UIBezierPath(rect: CGRect(x: 160.43, y: 66.9, width: 675.35, height: 223.4))
+        medium.setFill()
+        rectangle4Path.fill()
+        
+        
+        context.endTransparencyLayer()
+        context.restoreGState()
+        
+        
+        //// Bezier 13 Drawing
+        let bezier13Path = UIBezierPath()
+        bezier13Path.move(to: CGPoint(x: 786, y: 952.26))
+        bezier13Path.addCurve(to: CGPoint(x: 781.78, y: 950.89), controlPoint1: CGPoint(x: 784.54, y: 952.26), controlPoint2: CGPoint(x: 783.06, y: 951.8))
+        bezier13Path.addCurve(to: CGPoint(x: 780.09, y: 940.74), controlPoint1: CGPoint(x: 778.52, y: 948.56), controlPoint2: CGPoint(x: 777.75, y: 944.01))
+        bezier13Path.addCurve(to: CGPoint(x: 848.13, y: 261.75), controlPoint1: CGPoint(x: 920.64, y: 743.85), controlPoint2: CGPoint(x: 949.25, y: 458.31))
+        bezier13Path.addCurve(to: CGPoint(x: 495.09, y: 49.6), controlPoint1: CGPoint(x: 777.73, y: 124.94), controlPoint2: CGPoint(x: 652.37, y: 49.6))
+        bezier13Path.addCurve(to: CGPoint(x: 487.81, y: 42.32), controlPoint1: CGPoint(x: 491.06, y: 49.6), controlPoint2: CGPoint(x: 487.81, y: 46.34))
+        bezier13Path.addCurve(to: CGPoint(x: 495.09, y: 35.04), controlPoint1: CGPoint(x: 487.81, y: 38.3), controlPoint2: CGPoint(x: 491.06, y: 35.04))
+        bezier13Path.addCurve(to: CGPoint(x: 861.06, y: 255.09), controlPoint1: CGPoint(x: 658.08, y: 35.04), controlPoint2: CGPoint(x: 788.06, y: 113.19))
+        bezier13Path.addCurve(to: CGPoint(x: 791.93, y: 949.21), controlPoint1: CGPoint(x: 964.54, y: 456.22), controlPoint2: CGPoint(x: 935.46, y: 748.15))
+        bezier13Path.addCurve(to: CGPoint(x: 786, y: 952.26), controlPoint1: CGPoint(x: 790.51, y: 951.17), controlPoint2: CGPoint(x: 788.28, y: 952.26))
+        bezier13Path.close()
+        bezier13Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier13Path.fill()
+        
+        
+        //// Bezier 14 Drawing
+        let bezier14Path = UIBezierPath()
+        bezier14Path.move(to: CGPoint(x: 218.44, y: 952.26))
+        bezier14Path.addCurve(to: CGPoint(x: 212.51, y: 949.21), controlPoint1: CGPoint(x: 216.16, y: 952.26), controlPoint2: CGPoint(x: 213.93, y: 951.2))
+        bezier14Path.addCurve(to: CGPoint(x: 137.44, y: 248.33), controlPoint1: CGPoint(x: 65.79, y: 743.8), controlPoint2: CGPoint(x: 34.21, y: 449.04))
+        bezier14Path.addCurve(to: CGPoint(x: 495.09, y: 35.04), controlPoint1: CGPoint(x: 208.17, y: 110.79), controlPoint2: CGPoint(x: 335.18, y: 35.04))
+        bezier14Path.addCurve(to: CGPoint(x: 502.36, y: 42.32), controlPoint1: CGPoint(x: 499.11, y: 35.04), controlPoint2: CGPoint(x: 502.36, y: 38.3))
+        bezier14Path.addCurve(to: CGPoint(x: 495.09, y: 49.6), controlPoint1: CGPoint(x: 502.36, y: 46.34), controlPoint2: CGPoint(x: 499.11, y: 49.6))
+        bezier14Path.addCurve(to: CGPoint(x: 150.38, y: 254.99), controlPoint1: CGPoint(x: 297.48, y: 49.6), controlPoint2: CGPoint(x: 198.56, y: 161.29))
+        bezier14Path.addCurve(to: CGPoint(x: 224.35, y: 940.74), controlPoint1: CGPoint(x: 49.5, y: 451.13), controlPoint2: CGPoint(x: 80.62, y: 739.53))
+        bezier14Path.addCurve(to: CGPoint(x: 222.66, y: 950.89), controlPoint1: CGPoint(x: 226.69, y: 944.01), controlPoint2: CGPoint(x: 225.93, y: 948.56))
+        bezier14Path.addCurve(to: CGPoint(x: 218.44, y: 952.26), controlPoint1: CGPoint(x: 221.38, y: 951.8), controlPoint2: CGPoint(x: 219.9, y: 952.26))
+        bezier14Path.close()
+        bezier14Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier14Path.fill()
+        
+        
+        //// Bezier 15 Drawing
+        let bezier15Path = UIBezierPath()
+        bezier15Path.move(to: CGPoint(x: 762.27, y: 935.22))
+        bezier15Path.addCurve(to: CGPoint(x: 758.06, y: 933.86), controlPoint1: CGPoint(x: 760.81, y: 935.22), controlPoint2: CGPoint(x: 759.34, y: 934.77))
+        bezier15Path.addCurve(to: CGPoint(x: 756.36, y: 923.71), controlPoint1: CGPoint(x: 754.78, y: 931.53), controlPoint2: CGPoint(x: 754.03, y: 926.98))
+        bezier15Path.addCurve(to: CGPoint(x: 869.22, y: 646.89), controlPoint1: CGPoint(x: 812.82, y: 844.46), controlPoint2: CGPoint(x: 851.85, y: 748.75))
+        bezier15Path.addCurve(to: CGPoint(x: 824.32, y: 279.25), controlPoint1: CGPoint(x: 892.16, y: 513.21), controlPoint2: CGPoint(x: 876.21, y: 382.64))
+        bezier15Path.addLine(to: CGPoint(x: 822.15, y: 274.89))
+        bezier15Path.addCurve(to: CGPoint(x: 495.09, y: 78.72), controlPoint1: CGPoint(x: 776.07, y: 185.44), controlPoint2: CGPoint(x: 681.91, y: 78.72))
+        bezier15Path.addCurve(to: CGPoint(x: 487.81, y: 71.44), controlPoint1: CGPoint(x: 491.06, y: 78.72), controlPoint2: CGPoint(x: 487.81, y: 75.46))
+        bezier15Path.addCurve(to: CGPoint(x: 495.09, y: 64.16), controlPoint1: CGPoint(x: 487.81, y: 67.41), controlPoint2: CGPoint(x: 491.06, y: 64.16))
+        bezier15Path.addCurve(to: CGPoint(x: 835.11, y: 268.29), controlPoint1: CGPoint(x: 689.25, y: 64.16), controlPoint2: CGPoint(x: 787.15, y: 175.16))
+        bezier15Path.addLine(to: CGPoint(x: 837.34, y: 272.73))
+        bezier15Path.addCurve(to: CGPoint(x: 883.56, y: 649.36), controlPoint1: CGPoint(x: 890.61, y: 378.87), controlPoint2: CGPoint(x: 907.02, y: 512.62))
+        bezier15Path.addCurve(to: CGPoint(x: 768.21, y: 932.15), controlPoint1: CGPoint(x: 865.82, y: 753.35), controlPoint2: CGPoint(x: 825.94, y: 851.14))
+        bezier15Path.addCurve(to: CGPoint(x: 762.27, y: 935.22), controlPoint1: CGPoint(x: 766.79, y: 934.14), controlPoint2: CGPoint(x: 764.54, y: 935.22))
+        bezier15Path.close()
+        bezier15Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier15Path.fill()
+        
+        
+        //// Bezier 16 Drawing
+        let bezier16Path = UIBezierPath()
+        bezier16Path.move(to: CGPoint(x: 242.01, y: 935.22))
+        bezier16Path.addCurve(to: CGPoint(x: 236.08, y: 932.15), controlPoint1: CGPoint(x: 239.73, y: 935.22), controlPoint2: CGPoint(x: 237.5, y: 934.14))
+        bezier16Path.addCurve(to: CGPoint(x: 158.62, y: 271.21), controlPoint1: CGPoint(x: 98.76, y: 739.7), controlPoint2: CGPoint(x: 66.18, y: 461.73))
+        bezier16Path.addCurve(to: CGPoint(x: 163.37, y: 261.55), controlPoint1: CGPoint(x: 160.05, y: 268.06), controlPoint2: CGPoint(x: 161.71, y: 264.72))
+        bezier16Path.addCurve(to: CGPoint(x: 495.09, y: 64.16), controlPoint1: CGPoint(x: 209.63, y: 171.53), controlPoint2: CGPoint(x: 304.75, y: 64.16))
+        bezier16Path.addCurve(to: CGPoint(x: 502.36, y: 71.44), controlPoint1: CGPoint(x: 499.11, y: 64.16), controlPoint2: CGPoint(x: 502.36, y: 67.42))
+        bezier16Path.addCurve(to: CGPoint(x: 495.09, y: 78.72), controlPoint1: CGPoint(x: 502.36, y: 75.46), controlPoint2: CGPoint(x: 499.11, y: 78.72))
+        bezier16Path.addCurve(to: CGPoint(x: 176.29, y: 268.25), controlPoint1: CGPoint(x: 312.1, y: 78.72), controlPoint2: CGPoint(x: 220.72, y: 181.79))
+        bezier16Path.addCurve(to: CGPoint(x: 171.78, y: 277.41), controlPoint1: CGPoint(x: 174.73, y: 271.25), controlPoint2: CGPoint(x: 173.18, y: 274.33))
+        bezier16Path.addCurve(to: CGPoint(x: 247.92, y: 923.71), controlPoint1: CGPoint(x: 81.46, y: 463.58), controlPoint2: CGPoint(x: 113.51, y: 735.32))
+        bezier16Path.addCurve(to: CGPoint(x: 246.23, y: 933.86), controlPoint1: CGPoint(x: 250.26, y: 926.98), controlPoint2: CGPoint(x: 249.5, y: 931.53))
+        bezier16Path.addCurve(to: CGPoint(x: 242.01, y: 935.22), controlPoint1: CGPoint(x: 244.95, y: 934.77), controlPoint2: CGPoint(x: 243.47, y: 935.22))
+        bezier16Path.close()
+        bezier16Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier16Path.fill()
+        
+        
+        //// Bezier 17 Drawing
+        let bezier17Path = UIBezierPath()
+        bezier17Path.move(to: CGPoint(x: 786, y: 952.26))
+        bezier17Path.addCurve(to: CGPoint(x: 781.77, y: 950.89), controlPoint1: CGPoint(x: 784.53, y: 952.26), controlPoint2: CGPoint(x: 783.05, y: 951.8))
+        bezier17Path.addLine(to: CGPoint(x: 758.03, y: 933.86))
+        bezier17Path.addCurve(to: CGPoint(x: 756.37, y: 923.68), controlPoint1: CGPoint(x: 754.78, y: 931.5), controlPoint2: CGPoint(x: 754.03, y: 926.95))
+        bezier17Path.addCurve(to: CGPoint(x: 766.52, y: 922.03), controlPoint1: CGPoint(x: 758.72, y: 920.41), controlPoint2: CGPoint(x: 763.24, y: 919.67))
+        bezier17Path.addLine(to: CGPoint(x: 790.25, y: 939.06))
+        bezier17Path.addCurve(to: CGPoint(x: 791.92, y: 949.21), controlPoint1: CGPoint(x: 793.51, y: 941.39), controlPoint2: CGPoint(x: 794.26, y: 945.94))
+        bezier17Path.addCurve(to: CGPoint(x: 786, y: 952.26), controlPoint1: CGPoint(x: 790.49, y: 951.2), controlPoint2: CGPoint(x: 788.26, y: 952.26))
+        bezier17Path.close()
+        bezier17Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier17Path.fill()
+        
+        
+        //// Bezier 18 Drawing
+        let bezier18Path = UIBezierPath()
+        bezier18Path.move(to: CGPoint(x: 218.44, y: 952.26))
+        bezier18Path.addCurve(to: CGPoint(x: 212.53, y: 949.24), controlPoint1: CGPoint(x: 216.18, y: 952.26), controlPoint2: CGPoint(x: 213.96, y: 951.2))
+        bezier18Path.addCurve(to: CGPoint(x: 214.17, y: 939.06), controlPoint1: CGPoint(x: 210.18, y: 945.97), controlPoint2: CGPoint(x: 210.91, y: 941.42))
+        bezier18Path.addLine(to: CGPoint(x: 237.74, y: 922.03))
+        bezier18Path.addCurve(to: CGPoint(x: 247.9, y: 923.68), controlPoint1: CGPoint(x: 241, y: 919.64), controlPoint2: CGPoint(x: 245.54, y: 920.44))
+        bezier18Path.addCurve(to: CGPoint(x: 246.27, y: 933.83), controlPoint1: CGPoint(x: 250.25, y: 926.92), controlPoint2: CGPoint(x: 249.52, y: 931.47))
+        bezier18Path.addLine(to: CGPoint(x: 222.7, y: 950.86))
+        bezier18Path.addCurve(to: CGPoint(x: 218.44, y: 952.26), controlPoint1: CGPoint(x: 221.4, y: 951.8), controlPoint2: CGPoint(x: 219.92, y: 952.26))
+        bezier18Path.close()
+        bezier18Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier18Path.fill()
+        
+        
+        //// Bezier 19 Drawing
+        let bezier19Path = UIBezierPath()
+        bezier19Path.move(to: CGPoint(x: 287.3, y: 966.79))
+        bezier19Path.addCurve(to: CGPoint(x: 254.22, y: 949.7), controlPoint1: CGPoint(x: 277.2, y: 966.79), controlPoint2: CGPoint(x: 265.53, y: 962.92))
+        bezier19Path.addCurve(to: CGPoint(x: 255.03, y: 939.43), controlPoint1: CGPoint(x: 251.61, y: 946.65), controlPoint2: CGPoint(x: 251.98, y: 942.05))
+        bezier19Path.addCurve(to: CGPoint(x: 265.29, y: 940.23), controlPoint1: CGPoint(x: 258.08, y: 936.81), controlPoint2: CGPoint(x: 262.67, y: 937.18))
+        bezier19Path.addCurve(to: CGPoint(x: 304.58, y: 947.62), controlPoint1: CGPoint(x: 280.56, y: 958.11), controlPoint2: CGPoint(x: 294.44, y: 952.03))
+        bezier19Path.addCurve(to: CGPoint(x: 314.16, y: 951.37), controlPoint1: CGPoint(x: 308.26, y: 946.03), controlPoint2: CGPoint(x: 312.55, y: 947.71))
+        bezier19Path.addCurve(to: CGPoint(x: 310.4, y: 960.96), controlPoint1: CGPoint(x: 315.77, y: 955.04), controlPoint2: CGPoint(x: 314.09, y: 959.34))
+        bezier19Path.addCurve(to: CGPoint(x: 287.3, y: 966.79), controlPoint1: CGPoint(x: 305.41, y: 963.15), controlPoint2: CGPoint(x: 297.1, y: 966.79))
+        bezier19Path.close()
+        bezier19Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier19Path.fill()
+        
+        
+        //// Bezier 20 Drawing
+        let bezier20Path = UIBezierPath()
+        bezier20Path.move(to: CGPoint(x: 150.9, y: 651.61))
+        bezier20Path.addCurve(to: CGPoint(x: 145.58, y: 649.28), controlPoint1: CGPoint(x: 148.95, y: 651.61), controlPoint2: CGPoint(x: 147.01, y: 650.81))
+        bezier20Path.addCurve(to: CGPoint(x: 145.94, y: 638.98), controlPoint1: CGPoint(x: 142.84, y: 646.35), controlPoint2: CGPoint(x: 143, y: 641.74))
+        bezier20Path.addCurve(to: CGPoint(x: 154.03, y: 632.87), controlPoint1: CGPoint(x: 148.83, y: 636.31), controlPoint2: CGPoint(x: 151.41, y: 634.35))
+        bezier20Path.addCurve(to: CGPoint(x: 164.79, y: 627.53), controlPoint1: CGPoint(x: 157.02, y: 631), controlPoint2: CGPoint(x: 160.64, y: 629.18))
+        bezier20Path.addCurve(to: CGPoint(x: 174.25, y: 631.59), controlPoint1: CGPoint(x: 168.48, y: 626.05), controlPoint2: CGPoint(x: 172.77, y: 627.87))
+        bezier20Path.addCurve(to: CGPoint(x: 170.2, y: 641.03), controlPoint1: CGPoint(x: 175.74, y: 635.32), controlPoint2: CGPoint(x: 173.93, y: 639.55))
+        bezier20Path.addCurve(to: CGPoint(x: 161.46, y: 645.41), controlPoint1: CGPoint(x: 166.87, y: 642.37), controlPoint2: CGPoint(x: 164.01, y: 643.79))
+        bezier20Path.addCurve(to: CGPoint(x: 155.86, y: 649.65), controlPoint1: CGPoint(x: 159.57, y: 646.46), controlPoint2: CGPoint(x: 157.88, y: 647.77))
+        bezier20Path.addCurve(to: CGPoint(x: 150.9, y: 651.61), controlPoint1: CGPoint(x: 154.46, y: 650.96), controlPoint2: CGPoint(x: 152.68, y: 651.61))
+        bezier20Path.close()
+        bezier20Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier20Path.fill()
+        
+        
+        //// Bezier 21 Drawing
+        let bezier21Path = UIBezierPath()
+        bezier21Path.move(to: CGPoint(x: 167.5, y: 641.57))
+        bezier21Path.addCurve(to: CGPoint(x: 160.84, y: 637.22), controlPoint1: CGPoint(x: 164.71, y: 641.57), controlPoint2: CGPoint(x: 162.04, y: 639.95))
+        bezier21Path.addCurve(to: CGPoint(x: 164.54, y: 627.64), controlPoint1: CGPoint(x: 159.21, y: 633.55), controlPoint2: CGPoint(x: 160.87, y: 629.26))
+        bezier21Path.addLine(to: CGPoint(x: 191.17, y: 615.84))
+        bezier21Path.addCurve(to: CGPoint(x: 200.77, y: 619.53), controlPoint1: CGPoint(x: 194.86, y: 614.19), controlPoint2: CGPoint(x: 199.14, y: 615.87))
+        bezier21Path.addCurve(to: CGPoint(x: 197.07, y: 629.15), controlPoint1: CGPoint(x: 202.4, y: 623.2), controlPoint2: CGPoint(x: 200.74, y: 627.53))
+        bezier21Path.addLine(to: CGPoint(x: 170.44, y: 640.94))
+        bezier21Path.addCurve(to: CGPoint(x: 167.5, y: 641.57), controlPoint1: CGPoint(x: 169.48, y: 641.37), controlPoint2: CGPoint(x: 168.48, y: 641.57))
+        bezier21Path.close()
+        bezier21Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier21Path.fill()
+        
+        
+        //// Bezier 22 Drawing
+        let bezier22Path = UIBezierPath()
+        bezier22Path.move(to: CGPoint(x: 307.5, y: 961.55))
+        bezier22Path.addCurve(to: CGPoint(x: 300.83, y: 957.2), controlPoint1: CGPoint(x: 304.69, y: 961.55), controlPoint2: CGPoint(x: 302.02, y: 959.93))
+        bezier22Path.addCurve(to: CGPoint(x: 304.58, y: 947.62), controlPoint1: CGPoint(x: 299.21, y: 953.51), controlPoint2: CGPoint(x: 300.9, y: 949.21))
+        bezier22Path.addLine(to: CGPoint(x: 331.21, y: 935.96))
+        bezier22Path.addCurve(to: CGPoint(x: 340.79, y: 939.71), controlPoint1: CGPoint(x: 334.9, y: 934.4), controlPoint2: CGPoint(x: 339.19, y: 936.05))
+        bezier22Path.addCurve(to: CGPoint(x: 337.04, y: 949.3), controlPoint1: CGPoint(x: 342.41, y: 943.41), controlPoint2: CGPoint(x: 340.72, y: 947.71))
+        bezier22Path.addLine(to: CGPoint(x: 310.41, y: 960.96))
+        bezier22Path.addCurve(to: CGPoint(x: 307.5, y: 961.55), controlPoint1: CGPoint(x: 309.46, y: 961.35), controlPoint2: CGPoint(x: 308.46, y: 961.55))
+        bezier22Path.close()
+        bezier22Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier22Path.fill()
+        
+        
+        //// Bezier 23 Drawing
+        let bezier23Path = UIBezierPath()
+        bezier23Path.move(to: CGPoint(x: 334.13, y: 949.92))
+        bezier23Path.addCurve(to: CGPoint(x: 327.45, y: 945.55), controlPoint1: CGPoint(x: 331.32, y: 949.92), controlPoint2: CGPoint(x: 328.65, y: 948.28))
+        bezier23Path.addLine(to: CGPoint(x: 187.46, y: 625.42))
+        bezier23Path.addCurve(to: CGPoint(x: 191.19, y: 615.81), controlPoint1: CGPoint(x: 185.84, y: 621.72), controlPoint2: CGPoint(x: 187.51, y: 617.43))
+        bezier23Path.addCurve(to: CGPoint(x: 200.78, y: 619.56), controlPoint1: CGPoint(x: 194.9, y: 614.22), controlPoint2: CGPoint(x: 199.17, y: 615.87))
+        bezier23Path.addLine(to: CGPoint(x: 208.79, y: 637.77))
+        bezier23Path.addLine(to: CGPoint(x: 340.8, y: 939.75))
+        bezier23Path.addCurve(to: CGPoint(x: 337.03, y: 949.3), controlPoint1: CGPoint(x: 342.4, y: 943.42), controlPoint2: CGPoint(x: 340.71, y: 947.71))
+        bezier23Path.addCurve(to: CGPoint(x: 334.13, y: 949.92), controlPoint1: CGPoint(x: 336.09, y: 949.72), controlPoint2: CGPoint(x: 335.1, y: 949.92))
+        bezier23Path.close()
+        bezier23Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier23Path.fill()
+        
+        
+        //// Bezier 24 Drawing
+        let bezier24Path = UIBezierPath()
+        bezier24Path.move(to: CGPoint(x: 314.93, y: 688.15))
+        bezier24Path.addCurve(to: CGPoint(x: 308.25, y: 683.8), controlPoint1: CGPoint(x: 312.12, y: 688.15), controlPoint2: CGPoint(x: 309.45, y: 686.53))
+        bezier24Path.addCurve(to: CGPoint(x: 312, y: 674.22), controlPoint1: CGPoint(x: 306.64, y: 680.1), controlPoint2: CGPoint(x: 308.32, y: 675.81))
+        bezier24Path.addLine(to: CGPoint(x: 338.64, y: 662.56))
+        bezier24Path.addCurve(to: CGPoint(x: 348.22, y: 666.31), controlPoint1: CGPoint(x: 342.32, y: 660.97), controlPoint2: CGPoint(x: 346.62, y: 662.61))
+        bezier24Path.addCurve(to: CGPoint(x: 344.46, y: 675.89), controlPoint1: CGPoint(x: 349.83, y: 669.98), controlPoint2: CGPoint(x: 348.15, y: 674.27))
+        bezier24Path.addLine(to: CGPoint(x: 317.83, y: 687.55))
+        bezier24Path.addCurve(to: CGPoint(x: 314.93, y: 688.15), controlPoint1: CGPoint(x: 316.89, y: 687.95), controlPoint2: CGPoint(x: 315.9, y: 688.15))
+        bezier24Path.close()
+        bezier24Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier24Path.fill()
+        
+        
+        //// Bezier 25 Drawing
+        let bezier25Path = UIBezierPath()
+        bezier25Path.move(to: CGPoint(x: 344.17, y: 754.83))
+        bezier25Path.addCurve(to: CGPoint(x: 337.5, y: 750.48), controlPoint1: CGPoint(x: 341.37, y: 754.83), controlPoint2: CGPoint(x: 338.7, y: 753.21))
+        bezier25Path.addCurve(to: CGPoint(x: 341.25, y: 740.9), controlPoint1: CGPoint(x: 335.89, y: 746.78), controlPoint2: CGPoint(x: 337.57, y: 742.49))
+        bezier25Path.addLine(to: CGPoint(x: 367.89, y: 729.24))
+        bezier25Path.addCurve(to: CGPoint(x: 377.47, y: 732.99), controlPoint1: CGPoint(x: 371.57, y: 727.65), controlPoint2: CGPoint(x: 375.87, y: 729.29))
+        bezier25Path.addCurve(to: CGPoint(x: 373.71, y: 742.58), controlPoint1: CGPoint(x: 379.08, y: 736.66), controlPoint2: CGPoint(x: 377.4, y: 740.95))
+        bezier25Path.addLine(to: CGPoint(x: 347.08, y: 754.23))
+        bezier25Path.addCurve(to: CGPoint(x: 344.17, y: 754.83), controlPoint1: CGPoint(x: 346.14, y: 754.63), controlPoint2: CGPoint(x: 345.15, y: 754.83))
+        bezier25Path.close()
+        bezier25Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier25Path.fill()
+        
+        
+        //// Bezier 26 Drawing
+        let bezier26Path = UIBezierPath()
+        bezier26Path.move(to: CGPoint(x: 373.28, y: 821.51))
+        bezier26Path.addCurve(to: CGPoint(x: 366.61, y: 817.13), controlPoint1: CGPoint(x: 370.47, y: 821.51), controlPoint2: CGPoint(x: 367.8, y: 819.86))
+        bezier26Path.addCurve(to: CGPoint(x: 370.36, y: 807.55), controlPoint1: CGPoint(x: 365, y: 813.46), controlPoint2: CGPoint(x: 366.68, y: 809.17))
+        bezier26Path.addLine(to: CGPoint(x: 397, y: 795.92))
+        bezier26Path.addCurve(to: CGPoint(x: 406.57, y: 799.67), controlPoint1: CGPoint(x: 400.69, y: 794.3), controlPoint2: CGPoint(x: 404.98, y: 796))
+        bezier26Path.addCurve(to: CGPoint(x: 402.82, y: 809.25), controlPoint1: CGPoint(x: 408.19, y: 803.34), controlPoint2: CGPoint(x: 406.5, y: 807.63))
+        bezier26Path.addLine(to: CGPoint(x: 376.19, y: 820.89))
+        bezier26Path.addCurve(to: CGPoint(x: 373.28, y: 821.51), controlPoint1: CGPoint(x: 375.24, y: 821.31), controlPoint2: CGPoint(x: 374.25, y: 821.51))
+        bezier26Path.close()
+        bezier26Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier26Path.fill()
+        
+        
+        //// Bezier 27 Drawing
+        let bezier27Path = UIBezierPath()
+        bezier27Path.move(to: CGPoint(x: 364.04, y: 931.44))
+        bezier27Path.addCurve(to: CGPoint(x: 336.44, y: 925.36), controlPoint1: CGPoint(x: 354.56, y: 931.44), controlPoint2: CGPoint(x: 345.13, y: 929.42))
+        bezier27Path.addCurve(to: CGPoint(x: 332.92, y: 915.69), controlPoint1: CGPoint(x: 332.8, y: 923.68), controlPoint2: CGPoint(x: 331.22, y: 919.33))
+        bezier27Path.addCurve(to: CGPoint(x: 342.58, y: 912.16), controlPoint1: CGPoint(x: 334.6, y: 912.08), controlPoint2: CGPoint(x: 338.92, y: 910.43))
+        bezier27Path.addCurve(to: CGPoint(x: 384.68, y: 912.64), controlPoint1: CGPoint(x: 355.74, y: 918.27), controlPoint2: CGPoint(x: 371.09, y: 918.47))
+        bezier27Path.addCurve(to: CGPoint(x: 410.84, y: 845.51), controlPoint1: CGPoint(x: 410.27, y: 901.35), controlPoint2: CGPoint(x: 422.04, y: 871.24))
+        bezier27Path.addLine(to: CGPoint(x: 317.41, y: 632.1))
+        bezier27Path.addCurve(to: CGPoint(x: 250.31, y: 605.86), controlPoint1: CGPoint(x: 306.09, y: 606.4), controlPoint2: CGPoint(x: 275.99, y: 594.6))
+        bezier27Path.addCurve(to: CGPoint(x: 222.32, y: 637.02), controlPoint1: CGPoint(x: 236.84, y: 611.8), controlPoint2: CGPoint(x: 226.63, y: 623.17))
+        bezier27Path.addCurve(to: CGPoint(x: 213.21, y: 641.83), controlPoint1: CGPoint(x: 221.12, y: 640.86), controlPoint2: CGPoint(x: 217.06, y: 643.02))
+        bezier27Path.addCurve(to: CGPoint(x: 208.43, y: 632.7), controlPoint1: CGPoint(x: 209.38, y: 640.63), controlPoint2: CGPoint(x: 207.23, y: 636.54))
+        bezier27Path.addCurve(to: CGPoint(x: 244.45, y: 592.55), controlPoint1: CGPoint(x: 213.98, y: 614.81), controlPoint2: CGPoint(x: 227.12, y: 600.17))
+        bezier27Path.addCurve(to: CGPoint(x: 330.74, y: 626.24), controlPoint1: CGPoint(x: 277.46, y: 578.02), controlPoint2: CGPoint(x: 316.17, y: 593.17))
+        bezier27Path.addLine(to: CGPoint(x: 424.18, y: 839.68))
+        bezier27Path.addCurve(to: CGPoint(x: 390.47, y: 926.01), controlPoint1: CGPoint(x: 438.57, y: 872.75), controlPoint2: CGPoint(x: 423.44, y: 911.48))
+        bezier27Path.addCurve(to: CGPoint(x: 364.04, y: 931.44), controlPoint1: CGPoint(x: 381.99, y: 929.62), controlPoint2: CGPoint(x: 372.99, y: 931.44))
+        bezier27Path.close()
+        bezier27Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier27Path.fill()
+        
+        
+        //// Bezier 28 Drawing
+        let bezier28Path = UIBezierPath()
+        bezier28Path.move(to: CGPoint(x: 717.59, y: 966.87))
+        bezier28Path.addCurve(to: CGPoint(x: 694.52, y: 961.04), controlPoint1: CGPoint(x: 708.05, y: 966.87), controlPoint2: CGPoint(x: 699.88, y: 963.34))
+        bezier28Path.addCurve(to: CGPoint(x: 690.64, y: 951.43), controlPoint1: CGPoint(x: 690.84, y: 959.45), controlPoint2: CGPoint(x: 689.05, y: 955.13))
+        bezier28Path.addCurve(to: CGPoint(x: 700.12, y: 947.59), controlPoint1: CGPoint(x: 692.23, y: 947.74), controlPoint2: CGPoint(x: 696.41, y: 946.03))
+        bezier28Path.addCurve(to: CGPoint(x: 739.43, y: 940.23), controlPoint1: CGPoint(x: 710.41, y: 952.03), controlPoint2: CGPoint(x: 724.25, y: 958))
+        bezier28Path.addCurve(to: CGPoint(x: 749.69, y: 939.43), controlPoint1: CGPoint(x: 742.03, y: 937.19), controlPoint2: CGPoint(x: 746.63, y: 936.82))
+        bezier28Path.addCurve(to: CGPoint(x: 750.5, y: 949.7), controlPoint1: CGPoint(x: 752.75, y: 942.05), controlPoint2: CGPoint(x: 753.1, y: 946.66))
+        bezier28Path.addCurve(to: CGPoint(x: 717.59, y: 966.87), controlPoint1: CGPoint(x: 739.15, y: 962.98), controlPoint2: CGPoint(x: 727.62, y: 966.87))
+        bezier28Path.close()
+        bezier28Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier28Path.fill()
+        
+        
+        //// Bezier 29 Drawing
+        let bezier29Path = UIBezierPath()
+        bezier29Path.move(to: CGPoint(x: 853.82, y: 651.61))
+        bezier29Path.addCurve(to: CGPoint(x: 848.68, y: 649.48), controlPoint1: CGPoint(x: 851.96, y: 651.61), controlPoint2: CGPoint(x: 850.1, y: 650.9))
+        bezier29Path.addCurve(to: CGPoint(x: 843.54, y: 645.47), controlPoint1: CGPoint(x: 847.22, y: 648), controlPoint2: CGPoint(x: 845.38, y: 646.58))
+        bezier29Path.addCurve(to: CGPoint(x: 834.68, y: 641.03), controlPoint1: CGPoint(x: 840.85, y: 643.79), controlPoint2: CGPoint(x: 837.99, y: 642.37))
+        bezier29Path.addCurve(to: CGPoint(x: 830.62, y: 631.59), controlPoint1: CGPoint(x: 830.94, y: 639.55), controlPoint2: CGPoint(x: 829.13, y: 635.32))
+        bezier29Path.addCurve(to: CGPoint(x: 840.08, y: 627.52), controlPoint1: CGPoint(x: 832.11, y: 627.84), controlPoint2: CGPoint(x: 836.36, y: 626.04))
+        bezier29Path.addCurve(to: CGPoint(x: 851.14, y: 633.07), controlPoint1: CGPoint(x: 844.22, y: 629.17), controlPoint2: CGPoint(x: 847.83, y: 630.99))
+        bezier29Path.addCurve(to: CGPoint(x: 858.97, y: 639.18), controlPoint1: CGPoint(x: 853.9, y: 634.72), controlPoint2: CGPoint(x: 856.65, y: 636.85))
+        bezier29Path.addCurve(to: CGPoint(x: 858.97, y: 649.48), controlPoint1: CGPoint(x: 861.81, y: 642.02), controlPoint2: CGPoint(x: 861.81, y: 646.63))
+        bezier29Path.addCurve(to: CGPoint(x: 853.82, y: 651.61), controlPoint1: CGPoint(x: 857.55, y: 650.9), controlPoint2: CGPoint(x: 855.69, y: 651.61))
+        bezier29Path.close()
+        bezier29Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier29Path.fill()
+        
+        
+        //// Bezier 30 Drawing
+        let bezier30Path = UIBezierPath()
+        bezier30Path.move(to: CGPoint(x: 837.37, y: 641.57))
+        bezier30Path.addCurve(to: CGPoint(x: 834.43, y: 640.95), controlPoint1: CGPoint(x: 836.39, y: 641.57), controlPoint2: CGPoint(x: 835.39, y: 641.37))
+        bezier30Path.addLine(to: CGPoint(x: 807.79, y: 629.15))
+        bezier30Path.addCurve(to: CGPoint(x: 804.1, y: 619.54), controlPoint1: CGPoint(x: 804.13, y: 627.53), controlPoint2: CGPoint(x: 802.46, y: 623.2))
+        bezier30Path.addCurve(to: CGPoint(x: 813.69, y: 615.84), controlPoint1: CGPoint(x: 805.72, y: 615.9), controlPoint2: CGPoint(x: 810.02, y: 614.22))
+        bezier30Path.addLine(to: CGPoint(x: 840.32, y: 627.64))
+        bezier30Path.addCurve(to: CGPoint(x: 844.03, y: 637.22), controlPoint1: CGPoint(x: 844, y: 629.26), controlPoint2: CGPoint(x: 845.65, y: 633.56))
+        bezier30Path.addCurve(to: CGPoint(x: 837.37, y: 641.57), controlPoint1: CGPoint(x: 842.83, y: 639.95), controlPoint2: CGPoint(x: 840.17, y: 641.57))
+        bezier30Path.close()
+        bezier30Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier30Path.fill()
+        
+        
+        //// Bezier 31 Drawing
+        let bezier31Path = UIBezierPath()
+        bezier31Path.move(to: CGPoint(x: 697.22, y: 961.55))
+        bezier31Path.addCurve(to: CGPoint(x: 694.32, y: 960.96), controlPoint1: CGPoint(x: 696.25, y: 961.55), controlPoint2: CGPoint(x: 695.26, y: 961.35))
+        bezier31Path.addLine(to: CGPoint(x: 667.69, y: 949.3))
+        bezier31Path.addCurve(to: CGPoint(x: 663.93, y: 939.72), controlPoint1: CGPoint(x: 664.01, y: 947.71), controlPoint2: CGPoint(x: 662.31, y: 943.41))
+        bezier31Path.addCurve(to: CGPoint(x: 673.52, y: 935.96), controlPoint1: CGPoint(x: 665.54, y: 936.05), controlPoint2: CGPoint(x: 669.83, y: 934.4))
+        bezier31Path.addLine(to: CGPoint(x: 700.15, y: 947.62))
+        bezier31Path.addCurve(to: CGPoint(x: 703.9, y: 957.2), controlPoint1: CGPoint(x: 703.83, y: 949.21), controlPoint2: CGPoint(x: 705.51, y: 953.51))
+        bezier31Path.addCurve(to: CGPoint(x: 697.22, y: 961.55), controlPoint1: CGPoint(x: 702.71, y: 959.93), controlPoint2: CGPoint(x: 700.03, y: 961.55))
+        bezier31Path.close()
+        bezier31Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier31Path.fill()
+        
+        
+        //// Bezier 32 Drawing
+        let bezier32Path = UIBezierPath()
+        bezier32Path.move(to: CGPoint(x: 670.59, y: 949.92))
+        bezier32Path.addCurve(to: CGPoint(x: 667.69, y: 949.3), controlPoint1: CGPoint(x: 669.62, y: 949.92), controlPoint2: CGPoint(x: 668.64, y: 949.73))
+        bezier32Path.addCurve(to: CGPoint(x: 663.92, y: 939.74), controlPoint1: CGPoint(x: 664.01, y: 947.71), controlPoint2: CGPoint(x: 662.31, y: 943.41))
+        bezier32Path.addLine(to: CGPoint(x: 804.08, y: 619.56))
+        bezier32Path.addCurve(to: CGPoint(x: 813.67, y: 615.81), controlPoint1: CGPoint(x: 805.7, y: 615.87), controlPoint2: CGPoint(x: 809.97, y: 614.22))
+        bezier32Path.addCurve(to: CGPoint(x: 817.4, y: 625.42), controlPoint1: CGPoint(x: 817.35, y: 617.43), controlPoint2: CGPoint(x: 819.02, y: 621.72))
+        bezier32Path.addLine(to: CGPoint(x: 677.27, y: 945.55))
+        bezier32Path.addCurve(to: CGPoint(x: 670.59, y: 949.92), controlPoint1: CGPoint(x: 676.07, y: 948.28), controlPoint2: CGPoint(x: 673.4, y: 949.92))
+        bezier32Path.close()
+        bezier32Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier32Path.fill()
+        
+        
+        //// Bezier 33 Drawing
+        let bezier33Path = UIBezierPath()
+        bezier33Path.move(to: CGPoint(x: 660.7, y: 754.83))
+        bezier33Path.addCurve(to: CGPoint(x: 657.78, y: 754.23), controlPoint1: CGPoint(x: 659.72, y: 754.83), controlPoint2: CGPoint(x: 658.73, y: 754.63))
+        bezier33Path.addLine(to: CGPoint(x: 631.15, y: 742.58))
+        bezier33Path.addCurve(to: CGPoint(x: 627.39, y: 732.99), controlPoint1: CGPoint(x: 627.47, y: 740.95), controlPoint2: CGPoint(x: 625.79, y: 736.66))
+        bezier33Path.addCurve(to: CGPoint(x: 636.97, y: 729.24), controlPoint1: CGPoint(x: 629, y: 729.3), controlPoint2: CGPoint(x: 633.31, y: 727.62))
+        bezier33Path.addLine(to: CGPoint(x: 663.61, y: 740.9))
+        bezier33Path.addCurve(to: CGPoint(x: 667.36, y: 750.48), controlPoint1: CGPoint(x: 667.3, y: 742.49), controlPoint2: CGPoint(x: 668.98, y: 746.78))
+        bezier33Path.addCurve(to: CGPoint(x: 660.7, y: 754.83), controlPoint1: CGPoint(x: 666.17, y: 753.21), controlPoint2: CGPoint(x: 663.49, y: 754.83))
+        bezier33Path.close()
+        bezier33Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier33Path.fill()
+        
+        
+        //// Bezier 35 Drawing
+        let bezier35Path = UIBezierPath()
+        bezier35Path.move(to: CGPoint(x: 631.59, y: 821.51))
+        bezier35Path.addCurve(to: CGPoint(x: 628.69, y: 820.91), controlPoint1: CGPoint(x: 630.62, y: 821.51), controlPoint2: CGPoint(x: 629.64, y: 821.31))
+        bezier35Path.addLine(to: CGPoint(x: 601.91, y: 809.26))
+        bezier35Path.addCurve(to: CGPoint(x: 598.15, y: 799.67), controlPoint1: CGPoint(x: 598.23, y: 807.66), controlPoint2: CGPoint(x: 596.54, y: 803.37))
+        bezier35Path.addCurve(to: CGPoint(x: 607.71, y: 795.89), controlPoint1: CGPoint(x: 599.74, y: 796), controlPoint2: CGPoint(x: 604, y: 794.33))
+        bezier35Path.addLine(to: CGPoint(x: 634.49, y: 807.55))
+        bezier35Path.addCurve(to: CGPoint(x: 638.27, y: 817.13), controlPoint1: CGPoint(x: 638.18, y: 809.14), controlPoint2: CGPoint(x: 639.88, y: 813.43))
+        bezier35Path.addCurve(to: CGPoint(x: 631.59, y: 821.51), controlPoint1: CGPoint(x: 637.07, y: 819.86), controlPoint2: CGPoint(x: 634.4, y: 821.51))
+        bezier35Path.close()
+        bezier35Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier35Path.fill()
+        
+        
+        //// Bezier 36 Drawing
+        let bezier36Path = UIBezierPath()
+        bezier36Path.move(to: CGPoint(x: 640.78, y: 931.44))
+        bezier36Path.addCurve(to: CGPoint(x: 614.48, y: 926.04), controlPoint1: CGPoint(x: 631.88, y: 931.44), controlPoint2: CGPoint(x: 622.92, y: 929.65))
+        bezier36Path.addCurve(to: CGPoint(x: 580.69, y: 839.68), controlPoint1: CGPoint(x: 581.29, y: 911.39), controlPoint2: CGPoint(x: 566.17, y: 872.69))
+        bezier36Path.addLine(to: CGPoint(x: 674.13, y: 626.24))
+        bezier36Path.addCurve(to: CGPoint(x: 710.27, y: 591.5), controlPoint1: CGPoint(x: 681.1, y: 610.23), controlPoint2: CGPoint(x: 693.94, y: 597.87))
+        bezier36Path.addCurve(to: CGPoint(x: 760.27, y: 592.52), controlPoint1: CGPoint(x: 726.53, y: 585.13), controlPoint2: CGPoint(x: 744.28, y: 585.5))
+        bezier36Path.addCurve(to: CGPoint(x: 796.42, y: 632.64), controlPoint1: CGPoint(x: 777.49, y: 600.06), controlPoint2: CGPoint(x: 790.67, y: 614.67))
+        bezier36Path.addCurve(to: CGPoint(x: 791.72, y: 641.8), controlPoint1: CGPoint(x: 797.66, y: 636.48), controlPoint2: CGPoint(x: 795.54, y: 640.57))
+        bezier36Path.addCurve(to: CGPoint(x: 782.57, y: 637.08), controlPoint1: CGPoint(x: 787.89, y: 642.99), controlPoint2: CGPoint(x: 783.79, y: 640.92))
+        bezier36Path.addCurve(to: CGPoint(x: 754.42, y: 605.86), controlPoint1: CGPoint(x: 778.09, y: 623.11), controlPoint2: CGPoint(x: 767.83, y: 611.71))
+        bezier36Path.addCurve(to: CGPoint(x: 715.55, y: 605.06), controlPoint1: CGPoint(x: 742.02, y: 600.4), controlPoint2: CGPoint(x: 728.2, y: 600.11))
+        bezier36Path.addCurve(to: CGPoint(x: 687.46, y: 632.1), controlPoint1: CGPoint(x: 702.86, y: 610.01), controlPoint2: CGPoint(x: 692.88, y: 619.62))
+        bezier36Path.addLine(to: CGPoint(x: 594.03, y: 845.53))
+        bezier36Path.addCurve(to: CGPoint(x: 620.26, y: 912.7), controlPoint1: CGPoint(x: 582.71, y: 871.21), controlPoint2: CGPoint(x: 594.49, y: 901.32))
+        bezier36Path.addCurve(to: CGPoint(x: 662.12, y: 912.19), controlPoint1: CGPoint(x: 633.83, y: 918.47), controlPoint2: CGPoint(x: 649.11, y: 918.3))
+        bezier36Path.addCurve(to: CGPoint(x: 671.79, y: 915.66), controlPoint1: CGPoint(x: 665.71, y: 910.45), controlPoint2: CGPoint(x: 670.08, y: 912.05))
+        bezier36Path.addCurve(to: CGPoint(x: 668.3, y: 925.35), controlPoint1: CGPoint(x: 673.5, y: 919.29), controlPoint2: CGPoint(x: 671.94, y: 923.65))
+        bezier36Path.addCurve(to: CGPoint(x: 640.78, y: 931.44), controlPoint1: CGPoint(x: 659.66, y: 929.42), controlPoint2: CGPoint(x: 650.26, y: 931.44))
+        bezier36Path.close()
+        bezier36Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier36Path.fill()
+        
+        
+        //// Bezier 37 Drawing
+        let bezier37Path = UIBezierPath()
+        bezier37Path.move(to: CGPoint(x: 802.75, y: 292.3))
+        bezier37Path.addCurve(to: CGPoint(x: 795.81, y: 287.24), controlPoint1: CGPoint(x: 799.66, y: 292.3), controlPoint2: CGPoint(x: 796.81, y: 290.33))
+        bezier37Path.addCurve(to: CGPoint(x: 800.52, y: 278.08), controlPoint1: CGPoint(x: 794.59, y: 283.42), controlPoint2: CGPoint(x: 796.69, y: 279.31))
+        bezier37Path.addLine(to: CGPoint(x: 828.6, y: 269.06))
+        bezier37Path.addCurve(to: CGPoint(x: 837.75, y: 273.76), controlPoint1: CGPoint(x: 832.44, y: 267.83), controlPoint2: CGPoint(x: 836.53, y: 269.92))
+        bezier37Path.addCurve(to: CGPoint(x: 833.05, y: 282.92), controlPoint1: CGPoint(x: 838.99, y: 277.59), controlPoint2: CGPoint(x: 836.88, y: 281.69))
+        bezier37Path.addLine(to: CGPoint(x: 804.96, y: 291.95))
+        bezier37Path.addCurve(to: CGPoint(x: 802.75, y: 292.3), controlPoint1: CGPoint(x: 804.23, y: 292.18), controlPoint2: CGPoint(x: 803.49, y: 292.3))
+        bezier37Path.close()
+        bezier37Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier37Path.fill()
+        
+        
+        //// Bezier 38 Drawing
+        let bezier38Path = UIBezierPath()
+        bezier38Path.move(to: CGPoint(x: 802.75, y: 292.3))
+        bezier38Path.addCurve(to: CGPoint(x: 796.27, y: 288.34), controlPoint1: CGPoint(x: 800.1, y: 292.3), controlPoint2: CGPoint(x: 797.56, y: 290.85))
+        bezier38Path.addCurve(to: CGPoint(x: 495.09, y: 107.84), controlPoint1: CGPoint(x: 753.97, y: 205.99), controlPoint2: CGPoint(x: 667.38, y: 107.84))
+        bezier38Path.addCurve(to: CGPoint(x: 487.81, y: 100.56), controlPoint1: CGPoint(x: 491.07, y: 107.84), controlPoint2: CGPoint(x: 487.81, y: 104.58))
+        bezier38Path.addCurve(to: CGPoint(x: 495.09, y: 93.27), controlPoint1: CGPoint(x: 487.81, y: 96.53), controlPoint2: CGPoint(x: 491.07, y: 93.27))
+        bezier38Path.addCurve(to: CGPoint(x: 809.21, y: 281.69), controlPoint1: CGPoint(x: 674.72, y: 93.27), controlPoint2: CGPoint(x: 765.06, y: 195.73))
+        bezier38Path.addCurve(to: CGPoint(x: 806.07, y: 291.49), controlPoint1: CGPoint(x: 811.05, y: 285.26), controlPoint2: CGPoint(x: 809.64, y: 289.65))
+        bezier38Path.addCurve(to: CGPoint(x: 802.75, y: 292.3), controlPoint1: CGPoint(x: 805.01, y: 292.04), controlPoint2: CGPoint(x: 803.87, y: 292.3))
+        bezier38Path.close()
+        bezier38Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier38Path.fill()
+        
+        
+        //// Group 7
+        context.saveGState()
+        context.beginTransparencyLayer(auxiliaryInfo: nil)
+        
+        //// Clip Clip 5
+        let clip5Path = UIBezierPath()
+        clip5Path.move(to: CGPoint(x: 187.04, y: 292.25))
+        clip5Path.addCurve(to: CGPoint(x: 183.71, y: 291.44), controlPoint1: CGPoint(x: 185.91, y: 292.25), controlPoint2: CGPoint(x: 184.77, y: 291.99))
+        clip5Path.addCurve(to: CGPoint(x: 180.57, y: 281.61), controlPoint1: CGPoint(x: 180.13, y: 289.59), controlPoint2: CGPoint(x: 178.73, y: 285.19))
+        clip5Path.addCurve(to: CGPoint(x: 494.98, y: 92.78), controlPoint1: CGPoint(x: 224.91, y: 195.46), controlPoint2: CGPoint(x: 315.44, y: 92.78))
+        clip5Path.addCurve(to: CGPoint(x: 502.26, y: 100.07), controlPoint1: CGPoint(x: 499, y: 92.78), controlPoint2: CGPoint(x: 502.26, y: 96.04))
+        clip5Path.addCurve(to: CGPoint(x: 494.98, y: 107.37), controlPoint1: CGPoint(x: 502.26, y: 104.11), controlPoint2: CGPoint(x: 499, y: 107.37))
+        clip5Path.addCurve(to: CGPoint(x: 193.52, y: 288.3), controlPoint1: CGPoint(x: 322.78, y: 107.37), controlPoint2: CGPoint(x: 236, y: 205.76))
+        clip5Path.addCurve(to: CGPoint(x: 187.04, y: 292.25), controlPoint1: CGPoint(x: 192.22, y: 290.81), controlPoint2: CGPoint(x: 189.67, y: 292.25))
+        clip5Path.close()
+        clip5Path.usesEvenOddFillRule = true
+        clip5Path.addClip()
+        
+        
+        //// Rectangle 5 Drawing
+        let rectangle5Path = UIBezierPath(rect: CGRect(x: 174.75, y: 87.75, width: 332.5, height: 209.5))
+        dark.setFill()
+        rectangle5Path.fill()
+        
+        
+        context.endTransparencyLayer()
+        context.restoreGState()
+        
+        
+        //// Bezier 40 Drawing
+        let bezier40Path = UIBezierPath()
+        bezier40Path.move(to: CGPoint(x: 187.42, y: 292.3))
+        bezier40Path.addCurve(to: CGPoint(x: 184.29, y: 291.58), controlPoint1: CGPoint(x: 186.37, y: 292.3), controlPoint2: CGPoint(x: 185.3, y: 292.07))
+        bezier40Path.addLine(to: CGPoint(x: 163.91, y: 281.83))
+        bezier40Path.addCurve(to: CGPoint(x: 160.49, y: 272.12), controlPoint1: CGPoint(x: 160.29, y: 280.1), controlPoint2: CGPoint(x: 158.75, y: 275.75))
+        bezier40Path.addCurve(to: CGPoint(x: 170.19, y: 268.69), controlPoint1: CGPoint(x: 162.22, y: 268.49), controlPoint2: CGPoint(x: 166.56, y: 266.97))
+        bezier40Path.addLine(to: CGPoint(x: 190.57, y: 278.45))
+        bezier40Path.addCurve(to: CGPoint(x: 193.99, y: 288.16), controlPoint1: CGPoint(x: 194.19, y: 280.18), controlPoint2: CGPoint(x: 195.73, y: 284.53))
+        bezier40Path.addCurve(to: CGPoint(x: 187.42, y: 292.3), controlPoint1: CGPoint(x: 192.74, y: 290.78), controlPoint2: CGPoint(x: 190.13, y: 292.3))
+        bezier40Path.close()
+        bezier40Path.usesEvenOddFillRule = true
+        dark.setFill()
+        bezier40Path.fill()
+        
+        context.restoreGState()
+        
+    }
 
 
 

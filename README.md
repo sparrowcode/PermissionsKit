@@ -45,6 +45,8 @@ How customize titles and images you can read section [DataSource & Customization
 
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/951477c8e89de55eeeac441102b52b1415c691b7/resources/request-permission_permissions.png"/>
 
+Also now supported `MediaLibrary (Apple Music)` permission
+
 If you want to request notification (or other permissions) without dialog, use the function:
 ```swift
 SPPermission.request(.notification, with: {
@@ -112,6 +114,9 @@ In the project you can find an example for usage `SPPermissionDialogDataSource`
 
 ## Apps, using lib
 I like the idea to specify applications that use the `SPPermission`. Please, contact me via email. You can find it in the section `Contacts` so that I added app here
+
+## For russian users
+Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать [статью на хабре](https://habr.com/post/430886/), чтобы больше узнать о проекте
 
 ## License
 `SPPermission` is released under the MIT license. Check LICENSE.md for details

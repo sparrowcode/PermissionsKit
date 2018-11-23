@@ -71,6 +71,8 @@ extension ViewController: SPPermissionDialogDataSource {
             return "Location"
         case .locationWithBackground:
             return "Location"
+        case .mediaLibrary:
+            return "Media Library"
         }
     }
     
@@ -98,6 +100,8 @@ extension ViewController: SPPermissionDialogDataSource {
             return "App will can check your location"
         case .locationWithBackground:
             return "App will can check your location"
+        case .mediaLibrary:
+            return "Allow check your media"
         }
     }
     

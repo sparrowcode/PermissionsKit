@@ -297,6 +297,8 @@ extension SPPermissionDialogController {
             return "App will can check your location"
         case .locationWithBackground:
             return "App will can check your location"
+        case .mediaLibrary:
+            return "Allow check your media"
         }
     }
 }

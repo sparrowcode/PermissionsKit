@@ -75,6 +75,7 @@ public enum SPSeparatorInsetStyle {
     case locationAlways = 8
     case locationWhenInUse = 9
     case locationWithBackground = 10
+    case mediaLibrary = 11
     
     var name: String {
         switch self {
@@ -100,6 +101,8 @@ public enum SPSeparatorInsetStyle {
             return "Location"
         case .locationWithBackground:
             return "Location"
+        case .mediaLibrary:
+            return "Media Library"
         }
     }
 }

@@ -191,6 +191,8 @@ class SPPermissionDialogLineView: UIView {
                 self.iconView.type = .compass
             case .locationWithBackground:
                 self.iconView.type = .compass
+            case .mediaLibrary:
+                self.iconView.type = .headphones
             }
         }
         
