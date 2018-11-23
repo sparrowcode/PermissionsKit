@@ -27,6 +27,8 @@ import MapKit
 import EventKit
 import Contacts
 import Speech
+import MediaPlayer
+import HealthKit
 
 public struct SPPermission {
     
@@ -78,6 +80,8 @@ extension SPPermission {
            return SPLocationPermission(type: SPLocationPermission.SPLocationType.WhenInUse)
         case .locationWithBackground:
            return SPLocationPermission(type: SPLocationPermission.SPLocationType.AlwaysWithBackground)
+        case .mediaLibrary:
+            return SPMediaLibraryPermission()
         }
     }
 }
@@ -292,6 +296,26 @@ extension SPPermission {
             }
             
             SFSpeechRecognizer.requestAuthorization { status in
+                DispatchQueue.main.async {
+                    complectionHandler()
+                }
+            }
+        }
+    }
+    
+    fileprivate struct SPMediaLibraryPermission: SPPermissionInterface {
+        
+        func isAuthorized() -> Bool {
+            let status = MPMediaLibrary.authorizationStatus()
+            if status == .authorized {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+            MPMediaLibrary.requestAuthorization() { status in
                 DispatchQueue.main.async {
                     complectionHandler()
                 }
