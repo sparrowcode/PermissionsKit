@@ -125,7 +125,7 @@ public class SPPermissionDialogController: SPBaseViewController {
         self.areaView.transform = .identity
         self.modalPresentationStyle = .overCurrentContext
         self.modalPresentationCapturesStatusBarAppearance = true
-        self.statusBarType = (viewController.preferredStatusBarStyle == .default) ? .dark : .light
+        self.statusBar = (viewController.preferredStatusBarStyle == .default) ? .dark : .light
         viewController.present(self, animated: false, completion: {
             self.isHiddenStatusBar = true
             self.areaView.center = CGPoint.init(

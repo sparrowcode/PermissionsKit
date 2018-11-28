@@ -24,16 +24,18 @@ import Photos
 
 extension UIViewController {
     
-    func wrapToNavigationController() -> UINavigationController {
-        return UINavigationController(rootViewController: self)
-    }
-    
     func present(_ viewControllerToPresent: UIViewController, completion: (() -> Swift.Void)? = nil) {
         self.present(viewControllerToPresent, animated: true, completion: completion)
     }
     
     @objc func dismiss() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func wrapToNavigationController(statusBar: SPStatusBar = .dark) -> UINavigationController {
+        let controller = SPStatusBarManagerNavigationController(rootViewController: self)
+        controller.statusBar = statusBar
+        return controller
     }
 }
 
@@ -149,6 +151,10 @@ extension UIViewController {
     
     var navigationBarHeight: CGFloat {
         return self.navigationController?.navigationBar.frame.height ?? 0
+    }
+    
+    var statusBarHeight: CGFloat {
+        return UIApplication.shared.statusBarFrame.height
     }
 }
 

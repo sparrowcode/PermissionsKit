@@ -21,7 +21,7 @@
 
 import UIKit
 
-public enum SPStatusBarStyle {
+public enum SPStatusBar {
     case dark
     case light
 }

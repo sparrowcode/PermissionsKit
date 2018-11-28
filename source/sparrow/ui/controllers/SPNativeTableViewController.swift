@@ -53,7 +53,7 @@ class SPNativeTableViewController: SPBaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.statusBarType = .dark
+        self.statusBar = .dark
         
         self.tableView = UITableView.init(frame: self.view.bounds, style: UITableView.Style.grouped)
         self.setPrefersLargeNavigationTitle("Title")
