@@ -23,9 +23,18 @@ Or via CocoaPods:
 ```ruby
 pod 'SPPermission'
 ```
+
+and import library in class:
+```swift
+import SparrowKit
+```
+
 ## How to use
 Call `SPPermission` and use func `request()`. Also passed controller, on which dialog should present
 ```swift
+import UIKit
+import SparrowKit
+
 class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
