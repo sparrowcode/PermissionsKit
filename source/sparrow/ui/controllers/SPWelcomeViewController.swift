@@ -51,7 +51,7 @@ class SPWelcomeViewController: SPBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.statusBarType = self.data.statusBarStyle
+        self.statusBar = self.data.statusBarStyle
         self.view.backgroundColor = self.data.backgroundColor
         
         self.imageView.setImage(image: self.data.image, animatable: false)
@@ -213,6 +213,6 @@ struct SPWelcomeData {
     var color: UIColor = SPNativeStyleKit.Colors.blue
     var backgroundColor: UIColor = UIColor.white
     var textColor: UIColor = UIColor.black
-    var statusBarStyle: SPStatusBarStyle = .dark
+    var statusBarStyle: SPStatusBar = .dark
     var complection: (_ button: SPNativeOS11Button) -> () = { _ in }
 }

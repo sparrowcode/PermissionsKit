@@ -30,7 +30,7 @@ class SPHiderViewController: SPBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.statusBarType = .light
+        self.statusBar = .light
         
         self.view.backgroundColor = UIColor.clear
         

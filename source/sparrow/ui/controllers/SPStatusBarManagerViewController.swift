@@ -23,7 +23,7 @@ import UIKit
 
 public class SPStatusBarManagerViewController: UIViewController {
     
-    var statusBarType: SPStatusBarStyle = .dark {
+    var statusBar: SPStatusBar = .dark {
         didSet {
             UIView.animate(withDuration: 0.3) { () -> Void in
                 self.setNeedsStatusBarAppearanceUpdate()
@@ -32,7 +32,7 @@ public class SPStatusBarManagerViewController: UIViewController {
     }
     
     override public var preferredStatusBarStyle: UIStatusBarStyle {
-        switch self.statusBarType {
+        switch self.statusBar {
         case .dark:
             return .default
         case .light:
@@ -59,7 +59,7 @@ public class SPStatusBarManagerViewController: UIViewController {
 
 public class SPStatusBarManagerTableViewController: UITableViewController {
     
-    var statusBarType: SPStatusBarStyle = .dark {
+    var statusBar: SPStatusBar = .dark {
         didSet {            
             UIView.animate(withDuration: 0.3) { () -> Void in
                 self.setNeedsStatusBarAppearanceUpdate()
@@ -68,7 +68,7 @@ public class SPStatusBarManagerTableViewController: UITableViewController {
     }
     
     override public var preferredStatusBarStyle: UIStatusBarStyle {
-        switch self.statusBarType {
+        switch self.statusBar {
         case .dark:
             return .default
         case .light:
@@ -90,5 +90,48 @@ public class SPStatusBarManagerTableViewController: UITableViewController {
     
     override public var prefersStatusBarHidden: Bool {
         return isHiddenStatusBar
+    }
+}
+
+public class SPStatusBarManagerNavigationController: UINavigationController {
+    
+    var statusBar: SPStatusBar = .dark {
+        didSet {
+            UIView.animate(withDuration: 0.3) { () -> Void in
+                self.setNeedsStatusBarAppearanceUpdate()
+            }
+        }
+    }
+    
+    override public var preferredStatusBarStyle: UIStatusBarStyle {
+        switch self.statusBar {
+        case .dark:
+            return .default
+        case .light:
+            return .lightContent
+        }
+    }
+    
+    override public var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
+    }
+    
+    public var isHiddenStatusBar: Bool = false {
+        didSet {
+            UIView.animate(withDuration: 0.3) { () -> Void in
+                self.setNeedsStatusBarAppearanceUpdate()
+            }
+        }
+    }
+    
+    override public var prefersStatusBarHidden: Bool {
+        return isHiddenStatusBar
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIView.animate(withDuration: 0.3) { () -> Void in
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
     }
 }
