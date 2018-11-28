@@ -121,6 +121,11 @@ If you want add or remove close button (for close dialog, need swipe it), you ne
 
 In the project you can find an example for usage `SPPermissionDialogDataSource`
 
+## My projects
+I am create modal controller as in mail & apple music applicton. You can see it on [github](https://github.com/IvanVorobei/SPStorkController) and simple integrate in your project. Now project in develop and I am fast fix bugs and update it:
+
+<img src="https://rawcdn.githack.com/IvanVorobei/SPStorkController/0acd51bbe76ef48611e1bdd408aebb9c7d9b0ae6/resources/gif-mockup.gif" width="500">
+
 ## Apps, using lib
 I like the idea to specify applications that use the `SPPermission`. Please, contact me via email. You can find it in the section `Contacts` so that I added app here
 
