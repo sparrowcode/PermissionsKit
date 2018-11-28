@@ -126,9 +126,6 @@ I am create modal controller as in mail & apple music applicton. You can see it 
 
 <img src="https://rawcdn.githack.com/IvanVorobei/SPStorkController/0acd51bbe76ef48611e1bdd408aebb9c7d9b0ae6/resources/gif-mockup.gif" width="500">
 
-## Apps, using lib
-I like the idea to specify applications that use the `SPPermission`. Please, contact me via email. You can find it in the section `Contacts` so that I added app here
-
 ## For Russian-speaking users
 Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать [статью на хабре](https://habr.com/post/430886/), чтобы больше узнать о проекте
 
