@@ -58,6 +58,7 @@ final class SPStorkPresentationController: UIPresentationController, UIGestureRe
     
     private func updateLayout() {
         guard let presentedView = self.presentedView else { return }
+        self.indicatorView.style = .line
         self.indicatorView.sizeToFit()
         self.indicatorView.frame.origin.y = 12
         self.indicatorView.center.x = presentedView.frame.width / 2
@@ -65,7 +66,7 @@ final class SPStorkPresentationController: UIPresentationController, UIGestureRe
     
     override var frameOfPresentedViewInContainerView: CGRect {
         if let containerView = self.containerView {
-            let yOffset = topSpace + 13
+            let yOffset: CGFloat = topSpace + 13
             return CGRect(x: 0, y: yOffset, width: containerView.bounds.width, height: containerView.bounds.height - yOffset)
         } else {
             return .zero
@@ -88,8 +89,10 @@ final class SPStorkPresentationController: UIPresentationController, UIGestureRe
         
         guard let transitionCoordinator = self.presentingViewController.transitionCoordinator else { return }
         transitionCoordinator.animateAlongsideTransition(in: self.presentingViewController.view, animation: { _ in
-            self.presentingViewController.view.transform = self.transform
-            self.presentingViewController.view.alpha = self.alpha
+            if !self.isPresentingControllerUseStork {
+                self.presentingViewController.view.transform = self.transform
+                self.presentingViewController.view.alpha = self.alpha
+            }
         })
     }
     
@@ -112,15 +115,22 @@ final class SPStorkPresentationController: UIPresentationController, UIGestureRe
         
         transitionCoordinator.animateAlongsideTransition(in: presentingViewController.view, animation: { _ in
             self.presentingViewController.view.transform = CGAffineTransform.identity
+            if self.presentingViewController.view.frame.origin != CGPoint.zero {
+                self.presentingViewController.view.frame = CGRect.displayFrame
+            }
         })
         
-        self.presentingViewController.view.addCornerRadiusAnimation(to: 0, duration: 0.6)
+        if !self.isPresentingControllerUseStork {
+            self.presentingViewController.view.addCornerRadiusAnimation(to: 0, duration: 0.6)
+        }
     }
     
     override func dismissalTransitionDidEnd(_ completed: Bool) {
-        if let presentingView = self.presentingViewController.view {
-            presentingView.layer.cornerRadius = 0
-            presentingView.layer.masksToBounds = false
+        if !self.isPresentingControllerUseStork {
+            if let presentingView = self.presentingViewController.view {
+                presentingView.layer.cornerRadius = 0
+                presentingView.layer.masksToBounds = false
+            }
         }
     }
 }
@@ -158,8 +168,10 @@ extension SPStorkPresentationController {
                     options: [.curveEaseOut, .allowUserInteraction],
                     animations: {
                         self.presentedView?.transform = .identity
-                        self.presentingViewController.view.transform = self.transform
-                        self.presentingViewController.view.alpha = self.alpha
+                        if !self.isPresentingControllerUseStork {
+                            self.presentingViewController.view.transform = self.transform
+                            self.presentingViewController.view.alpha = self.alpha
+                        }
                 })
             }
         default:
@@ -185,9 +197,19 @@ extension SPStorkPresentationController {
 
             self.presentedView?.transform = CGAffineTransform(translationX: 0, y: translationForModal)
             
-            let factor = 1 + (translationForModal / 6000)
-            self.presentingViewController.view.transform = self.transform.scaledBy(x: factor, y: factor)
-            self.presentingViewController.view.alpha = self.alpha + ((factor - 1) * 15)
+            if !self.isPresentingControllerUseStork {
+                let factor = 1 + (translationForModal / 6000)
+                self.presentingViewController.view.transform = self.transform.scaledBy(x: factor, y: factor)
+                self.presentingViewController.view.alpha = self.alpha + ((factor - 1) * 15)
+            }
         }
+    }
+    
+
+    private var isPresentingControllerUseStork: Bool {
+        let controller = self.presentingViewController
+        return controller.transitioningDelegate is SPStorkTransitioningDelegate
+            && controller.modalPresentationStyle == .custom
+            && controller.presentingViewController != nil
     }
 }

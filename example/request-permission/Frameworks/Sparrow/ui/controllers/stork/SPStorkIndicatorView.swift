@@ -47,6 +47,7 @@ class SPStorkIndicatorView: UIView {
     
     init() {
         super.init(frame: .zero)
+        self.backgroundColor = UIColor.clear
         self.addSubview(self.leftView)
         self.addSubview(self.rightView)
         self.leftView.backgroundColor = UIColor.init(hex: "CAC9CF")

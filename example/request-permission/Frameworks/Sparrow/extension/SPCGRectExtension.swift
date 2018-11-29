@@ -23,6 +23,11 @@ import UIKit
 
 extension CGRect {
     
+    static var displayFrame: CGRect {
+        let screenSize = UIScreen.main.bounds
+        return CGRect.init(origin: .zero, size: screenSize.size)
+    }
+    
     var bottomXPosition: CGFloat {
         get {
             return self.origin.x + self.width
