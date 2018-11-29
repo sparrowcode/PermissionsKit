@@ -276,6 +276,10 @@ extension UIView {
             self.isHidden = true
         })
     }
+    
+    func removeAllAnimations() {
+        self.layer.removeAllAnimations()
+    }
 }
 
 // MARK: - corner radius
