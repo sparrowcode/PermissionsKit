@@ -23,6 +23,7 @@ import UIKit
 
 final class SPStorkPresentationController: UIPresentationController, UIGestureRecognizerDelegate {
     
+    var indicatorView = SPStorkIndicatorView()
     var isSwipeToDismissEnabled: Bool = true
     var transitioningDelegate: SPStorkTransitioningDelegate?
     private var pan: UIPanGestureRecognizer?
@@ -48,6 +49,20 @@ final class SPStorkPresentationController: UIPresentationController, UIGestureRe
         return 0.51
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { (contex) in
+            self.updateLayout()
+        }, completion: nil)
+    }
+    
+    private func updateLayout() {
+        guard let presentedView = self.presentedView else { return }
+        self.indicatorView.sizeToFit()
+        self.indicatorView.frame.origin.y = 12
+        self.indicatorView.center.x = presentedView.frame.width / 2
+    }
+    
     override var frameOfPresentedViewInContainerView: CGRect {
         if let containerView = self.containerView {
             let yOffset = topSpace + 13
@@ -58,8 +73,13 @@ final class SPStorkPresentationController: UIPresentationController, UIGestureRe
     }
     
     override func presentationTransitionWillBegin() {
+        self.updateLayout()
+        self.indicatorView.style = .arrow
+        
         guard let containerView = self.containerView, let presentedView = self.presentedView, let presentingView = self.presentingViewController.view else { return }
 
+        presentedView.addSubview(self.indicatorView)
+        
         presentedView.addCornerRadiusAnimation(to: 10, duration: 0.6)
         presentedView.layer.masksToBounds = true
         presentingView.layer.cornerRadius = 10
@@ -114,6 +134,8 @@ extension SPStorkPresentationController {
         
         switch gestureRecognizer.state {
         case .began:
+            self.indicatorView.style = .line
+            self.presentingViewController.view.removeAllAnimations()
             gestureRecognizer.setTranslation(CGPoint(x: 0, y: 0), in: containerView)
         case .changed:
             if self.isSwipeToDismissEnabled {
@@ -127,12 +149,13 @@ extension SPStorkPresentationController {
             if translation >= 240 {
                 presentedViewController.dismiss(animated: true, completion: nil)
             } else {
+                self.indicatorView.style = .arrow
                 UIView.animate(
                     withDuration: 0.6,
                     delay: 0,
                     usingSpringWithDamping: 1,
                     initialSpringVelocity: 1,
-                    options: .curveEaseOut,
+                    options: [.curveEaseOut, .allowUserInteraction],
                     animations: {
                         self.presentedView?.transform = .identity
                         self.presentingViewController.view.transform = self.transform
