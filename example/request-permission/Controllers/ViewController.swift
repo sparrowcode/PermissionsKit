@@ -36,10 +36,10 @@ class ViewController: SPBaseViewController {
     
     @objc func changeBackground() {
         self.currentIndexImage += 1
-        self.statusBarType = .light
+        self.statusBar = .light
         if self.currentIndexImage > self.images.count - 1 {
             self.currentIndexImage = 0
-            self.statusBarType = .dark
+            self.statusBar = .dark
         }
         self.backgroundView.image = self.images[self.currentIndexImage]
     }

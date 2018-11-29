@@ -127,7 +127,7 @@ I am create [SPStorkController](https://github.com/IvanVorobei/SPStorkController
 <img src="https://rawcdn.githack.com/IvanVorobei/SPStorkController/0acd51bbe76ef48611e1bdd408aebb9c7d9b0ae6/resources/gif-mockup.gif" width="500">
 
 ## For Russian-speaking users
-Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать [статью на хабре](https://habr.com/post/430886/), чтобы больше узнать о проекте
+Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать статью [Обновление библиотеки SPPermission](https://habr.com/post/430886/), чтобы больше узнать о проекте. Taк же вы можете прочитать статью [Получил 1.2K звезд на GitHub с ужасной архитектурой. Как?](https://habr.com/post/326620/) о первой версии проекта и работе с архитектурой
 
 ## License
 `SPPermission` is released under the MIT license. Check LICENSE.md for details
