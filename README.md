@@ -133,7 +133,7 @@ The `SPPermission` use [SparrowKit](https://github.com/IvanVorobei/SparrowKit) l
 pod 'SparrowKit'
 ```
 
-If you use `pod SPStorkController`, library [SparrowKit](https://github.com/IvanVorobei/SparrowKit) install automatically.
+If you use `SPStorkController`, library [SparrowKit](https://github.com/IvanVorobei/SparrowKit) install automatically.
 
 ## For Russian-speaking users
 Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать статью [Обновление библиотеки SPPermission](https://habr.com/post/430886/), чтобы больше узнать о проекте. Taк же вы можете прочитать статью [Получил 1.2K звезд на GitHub с ужасной архитектурой. Как?](https://habr.com/post/326620/) о первой версии проекта и работе с архитектурой
