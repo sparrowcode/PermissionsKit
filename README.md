@@ -1,7 +1,7 @@
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/fb53d20f152a3e76e053e6af529306611fb794f0/resources/request-permission - baner.svg"/>
 
 ## About
-This project is about managing permissions with the customizable visual effects. Beautiful dialog increases the chance of approval (which is important when we request notification). Simple control of this module saves you hours of development. You can start using this project with just two lines of code and easy customization! You can see [how I am designed UI](https://youtu.be/1mDdX7fQRv4) and [how use pod tutorial](https://youtu.be/viFDunOdyBg) on youtube
+This project is about managing permissions with the customizable visual effects. Beautiful dialog increases the chance of approval (which is important when we request notification). Simple control of this module saves you hours of development. You can start using this project with just two lines of code and easy customization! You can see [how I am designed UI](https://youtu.be/1mDdX7fQRv4) and [how use pod tutorial](https://youtu.be/viFDunOdyBg) on youtube.
 
 Preview GIF loading `4mb`. Please, wait
 
@@ -17,7 +17,7 @@ The project is absolutely free, but but it takes time to support and update it. 
 Swift 4.2. Ready for use on iOS 10+
 
 ## Integration
-Drop in `source/sparrow` folder to your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`
+Drop in `source/sparrow` folder to your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
 Or via CocoaPods:
 ```ruby
@@ -30,7 +30,7 @@ import SparrowKit
 ```
 
 ## How to use
-Call `SPPermission` and use func `request()`. Also passed controller, on which dialog should present
+Call `SPPermission` and use func `request()`. Also passed controller, on which dialog should present:
 ```swift
 import UIKit
 import SparrowKit
@@ -54,7 +54,7 @@ How customize titles and images you can read section [DataSource & Customization
 
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/951477c8e89de55eeeac441102b52b1415c691b7/resources/request-permission_permissions.png"/>
 
-Also now supported `MediaLibrary (Apple Music)` permission
+Also now supported `MediaLibrary (Apple Music)` permission.
 
 If you want to request notification (or other permissions) without dialog, use the function:
 ```swift
@@ -66,7 +66,7 @@ Notification permission should be tested _only_ on a real device.
 If you want to add new permission, create a new issue [here](https://github.com/IvanVorobei/SPPermission/issues)
 
 ## Delegate
-To track events hide & allowed permission associated with `SPPermission`, implement the protocol `SPPermissionDialogDelegate`
+To track events hide & allowed permission associated with `SPPermission`, implement the protocol `SPPermissionDialogDelegate`:
 
 ```swift
 @objc public protocol SPPermissionDialogDelegate: class {
@@ -86,7 +86,7 @@ SPPermission.Dialog.request(
 )
 ```
 ## DataSource & Customization
-If you want to change the text, you need to implement the `SPPermissionDialogDataSource` protocol. Override the needed parameters to see the changes
+If you want to change the text, you need to implement the `SPPermissionDialogDataSource` protocol. Override the needed parameters to see the changes:
 
 ```swift
 @objc public protocol SPPermissionDialogDataSource: class {
@@ -133,7 +133,7 @@ The `SPPermission` use [SparrowKit](https://github.com/IvanVorobei/SparrowKit) l
 pod 'SparrowKit'
 ```
 
-If you use `pod SPStorkController`, library [SPStorkController](https://github.com/IvanVorobei/SPStorkController) install automatically.
+If you use `pod SPStorkController`, library [SparrowKit](https://github.com/IvanVorobei/SparrowKit) install automatically.
 
 ## For Russian-speaking users
 Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать статью [Обновление библиотеки SPPermission](https://habr.com/post/430886/), чтобы больше узнать о проекте. Taк же вы можете прочитать статью [Получил 1.2K звезд на GitHub с ужасной архитектурой. Как?](https://habr.com/post/326620/) о первой версии проекта и работе с архитектурой
