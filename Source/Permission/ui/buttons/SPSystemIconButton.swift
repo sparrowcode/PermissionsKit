@@ -76,5 +76,4 @@ class SPSystemIconButton: UIButton {
         super.layoutSubviews()
         self.iconView.setEqualsFrameFromBounds(self, withWidthFactor: self.widthIconFactor, withHeightFactor: self.heightIconFactor, withCentering: true)
     }
-    
 }

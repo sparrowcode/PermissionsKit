@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPPermissionDialogController: UIViewController {
+public class SPPermissionDialogController: SPBaseViewController {
     
     weak var delegate: SPPermissionDialogDelegate?
     weak var dataSource: SPPermissionDialogDataSource?
