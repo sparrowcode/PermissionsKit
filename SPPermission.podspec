@@ -13,6 +13,6 @@ Pod::Spec.new do |s|
   s.platform      = :ios
   s.ios.deployment_target = "10.0"
 
-  s.source_files  = "Source/SparrowKit/**/*.swift"
+  s.source_files  = "Source/Permission/**/*.swift"
   s.dependency 'SparrowKit'
 end
