@@ -17,7 +17,7 @@ The project is absolutely free, but but it takes time to support and update it. 
 Swift 4.2. Ready for use on iOS 10+
 
 ## Integration
-Drop in `source/sparrow` folder to your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
+Drop in `Source/Sparrow` folder of [SparrowKit](https://github.com/IvanVorobei/SparrowKit) to your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
 Or via CocoaPods:
 ```ruby
@@ -122,6 +122,10 @@ If you want add or remove close button (for close dialog, need swipe it), you ne
 In the project you can find an example for usage `SPPermissionDialogDataSource`
 
 ## My projects
+
+Here I would like to offer you my other projects
+
+### SPStorkController
 I am create [SPStorkController](https://github.com/IvanVorobei/SPStorkController). It is modal controller as in mail or Apple music application. Similar animation and transition. You can see it on [github](https://github.com/IvanVorobei/SPStorkController) and simple integrate to your project. Now project in develop and I am fast fix bugs and update it:
 
 <img src="https://rawcdn.githack.com/IvanVorobei/SPStorkController/0acd51bbe76ef48611e1bdd408aebb9c7d9b0ae6/resources/gif-mockup.gif" width="500">
@@ -139,11 +143,10 @@ If you use `SPStorkController`, library [SparrowKit](https://github.com/IvanVoro
 Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать статью [Обновление библиотеки SPPermission](https://habr.com/post/430886/), чтобы больше узнать о проекте. Taк же вы можете прочитать статью [Получил 1.2K звезд на GitHub с ужасной архитектурой. Как?](https://habr.com/post/326620/) о первой версии проекта и работе с архитектурой
 
 ## License
-`SPPermission` is released under the MIT license. Check LICENSE.md for details
+`SPPermission` is released under the MIT license. Check `LICENSE.md` for details
 
 ## Contact
-If you need develop application or UI, write me to hello@ivanvorobei.by. I am develop design and ios apps. I am use `swift`. If you want to ask for more functionality, you should create a new issue. 
-
+If you need develop application or UI, write me to hello@ivanvorobei.by. I am develop design and ios apps. I am use `swift`. For request more functionality, you should create a new issue. 
 My apps in AppStore: [first account](https://itunes.apple.com/us/developer/polina-zubarik/id1434528595) & [second account](https://itunes.apple.com/us/developer/mikalai-varabei/id1435792103)
 
 
