@@ -26,14 +26,14 @@ pod 'SPPermission'
 
 and import library in class:
 ```swift
-import SparrowKit
+import SPPermission
 ```
 
 ## How to use
 Call `SPPermission` and use func `request()`. Also passed controller, on which dialog should present:
 ```swift
 import UIKit
-import SparrowKit
+import SPPermission
 
 class ViewController: UIViewController {
 
