@@ -59,14 +59,14 @@ public class SPBaseViewController: SPStatusBarManagerViewController {
     
     func updateLayout(with size: CGSize) {
         
-        var contentHeight = size.height - self.topSafeArea
+        var contentHeight = size.height - self.safeArea.top
         if self.isShowKeyboard {
             contentHeight = contentHeight - (self.keyboardSize?.height ?? 0)
         } else {
-            contentHeight = contentHeight - self.bottomSafeArea
+            contentHeight = contentHeight - self.safeArea.bottom
         }
         
-        let centerYPosition = self.topSafeArea + (contentHeight / 2)
+        let centerYPosition = self.safeArea.top + (contentHeight / 2)
         
         if self.activityIndicatorLayoutWithSafeArea {
             self.activityIndicatorView.center = CGPoint.init(
@@ -88,7 +88,7 @@ public class SPBaseViewController: SPStatusBarManagerViewController {
         self.emptyProposeView?.frame = CGRect.init(
             x: 0, y: 0,
             width: emptyProposeViewWidth,
-            height: (size.height - self.topSafeArea - self.bottomSafeArea) * self.emptyProposeViewHeightFactor
+            height: (size.height - self.safeArea.top - self.safeArea.bottom) * self.emptyProposeViewHeightFactor
         )
         self.emptyProposeView?.center = CGPoint.init(
             x: size.width / 2,
@@ -101,6 +101,19 @@ public class SPBaseViewController: SPStatusBarManagerViewController {
                 y: centerYPosition
             )
         }
+    }
+    
+    func addHideButton(title: String) {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(
+            title: title,
+            style: UIBarButtonItem.Style.done,
+            target: self,
+            action: #selector(self.dismiss(sender:))
+        )
+    }
+    
+    @objc func dismiss(sender: Any) {
+        self.dismiss()
     }
     
     //MARK: - keyboard

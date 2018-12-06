@@ -39,7 +39,6 @@ extension UIViewController {
     }
 }
 
-//MARK: - Keyboard
 extension UIViewController {
     
     func dismissKeyboardWhenTappedAround() {
@@ -53,7 +52,6 @@ extension UIViewController {
     }
 }
 
-//MARK: - Add image to Library
 extension UIViewController {
     
     func save(image: UIImage) {
@@ -107,7 +105,6 @@ extension UIViewController {
     }
 }
 
-//MARK: - Navigation Bar
 extension UIViewController {
     
     func setPrefersLargeNavigationTitle(_ title: String, smallScreenToSmallBar: Bool = true) {
@@ -129,31 +126,36 @@ extension UIViewController {
         switch style {
         case .large:
             if #available(iOS 11.0, *) {
+                self.navigationController?.navigationBar.prefersLargeTitles = true
                 self.navigationItem.largeTitleDisplayMode = .always
             }
         case .small:
             if #available(iOS 11.0, *) {
                 self.navigationItem.largeTitleDisplayMode = .never
             }
-        }
+        case .stork:
+            if #available(iOS 11.0, *) {
+                self.navigationItem.largeTitleDisplayMode = .never
+            }
+        }        
     }
 }
 
 extension UIViewController {
     
-    var topSafeArea: CGFloat {
-        return self.view.topSafeArea
-    }
-    
-    var bottomSafeArea: CGFloat {
-        return self.view.bottomSafeArea
+    var safeArea: UIEdgeInsets {
+        if #available(iOS 11.0, *) {
+            return self.view.safeAreaInsets
+        } else {
+            return UIEdgeInsets.zero
+        }
     }
     
     var navigationBarHeight: CGFloat {
         return self.navigationController?.navigationBar.frame.height ?? 0
     }
     
-    var statusBarHeight: CGFloat {
+    static var statusBarHeight: CGFloat {
         return UIApplication.shared.statusBarFrame.height
     }
 }

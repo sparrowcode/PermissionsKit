@@ -21,7 +21,17 @@
 
 import UIKit
 
-// MARK: - layout
+public extension UIView {
+    
+    var viewController: UIViewController? {
+        get {
+            if let nextResponder = self.next as? UIViewController { return nextResponder }
+            else if let nextResponder = self.next as? UIView { return nextResponder.viewController }
+            else { return nil }
+        }
+    }
+}
+
 public extension UIView {
     
     var topSafeArea: CGFloat {
@@ -49,21 +59,16 @@ public extension UIView {
     }
     
     func setEqualsFrameFromBounds(_ view: UIView, withWidthFactor widthFactor: CGFloat = 1, maxWidth: CGFloat? = nil, withHeightFactor heightFactor: CGFloat = 1, maxHeight: CGFloat? = nil, withCentering: Bool = false) {
-        
         self.setEqualsFrameFromBounds(view.bounds, withWidthFactor: widthFactor, maxWidth: maxWidth, withHeightFactor: heightFactor, maxHeight: maxHeight, withCentering: withCentering)
     }
     
     func setEqualsFrameFromBounds(_ bounds: CGRect, withWidthFactor widthFactor: CGFloat = 1, maxWidth: CGFloat? = nil, withHeightFactor heightFactor: CGFloat = 1, maxHeight: CGFloat? = nil, withCentering: Bool = false) {
         
         var width = bounds.width * widthFactor
-        if maxWidth != nil {
-            width.setIfMore(when: maxWidth!)
-        }
+        if maxWidth != nil { width.setIfMore(when: maxWidth!) }
         
         var height = bounds.height * heightFactor
-        if maxHeight != nil {
-            height.setIfMore(when: maxHeight!)
-        }
+        if maxHeight != nil { height.setIfMore(when: maxHeight!) }
         
         self.frame = CGRect.init(x: 0, y: 0, width: width, height: height)
         
@@ -74,27 +79,19 @@ public extension UIView {
     }
     
     func setEqualsBoundsFromSuperview(customWidth: CGFloat? = nil, customHeight: CGFloat? = nil) {
-        
-        if self.superview == nil {
-            return
-        }
-        
+        if self.superview == nil { return }
         self.frame = CGRect.init(origin: CGPoint.zero, size: self.superview!.frame.size)
-        
         if customWidth != nil {
             self.frame = CGRect.init(origin: CGPoint.zero, size: CGSize.init(width: customWidth!, height: self.frame.height))
         }
-        
         if customHeight != nil {
             self.frame = CGRect.init(origin: CGPoint.zero, size: CGSize.init(width: self.frame.width, height: customHeight!))
         }
     }
     
-    func resize(newWidth width: CGFloat) {
+    func resize(width: CGFloat) {
         let relativeFactor = self.frame.width / self.frame.height
-        if relativeFactor.isNaN {
-            return
-        }
+        if relativeFactor.isNaN { return }
         self.frame = CGRect.init(
             x: self.frame.origin.x,
             y: self.frame.origin.y,
@@ -103,17 +100,19 @@ public extension UIView {
         )
     }
     
-    func resize(newHeight height: CGFloat) {
+    func resize(height: CGFloat) {
         let relativeFactor = self.frame.width / self.frame.height
-        if relativeFactor.isNaN {
-            return
-        }
+        if relativeFactor.isNaN { return }
         self.frame = CGRect.init(
             x: self.frame.origin.x,
             y: self.frame.origin.y,
             width: height / relativeFactor,
             height: height
         )
+    }
+    
+    func setYCenteringFromSuperview() {
+        self.center.y = (self.superview?.frame.height ?? 0) / 2
     }
     
     func setXCenteringFromSuperview() {
@@ -148,29 +147,19 @@ public extension UIView {
     }
 }
 
-// MARK: - convertToImage
-public extension UIView {
-    
-    func convertToImage() -> UIImage {
-        return UIImage.drawFromView(view: self)
-    }
-}
-
-// MARK: - gradeView
 public extension UIView {
     
     func addGrade(alpha: CGFloat, color: UIColor = UIColor.black) -> UIView {
         let gradeView = UIView.init()
         gradeView.alpha = 0
         self.addSubview(gradeView)
-        SPConstraintsAssistent.setEqualSizeConstraint(gradeView, superVuew: self)
+        SPConstraints.setEqualSize(gradeView, superVuew: self)
         gradeView.alpha = alpha
         gradeView.backgroundColor = color
         return gradeView
     }
 }
 
-// MARK: - shadow
 extension UIView {
     
     func setShadow(
@@ -249,7 +238,6 @@ extension UIView {
     }
 }
 
-// MARK: - animation
 extension UIView {
     
     func addCornerRadiusAnimation(to: CGFloat, duration: CFTimeInterval) {
@@ -282,7 +270,6 @@ extension UIView {
     }
 }
 
-// MARK: - corner radius
 extension UIView {
     
     func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {

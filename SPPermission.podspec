@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "SPPermission"
-  s.version       = "2.1.6"
+  s.version       = "2.2"
   s.summary       = "Simple request permissions with dialog alert"
   s.homepage      = "https://github.com/IvanVorobei/RequestPermission"
   s.source        = { :git => "https://github.com/IvanVorobei/RequestPermission.git", :tag => s.version }
@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.platform      = :ios
   s.ios.deployment_target = "10.0"
 
-  s.dependency 'SparrowKit', '~> 1.0.0'
+  s.dependency 'SparrowKit', '~> 1.0.4'
 end

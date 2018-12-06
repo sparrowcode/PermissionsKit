@@ -83,7 +83,7 @@ class SPProposeViewController: SPBaseViewController {
         self.areaView.layoutSubviews()
         self.areaView.sizeToFit()
         self.areaView.frame.origin.x = self.space
-        self.areaView.frame.origin.y = self.view.frame.size.height - self.areaView.frame.height - (UIWindow.bottomSafeArea / 2) - self.space
+        self.areaView.frame.origin.y = self.view.frame.size.height - self.areaView.frame.height - (self.bottomSafeArea / 2) - self.space
         
     }
     
@@ -95,7 +95,7 @@ class SPProposeViewController: SPBaseViewController {
             SPAnimationSpring.animate(self.animationDuration, animations: {
                 self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
                 
-                self.areaView.frame.origin.y = self.view.frame.size.height - self.areaView.frame.height - (UIWindow.bottomSafeArea / 2) - self.space
+                self.areaView.frame.origin.y = self.view.frame.size.height - self.areaView.frame.height - (self.bottomSafeArea / 2) - self.space
             }, spring: 1,
                velocity: 1,
                options: .transitionCurlUp)
@@ -134,7 +134,7 @@ class SPProposeViewController: SPBaseViewController {
         
         let returnAreaViewToPoint = {
             SPAnimationSpring.animate(self.animationDuration, animations: {
-                self.areaView.frame.origin.y = self.view.frame.size.height - self.areaView.frame.height - (UIWindow.bottomSafeArea / 2) - self.space
+                self.areaView.frame.origin.y = self.view.frame.size.height - self.areaView.frame.height - (self.bottomSafeArea / 2) - self.space
             }, spring: 1,
                velocity: 1,
                options: .transitionCurlDown,
@@ -173,7 +173,7 @@ class SPProposeViewController: SPBaseViewController {
         let titleLabel = UILabel()
         let subtitleLabel = UILabel()
         let imageView = SPDownloadingImageView()
-        let button = SPNativeOS11Button()
+        let button = SPNativeLargeButton()
         let closeButton = SPSystemIconButton(type: SPSystemIconType.close)
         
         var imageSideSize: CGFloat = 160
@@ -206,7 +206,7 @@ class SPProposeViewController: SPBaseViewController {
             self.addSubview(self.imageView)
             
             self.button.titleLabel?.font = UIFont.system(type: UIFont.BoldType.Medium, size: 15)
-            self.button.setTitleColorForNoramlAndHightlightedStates(color: SPNativeStyleKit.Colors.black)
+            self.button.setTitleColor(SPNativeStyleKit.Colors.black)
             self.button.backgroundColor = UIColor.init(hex: "D4D3DB")
             self.addSubview(self.button)
             
@@ -265,5 +265,18 @@ class SPProposeViewController: SPBaseViewController {
         var imageLink: String?
         var image: UIImage?
         var complection: (_ isConfirmed: Bool)->()
+    }
+    
+    var bottomSafeArea: CGFloat {
+        var bottomSafeArea: CGFloat = 0
+        if let window =  UIApplication.shared.keyWindow {
+            if #available(iOS 11.0, *) {
+                bottomSafeArea = window.safeAreaInsets.bottom
+            }
+        } else {
+            bottomSafeArea = 0
+        }
+        
+        return bottomSafeArea
     }
 }

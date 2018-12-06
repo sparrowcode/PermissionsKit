@@ -23,34 +23,17 @@ import UIKit
 
 extension CGRect {
     
-    static var displayFrame: CGRect {
-        let screenSize = UIScreen.main.bounds
-        return CGRect.init(origin: .zero, size: screenSize.size)
-    }
-    
     var bottomXPosition: CGFloat {
-        get {
-            return self.origin.x + self.width
-        }
-        set {
-            self.origin.x = newValue - self.width
-        }
+        get { return self.origin.x + self.width }
+        set { self.origin.x = newValue - self.width }
     }
     
     var bottomYPosition: CGFloat {
-        get {
-            return self.origin.y + self.height
-        }
-        set {
-            self.origin.y = newValue - self.height
-        }
+        get { return self.origin.y + self.height }
+        set { self.origin.y = newValue - self.height }
     }
     
     var minSideSize: CGFloat {
         return min(self.width, self.height)
-    }
-    
-    var isWidthLessThanHeight: Bool {
-        return self.width < self.height
     }
 }

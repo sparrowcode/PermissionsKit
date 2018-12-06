@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPDownloadingButton: UIButton {
+class SPDownloadingButton: SPButton {
     
     let activityIndicatorView = UIActivityIndicatorView.init()
     var isFrameRounded: Bool = false

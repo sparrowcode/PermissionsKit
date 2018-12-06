@@ -23,6 +23,23 @@ import UIKit
 
 class SPScrollView: UIScrollView {
     
+    init() {
+        super.init(frame: .zero)
+        self.commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.commonInit()
+    }
+    
+    internal func commonInit() {
+        if #available(iOS 11.0, *) {
+            self.contentInsetAdjustmentBehavior = .never
+        }
+        self.delaysContentTouches = false
+    }
+    
     override func touchesShouldCancel(in view: UIView) -> Bool {
         if view is UIControl
             && !(view is UITextInput)

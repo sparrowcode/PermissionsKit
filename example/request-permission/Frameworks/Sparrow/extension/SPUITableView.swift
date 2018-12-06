@@ -36,50 +36,24 @@ extension UITableView {
     }
     
     var lastSectionWithRows: Int? {
-        
-        if self.numberOfSections == 0 {
-            return nil
-        }
-        
+        if self.numberOfSections == 0 { return nil }
         var section = self.numberOfSections - 1
-        
-        if section < 0 {
-            return nil
-        }
-
+        if section < 0 { return nil }
         while section >= 0 {
-
-            if self.numberOfRows(inSection: section) != 0 {
-                return section
-            }
-            
+            if self.numberOfRows(inSection: section) != 0 { return section }
             section -= 1
         }
-        
         return nil
     }
     
     var firstSectionWithRows: Int? {
-        
-        if self.numberOfSections == 0 {
-            return nil
-        }
-        
+        if self.numberOfSections == 0 { return nil }
         var section = 0
-        
-        if section > self.numberOfSections - 1 {
-            return nil
-        }
-        
+        if section > self.numberOfSections - 1 { return nil }
         while section <= (self.numberOfSections - 1) {
-            
-            if self.numberOfRows(inSection: section) != 0 {
-                return section
-            }
-            
+            if self.numberOfRows(inSection: section) != 0 { return section }
             section += 1
         }
-        
         return nil
     }
 }

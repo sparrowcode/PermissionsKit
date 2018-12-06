@@ -26,7 +26,7 @@ class SPAppStoreActionButton: SPDownloadingButton {
     var style: Style = .base {
         didSet {
             
-            self.setTitleColorForNoramlAndHightlightedStates(color: self.baseColor)
+            self.setTitleColor(self.baseColor)
             self.setTitle(self.titleLabel?.text, for: UIControl.State.normal)
             
             switch self.style {
@@ -38,14 +38,14 @@ class SPAppStoreActionButton: SPDownloadingButton {
             case .main:
                 self.backgroundColor = self.baseColor
                 self.layer.borderWidth = 0
-                self.setTitleColorForNoramlAndHightlightedStates(color: UIColor.white)
+                self.setTitleColor(UIColor.white)
                 self.titleLabel?.font = UIFont.system(type: .Bold, size: 14)
                 self.contentEdgeInsets = UIEdgeInsets.init(top: 6, left: 15, bottom: 6, right: 15)
                 break
             case .buyInStore:
                 self.backgroundColor = self.baseColor
                 self.layer.borderWidth = 0
-                self.setTitleColorForNoramlAndHightlightedStates(color: UIColor.white)
+                self.setTitleColor(UIColor.white)
                 self.titleLabel?.font = UIFont.system(type: .Bold, size: 14)
                 self.contentEdgeInsets = UIEdgeInsets.init(top: 8, left: 15, bottom: 8, right: 15)
                 break
@@ -73,17 +73,7 @@ class SPAppStoreActionButton: SPDownloadingButton {
         }
     }
     
-    init() {
-        super.init(frame: CGRect.zero)
-        self.commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.commonInit()
-    }
-    
-    private func commonInit() {
+    override func commonInit() {
         self.style = .base
         self.layer.masksToBounds = true
     }

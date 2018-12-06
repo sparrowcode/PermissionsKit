@@ -166,7 +166,7 @@ class SPConfirmActionViewController: UIViewController {
             self.addSubview(self.label)
             
             self.button.setTitle("Сancel", for: .normal)
-            self.button.setTitleColorForNoramlAndHightlightedStates(color: SPNativeStyleKit.Colors.blue)
+            self.button.setTitleColor(SPNativeStyleKit.Colors.blue)
             self.button.titleLabel?.font = UIFont.system(type: .DemiBold, size: 16)
             self.addSubview(self.button)
         }

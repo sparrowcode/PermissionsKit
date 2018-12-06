@@ -66,20 +66,6 @@ extension String {
         return false
     }
     
-    mutating func reduce(minimumFractionDigits: Int = 0, maximumFractionDigits: Int) {
-        let formatter = NumberFormatter()
-        formatter.minimumFractionDigits = minimumFractionDigits
-        formatter.maximumFractionDigits = maximumFractionDigits
-        let int = Double(self)
-        if int != nil {
-            let number = NSNumber.init(value: int!)
-            if var newValue = formatter.string(from: number) {
-                newValue.replace(",", with: ".")
-                self = newValue
-            }
-        }
-    }
-    
     mutating func replace(_ replacingString: String, with newString: String) {
         self = self.replacingOccurrences(of: replacingString, with: newString)
     }

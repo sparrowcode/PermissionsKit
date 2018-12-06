@@ -213,7 +213,7 @@ public class SPPermissionDialogController: SPBaseViewController {
         self.bottomLabel.sizeToFit()
         self.bottomLabel.setWidth(bottomLabelWidth)
         self.bottomLabel.center.x = size.width / 2
-        self.bottomLabel.frame.bottomYPosition = size.height - self.bottomSafeArea - 30
+        self.bottomLabel.frame.bottomYPosition = size.height - self.safeArea.bottom - 30
         self.bottomLabel.setShadowOffsetForLetters(blurRadius: 3, widthOffset: 0, heightOffset: 0, opacity: 0.18)
         
         let bottomLabelAlpha: CGFloat = SPDevice.Orientation.isPortrait ? 1 : 0

@@ -25,7 +25,11 @@ extension UINavigationController {
     
     static var elementsColor: UIColor {
         get {
-            return UINavigationBar.appearance().tintColor
+            if UINavigationBar.appearance().tintColor != nil {
+                return UINavigationBar.appearance().tintColor
+            } else {
+                return SPNativeStyleKit.Colors.blue
+            }
         }
         set {
             UINavigationBar.appearance().tintColor = newValue

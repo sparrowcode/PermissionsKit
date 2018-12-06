@@ -28,7 +28,7 @@ class SPWelcomeViewController: SPBaseViewController {
     let subtitleLabel = UILabel()
     let descriptionLabel = UILabel()
     let commentLabel = UILabel()
-    let button = SPNativeOS11Button()
+    let button = SPNativeLargeButton()
     
     private var data: SPWelcomeData
     private var views: [UIView] = []
@@ -134,7 +134,7 @@ class SPWelcomeViewController: SPBaseViewController {
         
         let sideSpace: CGFloat = size.width * 0.112
 
-        self.imageView.frame = CGRect.init(x: sideSpace, y: self.topSafeArea + (size.height * 0.1), width: 84, height: 84)
+        self.imageView.frame = CGRect.init(x: sideSpace, y: self.safeArea.top + (size.height * 0.1), width: 84, height: 84)
         
         let space: CGFloat = size.height * 0.025
         
@@ -148,7 +148,7 @@ class SPWelcomeViewController: SPBaseViewController {
         self.descriptionLabel.sizeToFit()
         
         self.button.sizeToFit()
-        self.button.frame.origin.y = size.height - self.bottomSafeArea - space - self.button.frame.height
+        self.button.frame.origin.y = size.height - self.safeArea.bottom - space - self.button.frame.height
         self.button.setWidth(size.width - sideSpace * 2)
         self.button.center.x = size.width / 2
         
@@ -214,5 +214,5 @@ struct SPWelcomeData {
     var backgroundColor: UIColor = UIColor.white
     var textColor: UIColor = UIColor.black
     var statusBarStyle: SPStatusBar = .dark
-    var complection: (_ button: SPNativeOS11Button) -> () = { _ in }
+    var complection: (_ button: SPNativeLargeButton) -> () = { _ in }
 }

@@ -23,50 +23,17 @@ import UIKit
 
 extension UITabBarController {
     
-    func addTabBarItem(titleName: String, imageName: String, viewController: UIViewController) {
-        
-        let image = UIImage.init(named: imageName)
-        
-        self.addTabBarItem(
-            titleName: titleName,
-            image: image ?? UIImage(),
-            viewController: viewController
-        )
-    }
-    
-    func addTabBarItem(titleName: String, image: UIImage, viewController: UIViewController) {
+    func addTabBarItem(title: String, image: UIImage, selectedImage: UIImage? = nil, controller: UIViewController) {
         
         let tabBarItem = UITabBarItem(
-            title: titleName,
+            title: title,
             image: image,
-            selectedImage: image
+            selectedImage: selectedImage ?? image
         )
         
-        viewController.tabBarItem = tabBarItem
+        controller.tabBarItem = tabBarItem
         
-        if self.viewControllers == nil {
-            self.viewControllers = [viewController]
-        } else {
-            self.viewControllers?.append(viewController)
-        }
+        if self.viewControllers == nil { self.viewControllers = [controller] }
+        else { self.viewControllers?.append(controller) }
     }
-    
-    @objc func addTabBarItem(titleName: String, image: UIImage, selectedImage: UIImage, viewController: UIViewController) {
-        
-        let tabBarItem = UITabBarItem(
-            title: titleName,
-            image: image,
-            selectedImage: selectedImage
-        )
-        
-        viewController.tabBarItem = tabBarItem
-        
-        if self.viewControllers == nil {
-            self.viewControllers = [viewController]
-        } else {
-            self.viewControllers?.append(viewController)
-        }
-    }
-    
-    
 }

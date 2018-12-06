@@ -59,7 +59,7 @@ class SPBaseTableViewController: SPStatusBarManagerTableViewController {
     
     func updateLayout(with size: CGSize) {
         let layoutIfShowKeyboard = {
-            let height = size.height - (self.keyboardSize?.height ?? 0) - self.topSafeArea
+            let height = size.height - (self.keyboardSize?.height ?? 0) - self.safeArea.top
             self.emptyProposeView?.frame = CGRect.init(
                 x: 0, y: 0,
                 width: size.width * self.emptyProposeViewWidthFactor,
@@ -69,7 +69,7 @@ class SPBaseTableViewController: SPStatusBarManagerTableViewController {
         }
         
         let layoutIfNotShowKeyboard = {
-            let height = size.height - self.topSafeArea - self.bottomSafeArea
+            let height = size.height - self.safeArea.top - self.safeArea.bottom
             self.emptyProposeView?.frame = CGRect.init(
                 x: 0, y: 0,
                 width: size.width * self.emptyProposeViewWidthFactor,
@@ -93,7 +93,7 @@ class SPBaseTableViewController: SPStatusBarManagerTableViewController {
         } else {
             self.activityIndicatorView.center = CGPoint.init(
                 x: size.width / 2,
-                y: (size.height - self.topSafeArea - self.bottomSafeArea) / 2
+                y: (size.height - self.safeArea.top - self.safeArea.bottom) / 2
             )
         }
     }
@@ -298,5 +298,14 @@ class SPBaseTableViewController: SPStatusBarManagerTableViewController {
     //MARK: - Other
     @objc func dismiss(sender: Any) {
         self.dismiss()
+    }
+    
+    func addHideButton(title: String) {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(
+            title: title,
+            style: UIBarButtonItem.Style.done,
+            target: self,
+            action: #selector(self.dismiss(sender:))
+        )
     }
 }

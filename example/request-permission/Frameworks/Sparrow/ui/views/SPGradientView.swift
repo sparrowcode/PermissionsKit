@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPGradientView: UIView {
+public class SPGradientView: SPView {
     
     var startColor: UIColor = UIColor.white { didSet { self.updateGradient() }}
     var endColor: UIColor = UIColor.black { didSet { self.updateGradient() }}
@@ -29,17 +29,7 @@ public class SPGradientView: UIView {
     var startColorPoint: CGPoint = CGPoint.zero { didSet { self.updateGradient() }}
     var endColorPoint: CGPoint = CGPoint.zero { didSet { self.updateGradient() }}
     
-    var gradientLayer: CAGradientLayer!
-    
-    public init() {
-        super.init(frame: CGRect.zero)
-        commonInit()
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.commonInit()
-    }
+    var gradientLayer: CAGradientLayer = CAGradientLayer()
     
     public func setStartColorPosition(_ position: Position) {
         self.startColorPoint = getPointForPosition(position)
@@ -49,16 +39,16 @@ public class SPGradientView: UIView {
         self.endColorPoint = getPointForPosition(position)
     }
     
-    private func commonInit() {
-        self.gradientLayer = CAGradientLayer()
-        self.layer.insertSublayer(self.gradientLayer!, at: 0)
+    override func commonInit() {
+        super.commonInit()
+        self.layer.insertSublayer(self.gradientLayer, at: 0)
     }
     
     private func updateGradient() {
-        self.gradientLayer!.colors = [startColor.cgColor, endColor.cgColor]
-        self.gradientLayer!.locations = [0.0, 1.0]
-        self.gradientLayer!.startPoint = self.startColorPoint
-        self.gradientLayer!.endPoint = self.endColorPoint
+        self.gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+        self.gradientLayer.locations = [0.0, 1.0]
+        self.gradientLayer.startPoint = self.startColorPoint
+        self.gradientLayer.endPoint = self.endColorPoint
     }
     
     override public func layoutSublayers(of layer: CALayer) {
