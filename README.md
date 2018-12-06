@@ -126,7 +126,7 @@ In the project you can find an example for usage `SPPermissionDialogDataSource`
 Here I would like to offer you my other projects
 
 ### SPStorkController
-I am create [SPStorkController](https://github.com/IvanVorobei/SPStorkController). It is modal controller as in mail or Apple music application. Similar animation and transition. You can see it on [github](https://github.com/IvanVorobei/SPStorkController) and simple integrate to your project. Now project in develop and I am fast fix bugs and update it:
+I am create [SPStorkController](https://github.com/IvanVorobei/SPStorkController). It is modal controller as in mail or Apple music application. Similar animation and transition. You can see it on github and simple integrate to your project. Now project in develop and I am fast fix bugs and update it:
 
 <img src="https://rawcdn.githack.com/IvanVorobei/SPStorkController/0acd51bbe76ef48611e1bdd408aebb9c7d9b0ae6/resources/gif-mockup.gif" width="500">
 
@@ -136,8 +136,6 @@ The `SPPermission` use [SparrowKit](https://github.com/IvanVorobei/SparrowKit) l
 ```ruby
 pod 'SparrowKit'
 ```
-
-If you use `SPStorkController`, library [SparrowKit](https://github.com/IvanVorobei/SparrowKit) install automatically.
 
 ## For Russian-speaking users
 Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать статью [Обновление библиотеки SPPermission](https://habr.com/post/430886/), чтобы больше узнать о проекте. Taк же вы можете прочитать статью [Получил 1.2K звезд на GitHub с ужасной архитектурой. Как?](https://habr.com/post/326620/) о первой версии проекта и работе с архитектурой
