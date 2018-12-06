@@ -63,50 +63,6 @@ public enum SPSeparatorInsetStyle {
     case auto
 }
 
-@objc public enum SPPermissionType: Int {
-    case camera = 0
-    case photoLibrary = 1
-    case notification = 2
-    case microphone = 3
-    case calendar = 4
-    case contacts = 5
-    case reminders = 6
-    case speech = 7
-    case locationAlways = 8
-    case locationWhenInUse = 9
-    case locationWithBackground = 10
-    case mediaLibrary = 11
-    
-    var name: String {
-        switch self {
-        case .camera:
-            return "Camera"
-        case .photoLibrary:
-            return "Photo Library"
-        case .notification:
-            return "Notification"
-        case .microphone:
-            return "Microphone"
-        case .calendar:
-            return "Calendar"
-        case .contacts:
-            return "Contacts"
-        case .reminders:
-            return "Reminders"
-        case .speech:
-            return "Speech"
-        case .locationAlways:
-            return "Location"
-        case .locationWhenInUse:
-            return "Location"
-        case .locationWithBackground:
-            return "Location"
-        case .mediaLibrary:
-            return "Media Library"
-        }
-    }
-}
-
 public enum SPNavigationTitleStyle {
     case large
     case small
