@@ -131,7 +131,7 @@ I am create [SPStorkController](https://github.com/IvanVorobei/SPStorkController
 <img src="https://rawcdn.githack.com/IvanVorobei/SPStorkController/0acd51bbe76ef48611e1bdd408aebb9c7d9b0ae6/resources/gif-mockup.gif" width="500">
 
 ### SparrowKit
-The `SPPermission` use [SparrowKit](https://github.com/IvanVorobei/SparrowKit) library. You can install it if you want to receive updates often. Also in library you can find [SPPermission](https://github.com/IvanVorobei/SPPermission) and other useful extensions. For install via CocoaPods use:
+The `SPPermission` additional use [SparrowKit](https://github.com/IvanVorobei/SparrowKit) library. Also in library you can find [SPStorkController](https://github.com/IvanVorobei/SPStorkController) and other useful extensions. For install via CocoaPods use:
 
 ```ruby
 pod 'SparrowKit'
