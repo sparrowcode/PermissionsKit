@@ -23,15 +23,10 @@ import UIKit
 
 extension UIImageView {
     
-    public func setNativeStyle() {
+    public func setNative() {
         self.layer.borderWidth = 0.5
         self.layer.borderColor = SPNativeStyleKit.Colors.midGray.cgColor
         self.layer.masksToBounds = true
-    }
-    
-    public func removeNativeStyle() {
-        self.layer.borderWidth = 0
-        self.layer.borderColor = UIColor.clear.cgColor
     }
     
     public func downloadedFrom(url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit, withComplection complection: @escaping (UIImage?) -> () = {_ in }) {

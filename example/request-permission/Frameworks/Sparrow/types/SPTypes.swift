@@ -110,6 +110,7 @@ public enum SPSeparatorInsetStyle {
 public enum SPNavigationTitleStyle {
     case large
     case small
+    case stork
 }
 
 public enum SPSystemApp {

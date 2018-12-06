@@ -24,11 +24,11 @@ import UIKit
 struct SPDevice {
     
     static var isIphone: Bool {
-        return UIDevice.current.isIphone
+        return UIDevice.current.userInterfaceIdiom == .phone
     }
     
     static var isIpad: Bool {
-        return UIDevice.current.isIpad
+        return UIDevice.current.userInterfaceIdiom == .pad
     }
     
     struct Orientation {

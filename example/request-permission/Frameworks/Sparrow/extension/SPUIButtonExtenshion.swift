@@ -65,7 +65,8 @@ extension UIButton {
     }
     
     func setTitleColor(_ color: UIColor) {
-        self.setTitleColorForNoramlAndHightlightedStates(color: color)
+        self.setTitleColor(color, for: .normal)
+        self.setTitleColor(color.withAlphaComponent(0.7), for: .highlighted)
     }
     
     func removeAllTargets() {
@@ -74,23 +75,18 @@ extension UIButton {
     
     func showText(_ text: String, withComplection completion: (() -> Void)! = {}) {
         let baseText = self.titleLabel?.text ?? " "
-        
-        SPAnimation.animate(0.2,
-                            animations: {
-                                self.titleLabel?.alpha = 0
+        SPAnimation.animate(0.2, animations: {
+            self.titleLabel?.alpha = 0
         }, withComplection: {
             self.setTitle(text, for: .normal)
-            
             SPAnimation.animate(0.2, animations: {
                 self.titleLabel?.alpha = 1
             }, withComplection: {
-                
                 SPAnimation.animate(0.2, animations: {
                     self.titleLabel?.alpha = 0
                 }, delay: 0.35,
                    withComplection: {
                     self.setTitle(baseText, for: .normal)
-                    
                     SPAnimation.animate(0.2, animations: {
                         self.titleLabel?.alpha = 1
                     }, withComplection: {
@@ -102,13 +98,10 @@ extension UIButton {
     }
     
     func setAnimatableText(_ text: String, withComplection completion: (() -> Void)! = {}) {
-        
-        SPAnimation.animate(0.2,
-                            animations: {
-                                self.titleLabel?.alpha = 0
+        SPAnimation.animate(0.2, animations: {
+            self.titleLabel?.alpha = 0
         }, withComplection: {
             self.setTitle(text, for: .normal)
-            
             SPAnimation.animate(0.2, animations: {
                 self.titleLabel?.alpha = 1
             }, withComplection: {   
@@ -118,25 +111,18 @@ extension UIButton {
     }
     
     func hideContent(completion: (() -> Void)! = {}) {
-        SPAnimation.animate(0.2,
-                            animations: {
-                                self.titleLabel?.alpha = 0
+        SPAnimation.animate(0.2, animations: {
+            self.titleLabel?.alpha = 0
         }, withComplection: {
              completion()
         })
     }
     
     func showContent(completion: (() -> Void)! = {}) {
-        SPAnimation.animate(0.2,
-                            animations: {
-                                self.titleLabel?.alpha = 1
+        SPAnimation.animate(0.2, animations: {
+            self.titleLabel?.alpha = 1
         }, withComplection: {
             completion()
         })
-    }
-    
-    func setTitleColorForNoramlAndHightlightedStates(color: UIColor) {
-        self.setTitleColor(color, for: .normal)
-        self.setTitleColor(color.withAlphaComponent(0.7), for: .highlighted)
     }
 }

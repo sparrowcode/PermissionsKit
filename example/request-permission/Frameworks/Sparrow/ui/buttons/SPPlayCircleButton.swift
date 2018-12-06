@@ -71,7 +71,5 @@ class SPPlayCircleButton: UIButton {
         case pause
         case stop
     }
-    
-    
 }
 

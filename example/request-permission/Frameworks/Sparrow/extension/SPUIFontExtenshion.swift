@@ -42,7 +42,7 @@ public extension UIFont {
         return UIFont.init(
             name: self.getFontNameBy(fontType: fontType) + self.getBoldTypeNameBy(boldType: boldType),
             size: size
-            )!
+        )!
     }
     
     private static func getFontNameBy(fontType: FontType) -> String {

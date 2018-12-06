@@ -183,19 +183,6 @@ extension SPNativeTableViewController {
     
 }
 
-//MARK: - hide button
-extension SPNativeTableViewController {
-    
-    func addHideButton(title: String) {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(
-            title: title,
-            style: UIBarButtonItem.Style.done,
-            target: self,
-            action: #selector(self.dismiss(sender:))
-        )
-    }
-}
-
 //MARK: - manage spaces
 extension SPNativeTableViewController {
     

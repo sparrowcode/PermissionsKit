@@ -40,5 +40,9 @@ public struct SPNativeStyleKit {
         static let midGray = UIColor.init(hex: "C7C7CC")
         static let gray = UIColor.init(hex: "8E8E93")
         static let black = UIColor.init(hex: "000000")
+        
+        private init() {}
     }
+    
+    private init() {}
 }

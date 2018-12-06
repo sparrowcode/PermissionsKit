@@ -21,27 +21,13 @@
 
 import UIKit
 
-class SPDownloadingImageView: UIImageView {
+class SPDownloadingImageView: SPImageView {
     
     let activityIndiactorView = UIActivityIndicatorView.init()
     let gradeView = UIView.init()
     
-    init() {
-        super.init(frame: CGRect.zero)
-        self.commonInit()
-    }
-    
-    override init(image: UIImage?) {
-        super.init(image: image)
-        self.commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.commonInit()
-    }
-    
-    func commonInit() {
+    override func commonInit() {
+        super.commonInit()
         self.backgroundColor = UIColor.clear
         self.layer.masksToBounds = true
         self.addSubview(self.gradeView)
@@ -76,12 +62,11 @@ class SPDownloadingImageView: UIImageView {
         }
     }
     
-    func setLoadingMode() {
+    func startLoading() {
         self.image = nil
         self.activityIndiactorView.startAnimating()
         self.gradeView.alpha = 1
     }
-    
     
     override func layoutSubviews() {
         super.layoutSubviews()
