@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.platform      = :ios
   s.ios.deployment_target = "10.0"
 
-  s.source_files  = "Source/Permission/**/*.swift"
+  s.source_files  = "Source/SPPermission/**/*.swift"
 end
