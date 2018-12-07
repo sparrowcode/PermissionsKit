@@ -233,7 +233,11 @@ public class SPPermissionDialogController: UIViewController {
         self.bottomLabel.sizeToFit()
         self.bottomLabel.frame = CGRect.init(origin: self.bottomLabel.frame.origin, size: CGSize.init(width: bottomLabelWidth, height: self.bottomLabel.frame.height))
         self.bottomLabel.center.x = size.width / 2
-        self.bottomLabel.frame.origin.y = size.height - self.view.safeAreaInsets.bottom - 30 - self.bottomLabel.frame.height
+        if #available(iOS 11.0, *) {
+            self.bottomLabel.frame.origin.y = size.height - self.view.safeAreaInsets.bottom - 30 - self.bottomLabel.frame.height
+        } else {
+             self.bottomLabel.frame.origin.y = size.height - 30 - self.bottomLabel.frame.height
+        }
         SPPermissionStyle.Shadow.setShadowOffsetForLabel(self.bottomLabel, blurRadius: 3, widthOffset: 0, heightOffset: 0, opacity: 0.18)
         
         let bottomLabelAlpha: CGFloat = SPPermissionStyle.Orientation.isPortrait ? 1 : 0
