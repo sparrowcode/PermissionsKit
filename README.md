@@ -17,7 +17,7 @@ The project is absolutely free, but but it takes time to support and update it. 
 Swift 4.2. Ready for use on iOS 10+
 
 ## Integration
-Drop in `Source/Sparrow` folder of [SparrowKit](https://github.com/IvanVorobei/SparrowKit) to your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
+Drop in `Source/SPPermission/` folder to your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
 Or via CocoaPods:
 ```ruby
@@ -31,6 +31,7 @@ import SPPermission
 
 ## How to use
 Call `SPPermission` and use func `request()`. Also passed controller, on which dialog should present:
+
 ```swift
 import UIKit
 import SPPermission
@@ -43,7 +44,9 @@ class ViewController: UIViewController {
     }
 }
 ```
+
 If you want to know if permission allowed, you should call the function:
+
 ```swift
 let isAvailableCamera = SPPermission.isAllow(.сamera)
 ```
@@ -57,11 +60,13 @@ How customize titles and images you can read section [DataSource & Customization
 Also now supported `MediaLibrary (Apple Music)` permission.
 
 If you want to request notification (or other permissions) without dialog, use the function:
+
 ```swift
 SPPermission.request(.notification, with: {
     //callback
 })
 ```
+
 Notification permission should be tested _only_ on a real device.
 If you want to add new permission, create a new issue [here](https://github.com/IvanVorobei/SPPermission/issues)
 
@@ -121,24 +126,27 @@ If you want add or remove close button (for close dialog, need swipe it), you ne
 
 In the project you can find an example for usage `SPPermissionDialogDataSource`
 
+## Contribution
+I will be glad to your participation in the project. If you want to add new permissions, make a pull request. You can ignore adding an icon, I will add it myself. If you find errors in the project, you can create new [issue](https://github.com/IvanVorobei/SPPermission/issues) or fix and make a pull request
+
+## For Russian-speaking users
+Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать статью [Обновление библиотеки SPPermission](https://habr.com/post/430886/), чтобы больше узнать о проекте. Taк же вы можете прочитать статью [Получил 1.2K звезд на GitHub с ужасной архитектурой. Как?](https://habr.com/post/326620/) о первой версии проекта и работе с архитектурой
+
 ## My projects
 
 Here I would like to offer you my other projects
 
 ### SPStorkController
-I am create [SPStorkController](https://github.com/IvanVorobei/SPStorkController). It is modal controller as in mail or Apple music application. Similar animation and transition. You can see it on github and simple integrate to your project. Now project in develop and I am fast fix bugs and update it:
+I am create [SPStorkController](https://github.com/IvanVorobei/SPStorkController). It is modal controller as in mail or Apple music application. Similar animation and transition. You can see it on github and simple integrate to your project:
 
 <img src="https://rawcdn.githack.com/IvanVorobei/SPStorkController/0acd51bbe76ef48611e1bdd408aebb9c7d9b0ae6/resources/gif-mockup.gif" width="500">
 
 ### SparrowKit
-The `SPPermission` additional use [SparrowKit](https://github.com/IvanVorobei/SparrowKit) library. Also in library you can find [SPStorkController](https://github.com/IvanVorobei/SPStorkController) and other useful extensions. For install via CocoaPods use:
+The `SPPermission` in the past was part of [SparrowKit](https://github.com/IvanVorobei/SparrowKit) library. In library you can find many useful extensions & classes. For install via CocoaPods use:
 
 ```ruby
 pod 'SparrowKit'
 ```
-
-## For Russian-speaking users
-Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать статью [Обновление библиотеки SPPermission](https://habr.com/post/430886/), чтобы больше узнать о проекте. Taк же вы можете прочитать статью [Получил 1.2K звезд на GitHub с ужасной архитектурой. Как?](https://habr.com/post/326620/) о первой версии проекта и работе с архитектурой
 
 ## License
 `SPPermission` is released under the MIT license. Check `LICENSE.md` for details
