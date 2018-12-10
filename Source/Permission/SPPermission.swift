@@ -31,6 +31,11 @@ import MediaPlayer
 
 public struct SPPermission {
     
+    public static func isFirstTime(_ permission: SPPermissionType) -> Bool {
+        let manager = self.getManagerForPermission(permission)
+        return manager.isFirstTime()
+    }
+    
     public static func isAllow(_ permission: SPPermissionType) -> Bool {
         let manager = self.getManagerForPermission(permission)
         return manager.isAuthorized()
@@ -49,6 +54,8 @@ public struct SPPermission {
 fileprivate protocol SPPermissionInterface {
     
     func isAuthorized() -> Bool
+    
+    func isFirstTime() -> Bool
     
     func request(withComlectionHandler complectionHandler: @escaping ()->()?)
 }
@@ -89,6 +96,10 @@ extension SPPermission {
     
     fileprivate struct SPCameraPermission: SPPermissionInterface {
         
+        func isFirstTime() -> Bool {
+            return AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .notDetermined
+        }
+        
         func isAuthorized() -> Bool {
             if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == AVAuthorizationStatus.authorized {
                 return true
@@ -108,6 +119,10 @@ extension SPPermission {
     }
     
     fileprivate struct SPNotificationPermission: SPPermissionInterface {
+        
+        func isFirstTime() -> Bool {
+            return !UIApplication.shared.isRegisteredForRemoteNotifications
+        }
         
         func isAuthorized() -> Bool {
             return UIApplication.shared.isRegisteredForRemoteNotifications
@@ -134,6 +149,10 @@ extension SPPermission {
     
     fileprivate struct SPPhotoLibraryPermission: SPPermissionInterface {
         
+        func isFirstTime() -> Bool {
+            return PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.notDetermined
+        }
+        
         func isAuthorized() -> Bool {
             if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
                 return true
@@ -154,6 +173,10 @@ extension SPPermission {
     
     fileprivate struct SPMicrophonePermission: SPPermissionInterface {
         
+        func isFirstTime() -> Bool {
+            return AVAudioSession.sharedInstance().recordPermission == .undetermined
+        }
+        
         func isAuthorized() -> Bool {
             if AVAudioSession.sharedInstance().recordPermission == .granted {
                 return true
@@ -173,6 +196,10 @@ extension SPPermission {
     
     
     fileprivate struct SPCalendarPermission: SPPermissionInterface {
+        
+        func isFirstTime() -> Bool {
+            return EKEventStore.authorizationStatus(for: EKEntityType.event) == .notDetermined
+        }
         
         func isAuthorized() -> Bool {
             let status = EKEventStore.authorizationStatus(for: EKEntityType.event)
@@ -196,6 +223,14 @@ extension SPPermission {
     }
     
     fileprivate struct SPContactsPermission: SPPermissionInterface {
+        
+        func isFirstTime() -> Bool {
+            if #available(iOS 9.0, *) {
+                return CNContactStore.authorizationStatus(for: .contacts) == .notDetermined
+            } else {
+                return ABAddressBookGetAuthorizationStatus() == .notDetermined
+            }
+        }
         
         func isAuthorized() -> Bool {
             if #available(iOS 9.0, *) {
@@ -238,6 +273,10 @@ extension SPPermission {
     
     fileprivate struct SPRemindersPermission: SPPermissionInterface {
         
+        func isFirstTime() -> Bool {
+            return EKEventStore.authorizationStatus(for: EKEntityType.reminder) == .notDetermined
+        }
+        
         func isAuthorized() -> Bool {
             let status = EKEventStore.authorizationStatus(for: EKEntityType.reminder)
             switch (status) {
@@ -260,6 +299,10 @@ extension SPPermission {
     }
     
     fileprivate struct SPBluetoothPermission: SPPermissionInterface {
+        
+        func isFirstTime() -> Bool {
+            return EKEventStore.authorizationStatus(for: EKEntityType.reminder) == .notDetermined
+        }
         
         func isAuthorized() -> Bool {
             let status = EKEventStore.authorizationStatus(for: EKEntityType.reminder)
@@ -284,6 +327,13 @@ extension SPPermission {
     
     fileprivate struct SPSpeechPermission: SPPermissionInterface {
         
+        func isFirstTime() -> Bool {
+            guard #available(iOS 10.0, *) else {
+                fatalError("ios 10 or higher required")
+            }
+            return SFSpeechRecognizer.authorizationStatus() == .notDetermined
+        }
+        
         func isAuthorized() -> Bool {
             guard #available(iOS 10.0, *) else { return false }
             return SFSpeechRecognizer.authorizationStatus() == .authorized
@@ -304,6 +354,10 @@ extension SPPermission {
     
     fileprivate struct SPMediaLibraryPermission: SPPermissionInterface {
         
+        func isFirstTime() -> Bool {
+            return MPMediaLibrary.authorizationStatus() == .notDetermined
+        }
+        
         func isAuthorized() -> Bool {
             let status = MPMediaLibrary.authorizationStatus()
             if status == .authorized {
@@ -323,6 +377,10 @@ extension SPPermission {
     }
     
     fileprivate struct SPLocationPermission: SPPermissionInterface {
+        
+        func isFirstTime() -> Bool {
+            return  CLLocationManager.authorizationStatus() == .notDetermined
+        }
         
         var type: SPLocationType
         
