@@ -104,15 +104,17 @@ public class SPPermissionDialogController: UIViewController {
             }
         }
         
-        if let permission = permission {
-            SPPermission.request(permission, with: {
-                if SPPermission.isAllow(permission) {
-                    self.delegate?.didAllow?(permission: permission)
+        guard let realPermission = permission else { return }
+        
+        if  SPPermission.isFirstTime(realPermission) { //it's the first time user press the "allow" button
+            SPPermission.request(realPermission, with: {
+                if SPPermission.isAllow(realPermission) {
+                    self.delegate?.didAllow?(permission: realPermission)
                     permissionView?.updateStyle()
                     for permission in self.permissions {
                         if SPPermission.isAllow(permission) {
                             if self.permissions.last == permission {
-                                SPPermissionStyle.Delay.wait(0.2, closure: {
+                                delay(0.2, closure: {
                                     self.hide(withDialog: true)
                                 })
                             }
@@ -122,6 +124,10 @@ public class SPPermissionDialogController: UIViewController {
                     }
                 }
             })
+        } else if !SPPermission.isAllow(realPermission) { //user has denied the request before, so this time just goto the app settings
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
         }
     }
     
