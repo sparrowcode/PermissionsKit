@@ -28,7 +28,6 @@ import EventKit
 import Contacts
 import Speech
 import MediaPlayer
-import HealthKit
 
 public struct SPPermission {
     
