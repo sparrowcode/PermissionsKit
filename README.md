@@ -149,7 +149,7 @@ pod 'SparrowKit'
 ```
 
 ## License
-`SPPermission` is released under the MIT license. Check `LICENSE.md` for details
+`SPPermission` is released under the MIT license. Check `LICENSE.md` (https://github.com/IvanVorobei/SPPermission/blob/master/LICENSE) for details
 
 ## Contact
 If you have any requirements to develop any application or UI, write to me at hello@ivanvorobei.by. I am developing iOS apps and creates designs too. I use `swift` for developing projects. For requesting more functionality, you should create a new issue. 
