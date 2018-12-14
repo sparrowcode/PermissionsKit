@@ -53,4 +53,8 @@ extension SPPermission {
     @objc optional func name(for permission: SPPermissionType) -> String?
     @objc optional func description(for permission: SPPermissionType) -> String?
     @objc optional func image(for permission: SPPermissionType) -> UIImage?
+    @objc optional func deniedTitle(for permission: SPPermissionType) -> String?
+    @objc optional func deniedSubtitle(for permission: SPPermissionType) -> String?
+    @objc optional var cancelTitle: String { get }
+    @objc optional var settingsTitle: String { get }
 }

@@ -131,6 +131,24 @@ public class SPPermissionDialogController: UIViewController {
                             return
                         }
                     }
+                } else {
+                    let alertController = UIAlertController.init(
+                        title:  self.dataSource?.deniedTitle?(for: permission) ?? "Permission denied",
+                        message: self.dataSource?.deniedSubtitle?(for: permission) ?? "Please, go to Settings and allow permissions",
+                        preferredStyle: .alert
+                    )
+                    alertController.addAction(UIAlertAction.init(title: self.dataSource?.cancelTitle ?? "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+                    alertController.addAction(UIAlertAction.init(title: self.dataSource?.settingsTitle ?? "Settings", style: UIAlertAction.Style.default, handler: { (action) in
+                        
+                        UIApplication.shared.open(
+                            URL.init(string: UIApplication.openSettingsURLString)!,
+                            options: [:],
+                            completionHandler: nil
+                        )
+                        
+                    }))
+                    
+                    self.present(alertController)
                 }
             })
         }
