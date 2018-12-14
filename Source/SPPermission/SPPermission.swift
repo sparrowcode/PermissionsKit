@@ -349,10 +349,14 @@ extension SPPermission {
                     return false
                 }
             case .WhenInUse:
-                if status == .authorizedWhenInUse {
+                if status == .authorizedAlways {
                     return true
                 } else {
-                    return false
+                    if status == .authorizedWhenInUse {
+                        return true
+                    } else {
+                        return false
+                    }
                 }
             case .AlwaysWithBackground:
                 if status == .authorizedAlways {
