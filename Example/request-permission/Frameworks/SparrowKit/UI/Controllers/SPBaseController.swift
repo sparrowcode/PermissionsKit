@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPBaseViewController: SPStatusBarManagerViewController {
+public class SPBaseController: SPStatusBarManagerViewController {
     
     var activityIndicatorLayoutWithSafeArea: Bool = true
     let activityIndicatorView = UIActivityIndicatorView()

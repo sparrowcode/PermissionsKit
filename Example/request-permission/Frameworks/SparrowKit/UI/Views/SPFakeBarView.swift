@@ -54,6 +54,21 @@ public class SPFakeBarView: UIView {
         }
     }
     
+    public var closeButton: closeButtonPlace = .none {
+        didSet {
+            self.leftButton.titleLabel?.font = UIFont.system(type: .Regular, size: 17)
+            self.rightButton.titleLabel?.font = UIFont.system(type: .Regular, size: 17)
+            switch self.closeButton {
+            case .left:
+                self.leftButton.titleLabel?.font = UIFont.system(type: .DemiBold, size: 17)
+            case .right:
+                self.rightButton.titleLabel?.font = UIFont.system(type: .DemiBold, size: 17)
+            case .none:
+                break
+            }
+        }
+    }
+    
     public var titleLabel = UILabel.init()
     public var subtitleLabel = UILabel.init()
     public var leftButton = UIButton.init()
@@ -130,6 +145,8 @@ public class SPFakeBarView: UIView {
         self.rightButton.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         self.rightButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -12).isActive = true
         
+        self.closeButton = .none
+        
         self.setContraints()
         self.updateStyle()
     }
@@ -196,6 +213,12 @@ public class SPFakeBarView: UIView {
     private func updateHeight() {
         self.heightConstraint?.constant = self.height
         self.updateConstraints()
+    }
+    
+    public enum closeButtonPlace {
+        case left
+        case right
+        case none
     }
 }
 

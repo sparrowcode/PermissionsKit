@@ -19,22 +19,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import UIKit
+import Foundation
 
-public struct SPConstraints {
+extension Date {
     
-    static func setEqualSize(_ view: UIView, superVuew: UIView) {
-        view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: superVuew.topAnchor),
-            view.leftAnchor.constraint(equalTo: superVuew.leftAnchor),
-            view.rightAnchor.constraint(equalTo: superVuew.rightAnchor),
-            view.bottomAnchor.constraint(equalTo: superVuew.bottomAnchor)
-        ])
+    func format(mask: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = mask
+        return dateFormatter.string(from: self)
     }
     
-    private init() {}
+    static func create(from value: String) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy HH:mm"
+        let date = formatter.date(from: value)
+        return date
+    }
 }
-
-
-       
