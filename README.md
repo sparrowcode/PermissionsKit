@@ -106,6 +106,10 @@ If you want to change the text, you need to implement the `SPPermissionDialogDat
     @objc optional func name(for permission: SPPermissionType) -> String?
     @objc optional func description(for permission: SPPermissionType) -> String?
     @objc optional func image(for permission: SPPermissionType) -> UIImage?
+    @objc optional func deniedTitle(for permission: SPPermissionType) -> String?
+    @objc optional func deniedSubtitle(for permission: SPPermissionType) -> String?
+    @objc optional var cancelTitle: String { get }
+    @objc optional var settingsTitle: String { get }
 }
 ```
 
@@ -137,7 +141,7 @@ I will be glad to your participation in the project. If you want to add new perm
 Here I would like to offer you my other projects
 
 ### SPStorkController
-I am create [SPStorkController](https://github.com/IvanVorobei/SPStorkController). It is modal controller as in mail or Apple music application. Similar animation and transition. You can see it on github and simple integrate to your project:
+I am create [SPStorkController](https://github.com/IvanVorobei/SPStorkController). It is modal controller as in mail or Apple music application. Similar animation and transition. You can see example of use controller in app [in AppStore](https://itunes.apple.com/app/id1446635818)
 
 <img src="https://rawcdn.githack.com/IvanVorobei/SPStorkController/c66764082c0d9bf11d0bd46d5fa458edb62044fe/Resources/gif-mockup - 3.gif" width="500">
 

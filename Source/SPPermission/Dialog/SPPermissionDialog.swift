@@ -38,11 +38,13 @@ extension SPPermission {
 }
 
 @objc public protocol SPPermissionDialogDelegate: class {
+    
     @objc optional func didHide()
     @objc optional func didAllow(permission: SPPermissionType)
 }
 
 @objc public protocol SPPermissionDialogDataSource: class {
+    
     @objc optional var dialogTitle: String { get }
     @objc optional var dialogSubtitle: String { get }
     @objc optional var dialogComment: String { get }
