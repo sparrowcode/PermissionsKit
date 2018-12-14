@@ -130,6 +130,16 @@ If you want add or remove close button (for close dialog, need swipe it), you ne
 
 In the project you can find an example for usage `SPPermissionDialogDataSource`
 
+## Purpose String in Info.plist
+
+SPPermssion uses many permissions in one library, you need to add some strings to the `Info.plist` file with the description. List of keys:
+
+- NSContactsUsageDescription
+- NSCalendarsUsageDescription
+- NSMicrophoneUsageDescription
+- NSAppleMusicUsageDescription
+- NSSpeechRecognitionUsageDescription
+
 ## Contribution
 I will be glad to your participation in the project. If you want to add new permissions, make a pull request. You can ignore adding an icon, I will add it myself. If you find errors in the project, you can create new [issue](https://github.com/IvanVorobei/SPPermission/issues) or fix and make a pull request
 
