@@ -108,4 +108,20 @@ extension ViewController: SPPermissionDialogDataSource {
     func image(for permission: SPPermissionType) -> UIImage? {
         return nil // default icon
     }
+    
+    func deniedTitle(for permission: SPPermissionType) -> String? {
+        return "Permission denied"
+    }
+    
+    func deniedSubtitle(for permission: SPPermissionType) -> String? {
+        return "Please, go to Settings and allow permissions"
+    }
+    
+    var cancelTitle: String {
+        return "Cancel"
+    }
+    
+    var settingsTitle: String {
+        return "Settings"
+    }
 }

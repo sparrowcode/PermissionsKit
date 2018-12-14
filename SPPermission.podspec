@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "SPPermission"
-  s.version       = "2.4.2"
+  s.version       = "2.4.4"
   s.summary       = "Simple request permissions with dialog alert"
   s.homepage      = "https://github.com/IvanVorobei/RequestPermission"
   s.source        = { :git => "https://github.com/IvanVorobei/RequestPermission.git", :tag => s.version }
