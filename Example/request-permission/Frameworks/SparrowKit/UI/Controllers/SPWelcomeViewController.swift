@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPWelcomeViewController: SPBaseViewController {
+class SPWelcomeViewController: SPBaseController {
     
     let imageView = SPDownloadingImageView()
     let titleLabel = UILabel()

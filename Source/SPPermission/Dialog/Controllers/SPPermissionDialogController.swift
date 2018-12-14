@@ -148,7 +148,7 @@ public class SPPermissionDialogController: UIViewController {
                         
                     }))
                     
-                    self.present(alertController)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             })
         }

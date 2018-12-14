@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPProposeViewController: SPBaseViewController {
+class SPProposeViewController: SPBaseController {
     
     private let data: Data
     internal let areaView = AreaView()

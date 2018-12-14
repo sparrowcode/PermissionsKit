@@ -24,6 +24,10 @@ import UIKit
 
 extension String {
     
+    var digits: String {
+        return components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+    }
+    
     mutating func dropLast(substring: String) {
         if self.hasSuffix(substring) {
             self = String(dropLast(substring.count))
@@ -68,5 +72,9 @@ extension String {
     
     mutating func replace(_ replacingString: String, with newString: String) {
         self = self.replacingOccurrences(of: replacingString, with: newString)
+    }
+    
+    func replace(_ replacingString: String, with newString: String) -> String {
+        return self.replacingOccurrences(of: replacingString, with: newString)
     }
 }

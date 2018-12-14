@@ -196,7 +196,6 @@ public class SPCollectionViewLayout: UICollectionViewFlowLayout {
         
         if isAllowInsertAnimation {
             if self.insertIndexPaths.contains(itemIndexPath) {
-                //attributes?.center = CGPoint.init(x: attributes?.center.x ?? 0, y: 40)
                 attributes?.alpha = 0
                 attributes?.zIndex = 0
                 attributes?.transform = CGAffineTransform.init(scaleX: self.minimumScaleFactor, y: self.minimumScaleFactor)
@@ -207,11 +206,10 @@ public class SPCollectionViewLayout: UICollectionViewFlowLayout {
     }
     
     override public func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        var attributes: UICollectionViewLayoutAttributes?
+
+        let attributes: UICollectionViewLayoutAttributes? = super.finalLayoutAttributesForDisappearingItem(at: itemIndexPath)
         
         if self.deleteIndexPaths.contains(itemIndexPath) {
-            
-            attributes = self.layoutAttributesForItem(at: itemIndexPath)
             attributes?.alpha = 0
             attributes?.zIndex = 0
             attributes?.transform3D = CATransform3DScale(CATransform3DIdentity, self.minimumScaleFactor, self.minimumScaleFactor, 1)
@@ -229,9 +227,19 @@ public class SPCollectionViewLayout: UICollectionViewFlowLayout {
         collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         
         if cellSideRatio == nil {
+            var height = collectionView.bounds.size.height * self.heightFactor
+            if height > self.maxHeight {
+                height = self.maxHeight
+            }
+            
+            var width = collectionView.bounds.size.width * self.widthFactor
+            if width > self.maxWidth {
+                width = self.maxWidth
+            }
+            
             self.itemSize = CGSize.init(
-                width: collectionView.bounds.size.width * self.widthFactor,
-                height: collectionView.bounds.size.height * self.heightFactor
+                width: width,
+                height: height
             )
         } else {
             self.itemSize = SPLayout.sizeWith(

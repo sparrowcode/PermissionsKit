@@ -98,11 +98,11 @@ extension UIButton {
     }
     
     func setAnimatableText(_ text: String, withComplection completion: (() -> Void)! = {}) {
-        SPAnimation.animate(0.2, animations: {
+        SPAnimation.animate(0.3, animations: {
             self.titleLabel?.alpha = 0
         }, withComplection: {
             self.setTitle(text, for: .normal)
-            SPAnimation.animate(0.2, animations: {
+            SPAnimation.animate(0.3, animations: {
                 self.titleLabel?.alpha = 1
             }, withComplection: {   
                 completion()
