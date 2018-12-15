@@ -24,11 +24,6 @@ Or via CocoaPods:
 pod 'SPPermission'
 ```
 
-and import library in class:
-```swift
-import SPPermission
-```
-
 ## How to use
 Call `SPPermission` and use func `request()`. Also passed controller, on which dialog should present:
 
