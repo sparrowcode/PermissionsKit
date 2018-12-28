@@ -7,11 +7,11 @@ Preview GIF loading `4mb`. Please, wait
 
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/fb53d20f152a3e76e053e6af529306611fb794f0/resources/request-permission - mockup_preview.gif" width="500">
 
-<img src="https://rawcdn.githack.com/IvanVorobei/SPPermission/fa9aa2eb528e4bf880414d28823c27339a7ecb55/Recource/request-permission - shop.svg"/>
+<img src="https://rawcdn.githack.com/IvanVorobei/SPPermission/206a6d7970ea03c30903f6bba96129556a59358f/Recource/request-permission - shop.svg"/>
 
 I have a store where I sell applications and modules for Xcode projects. You can find ready-made applications or custom animations. I regularly update the code. visit my website: [xcode-shop.com](https://xcode-shop.com). In website you can find preview and for some items link in AppStore
 
-<img src="https://rawcdn.githack.com/IvanVorobei/SPPermission/fa9aa2eb528e4bf880414d28823c27339a7ecb55/Recource/request-permission - shop.svg"/>
+<img src="https://rawcdn.githack.com/IvanVorobei/SPPermission/206a6d7970ea03c30903f6bba96129556a59358f/Recource/request-permission - shop.svg"/>
 
 ## Requirements
 Swift 4.2. Ready for use on iOS 10+
