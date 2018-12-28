@@ -9,7 +9,7 @@ Preview GIF loading `4mb`. Please, wait
 
 <img src="https://rawcdn.githack.com/IvanVorobei/SPPermission/1b658cd8943cef1687c37789d6c410a613868c36/Recource/request-permission - shop.svg"/>
 
-I have a store where I sell applications and modules for Xcode projects. You can find ready-made applications or custom animations. I regularly update the code. Visit my website for see all items for sale: [xcode-shop.com](https://xcode-shop.com). In website you can find preview and for some items link in AppStore
+I have a store where I sell applications and modules for Xcode projects. You can find source of applications or custom animations / UI. I regularly update the code. Visit my website for see all items for sale: [xcode-shop.com](https://xcode-shop.com). In website you can find preview and for some items link in AppStore
 
 <img src="https://rawcdn.githack.com/IvanVorobei/SPPermission/1b658cd8943cef1687c37789d6c410a613868c36/Recource/request-permission - shop.svg"/>
 
@@ -138,6 +138,12 @@ SPPermssion uses many permissions in one library, you need to add some strings t
 ## Contribution
 I will be glad to your participation in the project. If you want to add new permissions, make a pull request. You can ignore adding an icon, I will add it myself. If you find errors in the project, you can create new [issue](https://github.com/IvanVorobei/SPPermission/issues) or fix and make a pull request
 
+## YouTube Tutorials
+
+I have youtube channel where I publish videos about Xcode and design. You can see how to use `SPStorkController` and how customize it in this video:
+
+[![Tutorial on YouTube](https://rawcdn.githack.com/IvanVorobei/SPStorkController/03327b014f2376ca7151dd5aa90b794a2643600e/Recource/spstork-preivew.jpg)](https://youtu.be/1mDdX7fQRv4)
+
 ## For Russian-speaking users
 Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать статью [Обновление библиотеки SPPermission](https://habr.com/post/430886/), чтобы больше узнать о проекте. Taк же вы можете прочитать статью [Получил 1.2K звезд на GitHub с ужасной архитектурой. Как?](https://habr.com/post/326620/) о первой версии проекта и работе с архитектурой
 
@@ -163,8 +169,3 @@ pod 'SparrowKit'
 ## Contact
 If you have any requirements to develop any application or UI, write to me at hello@ivanvorobei.by. I am developing iOS apps and creates designs too. I use `swift` for developing projects. For requesting more functionality, you should create a new issue. 
 Here are my apps in AppStore: [first account](https://itunes.apple.com/us/developer/polina-zubarik/id1434528595) & [second account](https://itunes.apple.com/us/developer/mikalai-varabei/id1435792103)
-
-## Xcode Shop
-I have a store where I sell applications and modules for Xcode projects. You can find ready-made applications or custom animations. I regularly update the code. Visit my website for see all items for sale: [xcode-shop.com](https://xcode-shop.com). In website you can find preview and for some items link in AppStore
-
-
