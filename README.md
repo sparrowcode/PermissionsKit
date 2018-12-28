@@ -152,9 +152,11 @@ I have youtube channel where I publish videos about Xcode and design. You can se
 Here I would like to offer you my other projects
 
 ### SPStorkController
-I am create [SPStorkController](https://github.com/IvanVorobei/SPStorkController). It is modal controller as in mail or Apple music application. Similar animation and transition. You can see example of use controller in app [in AppStore](https://itunes.apple.com/app/id1446635818) or buy source of this app in [xcode-shop.com](https://xcode-shop.com)
+I am create [SPStorkController](https://github.com/IvanVorobei/SPStorkController). It is modal controller as in mail or Apple music application. Similar animation and transition. You can see example of use controller in app [in AppStore](https://itunes.apple.com/app/id1446635818)
 
 <img src="https://rawcdn.githack.com/IvanVorobei/SPStorkController/c66764082c0d9bf11d0bd46d5fa458edb62044fe/Resources/gif-mockup - 3.gif" width="500">
+
+You can buy source code of this app in [xcode-shop.com](https://xcode-shop.com)
 
 ### SparrowKit
 The `SPPermission` in the past was part of [SparrowKit](https://github.com/IvanVorobei/SparrowKit) library. In library you can find many useful extensions & classes. For install via CocoaPods use:
