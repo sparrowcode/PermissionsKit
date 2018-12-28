@@ -138,7 +138,7 @@ SPPermssion uses many permissions in one library, you need to add some strings t
 ## Contribution
 I will be glad to your participation in the project. If you want to add new permissions, make a pull request. You can ignore adding an icon, I will add it myself. If you find errors in the project, you can create new [issue](https://github.com/IvanVorobei/SPPermission/issues) or fix and make a pull request
 
-## YouTube Tutorials
+## YouTube Video
 
 I have youtube channel where I publish videos about Xcode and design. You can see how I am develop native design for `SPPermission` dialog view:
 
