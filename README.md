@@ -9,7 +9,7 @@ Preview GIF loading `4mb`. Please, wait
 
 <img src="https://rawcdn.githack.com/IvanVorobei/SPPermission/fa9aa2eb528e4bf880414d28823c27339a7ecb55/Recource/request-permission - shop.svg"/>
 
-I have a store where I sell applications and modules for xcode projects. You can find ready-made applications or custom animations. I regularly update the code. visit my website: [xcode-shop.com](https://xcode-shop.com)
+I have a store where I sell applications and modules for Xcode projects. You can find ready-made applications or custom animations. I regularly update the code. visit my website: [xcode-shop.com](https://xcode-shop.com). In website you can find preview and for some items link in AppStore
 
 <img src="https://rawcdn.githack.com/IvanVorobei/SPPermission/fa9aa2eb528e4bf880414d28823c27339a7ecb55/Recource/request-permission - shop.svg"/>
 
