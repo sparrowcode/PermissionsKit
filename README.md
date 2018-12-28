@@ -7,11 +7,11 @@ Preview GIF loading `4mb`. Please, wait
 
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/fb53d20f152a3e76e053e6af529306611fb794f0/resources/request-permission - mockup_preview.gif" width="500">
 
-<img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/6fcd9bdb50a99cea358294999e161dffe55be46f/resources/request-permission - donate.svg"/>
+<img src="https://rawcdn.githack.com/IvanVorobei/SPPermission/fa9aa2eb528e4bf880414d28823c27339a7ecb55/Recource/request-permission - shop.svg"/>
 
-The project is absolutely free, but but it takes time to support and update it. Your support is very motivating and very important. I often receive emails asking me to update or add functionality. [Small donate](https://money.yandex.ru/to/410012745748312) for a cup of coffee helps to develop the project and make it better
+I have a store where I sell applications and modules for xcode projects. You can find ready-made applications or custom animations. I regularly update the code. visit my website: [xcode-shop.com](https://xcode-shop.com)
 
-<img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/6fcd9bdb50a99cea358294999e161dffe55be46f/resources/request-permission - donate.svg"/>
+<img src="https://rawcdn.githack.com/IvanVorobei/SPPermission/fa9aa2eb528e4bf880414d28823c27339a7ecb55/Recource/request-permission - shop.svg"/>
 
 ## Requirements
 Swift 4.2. Ready for use on iOS 10+
