@@ -140,7 +140,7 @@ I would appreciate your participation in the project. If you want to add new per
 
 ## YouTube Video
 
-I have YouTube channel where I publish videos about Xcode and design. You can see how I develop native design for `SPPermission` dialog view:
+I have [YouTube channel](https://www.youtube.com/channel/UCNUGzZfcOyX4YpP36VzeZ6A) where I publish videos about Xcode and Design. You can see how I develop native design for `SPPermission` dialog view:
 
 [![Timelaps on YouTube](https://rawcdn.githack.com/IvanVorobei/SPPermission/832efb7929d7237888e0ee7a7f05a2e6e0e29e6f/Recource/sppermission-design-preivew.jpg)](https://youtu.be/1mDdX7fQRv4)
 
