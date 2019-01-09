@@ -70,7 +70,7 @@ To track events of hiding & allowing permissions associated with `SPPermission`,
 
 ```swift
 @objc public protocol SPPermissionDialogDelegate: class {
-    
+
     @objc optional func didHide()
     @objc optional func didAllow(permission: SPPermissionType)
 }
@@ -98,6 +98,7 @@ If you want to change the text, you need to implement `SPPermissionDialogDataSou
     @objc optional var allowedTitle: String { get }
     @objc optional var bottomComment: String { get }
     @objc optional var showCloseButton: Bool { get }
+    @objc optional var dragToDiscard: Bool { get }
     @objc optional func name(for permission: SPPermissionType) -> String?
     @objc optional func description(for permission: SPPermissionType) -> String?
     @objc optional func image(for permission: SPPermissionType) -> UIImage?
@@ -119,7 +120,7 @@ SPPermission.Dialog.request(
 )
 ```
 
-If you want to add or remove the close button (without the button you’ll have to swipe the dialog to close it), you need to override parameter `showCloseButton`. To see what it looks like, see the picture below:
+If you want to inhibite drap gesture to discard the dialog view you need to override `dragToDiscard` parameter, and if you want to add or remove the close button (without the button you’ll have to swipe the dialog to close it), you need to override parameter `showCloseButton`. To see what it looks like, see the picture below:
 
 <img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/b3e613295b73be36c8a3d35126d1f7015ef432a8/resources/request-permission - close button.png"/>
 
@@ -169,5 +170,5 @@ pod 'SparrowKit'
 `SPPermission` is released under the MIT license. Check `LICENSE.md` for details.
 
 ## Contact
-If you need any application or UI to be developed, message me at hello@ivanvorobei.by. I develop iOS apps and create designs, too. I use `swift` for development. To request more functionality, you should create a new issue. 
+If you need any application or UI to be developed, message me at hello@ivanvorobei.by. I develop iOS apps and create designs, too. I use `swift` for development. To request more functionality, you should create a new issue.
 Here are my apps in AppStore: [first account](https://itunes.apple.com/us/developer/polina-zubarik/id1434528595) & [second account](https://itunes.apple.com/us/developer/mikalai-varabei/id1435792103).
