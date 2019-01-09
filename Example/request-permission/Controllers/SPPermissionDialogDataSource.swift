@@ -23,6 +23,10 @@ import UIKit
 
 extension ViewController: SPPermissionDialogDataSource {
     
+    var dragToDiscard: Bool {
+        return true
+    }
+    
     var showCloseButton: Bool {
         return false
     }
