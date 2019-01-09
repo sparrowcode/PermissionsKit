@@ -95,9 +95,7 @@ public class SPPermissionDialogController: UIViewController {
         self.view.addSubview(self.areaView)
         self.areaView.layer.anchorPoint = CGPoint.init(x: 0.5, y: 0.5)
         
-        let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(self.handleGesture(sender:)))
-        panGesture.maximumNumberOfTouches = 1
-        self.areaView.addGestureRecognizer(panGesture)
+        self.setupPanGesture()
         self.animator = UIDynamicAnimator(referenceView: self.view)
         
         self.updateLayout(with: self.view.frame.size)
@@ -227,6 +225,16 @@ public class SPPermissionDialogController: UIViewController {
         coordinator.animate(alongsideTransition: { (contex) in
             self.updateLayout(with: size)
         }, completion: nil)
+    }
+    
+    private func setupPanGesture() {
+        if let dragToDiscard = self.dataSource?.dragToDiscard,
+            !dragToDiscard {
+            return
+        }
+        let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(self.handleGesture(sender:)))
+        panGesture.maximumNumberOfTouches = 1
+        self.areaView.addGestureRecognizer(panGesture)
     }
     
     private func updateLayout(with size: CGSize) {
