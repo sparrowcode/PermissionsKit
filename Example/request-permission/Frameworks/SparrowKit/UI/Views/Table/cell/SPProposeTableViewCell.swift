@@ -37,7 +37,7 @@ class SPProposeTableViewCell: UITableViewCell {
         
         self.button.titleLabel?.font = UIFont.system(type: .DemiBold, size: 14)
         self.button.titleLabel?.numberOfLines = 0
-        self.button.secondColor = SPNativeStyleKit.Colors.blue
+        self.button.secondColor = SPNativeColors.blue
         self.button.baseColor = UIColor.white
         self.button.style = .base
         self.button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.center

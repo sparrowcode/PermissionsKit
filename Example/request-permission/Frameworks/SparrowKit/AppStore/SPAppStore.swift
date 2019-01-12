@@ -56,6 +56,12 @@ struct SPAppStore {
         }
     }
     
+    static func requestReview() {
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        }
+    }
+    
     static func isUpdateAvailable(completion: @escaping (Bool)->()) {
         
         guard let info = Bundle.main.infoDictionary,
@@ -128,7 +134,6 @@ extension String {
     }
 }
 
-// Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
 	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

@@ -21,23 +21,38 @@
 
 import UIKit
 
-public class SPCollectionContainerCell<ContentView: UIView>: UICollectionViewCell {
+public class SPController: SPStatusBarManagerController {
     
-    let view = ContentView.init()
-    var currentIndexPath: IndexPath?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.backgroundColor = UIColor.clear
-        self.addSubview(view)
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+        self.updateLayout(with: self.view.frame.size)
     }
     
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { (contex) in
+            self.updateLayout(with: size)
+        }, completion: nil)
     }
     
-    override public func layoutSubviews() {
-        super.layoutSubviews()
-        self.view.setEqualsFrameFromBounds(self)
+    @available(iOS 11.0, *)
+    override public func viewLayoutMarginsDidChange() {
+        super.viewLayoutMarginsDidChange()
+        self.updateLayout(with: self.view.frame.size)
+    }
+    
+    func updateLayout(with size: CGSize) {}
+    
+    func addHideButton(title: String) {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(
+            title: title,
+            style: UIBarButtonItem.Style.done,
+            target: self,
+            action: #selector(self.dismiss(sender:))
+        )
+    }
+    
+    @objc func dismiss(sender: Any) {
+        self.dismiss()
     }
 }

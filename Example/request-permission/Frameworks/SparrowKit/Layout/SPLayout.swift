@@ -23,20 +23,30 @@ import UIKit
 
 struct SPLayout {
     
-    static func sizeWith(widthFactor: CGFloat, maxWidth: CGFloat, heightFactor: CGFloat, maxHeight: CGFloat, relativeSideFactor: CGFloat, from relativeSize: CGSize) -> CGSize {
+    static func sizeWith(widthFactor: CGFloat, maxWidth: CGFloat?, heightFactor: CGFloat, maxHeight: CGFloat?, relativeSideFactor: CGFloat?, from size: CGSize) -> CGSize {
         
-        var widthArea = relativeSize.width * widthFactor
-        var heightArea = relativeSize.height * heightFactor
+        var widthArea = size.width * widthFactor
+        var heightArea = size.height * heightFactor
         
-        widthArea.setIfMore(when: maxWidth)
-        heightArea.setIfMore(when: maxHeight)
+        if let maxWidth = maxWidth {
+            widthArea.setIfMore(when: maxWidth)
+        }
+        
+        if let maxHeight = maxHeight {
+            heightArea.setIfMore(when: maxHeight)
+        }
         
         var prepareWidth = widthArea
-        var prepareHeight = widthArea / relativeSideFactor
-        if prepareHeight > heightArea {
-            prepareHeight = heightArea
-            prepareWidth = heightArea * relativeSideFactor
+        var prepareHeight = heightArea
+        
+        if let relativeSideFactor = relativeSideFactor {
+            prepareHeight = widthArea / relativeSideFactor
+            if prepareHeight > heightArea {
+                prepareHeight = heightArea
+                prepareWidth = heightArea * relativeSideFactor
+            }
         }
+        
         return CGSize.init(width: prepareWidth, height: prepareHeight)
     }
     

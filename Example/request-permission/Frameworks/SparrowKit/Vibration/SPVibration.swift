@@ -21,30 +21,14 @@
 
 import UIKit
 
-class SPVibration {
+struct SPVibration {
     
-    private let generator = UINotificationFeedbackGenerator()
-    
-    func prepare() {
-        self.generator.prepare()
-    }
-    
-    func impact(_ mode: Mode) {
-        
-        switch mode {
-        case .success:
-            self.generator.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.success)
-        case .warning:
-            self.generator.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.warning)
-        case .error:
-            self.generator.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.error)
-        }
-    }
+    private init() {}
 }
 
 extension SPVibration {
     
-    static func impact(_ mode: Mode) {
+    static func impact(system mode: SystemMode) {
         let generator = UINotificationFeedbackGenerator()
         
         switch mode {
@@ -72,7 +56,7 @@ extension SPVibration {
         }
     }
     
-    enum Mode {
+    enum SystemMode {
         case error
         case success
         case warning

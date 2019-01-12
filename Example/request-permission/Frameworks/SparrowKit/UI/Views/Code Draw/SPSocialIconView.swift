@@ -29,7 +29,7 @@ class SPSocialIconView: UIView {
         }
     }
     
-    var color = SPNativeStyleKit.Colors.blue {
+    var color = SPNativeColors.blue {
         didSet {
             self.setNeedsDisplay()
         }

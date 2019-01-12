@@ -21,25 +21,24 @@
 
 import UIKit
 
-struct SPLaunch {
+extension SPApp {
     
-    static func run() {
-        self.count += 1
-    }
-    
-    static var count: Int {
-        get {
-            return UserDefaults.standard.value(forKey: "SPLaunchCount") as? Int ?? 0
+    public struct Badge {
+        
+        static var number: Int {
+            get {
+                return UIApplication.shared.applicationIconBadgeNumber
+            }
+            set {
+                UIApplication.shared.applicationIconBadgeNumber = newValue
+            }
         }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "SPLaunchCount")
+        
+        static func reset() {
+            UIApplication.shared.applicationIconBadgeNumber = 0
         }
+        
+        private init() {}
     }
-    
-    static var isFirstOpen: Bool {
-        return (self.count == 1) || (self.count == 0)
-    }
-    
-    
-    private init() {}
 }
+

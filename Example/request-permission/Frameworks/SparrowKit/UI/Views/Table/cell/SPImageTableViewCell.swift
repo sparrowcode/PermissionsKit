@@ -79,7 +79,7 @@ class SPImageTableViewCell: SPTableViewCell {
         self.subtitleLabel.numberOfLines = 3
         self.subtitleLabel.font = UIFont.system(type: UIFont.BoldType.Regular, size: 15)
         self.subtitleLabel.textAlignment = .left
-        self.subtitleLabel.textColor = SPNativeStyleKit.Colors.gray
+        self.subtitleLabel.textColor = SPNativeColors.gray
         self.contentView.addSubview(self.subtitleLabel)
         self.subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.subtitleLabel.leadingAnchor.constraint(equalTo:

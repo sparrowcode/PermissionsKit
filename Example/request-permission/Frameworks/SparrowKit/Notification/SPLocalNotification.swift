@@ -29,7 +29,7 @@ struct SPLocalNotification {
         let content = UNMutableNotificationContent()
         content.body = body
         content.title = title ?? ""
-        content.badge = NSNumber(value: SPBadge.number + 1)
+        content.badge = NSNumber(value: 1)
         content.sound = UNNotificationSound.default
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
@@ -55,7 +55,7 @@ struct SPLocalNotification {
         let content = UNMutableNotificationContent()
         content.body = body
         content.title = title ?? ""
-        content.badge = NSNumber(value: SPBadge.number + 1)
+        content.badge = NSNumber(value: 1)
         content.sound = UNNotificationSound.default
         
         let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)

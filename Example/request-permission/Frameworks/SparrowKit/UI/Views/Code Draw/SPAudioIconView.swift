@@ -29,7 +29,7 @@ class SPAudioIconView: UIView {
         }
     }
     
-    var color = SPNativeStyleKit.Colors.white {
+    var color = SPNativeColors.white {
         didSet {
             self.setNeedsDisplay()
         }

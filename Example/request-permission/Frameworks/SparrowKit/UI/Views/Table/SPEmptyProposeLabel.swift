@@ -37,7 +37,7 @@ class SPEmptyProposeLabel: UILabel {
     private func commonInit() {
         self.setCenteringAlignment()
         self.font = UIFont.system(type: .Regular, size: 14)
-        self.textColor = SPNativeStyleKit.Colors.gray
+        self.textColor = SPNativeColors.gray
     }
     
     required init?(coder aDecoder: NSCoder) {

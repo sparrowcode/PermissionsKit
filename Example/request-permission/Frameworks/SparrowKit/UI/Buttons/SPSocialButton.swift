@@ -75,8 +75,8 @@ class SPSocialButton: UIButton {
     fileprivate func commonInit() {
         self.iconView.isUserInteractionEnabled = false
         self.addSubview(self.iconView)
-        self.backgroundColor = SPNativeStyleKit.Colors.blue
-        self.iconView.color = SPNativeStyleKit.Colors.white
+        self.backgroundColor = SPNativeColors.blue
+        self.iconView.color = SPNativeColors.white
     }
     
     override func layoutSubviews() {

@@ -36,7 +36,6 @@ public struct SPAudio {
     private init() {}
 }
 
-// Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
 	return input.rawValue
 }

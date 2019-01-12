@@ -32,7 +32,7 @@ extension UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func wrapToNavigationController(statusBar: SPStatusBar = .dark) -> UINavigationController {
+    public func wrapToNavigationController(statusBar: SPStatusBar = .dark) -> UINavigationController {
         let controller = SPStatusBarManagerNavigationController(rootViewController: self)
         controller.statusBar = statusBar
         return controller

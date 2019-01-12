@@ -59,7 +59,7 @@ class SPDotButton: SPButton {
     
     override func commonInit() {
         super.commonInit()
-        self.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        self.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         for _ in 0...2 {
             let dotView = UIView()
             dotView.isUserInteractionEnabled = false

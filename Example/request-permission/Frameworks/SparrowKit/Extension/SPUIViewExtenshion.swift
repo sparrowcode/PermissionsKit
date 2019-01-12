@@ -34,20 +34,17 @@ public extension UIView {
 
 public extension UIView {
     
-    var topSafeArea: CGFloat {
-        var topSafeArea: CGFloat = 0
+    var safeArea: UIEdgeInsets {
         if #available(iOS 11.0, *) {
-            topSafeArea = self.safeAreaInsets.top
+            return self.safeAreaInsets
+        } else{
+            return UIEdgeInsets.zero
         }
-        return topSafeArea
     }
     
-    var bottomSafeArea: CGFloat {
-        var bottomSafeArea: CGFloat = 0
-        if #available(iOS 11.0, *) {
-            bottomSafeArea = self.safeAreaInsets.bottom
-        }
-        return bottomSafeArea
+    func set(width: CGFloat, height: CGFloat) {
+        self.setHeight(height)
+        self.setWidth(width)
     }
     
     func setHeight(_ height: CGFloat) {
@@ -82,10 +79,10 @@ public extension UIView {
         if self.superview == nil { return }
         self.frame = CGRect.init(origin: CGPoint.zero, size: self.superview!.frame.size)
         if customWidth != nil {
-            self.frame = CGRect.init(origin: CGPoint.zero, size: CGSize.init(width: customWidth!, height: self.frame.height))
+            self.frame = CGRect.init(origin: CGPoint.zero, size: CGSize.init(width: customWidth!, height: self.superview!.frame.height))
         }
         if customHeight != nil {
-            self.frame = CGRect.init(origin: CGPoint.zero, size: CGSize.init(width: self.frame.width, height: customHeight!))
+            self.frame = CGRect.init(origin: CGPoint.zero, size: CGSize.init(width: self.superview!.frame.width, height: customHeight!))
         }
     }
     
@@ -153,7 +150,7 @@ public extension UIView {
         let gradeView = UIView.init()
         gradeView.alpha = 0
         self.addSubview(gradeView)
-        SPConstraints.setEqualSize(gradeView, superVuew: self)
+        SPConstraints.setEqualSizeSuperview(for: gradeView)
         gradeView.alpha = alpha
         gradeView.backgroundColor = color
         return gradeView

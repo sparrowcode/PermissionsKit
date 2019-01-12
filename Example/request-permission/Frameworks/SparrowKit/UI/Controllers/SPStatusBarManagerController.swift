@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPStatusBarManagerViewController: UIViewController {
+public class SPStatusBarManagerController: UIViewController {
     
     var statusBar: SPStatusBar = .dark {
         didSet {
@@ -57,7 +57,7 @@ public class SPStatusBarManagerViewController: UIViewController {
     }
 }
 
-public class SPStatusBarManagerTableViewController: UITableViewController {
+public class SPStatusBarManagerTableController: UITableViewController {
     
     var statusBar: SPStatusBar = .dark {
         didSet {            
