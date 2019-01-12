@@ -1,4 +1,4 @@
-<img src="https://rawcdn.githack.com/IvanVorobei/SPPermission/730036c7122db4b68808655be232971090e01ed6/Recources/request-permission - baner.svg"/>
+<img src="https://rawcdn.githack.com/IvanVorobei/SPPermission/master/Recources/request-permission - baner.svg"/>
 
 ## About
 This project is about managing permissions with customizable visual effects. Beautiful dialog increases chance of approval (which is important when we request notification). Simple control of this module saves you hours of development. You can start using this project with just two lines of code and easy customization! You can watch [how I design UI](https://youtu.be/1mDdX7fQRv4) and [how to use pod tutorial](https://youtu.be/viFDunOdyBg) on YouTube.
