@@ -130,6 +130,7 @@ public class SPPermissionDialogController: UIViewController {
                         }
                     }
                 } else {
+                    self.delegate?.didDenied?(permission: permission)
                     let alertController = UIAlertController.init(
                         title:  self.dataSource?.deniedTitle?(for: permission) ?? "Permission denied",
                         message: self.dataSource?.deniedSubtitle?(for: permission) ?? "Please, go to Settings and allow permissions",
@@ -179,8 +180,14 @@ public class SPPermissionDialogController: UIViewController {
                 SPPermissionStyle.Delay.wait(0.2, closure: {
                     SPPermissionStyle.Animation.base(0.3, animations: {
                         self.bottomLabel.alpha = 1
-                        if self.dataSource?.showCloseButton ?? false {
-                            self.closeButton.alpha = 1
+                        if let showCloseButton = self.dataSource?.showCloseButton {
+                            if showCloseButton {
+                                self.closeButton.alpha = 1
+                            }
+                        } else {
+                            if !(self.dataSource?.dragEnabled ?? true) {
+                                self.closeButton.alpha = 1
+                            }
                         }
                     })
                 })
@@ -228,17 +235,19 @@ public class SPPermissionDialogController: UIViewController {
     }
     
     private func setupPanGesture() {
-        if let dragToDiscard = self.dataSource?.dragToDiscard,
-            !dragToDiscard {
-            return
+        if (self.dataSource?.dragEnabled ?? true) {
+            let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(self.handleGesture(sender:)))
+            panGesture.maximumNumberOfTouches = 1
+            self.areaView.addGestureRecognizer(panGesture)
+        } else {
+            let tapGester = UITapGestureRecognizer.init(target: self, action: #selector(self.handleTap))
+            tapGester.cancelsTouchesInView = false
+            self.view.addGestureRecognizer(tapGester)
         }
-        let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(self.handleGesture(sender:)))
-        panGesture.maximumNumberOfTouches = 1
-        self.areaView.addGestureRecognizer(panGesture)
     }
     
     private func updateLayout(with size: CGSize) {
-        animator.removeAllBehaviors()
+        self.animator.removeAllBehaviors()
         
         self.closeButton.frame = CGRect.init(x: 0, y: 0, width: 35, height: 35)
         self.closeButton.frame.origin.x = size.width - 27 - self.closeButton.frame.width
@@ -325,6 +334,10 @@ public class SPPermissionDialogController: UIViewController {
                 self.hide(withDialog: false)
             }
         }
+    }
+    
+    @objc func handleTap() {
+        self.hide(withDialog: true)
     }
     
     //MARK: - other
