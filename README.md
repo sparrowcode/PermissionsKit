@@ -158,7 +158,7 @@ I created [SPStorkController](https://github.com/IvanVorobei/SPStorkController).
 
 <img src="https://rawcdn.githack.com/IvanVorobei/SPStorkController/c66764082c0d9bf11d0bd46d5fa458edb62044fe/Resources/gif-mockup - 3.gif" width="500">
 
-You can buy source code of this app on [xcode-shop.com](https://xcode-shop.com).
+You can buy source code of this app on [xcode-shop.com](https://xcode-shop.com). Price: $200.
 
 ### SparrowKit
 `SPPermission` was formerly a part of [SparrowKit](https://github.com/IvanVorobei/SparrowKit) library. In the library you can find many useful extensions & classes. To install via CocoaPods use:
