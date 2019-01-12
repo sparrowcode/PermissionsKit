@@ -43,7 +43,7 @@ class ViewController: UIViewController {
 If you want to know if permission is allowed, you need to call the function:
 
 ```swift
-let isAvailableCamera = SPPermission.isAllow(.ñamera)
+let isAllowCamera = SPPermission.isAllow(.ñamera)
 ```
 
 To learn how to customize titles and images you can read section [DataSource & Customization](#datasource--customization)
@@ -58,7 +58,7 @@ If you want to request notification (or other permissions) without dialog, use t
 
 ```swift
 SPPermission.request(.notification, with: {
-    //callback
+    // Callback
 })
 ```
 
