@@ -31,4 +31,8 @@ extension ViewController: SPPermissionDialogDelegate {
     func didAllow(permission: SPPermissionType) {
         print("SPPermissionDialogDelegate - didAllow \(permission.name)")
     }
+    
+    func didDenied(permission: SPPermissionType) {
+        print("SPPermissionDialogDelegate - didDenied \(permission.name)")
+    }
 }
