@@ -28,7 +28,7 @@ extension UINavigationController {
             if UINavigationBar.appearance().tintColor != nil {
                 return UINavigationBar.appearance().tintColor
             } else {
-                return SPNativeStyleKit.Colors.blue
+                return SPNativeColors.blue
             }
         }
         set {

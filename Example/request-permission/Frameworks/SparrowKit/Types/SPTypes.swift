@@ -26,11 +26,6 @@ public enum SPStatusBar {
     case light
 }
 
-public enum SPSnapToSide {
-    case left
-    case right
-}
-
 public enum SPSystemIconType {
     case share
     case close
@@ -72,4 +67,9 @@ public enum SPNavigationTitleStyle {
 public enum SPSystemApp {
     case photos
     case setting
+}
+
+public enum SPSelectionType {
+    case select
+    case unselect
 }

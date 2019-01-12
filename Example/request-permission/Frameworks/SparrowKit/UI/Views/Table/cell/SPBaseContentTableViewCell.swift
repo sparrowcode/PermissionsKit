@@ -250,7 +250,7 @@ class SPBaseContentTableViewCell: SPTableViewCell {
         self.descriptionLabel.numberOfLines = 0
         self.descriptionLabel.font = UIFont.system(type: UIFont.BoldType.Regular, size: 15)
         self.descriptionLabel.textAlignment = .left
-        self.descriptionLabel.textColor = SPNativeStyleKit.Colors.gray
+        self.descriptionLabel.textColor = SPNativeColors.gray
         self.contentView.addSubview(self.descriptionLabel)
         self.descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -305,7 +305,7 @@ class SPBaseContentTableViewCell: SPTableViewCell {
         self.descriptionLabel.text = "Description"
         self.descriptionLabel.font = UIFont.system(type: UIFont.BoldType.Regular, size: 15)
         self.descriptionLabel.textAlignment = .left
-        self.descriptionLabel.textColor = SPNativeStyleKit.Colors.gray
+        self.descriptionLabel.textColor = SPNativeColors.gray
         self.button.setTitle("Button")
         
         self.imageSide = 63

@@ -21,20 +21,26 @@
 
 import UIKit
 
-public struct SPBadge {
+class SPSeparatorView: SPView {
     
-    static func reset() {
-        UIApplication.shared.applicationIconBadgeNumber = 0
+    private var height: CGFloat {
+        return 0.5
     }
     
-    static var number: Int {
-        get {
-            return UIApplication.shared.applicationIconBadgeNumber
-        }
-        set {
-            UIApplication.shared.applicationIconBadgeNumber = newValue
-        }
+    override func commonInit() {
+        super.commonInit()
+        self.backgroundColor = UIColor.init(hex: "515B66").withAlphaComponent(0.4)
+        self.round = true
+        self.setHeight(self.height)
     }
     
-    private init() {}
+    func layout(origin: CGPoint, width: CGFloat) {
+        self.frame.origin = origin
+        self.set(width: width, height: self.height)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.setHeight(self.height)
+    }
 }

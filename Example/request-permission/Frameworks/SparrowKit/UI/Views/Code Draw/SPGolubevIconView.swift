@@ -29,7 +29,7 @@ class SPGolubevIconView: UIView {
         }
     }
     
-    var whiteColor = SPNativeStyleKit.Colors.white {
+    var whiteColor = SPNativeColors.white {
         didSet {
             self.setNeedsDisplay()
         }

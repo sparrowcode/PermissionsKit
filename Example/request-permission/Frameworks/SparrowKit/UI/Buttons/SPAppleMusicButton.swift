@@ -23,21 +23,21 @@ import UIKit
 
 class SPAppleMusicButton: SPButton {
     
-    var mode: Mode = .unselect {
+    var type: SPSelectionType = .unselect {
         didSet {
-            self.updateStyle(animated: false)
+            self.updateType(animated: false)
         }
     }
     
     var selectColor: UIColor = UIColor.init(hex: "FD2D55") {
         didSet {
-            self.updateStyle(animated: false)
+            self.updateType(animated: false)
         }
     }
     
     var baseColor: UIColor = UIColor.init(hex: "F8F7FC") {
         didSet {
-            self.updateStyle(animated: false)
+            self.updateType(animated: false)
         }
     }
     
@@ -46,11 +46,11 @@ class SPAppleMusicButton: SPButton {
         self.layer.cornerRadius = 8
         self.titleLabel?.font = UIFont.system(type: .DemiBold, size: 15)
         self.contentEdgeInsets = UIEdgeInsets.init(top: 12, left: 27, bottom: 12, right: 27)
-        self.mode = .unselect
+        self.type = .unselect
     }
     
-    private func updateStyle(animated: Bool) {
-        switch self.mode {
+    private func updateType(animated: Bool) {
+        switch self.type {
         case .select:
             self.backgroundColor = self.selectColor
             self.setTitleColor(UIColor.white)
@@ -60,11 +60,6 @@ class SPAppleMusicButton: SPButton {
             self.setTitleColor(self.selectColor)
             break
         }
-    }
-    
-    enum Mode {
-        case select
-        case unselect
     }
 }
 

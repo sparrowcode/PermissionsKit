@@ -24,11 +24,7 @@ import UIKit
 class SPTwitter {
     
     static var isSetApp: Bool {
-        if UIApplication.shared.canOpenURL(URL(string: "twitter://post?message=test")!) {
-            return true
-        } else {
-            return false
-        }
+        return UIApplication.shared.canOpenURL(URL(string: "twitter://post?message=test")!)
     }
     
     static func share(text: String, complection: @escaping (_ isOpened: Bool)->() = {_ in }) {
@@ -48,7 +44,6 @@ class SPTwitter {
     private init() {}
 }
 
-// Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
 	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

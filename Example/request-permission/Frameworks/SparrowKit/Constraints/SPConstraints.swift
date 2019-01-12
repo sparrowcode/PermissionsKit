@@ -23,14 +23,16 @@ import UIKit
 
 public struct SPConstraints {
     
-    static func setEqualSize(_ view: UIView, superVuew: UIView) {
-        view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: superVuew.topAnchor),
-            view.leftAnchor.constraint(equalTo: superVuew.leftAnchor),
-            view.rightAnchor.constraint(equalTo: superVuew.rightAnchor),
-            view.bottomAnchor.constraint(equalTo: superVuew.bottomAnchor)
-        ])
+    static func setEqualSizeSuperview(for view: UIView) {
+        if let superView = view.superview {
+            view.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                view.topAnchor.constraint(equalTo: superView.topAnchor),
+                view.leftAnchor.constraint(equalTo: superView.leftAnchor),
+                view.rightAnchor.constraint(equalTo: superView.rightAnchor),
+                view.bottomAnchor.constraint(equalTo: superView.bottomAnchor)
+            ])
+        }
     }
     
     private init() {}

@@ -33,7 +33,7 @@ extension UITableViewCell {
         }
         set {
             let backgroundView = UIView()
-            backgroundView.backgroundColor = SPNativeStyleKit.Colors.customGray
+            backgroundView.backgroundColor = SPNativeColors.customGray
             self.selectedBackgroundView = backgroundView
         }
     }

@@ -74,7 +74,7 @@ public extension CGFloat {
 }
 
 public extension Collection {
-    /// Return a copy of `self` with its elements shuffled
+
     func shuffle() -> [Iterator.Element] {
         var list = Array(self)
         list.shuffleInPlace()
@@ -90,9 +90,9 @@ extension Collection where Index == Int {
 }
 
 public extension MutableCollection where Index == Int {
-    /// Shuffle the elements of `self` in-place.
+
     mutating func shuffleInPlace() {
-        // empty and single-element collections don't shuffle
+
         if count < 2 { return }
         
         for i in startIndex ..< endIndex - 1 {

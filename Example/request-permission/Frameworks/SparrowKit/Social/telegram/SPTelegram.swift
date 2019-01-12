@@ -24,11 +24,7 @@ import UIKit
 class SPTelegram {
     
     static var isSetApp: Bool {
-        if UIApplication.shared.canOpenURL(URL(string: "tg://msg?text=test")!) {
-            return true
-        } else {
-            return false
-        }
+        return UIApplication.shared.canOpenURL(URL(string: "tg://msg?text=test")!)
     }
     
     static func share(text: String, complection: @escaping (_ isOpened: Bool)->() = {_ in }) {
@@ -47,7 +43,7 @@ class SPTelegram {
     
     static func joinChannel(id: String) {
         let url = "https://t.me/joinchat/\(id)"
-        SPOpener.Link.redirectToBrowserAndOpen(link: url)
+        SPApp.open(link: url, redirect: true)
     }
     
     static func openBot(username: String) {
@@ -56,13 +52,12 @@ class SPTelegram {
             username.removeFirst()
         }
         let url = "https://telegram.me/\(username)"
-        SPOpener.Link.redirectToBrowserAndOpen(link: url)
+        SPApp.open(link: url, redirect: true)
     }
     
     private init() {}
 }
 
-// Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
 	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

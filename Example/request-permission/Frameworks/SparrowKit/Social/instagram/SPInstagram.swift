@@ -24,11 +24,7 @@ import UIKit
 class SPInstagram {
     
     static var isSetApp: Bool {
-        if UIApplication.shared.canOpenURL(URL(string: "instagram://user?username=test")!) {
-            return true
-        } else {
-            return false
-        }
+        return UIApplication.shared.canOpenURL(URL(string: "instagram://user?username=test")!)
     }
     
     static func openPost(id: String) {
@@ -38,7 +34,7 @@ class SPInstagram {
         if UIApplication.shared.canOpenURL(instagramUrl!) {
             UIApplication.shared.open(instagramUrl!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {
-            SPOpener.Link.redirectToBrowserAndOpen(link: safariURL)
+            SPApp.open(link: safariURL.absoluteString, redirect: true)
         }
     }
     
@@ -49,14 +45,13 @@ class SPInstagram {
         if UIApplication.shared.canOpenURL(instagramUrl!) {
             UIApplication.shared.open(instagramUrl!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {
-            SPOpener.Link.redirectToBrowserAndOpen(link: safariURL)
+            SPApp.open(link: safariURL.absoluteString, redirect: true)
         }
     }
     
     private init() {}
 }
 
-// Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
 	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

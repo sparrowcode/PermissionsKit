@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPNativeTableViewController: SPBaseTableViewController {
+class SPNativeTableController: SPTableController {
     
     let labelTableViewCellIdentifier: String = "labelTableViewCellIdentifier"
     let textFieldTableViewCellIdentifier: String = "textFieldTableViewCellIdentifier"
@@ -31,7 +31,6 @@ class SPNativeTableViewController: SPBaseTableViewController {
     let promoTableViewCellIdentifier: String = "promoTableViewCellIdentifier"
     let featuredTitleTableViewCellIdentifier: String = "featuredTitleTableViewCellIdentifier"
     let mailTableViewCellIdentifier: String = "mailTableViewCellIdentifier"
-    let collectionImagesTableViewCellIdentifier: String = "collectionImagesTableViewCellIdentifier"
     let imageTableViewCellIdentifier: String = "imageTableViewCellIdentifier"
     let proposeTableViewCellIdentifier: String = "proposeTableViewCellIdentifier"
     let mengTransformTableViewCell = "mengTransformTableViewCell"
@@ -40,15 +39,8 @@ class SPNativeTableViewController: SPBaseTableViewController {
     var showBottomInsets: Bool = true
     var autoTopSpace: Bool = true
     var autoBottomSpace: Bool = true
+    
     private var autoSpaceHeight: CGFloat = 35
-    
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +54,7 @@ class SPNativeTableViewController: SPBaseTableViewController {
             self.tableView.contentInsetAdjustmentBehavior = .always
         }
         
-        self.tableView.backgroundColor = SPNativeStyleKit.Colors.customGray
+        self.tableView.backgroundColor = SPNativeColors.customGray
         self.tableView.delaysContentTouches = false
         self.tableView.allowsSelection = false
         self.tableView.rowHeight = UITableView.automaticDimension
@@ -78,13 +70,12 @@ class SPNativeTableViewController: SPBaseTableViewController {
         self.tableView.register(SPPromoTableViewCell.self, forCellReuseIdentifier: self.promoTableViewCellIdentifier)
         self.tableView.register(SPFormFeaturedTitleTableViewCell.self, forCellReuseIdentifier: self.featuredTitleTableViewCellIdentifier)
         self.tableView.register(SPFormMailTableViewCell.self, forCellReuseIdentifier: self.mailTableViewCellIdentifier)
-        self.tableView.register(SPCollectionImagesTableViewCell.self, forCellReuseIdentifier: self.collectionImagesTableViewCellIdentifier)
         self.tableView.register(SPImageTableViewCell.self, forCellReuseIdentifier: self.imageTableViewCellIdentifier)
         self.tableView.register(SPProposeTableViewCell.self, forCellReuseIdentifier: self.proposeTableViewCellIdentifier)
         self.tableView.register(SPMengTransformTableViewCell.self, forCellReuseIdentifier: self.mengTransformTableViewCell)
         
         self.activityIndicatorView.stopAnimating()
-        self.activityIndicatorView.color = SPNativeStyleKit.Colors.gray
+        self.activityIndicatorView.color = SPNativeColors.gray
         self.view.addSubview(self.activityIndicatorView)
         
         self.updateLayout(with: self.view.frame.size)
@@ -150,10 +141,6 @@ class SPNativeTableViewController: SPBaseTableViewController {
         return cell
     }
     
-    func dequeueCollectionImagesTableViewCell(indexPath: IndexPath) -> SPCollectionImagesTableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: self.collectionImagesTableViewCellIdentifier, for: indexPath as IndexPath) as! SPCollectionImagesTableViewCell
-    }
-    
     func dequeueImageTableViewCell(indexPath: IndexPath) -> SPImageTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.imageTableViewCellIdentifier, for: indexPath as IndexPath) as! SPImageTableViewCell
         cell.currentIndexPath = indexPath
@@ -170,7 +157,7 @@ class SPNativeTableViewController: SPBaseTableViewController {
 }
 
 //MARK: - manage selection
-extension SPNativeTableViewController {
+extension SPNativeTableController {
     
     override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         
@@ -184,7 +171,7 @@ extension SPNativeTableViewController {
 }
 
 //MARK: - manage spaces
-extension SPNativeTableViewController {
+extension SPNativeTableController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {

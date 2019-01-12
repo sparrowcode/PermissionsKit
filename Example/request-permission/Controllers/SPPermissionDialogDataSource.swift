@@ -28,7 +28,7 @@ extension ViewController: SPPermissionDialogDataSource {
     }
     
     var showCloseButton: Bool {
-        return false
+        return true
     }
     
     var allowTitle: String {

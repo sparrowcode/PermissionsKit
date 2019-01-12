@@ -33,7 +33,7 @@ class SPSystemIconButton: UIButton {
         }
     }
     
-    var color = SPNativeStyleKit.Colors.blue {
+    var color = SPNativeColors.blue {
         didSet {
             self.iconView.color = self.color
         }

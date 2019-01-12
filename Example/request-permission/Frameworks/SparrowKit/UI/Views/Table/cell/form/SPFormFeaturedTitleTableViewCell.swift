@@ -34,7 +34,7 @@ class SPFormFeaturedTitleTableViewCell: UITableViewCell {
                 self.titleLabel.textColor = UIColor.black
             case .smallColorful:
                 self.titleLabel.font = UIFont.system(type: .DemiBold, size: 11)
-                self.titleLabel.textColor = SPNativeStyleKit.Colors.blue
+                self.titleLabel.textColor = SPNativeColors.blue
                 self.titleLabel.text = self.titleLabel.text?.uppercased()
             }
         }
@@ -82,7 +82,7 @@ class SPFormFeaturedTitleTableViewCell: UITableViewCell {
         
         self.withButton = false
         self.button.setTitle("Button Title", for: UIControl.State.normal)
-        self.button.setTitleColor(SPNativeStyleKit.Colors.blue)
+        self.button.setTitleColor(SPNativeColors.blue)
         self.button.titleLabel?.font = UIFont.system(type: .Medium, size: 17)
         self.button.translatesAutoresizingMaskIntoConstraints = false
         self.button.titleLabel?.textAlignment = .right

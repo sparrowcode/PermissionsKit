@@ -25,7 +25,7 @@ extension UIImageView {
     
     public func setNative() {
         self.layer.borderWidth = 0.5
-        self.layer.borderColor = SPNativeStyleKit.Colors.midGray.cgColor
+        self.layer.borderColor = SPNativeColors.midGray.cgColor
         self.layer.masksToBounds = true
     }
     

@@ -21,7 +21,7 @@
 
 import UIKit
 
-class ViewController: SPBaseController {
+class ViewController: SPController {
     
     @objc func presentPermissonDialog() {
         SPAnimationAlpha.hideList(views: [self.presentButton, self.changeBackgroundButton])
@@ -53,7 +53,7 @@ class ViewController: SPBaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = SPNativeStyleKit.Colors.customGray
+        self.view.backgroundColor = SPNativeColors.customGray
         self.backgroundView.contentMode = .scaleAspectFill
         self.view.addSubview(self.backgroundView)
         

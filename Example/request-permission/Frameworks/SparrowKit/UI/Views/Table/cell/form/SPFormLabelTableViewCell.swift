@@ -65,7 +65,7 @@ class SPFormLabelTableViewCell: SPTableViewCell {
         self.descriptionLabel.text = "Description"
         self.descriptionLabel.numberOfLines = 1
         self.descriptionLabel.font = UIFont.system(type: .Regular, size: 17)
-        self.descriptionLabel.textColor = SPNativeStyleKit.Colors.gray
+        self.descriptionLabel.textColor = SPNativeColors.gray
         self.contentView.addSubview(self.descriptionLabel)
 
         self.stopLoading(animated: false)

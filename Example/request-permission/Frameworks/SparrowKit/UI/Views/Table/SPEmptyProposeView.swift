@@ -54,7 +54,7 @@ class SPEmptyProposeView: UIView {
         self.label.numberOfLines = 0
         self.label.setCenteringAlignment()
         self.label.font = UIFont.system(type: .Regular, size: 13)
-        self.label.textColor = SPNativeStyleKit.Colors.gray
+        self.label.textColor = SPNativeColors.gray
         self.addSubview(self.label)
         
         self.addSubview(self.button)

@@ -46,7 +46,7 @@ class SPNativeLargeButton: SPDownloadingButton {
         super.commonInit()
         self.titleLabel?.font = UIFont.system(type: UIFont.BoldType.DemiBold, size: 16)
         self.setTitleColor(UIColor.white)
-        self.backgroundColor = SPNativeStyleKit.Colors.blue
+        self.backgroundColor = SPNativeColors.blue
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 8
         self.contentEdgeInsets = UIEdgeInsets.init(top: 15, left: 15, bottom: 15, right: 15)
