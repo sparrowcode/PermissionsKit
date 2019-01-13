@@ -144,7 +144,7 @@ I would appreciate your participation in the project. If you want to add new per
 
 I have [YouTube channel](https://www.youtube.com/channel/UCNUGzZfcOyX4YpP36VzeZ6A) where I publish videos about Xcode and Design. You can see how I develop native design for `SPPermission` dialog view:
 
-[![Timelaps on YouTube](https://rawcdn.githack.com/IvanVorobei/SPPermission/832efb7929d7237888e0ee7a7f05a2e6e0e29e6f/Recource/sppermission-design-preivew.jpg)](https://youtu.be/1mDdX7fQRv4)
+[![Timelaps on YouTube](https://rawcdn.githack.com/IvanVorobei/SPPermission/055dc964bfcf948b228a86704b61d10535f3d6d5/Recource/Youtube.jpg)](https://youtu.be/1mDdX7fQRv4)
 
 ## For Russian-speaking users
 Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать статью [Обновление библиотеки SPPermission](https://habr.com/post/430886/), чтобы больше узнать о проекте. Taк же вы можете прочитать статью [Получил 1.2K звезд на GitHub с ужасной архитектурой. Как?](https://habr.com/post/326620/) о первой версии проекта и работе с архитектурой
