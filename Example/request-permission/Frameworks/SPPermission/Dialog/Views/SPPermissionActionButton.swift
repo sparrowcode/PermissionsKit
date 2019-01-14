@@ -46,13 +46,13 @@ class SPPermissionActionButton: UIButton {
         }
     }
     
-    var baseColor: UIColor = SPPermissionStyle.Colors.blue {
+    var baseColor: UIColor = SPPermissionStyle.DefaultColors.blue {
         didSet {
             let currentStyle = self.style
             self.style = currentStyle
         }
     }
-    var secondColor: UIColor = SPPermissionStyle.Colors.lightGray {
+    var secondColor: UIColor = SPPermissionStyle.DefaultColors.lightGray {
         didSet {
             let currentStyle = self.style
             self.style = currentStyle

@@ -127,6 +127,27 @@ If you want to inhibite drag gesture to discard the dialog view you need to over
 
 In the project you can find an example of usage of `SPPermissionDialogDataSource`
 
+### Colors
+If you want to change the color scheme, you need to implement the protocol `SPPermissionDialogColorSource`. It is not necessary to override all parameters, you can only change those that are necessary:
+
+```swift
+@objc public protocol SPPermissionDialogColorSource: class {
+    
+    @objc optional var whiteColor: UIColor { get }
+    @objc optional var blackColor: UIColor { get }
+    @objc optional var baseColor: UIColor { get }
+    @objc optional var grayColor: UIColor { get }
+    @objc optional var lightGrayColor: UIColor { get }
+    
+    @objc optional var iconWhiteColor: UIColor { get }
+    @objc optional var iconLightColor: UIColor { get }
+    @objc optional var iconMediumColor: UIColor { get }
+    @objc optional var iconDarkColor: UIColor { get }
+}
+```
+
+And pass the object to the function `request` for `colorSource`.
+
 ## Purpose String in Info.plist
 
 SPPermission uses many permissions in one library; you need to add some strings to the `Info.plist` file with description. List of keys:

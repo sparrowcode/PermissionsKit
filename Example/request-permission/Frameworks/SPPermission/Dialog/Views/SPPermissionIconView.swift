@@ -29,25 +29,25 @@ class SPPermissionIconView: UIView {
         }
     }
     
-    var whiteColor = SPPermissionStyle.Colors.white {
+    var whiteColor = SPPermissionStyle.DefaultColors.white {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
-    var lightColor = UIColor.init(red: 196/255, green: 216/255, blue: 251/255, alpha: 1) {
+    var lightColor = SPPermissionStyle.DefaultColors.lightIcon {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
-    var mediumColor = UIColor.init(red: 122/255, green: 169/255, blue: 248/255, alpha: 1) {
+    var mediumColor = SPPermissionStyle.DefaultColors.mediumIcon {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
-    var darkColor = UIColor.init(red: 0/255, green: 122/255, blue: 255/255, alpha: 1) {
+    var darkColor = SPPermissionStyle.DefaultColors.darkIcon {
         didSet {
             self.setNeedsDisplay()
         }

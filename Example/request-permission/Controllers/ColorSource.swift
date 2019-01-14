@@ -21,18 +21,19 @@
 
 import UIKit
 
-extension SPPermissionStyle {
+extension ViewController: SPPermissionDialogColorSource {
     
-    enum DefaultColors {
-        
-        static let white = UIColor.white
-        static let black = UIColor.black
-        static let blue = UIColor.init(red: 0/255, green: 118/255, blue: 255/255, alpha: 1)
-        static let gray = UIColor.init(red: 142/255, green: 142/255, blue: 147/255, alpha: 1)
-        static let lightGray = UIColor.init(red: 240/255, green: 241/255, blue: 246/255, alpha: 1)
-        
-        static let darkIcon = UIColor.init(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
-        static let mediumIcon = UIColor.init(red: 122/255, green: 169/255, blue: 248/255, alpha: 1)
-        static let lightIcon = UIColor.init(red: 196/255, green: 216/255, blue: 251/255, alpha: 1)
+    /*
+        For customize colors ovveride more parametrs.
+        All parametrs not requerid.
+        For example I am ovveride two parametrs.
+    */
+    
+    var whiteColor: UIColor {
+        return UIColor.white
+    }
+    
+    var blackColor: UIColor {
+        return UIColor.black
     }
 }

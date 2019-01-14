@@ -27,7 +27,7 @@ class SPPermissionCloseButton: UIButton {
     var widthIconFactor: CGFloat = 1
     var heightIconFactor: CGFloat = 1
     
-    var color = SPPermissionStyle.Colors.blue {
+    var color = SPPermissionStyle.DefaultColors.blue {
         didSet {
             self.iconView.color = self.color
         }
