@@ -30,7 +30,8 @@ class ViewController: SPController {
             with: [.camera, .calendar, .microphone],
             on: self,
             delegate: self,
-            dataSource: self
+            dataSource: self,
+            colorSource: self
         )
     }
     

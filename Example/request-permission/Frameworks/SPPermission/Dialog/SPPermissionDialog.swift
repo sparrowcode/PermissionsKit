@@ -25,11 +25,12 @@ extension SPPermission {
     
     public struct Dialog {
         
-        public static func request(with permissions: [SPPermissionType], on viewController: UIViewController, delegate: SPPermissionDialogDelegate? = nil, dataSource: SPPermissionDialogDataSource? = nil) {
+        public static func request(with permissions: [SPPermissionType], on viewController: UIViewController, delegate: SPPermissionDialogDelegate? = nil, dataSource: SPPermissionDialogDataSource? = nil, colorSource: SPPermissionDialogColorSource? = nil) {
             if permissions.isEmpty {  return }
             let controller = SPPermissionDialogController(permissions: permissions)
             controller.delegate = delegate
             controller.dataSource = dataSource
+            controller.colorSource = colorSource
             controller.present(on: viewController)
         }
         
@@ -61,4 +62,18 @@ extension SPPermission {
     @objc optional func deniedSubtitle(for permission: SPPermissionType) -> String?
     @objc optional var cancelTitle: String { get }
     @objc optional var settingsTitle: String { get }
+}
+
+@objc public protocol SPPermissionDialogColorSource: class {
+    
+    @objc optional var whiteColor: UIColor { get }
+    @objc optional var blackColor: UIColor { get }
+    @objc optional var baseColor: UIColor { get }
+    @objc optional var grayColor: UIColor { get }
+    @objc optional var lightGrayColor: UIColor { get }
+    
+    @objc optional var iconWhiteColor: UIColor { get }
+    @objc optional var iconLightColor: UIColor { get }
+    @objc optional var iconMediumColor: UIColor { get }
+    @objc optional var iconDarkColor: UIColor { get }
 }

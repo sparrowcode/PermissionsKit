@@ -23,7 +23,7 @@ import UIKit
 
 class SPPermissionCloseIconView: UIView {
     
-    var color = SPPermissionStyle.Colors.blue {
+    var color = SPPermissionStyle.DefaultColors.blue {
         didSet {
             self.setNeedsDisplay()
         }

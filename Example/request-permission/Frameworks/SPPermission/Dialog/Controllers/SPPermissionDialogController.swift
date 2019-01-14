@@ -25,7 +25,11 @@ public class SPPermissionDialogController: UIViewController {
     
     weak var delegate: SPPermissionDialogDelegate?
     weak var dataSource: SPPermissionDialogDataSource?
+    weak var colorSource: SPPermissionDialogColorSource?
+    
     var permissions: [SPPermissionType]
+    var colorScheme: ColorScheme!
+    
     var closeButton = SPPermissionCloseButton()
     var areaView = SPPermissionDialogView()
     var bottomLabel = UILabel()
@@ -59,10 +63,24 @@ public class SPPermissionDialogController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.colorScheme = ColorScheme(
+            white: self.colorSource?.whiteColor ?? SPPermissionStyle.DefaultColors.white,
+            black: self.colorSource?.blackColor ?? SPPermissionStyle.DefaultColors.black,
+            base: self.colorSource?.baseColor ?? SPPermissionStyle.DefaultColors.blue,
+            gray: self.colorSource?.grayColor ?? SPPermissionStyle.DefaultColors.gray,
+            lightGray: self.colorSource?.lightGrayColor ?? SPPermissionStyle.DefaultColors.lightGray,
+            iconWhite: self.colorSource?.iconWhiteColor ?? SPPermissionStyle.DefaultColors.white,
+            iconLight: self.colorSource?.iconLightColor ?? SPPermissionStyle.DefaultColors.lightIcon,
+            iconMedium: self.colorSource?.iconMediumColor ?? SPPermissionStyle.DefaultColors.mediumIcon,
+            iconDark: self.colorSource?.iconDarkColor ?? SPPermissionStyle.DefaultColors.darkIcon
+        )
+        
         self.backgroundView.setGradeAlpha(0, blurRaius: 0)
         self.view.addSubview(self.backgroundView)
         
-        self.closeButton.backgroundColor = SPPermissionStyle.Colors.white
+        self.closeButton.backgroundColor = self.colorScheme.white
+        self.closeButton.color = self.colorScheme.base
         self.closeButton.widthIconFactor = 0.36
         self.closeButton.heightIconFactor = 0.36
         self.closeButton.alpha = 0
@@ -71,7 +89,7 @@ public class SPPermissionDialogController: UIViewController {
         
         self.bottomLabel.text = (self.dataSource?.bottomComment ?? "")
         self.bottomLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        self.bottomLabel.textColor = SPPermissionStyle.Colors.white
+        self.bottomLabel.textColor = self.colorScheme.white
         self.bottomLabel.numberOfLines = 0
         self.bottomLabel.textAlignment = .center
         self.bottomLabel.alpha = 0
@@ -79,6 +97,10 @@ public class SPPermissionDialogController: UIViewController {
         
         self.areaView.subtitleLabel.text = (self.dataSource?.dialogSubtitle ?? "Permissions Request").uppercased()
         self.areaView.titleLabel.text = (self.dataSource?.dialogTitle ?? "Need Permissions")
+        self.areaView.backgroundColor = self.colorScheme.white
+        self.areaView.subtitleLabel.textColor = self.colorScheme.gray
+        self.areaView.titleLabel.textColor = self.colorScheme.black
+        self.areaView.descriptionLabel.textColor = self.colorScheme.gray
         for permission in self.permissions {
             let view = SPPermissionDialogLineView.init(
                 permission: permission,
@@ -88,6 +110,16 @@ public class SPPermissionDialogController: UIViewController {
                 allowedTitle: self.dataSource?.allowedTitle ?? "Allowed",
                 image: self.dataSource?.image?(for: permission)
             )
+            view.backgroundColor = self.colorScheme.white
+            view.titleLabel.textColor = self.colorScheme.black
+            view.subtitleLabel.textColor = self.colorScheme.gray
+            view.separatorView.backgroundColor = self.colorScheme.gray.withAlphaComponent(0.3)
+            view.iconView.whiteColor = self.colorScheme.iconWhite
+            view.iconView.lightColor = self.colorScheme.iconLight
+            view.iconView.mediumColor = self.colorScheme.iconMedium
+            view.iconView.darkColor = self.colorScheme.iconDark
+            view.button.baseColor = self.colorScheme.base
+            view.button.secondColor = self.colorScheme.lightGray
             view.button.addTarget(self, action: #selector(self.request(with:)), for: .touchUpInside)
             self.areaView.add(view: view)
         }
@@ -375,5 +407,23 @@ extension SPPermissionDialogController {
         case .mediaLibrary:
             return "Allow check your media"
         }
+    }
+}
+
+extension SPPermissionDialogController {
+    
+    public struct ColorScheme {
+        
+        var white: UIColor
+        var black: UIColor
+        var base: UIColor
+        var gray: UIColor
+        var lightGray: UIColor
+        
+        var iconWhite: UIColor
+        var iconLight: UIColor
+        var iconMedium: UIColor
+        var iconDark: UIColor
+        
     }
 }
