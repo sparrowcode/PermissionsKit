@@ -7,11 +7,11 @@ Preview GIF is loading `4mb`. Please wait.
 
 <img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Preview.gif" width="500">
 
-<img src="https://rawcdn.githack.com/IvanVorobei/SPPermission/1b658cd8943cef1687c37789d6c410a613868c36/Recource/request-permission - shop.svg"/>
+<img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Shop.svg"/>
 
 I have a store where I sell applications and modules for Xcode projects. You can find source codes of applications or custom animations / UI. I regularly update the code. Visit my website to see all items for sale: [xcode-shop.com](https://xcode-shop.com). On the website you can find previews and, for some items, links to AppStore.
 
-<img src="https://rawcdn.githack.com/IvanVorobei/SPPermission/1b658cd8943cef1687c37789d6c410a613868c36/Recource/request-permission - shop.svg"/>
+<img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Shop.svg"/>
 
 ## Requirements
 Swift 4.2. Ready for use on iOS 10+
@@ -123,7 +123,7 @@ SPPermission.Dialog.request(
 
 If you want to inhibite drag gesture to discard the dialog view you need to override `dragToDismiss` parameter, and if you want to add or remove the close button (without the button you’ll have to swipe the dialog to close it), you need to override parameter `showCloseButton`. To see what it looks like, see the picture below:
 
-<img src="https://rawcdn.githack.com/IvanVorobei/RequestPermission/b3e613295b73be36c8a3d35126d1f7015ef432a8/resources/request-permission - close button.png"/>
+<img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Close%20Button.png"/>
 
 In the project you can find an example of usage of `SPPermissionDialogDataSource`
 
