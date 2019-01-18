@@ -21,4 +21,39 @@
 
 import UIKit
 
-struct SPCodeDraw { private init() {} }
+class SPPromoTableViewCell: SPBaseContentTableViewCell {
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.backgroundColor = UIColor.clear
+        self.commonInit()
+    }
+    
+    private func commonInit() {
+        self.withImage = false
+        self.withButton = true
+        self.withSubtitle = false
+        self.centerXButton = true
+
+        self.topSpace = 14
+        self.spaceAfterTitle = 6
+        self.spaceAfterDescribtion = 16
+        self.bottomSpace = 22
+        
+        self.titleLabel.font = UIFont.system(type: .DemiBold, size: 16)
+        self.titleLabel.setCenteringAlignment()
+        self.descriptionLabel.font = UIFont.system(type: .Regular, size: 13)
+        self.descriptionLabel.setCenteringAlignment()
+        self.subtitleLabel.textColor = UIColor.lightGray
+        self.button.style = .main
+    }
+}

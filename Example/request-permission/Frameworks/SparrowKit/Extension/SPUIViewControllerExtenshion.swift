@@ -119,7 +119,7 @@ extension UIViewController {
         }
     }
     
-    func setNavigationTitle(_ title: String, style: SPNavigationTitleStyle) {
+    public func setNavigationTitle(_ title: String, style: SPNavigationTitleStyle) {
         self.navigationItem.title = title
         switch style {
         case .large:

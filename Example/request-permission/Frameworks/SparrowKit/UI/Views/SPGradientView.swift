@@ -23,21 +23,12 @@ import UIKit
 
 public class SPGradientView: SPView {
     
-    var startColor: UIColor = UIColor.white { didSet { self.updateGradient() }}
-    var endColor: UIColor = UIColor.black { didSet { self.updateGradient() }}
-    
-    var startColorPoint: CGPoint = CGPoint.zero { didSet { self.updateGradient() }}
-    var endColorPoint: CGPoint = CGPoint.zero { didSet { self.updateGradient() }}
-    
     var gradientLayer: CAGradientLayer = CAGradientLayer()
     
-    public func setStartColorPosition(_ position: Position) {
-        self.startColorPoint = getPointForPosition(position)
-    }
-    
-    public func setEndColorPosition(_ position: Position) {
-        self.endColorPoint = getPointForPosition(position)
-    }
+    var startColor: UIColor = UIColor.white { didSet { self.updateGradient() }}
+    var endColor: UIColor = UIColor.black { didSet { self.updateGradient() }}
+    var startColorPosition: Position = Position.TopLeft { didSet { self.updateGradient() }}
+    var endColorPosition: Position = Position.BottomRight { didSet { self.updateGradient() }}
     
     override func commonInit() {
         super.commonInit()
@@ -47,8 +38,8 @@ public class SPGradientView: SPView {
     private func updateGradient() {
         self.gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         self.gradientLayer.locations = [0.0, 1.0]
-        self.gradientLayer.startPoint = self.startColorPoint
-        self.gradientLayer.endPoint = self.endColorPoint
+        self.gradientLayer.startPoint = self.startColorPosition.point
+        self.gradientLayer.endPoint = self.endColorPosition.point
     }
     
     override public func layoutSublayers(of layer: CALayer) {
@@ -65,49 +56,26 @@ public class SPGradientView: SPView {
         case BottomRight
         case MediumLeft
         case MediumRight
-    }
-    
-    private func getPointForPosition(_ position: Position) -> CGPoint {
-        switch position {
-        case .TopLeft:
-            return CGPoint.init(x: 0, y: 0)
-        case .TopCenter:
-            return CGPoint.init(x: 0.5, y: 0)
-        case .TopRight:
-            return CGPoint.init(x: 1, y: 0)
-        case .BottomLeft:
-            return CGPoint.init(x: 0, y: 1)
-        case .BottomCenter:
-            return CGPoint.init(x: 0.5, y: 1)
-        case .BottomRight:
-            return CGPoint.init(x: 1, y: 1)
-        case .MediumLeft:
-            return CGPoint.init(x: 0, y: 0.5)
-        case .MediumRight:
-            return CGPoint.init(x: 1, y: 0.5)
-        }
-    }
-}
-
-
-class SPGradientWithPictureView: SPGradientView {
-    
-    var pictureView: UIView? {
-        willSet {
-            if self.pictureView != nil {
-                if self.subviews.contains(self.pictureView!) {
-                    self.pictureView?.removeFromSuperview()
-                }
+        
+        var point: CGPoint {
+            switch self {
+            case .TopLeft:
+                return CGPoint.init(x: 0, y: 0)
+            case .TopCenter:
+                return CGPoint.init(x: 0.5, y: 0)
+            case .TopRight:
+                return CGPoint.init(x: 1, y: 0)
+            case .BottomLeft:
+                return CGPoint.init(x: 0, y: 1)
+            case .BottomCenter:
+                return CGPoint.init(x: 0.5, y: 1)
+            case .BottomRight:
+                return CGPoint.init(x: 1, y: 1)
+            case .MediumLeft:
+                return CGPoint.init(x: 0, y: 0.5)
+            case .MediumRight:
+                return CGPoint.init(x: 1, y: 0.5)
             }
         }
-        didSet {
-            if self.pictureView != nil {
-                self.addSubview(pictureView!)
-            }
-        }
-    }
-    
-    override func layoutSubviews() {
-        self.pictureView?.frame = self.bounds
     }
 }

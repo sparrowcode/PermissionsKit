@@ -21,4 +21,6 @@
 
 import UIKit
 
-struct SPCodeDraw { private init() {} }
+class SPFormMailTableViewCell: SPBaseContentTableViewCell {
+    
+}

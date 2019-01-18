@@ -49,7 +49,7 @@ class SPPermissionAlwaysAuthorizationLocationHandler: NSObject, CLLocationManage
         }
 
         if let complectionHandler = complectionHandler {
-            complectionHandler(isAuthorized())
+            complectionHandler(self.isAuthorized)
         }
     }
     
@@ -71,11 +71,11 @@ class SPPermissionAlwaysAuthorizationLocationHandler: NSObject, CLLocationManage
             locationManager.requestAlwaysAuthorization()
             break
         default:
-            complectionHandler(isAuthorized())
+            complectionHandler(self.isAuthorized)
         }
     }
     
-    func isAuthorized() -> Bool {
+    var isAuthorized: Bool {
         let status = CLLocationManager.authorizationStatus()
         if status == .authorizedAlways {
             return true
@@ -108,7 +108,7 @@ class SPPermissionWhenInUseAuthorizationLocationHandler: NSObject, CLLocationMan
         }
         
         if let complectionHandler = complectionHandler {
-            complectionHandler(isAuthorized())
+            complectionHandler(self.isAuthorized)
         }
     }
     
@@ -120,11 +120,11 @@ class SPPermissionWhenInUseAuthorizationLocationHandler: NSObject, CLLocationMan
             locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()
         } else {
-            complectionHandler(isAuthorized())
+            complectionHandler(self.isAuthorized)
         }
     }
     
-    func isAuthorized() -> Bool {
+    var isAuthorized: Bool {
         let status = CLLocationManager.authorizationStatus()
         if status == .authorizedWhenInUse {
             return true
@@ -134,16 +134,6 @@ class SPPermissionWhenInUseAuthorizationLocationHandler: NSObject, CLLocationMan
     
     deinit {
         locationManager.delegate = nil
-    }
-}
-
-class SPPermissionLocationWithBackgroundHandler: SPPermissionAlwaysAuthorizationLocationHandler {
-    
-    override func requestPermission(_ complectionHandler: @escaping SPPermissionAlwaysAuthorizationLocationHandler.SPPermissionAuthorizationHandlerCompletionBlock) {
-        if #available(iOS 9.0, *) {
-            locationManager.allowsBackgroundLocationUpdates = true
-        }
-        super.requestPermission(complectionHandler)
     }
 }
 

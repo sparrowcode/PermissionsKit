@@ -21,4 +21,4 @@
 
 import UIKit
 
-struct SPCodeDraw { private init() {} }
+struct SPPermissionDraw { private init(){} }

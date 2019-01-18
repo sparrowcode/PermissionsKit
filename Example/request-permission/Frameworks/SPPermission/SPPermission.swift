@@ -29,16 +29,23 @@ import Contacts
 import Speech
 import MediaPlayer
 import HealthKit
+import CoreMotion
 
 public struct SPPermission {
     
     public static func isAllow(_ permission: SPPermissionType) -> Bool {
         let manager = self.getManagerForPermission(permission)
-        return manager.isAuthorized()
+        return manager.isAuthorized
     }
     
     public static func request(_ permission: SPPermissionType, with complectionHandler: @escaping ()->()) {
         let manager = self.getManagerForPermission(permission)
+        if let usageDescriptionKey = permission.usageDescriptionKey {
+            guard let _ = Bundle.main.object(forInfoDictionaryKey: usageDescriptionKey) else {
+                print("SPPermission Warning - \(usageDescriptionKey) for \(permission.name) not found in Info.plist")
+                return
+            }
+        }
         manager.request(withComlectionHandler: {
             complectionHandler()
         })
@@ -49,7 +56,7 @@ public struct SPPermission {
 
 fileprivate protocol SPPermissionInterface {
     
-    func isAuthorized() -> Bool
+    var isAuthorized: Bool { get }
     
     func request(withComlectionHandler complectionHandler: @escaping ()->()?)
 }
@@ -78,8 +85,8 @@ extension SPPermission {
             return SPLocationPermission(type: SPLocationPermission.SPLocationType.Always)
         case .locationWhenInUse:
            return SPLocationPermission(type: SPLocationPermission.SPLocationType.WhenInUse)
-        case .locationWithBackground:
-           return SPLocationPermission(type: SPLocationPermission.SPLocationType.AlwaysWithBackground)
+        case .motion:
+            return SPMotionPermission()
         case .mediaLibrary:
             return SPMediaLibraryPermission()
         }
@@ -90,7 +97,7 @@ extension SPPermission {
     
     fileprivate struct SPCameraPermission: SPPermissionInterface {
         
-        func isAuthorized() -> Bool {
+        var isAuthorized: Bool {
             if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == AVAuthorizationStatus.authorized {
                 return true
             } else {
@@ -110,7 +117,7 @@ extension SPPermission {
     
     fileprivate struct SPNotificationPermission: SPPermissionInterface {
         
-        func isAuthorized() -> Bool {
+        var isAuthorized: Bool {
             return UIApplication.shared.isRegisteredForRemoteNotifications
         }
         
@@ -135,7 +142,7 @@ extension SPPermission {
     
     fileprivate struct SPPhotoLibraryPermission: SPPermissionInterface {
         
-        func isAuthorized() -> Bool {
+        var isAuthorized: Bool {
             if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
                 return true
             } else {
@@ -155,7 +162,7 @@ extension SPPermission {
     
     fileprivate struct SPMicrophonePermission: SPPermissionInterface {
         
-        func isAuthorized() -> Bool {
+        var isAuthorized: Bool {
             if AVAudioSession.sharedInstance().recordPermission == .granted {
                 return true
             }
@@ -175,7 +182,7 @@ extension SPPermission {
     
     fileprivate struct SPCalendarPermission: SPPermissionInterface {
         
-        func isAuthorized() -> Bool {
+        var isAuthorized: Bool {
             let status = EKEventStore.authorizationStatus(for: EKEntityType.event)
             switch (status) {
             case EKAuthorizationStatus.authorized:
@@ -198,7 +205,7 @@ extension SPPermission {
     
     fileprivate struct SPContactsPermission: SPPermissionInterface {
         
-        func isAuthorized() -> Bool {
+        var isAuthorized: Bool {
             if #available(iOS 9.0, *) {
                 let status = CNContactStore.authorizationStatus(for: .contacts)
                 if status == .authorized {
@@ -239,7 +246,7 @@ extension SPPermission {
     
     fileprivate struct SPRemindersPermission: SPPermissionInterface {
         
-        func isAuthorized() -> Bool {
+        var isAuthorized: Bool {
             let status = EKEventStore.authorizationStatus(for: EKEntityType.reminder)
             switch (status) {
             case EKAuthorizationStatus.authorized:
@@ -262,7 +269,7 @@ extension SPPermission {
     
     fileprivate struct SPBluetoothPermission: SPPermissionInterface {
         
-        func isAuthorized() -> Bool {
+        var isAuthorized: Bool {
             let status = EKEventStore.authorizationStatus(for: EKEntityType.reminder)
             switch (status) {
             case EKAuthorizationStatus.authorized:
@@ -285,16 +292,11 @@ extension SPPermission {
     
     fileprivate struct SPSpeechPermission: SPPermissionInterface {
         
-        func isAuthorized() -> Bool {
-            guard #available(iOS 10.0, *) else { return false }
+        var isAuthorized: Bool {
             return SFSpeechRecognizer.authorizationStatus() == .authorized
         }
         
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
-            guard #available(iOS 10.0, *) else {
-                fatalError("ios 10 or higher required")
-            }
-            
             SFSpeechRecognizer.requestAuthorization { status in
                 DispatchQueue.main.async {
                     complectionHandler()
@@ -305,7 +307,7 @@ extension SPPermission {
     
     fileprivate struct SPMediaLibraryPermission: SPPermissionInterface {
         
-        func isAuthorized() -> Bool {
+        var isAuthorized: Bool {
             let status = MPMediaLibrary.authorizationStatus()
             if status == .authorized {
                 return true
@@ -330,14 +332,13 @@ extension SPPermission {
         enum SPLocationType {
             case Always
             case WhenInUse
-            case AlwaysWithBackground
         }
         
         init(type: SPLocationType) {
             self.type = type
         }
         
-        func isAuthorized() -> Bool {
+        var isAuthorized: Bool {
             
             let status = CLLocationManager.authorizationStatus()
             
@@ -357,12 +358,6 @@ extension SPPermission {
                     } else {
                         return false
                     }
-                }
-            case .AlwaysWithBackground:
-                if status == .authorizedAlways {
-                    return true
-                } else {
-                    return false
                 }
             }
         }
@@ -394,19 +389,27 @@ extension SPPermission {
                     }
                 }
                 break
-            case .AlwaysWithBackground:
-                if SPPermissionLocationWithBackgroundHandler.shared == nil {
-                    SPPermissionLocationWithBackgroundHandler.shared = SPPermissionLocationWithBackgroundHandler()
-                }
-                
-                SPPermissionLocationWithBackgroundHandler.shared!.requestPermission { (authorized) in
-                    DispatchQueue.main.async {
-                        complectionHandler()
-                        SPPermissionLocationWithBackgroundHandler.shared = nil
-                    }
-                }
-                break
             }
+        }
+    }
+    
+    private struct SPMotionPermission: SPPermissionInterface {
+        
+        var isAuthorized: Bool {
+            if #available(iOS 11.0, *) {
+                return CMMotionActivityManager.authorizationStatus() == .authorized
+            }
+            return false
+        }
+        
+        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+            let manager = CMMotionActivityManager()
+            let today = Date()
+            
+            manager.queryActivityStarting(from: today, to: today, to: OperationQueue.main, withHandler: { (activities: [CMMotionActivity]?, error: Error?) -> () in
+                complectionHandler()
+                manager.stopActivityUpdates()
+            })
         }
     }
 

@@ -402,8 +402,8 @@ extension SPPermissionDialogController {
             return "App will can check your location"
         case .locationWhenInUse:
             return "App will can check your location"
-        case .locationWithBackground:
-            return "App will can check your location"
+        case .motion:
+            return "Allow reports motion and environment-related data"
         case .mediaLibrary:
             return "Allow check your media"
         }

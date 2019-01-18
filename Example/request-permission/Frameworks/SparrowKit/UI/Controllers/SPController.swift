@@ -23,8 +23,12 @@ import UIKit
 
 public class SPController: SPStatusBarManagerController {
     
+    let emptyTitlesView = SPEmptyTitlesView(title: "No Data", subtitle: "No data or information")
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
+        self.emptyTitlesView.isHidden = true
+        self.view.addSubview(self.emptyTitlesView)
         self.updateLayout(with: self.view.frame.size)
     }
     
@@ -41,7 +45,9 @@ public class SPController: SPStatusBarManagerController {
         self.updateLayout(with: self.view.frame.size)
     }
     
-    func updateLayout(with size: CGSize) {}
+    func updateLayout(with size: CGSize) {
+        self.emptyTitlesView.layout(centerY: size.height / 2)
+    }
     
     func addHideButton(title: String) {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(

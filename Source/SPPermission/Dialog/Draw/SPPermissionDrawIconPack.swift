@@ -21,8 +21,6 @@
 
 import UIKit
 
-struct SPPermissionDraw { private init(){} }
-
 extension SPPermissionDraw {
     
     public class IconPack : NSObject {
