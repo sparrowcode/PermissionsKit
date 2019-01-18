@@ -52,8 +52,6 @@ To learn how to customize titles and images you can read section [DataSource & C
 
 <img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Permissions.jpg"/>
 
-Now also supports `MediaLibrary (Apple Music)` permission.
-
 If you want to request notification (or other permissions) without dialog, use the function:
 
 ```swift
@@ -146,7 +144,7 @@ If you want to change the color scheme, you need to implement the protocol `SPPe
 }
 ```
 
-And pass the object to the function `request` for `colorSource`.
+Will auto check `SPPermissionDialogDataSource` also implement `SPPermissionDialogColorSource`. You need pass for `dataSource` object, which implements two protocols.
 
 ## Purpose String in Info.plist
 

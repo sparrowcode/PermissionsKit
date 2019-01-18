@@ -103,6 +103,9 @@ class SPPermissionIconView: UIView {
         case .headphones:
             SPPermissionDraw.PermissionPack.drawHeadphones(frame: rect, resizing: .aspectFit, white: self.whiteColor, light: self.lightColor, medium: self.mediumColor, dark: self.darkColor)
             break
+        case .windmill:
+            SPPermissionDraw.PermissionPack.drawWindmill(frame: rect, resizing: .aspectFit, white: self.whiteColor, light: self.lightColor, medium: self.mediumColor, dark: self.darkColor)
+            break
         }
     }
     
@@ -116,6 +119,7 @@ class SPPermissionIconView: UIView {
         case documents
         case compass
         case headphones
+        case windmill
     }
 }
 

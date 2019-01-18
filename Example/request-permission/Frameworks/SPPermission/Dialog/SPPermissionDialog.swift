@@ -25,13 +25,18 @@ extension SPPermission {
     
     public struct Dialog {
         
-        public static func request(with permissions: [SPPermissionType], on viewController: UIViewController, delegate: SPPermissionDialogDelegate? = nil, dataSource: SPPermissionDialogDataSource? = nil, colorSource: SPPermissionDialogColorSource? = nil) {
+        public static func request(with permissions: [SPPermissionType], on viewController: UIViewController, delegate: SPPermissionDialogDelegate? = nil, dataSource: SPPermissionDialogDataSource? = nil) {
             if permissions.isEmpty {  return }
             let controller = SPPermissionDialogController(permissions: permissions)
             controller.delegate = delegate
             controller.dataSource = dataSource
-            controller.colorSource = colorSource
-            controller.present(on: viewController)
+            controller.colorSource = dataSource as? SPPermissionDialogColorSource
+            
+            if let tabBarController = viewController.tabBarController {
+                controller.present(on: tabBarController)
+            } else {
+                controller.present(on: viewController)
+            }
         }
         
         private init() {}

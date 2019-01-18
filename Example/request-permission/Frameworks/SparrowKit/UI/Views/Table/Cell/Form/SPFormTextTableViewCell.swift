@@ -21,4 +21,35 @@
 
 import UIKit
 
-struct SPCodeDraw { private init() {} }
+class SPFormTextTableViewCell: UITableViewCell {
+    
+    override var accessoryType: UITableViewCell.AccessoryType {
+        didSet {
+            if self.accessoryType == .disclosureIndicator {
+                self.selectionStyle = .default
+            } else {
+                self.selectionStyle = .none
+            }
+        }
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.commonInit()
+    }
+    
+    private func commonInit() {
+        self.textLabel?.numberOfLines = 0
+        self.accessoryType = .none
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.commonInit()
+    }
+}

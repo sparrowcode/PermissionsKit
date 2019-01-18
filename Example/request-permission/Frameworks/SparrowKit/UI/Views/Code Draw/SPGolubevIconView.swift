@@ -103,6 +103,9 @@ class SPGolubevIconView: UIView {
         case .headphones:
             SPCodeDraw.GolubevIconPack.drawHeadphones(frame: rect, resizing: .aspectFit, white: self.whiteColor, light: self.lightColor, medium: self.mediumColor, dark: self.darkColor)
             break
+        case .windmill:
+            SPCodeDraw.GolubevIconPack.drawWindmill(frame: rect, resizing: .aspectFit, white: self.whiteColor, light: self.lightColor, medium: self.mediumColor, dark: self.darkColor)
+            break
         }
     }
     
@@ -116,6 +119,7 @@ class SPGolubevIconView: UIView {
         case documents
         case compass
         case headphones
+        case windmill
     }
 }
 
