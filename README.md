@@ -50,7 +50,7 @@ To learn how to customize titles and images you can read section [DataSource & C
 
 ## Permissions
 
-<img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Permissions.jpg"/>
+<img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Permissions_List.jpg"/>
 
 If you want to request notification (or other permissions) without dialog, use the function:
 
