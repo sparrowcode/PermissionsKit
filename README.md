@@ -155,6 +155,7 @@ SPPermission uses many permissions in one library; you need to add some strings 
 - NSMicrophoneUsageDescription
 - NSAppleMusicUsageDescription
 - NSSpeechRecognitionUsageDescription
+- NSMotionUsageDescription
 
 ## Contribution
 I would appreciate your participation in the project. If you want to add new permissions, make a pull request. You can ignore adding an icon, I will add it myself. If you find errors in the project, you can create new [issue](https://github.com/IvanVorobei/SPPermission/issues) or fix it and make a pull request.
