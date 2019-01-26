@@ -23,9 +23,9 @@ import UIKit
 
 class SPSectionLabelsView: SPView {
     
-    let titleLabel = UILabel()
-    let subtitleLabel = UILabel()
-    let button = UIButton.init(type: UIButton.ButtonType.system)
+    let titleLabel = SPLabel()
+    let subtitleLabel = SPLabel()
+    let button = SPButton()
     
     override func commonInit() {
         super.commonInit()
@@ -59,15 +59,18 @@ class SPSectionLabelsView: SPView {
         self.titleLabel.sizeToFit()
         self.titleLabel.setWidth(self.frame.width)
         self.titleLabel.frame.origin = CGPoint.zero
+        //self.titleLabel.backgroundColor = UIColor.lightGray
         
         self.subtitleLabel.sizeToFit()
         self.subtitleLabel.setWidth(self.frame.width)
         self.subtitleLabel.frame.origin.x = 0
         self.subtitleLabel.frame.origin.y = self.titleLabel.frame.bottomYPosition + 3
+        //self.subtitleLabel.backgroundColor = UIColor.darkGray
         
         self.button.sizeToFit()
         self.button.frame.bottomXPosition = self.frame.width
-        self.button.frame.bottomYPosition = self.titleLabel.frame.bottomYPosition
+        self.button.center.y = self.titleLabel.center.y
+        //self.button.backgroundColor = UIColor.darkGray
         
         self.setHeight(self.subtitleLabel.frame.bottomYPosition)
     }

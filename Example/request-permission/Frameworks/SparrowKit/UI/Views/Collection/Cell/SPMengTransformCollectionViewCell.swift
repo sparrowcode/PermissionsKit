@@ -86,8 +86,8 @@ class SPMengTransformCollectionViewCell: SPCollectionViewCell {
         self.backgroundImageView.bottomAnchor.constraint(equalTo:
             contentView.bottomAnchor, constant: 0).isActive = true
         
-        self.gradientView.startColorPosition = .TopLeft
-        self.gradientView.endColorPosition = .BottomRight
+        self.gradientView.startColorPosition = .topLeft
+        self.gradientView.endColorPosition = .bottomRight
         self.gradientView.isHidden = true
         self.gradientView.translatesAutoresizingMaskIntoConstraints = false
         self.gradientView.layer.masksToBounds = false
