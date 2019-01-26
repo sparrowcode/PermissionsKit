@@ -60,7 +60,6 @@ SPPermission.request(.notification, with: {
 })
 ```
 
-Notification permission should be tested _only_ on a real device.
 If you want new permission added, create new issue [here](https://github.com/IvanVorobei/SPPermission/issues)
 
 ## Delegate
