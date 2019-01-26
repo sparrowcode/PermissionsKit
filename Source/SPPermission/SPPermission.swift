@@ -118,7 +118,19 @@ extension SPPermission {
     fileprivate struct SPNotificationPermission: SPPermissionInterface {
         
         var isAuthorized: Bool {
-            return UIApplication.shared.isRegisteredForRemoteNotifications
+            var notificationSettings: UNNotificationSettings?
+            let semasphore = DispatchSemaphore(value: 0)
+            
+            DispatchQueue.global().async {
+                UNUserNotificationCenter.current().getNotificationSettings { setttings in
+                    notificationSettings = setttings
+                    semasphore.signal()
+                }
+            }
+            
+            semasphore.wait()
+            guard let authorizationStatus = notificationSettings?.authorizationStatus else { return false }
+            return authorizationStatus == .authorized
         }
         
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {

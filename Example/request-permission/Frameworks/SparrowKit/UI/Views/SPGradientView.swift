@@ -25,10 +25,10 @@ public class SPGradientView: SPView {
     
     var gradientLayer: CAGradientLayer = CAGradientLayer()
     
-    var startColor: UIColor = UIColor.white { didSet { self.updateGradient() }}
-    var endColor: UIColor = UIColor.black { didSet { self.updateGradient() }}
-    var startColorPosition: Position = Position.TopLeft { didSet { self.updateGradient() }}
-    var endColorPosition: Position = Position.BottomRight { didSet { self.updateGradient() }}
+    var startColor = UIColor.white { didSet { self.updateGradient() }}
+    var endColor = UIColor.black { didSet { self.updateGradient() }}
+    var startColorPosition = Position.topLeft { didSet { self.updateGradient() }}
+    var endColorPosition = Position.bottomRight { didSet { self.updateGradient() }}
     
     override func commonInit() {
         super.commonInit()
@@ -48,32 +48,33 @@ public class SPGradientView: SPView {
     }
     
     public enum Position {
-        case TopLeft
-        case TopCenter
-        case TopRight
-        case BottomLeft
-        case BottomCenter
-        case BottomRight
-        case MediumLeft
-        case MediumRight
+        
+        case topLeft
+        case topCenter
+        case topRight
+        case bottomLeft
+        case bottomCenter
+        case bottomRight
+        case mediumLeft
+        case mediumRight
         
         var point: CGPoint {
             switch self {
-            case .TopLeft:
+            case .topLeft:
                 return CGPoint.init(x: 0, y: 0)
-            case .TopCenter:
+            case .topCenter:
                 return CGPoint.init(x: 0.5, y: 0)
-            case .TopRight:
+            case .topRight:
                 return CGPoint.init(x: 1, y: 0)
-            case .BottomLeft:
+            case .bottomLeft:
                 return CGPoint.init(x: 0, y: 1)
-            case .BottomCenter:
+            case .bottomCenter:
                 return CGPoint.init(x: 0.5, y: 1)
-            case .BottomRight:
+            case .bottomRight:
                 return CGPoint.init(x: 1, y: 1)
-            case .MediumLeft:
+            case .mediumLeft:
                 return CGPoint.init(x: 0, y: 0.5)
-            case .MediumRight:
+            case .mediumRight:
                 return CGPoint.init(x: 1, y: 0.5)
             }
         }

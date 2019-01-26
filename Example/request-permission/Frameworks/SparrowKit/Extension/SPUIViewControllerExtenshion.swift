@@ -24,11 +24,11 @@ import Photos
 
 extension UIViewController {
     
-    func present(_ viewControllerToPresent: UIViewController, completion: (() -> Swift.Void)? = nil) {
+    public func present(_ viewControllerToPresent: UIViewController, completion: (() -> Swift.Void)? = nil) {
         self.present(viewControllerToPresent, animated: true, completion: completion)
     }
     
-    @objc func dismiss() {
+    @objc public func dismiss() {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -41,20 +41,20 @@ extension UIViewController {
 
 extension UIViewController {
     
-    func dismissKeyboardWhenTappedAround() {
+    public func dismissKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
     
-    @objc func dismissKeyboard() {
+    @objc public func dismissKeyboard() {
         view.endEditing(true)
     }
 }
 
 extension UIViewController {
     
-    func save(image: UIImage) {
+    public func save(image: UIImage) {
         if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
             UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
         } else {
@@ -62,7 +62,7 @@ extension UIViewController {
         }
     }
     
-    func saveVideo(url: String, complection: @escaping (Bool)->()) {
+    public func saveVideo(url: String, complection: @escaping (Bool)->()) {
         DispatchQueue.global(qos: .utility).async {
             let urls = URL(string: url)
             let urldata = try? Data(contentsOf: urls!)
@@ -141,7 +141,7 @@ extension UIViewController {
 
 extension UIViewController {
     
-    var safeArea: UIEdgeInsets {
+    public var safeArea: UIEdgeInsets {
         if #available(iOS 11.0, *) {
             return self.view.safeAreaInsets
         } else {
@@ -149,18 +149,18 @@ extension UIViewController {
         }
     }
     
-    var navigationBarHeight: CGFloat {
+    public var navigationBarHeight: CGFloat {
         return self.navigationController?.navigationBar.frame.height ?? 0
     }
     
-    static var statusBarHeight: CGFloat {
+    public static var statusBarHeight: CGFloat {
         return UIApplication.shared.statusBarFrame.height
     }
 }
 
 extension UIViewController {
     
-    var navigationTitleColor: UIColor? {
+    public var navigationTitleColor: UIColor? {
         get {
             return (self.navigationController?.navigationBar.titleTextAttributes?[NSAttributedString.Key.foregroundColor] as? UIColor) ?? nil
         }
