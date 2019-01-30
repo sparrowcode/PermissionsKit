@@ -96,7 +96,7 @@ If you want to change the text, you need to implement `SPPermissionDialogDataSou
     @objc optional var allowedTitle: String { get }
     @objc optional var bottomComment: String { get }
     @objc optional var showCloseButton: Bool { get }
-    @objc optional var dragToDismiss: Bool { get }
+    @objc optional var dragEnabled: Bool { get }
     @objc optional func name(for permission: SPPermissionType) -> String?
     @objc optional func description(for permission: SPPermissionType) -> String?
     @objc optional func image(for permission: SPPermissionType) -> UIImage?
@@ -118,7 +118,7 @@ SPPermission.Dialog.request(
 )
 ```
 
-If you want to inhibite drag gesture to discard the dialog view you need to override `dragToDismiss` parameter, and if you want to add or remove the close button (without the button you’ll have to swipe the dialog to close it), you need to override parameter `showCloseButton`. To see what it looks like, see the picture below:
+If you want to inhibite drag gesture to discard the dialog view you need to override `dragEnabled` parameter, and if you want to add or remove the close button (without the button you’ll have to swipe the dialog to close it), you need to override parameter `showCloseButton`. To see what it looks like, see the picture below:
 
 <img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Close%20Button.png"/>
 
