@@ -6,8 +6,7 @@ Pod::Spec.new do |s|
   s.source        = { :git => "https://github.com/IvanVorobei/RequestPermission.git", :tag => s.version }
   s.license       = { :type => "MIT", :file => "LICENSE" }
   
-  s.author        = { "Ivan Vorobei" => "ivanvorobei@icloud.com" }
-  s.social_media_url   = "http://t.me/ivanvorobei"
+  s.author        = { "Ivan Vorobei" => "hello@ivanvorobei.by" }
   
   s.swift_version = '4.2'
   s.platform      = :ios
