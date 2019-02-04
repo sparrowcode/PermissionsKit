@@ -232,7 +232,7 @@ class SPPermissionDialogLineView: UIView {
     }
     
     func updateStyle() {
-        if SPPermission.isAllow(self.permission) {
+        if SPPermission.isAllowed(self.permission) {
             SPPermissionStyle.Animation.base(0.2, animations: {
                 self.button.setTitle(self.allowedTitle, for: .normal)
                 self.button.style = .select
