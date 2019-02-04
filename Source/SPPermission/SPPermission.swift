@@ -33,9 +33,14 @@ import CoreMotion
 
 public struct SPPermission {
     
-    public static func isAllow(_ permission: SPPermissionType) -> Bool {
+    public static func isAllowed(_ permission: SPPermissionType) -> Bool {
         let manager = self.getManagerForPermission(permission)
         return manager.isAuthorized
+    }
+    
+    public static func isDenied(_ permission: SPPermissionType) -> Bool {
+        let manager = self.getManagerForPermission(permission)
+        return manager.isDenied
     }
     
     public static func request(_ permission: SPPermissionType, with complectionHandler: @escaping ()->()) {
@@ -57,6 +62,8 @@ public struct SPPermission {
 fileprivate protocol SPPermissionInterface {
     
     var isAuthorized: Bool { get }
+    
+    var isDenied: Bool { get }
     
     func request(withComlectionHandler complectionHandler: @escaping ()->()?)
 }
@@ -98,11 +105,11 @@ extension SPPermission {
     fileprivate struct SPCameraPermission: SPPermissionInterface {
         
         var isAuthorized: Bool {
-            if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == AVAuthorizationStatus.authorized {
-                return true
-            } else {
-                return false
-            }
+            return AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == AVAuthorizationStatus.authorized
+        }
+        
+        var isDenied: Bool {
+            return AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == AVAuthorizationStatus.denied
         }
         
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
@@ -118,19 +125,28 @@ extension SPPermission {
     fileprivate struct SPNotificationPermission: SPPermissionInterface {
         
         var isAuthorized: Bool {
+            guard let authorizationStatus = fetchAuthorizationStatus() else { return false }
+            return authorizationStatus == .authorized
+        }
+        
+        var isDenied: Bool {
+            guard let authorizationStatus = fetchAuthorizationStatus() else { return false }
+            return authorizationStatus == .denied
+        }
+        
+        private func fetchAuthorizationStatus() -> UNAuthorizationStatus? {
             var notificationSettings: UNNotificationSettings?
-            let semasphore = DispatchSemaphore(value: 0)
+            let semaphore = DispatchSemaphore(value: 0)
             
             DispatchQueue.global().async {
                 UNUserNotificationCenter.current().getNotificationSettings { setttings in
                     notificationSettings = setttings
-                    semasphore.signal()
+                    semaphore.signal()
                 }
             }
             
-            semasphore.wait()
-            guard let authorizationStatus = notificationSettings?.authorizationStatus else { return false }
-            return authorizationStatus == .authorized
+            semaphore.wait()
+            return notificationSettings?.authorizationStatus
         }
         
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
@@ -153,13 +169,13 @@ extension SPPermission {
     }
     
     fileprivate struct SPPhotoLibraryPermission: SPPermissionInterface {
-        
+
         var isAuthorized: Bool {
-            if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
-                return true
-            } else {
-                return false
-            }
+            return PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized
+        }
+        
+        var isDenied: Bool {
+            return PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.denied
         }
         
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
@@ -175,10 +191,11 @@ extension SPPermission {
     fileprivate struct SPMicrophonePermission: SPPermissionInterface {
         
         var isAuthorized: Bool {
-            if AVAudioSession.sharedInstance().recordPermission == .granted {
-                return true
-            }
-            return false
+            return AVAudioSession.sharedInstance().recordPermission == .granted
+        }
+        
+        var isDenied: Bool {
+            return AVAudioSession.sharedInstance().recordPermission == .denied
         }
         
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
@@ -195,13 +212,11 @@ extension SPPermission {
     fileprivate struct SPCalendarPermission: SPPermissionInterface {
         
         var isAuthorized: Bool {
-            let status = EKEventStore.authorizationStatus(for: EKEntityType.event)
-            switch (status) {
-            case EKAuthorizationStatus.authorized:
-                return true
-            default:
-                return false
-            }
+            return EKEventStore.authorizationStatus(for: EKEntityType.event) == .authorized
+        }
+        
+        var isDenied: Bool {
+            return EKEventStore.authorizationStatus(for: EKEntityType.event) == .denied
         }
         
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
@@ -219,21 +234,18 @@ extension SPPermission {
         
         var isAuthorized: Bool {
             if #available(iOS 9.0, *) {
-                let status = CNContactStore.authorizationStatus(for: .contacts)
-                if status == .authorized {
-                    return true
-                } else {
-                    return false
-                }
+                return CNContactStore.authorizationStatus(for: .contacts) == .authorized
             } else {
-                let status = ABAddressBookGetAuthorizationStatus()
-                if status == .authorized {
-                    return true
-                } else {
-                    return false
-                }
+                return ABAddressBookGetAuthorizationStatus() == .authorized
             }
-            
+        }
+        
+        var isDenied: Bool {
+            if #available(iOS 9.0, *) {
+                return CNContactStore.authorizationStatus(for: .contacts) == .denied
+            } else {
+                return ABAddressBookGetAuthorizationStatus() == .denied
+            }
         }
         
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
@@ -259,13 +271,11 @@ extension SPPermission {
     fileprivate struct SPRemindersPermission: SPPermissionInterface {
         
         var isAuthorized: Bool {
-            let status = EKEventStore.authorizationStatus(for: EKEntityType.reminder)
-            switch (status) {
-            case EKAuthorizationStatus.authorized:
-                return true
-            default:
-                return false
-            }
+            return EKEventStore.authorizationStatus(for: EKEntityType.reminder) == .authorized
+        }
+        
+        var isDenied: Bool {
+            return EKEventStore.authorizationStatus(for: EKEntityType.reminder) == .denied
         }
         
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
@@ -282,13 +292,11 @@ extension SPPermission {
     fileprivate struct SPBluetoothPermission: SPPermissionInterface {
         
         var isAuthorized: Bool {
-            let status = EKEventStore.authorizationStatus(for: EKEntityType.reminder)
-            switch (status) {
-            case EKAuthorizationStatus.authorized:
-                return true
-            default:
-                return false
-            }
+            return EKEventStore.authorizationStatus(for: EKEntityType.reminder) == .authorized
+        }
+        
+        var isDenied: Bool {
+            return EKEventStore.authorizationStatus(for: EKEntityType.reminder) == .denied
         }
         
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
@@ -308,6 +316,10 @@ extension SPPermission {
             return SFSpeechRecognizer.authorizationStatus() == .authorized
         }
         
+        var isDenied: Bool {
+            return SFSpeechRecognizer.authorizationStatus() == .denied
+        }
+        
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
             SFSpeechRecognizer.requestAuthorization { status in
                 DispatchQueue.main.async {
@@ -320,12 +332,11 @@ extension SPPermission {
     fileprivate struct SPMediaLibraryPermission: SPPermissionInterface {
         
         var isAuthorized: Bool {
-            let status = MPMediaLibrary.authorizationStatus()
-            if status == .authorized {
-                return true
-            } else {
-                return false
-            }
+            return MPMediaLibrary.authorizationStatus() == .authorized
+        }
+        
+        var isDenied: Bool {
+            return MPMediaLibrary.authorizationStatus() == .denied
         }
         
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
@@ -374,6 +385,10 @@ extension SPPermission {
             }
         }
         
+        var isDenied: Bool {
+            return CLLocationManager.authorizationStatus() == .denied
+        }
+        
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
             
             switch self.type {
@@ -410,6 +425,13 @@ extension SPPermission {
         var isAuthorized: Bool {
             if #available(iOS 11.0, *) {
                 return CMMotionActivityManager.authorizationStatus() == .authorized
+            }
+            return false
+        }
+        
+        var isDenied: Bool {
+            if #available(iOS 11.0, *) {
+                return CMMotionActivityManager.authorizationStatus() == .denied
             }
             return false
         }
