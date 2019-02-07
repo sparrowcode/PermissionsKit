@@ -23,7 +23,7 @@ import UIKit
 
 public struct SPConstraints {
     
-    static func setEqualSizeSuperview(for view: UIView) {
+    public static func setEqualSizeSuperview(for view: UIView) {
         if let superView = view.superview {
             view.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([

@@ -23,13 +23,13 @@ import UIKit
 
 extension SPApp {
     
-    struct Launch {
+    public struct Launch {
         
-        static func run() {
+        public static func run() {
             self.count += 1
         }
         
-        static var count: Int {
+        public static var count: Int {
             get {
                 return UserDefaults.standard.value(forKey: "SPLaunchCount") as? Int ?? 0
             }
@@ -38,7 +38,7 @@ extension SPApp {
             }
         }
         
-        static var isFirstLaunch: Bool {
+        public static var isFirstLaunch: Bool {
             return (self.count == 1) || (self.count == 0)
         }
         

@@ -27,7 +27,7 @@ extension UITableViewCell {
         return subviews.compactMap { $0 as? UIButton }.first
     }
     
-    var highlightedColor: UIColor? {
+    public var highlightedColor: UIColor? {
         get {
             return self.backgroundView?.backgroundColor
         }

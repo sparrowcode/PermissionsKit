@@ -23,7 +23,7 @@ import UIKit
 
 extension UINavigationController {
     
-    static var elementsColor: UIColor {
+    public static var elementsColor: UIColor {
         get {
             if UINavigationBar.appearance().tintColor != nil {
                 return UINavigationBar.appearance().tintColor

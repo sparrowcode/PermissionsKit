@@ -23,17 +23,17 @@ import UIKit
 
 extension CGRect {
     
-    var bottomXPosition: CGFloat {
+    public var bottomXPosition: CGFloat {
         get { return self.origin.x + self.width }
         set { self.origin.x = newValue - self.width }
     }
     
-    var bottomYPosition: CGFloat {
+    public var bottomYPosition: CGFloat {
         get { return self.origin.y + self.height }
         set { self.origin.y = newValue - self.height }
     }
     
-    var minSideSize: CGFloat {
+    public var minSideSize: CGFloat {
         return min(self.width, self.height)
     }
 }

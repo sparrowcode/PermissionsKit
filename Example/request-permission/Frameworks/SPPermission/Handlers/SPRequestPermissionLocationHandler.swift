@@ -30,7 +30,7 @@ class SPPermissionAlwaysAuthorizationLocationHandler: NSObject, CLLocationManage
         return CLLocationManager()
     }()
     
-    var complectionHandler: SPPermissionAuthorizationHandlerCompletionBlock?
+    var completionHandler: SPPermissionAuthorizationHandlerCompletionBlock?
     
     override init() {
         super.init()
@@ -48,15 +48,15 @@ class SPPermissionAlwaysAuthorizationLocationHandler: NSObject, CLLocationManage
             return
         }
 
-        if let complectionHandler = complectionHandler {
-            complectionHandler(self.isAuthorized)
+        if let completionHandler = completionHandler {
+            completionHandler(self.isAuthorized)
         }
     }
     
     private var whenInUseNotRealChangeStatus: Bool = false
     
-    func requestPermission(_ complectionHandler: @escaping SPPermissionAuthorizationHandlerCompletionBlock) {
-        self.complectionHandler = complectionHandler
+    func requestPermission(_ completionHandler: @escaping SPPermissionAuthorizationHandlerCompletionBlock) {
+        self.completionHandler = completionHandler
         
         let status = CLLocationManager.authorizationStatus()
         
@@ -71,7 +71,7 @@ class SPPermissionAlwaysAuthorizationLocationHandler: NSObject, CLLocationManage
             locationManager.requestAlwaysAuthorization()
             break
         default:
-            complectionHandler(self.isAuthorized)
+            completionHandler(self.isAuthorized)
         }
     }
     
@@ -96,7 +96,7 @@ class SPPermissionWhenInUseAuthorizationLocationHandler: NSObject, CLLocationMan
         return CLLocationManager()
     }()
     
-    var complectionHandler: SPPermissionAuthorizationHandlerCompletionBlock?
+    var completionHandler: SPPermissionAuthorizationHandlerCompletionBlock?
     
     override init() {
         super.init()
@@ -107,20 +107,20 @@ class SPPermissionWhenInUseAuthorizationLocationHandler: NSObject, CLLocationMan
             return
         }
         
-        if let complectionHandler = complectionHandler {
-            complectionHandler(self.isAuthorized)
+        if let completionHandler = completionHandler {
+            completionHandler(self.isAuthorized)
         }
     }
     
-    func requestPermission(_ complectionHandler: @escaping SPPermissionAuthorizationHandlerCompletionBlock) {
-        self.complectionHandler = complectionHandler
+    func requestPermission(_ completionHandler: @escaping SPPermissionAuthorizationHandlerCompletionBlock) {
+        self.completionHandler = completionHandler
         
         let status = CLLocationManager.authorizationStatus()
         if (status == .notDetermined) || (status == .authorizedAlways) {
             locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()
         } else {
-            complectionHandler(self.isAuthorized)
+            completionHandler(self.isAuthorized)
         }
     }
     

@@ -22,9 +22,9 @@
 import UIKit
 import UserNotifications
 
-struct SPLocalNotification {
+public struct SPLocalNotification {
     
-    static func add(from timeInterval: TimeInterval, body: String, title: String? = nil, identifier: String? = nil) {
+    public static func add(from timeInterval: TimeInterval, body: String, title: String? = nil, identifier: String? = nil) {
         
         let content = UNMutableNotificationContent()
         content.body = body
@@ -50,8 +50,8 @@ struct SPLocalNotification {
         }
     }
     
-    static func add(in date: Date, body: String, title: String? = nil, identifier: String? = nil) {
-        
+    public static func add(in date: Date, body: String, title: String? = nil, identifier: String? = nil) {
+
         let content = UNMutableNotificationContent()
         content.body = body
         content.title = title ?? ""
@@ -77,7 +77,7 @@ struct SPLocalNotification {
         }
     }
     
-    static func remove(identifier: String) {
+    public static func remove(identifier: String) {
         let center = UNUserNotificationCenter.current()
         center.removePendingNotificationRequests(withIdentifiers: [identifier])
     }

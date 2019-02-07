@@ -25,7 +25,7 @@ public struct SPShare {
     
     public struct Native {
         
-        static func share(text: String? = nil, fileNames: [String] = [], images: [UIImage] = [], complection: ((_ isSharing: Bool)->())? = nil, sourceView: UIView, on viewController: UIViewController) {
+        public static func share(text: String? = nil, fileNames: [String] = [], images: [UIImage] = [], complection: ((_ isSharing: Bool)->())? = nil, sourceView: UIView, on viewController: UIViewController) {
             
             var shareData: [Any] = []
             if text != nil {

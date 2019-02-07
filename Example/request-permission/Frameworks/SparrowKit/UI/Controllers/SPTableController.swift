@@ -21,11 +21,11 @@
 
 import UIKit
 
-class SPTableController: SPStatusBarManagerTableController {
+public class SPTableController: SPStatusBarManagerTableController {
     
     var activityIndicatorView = UIActivityIndicatorView.init()
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         self.activityIndicatorView.stopAnimating()
@@ -35,7 +35,7 @@ class SPTableController: SPStatusBarManagerTableController {
         self.updateLayout(with: self.view.frame.size)
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { (contex) in
             self.updateLayout(with: size)
@@ -43,7 +43,7 @@ class SPTableController: SPStatusBarManagerTableController {
     }
     
     @available(iOS 11.0, *)
-    override func viewLayoutMarginsDidChange() {
+    override public func viewLayoutMarginsDidChange() {
         super.viewLayoutMarginsDidChange()
         self.updateLayout(with: self.view.frame.size)
     }

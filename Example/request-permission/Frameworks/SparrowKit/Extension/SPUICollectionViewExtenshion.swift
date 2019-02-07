@@ -23,7 +23,7 @@ import UIKit
 
 extension UICollectionView {
     
-    var currentIndexCellPath: IndexPath? {
+    public var currentIndexCellPath: IndexPath? {
         let visibleRect = CGRect(origin: self.contentOffset, size: self.bounds.size)
         let visiblePoint = CGPoint.init(x: visibleRect.midX, y: visibleRect.midY)
         let visibleIndexPath = self.indexPathForItem(at: visiblePoint)

@@ -24,7 +24,7 @@ import LocalAuthentication
 
 struct SPLocalAuthentication {
     
-    static var isEnable: Bool {
+    public static var isEnable: Bool {
         let context = LAContext()
         var error: NSError?
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
@@ -38,7 +38,7 @@ struct SPLocalAuthentication {
         }
     }
     
-    static func request(reason: String, complecton: @escaping (Bool)->()) {
+    public static func request(reason: String, complecton: @escaping (Bool)->()) {
         let context = LAContext()
         var error: NSError?
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {

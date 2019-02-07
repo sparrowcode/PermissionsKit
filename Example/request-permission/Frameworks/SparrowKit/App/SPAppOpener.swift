@@ -24,7 +24,7 @@ import SafariServices
 
 extension SPApp {
     
-    static func open(app: SPSystemApp) {
+    public static func open(app: SPSystemApp) {
         switch app {
         case SPSystemApp.photos:
             guard let settingsUrl = URL(string: "photos-redirect://") else {
@@ -63,7 +63,7 @@ extension SPApp {
         }
     }
     
-    static func open(link: String, redirect: Bool) {
+    public static func open(link: String, redirect: Bool) {
         
         guard let url = URL(string: link) else {
             print("SPOpener - can not create URL")

@@ -21,9 +21,9 @@
 
 import UIKit
 
-class SPNativeLargeButton: SPDownloadingButton {
+public class SPNativeLargeButton: SPDownloadingButton {
     
-    override var isHighlighted: Bool {
+    override public var isHighlighted: Bool {
         didSet {
             if self.gradientView == nil {
                 if isHighlighted {
@@ -42,7 +42,7 @@ class SPNativeLargeButton: SPDownloadingButton {
         }
     }
     
-    override func commonInit() {
+    override public func commonInit() {
         super.commonInit()
         self.titleLabel?.font = UIFont.system(type: UIFont.BoldType.DemiBold, size: 16)
         self.setTitleColor(UIColor.white)
@@ -52,7 +52,7 @@ class SPNativeLargeButton: SPDownloadingButton {
         self.contentEdgeInsets = UIEdgeInsets.init(top: 15, left: 15, bottom: 15, right: 15)
     }
     
-    override func sizeToFit() {
+    override public func sizeToFit() {
         super.sizeToFit()
         if let superview = self.superview {
             let sideSpace: CGFloat = superview.frame.width * 0.112
@@ -62,7 +62,7 @@ class SPNativeLargeButton: SPDownloadingButton {
         }
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         self.gradientView?.setEqualsBoundsFromSuperview()
         self.gradientView?.layer.cornerRadius = self.layer.cornerRadius

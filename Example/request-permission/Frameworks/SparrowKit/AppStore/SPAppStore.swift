@@ -24,11 +24,11 @@ import StoreKit
 
 struct SPAppStore {
     
-    static func link(appID: String) -> String {
+    public static func link(appID: String) -> String {
         return "https://itunes.apple.com/by/app/id" + appID
     }
     
-    static func open(appID: String) {
+    public static func open(appID: String) {
         if let url = URL(string: "itms-apps://itunes.apple.com/app/id\(appID)"),
             UIApplication.shared.canOpenURL(url) {
             if #available(iOS 10.0, *) {
@@ -39,7 +39,7 @@ struct SPAppStore {
         }
     }
     
-    static func requestReview(appID: String, force: Bool) {
+    public static func requestReview(appID: String, force: Bool) {
         if force {
             if let url = URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id\(appID)?mt=8&action=write-review"),
                 UIApplication.shared.canOpenURL(url) {
@@ -56,13 +56,13 @@ struct SPAppStore {
         }
     }
     
-    static func requestReview() {
+    public static func requestReview() {
         if #available(iOS 10.3, *) {
             SKStoreReviewController.requestReview()
         }
     }
     
-    static func isUpdateAvailable(completion: @escaping (Bool)->()) {
+    public static func isUpdateAvailable(completion: @escaping (Bool)->()) {
         
         guard let info = Bundle.main.infoDictionary,
             let currentVersion = info["CFBundleShortVersionString"] as? String,

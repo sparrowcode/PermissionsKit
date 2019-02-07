@@ -21,4 +21,4 @@
 
 import Foundation
 
-struct SPShadow { private init() {} }
+public struct SPShadow { private init() {} }

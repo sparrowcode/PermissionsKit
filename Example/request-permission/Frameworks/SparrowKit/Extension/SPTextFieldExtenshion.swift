@@ -23,7 +23,7 @@ import UIKit
 
 extension UITextField {
     
-    @IBInspectable var placeholderColor: UIColor? {
+    @IBInspectable public var placeholderColor: UIColor? {
         get {
             return self.placeholderColor
         }

@@ -23,7 +23,7 @@ import UIKit
 
 extension UITextField {
     
-    var isEmptyText: Bool {
+    public var isEmptyText: Bool {
         get {
             if self.text == "" {
                 return true
