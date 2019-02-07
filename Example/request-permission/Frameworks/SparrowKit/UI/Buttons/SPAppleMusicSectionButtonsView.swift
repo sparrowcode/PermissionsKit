@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPAppleMusicSectionButtonsView: SPView {
+public class SPAppleMusicSectionButtonsView: SPView {
     
     let topSeparatorView = SPSeparatorView()
     let bottomSeparatorView = SPSeparatorView()
@@ -68,7 +68,7 @@ class SPAppleMusicSectionButtonsView: SPView {
         self.layoutSubviews()
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         self.topSeparatorView.frame.origin = .zero

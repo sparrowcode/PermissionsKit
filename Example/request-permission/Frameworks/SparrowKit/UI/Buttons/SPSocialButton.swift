@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPSocialButton: UIButton {
+public class SPSocialButton: UIButton {
     
     let iconView = SPSocialIconView.init()
     var widthIconFactor: CGFloat = 0.5
@@ -33,7 +33,7 @@ class SPSocialButton: UIButton {
         }
     }
     
-    override var isHighlighted: Bool {
+    override public var isHighlighted: Bool {
         didSet {
             if isHighlighted {
                 self.iconView.color = self.iconView.color.withAlphaComponent(0.7)
@@ -43,7 +43,7 @@ class SPSocialButton: UIButton {
         }
     }
     
-    override var isEnabled: Bool {
+    override public var isEnabled: Bool {
         didSet {
             if isEnabled {
                 self.alpha = 1
@@ -79,7 +79,7 @@ class SPSocialButton: UIButton {
         self.iconView.color = SPNativeColors.white
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         self.iconView.setEqualsFrameFromBounds(self, withWidthFactor: self.widthIconFactor, withHeightFactor: self.heightIconFactor, withCentering: true)
         self.round()

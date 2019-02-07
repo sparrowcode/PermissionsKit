@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPNativeTableController: SPTableController {
+public class SPNativeTableController: SPTableController {
     
     let labelTableViewCellIdentifier: String = "labelTableViewCellIdentifier"
     let textFieldTableViewCellIdentifier: String = "textFieldTableViewCellIdentifier"
@@ -42,7 +42,7 @@ class SPNativeTableController: SPTableController {
     
     private var autoSpaceHeight: CGFloat = 35
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         self.statusBar = .dark
@@ -81,23 +81,23 @@ class SPNativeTableController: SPTableController {
         self.updateLayout(with: self.view.frame.size)
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override public func numberOfSections(in tableView: UITableView) -> Int {
         return super.numberOfSections(in: tableView)
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return super.tableView(tableView, numberOfRowsInSection: section)
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         fatalError("SPNativeTableViewController - need ivveride cellForRowAt")
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return nil
     }
     
-    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    override public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return nil
     }
     
@@ -159,7 +159,7 @@ class SPNativeTableController: SPTableController {
 //MARK: - manage selection
 extension SPNativeTableController {
     
-    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+    override public func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         
         if let _ = tableView.cellForRow(at: indexPath) as? SPFormFeaturedTitleTableViewCell {
             return false
@@ -173,7 +173,7 @@ extension SPNativeTableController {
 //MARK: - manage spaces
 extension SPNativeTableController {
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    override public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             return self.showTopInsets ? super.tableView(tableView, viewForHeaderInSection: section) : nil
         } else {
@@ -181,7 +181,7 @@ extension SPNativeTableController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    override public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == self.tableView.lastSection {
             return self.showBottomInsets ? super.tableView(tableView, viewForFooterInSection: section) : nil
         } else {
@@ -189,7 +189,7 @@ extension SPNativeTableController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let firstSection = self.tableView.firstSectionWithRows
         if section == firstSection {
             if self.showTopInsets {
@@ -217,7 +217,7 @@ extension SPNativeTableController {
         
     }
     
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    override public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if section == self.tableView.lastSectionWithRows {
             if self.showBottomInsets {
                 if self.autoBottomSpace {

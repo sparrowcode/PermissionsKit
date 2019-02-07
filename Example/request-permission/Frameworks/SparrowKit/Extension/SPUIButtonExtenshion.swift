@@ -23,7 +23,7 @@ import UIKit
 
 extension UIButton {
     
-    typealias UIButtonTargetClosure = () -> ()
+    public typealias UIButtonTargetClosure = () -> ()
     
     private class ClosureWrapper: NSObject {
         let closure: UIButtonTargetClosure
@@ -47,7 +47,7 @@ extension UIButton {
         }
     }
     
-    func target(_ action: @escaping UIButtonTargetClosure) {
+    public func target(_ action: @escaping UIButtonTargetClosure) {
         targetClosure = action
         addTarget(self, action: #selector(UIButton.targetAction), for: .touchUpInside)
     }
@@ -60,20 +60,20 @@ extension UIButton {
 
 extension UIButton {
     
-    func setTitle(_ title: String) {
+    public func setTitle(_ title: String) {
         self.setTitle(title, for: .normal)
     }
     
-    func setTitleColor(_ color: UIColor) {
+    public func setTitleColor(_ color: UIColor) {
         self.setTitleColor(color, for: .normal)
         self.setTitleColor(color.withAlphaComponent(0.7), for: .highlighted)
     }
     
-    func removeAllTargets() {
+    public func removeAllTargets() {
         self.removeTarget(nil, action: nil, for: .allEvents)
     }
     
-    func showText(_ text: String, withComplection completion: (() -> Void)! = {}) {
+    public func showText(_ text: String, withComplection completion: (() -> Void)! = {}) {
         let baseText = self.titleLabel?.text ?? " "
         SPAnimation.animate(0.2, animations: {
             self.titleLabel?.alpha = 0
@@ -97,7 +97,7 @@ extension UIButton {
         })
     }
     
-    func setAnimatableText(_ text: String, withComplection completion: (() -> Void)! = {}) {
+    public func setAnimatableText(_ text: String, withComplection completion: (() -> Void)! = {}) {
         SPAnimation.animate(0.3, animations: {
             self.titleLabel?.alpha = 0
         }, withComplection: {
@@ -110,7 +110,7 @@ extension UIButton {
         })
     }
     
-    func hideContent(completion: (() -> Void)! = {}) {
+    public func hideContent(completion: (() -> Void)! = {}) {
         SPAnimation.animate(0.2, animations: {
             self.titleLabel?.alpha = 0
         }, withComplection: {
@@ -118,7 +118,7 @@ extension UIButton {
         })
     }
     
-    func showContent(completion: (() -> Void)! = {}) {
+    public func showContent(completion: (() -> Void)! = {}) {
         SPAnimation.animate(0.2, animations: {
             self.titleLabel?.alpha = 1
         }, withComplection: {

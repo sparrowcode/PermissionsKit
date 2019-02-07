@@ -24,57 +24,57 @@ import UIKit
 
 extension String {
     
-    var digits: String {
+    public var digits: String {
         return components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
     }
     
-    mutating func dropLast(substring: String) {
+    public mutating func dropLast(substring: String) {
         if self.hasSuffix(substring) {
             self = String(dropLast(substring.count))
         }
     }
     
-    mutating func dropFirst(substring: String) {
+    public mutating func dropFirst(substring: String) {
         if self.hasPrefix(substring) {
             self = String(dropFirst(substring.count))
         }
     }
     
-    func uppercasedFirstLetter() -> String {
+    public func uppercasedFirstLetter() -> String {
         let lowercaseSctring = self.lowercased()
         return lowercaseSctring.prefix(1).uppercased() + lowercaseSctring.dropFirst()
     }
     
-    mutating func uppercaseFirstLetter() {
+    public mutating func uppercaseFirstLetter() {
         self = self.uppercasedFirstLetter()
     }
     
-    func removeAllSpaces() -> String {
+    public func removeAllSpaces() -> String {
          return self.components(separatedBy: .whitespaces).joined()
     }
     
-    mutating func removeAllSpaces() {
+    public mutating func removeAllSpaces() {
         self = self.removeAllSpaces()
     }
     
-    var isEmail: Bool {
+    public var isEmail: Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: self)
     }
     
-    var isLink: Bool {
+    public var isLink: Bool {
         if let url = URL(string: self) {
             return UIApplication.shared.canOpenURL(url)
         }
         return false
     }
     
-    mutating func replace(_ replacingString: String, with newString: String) {
+    public mutating func replace(_ replacingString: String, with newString: String) {
         self = self.replacingOccurrences(of: replacingString, with: newString)
     }
     
-    func replace(_ replacingString: String, with newString: String) -> String {
+    public func replace(_ replacingString: String, with newString: String) -> String {
         return self.replacingOccurrences(of: replacingString, with: newString)
     }
 }

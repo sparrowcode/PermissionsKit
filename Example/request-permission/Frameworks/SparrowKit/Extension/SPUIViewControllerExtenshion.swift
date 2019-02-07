@@ -90,7 +90,7 @@ extension UIViewController {
         }
     }
     
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+    @objc public func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let _ = error {
             self.imageSaved(isSuccses: false)
         } else {
@@ -98,14 +98,14 @@ extension UIViewController {
         }
     }
     
-    @objc func imageSaved(isSuccses: Bool) {
+    @objc public func imageSaved(isSuccses: Bool) {
         fatalError("SPUIViewControllerExtenshion - Need ovveride 'imageSaved' func")
     }
 }
 
 extension UIViewController {
     
-    func setPrefersLargeNavigationTitle(_ title: String, smallScreenToSmallBar: Bool = true) {
+    public func setPrefersLargeNavigationTitle(_ title: String, smallScreenToSmallBar: Bool = true) {
         self.navigationItem.title = title
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = .automatic

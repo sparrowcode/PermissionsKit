@@ -23,10 +23,10 @@ import UIKit
 
 public class SPAnimationSpring {
     
-    fileprivate static let spring: CGFloat = 1
-    fileprivate static let velocity: CGFloat = 1
+    public static let spring: CGFloat = 1
+    public static let velocity: CGFloat = 1
     
-    static func animate(_ duration: TimeInterval,
+    public static func animate(_ duration: TimeInterval,
                         animations: (() -> Void)!,
                         delay: TimeInterval = 0,
                         spring: CGFloat = spring,
@@ -47,7 +47,7 @@ public class SPAnimationSpring {
         })
     }
     
-    static func animateWithRepeatition(_ duration: TimeInterval,
+    public static func animateWithRepeatition(_ duration: TimeInterval,
                                        animations: (() -> Void)!,
                                        delay: TimeInterval = 0,
                                        spring: CGFloat = spring,

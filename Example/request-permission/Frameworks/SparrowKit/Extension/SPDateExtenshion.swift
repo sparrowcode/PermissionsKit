@@ -23,13 +23,13 @@ import Foundation
 
 extension Date {
     
-    func format(mask: String) -> String {
+    public func format(mask: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = mask
         return dateFormatter.string(from: self)
     }
     
-    static func create(from value: String) -> Date? {
+    public static func create(from value: String) -> Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy HH:mm"
         let date = formatter.date(from: value)

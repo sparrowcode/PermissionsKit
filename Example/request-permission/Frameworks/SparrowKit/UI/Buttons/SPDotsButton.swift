@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPDotButton: SPButton {
+public class SPDotButton: SPButton {
     
     var customSideSize: CGFloat = 26 {
         didSet {
@@ -37,7 +37,7 @@ class SPDotButton: SPButton {
         }
     }
     
-    override var isHighlighted: Bool{
+    override public var isHighlighted: Bool{
         didSet{
             if isHighlighted{
                 UIView.animate(withDuration: 0.1, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1.0, options: [.curveEaseOut, .beginFromCurrentState], animations: {
@@ -69,14 +69,14 @@ class SPDotButton: SPButton {
         }
     }
     
-    override func sizeToFit() {
+    override public func sizeToFit() {
         super.sizeToFit()
         self.setWidth(self.customSideSize)
         self.setHeight(self.customSideSize)
         self.layoutSubviews()
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
 
         let space: CGFloat = 2

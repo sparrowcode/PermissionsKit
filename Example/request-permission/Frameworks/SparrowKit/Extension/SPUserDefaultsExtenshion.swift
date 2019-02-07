@@ -23,15 +23,15 @@ import Foundation
 
 extension UserDefaults {
     
-    func set(stringArray array: [String], forKey key: String) {
+    public func set(stringArray array: [String], forKey key: String) {
         self.set(array, forKey: key)
     }
     
-    func set(boolArray array: [Bool], forKey key: String) {
+    public func set(boolArray array: [Bool], forKey key: String) {
         self.set(array, forKey: key)
     }
     
-    func boolArray(forKey defaultName: String) -> [Bool] {
+    public func boolArray(forKey defaultName: String) -> [Bool] {
         return UserDefaults.standard.array(forKey: defaultName) as? [Bool] ?? []
     }
 }

@@ -23,7 +23,7 @@ import UIKit
 
 public class SPAnimation {
     
-    static func animate(_ duration: TimeInterval,
+    public static func animate(_ duration: TimeInterval,
                         animations: (() -> Void)!,
                         delay: TimeInterval = 0,
                         options: UIView.AnimationOptions = [],
@@ -40,7 +40,7 @@ public class SPAnimation {
         })
     }
     
-    static func animateWithRepeatition(_ duration: TimeInterval,
+    public static func animateWithRepeatition(_ duration: TimeInterval,
                                        animations: (() -> Void)!,
                                        delay: TimeInterval = 0,
                                        options: UIView.AnimationOptions = [],

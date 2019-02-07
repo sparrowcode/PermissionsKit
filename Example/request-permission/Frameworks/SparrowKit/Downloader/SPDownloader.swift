@@ -23,7 +23,7 @@ import UIKit
 
 struct SPDownloader {
     
-    static func image(link: String, withComplection complection: @escaping (UIImage?) -> ()) {
+    public static func image(link: String, withComplection complection: @escaping (UIImage?) -> ()) {
         guard let url = URL(string: link) else {
             DispatchQueue.main.async {
                 complection(nil)

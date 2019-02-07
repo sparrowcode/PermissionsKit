@@ -23,7 +23,7 @@ import UIKit
 
 extension SPShadow {
     
-    struct DeepStyle {
+    public struct DeepStyle {
         
         private init() {}
         
@@ -85,14 +85,14 @@ extension SPShadow {
 
 extension UIView {
     
-    func setDeepShadow() {
+    public func setDeepShadow() {
         SPShadow.DeepStyle.setFor(view: self)
     }
 }
 
 extension UILabel {
     
-    func setDeepShadowForLetters() {
+    public func setDeepShadowForLetters() {
         SPShadow.DeepStyle.setFor(label: self)
     }
 }

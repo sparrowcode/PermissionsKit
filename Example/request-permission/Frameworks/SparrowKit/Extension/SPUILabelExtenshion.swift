@@ -23,7 +23,7 @@ import UIKit
 
 public extension UILabel {
     
-    func setShadowOffsetForLetters(blurRadius: CGFloat = 0, widthOffset: CGFloat = 0, heightOffset: CGFloat, opacity: CGFloat) {
+    public func setShadowOffsetForLetters(blurRadius: CGFloat = 0, widthOffset: CGFloat = 0, heightOffset: CGFloat, opacity: CGFloat) {
         self.layer.shadowRadius = blurRadius
         self.layer.shadowOffset = CGSize(
             width: widthOffset,
@@ -32,29 +32,29 @@ public extension UILabel {
         self.layer.shadowOpacity = Float(opacity)
     }
     
-    func setShadowOffsetFactorForLetters(blurRadius: CGFloat = 0, widthOffsetFactor: CGFloat = 0, heightOffsetFactor: CGFloat, opacity: CGFloat) {
+    public func setShadowOffsetFactorForLetters(blurRadius: CGFloat = 0, widthOffsetFactor: CGFloat = 0, heightOffsetFactor: CGFloat, opacity: CGFloat) {
         let widthOffset = widthOffsetFactor * self.frame.width
         let heightOffset = heightOffsetFactor * self.frame.height
         self.setShadowOffsetForLetters(blurRadius: blurRadius, widthOffset: widthOffset, heightOffset: heightOffset, opacity: opacity)
     }
     
-    func removeShadowForLetters() {
+    public func removeShadowForLetters() {
         self.setShadowOffsetForLetters(blurRadius: 0, widthOffset: 0, heightOffset: 0, opacity: 0)
     }
     
-    func setCenteringAlignment() {
+    public func setCenteringAlignment() {
         self.textAlignment = .center
         self.baselineAdjustment = .alignCenters
     }
     
-    func setLettersSpacing(_ value: CGFloat) {
+    public func setLettersSpacing(_ value: CGFloat) {
         if let textString = text {
             let attrs: [NSAttributedString.Key : Any] = [.kern: value]
             attributedText = NSAttributedString(string: textString, attributes: attrs)
         }
     }
     
-    func setLineSpacing(lineSpacing: CGFloat = 0.0, lineHeightMultiple: CGFloat = 0.0) {
+    public func setLineSpacing(lineSpacing: CGFloat = 0.0, lineHeightMultiple: CGFloat = 0.0) {
         
         guard let labelText = self.text else { return }
         

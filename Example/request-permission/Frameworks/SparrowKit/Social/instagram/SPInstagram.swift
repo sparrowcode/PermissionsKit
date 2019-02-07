@@ -21,13 +21,13 @@
 
 import UIKit
 
-class SPInstagram {
+public class SPInstagram {
     
-    static var isSetApp: Bool {
+    public static var isSetApp: Bool {
         return UIApplication.shared.canOpenURL(URL(string: "instagram://user?username=test")!)
     }
     
-    static func openPost(id: String) {
+    public static func openPost(id: String) {
         let instagramHooks = "instagram://media?id=\(id)"
         let instagramUrl = URL(string: instagramHooks)
         let safariURL = URL(string: "instagram.com/\(id)")!
@@ -38,7 +38,7 @@ class SPInstagram {
         }
     }
     
-    static func openUser(username: String) {
+    public static func openUser(username: String) {
         let instagramHooks = "instagram://user?username=\(username)"
         let instagramUrl = URL(string: instagramHooks)
         let safariURL = URL(string: "https://instagram.com/\(username)")!

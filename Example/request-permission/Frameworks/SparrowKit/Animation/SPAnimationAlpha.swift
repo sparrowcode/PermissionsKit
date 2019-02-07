@@ -23,11 +23,11 @@ import UIKit
 
 public class SPAnimationAlpha {
     
-    fileprivate static let durationListAnimation: TimeInterval = 0.45
-    fileprivate static let coefLenthForTransition: CGFloat = 2.8
-    fileprivate static let delayPerItem: TimeInterval = 0.09
+    public static let durationListAnimation: TimeInterval = 0.45
+    public static let coefLenthForTransition: CGFloat = 2.8
+    public static let delayPerItem: TimeInterval = 0.09
 
-    static func hideList(_ duration: TimeInterval = durationListAnimation,
+    public static func hideList(_ duration: TimeInterval = durationListAnimation,
                          views: [UIView],
                          delayPerItem: TimeInterval = delayPerItem,
                          withComplection completion: (() -> Void)! = {}) {
@@ -51,7 +51,7 @@ public class SPAnimationAlpha {
         }
     }
     
-    static func hideReverseList(_ duration: TimeInterval = durationListAnimation,
+    public static func hideReverseList(_ duration: TimeInterval = durationListAnimation,
                          views: [UIView],
                          delayPerItem: TimeInterval = delayPerItem,
                          withComplection completion: (() -> Void)! = {}) {
@@ -76,7 +76,7 @@ public class SPAnimationAlpha {
         }
     }
     
-    static func showList(_ duration: TimeInterval = durationListAnimation,
+    public static func showList(_ duration: TimeInterval = durationListAnimation,
                          views: [UIView],
                          delayPerItem: TimeInterval = delayPerItem,
                          withComplection completion: (() -> Void)! = {}) {

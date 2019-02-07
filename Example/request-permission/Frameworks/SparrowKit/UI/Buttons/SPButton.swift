@@ -59,4 +59,16 @@ public class SPButton: UIButton {
             self.round()
         }
     }
+    
+    public func set(enable: Bool, animatable: Bool) {
+        self.isEnabled = enable
+        if animatable {
+            SPAnimation.animate(0.3, animations: {
+                self.alpha = enable ? 1 : 0.6
+            })
+        } else {
+            self.alpha = enable ? 1 : 0.6
+        }
+        
+    }
 }

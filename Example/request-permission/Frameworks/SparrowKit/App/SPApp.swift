@@ -24,19 +24,19 @@ import StoreKit
 
 struct SPApp {
     
-    static var udid: String? {
+    public static var udid: String? {
         return UIDevice.current.identifierForVendor?.uuidString
     }
     
-    static var displayName: String? {
+    public static var displayName: String? {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
     }
     
-    static var rootController: UIViewController? {
+    public static var rootController: UIViewController? {
         return UIApplication.shared.keyWindow?.rootViewController
     }
     
-    static func set(rootController: UIViewController, animatable: Bool = true) {
+    public static func set(rootController: UIViewController, animatable: Bool = true) {
         
         rootController.view.frame = UIScreen.main.bounds
         
@@ -57,7 +57,7 @@ struct SPApp {
         }
     }
     
-    static func set(elementsColor: UIColor) {
+    public static func set(elementsColor: UIColor) {
         UINavigationController.elementsColor = elementsColor
         UIAlertController.elementsColor = elementsColor
         UITabBarController.elementsColor = elementsColor

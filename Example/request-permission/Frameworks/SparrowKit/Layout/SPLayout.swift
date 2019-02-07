@@ -21,9 +21,9 @@
 
 import UIKit
 
-struct SPLayout {
+public struct SPLayout {
     
-    static func sizeWith(widthFactor: CGFloat, maxWidth: CGFloat?, heightFactor: CGFloat, maxHeight: CGFloat?, relativeSideFactor: CGFloat?, from size: CGSize) -> CGSize {
+    public static func sizeWith(widthFactor: CGFloat, maxWidth: CGFloat?, heightFactor: CGFloat, maxHeight: CGFloat?, relativeSideFactor: CGFloat?, from size: CGSize) -> CGSize {
         
         var widthArea = size.width * widthFactor
         var heightArea = size.height * heightFactor

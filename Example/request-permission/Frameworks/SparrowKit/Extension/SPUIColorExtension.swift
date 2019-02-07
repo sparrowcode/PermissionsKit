@@ -23,7 +23,7 @@ import UIKit
 
 public extension UIColor {
     
-    convenience init(hex: String) {
+    public convenience init(hex: String) {
         var red:   CGFloat = 0.0
         var green: CGFloat = 0.0
         var blue:  CGFloat = 0.0

@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPProposeController: SPController {
+public class SPProposeController: SPController {
     
     private let data: Data
     internal let areaView = AreaView()
@@ -54,7 +54,7 @@ class SPProposeController: SPController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         self.areaView.isHidden = true
@@ -79,7 +79,7 @@ class SPProposeController: SPController {
         self.updateLayout(with: self.view.frame.size)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if !self.isPresent {
             self.present()
@@ -88,7 +88,7 @@ class SPProposeController: SPController {
     }
     
     private func present() {
-        SPVibration.impact(system: .warning)
+        SPVibration.impact(.warning)
         self.areaView.frame.origin.y = self.view.frame.size.height
         self.areaView.isHidden = false
         SPAnimationSpring.animate(self.animationDuration, animations: {
@@ -99,7 +99,7 @@ class SPProposeController: SPController {
            options: .transitionCurlUp)
     }
     
-    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+    override public func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         
         let hide = {
             self.view.backgroundColor = UIColor.black.withAlphaComponent(0)

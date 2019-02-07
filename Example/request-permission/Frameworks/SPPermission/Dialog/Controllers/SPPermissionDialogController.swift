@@ -147,11 +147,11 @@ public class SPPermissionDialogController: UIViewController {
         
         if let permission = permission {
             SPPermission.request(permission, with: {
-                if SPPermission.isAllow(permission) {
+                if SPPermission.isAllowed(permission) {
                     self.delegate?.didAllow?(permission: permission)
                     permissionView?.updateStyle()
                     for permission in self.permissions {
-                        if SPPermission.isAllow(permission) {
+                        if SPPermission.isAllowed(permission) {
                             if self.permissions.last == permission {
                                 SPPermissionStyle.Delay.wait(0.2, closure: {
                                     self.hide(withDialog: true)
@@ -305,18 +305,15 @@ public class SPPermissionDialogController: UIViewController {
         self.areaView.frame = CGRect.init(origin: self.areaView.frame.origin, size: CGSize.init(width: self.areaView.frame.width, height: self.areaView.layoutHeight))
         self.areaView.center = self.areaCenter
         
-        var bottomLabelWidth: CGFloat = size.width * 0.4
+        var bottomLabelWidth: CGFloat = size.width * 0.6
         if bottomLabelWidth > 230 {
             bottomLabelWidth = 230
         }
+        
+        self.bottomLabel.frame = CGRect.init(origin: self.bottomLabel.frame.origin, size: CGSize.init(width: bottomLabelWidth, height: 10))
         self.bottomLabel.sizeToFit()
-        self.bottomLabel.frame = CGRect.init(origin: self.bottomLabel.frame.origin, size: CGSize.init(width: bottomLabelWidth, height: self.bottomLabel.frame.height))
         self.bottomLabel.center.x = size.width / 2
-        if #available(iOS 11.0, *) {
-            self.bottomLabel.frame.origin.y = size.height - self.view.safeAreaInsets.bottom - 30 - self.bottomLabel.frame.height
-        } else {
-             self.bottomLabel.frame.origin.y = size.height - 30 - self.bottomLabel.frame.height
-        }
+        self.bottomLabel.frame.origin.y = size.height - 40 - self.bottomLabel.frame.height
         SPPermissionStyle.Shadow.setShadowOffsetForLabel(self.bottomLabel, blurRadius: 3, widthOffset: 0, heightOffset: 0, opacity: 0.18)
         
         let bottomLabelAlpha: CGFloat = SPPermissionStyle.Orientation.isPortrait ? 1 : 0

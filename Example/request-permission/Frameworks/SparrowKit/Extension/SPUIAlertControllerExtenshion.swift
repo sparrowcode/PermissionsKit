@@ -23,7 +23,7 @@ import UIKit
 
 extension UIAlertController {
     
-    static var elementsColor: UIColor {
+    public static var elementsColor: UIColor {
         get {
             return UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor
         }
@@ -87,15 +87,22 @@ extension UIAlertController {
 
 extension UIAlertController {
     
-    func addAction(title: String, complection: @escaping ()->()) {
+    public func addAction(title: String, complection: @escaping ()->()) {
         let action = UIAlertAction(title: title, style: .default) { (action) in
             complection()
         }
         self.addAction(action)
     }
     
-    func addDestructiveAction(title: String, complection: @escaping ()->()) {
+    public func addDestructiveAction(title: String, complection: @escaping ()->()) {
         let action = UIAlertAction(title: title, style: .destructive) { (action) in
+            complection()
+        }
+        self.addAction(action)
+    }
+    
+    public func addCancelAction(title: String, complection: @escaping ()->() = {}) {
+        let action = UIAlertAction(title: title, style: .cancel) { (action) in
             complection()
         }
         self.addAction(action)
