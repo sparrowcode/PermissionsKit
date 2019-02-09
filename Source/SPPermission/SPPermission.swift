@@ -92,6 +92,8 @@ extension SPPermission {
             return SPLocationPermission(type: SPLocationPermission.SPLocationType.Always)
         case .locationWhenInUse:
            return SPLocationPermission(type: SPLocationPermission.SPLocationType.WhenInUse)
+        case .locationAlwaysAndWhenInUse:
+            return SPLocationPermission(type: SPLocationPermission.SPLocationType.AlwaysAndWhenInUse)
         case .motion:
             return SPMotionPermission()
         case .mediaLibrary:
@@ -355,6 +357,7 @@ extension SPPermission {
         enum SPLocationType {
             case Always
             case WhenInUse
+            case AlwaysAndWhenInUse
         }
         
         init(type: SPLocationType) {
@@ -372,7 +375,7 @@ extension SPPermission {
                 } else {
                     return false
                 }
-            case .WhenInUse:
+            case .WhenInUse, .AlwaysAndWhenInUse:
                 if status == .authorizedAlways {
                     return true
                 } else {
@@ -392,7 +395,7 @@ extension SPPermission {
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
             
             switch self.type {
-            case .Always:
+            case .Always, .AlwaysAndWhenInUse:
                 if SPPermissionAlwaysAuthorizationLocationHandler.shared == nil {
                     SPPermissionAlwaysAuthorizationLocationHandler.shared = SPPermissionAlwaysAuthorizationLocationHandler()
                 }

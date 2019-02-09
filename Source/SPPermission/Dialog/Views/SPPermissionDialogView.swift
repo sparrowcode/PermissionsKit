@@ -185,9 +185,9 @@ class SPPermissionDialogLineView: UIView {
                 self.iconView.type = .calendar
             case .speech:
                 self.iconView.type = .micro
-            case .locationWhenInUse:
-                self.iconView.type = .compass
-            case .locationAlways:
+            case .locationWhenInUse,
+                 .locationAlways,
+                 .locationAlwaysAndWhenInUse:
                 self.iconView.type = .compass
             case .motion:
                 self.iconView.type = .windmill
