@@ -69,9 +69,7 @@ extension ViewController: SPPermissionDialogDataSource {
             return "Reminders"
         case .speech:
             return "Speech"
-        case .locationAlways:
-            return "Location"
-        case .locationWhenInUse:
+        case .locationAlways, .locationWhenInUse, .locationAlwaysAndWhenInUse:
             return "Location"
         case .motion:
             return "Motion"
@@ -98,9 +96,7 @@ extension ViewController: SPPermissionDialogDataSource {
             return "Application can create new task"
         case .speech:
             return "Allow check you voice"
-        case .locationAlways:
-            return "App will can check your location"
-        case .locationWhenInUse:
+        case .locationAlways, .locationWhenInUse, .locationAlwaysAndWhenInUse:
             return "App will can check your location"
         case .motion:
             return "Allow reports motion and environment-related data"
@@ -110,7 +106,7 @@ extension ViewController: SPPermissionDialogDataSource {
     }
     
     func image(for permission: SPPermissionType) -> UIImage? {
-        return nil // default icon
+        return nil // Default icon
     }
     
     func deniedTitle(for permission: SPPermissionType) -> String? {

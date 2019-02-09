@@ -31,10 +31,12 @@ import UIKit
     case contacts = 5
     case reminders = 6
     case speech = 7
+    @available(iOS, obsoleted: 11, renamed: "locationAlwaysAndWhenInUse")
     case locationAlways = 8
     case locationWhenInUse = 9
-    case motion = 10
-    case mediaLibrary = 11
+    case locationAlwaysAndWhenInUse = 10
+    case motion = 11
+    case mediaLibrary = 12
     
     var name: String {
         switch self {
@@ -54,9 +56,7 @@ import UIKit
             return "Reminders"
         case .speech:
             return "Speech"
-        case .locationAlways:
-            return "Location"
-        case .locationWhenInUse:
+        case .locationAlways, .locationWhenInUse, .locationAlwaysAndWhenInUse:
             return "Location"
         case .motion:
             return "Motion"
@@ -87,6 +87,8 @@ import UIKit
             return "NSLocationAlwaysUsageDescription"
         case .locationWhenInUse:
             return "NSLocationWhenInUseUsageDescription"
+        case .locationAlwaysAndWhenInUse:
+            return "NSLocationAlwaysAndWhenInUseUsageDescription"
         case .motion:
             return "NSMotionUsageDescription"
         case .mediaLibrary:
