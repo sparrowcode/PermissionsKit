@@ -56,11 +56,7 @@ import UIKit
             return "Reminders"
         case .speech:
             return "Speech"
-        case .locationAlways:
-            return "Location"
-        case .locationWhenInUse:
-            return "Location"
-        case .locationAlwaysAndWhenInUse:
+        case .locationAlways, .locationWhenInUse, .locationAlwaysAndWhenInUse:
             return "Location"
         case .motion:
             return "Motion"
