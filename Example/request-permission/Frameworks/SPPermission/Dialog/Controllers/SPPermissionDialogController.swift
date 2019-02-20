@@ -79,14 +79,6 @@ public class SPPermissionDialogController: UIViewController {
         self.backgroundView.setGradeAlpha(0, blurRaius: 0)
         self.view.addSubview(self.backgroundView)
         
-        self.closeButton.backgroundColor = self.colorScheme.white
-        self.closeButton.color = self.colorScheme.base
-        self.closeButton.widthIconFactor = 0.36
-        self.closeButton.heightIconFactor = 0.36
-        self.closeButton.alpha = 0
-        self.closeButton.addTarget(self, action: #selector(self.tapClose), for: .touchUpInside)
-        self.view.addSubview(self.closeButton)
-        
         self.bottomLabel.text = (self.dataSource?.bottomComment ?? "")
         self.bottomLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         self.bottomLabel.textColor = self.colorScheme.white
@@ -126,6 +118,14 @@ public class SPPermissionDialogController: UIViewController {
         self.areaView.descriptionLabel.text = (self.dataSource?.dialogComment ?? "Permissions are necessary for the correct work of the application and the performance of all functions. Push are not required permissions")
         self.view.addSubview(self.areaView)
         self.areaView.layer.anchorPoint = CGPoint.init(x: 0.5, y: 0.5)
+        
+        self.closeButton.backgroundColor = self.colorScheme.white
+        self.closeButton.color = self.colorScheme.base
+        self.closeButton.widthIconFactor = 0.36
+        self.closeButton.heightIconFactor = 0.36
+        self.closeButton.alpha = 0
+        self.closeButton.addTarget(self, action: #selector(self.tapClose), for: .touchUpInside)
+        self.view.insertSubview(self.closeButton, aboveSubview: self.areaView)
         
         self.setupPanGesture()
         self.animator = UIDynamicAnimator(referenceView: self.view)
