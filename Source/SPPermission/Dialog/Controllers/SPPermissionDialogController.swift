@@ -274,7 +274,7 @@ public class SPPermissionDialogController: UIViewController {
         } else {
             let tapGester = UITapGestureRecognizer.init(target: self, action: #selector(self.handleTap))
             tapGester.cancelsTouchesInView = false
-            self.view.addGestureRecognizer(tapGester)
+            self.backgroundView.addGestureRecognizer(tapGester)
         }
     }
     
