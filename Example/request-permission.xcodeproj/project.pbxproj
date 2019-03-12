@@ -11,29 +11,29 @@
 		F46531032195D242007CDB17 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46531022195D242007CDB17 /* Media.xcassets */; };
 		F46531052195D24D007CDB17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46531042195D24D007CDB17 /* LaunchScreen.storyboard */; };
 		F46531072195D2AE007CDB17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46531062195D2AE007CDB17 /* ViewController.swift */; };
-		F4720E5F221D622B00DF6E3F /* SPPermissionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E46221D622B00DF6E3F /* SPPermissionDialog.swift */; };
-		F4720E60221D622B00DF6E3F /* SPPermissionStyleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E48221D622B00DF6E3F /* SPPermissionStyleAnimation.swift */; };
-		F4720E61221D622B00DF6E3F /* SPPermissionStyleOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E49221D622B00DF6E3F /* SPPermissionStyleOrientation.swift */; };
-		F4720E62221D622B00DF6E3F /* SPPermissionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E4A221D622B00DF6E3F /* SPPermissionStyle.swift */; };
-		F4720E63221D622B00DF6E3F /* SPPermissionStyleShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E4B221D622B00DF6E3F /* SPPermissionStyleShadow.swift */; };
-		F4720E64221D622B00DF6E3F /* SPPermissionStyleDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E4C221D622B00DF6E3F /* SPPermissionStyleDelay.swift */; };
-		F4720E65221D622B00DF6E3F /* SPPermissionStyleColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E4D221D622B00DF6E3F /* SPPermissionStyleColors.swift */; };
-		F4720E66221D622B00DF6E3F /* SPPermissionDialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E4F221D622B00DF6E3F /* SPPermissionDialogController.swift */; };
-		F4720E67221D622B00DF6E3F /* SPPermissionCloseIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E51221D622B00DF6E3F /* SPPermissionCloseIconView.swift */; };
-		F4720E68221D622B00DF6E3F /* SPPermissionIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E52221D622B00DF6E3F /* SPPermissionIconView.swift */; };
-		F4720E69221D622B00DF6E3F /* SPPermissionBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E53221D622B00DF6E3F /* SPPermissionBlurView.swift */; };
-		F4720E6A221D622B00DF6E3F /* SPPermissionActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E54221D622B00DF6E3F /* SPPermissionActionButton.swift */; };
-		F4720E6B221D622B00DF6E3F /* SPPermissionDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E55221D622B00DF6E3F /* SPPermissionDialogView.swift */; };
-		F4720E6C221D622B00DF6E3F /* SPPermissionCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E56221D622B00DF6E3F /* SPPermissionCloseButton.swift */; };
-		F4720E6D221D622B00DF6E3F /* SPPermissionDrawIconPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E58221D622B00DF6E3F /* SPPermissionDrawIconPack.swift */; };
-		F4720E6E221D622B00DF6E3F /* SPPermissionDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E59221D622B00DF6E3F /* SPPermissionDraw.swift */; };
-		F4720E6F221D622B00DF6E3F /* SPPermissionDrawPermissionPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E5A221D622B00DF6E3F /* SPPermissionDrawPermissionPack.swift */; };
-		F4720E70221D622B00DF6E3F /* SPPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E5B221D622B00DF6E3F /* SPPermission.swift */; };
-		F4720E71221D622B00DF6E3F /* SPPermissionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E5C221D622B00DF6E3F /* SPPermissionType.swift */; };
-		F4720E72221D622B00DF6E3F /* SPRequestPermissionLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4720E5E221D622B00DF6E3F /* SPRequestPermissionLocationHandler.swift */; };
 		F4997FDC21EC87FF00E89344 /* ColorSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4997FDB21EC87FF00E89344 /* ColorSource.swift */; };
 		F49CC4822196DA0A0060FCAD /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49CC4812196DA090060FCAD /* Delegate.swift */; };
 		F49CC4842196DA160060FCAD /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49CC4832196DA160060FCAD /* DataSource.swift */; };
+		F4AFE410223794B300504748 /* SPPermissionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE3F7223794B300504748 /* SPPermissionDialog.swift */; };
+		F4AFE411223794B300504748 /* SPPermissionStyleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE3F9223794B300504748 /* SPPermissionStyleAnimation.swift */; };
+		F4AFE412223794B300504748 /* SPPermissionStyleOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE3FA223794B300504748 /* SPPermissionStyleOrientation.swift */; };
+		F4AFE413223794B300504748 /* SPPermissionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE3FB223794B300504748 /* SPPermissionStyle.swift */; };
+		F4AFE414223794B300504748 /* SPPermissionStyleShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE3FC223794B300504748 /* SPPermissionStyleShadow.swift */; };
+		F4AFE415223794B300504748 /* SPPermissionStyleDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE3FD223794B300504748 /* SPPermissionStyleDelay.swift */; };
+		F4AFE416223794B300504748 /* SPPermissionStyleColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE3FE223794B300504748 /* SPPermissionStyleColors.swift */; };
+		F4AFE417223794B300504748 /* SPPermissionDialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE400223794B300504748 /* SPPermissionDialogController.swift */; };
+		F4AFE418223794B300504748 /* SPPermissionCloseIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE402223794B300504748 /* SPPermissionCloseIconView.swift */; };
+		F4AFE419223794B300504748 /* SPPermissionIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE403223794B300504748 /* SPPermissionIconView.swift */; };
+		F4AFE41A223794B300504748 /* SPPermissionBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE404223794B300504748 /* SPPermissionBlurView.swift */; };
+		F4AFE41B223794B300504748 /* SPPermissionActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE405223794B300504748 /* SPPermissionActionButton.swift */; };
+		F4AFE41C223794B300504748 /* SPPermissionDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE406223794B300504748 /* SPPermissionDialogView.swift */; };
+		F4AFE41D223794B300504748 /* SPPermissionCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE407223794B300504748 /* SPPermissionCloseButton.swift */; };
+		F4AFE41E223794B300504748 /* SPPermissionDrawIconPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE409223794B300504748 /* SPPermissionDrawIconPack.swift */; };
+		F4AFE41F223794B300504748 /* SPPermissionDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE40A223794B300504748 /* SPPermissionDraw.swift */; };
+		F4AFE420223794B300504748 /* SPPermissionDrawPermissionPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE40B223794B300504748 /* SPPermissionDrawPermissionPack.swift */; };
+		F4AFE421223794B300504748 /* SPPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE40C223794B300504748 /* SPPermission.swift */; };
+		F4AFE422223794B300504748 /* SPPermissionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE40D223794B300504748 /* SPPermissionType.swift */; };
+		F4AFE423223794B300504748 /* SPRequestPermissionLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AFE40F223794B300504748 /* SPRequestPermissionLocationHandler.swift */; };
 		F4C3075B220C2CFD00828B79 /* SPVibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C306A3220C2CFD00828B79 /* SPVibration.swift */; };
 		F4C3075C220C2CFD00828B79 /* SPTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C306A6220C2CFD00828B79 /* SPTableView.swift */; };
 		F4C3075D220C2CFD00828B79 /* SPPromoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C306A8220C2CFD00828B79 /* SPPromoTableViewCell.swift */; };
@@ -160,30 +160,30 @@
 		F46531022195D242007CDB17 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		F46531042195D24D007CDB17 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F46531062195D2AE007CDB17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F4720E46221D622B00DF6E3F /* SPPermissionDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionDialog.swift; sourceTree = "<group>"; };
-		F4720E48221D622B00DF6E3F /* SPPermissionStyleAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionStyleAnimation.swift; sourceTree = "<group>"; };
-		F4720E49221D622B00DF6E3F /* SPPermissionStyleOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionStyleOrientation.swift; sourceTree = "<group>"; };
-		F4720E4A221D622B00DF6E3F /* SPPermissionStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionStyle.swift; sourceTree = "<group>"; };
-		F4720E4B221D622B00DF6E3F /* SPPermissionStyleShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionStyleShadow.swift; sourceTree = "<group>"; };
-		F4720E4C221D622B00DF6E3F /* SPPermissionStyleDelay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionStyleDelay.swift; sourceTree = "<group>"; };
-		F4720E4D221D622B00DF6E3F /* SPPermissionStyleColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionStyleColors.swift; sourceTree = "<group>"; };
-		F4720E4F221D622B00DF6E3F /* SPPermissionDialogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionDialogController.swift; sourceTree = "<group>"; };
-		F4720E51221D622B00DF6E3F /* SPPermissionCloseIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionCloseIconView.swift; sourceTree = "<group>"; };
-		F4720E52221D622B00DF6E3F /* SPPermissionIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionIconView.swift; sourceTree = "<group>"; };
-		F4720E53221D622B00DF6E3F /* SPPermissionBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionBlurView.swift; sourceTree = "<group>"; };
-		F4720E54221D622B00DF6E3F /* SPPermissionActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionActionButton.swift; sourceTree = "<group>"; };
-		F4720E55221D622B00DF6E3F /* SPPermissionDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionDialogView.swift; sourceTree = "<group>"; };
-		F4720E56221D622B00DF6E3F /* SPPermissionCloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionCloseButton.swift; sourceTree = "<group>"; };
-		F4720E58221D622B00DF6E3F /* SPPermissionDrawIconPack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionDrawIconPack.swift; sourceTree = "<group>"; };
-		F4720E59221D622B00DF6E3F /* SPPermissionDraw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionDraw.swift; sourceTree = "<group>"; };
-		F4720E5A221D622B00DF6E3F /* SPPermissionDrawPermissionPack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionDrawPermissionPack.swift; sourceTree = "<group>"; };
-		F4720E5B221D622B00DF6E3F /* SPPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermission.swift; sourceTree = "<group>"; };
-		F4720E5C221D622B00DF6E3F /* SPPermissionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionType.swift; sourceTree = "<group>"; };
-		F4720E5E221D622B00DF6E3F /* SPRequestPermissionLocationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionLocationHandler.swift; sourceTree = "<group>"; };
 		F4997FDB21EC87FF00E89344 /* ColorSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSource.swift; sourceTree = "<group>"; };
 		F49CC4812196DA090060FCAD /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		F49CC4832196DA160060FCAD /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		F4A4C8642199C05700509AF1 /* request-permission.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "request-permission.entitlements"; sourceTree = "<group>"; };
+		F4AFE3F7223794B300504748 /* SPPermissionDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionDialog.swift; sourceTree = "<group>"; };
+		F4AFE3F9223794B300504748 /* SPPermissionStyleAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionStyleAnimation.swift; sourceTree = "<group>"; };
+		F4AFE3FA223794B300504748 /* SPPermissionStyleOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionStyleOrientation.swift; sourceTree = "<group>"; };
+		F4AFE3FB223794B300504748 /* SPPermissionStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionStyle.swift; sourceTree = "<group>"; };
+		F4AFE3FC223794B300504748 /* SPPermissionStyleShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionStyleShadow.swift; sourceTree = "<group>"; };
+		F4AFE3FD223794B300504748 /* SPPermissionStyleDelay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionStyleDelay.swift; sourceTree = "<group>"; };
+		F4AFE3FE223794B300504748 /* SPPermissionStyleColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionStyleColors.swift; sourceTree = "<group>"; };
+		F4AFE400223794B300504748 /* SPPermissionDialogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionDialogController.swift; sourceTree = "<group>"; };
+		F4AFE402223794B300504748 /* SPPermissionCloseIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionCloseIconView.swift; sourceTree = "<group>"; };
+		F4AFE403223794B300504748 /* SPPermissionIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionIconView.swift; sourceTree = "<group>"; };
+		F4AFE404223794B300504748 /* SPPermissionBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionBlurView.swift; sourceTree = "<group>"; };
+		F4AFE405223794B300504748 /* SPPermissionActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionActionButton.swift; sourceTree = "<group>"; };
+		F4AFE406223794B300504748 /* SPPermissionDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionDialogView.swift; sourceTree = "<group>"; };
+		F4AFE407223794B300504748 /* SPPermissionCloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionCloseButton.swift; sourceTree = "<group>"; };
+		F4AFE409223794B300504748 /* SPPermissionDrawIconPack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionDrawIconPack.swift; sourceTree = "<group>"; };
+		F4AFE40A223794B300504748 /* SPPermissionDraw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionDraw.swift; sourceTree = "<group>"; };
+		F4AFE40B223794B300504748 /* SPPermissionDrawPermissionPack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionDrawPermissionPack.swift; sourceTree = "<group>"; };
+		F4AFE40C223794B300504748 /* SPPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermission.swift; sourceTree = "<group>"; };
+		F4AFE40D223794B300504748 /* SPPermissionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionType.swift; sourceTree = "<group>"; };
+		F4AFE40F223794B300504748 /* SPRequestPermissionLocationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionLocationHandler.swift; sourceTree = "<group>"; };
 		F4C306A3220C2CFD00828B79 /* SPVibration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPVibration.swift; sourceTree = "<group>"; };
 		F4C306A6220C2CFD00828B79 /* SPTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPTableView.swift; sourceTree = "<group>"; };
 		F4C306A8220C2CFD00828B79 /* SPPromoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPromoTableViewCell.swift; sourceTree = "<group>"; };
@@ -317,7 +317,7 @@
 		F445C93521AED32A00184254 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F4720E44221D622B00DF6E3F /* SPPermission */,
+				F4AFE3F5223794B200504748 /* SPPermission */,
 				F4C306A1220C2CFD00828B79 /* SparrowKit */,
 			);
 			path = Frameworks;
@@ -372,77 +372,77 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		F4720E44221D622B00DF6E3F /* SPPermission */ = {
+		F4AFE3F5223794B200504748 /* SPPermission */ = {
 			isa = PBXGroup;
 			children = (
-				F4720E45221D622B00DF6E3F /* Dialog */,
-				F4720E5B221D622B00DF6E3F /* SPPermission.swift */,
-				F4720E5C221D622B00DF6E3F /* SPPermissionType.swift */,
-				F4720E5D221D622B00DF6E3F /* Handlers */,
+				F4AFE3F6223794B300504748 /* Dialog */,
+				F4AFE40C223794B300504748 /* SPPermission.swift */,
+				F4AFE40D223794B300504748 /* SPPermissionType.swift */,
+				F4AFE40E223794B300504748 /* Handlers */,
 			);
 			path = SPPermission;
 			sourceTree = "<group>";
 		};
-		F4720E45221D622B00DF6E3F /* Dialog */ = {
+		F4AFE3F6223794B300504748 /* Dialog */ = {
 			isa = PBXGroup;
 			children = (
-				F4720E46221D622B00DF6E3F /* SPPermissionDialog.swift */,
-				F4720E47221D622B00DF6E3F /* Style */,
-				F4720E4E221D622B00DF6E3F /* Controllers */,
-				F4720E50221D622B00DF6E3F /* Views */,
-				F4720E57221D622B00DF6E3F /* Draw */,
+				F4AFE3F7223794B300504748 /* SPPermissionDialog.swift */,
+				F4AFE3F8223794B300504748 /* Style */,
+				F4AFE3FF223794B300504748 /* Controllers */,
+				F4AFE401223794B300504748 /* Views */,
+				F4AFE408223794B300504748 /* Draw */,
 			);
 			path = Dialog;
 			sourceTree = "<group>";
 		};
-		F4720E47221D622B00DF6E3F /* Style */ = {
+		F4AFE3F8223794B300504748 /* Style */ = {
 			isa = PBXGroup;
 			children = (
-				F4720E48221D622B00DF6E3F /* SPPermissionStyleAnimation.swift */,
-				F4720E49221D622B00DF6E3F /* SPPermissionStyleOrientation.swift */,
-				F4720E4A221D622B00DF6E3F /* SPPermissionStyle.swift */,
-				F4720E4B221D622B00DF6E3F /* SPPermissionStyleShadow.swift */,
-				F4720E4C221D622B00DF6E3F /* SPPermissionStyleDelay.swift */,
-				F4720E4D221D622B00DF6E3F /* SPPermissionStyleColors.swift */,
+				F4AFE3F9223794B300504748 /* SPPermissionStyleAnimation.swift */,
+				F4AFE3FA223794B300504748 /* SPPermissionStyleOrientation.swift */,
+				F4AFE3FB223794B300504748 /* SPPermissionStyle.swift */,
+				F4AFE3FC223794B300504748 /* SPPermissionStyleShadow.swift */,
+				F4AFE3FD223794B300504748 /* SPPermissionStyleDelay.swift */,
+				F4AFE3FE223794B300504748 /* SPPermissionStyleColors.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
 		};
-		F4720E4E221D622B00DF6E3F /* Controllers */ = {
+		F4AFE3FF223794B300504748 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F4720E4F221D622B00DF6E3F /* SPPermissionDialogController.swift */,
+				F4AFE400223794B300504748 /* SPPermissionDialogController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		F4720E50221D622B00DF6E3F /* Views */ = {
+		F4AFE401223794B300504748 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F4720E51221D622B00DF6E3F /* SPPermissionCloseIconView.swift */,
-				F4720E52221D622B00DF6E3F /* SPPermissionIconView.swift */,
-				F4720E53221D622B00DF6E3F /* SPPermissionBlurView.swift */,
-				F4720E54221D622B00DF6E3F /* SPPermissionActionButton.swift */,
-				F4720E55221D622B00DF6E3F /* SPPermissionDialogView.swift */,
-				F4720E56221D622B00DF6E3F /* SPPermissionCloseButton.swift */,
+				F4AFE402223794B300504748 /* SPPermissionCloseIconView.swift */,
+				F4AFE403223794B300504748 /* SPPermissionIconView.swift */,
+				F4AFE404223794B300504748 /* SPPermissionBlurView.swift */,
+				F4AFE405223794B300504748 /* SPPermissionActionButton.swift */,
+				F4AFE406223794B300504748 /* SPPermissionDialogView.swift */,
+				F4AFE407223794B300504748 /* SPPermissionCloseButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F4720E57221D622B00DF6E3F /* Draw */ = {
+		F4AFE408223794B300504748 /* Draw */ = {
 			isa = PBXGroup;
 			children = (
-				F4720E58221D622B00DF6E3F /* SPPermissionDrawIconPack.swift */,
-				F4720E59221D622B00DF6E3F /* SPPermissionDraw.swift */,
-				F4720E5A221D622B00DF6E3F /* SPPermissionDrawPermissionPack.swift */,
+				F4AFE409223794B300504748 /* SPPermissionDrawIconPack.swift */,
+				F4AFE40A223794B300504748 /* SPPermissionDraw.swift */,
+				F4AFE40B223794B300504748 /* SPPermissionDrawPermissionPack.swift */,
 			);
 			path = Draw;
 			sourceTree = "<group>";
 		};
-		F4720E5D221D622B00DF6E3F /* Handlers */ = {
+		F4AFE40E223794B300504748 /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
-				F4720E5E221D622B00DF6E3F /* SPRequestPermissionLocationHandler.swift */,
+				F4AFE40F223794B300504748 /* SPRequestPermissionLocationHandler.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -983,7 +983,7 @@
 				F4C3075F220C2CFD00828B79 /* SPFormMailTableViewCell.swift in Sources */,
 				F4C307AA220C2CFD00828B79 /* SPUIImageViewExtenshion.swift in Sources */,
 				F4C307CE220C2CFD00828B79 /* SPDelay.swift in Sources */,
-				F4720E69221D622B00DF6E3F /* SPPermissionBlurView.swift in Sources */,
+				F4AFE41A223794B300504748 /* SPPermissionBlurView.swift in Sources */,
 				F4C30785220C2CFD00828B79 /* SPSocialIconView.swift in Sources */,
 				F4C30762220C2CFD00828B79 /* SPFormFeaturedTitleTableViewCell.swift in Sources */,
 				F4C307CB220C2CFD00828B79 /* SPGolubevGolubevIconPack.swift in Sources */,
@@ -1011,9 +1011,9 @@
 				F4C30769220C2CFD00828B79 /* SPTableViewCell.swift in Sources */,
 				F4C3078D220C2CFD00828B79 /* SPCollectionViewLayout.swift in Sources */,
 				F4C307A7220C2CFD00828B79 /* SPUILabelExtenshion.swift in Sources */,
-				F4720E67221D622B00DF6E3F /* SPPermissionCloseIconView.swift in Sources */,
+				F4AFE418223794B300504748 /* SPPermissionCloseIconView.swift in Sources */,
 				F4C3076C220C2CFD00828B79 /* SPAppleMusicSectionButtonsView.swift in Sources */,
-				F4720E72221D622B00DF6E3F /* SPRequestPermissionLocationHandler.swift in Sources */,
+				F4AFE423223794B300504748 /* SPRequestPermissionLocationHandler.swift in Sources */,
 				F4C3075C220C2CFD00828B79 /* SPTableView.swift in Sources */,
 				F4C3075E220C2CFD00828B79 /* SPFormButtonTableViewCell.swift in Sources */,
 				F4C30764220C2CFD00828B79 /* SPFormTextTableViewCell.swift in Sources */,
@@ -1028,8 +1028,8 @@
 				F4C30774220C2CFD00828B79 /* SPImageView.swift in Sources */,
 				F4C307BC220C2CFD00828B79 /* SPAnimationAlpha.swift in Sources */,
 				F4C30796220C2CFD00828B79 /* SPUITableViewCellExtenshion.swift in Sources */,
-				F4720E6E221D622B00DF6E3F /* SPPermissionDraw.swift in Sources */,
-				F4720E6A221D622B00DF6E3F /* SPPermissionActionButton.swift in Sources */,
+				F4AFE41F223794B300504748 /* SPPermissionDraw.swift in Sources */,
+				F4AFE41B223794B300504748 /* SPPermissionActionButton.swift in Sources */,
 				F4C307A6220C2CFD00828B79 /* SPCGRectExtension.swift in Sources */,
 				F4C307CF220C2CFD00828B79 /* SPShare.swift in Sources */,
 				F4C30773220C2CFD00828B79 /* SPAppleMusicButton.swift in Sources */,
@@ -1042,12 +1042,12 @@
 				F4C307CC220C2CFD00828B79 /* SPDevice.swift in Sources */,
 				F4C307AE220C2CFD00828B79 /* SPApp.swift in Sources */,
 				F4C30790220C2CFD00828B79 /* SPMengTransformCollectionView.swift in Sources */,
-				F4720E62221D622B00DF6E3F /* SPPermissionStyle.swift in Sources */,
+				F4AFE413223794B300504748 /* SPPermissionStyle.swift in Sources */,
 				F4C30793220C2CFD00828B79 /* SPTypes.swift in Sources */,
-				F4720E65221D622B00DF6E3F /* SPPermissionStyleColors.swift in Sources */,
+				F4AFE416223794B300504748 /* SPPermissionStyleColors.swift in Sources */,
 				F4C307A1220C2CFD00828B79 /* SPUIVisualEffectViewExtenshion.swift in Sources */,
 				F4C307AB220C2CFD00828B79 /* SPUIColorExtension.swift in Sources */,
-				F4720E64221D622B00DF6E3F /* SPPermissionStyleDelay.swift in Sources */,
+				F4AFE415223794B300504748 /* SPPermissionStyleDelay.swift in Sources */,
 				F4C3079A220C2CFD00828B79 /* SPUITableView.swift in Sources */,
 				F4C307A5220C2CFD00828B79 /* SPUINavigationControllerExtenshion.swift in Sources */,
 				F4C30763220C2CFD00828B79 /* SPFormTextInputTableViewCell.swift in Sources */,
@@ -1055,12 +1055,12 @@
 				F4C30766220C2CFD00828B79 /* SPImageTableViewCell.swift in Sources */,
 				F4C30772220C2CFD00828B79 /* SPAppStoreActionButton.swift in Sources */,
 				F4C307BB220C2CFD00828B79 /* SPAnimationSpring.swift in Sources */,
-				F4720E6B221D622B00DF6E3F /* SPPermissionDialogView.swift in Sources */,
+				F4AFE41C223794B300504748 /* SPPermissionDialogView.swift in Sources */,
 				F4C3078B220C2CFD00828B79 /* SPStatusBarManagerController.swift in Sources */,
 				F4C307C7220C2CFD00828B79 /* SPCodeAudioIconPack.swift in Sources */,
-				F4720E6D221D622B00DF6E3F /* SPPermissionDrawIconPack.swift in Sources */,
+				F4AFE41E223794B300504748 /* SPPermissionDrawIconPack.swift in Sources */,
 				F4C3076B220C2CFD00828B79 /* SPSocialButton.swift in Sources */,
-				F4720E71221D622B00DF6E3F /* SPPermissionType.swift in Sources */,
+				F4AFE422223794B300504748 /* SPPermissionType.swift in Sources */,
 				F4C307C9220C2CFD00828B79 /* SPCodeSystemIconPack.swift in Sources */,
 				F4C30781220C2CFD00828B79 /* SPEmptyTitlesView.swift in Sources */,
 				F4C307B7220C2CFD00828B79 /* SPLayout.swift in Sources */,
@@ -1080,11 +1080,11 @@
 				F4C307B5220C2CFD00828B79 /* SPLocalNotification.swift in Sources */,
 				F4C3076E220C2CFD00828B79 /* SPSystemIconButton.swift in Sources */,
 				F4C30775220C2CFD00828B79 /* SPScrollView.swift in Sources */,
-				F4720E6C221D622B00DF6E3F /* SPPermissionCloseButton.swift in Sources */,
-				F4720E61221D622B00DF6E3F /* SPPermissionStyleOrientation.swift in Sources */,
+				F4AFE41D223794B300504748 /* SPPermissionCloseButton.swift in Sources */,
+				F4AFE412223794B300504748 /* SPPermissionStyleOrientation.swift in Sources */,
 				F4C3078C220C2CFD00828B79 /* SPController.swift in Sources */,
-				F4720E68221D622B00DF6E3F /* SPPermissionIconView.swift in Sources */,
-				F4720E6F221D622B00DF6E3F /* SPPermissionDrawPermissionPack.swift in Sources */,
+				F4AFE419223794B300504748 /* SPPermissionIconView.swift in Sources */,
+				F4AFE420223794B300504748 /* SPPermissionDrawPermissionPack.swift in Sources */,
 				F4C30786220C2CFD00828B79 /* SPSystemIconView.swift in Sources */,
 				F4C307BF220C2CFD00828B79 /* SPBufer.swift in Sources */,
 				F4C3077F220C2CFD00828B79 /* SPVideoPlayer.swift in Sources */,
@@ -1097,22 +1097,22 @@
 				F4C30776220C2CFD00828B79 /* SPFakeBarView.swift in Sources */,
 				F4C30798220C2CFD00828B79 /* SPUIFontExtenshion.swift in Sources */,
 				F4C307B9220C2CFD00828B79 /* SPShadowDeep.swift in Sources */,
-				F4720E70221D622B00DF6E3F /* SPPermission.swift in Sources */,
+				F4AFE421223794B300504748 /* SPPermission.swift in Sources */,
 				F4C3077D220C2CFD00828B79 /* SPGradientView.swift in Sources */,
-				F4720E5F221D622B00DF6E3F /* SPPermissionDialog.swift in Sources */,
-				F4720E63221D622B00DF6E3F /* SPPermissionStyleShadow.swift in Sources */,
+				F4AFE410223794B300504748 /* SPPermissionDialog.swift in Sources */,
+				F4AFE414223794B300504748 /* SPPermissionStyleShadow.swift in Sources */,
 				F4C3079C220C2CFD00828B79 /* SPArrayExtension.swift in Sources */,
 				F4C30770220C2CFD00828B79 /* SPDownloadingButton.swift in Sources */,
 				F4C3076D220C2CFD00828B79 /* SPDotsButton.swift in Sources */,
 				F4C307C1220C2CFD00828B79 /* SPViber.swift in Sources */,
 				F4C30760220C2CFD00828B79 /* SPFormLabelTableViewCell.swift in Sources */,
 				F4C30799220C2CFD00828B79 /* SPUIImageExtension.swift in Sources */,
-				F4720E66221D622B00DF6E3F /* SPPermissionDialogController.swift in Sources */,
+				F4AFE417223794B300504748 /* SPPermissionDialogController.swift in Sources */,
 				F4C30797220C2CFD00828B79 /* SPUITextFieldExtenshion.swift in Sources */,
 				F4C307A0220C2CFD00828B79 /* SPStrideableExtension.swift in Sources */,
 				F4C3077C220C2CFD00828B79 /* SPView.swift in Sources */,
 				F4C3078A220C2CFD00828B79 /* SPTableController.swift in Sources */,
-				F4720E60221D622B00DF6E3F /* SPPermissionStyleAnimation.swift in Sources */,
+				F4AFE411223794B300504748 /* SPPermissionStyleAnimation.swift in Sources */,
 				F4C307CD220C2CFD00828B79 /* SPRandom.swift in Sources */,
 				F4C307A2220C2CFD00828B79 /* SPUICollectionViewExtenshion.swift in Sources */,
 				F4C307BD220C2CFD00828B79 /* SPAnimation.swift in Sources */,
