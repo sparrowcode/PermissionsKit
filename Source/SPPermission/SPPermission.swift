@@ -88,8 +88,6 @@ extension SPPermission {
             return SPRemindersPermission()
         case .speech:
             return SPSpeechPermission()
-        case .locationAlways:
-            return SPLocationPermission(type: SPLocationPermission.SPLocationType.Always)
         case .locationWhenInUse:
            return SPLocationPermission(type: SPLocationPermission.SPLocationType.WhenInUse)
         case .locationAlwaysAndWhenInUse:
@@ -355,7 +353,6 @@ extension SPPermission {
         var type: SPLocationType
         
         enum SPLocationType {
-            case Always
             case WhenInUse
             case AlwaysAndWhenInUse
         }
@@ -368,23 +365,10 @@ extension SPPermission {
             
             let status = CLLocationManager.authorizationStatus()
             
-            switch self.type {
-            case .Always:
-                if status == .authorizedAlways {
-                    return true
-                } else {
-                    return false
-                }
-            case .WhenInUse, .AlwaysAndWhenInUse:
-                if status == .authorizedAlways {
-                    return true
-                } else {
-                    if status == .authorizedWhenInUse {
-                        return true
-                    } else {
-                        return false
-                    }
-                }
+            if status == .authorizedAlways {
+                return true
+            } else {
+                return status == .authorizedWhenInUse
             }
         }
         
@@ -395,7 +379,7 @@ extension SPPermission {
         func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
             
             switch self.type {
-            case .Always, .AlwaysAndWhenInUse:
+            case .AlwaysAndWhenInUse:
                 if SPPermissionAlwaysAuthorizationLocationHandler.shared == nil {
                     SPPermissionAlwaysAuthorizationLocationHandler.shared = SPPermissionAlwaysAuthorizationLocationHandler()
                 }

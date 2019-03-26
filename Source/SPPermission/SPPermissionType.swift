@@ -31,8 +31,6 @@ import UIKit
     case contacts = 5
     case reminders = 6
     case speech = 7
-    @available(iOS, obsoleted: 11, renamed: "locationAlwaysAndWhenInUse")
-    case locationAlways = 8
     case locationWhenInUse = 9
     case locationAlwaysAndWhenInUse = 10
     case motion = 11
@@ -56,7 +54,7 @@ import UIKit
             return "Reminders"
         case .speech:
             return "Speech"
-        case .locationAlways, .locationWhenInUse, .locationAlwaysAndWhenInUse:
+        case .locationWhenInUse, .locationAlwaysAndWhenInUse:
             return "Location"
         case .motion:
             return "Motion"
@@ -83,8 +81,6 @@ import UIKit
             return "NSRemindersUsageDescription"
         case .speech:
             return "NSSpeechRecognitionUsageDescription"
-        case .locationAlways:
-            return "NSLocationAlwaysUsageDescription"
         case .locationWhenInUse:
             return "NSLocationWhenInUseUsageDescription"
         case .locationAlwaysAndWhenInUse:
