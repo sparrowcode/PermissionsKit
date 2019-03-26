@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   
   s.author        = { "Ivan Vorobei" => "hello@ivanvorobei.by" }
   
-  s.swift_version = '4.0'
+  s.swift_version = '4.2'
   s.platform      = :ios
   s.ios.framework  = 'UIKit'
   s.ios.deployment_target = "10.0"
