@@ -395,9 +395,7 @@ extension SPPermissionDialogController {
             return "Application can create new task"
         case .speech:
             return "Allow check you voice"
-        case .locationAlways,
-             .locationWhenInUse,
-             .locationAlwaysAndWhenInUse:
+        case .locationWhenInUse, .locationAlwaysAndWhenInUse:
             return "App will can check your location"
         case .motion:
             return "Allow reports motion and environment-related data"
