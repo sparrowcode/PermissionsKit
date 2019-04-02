@@ -17,7 +17,6 @@ I have a store where I sell applications and modules for Xcode projects. You can
 Swift 4.2. Ready for use on iOS 10+
 
 ## Installation
-Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
 #### CocoaPods:
 
@@ -34,6 +33,9 @@ pod 'SPPermission'
 ```ogdl
 github "IvanVorobei/SPPermission"
 ```
+
+#### Manually
+Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
 ## How to use
 Call `SPPermission` and use func `request()`. Also, pass the controller on which the dialog should present:
