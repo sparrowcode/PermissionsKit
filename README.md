@@ -20,7 +20,7 @@ Swift 4.2 & 5.0. Ready for use on iOS 10+
 
 #### CocoaPods:
 
-You can use [CocoaPods](http://cocoapods.org/) to install `SPPermission` by adding it to your `Podfile`::
+You can use [CocoaPods](http://cocoapods.org/) to install `SPPermission` by adding it to your `Podfile`:
 
 ```ruby
 pod 'SPPermission'
@@ -28,11 +28,13 @@ pod 'SPPermission'
 
 #### Carthage
 
-You can use [Carthage](https://github.com/Carthage/Carthage) to install `SPPermission` by adding it to your `Cartfile`::
+You can use [Carthage](https://github.com/Carthage/Carthage) to install `SPPermission` by adding it to your `Cartfile`:
 
 ```ogdl
 github "IvanVorobei/SPPermission"
 ```
+
+For now `Carthage` support may not work correctly. If you have any problems, create a new [issue](https://github.com/IvanVorobei/SPPermission/issues).
 
 #### Manually
 Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
