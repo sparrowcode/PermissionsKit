@@ -14,13 +14,13 @@ I have a store where I sell applications and modules for Xcode projects. You can
 <img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Shop.svg"/>
 
 ## Requirements
-Swift 4.2. Ready for use on iOS 10+
+Swift 4.2 & 5.0. Ready for use on iOS 10+
 
 ## Installation
 
 #### CocoaPods:
 
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate Alamofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
+You can use [CocoaPods](http://cocoapods.org/) to install `SPPermission` by adding it to your `Podfile`::
 
 ```ruby
 pod 'SPPermission'
@@ -28,7 +28,7 @@ pod 'SPPermission'
 
 #### Carthage
 
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
+You can use [Carthage](https://github.com/Carthage/Carthage) to install `SPPermission` by adding it to your `Cartfile`::
 
 ```ogdl
 github "IvanVorobei/SPPermission"
