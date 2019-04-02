@@ -1,6 +1,5 @@
 <img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Banner.svg"/>
 
-## About
 This project is about managing permissions with customizable visual effects. Simple pod saves your hours of development. You can start using this project with just two lines of code and easy customization! You can watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
 
 Preview GIF is loading `4mb`. Please wait.
