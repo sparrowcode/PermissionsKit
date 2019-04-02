@@ -80,7 +80,7 @@ SPPermission.request(.notification, with: {
 })
 ```
 
-If you want new permission added, create new issue [here](https://github.com/IvanVorobei/SPPermission/issues)
+If you want new permission added, create new issue [here](https://github.com/IvanVorobei/SPPermission/issues).
 
 ## Delegate
 To track events of hiding & allowing permissions associated with `SPPermission`, implement protocol `SPPermissionDialogDelegate`:
