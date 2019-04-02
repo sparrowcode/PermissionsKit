@@ -16,16 +16,22 @@ I have a store where I sell applications and modules for Xcode projects. You can
 ## Requirements
 Swift 4.2. Ready for use on iOS 10+
 
-## Integration
+## Installation
 Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
 #### CocoaPods:
+
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate Alamofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
 ```ruby
 pod 'SPPermission'
 ```
 
 #### Carthage
-```ruby
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
 github "IvanVorobei/SPPermission"
 ```
 
