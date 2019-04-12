@@ -39,6 +39,7 @@ For now `Carthage` support may not work correctly. If you have any problems, cre
 Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
 ## Usage
+
 Call `SPPermission` and use func `request()`. Also, pass the controller on which the dialog should present:
 
 ```swift
