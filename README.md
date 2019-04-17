@@ -197,7 +197,7 @@ I created [SPStorkController](https://github.com/IvanVorobei/SPStorkController).
 
 <img src="https://github.com/IvanVorobei/SPStorkController/blob/master/Resources/Preview.gif" width="440">
 
-You can buy source code of this app on [xcode-shop.com](https://xcode-shop.com). Price: $200. Please, see [detailed preview](https://xcode-shop.com/assets/preview/debts.mov) or download app [from AppStore](https://itunes.apple.com/app/id1446635818). 
+You can buy source code of this app on [xcode-shop.com](https://xcode-shop.com). Price - $200. Please, see [detailed preview](https://xcode-shop.com/assets/preview/debts.mov) or download app [from AppStore](https://itunes.apple.com/app/id1446635818). 
 
 ### SPLarkController
 Project [SPLarkController](https://github.com/IvanVorobei/SPLarkController) will help you realize the management of your application settings. You can add both buttons and switches. The amount cells is not limited. You can start using project with just two lines of code and easy customization!
@@ -214,4 +214,3 @@ You can buy source code of this app on [xcode-shop.com](https://xcode-shop.com).
 
 ## Contact
 If you need any application or UI to be developed, message me at hello@ivanvorobei.by. I develop iOS apps and create designs, too. I use `swift` for development. To request more functionality, you should create a new issue.
-Here are my apps in AppStore: [first account](https://itunes.apple.com/us/developer/polina-zubarik/id1434528595) & [second account](https://itunes.apple.com/us/developer/mikalai-varabei/id1435792103).
