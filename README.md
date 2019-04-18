@@ -197,14 +197,14 @@ I created [SPStorkController](https://github.com/IvanVorobei/SPStorkController).
 
 <img src="https://github.com/IvanVorobei/SPStorkController/blob/master/Resources/Preview.gif" width="440">
 
-You can buy source code of this app on [xcode-shop.com](https://xcode-shop.com). Price - $200. Please, see [detailed preview](https://xcode-shop.com/assets/preview/debts.mov) or download app [from AppStore](https://itunes.apple.com/app/id1446635818). 
+You can buy source code of this app on [xcode-shop.com](https://xcode-shop.com). Price - $200. You can download app [from AppStore](https://itunes.apple.com/app/id1446635818) or see [detailed preview](https://xcode-shop.com/assets/preview/debts.mov). 
 
 ### SPLarkController
 Project [SPLarkController](https://github.com/IvanVorobei/SPLarkController) will help you realize the management of your application settings. You can add both buttons and switches. The amount cells is not limited. You can start using project with just two lines of code and easy customization!
 
 <img src="https://github.com/IvanVorobei/SPLarkController/blob/master/Resources/Preview.gif" width="440">
 
-You can buy source code of this app on [xcode-shop.com](https://xcode-shop.com). Price for GitHub users - $300. `With copyright - 4.900$`. Please, see [detailed preview](https://xcode-shop.com/assets/preview/code.mov) with all the features and screens of the application.
+You can buy source code of this app on [xcode-shop.com](https://xcode-shop.com). Price for GitHub users - $300. `With copyright - $4.900`. Please, see [detailed preview](https://xcode-shop.com/assets/preview/code.mov) with all the features and screens of the application.
 
 ## For Russian-speaking users
 Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать статью [Обновление библиотеки SPPermission](https://habr.com/post/430886/), чтобы больше узнать о проекте. Taк же вы можете прочитать статью [Получил 1.2K звезд на GitHub с ужасной архитектурой. Как?](https://habr.com/post/326620/) о первой версии проекта и работе с архитектурой
