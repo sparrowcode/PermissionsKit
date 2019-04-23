@@ -213,4 +213,4 @@ You can download example app [Code - Learn Swift & Design](https://itunes.apple.
 `SPPermission` is released under the MIT license. Check `LICENSE.md` for details.
 
 ## Contact
-If you need any application or UI to be developed, message me at hello@ivanvorobei.by. I develop iOS apps and create designs, too. I use `swift` for development. To request more functionality, you should create a new issue.
+If you need any application or UI to be developed, message me at hello@ivanvorobei.by. I develop iOS apps and create designs, too. I use `swift` for development. To request more functionality, you should create a new issue. My personal account with [apps](https://itunes.apple.com/developer/id1446635817).
