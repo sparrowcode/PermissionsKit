@@ -206,6 +206,10 @@ Project [SPLarkController](https://github.com/IvanVorobei/SPLarkController) will
 
 You can download example [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) app from AppStore. Also you can buy source code of this app on [xcode-shop.com](https://xcode-shop.com) or see [detailed preview](https://xcode-shop.com/assets/preview/code.mov).
 
+### Code
+Now I am developing a project that will be useful for beginners and experienced iOS developers. The AppStore presents [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) app, where I publish tutorials, interesting libraries, and design collections.<br>
+You can also test your strength by answering questions related to the development of iOS applications on my website [https://code.ivanvorobei.by/exercises](https://code.ivanvorobei.by/exercises). If you want to add questions, please open the [GitHub project page](https://github.com/IvanVorobei/Code) and create new pull request.
+
 ## For Russian-speaking users
 Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать статью [Обновление библиотеки SPPermission](https://habr.com/post/430886/), чтобы больше узнать о проекте. Taк же вы можете прочитать статью [Получил 1.2K звезд на GitHub с ужасной архитектурой. Как?](https://habr.com/post/326620/) о первой версии проекта и работе с архитектурой
 
