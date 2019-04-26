@@ -213,15 +213,15 @@ If you want to **buy source code** of this apps, please, go to [xcode-shop.com](
 
 ### SPLarkController
 
-Project [SPLarkController](https://github.com/IvanVorobei/SPLarkController) make settings for your application. You can add buttons and switches. The amount cells is not limited. You can start using project with just two lines of code and easy customization.
+[SPLarkController](https://github.com/IvanVorobei/SPLarkController) make **settings** for your application. You can add buttons and switches. The amount cells is not limited. You can start using project with just two lines of code and easy customization.
 
 <img src="https://github.com/IvanVorobei/SPLarkController/blob/master/Resources/Preview.gif" width="440">
 
-You can download [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) app, which uses `SPLarkController`. Also you can buy source code of this app on [xcode-shop.com](https://xcode-shop.com) or see [detailed preview](https://xcode-shop.com/assets/preview/code.mov).
+You can download [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) app, which uses `SPLarkController`. Also you can **buy source code** of this app on [xcode-shop.com](https://xcode-shop.com).
 
 ### Xcode Shop
 
-If you want buy apps with source code, you can visit my [xcode-shop.com](xcode-shop.com). Here I am sale apps, modules, 3D elements and other. In applications you can find many cool UI that will be useful for your projects. Also by buying, you support me and my free GitHub development.
+If you want **buy apps with source code**, you can visit my [xcode-shop.com](xcode-shop.com). Here I am sale apps, modules, 3D elements and other. In applications you can find many cool UI that will be useful for your projects. Also by buying, **you support me** and my free GitHub development.
 
 ## License
 `SPStorkController` is released under the MIT license. Check `LICENSE.md` for details.
