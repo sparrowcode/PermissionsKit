@@ -14,10 +14,10 @@ This project is about managing permissions with customizable visual effects. Sim
 - [DataSource & Customization](#datasource--customization)
     - [Colors](#colors)
 - [Purpose String in Info.plist](#purpose-string-in-infoplist)
-- [Screen record with Design](#screen-record-with-design)
+- [Screen record with design](#screen-record-with-design)
 - [Other Projects (+gif)](#my-projects)
+    - [SPStorkController](#spstorkcontroller)
     - [SPLarkController](#splarkcontroller)
-    - [SPPermission](#sppermission)
     - [Xcode Shop](#xcode-shop)
 - [License](#license)
 - [Contact or Order Develop](#contact)
@@ -195,13 +195,21 @@ SPPermission uses many permissions in one library; you need to add some strings 
 Do not use the description as the name of the key - this causes errors in the latest version of the new Xcode. Specify `For SPPermission` in the description.
 If I forgot to mention some, please let me know and create [issue](https://github.com/IvanVorobei/SPPermission/issues) or [pull request](https://github.com/IvanVorobei/SPPermission/pulls).
 
-## Screen Record with develop design
+## Screen record with design
 
 I have [YouTube channel](http://youtube.com/ivanvorobei) where I publish videos about Xcode and Design. You can see how I develop native design for `SPPermission` dialog view:
 
 [![Timelaps on YouTube](https://github.com/IvanVorobei/SPPermission/blob/master/Resources/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
 
 ## My projects
+
+### SPStorkController
+
+Very similar to the modal **controller displayed in Apple Music, Podcasts and Mail** apps. Customizable height of view. Check scroll's bounce for more interactive. Simple adding close button and centering arrow indicator. You can download example [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) or [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) apps from AppStore.
+
+<img src="https://github.com/IvanVorobei/SPStorkController/blob/master/Resources/Preview.gif" width="500">
+
+If you want to **buy source code** of this apps, please, go to [xcode-shop.com](https://xcode-shop.com).
 
 ### SPLarkController
 
@@ -210,12 +218,6 @@ Project [SPLarkController](https://github.com/IvanVorobei/SPLarkController) make
 <img src="https://github.com/IvanVorobei/SPLarkController/blob/master/Resources/Preview.gif" width="440">
 
 You can download [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) app, which uses `SPLarkController`. Also you can buy source code of this app on [xcode-shop.com](https://xcode-shop.com) or see [detailed preview](https://xcode-shop.com/assets/preview/code.mov).
-
-### SPPermission
-
-Project [SPPermission](https://github.com/IvanVorobei/SPPermission) for managing permissions. You can check state of any permission and request as pack. Also available customize all texts, change default icons and colors. Cool swipe animation as on preview.
-
-<img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Preview.gif" width="500">
 
 ### Xcode Shop
 
