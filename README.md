@@ -1,6 +1,6 @@
 # SPPermission
 
-Request permissions **with native dialog** UI and interactive animations. Also you can request permissions without dialog. Check state any permission. You can start using this project with just two lines of code and easy customization. You can watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
+Request permissions **with native dialog** UI and interactive animations. Also you can request permissions without dialog. Check state any permission. You can start using this project with just two lines of code and easy customisation. You can watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
 
 <img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Preview.gif" width="500">
 
@@ -11,8 +11,8 @@ Request permissions **with native dialog** UI and interactive animations. Also y
 - [Usage](#usage)
 - [Permissions](#permissions)
 - [Delegate](#delegate)
-- [DataSource & Customization](#datasource--customization)
-    - [Content](#datasource--customization)
+- [DataSource & Customisation](#datasource--customisation)
+    - [Content](#datasource--customisation)
     - [Colors](#colors)
 - [Purpose String in Info.plist](#purpose-string-in-infoplist)
 - [Screen record with design](#screen-record-with-design)
@@ -79,7 +79,7 @@ If you want to know if permission is denied, you need to call the function:
 let isDeniedMicrophone = SPPermission.isDenied(.microphone)
 ```
 
-To learn how to customize titles and images you can read section [DataSource & Customization](#datasource--customization)
+To learn how to customize titles and images you can read section [DataSource & Customisation](#datasource--customisation)
 
 ## Permissions
 
@@ -117,7 +117,7 @@ SPPermission.Dialog.request(
     delegate: self
 )
 ```
-## DataSource & Customization
+## DataSource & Customisation
 
 If you want to change the text, you need to implement `SPPermissionDialogDataSource` protocol. Override needed parameters to see the changes:
 
@@ -214,7 +214,7 @@ If you want to **buy source code** of this apps, please, go to [xcode-shop.com](
 
 ### SPLarkController
 
-[SPLarkController](https://github.com/IvanVorobei/SPLarkController) make **settings** for your application. You can add buttons and switches. The amount cells is not limited. You can start using project with just two lines of code and easy customization.
+[SPLarkController](https://github.com/IvanVorobei/SPLarkController) make **settings** for your application. You can add buttons and switches. The amount cells is not limited. You can start using project with just two lines of code and easy customisation.
 
 <img src="https://github.com/IvanVorobei/SPLarkController/blob/master/Resources/Preview.gif" width="440">
 
