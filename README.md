@@ -1,42 +1,53 @@
-<img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Banner.svg"/>
+# SPPermission
 
 This project is about managing permissions with customizable visual effects. Simple pod saves your hours of development. You can start using this project with just two lines of code and easy customization! You can watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
 
-Preview GIF is loading `4mb`. Please wait.
-
 <img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Preview.gif" width="500">
 
-<img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Shop.svg"/>
+## Navigate
 
-I have a store where I sell applications and modules for Xcode projects. You can find source codes of applications or custom animations / UI. I regularly update the code. Visit my website to see all items for sale: [xcode-shop.com](https://xcode-shop.com). On the website you can find previews and, for some items, links to AppStore.
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Permissions](#permissions)
+- [Delegate](#delegate)
+- [DataSource & Customization](#datasource--customization)
+    - [Colors](#colors)
+- [Purpose String in Info.plist](#)
+- [Screen Record with develop design](#)
+- [Other Projects (+gif)](#my-projects)
+    - [SPLarkController](#splarkcontroller)
+    - [SPPermission](#sppermission)
+    - [Xcode Shop](#xcode-shop)
+- [License](#license)
+- [Contact or Order Develop](#contact)
 
-<img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Shop.svg"/>
 
 ## Requirements
-Swift 4.2 & 5.0. Ready for use on iOS 10+
+
+Swift 4.2 & **5.0**. Ready for use on iOS 10+
 
 ## Installation
 
-#### CocoaPods:
+### CocoaPods:
 
-You can use [CocoaPods](http://cocoapods.org/) to install `SPPermission` by adding it to your `Podfile`:
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `SPPermission` into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 pod 'SPPermission'
 ```
 
-#### Carthage
+### Carthage
 
-You can use [Carthage](https://github.com/Carthage/Carthage) to install `SPPermission` by adding it to your `Cartfile`:
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate `SPPermission` into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
 github "IvanVorobei/SPPermission"
 ```
 
-For now `Carthage` support may not work correctly. If you have any problems, create a new [issue](https://github.com/IvanVorobei/SPPermission/issues).
+### Manually
 
-#### Manually
-Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
+If you prefer not to use any of the aforementioned dependency managers, you can integrate `SPPermission` into your project manually. Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
 ## Usage
 
@@ -84,6 +95,7 @@ SPPermission.request(.notification, with: {
 If you want new permission added, create new issue [here](https://github.com/IvanVorobei/SPPermission/issues).
 
 ## Delegate
+
 To track events of hiding & allowing permissions associated with `SPPermission`, implement protocol `SPPermissionDialogDelegate`:
 
 ```swift
@@ -105,6 +117,7 @@ SPPermission.Dialog.request(
 )
 ```
 ## DataSource & Customization
+
 If you want to change the text, you need to implement `SPPermissionDialogDataSource` protocol. Override needed parameters to see the changes:
 
 ```swift
@@ -182,7 +195,7 @@ SPPermission uses many permissions in one library; you need to add some strings 
 Do not use the description as the name of the key - this causes errors in the latest version of the new Xcode. Specify `For SPPermission` in the description.
 If I forgot to mention some, please let me know and create [issue](https://github.com/IvanVorobei/SPPermission/issues) or [pull request](https://github.com/IvanVorobei/SPPermission/pulls).
 
-## YouTube Video
+## Screen Record with develop design
 
 I have [YouTube channel](http://youtube.com/ivanvorobei) where I publish videos about Xcode and Design. You can see how I develop native design for `SPPermission` dialog view:
 
@@ -190,31 +203,26 @@ I have [YouTube channel](http://youtube.com/ivanvorobei) where I publish videos 
 
 ## My projects
 
-Here I would like to offer you my other projects.
-
-### SPStorkController
-I created [SPStorkController](https://github.com/IvanVorobei/SPStorkController). It is a modal controller like in Mail or Apple Music application. Similar animation and transition. You can download example [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) or [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) apps from AppStore.
-
-<img src="https://github.com/IvanVorobei/SPStorkController/blob/master/Resources/Preview.gif" width="440">
-
-You can buy source code of this apps on [xcode-shop.com](https://xcode-shop.com).
-
 ### SPLarkController
-Project [SPLarkController](https://github.com/IvanVorobei/SPLarkController) will help you realize the management of your application settings. You can add both buttons and switches. The amount cells is not limited. You can start using project with just two lines of code and easy customization!
+
+Project [SPLarkController](https://github.com/IvanVorobei/SPLarkController) make settings for your application. You can add buttons and switches. The amount cells is not limited. You can start using project with just two lines of code and easy customization.
 
 <img src="https://github.com/IvanVorobei/SPLarkController/blob/master/Resources/Preview.gif" width="440">
 
-You can download example [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) app from AppStore. Also you can buy source code of this app on [xcode-shop.com](https://xcode-shop.com) or see [detailed preview](https://xcode-shop.com/assets/preview/code.mov).
+You can download [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) app, which uses `SPLarkController`. Also you can buy source code of this app on [xcode-shop.com](https://xcode-shop.com) or see [detailed preview](https://xcode-shop.com/assets/preview/code.mov).
 
-### Code
-Now I am developing a project that will be useful for beginners and experienced iOS developers. The AppStore presents [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) app, where I publish tutorials, interesting libraries, and design collections.<br>
-You can also test your skill by answering questions related to the development of iOS applications on my [website](https://code.ivanvorobei.by/exercises). If you want to add questions, please open the [GitHub project page](https://github.com/IvanVorobei/Code) and create new pull request.
+### SPPermission
 
-## For Russian-speaking users
-Вы можете глянуть [туториал на youtube](https://youtu.be/viFDunOdyBg) или почитать статью [Обновление библиотеки SPPermission](https://habr.com/post/430886/), чтобы больше узнать о проекте. Taк же вы можете прочитать статью [Получил 1.2K звезд на GitHub с ужасной архитектурой. Как?](https://habr.com/post/326620/) о первой версии проекта и работе с архитектурой
+Project [SPPermission](https://github.com/IvanVorobei/SPPermission) for managing permissions. You can check state of any permission and request as pack. Also available customize all texts, change default icons and colors. Cool swipe animation as on preview.
+
+<img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Preview.gif" width="500">
+
+### Xcode Shop
+
+If you want buy apps with source code, you can visit my [xcode-shop.com](xcode-shop.com). Here I am sale apps, modules, 3D elements and other. In applications you can find many cool UI that will be useful for your projects. Also by buying, you support me and my free GitHub development.
 
 ## License
-`SPPermission` is released under the MIT license. Check `LICENSE.md` for details.
+`SPStorkController` is released under the MIT license. Check `LICENSE.md` for details.
 
 ## Contact
-If you need any application or UI to be developed, message me at hello@ivanvorobei.by. I develop iOS apps and create designs, too. I use `swift` for development. To request more functionality, you should create a new issue. My personal account with [apps](https://itunes.apple.com/developer/id1446635817).
+If you need any application or UI to be developed, message me at hello@ivanvorobei.by or via [telegram](https://t.me/ivanvorobei). I develop iOS apps and designs. I use `swift` for development. To request more functionality, you should create a new issue. You can see my [apps in AppStore](https://itunes.apple.com/developer/id1446635817).
