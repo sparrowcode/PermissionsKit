@@ -1,6 +1,6 @@
 # SPPermission
 
-This project is about managing permissions with customizable visual effects. Simple pod saves your hours of development. You can start using this project with just two lines of code and easy customization! You can watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
+Request permissions **with native dialog** UI and interactive animations. Check state any permission. You can start using this project with just two lines of code and easy customization! You can watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
 
 <img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Preview.gif" width="500">
 
@@ -224,7 +224,7 @@ You can download [Code - Learn Swift & Design](https://itunes.apple.com/app/id14
 If you want **buy apps with source code**, you can visit my [xcode-shop.com](xcode-shop.com). Here I am sale apps, modules, 3D elements and other. In applications you can find many cool UI that will be useful for your projects. Also by buying, **you support me** and my free GitHub development.
 
 ## License
-`SPStorkController` is released under the MIT license. Check `LICENSE.md` for details.
+`SPPermission` is released under the MIT license. Check `LICENSE.md` for details.
 
 ## Contact
 If you need any application or UI to be developed, message me at hello@ivanvorobei.by or via [telegram](https://t.me/ivanvorobei). I develop iOS apps and designs. I use `swift` for development. To request more functionality, you should create a new issue. You can see my [apps in AppStore](https://itunes.apple.com/developer/id1446635817).
