@@ -1,6 +1,6 @@
 # SPPermission
 
-Request permissions **with native dialog** UI and interactive animations. Check state any permission. You can start using this project with just two lines of code and easy customization! You can watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
+Request permissions **with native dialog** UI and interactive animations. Also you can request permissions without dialog. Check state any permission. You can start using this project with just two lines of code and easy customization. You can watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
 
 <img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Preview.gif" width="500">
 
@@ -12,6 +12,7 @@ Request permissions **with native dialog** UI and interactive animations. Check 
 - [Permissions](#permissions)
 - [Delegate](#delegate)
 - [DataSource & Customization](#datasource--customization)
+    - [Content](#datasource--customization)
     - [Colors](#colors)
 - [Purpose String in Info.plist](#purpose-string-in-infoplist)
 - [Screen record with design](#screen-record-with-design)
