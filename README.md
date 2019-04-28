@@ -12,10 +12,10 @@ Request permissions **with native dialog** UI and interactive animations. Also y
 - [Installation](#installation)
 - [Usage](#usage)
 - [Permissions](#permissions)
-- [Delegate](#delegate)
 - [DataSource & Customisation](#datasource--customisation)
     - [Content](#datasource--customisation)
     - [Colors](#colors)
+- [Delegate](#delegate)
 - [Purpose String in Info.plist](#purpose-string-in-infoplist)
 - [Screen record with design](#screen-record-with-design)
 - [Other Projects (+gif)](#my-projects)
@@ -97,28 +97,6 @@ SPPermission.request(.notification, with: {
 
 If you want new permission added, create new issue [here](https://github.com/IvanVorobei/SPPermission/issues).
 
-## Delegate
-
-To track events of hiding & allowing permissions associated with `SPPermission`, implement protocol `SPPermissionDialogDelegate`:
-
-```swift
-@objc public protocol SPPermissionDialogDelegate: class {
-
-    @objc optional func didHide()
-    @objc optional func didAllow(permission: SPPermissionType)
-    @objc optional func didDenied(permission: SPPermissionType)
-}
-```
-
-And pass the delegate to the function:
-
-```swift
-SPPermission.Dialog.request(
-    with: [.calendar, .microphone],
-    on: self,
-    delegate: self
-)
-```
 ## DataSource & Customisation
 
 If you want to change the text, you need to implement `SPPermissionDialogDataSource` protocol. Override needed parameters to see the changes:
@@ -162,6 +140,7 @@ If you want to inhibite drag gesture to discard the dialog view you need to over
 In the project you can find an example of usage of `SPPermissionDialogDataSource`
 
 ### Colors
+
 If you want to change the color scheme, you need to implement the protocol `SPPermissionDialogColorSource`. It is not necessary to override all parameters, you can only change those that are necessary:
 
 ```swift
@@ -181,6 +160,29 @@ If you want to change the color scheme, you need to implement the protocol `SPPe
 ```
 
 Will auto check `SPPermissionDialogDataSource` also implement `SPPermissionDialogColorSource`. You need pass for `dataSource` object, which implements two protocols.
+
+## Delegate
+
+To track events of hiding & allowing permissions associated with `SPPermission`, implement protocol `SPPermissionDialogDelegate`:
+
+```swift
+@objc public protocol SPPermissionDialogDelegate: class {
+
+    @objc optional func didHide()
+    @objc optional func didAllow(permission: SPPermissionType)
+    @objc optional func didDenied(permission: SPPermissionType)
+}
+```
+
+And pass the delegate to the function:
+
+```swift
+SPPermission.Dialog.request(
+    with: [.calendar, .microphone],
+    on: self,
+    delegate: self
+)
+```
 
 ## Purpose String in Info.plist
 
