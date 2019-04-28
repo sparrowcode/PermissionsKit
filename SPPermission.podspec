@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name          = "SPPermission"
   s.version       = "3.0.5"
-  s.summary       = "Simple request permissions with dialog alert"
+  s.summary       = "Request permissions with native dialog UI and interactive animations. Check state any permission."
   s.homepage      = "https://github.com/IvanVorobei/RequestPermission"
   s.source        = { :git => "https://github.com/IvanVorobei/RequestPermission.git", :tag => s.version }
   s.license       = { :type => "MIT", :file => "LICENSE" }
