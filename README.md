@@ -1,7 +1,6 @@
 # SPPermission
 
-Request permissions **with native dialog** UI and interactive animations. Also you can request permissions without dialog. Check state any permission. You can start using this project with just two lines of code and easy customisation. You can watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
-<br>If you like the project, do not forget to **put star ★**
+Request permissions **with native dialog** UI and interactive animations. Also you can request permissions without dialog. Check state any permission. You can start using this project with just two lines of code and easy customisation. You can watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4). If you like the project, do not forget to **put star ★**
 
 ### Preview
 
