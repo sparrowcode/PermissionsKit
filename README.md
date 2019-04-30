@@ -226,7 +226,7 @@ You can download [Code - Learn Swift & Design](https://itunes.apple.com/app/id14
 
 ### Xcode Shop
 
-If you want **buy apps with source code**, you can visit my [xcode-shop.com](xcode-shop.com). Here I am sale apps, modules, 3D elements and other. In applications you can find many cool UI that will be useful for your projects. Also by buying, **you support me** and my free GitHub development.
+If you want **buy apps with source code**, you can visit my [xcode-shop.com](https://xcode-shop.com). Here I am sale apps, modules, 3D elements and other. In applications you can find many cool UI that will be useful for your projects. Also by buying, **you support me** and my free GitHub development.
 
 ## License
 `SPPermission` is released under the MIT license. Check `LICENSE.md` for details.
