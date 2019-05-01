@@ -64,6 +64,9 @@ public class SPPermissionDialogController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
+        let closeIconBackgroundColor = (self.colorSource?.closeIconBackgroundColor ?? SPPermissionStyle.DefaultColors.white) ?? SPPermissionStyle.DefaultColors.white
+        let closeIconColor = (self.colorSource?.closeIconColor ?? SPPermissionStyle.DefaultColors.blue) ?? SPPermissionStyle.DefaultColors.blue
+        
         self.colorScheme = ColorScheme(
             white: self.colorSource?.whiteColor ?? SPPermissionStyle.DefaultColors.white,
             black: self.colorSource?.blackColor ?? SPPermissionStyle.DefaultColors.black,
@@ -73,7 +76,9 @@ public class SPPermissionDialogController: UIViewController {
             iconWhite: self.colorSource?.iconWhiteColor ?? SPPermissionStyle.DefaultColors.white,
             iconLight: self.colorSource?.iconLightColor ?? SPPermissionStyle.DefaultColors.lightIcon,
             iconMedium: self.colorSource?.iconMediumColor ?? SPPermissionStyle.DefaultColors.mediumIcon,
-            iconDark: self.colorSource?.iconDarkColor ?? SPPermissionStyle.DefaultColors.darkIcon
+            iconDark: self.colorSource?.iconDarkColor ?? SPPermissionStyle.DefaultColors.darkIcon,
+            closeIconBackgroundColor: closeIconBackgroundColor,
+            closeIconColor: closeIconColor
         )
         
         self.backgroundView.setGradeAlpha(0, blurRaius: 0)
@@ -119,8 +124,8 @@ public class SPPermissionDialogController: UIViewController {
         self.view.addSubview(self.areaView)
         self.areaView.layer.anchorPoint = CGPoint.init(x: 0.5, y: 0.5)
         
-        self.closeButton.backgroundColor = self.colorScheme.white
-        self.closeButton.color = self.colorScheme.base
+        self.closeButton.backgroundColor = self.colorScheme.closeIconBackgroundColor
+        self.closeButton.color = self.colorScheme.closeIconColor
         self.closeButton.widthIconFactor = 0.36
         self.closeButton.heightIconFactor = 0.36
         self.closeButton.alpha = 0
@@ -420,5 +425,7 @@ extension SPPermissionDialogController {
         var iconMedium: UIColor
         var iconDark: UIColor
         
+        var closeIconBackgroundColor: UIColor
+        var closeIconColor: UIColor
     }
 }

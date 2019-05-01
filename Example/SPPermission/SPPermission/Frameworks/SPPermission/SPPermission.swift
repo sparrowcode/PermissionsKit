@@ -368,7 +368,11 @@ extension SPPermission {
             if status == .authorizedAlways {
                 return true
             } else {
-                return status == .authorizedWhenInUse
+                if type == .WhenInUse {
+                    return status == .authorizedWhenInUse
+                } else {
+                    return false
+                }
             }
         }
         

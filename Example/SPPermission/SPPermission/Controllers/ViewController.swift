@@ -24,10 +24,18 @@ import UIKit
 class ViewController: SPController {
     
     @objc func presentPermissonDialog() {
+        
         SPAnimationAlpha.hideList(views: [self.presentButton, self.changeBackgroundButton])
 
-        SPPermission.Dialog.request(
+        /*SPPermission.Dialog.request(
             with: [.camera, .calendar, .microphone],
+            on: self,
+            delegate: self,
+            dataSource: self
+        )*/
+        
+        SPPermission.Dialog.request(
+            with: [.locationWhenInUse, .locationAlwaysAndWhenInUse, .camera],
             on: self,
             delegate: self,
             dataSource: self
@@ -53,6 +61,7 @@ class ViewController: SPController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.backgroundColor = SPNativeColors.customGray
         self.backgroundView.contentMode = .scaleAspectFill
         self.view.addSubview(self.backgroundView)

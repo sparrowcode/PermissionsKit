@@ -81,4 +81,7 @@ extension SPPermission {
     @objc optional var iconLightColor: UIColor { get }
     @objc optional var iconMediumColor: UIColor { get }
     @objc optional var iconDarkColor: UIColor { get }
+    
+    @objc optional var closeIconBackgroundColor: UIColor? { get }
+    @objc optional var closeIconColor: UIColor? { get }
 }
