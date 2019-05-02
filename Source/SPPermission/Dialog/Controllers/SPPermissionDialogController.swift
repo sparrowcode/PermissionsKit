@@ -63,10 +63,7 @@ public class SPPermissionDialogController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
-        let closeIconBackgroundColor = (self.colorSource?.closeIconBackgroundColor ?? SPPermissionStyle.DefaultColors.white) ?? SPPermissionStyle.DefaultColors.white
-        let closeIconColor = (self.colorSource?.closeIconColor ?? SPPermissionStyle.DefaultColors.blue) ?? SPPermissionStyle.DefaultColors.blue
-        
+
         self.colorScheme = ColorScheme(
             white: self.colorSource?.whiteColor ?? SPPermissionStyle.DefaultColors.white,
             black: self.colorSource?.blackColor ?? SPPermissionStyle.DefaultColors.black,
@@ -77,8 +74,8 @@ public class SPPermissionDialogController: UIViewController {
             iconLight: self.colorSource?.iconLightColor ?? SPPermissionStyle.DefaultColors.lightIcon,
             iconMedium: self.colorSource?.iconMediumColor ?? SPPermissionStyle.DefaultColors.mediumIcon,
             iconDark: self.colorSource?.iconDarkColor ?? SPPermissionStyle.DefaultColors.darkIcon,
-            closeIconBackgroundColor: closeIconBackgroundColor,
-            closeIconColor: closeIconColor
+            closeIconBackgroundColor: self.colorSource?.closeIconBackgroundColor ?? SPPermissionStyle.DefaultColors.white,
+            closeIconColor: self.colorSource?.closeIconColor ?? SPPermissionStyle.DefaultColors.blue
         )
         
         self.backgroundView.setGradeAlpha(0, blurRaius: 0)
