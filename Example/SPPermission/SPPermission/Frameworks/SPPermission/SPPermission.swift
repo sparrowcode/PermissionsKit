@@ -31,7 +31,7 @@ import MediaPlayer
 import HealthKit
 import CoreMotion
 
-public struct SPPermission {
+public enum SPPermission {
     
     public static func isAllowed(_ permission: SPPermissionType) -> Bool {
         let manager = self.getManagerForPermission(permission)
@@ -55,8 +55,6 @@ public struct SPPermission {
             complectionHandler()
         })
     }
-    
-    private init() {}
 }
 
 fileprivate protocol SPPermissionInterface {

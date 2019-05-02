@@ -23,7 +23,7 @@ import UIKit
 
 extension SPPermission {
     
-    public struct Dialog {
+    public enum Dialog {
         
         public static func request(with permissions: [SPPermissionType], on viewController: UIViewController, delegate: SPPermissionDialogDelegate? = nil, dataSource: SPPermissionDialogDataSource? = nil) {
             if permissions.isEmpty {  return }
@@ -38,8 +38,6 @@ extension SPPermission {
                 controller.present(on: viewController)
             }
         }
-        
-        private init() {}
     }
 }
 

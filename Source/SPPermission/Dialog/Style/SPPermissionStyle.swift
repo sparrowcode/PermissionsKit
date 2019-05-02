@@ -21,12 +21,10 @@
 
 import Foundation
 
-struct SPPermissionStyle {
+enum SPPermissionStyle {
     
-    struct Animation { private init() {} }
-    struct Delay { private init() {} }
-    struct Orientation { private init() {} }
-    struct Shadow { private init() {} }
-    
-    private init() {}
+    enum Animation {}
+    enum Delay {}
+    enum Orientation {}
+    enum Shadow {}
 }
