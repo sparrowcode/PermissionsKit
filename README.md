@@ -158,8 +158,8 @@ If you want to change the color scheme, you need to implement the protocol `SPPe
     @objc optional var iconMediumColor: UIColor { get }
     @objc optional var iconDarkColor: UIColor { get }
 
-    @objc optional var closeIconBackgroundColor: UIColor? { get }
-    @objc optional var closeIconColor: UIColor? { get }
+    @objc optional var closeIconBackgroundColor: UIColor { get }
+    @objc optional var closeIconColor: UIColor { get }
 }
 ```
 
