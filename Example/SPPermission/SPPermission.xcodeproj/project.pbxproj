@@ -345,9 +345,9 @@
 		F4C55DE3227A221C00CBA1C3 /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				F4C55DE6227A221C00CBA1C3 /* SPPermissionStyle.swift */,
 				F4C55DE4227A221C00CBA1C3 /* SPPermissionStyleAnimation.swift */,
 				F4C55DE5227A221C00CBA1C3 /* SPPermissionStyleOrientation.swift */,
-				F4C55DE6227A221C00CBA1C3 /* SPPermissionStyle.swift */,
 				F4C55DE7227A221C00CBA1C3 /* SPPermissionStyleShadow.swift */,
 				F4C55DE8227A221C00CBA1C3 /* SPPermissionStyleDelay.swift */,
 				F4C55DE9227A221C00CBA1C3 /* SPPermissionStyleColors.swift */,
@@ -379,8 +379,8 @@
 		F4C55DF3227A221C00CBA1C3 /* Draw */ = {
 			isa = PBXGroup;
 			children = (
-				F4C55DF4227A221C00CBA1C3 /* SPPermissionDrawIconPack.swift */,
 				F4C55DF5227A221C00CBA1C3 /* SPPermissionDraw.swift */,
+				F4C55DF4227A221C00CBA1C3 /* SPPermissionDrawIconPack.swift */,
 				F4C55DF6227A221C00CBA1C3 /* SPPermissionDrawPermissionPack.swift */,
 			);
 			path = Draw;

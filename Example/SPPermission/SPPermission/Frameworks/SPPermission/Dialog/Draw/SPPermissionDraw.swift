@@ -21,4 +21,4 @@
 
 import UIKit
 
-struct SPPermissionDraw { private init(){} }
+enum SPPermissionDraw {}
