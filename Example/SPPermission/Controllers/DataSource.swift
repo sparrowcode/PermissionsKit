@@ -99,13 +99,13 @@ extension ViewController: SPPermissionDialogDataSource {
         case .reminders:
             return "Application can create new task"
         case .speech:
-            return "Allow check you voice"
+            return "Allow to check your voice"
         case .locationWhenInUse, .locationAlwaysAndWhenInUse:
-            return "App will can check your location"
+            return "Allow to access your location"
         case .motion:
-            return "Allow reports motion and environment-related data"
+            return "Allow to report motion and environment-related data"
         case .mediaLibrary:
-            return "Allow check your media"
+            return "Allow to check your media"
         }
     }
     
