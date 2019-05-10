@@ -21,7 +21,7 @@
 
 import UIKit
 
-class ViewController: SPController {
+class Controller: SPController {
     
     @objc func presentPermissonDialog() {
         

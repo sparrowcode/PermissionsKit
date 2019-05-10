@@ -1,6 +1,6 @@
 # SPPermission
 
-Request permissions **with native dialog** UI and interactive animations. Also you can request permissions without dialog. Check state any permission. You can start using this project with just two lines of code and easy customisation. You can watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4). If you like the project, do not forget to **put star ★**
+**Request permissions with dialog**. You can request many permission at once. Fast start using - type two lines of code. I do UI of dialog in Apple style. Watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4). If you like the project, do not forget to **put star ★**
 
 ### Preview
 
@@ -17,8 +17,8 @@ Request permissions **with native dialog** UI and interactive animations. Also y
     - [Colors](#colors)
 - [Delegate](#delegate)
 - [Purpose String in Info.plist](#purpose-string-in-infoplist)
-- [Screen record with design](#screen-record-with-design)
-- [Other Projects (+gif)](#my-projects)
+- [How I do UI](#how-i-do-UI)
+- [Other Projects +gif](#my-projects)
     - [SPStorkController](#spstorkcontroller)
     - [SPAlert](#spalert)
     - [SPLarkController](#splarkcontroller)
@@ -204,9 +204,9 @@ SPPermission uses many permissions in one library; you need to add some strings 
 Do not use the description as the name of the key - this causes errors in the latest version of the new Xcode. Specify `For SPPermission` in the description.
 If I forgot to mention some, please let me know and create [issue](https://github.com/IvanVorobei/SPPermission/issues) or [pull request](https://github.com/IvanVorobei/SPPermission/pulls).
 
-## Screen record with design
+## How I do UI
 
-I have [YouTube channel](http://youtube.com/ivanvorobei) where I publish videos about Xcode and Design. You can see how I develop native design for `SPPermission` dialog view:
+I develop `SPPermission` in Apple-way. For this, I check 30 apps to get UI-elements for it project. I am take screenshoot and draw it in Sketch. For example, `Allow` button is similar to `Get` button in the AppStore. Check [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I am design `SPPermission`:
 
 [![Timelaps on YouTube](https://github.com/IvanVorobei/SPPermission/blob/master/Resources/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
 

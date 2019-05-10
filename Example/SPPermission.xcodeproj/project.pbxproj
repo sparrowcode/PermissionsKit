@@ -29,7 +29,7 @@
 		F4C55E0E227A221C00CBA1C3 /* SPRequestPermissionLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C55DFA227A221C00CBA1C3 /* SPRequestPermissionLocationHandler.swift */; };
 		F4FADBF5225379E70027C912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FADB33225379E60027C912 /* LaunchScreen.storyboard */; };
 		F4FADBF6225379E70027C912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FADB34225379E60027C912 /* AppDelegate.swift */; };
-		F4FADC80225379E70027C912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FADBF1225379E70027C912 /* ViewController.swift */; };
+		F4FADC80225379E70027C912 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FADBF1225379E70027C912 /* Controller.swift */; };
 		F4FADC81225379E70027C912 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FADBF2225379E70027C912 /* Delegate.swift */; };
 		F4FADC82225379E70027C912 /* ColorSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FADBF3225379E70027C912 /* ColorSource.swift */; };
 		F4FADC83225379E70027C912 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FADBF4225379E70027C912 /* DataSource.swift */; };
@@ -181,7 +181,7 @@
 		F4FADB2C225379AF0027C912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4FADB33225379E60027C912 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4FADB34225379E60027C912 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4FADBF1225379E70027C912 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4FADBF1225379E70027C912 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		F4FADBF2225379E70027C912 /* Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		F4FADBF3225379E70027C912 /* ColorSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSource.swift; sourceTree = "<group>"; };
 		F4FADBF4225379E70027C912 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
@@ -443,7 +443,7 @@
 		F4FADBF0225379E70027C912 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F4FADBF1225379E70027C912 /* ViewController.swift */,
+				F4FADBF1225379E70027C912 /* Controller.swift */,
 				F4FADBF2225379E70027C912 /* Delegate.swift */,
 				F4FADBF3225379E70027C912 /* ColorSource.swift */,
 				F4FADBF4225379E70027C912 /* DataSource.swift */,
@@ -1103,7 +1103,7 @@
 				F4FADD9E22537A6E0027C912 /* SPConstraints.swift in Sources */,
 				F4FADD9622537A6E0027C912 /* SPUIImageViewExtenshion.swift in Sources */,
 				F4FADD6822537A6E0027C912 /* SPVideoPlayer.swift in Sources */,
-				F4FADC80225379E70027C912 /* ViewController.swift in Sources */,
+				F4FADC80225379E70027C912 /* Controller.swift in Sources */,
 				F4FADD4E22537A6E0027C912 /* SPImageTableViewCell.swift in Sources */,
 				F4FADD9A22537A6E0027C912 /* SPApp.swift in Sources */,
 				F4FADD8722537A6E0027C912 /* SPUIViewExtenshion.swift in Sources */,
@@ -1256,7 +1256,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8JMTA2AAF3;
 				INFOPLIST_FILE = SPPermission/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1275,7 +1275,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8JMTA2AAF3;
 				INFOPLIST_FILE = SPPermission/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

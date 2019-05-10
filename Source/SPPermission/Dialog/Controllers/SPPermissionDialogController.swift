@@ -132,10 +132,13 @@ public class SPPermissionDialogController: UIViewController {
         self.setupPanGesture()
         self.animator = UIDynamicAnimator(referenceView: self.view)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        
         self.updateLayout(with: self.view.frame.size)
     }
     
     @objc func request(with button: UIButton) {
+        
         var permission: SPPermissionType?
         var permissionView: SPPermissionDialogLineView?
         
@@ -149,6 +152,18 @@ public class SPPermissionDialogController: UIViewController {
         
         if let permission = permission {
             SPPermission.request(permission, with: {
+                
+                // Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
+                if permission == .locationAlwaysAndWhenInUse {
+                    if self.permissions.contains(.locationWhenInUse) {
+                        for view in self.areaView.views {
+                            if view.permission == .locationWhenInUse {
+                                view.updateStyle()
+                            }
+                        }
+                    }
+                }
+                
                 if SPPermission.isAllowed(permission) {
                     self.delegate?.didAllow?(permission: permission)
                     permissionView?.updateStyle()
@@ -184,6 +199,12 @@ public class SPPermissionDialogController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 }
             })
+        }
+    }
+    
+    @objc func applicationDidBecomeActive() {
+        for view in self.areaView.views {
+            view.updateStyle()
         }
     }
     
@@ -330,13 +351,13 @@ public class SPPermissionDialogController: UIViewController {
         return CGPoint(x: self.view.center.x, y: self.view.center.y)
     }
     
-    //MARK: - animator
+    //MARK: - Animator
     var animator = UIDynamicAnimator()
     var attachmentBehavior : UIAttachmentBehavior!
     var gravityBehaviour : UIGravityBehavior!
     var snapBehavior : UISnapBehavior!
     
-    //MARK: - handle gesture
+    //MARK: - Handle Gesture
     @objc func handleGesture(sender: AnyObject) {
         let myView = self.areaView
         let location = sender.location(in: view)
@@ -371,9 +392,13 @@ public class SPPermissionDialogController: UIViewController {
         self.hide(withDialog: true)
     }
     
-    //MARK: - other
+    //MARK: - Other
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+         NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
 }
 
