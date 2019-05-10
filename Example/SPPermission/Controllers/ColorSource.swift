@@ -21,7 +21,7 @@
 
 import UIKit
 
-extension ViewController: SPPermissionDialogColorSource {
+extension Controller: SPPermissionDialogColorSource {
     
     /*
         For customize colors ovveride more parametrs.

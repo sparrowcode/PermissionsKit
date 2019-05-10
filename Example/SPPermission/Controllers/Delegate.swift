@@ -21,7 +21,7 @@
 
 import UIKit
 
-extension ViewController: SPPermissionDialogDelegate {
+extension Controller: SPPermissionDialogDelegate {
     
     func didHide() {
         print("SPPermissionDialogDelegate - didHide")

@@ -37,14 +37,10 @@ class SPPermissionAlwaysAuthorizationLocationHandler: NSObject, CLLocationManage
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        
-        if whenInUseNotRealChangeStatus {
-            if status == .authorizedWhenInUse {
-                return
-            }
-        }
+        print("locationManager \(status)")
         
         if status == .notDetermined {
+            print("2")
             return
         }
 
@@ -64,12 +60,10 @@ class SPPermissionAlwaysAuthorizationLocationHandler: NSObject, CLLocationManage
         case .notDetermined:
             locationManager.delegate = self
             locationManager.requestAlwaysAuthorization()
-            break
         case .authorizedWhenInUse:
-            self.whenInUseNotRealChangeStatus = true
             locationManager.delegate = self
             locationManager.requestAlwaysAuthorization()
-            break
+            self.whenInUseNotRealChangeStatus = true
         default:
             completionHandler(self.isAuthorized)
         }

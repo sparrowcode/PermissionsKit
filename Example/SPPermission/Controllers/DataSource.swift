@@ -21,7 +21,7 @@
 
 import UIKit
 
-extension ViewController: SPPermissionDialogDataSource {
+extension Controller: SPPermissionDialogDataSource {
     
     var dragEnabled: Bool {
         return true
@@ -73,8 +73,10 @@ extension ViewController: SPPermissionDialogDataSource {
             return "Reminders"
         case .speech:
             return "Speech"
-        case .locationWhenInUse, .locationAlwaysAndWhenInUse:
-            return "Location"
+        case .locationWhenInUse:
+            return "Location When Use"
+        case .locationAlwaysAndWhenInUse:
+            return "Location Always"
         case .motion:
             return "Motion"
         case .mediaLibrary:
