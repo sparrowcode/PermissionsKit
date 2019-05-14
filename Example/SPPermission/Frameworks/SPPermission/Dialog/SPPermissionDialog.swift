@@ -65,6 +65,7 @@ extension SPPermission {
     @objc optional func deniedSubtitle(for permission: SPPermissionType) -> String?
     @objc optional var cancelTitle: String { get }
     @objc optional var settingsTitle: String { get }
+	@objc optional var uiDynamics: CGFloat { get }
 }
 
 @objc public protocol SPPermissionDialogColorSource: class {
