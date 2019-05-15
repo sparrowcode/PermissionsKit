@@ -1,6 +1,6 @@
 # SPPermission
 
-**Request permissions with dialog**. You can request many permission at once. Fast start using - type two lines of code. I do UI of dialog in Apple style. Watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4). If you like the project, do not forget to **put star ★**
+Request permissions with dialog. You can request many permission at once. Fast start using - type two lines of code. I do UI of dialog in Apple style. Watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4). If you like the project, do not forget to **put star ★**
 
 ### Preview
 
@@ -130,7 +130,7 @@ SPPermission.Dialog.request(
 
 ### Texts
 
-All properties and functions optinal. Func can return `nil`. If do it - will be used defualt value.
+All properties and functions optional. Func can return `nil`. If do it - will be used defualt value.
 
 ```swift
 extension Controller: SPPermissionDialogDataSource {
