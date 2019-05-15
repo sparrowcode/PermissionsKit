@@ -13,8 +13,12 @@
 - [Usage](#usage)
 - [Permissions](#permissions)
 - [DataSource & Customisation](#datasource--customisation)
-    - [Content](#datasource--customisation)
+    - [Protocol](#protocol)
+    - [Texts](#texts)
+    - [Close Button](#close-button)
+    - [Drag](#drag)
     - [Colors](#colors)
+    - [Start position](#start-position)
 - [Delegate](#delegate)
 - [Purpose String in Info.plist](#purpose-string-in-infoplist)
 - [How I do UI](#how-i-do-UI)
@@ -98,28 +102,18 @@ SPPermission.request(.notification, with: {
 
 If you want new permission added, create new issue [here](https://github.com/IvanVorobei/SPPermission/issues).
 
-## DataSource & Customisation
+## Customisation
+
+### Protocol
 
 If you want to change the text, you need to implement `SPPermissionDialogDataSource` protocol. Override needed parameters to see the changes:
 
 ```swift
-@objc public protocol SPPermissionDialogDataSource: class {
+extension Controller: SPPermissionDialogDataSource {
 
-    @objc optional var dialogTitle: String { get }
-    @objc optional var dialogSubtitle: String { get }
-    @objc optional var dialogComment: String { get }
-    @objc optional var allowTitle: String { get }
-    @objc optional var allowedTitle: String { get }
-    @objc optional var bottomComment: String { get }
-    @objc optional var showCloseButton: Bool { get }
-    @objc optional var dragEnabled: Bool { get }
-    @objc optional func name(for permission: SPPermissionType) -> String?
-    @objc optional func description(for permission: SPPermissionType) -> String?
-    @objc optional func image(for permission: SPPermissionType) -> UIImage?
-    @objc optional func deniedTitle(for permission: SPPermissionType) -> String?
-    @objc optional func deniedSubtitle(for permission: SPPermissionType) -> String?
-    @objc optional var cancelTitle: String { get }
-    @objc optional var settingsTitle: String { get }
+    var showCloseButton: Bool { 
+        return true
+    }
 }
 ```
 
@@ -134,11 +128,57 @@ SPPermission.Dialog.request(
 )
 ```
 
-If you want to inhibite drag gesture to discard the dialog view you need to override `dragEnabled` parameter, and if you want to add or remove the close button (without the button you’ll have to swipe the dialog to close it), you need to override parameter `showCloseButton`. To see what it looks like, see the picture below:
+### Texts
+
+All properties and functions optinal. Func can return `nil`. If do it - will be used defualt value.
+
+```swift
+extension Controller: SPPermissionDialogDataSource {
+    
+    var dialogTitle: String { return "Need Permissions" }
+    var dialogSubtitle: String { return "Permissions Request" }
+    var dialogComment: String { return "Push are not required permissions" }
+    var allowTitle: String { return "Allow" }
+    var allowedTitle: String { return "Allowed" }
+    var bottomComment: String { return "" }
+    
+    func name(for permission: SPPermissionType) -> String? { return nil }
+    func description(for permission: SPPermissionType) -> String? { return nil }
+    func deniedTitle(for permission: SPPermissionType) -> String? { return nil }
+    func deniedSubtitle(for permission: SPPermissionType) -> String? { return nil }
+
+    var cancelTitle: String { return "Cancel" }
+    var settingsTitle: String { return "Settings" }
+}
+```
+
+### Close Button
+
+For add or remove close button, you need to override parameter `showCloseButton`. Without button you’ll have to swipe the dialog to close it. 
+
+```swift
+var showCloseButton: Bool {
+    return true
+}
+```
+
+To see what it looks like, see the picture below:
 
 <img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Close%20Button.png"/>
 
-In the project you can find an example of usage of `SPPermissionDialogDataSource`
+### Drag
+
+For disable drag ovveride `dragEnabled`. If need allow drag, but disable swipe for hide, ovveride `dragToDismiss`:
+
+```swift
+var dragEnabled: Bool {
+    return true
+}
+    
+var dragToDismiss: Bool {
+    return true
+}
+```
 
 ### Colors
 
@@ -164,6 +204,17 @@ If you want to change the color scheme, you need to implement the protocol `SPPe
 ```
 
 Will auto check `SPPermissionDialogDataSource` also implement `SPPermissionDialogColorSource`. You need pass for `dataSource` object, which implements two protocols.
+
+### Start position
+
+Property `startTransitionYoffset` customise position before start. Set to 0 if need disable wobble animation. By default used `center.y * 1.2`.
+
+```swift
+var startTransitionYoffset: CGFloat {
+    return 0
+}
+```
+
 
 ## Delegate
 
