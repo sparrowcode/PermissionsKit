@@ -130,4 +130,12 @@ extension Controller: SPPermissionDialogDataSource {
     var settingsTitle: String {
         return "Settings"
     }
+    
+    /*
+    // For change vertical position (or remove wobble animation for start), ovveride `startTransitionYoffset` to 0. Also you can set any custom value
+    
+    var startTransitionYoffset: CGFloat {
+       return 0
+    }
+    */
 }

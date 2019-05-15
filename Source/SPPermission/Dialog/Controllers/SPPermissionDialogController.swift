@@ -221,7 +221,7 @@ public class SPPermissionDialogController: UIViewController {
             self.isHiddenStatusBar = true
             self.areaView.center = CGPoint.init(
                 x: self.view.center.x,
-                y: self.view.center.y * (self.dataSource?.startTransitionYoffset ?? 1.2)
+                y: self.view.center.y + (self.dataSource?.startTransitionYoffset ?? self.view.center.y * 0.2)
             )
             SPPermissionStyle.Animation.base(0.8, animations: {
                 self.backgroundView.setGradeAlpha(0.07, blurRaius: 4)
