@@ -12,7 +12,7 @@ Request permissions with dialog. You can request many permission at once. I do U
 - [Installation](#installation)
 - [Usage](#usage)
 - [Permissions](#permissions)
-- [DataSource & Customisation](#datasource--customisation)
+- [Customisation](#customisation)
     - [Protocol](#protocol)
     - [Texts](#texts)
     - [Close Button](#close-button)
