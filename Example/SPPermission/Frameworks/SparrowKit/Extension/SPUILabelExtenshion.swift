@@ -62,7 +62,7 @@ extension UILabel {
         paragraphStyle.lineSpacing = lineSpacing
         paragraphStyle.lineHeightMultiple = lineHeightMultiple
         
-        let attributedString:NSMutableAttributedString
+        let attributedString: NSMutableAttributedString
         if let labelattributedText = self.attributedText {
             attributedString = NSMutableAttributedString(attributedString: labelattributedText)
         } else {
@@ -74,20 +74,27 @@ extension UILabel {
         self.attributedText = attributedString
     }
     
-    func setFormat(text: String, positions: [(start: Int, length: Int)], hithiglightFont: UIFont, higlightColor: UIColor) {
+    func setFormat(text: String, positions: [FormatPosition], font: UIFont, textColor: UIColor, backgroundColor: UIColor = .clear) {
         
         let title = NSMutableAttributedString.init(string: text)
         
         for position in positions {
             title.addAttributes(
                 [
-                    NSAttributedString.Key.foregroundColor : higlightColor,
-                    NSAttributedString.Key.font : hithiglightFont
+                    NSAttributedString.Key.backgroundColor : backgroundColor,
+                    NSAttributedString.Key.foregroundColor : textColor,
+                    NSAttributedString.Key.font : font
                 ],
                 range: NSRange.init(location: position.start, length: position.length)
             )
         }
         
         self.attributedText = title
+    }
+    
+    struct FormatPosition {
+        
+        var start: Int
+        var length: Int
     }
 }

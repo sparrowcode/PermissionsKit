@@ -82,7 +82,7 @@ struct SPLocalNotificationCategory {
     var identifier: String
     var summary: String
     
-    var countSymbol: String {
+    static var countSymbol: String {
         return "%u"
     }
 }

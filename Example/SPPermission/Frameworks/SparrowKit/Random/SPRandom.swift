@@ -78,15 +78,6 @@ extension CGFloat {
     }
 }
 
-extension Collection {
-    
-    func shuffle() -> [Iterator.Element] {
-        var list = Array(self)
-        list.shuffleInPlace()
-        return list
-    }
-}
-
 extension Collection where Index == Int {
     
     func random() -> Iterator.Element? {

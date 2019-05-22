@@ -63,21 +63,23 @@ extension SPApp {
         }
     }
     
-    static func open(link: String, redirect: Bool) {
+    static func open(link: String) {
         
         guard let url = URL(string: link) else {
             print("SPOpener - can not create URL")
             return
         }
         
-        if redirect {
-            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-        } else {
-            if let rootController = SPApp.rootController {
-                let safariController = SFSafariViewController.init(url: url)
-                rootController.present(safariController, animated: true, completion: nil)
-            }
+        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+    }
+    
+    static func open(link: String, on controller: UIViewController) {
+        guard let url = URL(string: link) else {
+            print("SPOpener - can not create URL")
+            return
         }
+        let safariController = SFSafariViewController.init(url: url)
+        controller.present(safariController, animated: true, completion: nil)
     }
 }
 

@@ -20,9 +20,8 @@
 // SOFTWARE.
 
 import UIKit
-import StoreKit
 
-struct SPApp {
+enum SPApp {
     
     static var udid: String? {
         return UIDevice.current.identifierForVendor?.uuidString
@@ -71,6 +70,4 @@ struct SPApp {
         UITabBarController.elementsColor = elementsColor
         UITabBar.appearance().tintColor = elementsColor
     }
-    
-    private init() {}
 }
