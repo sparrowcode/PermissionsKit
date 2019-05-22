@@ -197,7 +197,7 @@ class SPProposeController: SPController {
             self.layer.masksToBounds = true
             self.layer.cornerRadius = 34
             
-            self.titleLabel.font = UIFont.system(weight: .regular, size: 28)
+            self.titleLabel.font = UIFont.system(weight: .regular, size: 31)
             self.titleLabel.textColor = UIColor.init(hex: "939393")
             self.titleLabel.numberOfLines = 1
             self.titleLabel.adjustsFontSizeToFitWidth = true
@@ -205,7 +205,7 @@ class SPProposeController: SPController {
             self.titleLabel.setCenterAlignment()
             self.addSubview(self.titleLabel)
             
-            self.subtitleLabel.font = UIFont.system(weight: .regular, size: 16)
+            self.subtitleLabel.font = UIFont.system(weight: .regular, size: 17)
             self.subtitleLabel.textColor = SPNativeColors.black
             self.subtitleLabel.numberOfLines = 0
             self.subtitleLabel.setCenterAlignment()
@@ -243,23 +243,23 @@ class SPProposeController: SPController {
             
             self.subtitleLabel.sizeToFit()
             self.subtitleLabel.frame.origin.y = self.titleLabel.frame.bottomY + 8
-            self.subtitleLabel.frame.set(width: self.frame.width - self.space * 2)
+            self.subtitleLabel.frame.set(width: self.frame.width - self.space * 2 + 10)
             self.subtitleLabel.setXCenter()
             
             self.imageView.frame = CGRect.init(
-                x: 0, y: self.subtitleLabel.frame.bottomY + self.space / 2,
+                x: 0, y: self.subtitleLabel.frame.bottomY + self.space / 1.4,
                 width: self.imageSideSize,
                 height: self.imageSideSize
             )
             self.imageView.setXCenter()
             
             self.button.sizeToFit()
-            self.button.frame.set(height: 52)
+            self.button.frame.set(height: 55)
             self.button.frame.set(width: self.frame.width - self.space * 2)
-            self.button.frame.origin.y = self.imageView.frame.bottomY + self.space / 1.8
+            self.button.frame.origin.y = self.imageView.frame.bottomY + self.space / 1.2
             self.button.setXCenter()
             
-            self.closeButton.frame = CGRect.init(x: 0, y: 0, width: 24, height: 24)
+            self.closeButton.frame = CGRect.init(x: 0, y: 0, width: 28, height: 28)
             self.closeButton.frame.origin.x = self.frame.width - self.closeButton.frame.width - 20
             self.closeButton.frame.origin.y = 20
             self.closeButton.round()

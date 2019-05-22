@@ -32,19 +32,21 @@ extension UIAlertController {
         }
     }
     
-    static func show(title: String, message: String, buttonTitle: String, cancelButtonTitle: String? = nil, complection: @escaping ()->() = {}, on viewController: UIViewController) {
+    
+    static func show(title: String? = nil, message: String? = nil, buttonTitle: String, cancelButtonTitle: String? = nil, complection: @escaping ()->() = {}, on viewController: UIViewController) {
         let ac = UIAlertController(
             title: title,
             message: message,
             preferredStyle: .alert
         )
         
-        guard cancelButtonTitle != nil else { return }
-        ac.addAction(UIAlertAction.init(
-            title: cancelButtonTitle!,
-            style: UIAlertAction.Style.cancel,
-            handler: nil)
-        )
+        if let cancelTitle = cancelButtonTitle {
+            ac.addAction(UIAlertAction.init(
+                title: cancelTitle,
+                style: UIAlertAction.Style.cancel,
+                handler: nil)
+            )
+        }
         
         ac.addAction(UIAlertAction.init(
             title: buttonTitle,
@@ -56,7 +58,7 @@ extension UIAlertController {
         viewController.present(ac, animated: true, completion: nil)
     }
     
-    static func сonfirm(title: String? = nil, message: String, buttonTitle: String, cancelButtonTitle: String, isDestructive: Bool = false, complection: @escaping (Bool)->(), on viewController: UIViewController) {
+    static func сonfirm(title: String? = nil, message: String? = nil, buttonTitle: String, cancelButtonTitle: String, isDestructive: Bool = false, complection: @escaping (Bool)->(), on viewController: UIViewController) {
         let ac = UIAlertController(
             title: title,
             message: message,

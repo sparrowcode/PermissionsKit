@@ -43,31 +43,12 @@ class SPTelegram {
     
     static func joinChannel(id: String) {
         let url = "https://t.me/joinchat/\(id)"
-        SPApp.open(link: url, redirect: true)
+        SPApp.open(link: url)
     }
     
     static func joinChat(id: String) {
-        
-        let openInBrowser = {
-            let url = "https://t.me/joinchat/\(id)"
-            SPApp.open(link: url, redirect: true)
-        }
-        
-        if SPTelegram.isSetApp {
-            let urlStringEncoded = id.addingPercentEncoding( withAllowedCharacters: .urlHostAllowed)
-            let urlOptional = URL(string: "tg://join?invite=\(urlStringEncoded ?? "")")
-            if let url = urlOptional {
-                if UIApplication.shared.canOpenURL(url) {
-                    UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-                } else {
-                    openInBrowser()
-                }
-            } else {
-                openInBrowser()
-            }
-        } else {
-            openInBrowser()
-        }
+        let url = "https://t.me/joinchat/\(id)"
+        SPApp.open(link: url)
     }
     
     static func openBot(username: String) {
@@ -76,7 +57,12 @@ class SPTelegram {
             username.removeFirst()
         }
         let url = "https://telegram.me/\(username)"
-        SPApp.open(link: url, redirect: true)
+        SPApp.open(link: url)
+    }
+    
+    static func openDialog(username: String) {
+        let url = "https://t.me/\(username)"
+        SPApp.open(link: url)
     }
     
     private init() {}

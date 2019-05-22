@@ -34,7 +34,7 @@ class SPInstagram {
         if UIApplication.shared.canOpenURL(instagramUrl!) {
             UIApplication.shared.open(instagramUrl!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {
-            SPApp.open(link: safariURL.absoluteString, redirect: true)
+            SPApp.open(link: safariURL.absoluteString)
         }
     }
     
@@ -45,7 +45,7 @@ class SPInstagram {
         if UIApplication.shared.canOpenURL(instagramUrl!) {
             UIApplication.shared.open(instagramUrl!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {
-            SPApp.open(link: safariURL.absoluteString, redirect: true)
+            SPApp.open(link: safariURL.absoluteString)
         }
     }
     

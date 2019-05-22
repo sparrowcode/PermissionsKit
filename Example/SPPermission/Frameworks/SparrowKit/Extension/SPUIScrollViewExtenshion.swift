@@ -21,28 +21,9 @@
 
 import UIKit
 
-extension SPApp {
+extension UIScrollView {
     
-    enum Launch {
-        
-        static func run() {
-            self.count += 1
-            if (UserDefaults.standard.object(forKey: "SPDateFirstLaunch") as? Date) == nil {
-                UserDefaults.standard.set(Date(), forKey: "SPDateFirstLaunch")
-            }
-        }
-        
-        static var count: Int {
-            get { return UserDefaults.standard.value(forKey: "SPLaunchCount") as? Int ?? 0 }
-            set { UserDefaults.standard.set(newValue, forKey: "SPLaunchCount") }
-        }
-        
-        static var isFirstLaunch: Bool {
-            return (self.count == 1) || (self.count == 0)
-        }
-        
-        static var dateFirstLaunch: Date {
-            return ((UserDefaults.standard.object(forKey: "SPDateFirstLaunch") as? Date) ?? Date())
-        }
+    func stopScrolling() {
+        self.setContentOffset(self.contentOffset, animated: false)
     }
 }
