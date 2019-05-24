@@ -1,6 +1,8 @@
 # SPPermission
 
-Request permissions with dialog. You can request many permission at once. I do UI of dialog in Apple style. Watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4). If you like this project, do not forget to **put star ★**
+Request permissions with dialog. You can request many permission at once. I do UI of dialog in Apple style. Watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4). If you like this project, do not forget to **put star ★** or donate:
+
+[![Patron](https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Patron%20Button.svg)](https://patreon.com/ivanvorobei)
 
 ### Preview
 
