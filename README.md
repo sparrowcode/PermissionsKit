@@ -1,10 +1,17 @@
 # SPPermission
 
-Request permissions with dialog. You can request many permission at once. I do UI of dialog in Apple style. Watch how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4). If you like this project, do not forget to **put star ★** or donate:
+<a href="https://github.com/IvanVorobei/SPPermission">
+<img align="left" src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Preview.gif" width="500"/></a>
 
-[![Patron](https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Patron%20Button.svg)](https://patreon.com/ivanvorobei)
+<p><h2>About</h2></p>
+<p>Request permissions with dialog. You can request many permission at once. I do UI of dialog in Apple style. Watch how I design UI for this pod <a href="https://youtu.be/1mDdX7fQRv4">on YouTube</a>
+<br><br>
+If you like this project, do not forget to **put star ★** or donate:
+
+[![Patron](https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Patron%20Button.svg)](https://patreon.com/ivanvorobei)</p>
 
 ### Preview
+
 
 <img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Preview.gif" width="500">
 
