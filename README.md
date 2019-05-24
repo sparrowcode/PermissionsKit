@@ -10,11 +10,6 @@ If you like this project, do not forget to **put star ★** or donate:
 
 [![Patron](https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Patron%20Button.svg)](https://patreon.com/ivanvorobei)</p>
 
-### Preview
-
-
-<img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Preview.gif" width="500">
-
 ## Navigate
 
 - [Requirements](#requirements)
