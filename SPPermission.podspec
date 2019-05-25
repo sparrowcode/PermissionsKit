@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "SPPermission"
-  s.version       = "3.1.0"
+  s.version       = "3.1.1"
   s.summary       = "Request permissions with dialog. For customise implement DataSource protocol. Check permissions."
   s.homepage      = "https://github.com/IvanVorobei/RequestPermission"
   s.source        = { :git => "https://github.com/IvanVorobei/RequestPermission.git", :tag => s.version }
