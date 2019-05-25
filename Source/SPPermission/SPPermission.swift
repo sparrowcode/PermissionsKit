@@ -43,7 +43,7 @@ public enum SPPermission {
         return manager.isDenied
     }
     
-    public static func request(_ permission: SPPermissionType, with complectionHandler: @escaping ()->()) {
+    public static func request(_ permission: SPPermissionType, with сompletionHandler: @escaping ()->()) {
         let manager = self.getManagerForPermission(permission)
         if let usageDescriptionKey = permission.usageDescriptionKey {
             guard let _ = Bundle.main.object(forInfoDictionaryKey: usageDescriptionKey) else {
@@ -51,8 +51,8 @@ public enum SPPermission {
                 return
             }
         }
-        manager.request(withComlectionHandler: {
-            complectionHandler()
+        manager.request(withCompletionHandler: {
+            сompletionHandler()
         })
     }
 }
@@ -63,7 +63,7 @@ fileprivate protocol SPPermissionInterface {
     
     var isDenied: Bool { get }
     
-    func request(withComlectionHandler complectionHandler: @escaping ()->()?)
+    func request(withCompletionHandler сompletionHandler: @escaping ()->()?)
 }
 
 extension SPPermission {
@@ -110,11 +110,11 @@ extension SPPermission {
             return AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == AVAuthorizationStatus.denied
         }
         
-        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        func request(withCompletionHandler сompletionHandler: @escaping ()->()?) {
             AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: {
                 finished in
                 DispatchQueue.main.async {
-                    complectionHandler()
+                    сompletionHandler()
                 }
             })
         }
@@ -147,18 +147,18 @@ extension SPPermission {
             return notificationSettings?.authorizationStatus
         }
         
-        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        func request(withCompletionHandler сompletionHandler: @escaping ()->()?) {
             if #available(iOS 10.0, *) {
                 let center = UNUserNotificationCenter.current()
                 center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
                     DispatchQueue.main.async {
-                        complectionHandler()
+                        сompletionHandler()
                     }
                 }
             } else {
                 UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
                 DispatchQueue.main.async {
-                    complectionHandler()
+                    сompletionHandler()
                 }
             }
             
@@ -176,11 +176,11 @@ extension SPPermission {
             return PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.denied
         }
         
-        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        func request(withCompletionHandler сompletionHandler: @escaping ()->()?) {
             PHPhotoLibrary.requestAuthorization({
                 finished in
                 DispatchQueue.main.async {
-                    complectionHandler()
+                    сompletionHandler()
                 }
             })
         }
@@ -196,11 +196,11 @@ extension SPPermission {
             return AVAudioSession.sharedInstance().recordPermission == .denied
         }
         
-        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        func request(withCompletionHandler сompletionHandler: @escaping ()->()?) {
             AVAudioSession.sharedInstance().requestRecordPermission {
                 granted in
                 DispatchQueue.main.async {
-                    complectionHandler()
+                    сompletionHandler()
                 }
             }
         }
@@ -217,12 +217,12 @@ extension SPPermission {
             return EKEventStore.authorizationStatus(for: EKEntityType.event) == .denied
         }
         
-        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        func request(withCompletionHandler сompletionHandler: @escaping ()->()?) {
             let eventStore = EKEventStore()
             eventStore.requestAccess(to: EKEntityType.event, completion: {
                 (accessGranted: Bool, error: Error?) in
                 DispatchQueue.main.async {
-                    complectionHandler()
+                    сompletionHandler()
                 }
             })
         }
@@ -246,12 +246,12 @@ extension SPPermission {
             }
         }
         
-        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        func request(withCompletionHandler сompletionHandler: @escaping ()->()?) {
             if #available(iOS 9.0, *) {
                 let store = CNContactStore()
                 store.requestAccess(for: .contacts, completionHandler: { (granted, error) in
                     DispatchQueue.main.async {
-                        complectionHandler()
+                        сompletionHandler()
                     }
                 })
             } else {
@@ -259,7 +259,7 @@ extension SPPermission {
                 ABAddressBookRequestAccessWithCompletion(addressBookRef) {
                     (granted: Bool, error: CFError?) in
                     DispatchQueue.main.async() {
-                        complectionHandler()
+                        сompletionHandler()
                     }
                 }
             }
@@ -276,12 +276,12 @@ extension SPPermission {
             return EKEventStore.authorizationStatus(for: EKEntityType.reminder) == .denied
         }
         
-        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        func request(withCompletionHandler сompletionHandler: @escaping ()->()?) {
             let eventStore = EKEventStore()
             eventStore.requestAccess(to: EKEntityType.reminder, completion: {
                 (accessGranted: Bool, error: Error?) in
                 DispatchQueue.main.async {
-                    complectionHandler()
+                    сompletionHandler()
                 }
             })
         }
@@ -297,12 +297,12 @@ extension SPPermission {
             return EKEventStore.authorizationStatus(for: EKEntityType.reminder) == .denied
         }
         
-        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        func request(withCompletionHandler сompletionHandler: @escaping ()->()?) {
             let eventStore = EKEventStore()
             eventStore.requestAccess(to: EKEntityType.reminder, completion: {
                 (accessGranted: Bool, error: Error?) in
                 DispatchQueue.main.async {
-                    complectionHandler()
+                    сompletionHandler()
                 }
             })
         }
@@ -318,10 +318,10 @@ extension SPPermission {
             return SFSpeechRecognizer.authorizationStatus() == .denied
         }
         
-        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        func request(withCompletionHandler сompletionHandler: @escaping ()->()?) {
             SFSpeechRecognizer.requestAuthorization { status in
                 DispatchQueue.main.async {
-                    complectionHandler()
+                    сompletionHandler()
                 }
             }
         }
@@ -337,10 +337,10 @@ extension SPPermission {
             return MPMediaLibrary.authorizationStatus() == .denied
         }
         
-        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        func request(withCompletionHandler сompletionHandler: @escaping ()->()?) {
             MPMediaLibrary.requestAuthorization() { status in
                 DispatchQueue.main.async {
-                    complectionHandler()
+                    сompletionHandler()
                 }
             }
         }
@@ -378,7 +378,7 @@ extension SPPermission {
             return CLLocationManager.authorizationStatus() == .denied
         }
         
-        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        func request(withCompletionHandler сompletionHandler: @escaping ()->()?) {
             
             switch self.type {
             case .AlwaysAndWhenInUse:
@@ -388,7 +388,7 @@ extension SPPermission {
                 
                 SPPermissionAlwaysAuthorizationLocationHandler.shared!.requestPermission { (authorized) in
                     DispatchQueue.main.async {
-                        complectionHandler()
+                        сompletionHandler()
                         SPPermissionAlwaysAuthorizationLocationHandler.shared = nil
                     }
                 }
@@ -400,7 +400,7 @@ extension SPPermission {
                 
                 SPPermissionWhenInUseAuthorizationLocationHandler.shared!.requestPermission { (authorized) in
                     DispatchQueue.main.async {
-                        complectionHandler()
+                        сompletionHandler()
                         SPPermissionWhenInUseAuthorizationLocationHandler.shared = nil
                     }
                 }
@@ -425,12 +425,12 @@ extension SPPermission {
             return false
         }
         
-        func request(withComlectionHandler complectionHandler: @escaping ()->()?) {
+        func request(withCompletionHandler сompletionHandler: @escaping ()->()?) {
             let manager = CMMotionActivityManager()
             let today = Date()
             
             manager.queryActivityStarting(from: today, to: today, to: OperationQueue.main, withHandler: { (activities: [CMMotionActivity]?, error: Error?) -> () in
-                complectionHandler()
+                сompletionHandler()
                 manager.stopActivityUpdates()
             })
         }
