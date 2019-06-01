@@ -1,7 +1,7 @@
 # SPPermission
 
 <p float="left">
-    <img align="left" src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Preview.gif" width="500"/>
+    <img align="left" src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Preview.gif" width="500"/>
 </p>
 
 <p><h3>About</h3>
@@ -11,9 +11,9 @@ Watch timelaps how I design UI for this pod <a href="https://youtu.be/1mDdX7fQRv
 <br><br>
 If you like this project, do not forget to <b>put star ★</b> or donate:<br><br>
 
-[![Patron](https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Patron%20Button.svg)](https://patreon.com/ivanvorobei)
+[![Patron](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Patron%20Button.svg)](https://patreon.com/ivanvorobei)
 
-See project's backers in <a href="https://github.com/IvanVorobei/SPPermission#sponsors">Sponsors</a> section.</p>
+See project's backers in <a href="https://github.com/ivanvorobei/SPPermission#sponsors">Sponsors</a> section.</p>
 
 ## Navigate
 
@@ -59,7 +59,7 @@ pod 'SPPermission'
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate `SPPermission` into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "IvanVorobei/SPPermission"
+github "ivanvorobei/SPPermission"
 ```
 
 ### Manually
@@ -99,7 +99,7 @@ To learn how to customize titles and images you can read section [DataSource & C
 
 ## Permissions
 
-<img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Permissions%20List.jpg"/>
+<img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions%20List.jpg"/>
 
 If you want to request notification (or other permissions) without dialog, use the function:
 
@@ -109,7 +109,7 @@ SPPermission.request(.notification, with: {
 })
 ```
 
-If you want new permission added, create new issue [here](https://github.com/IvanVorobei/SPPermission/issues).
+If you want new permission added, create new issue [here](https://github.com/ivanvorobei/SPPermission/issues).
 
 ## Customisation
 
@@ -173,7 +173,7 @@ var showCloseButton: Bool {
 
 To see what it looks like, see the picture below:
 
-<img src="https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Close%20Button.png"/>
+<img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Close%20Button.png"/>
 
 ### Drag
 
@@ -262,13 +262,13 @@ SPPermission uses many permissions in one library; you need to add some strings 
 - NSLocationWhenInUseUsageDescription
 
 Do not use the description as the name of the key - this causes errors in the latest version of the new Xcode. Specify `For SPPermission` in the description.
-If I forgot to mention some, please let me know and create [issue](https://github.com/IvanVorobei/SPPermission/issues) or [pull request](https://github.com/IvanVorobei/SPPermission/pulls).
+If I forgot to mention some, please let me know and create [issue](https://github.com/ivanvorobei/SPPermission/issues) or [pull request](https://github.com/ivanvorobei/SPPermission/pulls).
 
 ## How I do UI
 
 I develop `SPPermission` in Apple-way. For this, I check 30 apps to get UI-elements for it project. I am take screenshoot and draw it in Sketch. For example, `Allow` button is similar to `Get` button in the AppStore. Check [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I am design `SPPermission`:
 
-[![Timelaps on YouTube](https://github.com/IvanVorobei/SPPermission/blob/master/Resources/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
+[![Timelaps on YouTube](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
 
 ## Sponsors
 
@@ -282,35 +282,35 @@ Support me with a monthly donation and help me continue activities. After paymen
 ## My projects
 
 <p float="left">
-    <img align="left" src="https://github.com/IvanVorobei/SPStorkController/blob/master/Resources/Preview.gif" width="220"/>
+    <img align="left" src="https://github.com/ivanvorobei/SPStorkController/blob/master/Resources/Preview.gif" width="220"/>
 </p>
 
 ### SPStorkController
 
-<p><a href="https://github.com/IvanVorobei/SPStorkController" target="_blank">SPStorkController</a> is transition controller <b>as in Apple Music, Podcasts and Mail</b> apps. Customizable height. Simple adding close button and centering arrow indicator. Check scroll's bounce for more interactive. Simple adding close button and centering arrow indicator. You can download example <a href="https://itunes.apple.com/app/id1446635818">Debts - Spending tracker</a> app from AppStore.<br><br>
-Alert you can find in <a href="https://github.com/IvanVorobei/SPAlert">SPAlert</a> project. If you want to <b>buy source code</b> of app in preview, please, go to <a href="https://xcode-shop.com">xcode-shop.com</a>.</p>
+<p><a href="https://github.com/ivanvorobei/SPStorkController" target="_blank">SPStorkController</a> is transition controller <b>as in Apple Music, Podcasts and Mail</b> apps. Customizable height. Simple adding close button and centering arrow indicator. Check scroll's bounce for more interactive. Simple adding close button and centering arrow indicator. You can download example <a href="https://itunes.apple.com/app/id1446635818">Debts - Spending tracker</a> app from AppStore.<br><br>
+Alert you can find in <a href="https://github.com/ivanvorobei/SPAlert">SPAlert</a> project. If you want to <b>buy source code</b> of app in preview, please, go to <a href="https://xcode-shop.com">xcode-shop.com</a>.</p>
 
 ---
 
 <p float="left">
-    <img align="left" src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Done.gif" width="220"/>
+    <img align="left" src="https://github.com/ivanvorobei/SPAlert/blob/master/Resources/Preview-Done.gif" width="220"/>
 </p>
 
 ### SPAlert
 
-<p><a href="https://github.com/IvanVorobei/SPAlert" target="_blank">SPAlert</a> is <b>popup from Apple Music & Feedback in AppStore</b>. Contains `Done` & `Heart` presets. `Done` preset present with animation. I clone Apple's alerts as much as possible. You can find this alerts in AppStore after feedback, after added song to library in Apple Music. I am also add alert without icon, as simple message.
+<p><a href="https://github.com/ivanvorobei/SPAlert" target="_blank">SPAlert</a> is <b>popup from Apple Music & Feedback in AppStore</b>. Contains `Done` & `Heart` presets. `Done` preset present with animation. I clone Apple's alerts as much as possible. You can find this alerts in AppStore after feedback, after added song to library in Apple Music. I am also add alert without icon, as simple message.
 <br><br>
 You can download example <a href="https://itunes.apple.com/app/id1446635818">Debts - Spending tracker</a> app from AppStore. If you want to <b>buy source code</b> of app in preview, please, go to <a href="https://xcode-shop.com">xcode-shop.com</a>.</p>
 
 ---
 
 <p float="left">
-    <img align="left" src="https://github.com/IvanVorobei/SPLarkController/blob/master/Resources/Preview.gif" width="220"/>
+    <img align="left" src="https://github.com/ivanvorobei/SPLarkController/blob/master/Resources/Preview.gif" width="220"/>
 </p>
 
 ### SPLarkController
 
-<p><a href="https://github.com/IvanVorobei/SPLarkController" target="_blank">SPLarkController</a> make <b>settings screen</b> for application. You can add <b>buttons and switches</b>. The amount cells is not limited. You can start using project with just two lines of code and easy customisation. For implement settings as in preiew, see section <a href="https://github.com/IvanVorobei/SPLarkController#settings-controller">Settings Controller</a>.<br><br>
+<p><a href="https://github.com/ivanvorobei/SPLarkController" target="_blank">SPLarkController</a> make <b>settings screen</b> for application. You can add <b>buttons and switches</b>. The amount cells is not limited. You can start using project with just two lines of code and easy customisation. For implement settings as in preiew, see section <a href="https://github.com/ivanvorobei/SPLarkController#settings-controller">Settings Controller</a>.<br><br>
 You can download example app <a href="https://itunes.apple.com/app/id1453325619" target="_blank">Code - Learn Swift & Design</a> from AppStore. If you want to <b>buy source code</b> of app this app, please, go to <a href="https://xcode-shop.com" target="_blank">xcode-shop.com</a><p>
 
 ## License
