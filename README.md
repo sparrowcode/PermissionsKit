@@ -94,7 +94,7 @@ If you want to know if permission is denied, you need to call the function:
 let isDeniedMicrophone = SPPermission.isDenied(.microphone)
 ```
 
-To learn how to customize titles and images you can read section [DataSource & Customisation](#datasource--customisation)
+To learn how to customize titles and images you can read section [Customisation](#customisation)
 
 ## Permissions
 
