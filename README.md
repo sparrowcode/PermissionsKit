@@ -99,17 +99,17 @@ To learn how to customize titles and images you can read section [DataSource & C
 ## Permissions
 
 <p float="left">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Camera.svg" width="120">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Photo.svg" width="120">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Notification.svg" width="120">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Location.svg" width="120">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Microphone.svg" width="120">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Calendar.svg" width="120">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Contacts.svg" width="120">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Reminder.svg" width="120">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Motion.svg" width="120">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Media.svg" width="120">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Speech.svg" width="120">
+    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Camera.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Photo.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Notification.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Location.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Microphone.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Calendar.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Contacts.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Reminder.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Motion.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Media.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Speech.svg" width="130">
 </p>
 
 If you want to request notification (or other permissions) without dialog, use the function:
