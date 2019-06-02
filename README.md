@@ -98,9 +98,11 @@ To learn how to customize titles and images you can read section [DataSource & C
 
 ## Permissions
 
-<img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Camera.svg" width="140">
-<img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Camera.svg" width="140">
-<img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Camera.svg" width="140">
+<p float="left">
+    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Camera.svg" width="140">
+    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Camera.svg" width="140">
+    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Camera.svg" width="140">
+</p>
 
 If you want to request notification (or other permissions) without dialog, use the function:
 
