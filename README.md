@@ -1,6 +1,6 @@
 # SPPermission
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Preview.gif" width="500"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Preview.gif" width="470"/>
 
 ### About
 Request permissions with dialog. You can request many permission at once. I do UI of dialog in **Apple style**. If you need additional permission, please, create new issue.
