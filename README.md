@@ -3,7 +3,7 @@
 <img align="left" src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Preview.gif" width="470"/>
 
 ### About
-Request permissions with dialog. You can request many permission at once. I do UI of dialog in **Apple style**. If you need additional permission, please, create new issue.
+Request permissions with dialog. You can request many permissions at once. I do UI of dialog in **Apple style**. If you need additional permission, please, create new issue.
 
 Watch timelaps how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
 
@@ -120,7 +120,7 @@ SPPermission.request(.notification, with: {
 })
 ```
 
-If you want new permission added, create new issue [here](https://github.com/ivanvorobei/SPPermission/issues).
+If you want add new permission, create [issue](https://github.com/ivanvorobei/SPPermission/issues).
 
 ## Customisation
 
@@ -261,7 +261,7 @@ SPPermission.Dialog.request(
 
 ## Purpose String in Info.plist
 
-SPPermission uses many permissions in one library; you need to add some strings to the `Info.plist` file with description. List of keys:
+`SPPermission` uses many permissions in one library; you need to add some strings to the `Info.plist` file with description. List of keys:
 
 - NSContactsUsageDescription
 - NSCalendarsUsageDescription
