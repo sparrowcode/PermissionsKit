@@ -7,7 +7,7 @@ Request permissions with dialog. You can request many permission at once. I do U
 
 Watch timelaps how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
 
-If you like this project, do not forget to `put star ★` or donate:
+If you like the project, do not forget to `put star ★` or help me by donate:
 
 [![Patron](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Patron%20Button.svg)](https://patreon.com/ivanvorobei)
 
@@ -41,7 +41,7 @@ See project's backers in [Sponsors](https://github.com/ivanvorobei/SPStorkContro
 
 ## Requirements
 
-Swift 4.2 & **5.0**. Ready for use on iOS 10+
+Swift `4.2` & `5.0`. Ready for use on iOS 10+
 
 ## Installation
 
