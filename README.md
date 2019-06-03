@@ -1,6 +1,6 @@
 # SPPermission
 
-<a href="https://github.com/ivanvorobei/awesome-ios-ui" target="_blank"><img align="left" src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Preview.gif" width="470"/></a>
+<img align="left" src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Preview.gif" width="470"/>
 
 ### About
 Request permissions with dialog. You can request many permissions at once. I do UI of dialog in **Apple style**. If you need additional permission, please, create new issue.
