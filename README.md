@@ -11,7 +11,7 @@ If you like the project, do not forget to `put star ★` or help me by donate:
 
 [![Patron](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Patron%20Button.svg)](https://patreon.com/ivanvorobei)
 
-See project's backers in [Sponsors](https://github.com/ivanvorobei/SPStorkController#sponsors) section.
+See project's backers in [Sponsors](https://github.com/ivanvorobei/SPPermission#sponsors) section.
 
 ## Navigate
 
