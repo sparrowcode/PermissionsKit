@@ -269,8 +269,9 @@ SPPermission.Dialog.request(
 - NSAppleMusicUsageDescription
 - NSSpeechRecognitionUsageDescription
 - NSMotionUsageDescription
-- NSLocationAlwaysUsageDescription
 - NSLocationWhenInUseUsageDescription
+- NSLocationAlwaysAndWhenInUseUsageDescription
+- NSLocationAlwaysUsageDescription (iOS 10 and earlier)
 
 Do not use the description as the name of the key - this causes errors in the latest version of the new Xcode. Specify `For SPPermission` in the description.
 If I forgot to mention some, please let me know and create [issue](https://github.com/ivanvorobei/SPPermission/issues) or [pull request](https://github.com/ivanvorobei/SPPermission/pulls).
