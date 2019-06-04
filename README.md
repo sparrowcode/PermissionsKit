@@ -73,19 +73,26 @@ pod 'SPPermission/PhotoLibrary'
 ```ruby
 pod 'SPPermission/Notification'
 ```
+```ruby
+pod 'SPPermission/Microphone'
+```
+```ruby
+pod 'SPPermission/Reminders'
+```
+```ruby
+pod 'SPPermission/SpeechRecognizer'
+```
+```ruby
+pod 'SPPermission/Location'
+```
+```ruby
+pod 'SPPermission/Motion'
+```
+```ruby
+pod 'SPPermission/MediaLibrary'
+```
 
 </p>
-<ul>
-    <li>SPPermission/Camera</li>
-    <li>SPPermission/PhotoLibrary</li>
-    <li>SPPermission/Notification</li>
-    <li>SPPermission/Microphone</li>
-    <li>SPPermission/Reminders</li>
-    <li>SPPermission/SpeechRecognizer</li>
-    <li>SPPermission/Location</li>
-    <li>SPPermission/Motion</li>
-    <li>SPPermission/MediaLibrary</li>
-<ul>
 </details>
 
 ### Carthage
