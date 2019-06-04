@@ -53,7 +53,8 @@ class SPFormLabelTableViewCell: SPTableViewCell {
         self.commonInit()
     }
     
-    private func commonInit() {
+    override func commonInit() {
+        super.commonInit()
         self.backgroundColor = UIColor.white
         self.label.textAlignment = .left
         self.label.text = "Title"

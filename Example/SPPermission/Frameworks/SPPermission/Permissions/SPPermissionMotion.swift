@@ -19,42 +19,39 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if SPPERMISSION_MOTION
+
 import UIKit
+import CoreMotion
 
-class SPPromoTableViewCell: SPBaseContentTableViewCell {
+extension SPPermission {
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        self.backgroundColor = UIColor.clear
-        self.commonInit()
-    }
-    
-    override func commonInit() {
-        super.commonInit()
-        self.withImage = false
-        self.withButton = true
-        self.withSubtitle = false
-        self.centerXButton = true
-
-        self.topSpace = 14
-        self.spaceAfterTitle = 6
-        self.spaceAfterDescribtion = 16
-        self.bottomSpace = 22
+    struct SPMotionPermission: SPPermissionInterface {
         
-        self.titleLabel.font = UIFont.system(weight: .demiBold, size: 16)
-        self.titleLabel.setCenterAlignment()
-        self.descriptionLabel.font = UIFont.system(weight: .regular, size: 13)
-        self.descriptionLabel.setCenterAlignment()
-        self.subtitleLabel.textColor = UIColor.lightGray
-        self.button.style = .main
+        var isAuthorized: Bool {
+            if #available(iOS 11.0, *) {
+                return CMMotionActivityManager.authorizationStatus() == .authorized
+            }
+            return false
+        }
+        
+        var isDenied: Bool {
+            if #available(iOS 11.0, *) {
+                return CMMotionActivityManager.authorizationStatus() == .denied
+            }
+            return false
+        }
+        
+        func request(withCompletionHandler сompletionHandler: @escaping ()->()?) {
+            let manager = CMMotionActivityManager()
+            let today = Date()
+            
+            manager.queryActivityStarting(from: today, to: today, to: OperationQueue.main, withHandler: { (activities: [CMMotionActivity]?, error: Error?) -> () in
+                сompletionHandler()
+                manager.stopActivityUpdates()
+            })
+        }
     }
 }
+
+#endif

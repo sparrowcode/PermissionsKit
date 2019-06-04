@@ -189,7 +189,8 @@ class SPBaseContentTableViewCell: SPTableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func commonInit() {
+    override func commonInit() {
+        super.commonInit()
         let marginGuide = contentView.layoutMarginsGuide
         
         //iconImageView
