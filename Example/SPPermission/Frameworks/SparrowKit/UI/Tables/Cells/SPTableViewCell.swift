@@ -57,7 +57,7 @@ class SPTableViewCell: UITableViewCell {
         self.commonInit()
     }
     
-    private func commonInit() {
+    func commonInit() {
         
         self.contentView.addSubview(self.processActivityIndicatorView)
         self.processActivityIndicatorView.style = .gray

@@ -27,7 +27,7 @@ See project's backers in [Sponsors](https://github.com/ivanvorobei/SPPermission#
     - [Colors](#colors)
     - [Start position](#start-position)
 - [Delegate](#delegate)
-- [Purpose String in Info.plist](#purpose-string-in-infoplist)
+- [String in Info.plist](#string-in-infoplist)
 - [How I do UI](#how-i-do-UI)
 - [Sponsors](#sponsors)
 - [Other Projects +gif](#my-projects)
@@ -74,6 +74,8 @@ github "ivanvorobei/SPPermission"
 ### Manually
 
 If you prefer not to use any of the aforementioned dependency managers, you can integrate `SPPermission` into your project manually. Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
+
+After it need implement configuration file. See example in [PermissionConfiguration.xcconfig](PermissionConfiguration.xcconfig)
 
 ## Usage
 
@@ -268,10 +270,11 @@ SPPermission.Dialog.request(
 )
 ```
 
-## Purpose String in Info.plist
+## String in Info.plist
 
 You need to add some strings to the `Info.plist` file with description. List of keys:
 
+- NSCameraUsageDescription
 - NSContactsUsageDescription
 - NSCalendarsUsageDescription
 - NSMicrophoneUsageDescription

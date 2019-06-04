@@ -56,8 +56,8 @@ class SPImageTableViewCell: SPTableViewCell {
         self.commonInit()
     }
     
-    private func commonInit() {
-        
+    override func commonInit() {
+        super.commonInit()
         self.layer.masksToBounds = true
         
         let marginGuide = contentView.layoutMarginsGuide

@@ -57,7 +57,8 @@ class SPFormTextInputTableViewCell: SPTableViewCell {
         self.commonInit()
     }
     
-    private func commonInit() {
+    override func commonInit() {
+        super.commonInit()
         self.backgroundColor = UIColor.white
         self.textInputView.textAlignment = .left
         self.textInputView.text = ""
