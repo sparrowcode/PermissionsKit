@@ -245,7 +245,6 @@ var startTransitionYoffset: CGFloat {
 }
 ```
 
-
 ## Delegate
 
 To track events of hiding & allowing permissions associated with `SPPermission`, implement protocol `SPPermissionDialogDelegate`:
@@ -283,7 +282,7 @@ You need to add some strings to the `Info.plist` file with description. List of 
 - NSLocationAlwaysAndWhenInUseUsageDescription
 - NSLocationAlwaysUsageDescription (iOS 10 and earlier)
 
-Do not use the description as the name of the key - this causes errors in the latest version of the new Xcode. Specify `For SPPermission` in the description.
+Do not use the description as the name of the key - this causes errors in the latest version of the new Xcode.
 
 ## How I do UI
 
