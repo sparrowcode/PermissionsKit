@@ -53,11 +53,12 @@ Swift `4.2` & `5.0`. Ready for use on iOS 10+
 pod 'SPPermission/Notification'
 ```
 
-Due to Apple's new policy regarding permission access you need to specifically define what kind of permissions you want to access using subspecs. For example if you want to access `Camera` and `Location` you define the following:
+Due to Apple's new policy regarding permission access you need to specifically define what kind of permissions you want to access using subspecs. For example if you want to access `Camera`, `Location` & `Microphone` you define the following:
 
 ```ruby
 pod 'SPPermission/Camera'
 pod 'SPPermission/Location'
+pod 'SPPermission/Microphone'
 ```
 
 See [SPPermission.podspec](https://github.com/ivanvorobei/SPPermission/blob/master/SPPermission.podspec) for more information about which subspecs are available.
