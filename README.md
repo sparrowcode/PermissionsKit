@@ -61,14 +61,10 @@ pod 'SPPermission/Location'
 pod 'SPPermission/Microphone'
 ```
 
-See available subspecs <details>
-<summary>here</summary>
-    - SPPermission/Camera
-    - SPPermission/Notification
-    - SPPermission/Location
-    - SPPermission/Microphone
-    - markdown list 2
-</details>.
+<details><summary>Available subspecs</summary>
+    - NSCameraUsageDescription
+    - NSContactsUsageDescription
+</details>
 
 See [SPPermission.podspec](https://github.com/ivanvorobei/SPPermission/blob/master/SPPermission.podspec) for more information about which subspecs are available.
 
