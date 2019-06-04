@@ -60,7 +60,7 @@ pod 'SPPermission/Camera'
 pod 'SPPermission/Location'
 ```
 
-See `Permission.podspec` for more information about which subspecs are available.
+See `[Permission.podspec](https://github.com/ivanvorobei/SPPermission/blob/master/SPPermission.podspec)` for more information about which subspecs are available.
 
 ### Carthage
 
