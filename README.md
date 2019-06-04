@@ -63,10 +63,11 @@ pod 'SPPermission/Microphone'
 
 <details><summary>Available subspecs</summary>
 <p>
-    ```ruby
-    pod SPPermission/Camera
-    pod SPPermission/Camera
-    ```
+
+```ruby
+pod 'SPPermission/Camera'
+```
+
 </p>
 <ul>
     <li>SPPermission/Camera</li>
