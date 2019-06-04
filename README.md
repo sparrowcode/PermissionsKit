@@ -61,7 +61,7 @@ pod 'SPPermission/Location'
 pod 'SPPermission/Microphone'
 ```
 
-<details><summary>Available subspecs</summary>
+<details><summary>Available subspecs</summary><br>
 <ul>
     <li>SPPermission/Camera</li>
     <li>SPPermission/PhotoLibrary</li>
