@@ -75,7 +75,7 @@ github "ivanvorobei/SPPermission"
 
 If you prefer not to use any of the aforementioned dependency managers, you can integrate `SPPermission` into your project manually. Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
-After it need implement configuration file. See example in [PermissionConfiguration.xcconfig](PermissionConfiguration.xcconfig)
+After it need implement configuration file. See example in [PermissionConfiguration.xcconfig](https://github.com/ivanvorobei/SPPermission/blob/master/Example/SPPermission/PermissionConfiguration.xcconfig)
 
 ## Usage
 
