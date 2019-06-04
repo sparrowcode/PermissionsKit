@@ -62,10 +62,17 @@ pod 'SPPermission/Microphone'
 ```
 
 <details><summary>Available subspecs</summary>
-<p>
-    - NSCameraUsageDescription
-    - NSContactsUsageDescription
-</p>
+<ul>
+    <li>SPPermission/Camera</li>
+    <li>SPPermission/PhotoLibrary</li>
+    <li>SPPermission/Notification</li>
+    <li>SPPermission/Microphone</li>
+    <li>SPPermission/Reminders</li>
+    <li>SPPermission/SpeechRecognizer</li>
+    <li>SPPermission/Location</li>
+    <li>SPPermission/Motion</li>
+    <li>SPPermission/MediaLibrary</li>
+<ul>
 </details>
 
 See [SPPermission.podspec](https://github.com/ivanvorobei/SPPermission/blob/master/SPPermission.podspec) for more information about which subspecs are available.
