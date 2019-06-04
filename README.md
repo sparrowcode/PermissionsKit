@@ -67,6 +67,12 @@ pod 'SPPermission/Microphone'
 ```ruby
 pod 'SPPermission/Camera'
 ```
+```ruby
+pod 'SPPermission/PhotoLibrary'
+```
+```ruby
+pod 'SPPermission/Notification'
+```
 
 </p>
 <ul>
