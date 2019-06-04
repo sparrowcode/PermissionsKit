@@ -61,7 +61,7 @@ pod 'SPPermission/Location'
 pod 'SPPermission/Microphone'
 ```
 
-<details><summary>Available subspecs</summary><br>
+<details><summary>Available subspecs</summary>
 <ul>
     <li>SPPermission/Camera</li>
     <li>SPPermission/PhotoLibrary</li>
@@ -74,8 +74,6 @@ pod 'SPPermission/Microphone'
     <li>SPPermission/MediaLibrary</li>
 <ul>
 </details>
-
-See [SPPermission.podspec](https://github.com/ivanvorobei/SPPermission/blob/master/SPPermission.podspec) for more information about which subspecs are available.
 
 ### Carthage
 
