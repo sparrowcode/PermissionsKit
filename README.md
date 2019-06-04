@@ -50,8 +50,17 @@ Swift `4.2` & `5.0`. Ready for use on iOS 10+
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `SPPermission` into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'SPPermission'
+pod 'SPPermission/Notification'
 ```
+
+Due to Apple's new policy regarding permission access you need to specifically define what kind of permissions you want to access using subspecs. For example if you want to access `Camera` and `Location` you define the following:
+
+```ruby
+pod 'SPPermission/Camera'
+pod 'SPPermission/Location'
+```
+
+See `Permission.podspec` for more information about which subspecs are available.
 
 ### Carthage
 
@@ -261,7 +270,7 @@ SPPermission.Dialog.request(
 
 ## Purpose String in Info.plist
 
-`SPPermission` uses many permissions in one library; you need to add some strings to the `Info.plist` file with description. List of keys:
+You need to add some strings to the `Info.plist` file with description. List of keys:
 
 - NSContactsUsageDescription
 - NSCalendarsUsageDescription
@@ -274,7 +283,6 @@ SPPermission.Dialog.request(
 - NSLocationAlwaysUsageDescription (iOS 10 and earlier)
 
 Do not use the description as the name of the key - this causes errors in the latest version of the new Xcode. Specify `For SPPermission` in the description.
-If I forgot to mention some, please let me know and create [issue](https://github.com/ivanvorobei/SPPermission/issues) or [pull request](https://github.com/ivanvorobei/SPPermission/pulls).
 
 ## How I do UI
 
