@@ -130,11 +130,6 @@ If you want to know if permission is allowed, you need to call the function:
 
 ```swift
 let isAllowedCamera = SPPermission.isAllowed(.camera)
-```
-
-If you want to know if permission is denied, you need to call the function:
-
-```swift
 let isDeniedMicrophone = SPPermission.isDenied(.microphone)
 ```
 
