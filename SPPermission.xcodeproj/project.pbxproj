@@ -336,7 +336,6 @@
 /* Begin XCBuildConfiguration section */
 		F4FAD96C225371A20027C912 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4824FE522ABA54E00A0A487 /* SPPermissionConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -401,7 +400,6 @@
 		};
 		F4FAD96D225371A20027C912 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4824FE522ABA54E00A0A487 /* SPPermissionConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -460,7 +458,6 @@
 		};
 		F4FAD96F225371A20027C912 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4824FE522ABA54E00A0A487 /* SPPermissionConfiguration.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -487,7 +484,6 @@
 		};
 		F4FAD970225371A20027C912 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4824FE522ABA54E00A0A487 /* SPPermissionConfiguration.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
