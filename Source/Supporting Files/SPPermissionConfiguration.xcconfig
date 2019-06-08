@@ -1,0 +1,7 @@
+// This hook allows users of the framework to provide build flags without modifying any files within the Permission repository. See README.md for instructions.
+#include? "../../PermissionConfiguration.xcconfig"
+
+// This secondary hook allows to provide a configuration two levels further up the directory hierarchy. It exists primarily for Carthage support to allow for config files outside of auto-generated directories that may not be under version control.
+// Carthage directories are typically structured:
+//    "Carthage/Build/iOS/Permission"
+#include? "../../../../../PermissionConfiguration.xcconfig"

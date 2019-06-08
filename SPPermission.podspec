@@ -2,9 +2,9 @@ Pod::Spec.new do |s|
 
   s.name          = "SPPermission"
   s.version       = "4.0"
-  s.summary       = "Request permissions with dialog. For customise implement DataSource protocol. Check permissions."
-  s.homepage      = "https://github.com/IvanVorobei/RequestPermission"
-  s.source        = { :git => "https://github.com/IvanVorobei/RequestPermission.git", :tag => s.version }
+  s.summary       = "A unified API to ask for permissions on iOS. Available dialog UI."
+  s.homepage      = "https://github.com/IvanVorobei/SPPermission"
+  s.source        = { :git => "https://github.com/IvanVorobei/SPPermission.git", :tag => s.version }
   s.license       = { :type => "MIT", :file => "LICENSE" }
   
   s.author        = { "Ivan Vorobei" => "hello@ivanvorobei.by" }
