@@ -103,11 +103,19 @@ pod 'SPPermission/MediaLibrary'
 github "ivanvorobei/SPPermission"
 ```
 
+Due to Apple's new policy regarding permission access, binaries may be rejected due to a perceived attempt
+to access privacy-sensitive data without a usage key, and then further rejected for not actually requesting
+permissions.
+
+As a workaround, you can provide custom build flags _before_ building the dynamic framework to only compile
+with permissions you request. This is done by adding a configuration file [PermissionConfiguration.xcconfig](https://github.com/ivanvorobei/SPPermission/blob/master/PermissionConfiguration.xcconfig)
+to the root of your project.
+
 ### Manually
 
 If you prefer not to use any of the aforementioned dependency managers, you can integrate `SPPermission` into your project manually. Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
-After it need implement configuration file. See example in [PermissionConfiguration.xcconfig](https://github.com/ivanvorobei/SPPermission/blob/master/Example/SPPermission/PermissionConfiguration.xcconfig).
+After it need implement configuration file. See example in [PermissionConfiguration.xcconfig](https://github.com/ivanvorobei/SPPermission/blob/master/PermissionConfiguration.xcconfig).
 
 ## Usage
 
