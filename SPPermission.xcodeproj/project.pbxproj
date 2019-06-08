@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F4824FE822ABA8A500A0A487 /* PermissionConfiguration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F4824FE722ABA8A500A0A487 /* PermissionConfiguration.xcconfig */; };
 		F4F8D4CF22A6E8F500C32329 /* SPPermissionPhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8D4A822A6E8F500C32329 /* SPPermissionPhotoLibrary.swift */; };
 		F4F8D4D022A6E8F500C32329 /* SPPermissionLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8D4A922A6E8F500C32329 /* SPPermissionLocation.swift */; };
 		F4F8D4D122A6E8F500C32329 /* SPPermissionMediaLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8D4AA22A6E8F500C32329 /* SPPermissionMediaLibrary.swift */; };
@@ -288,7 +287,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4824FE822ABA8A500A0A487 /* PermissionConfiguration.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
