@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4824FEA22ABAAB700A0A487 /* PermissionConfiguration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F4824FE922ABAAB700A0A487 /* PermissionConfiguration.xcconfig */; };
 		F4F8D4CF22A6E8F500C32329 /* SPPermissionPhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8D4A822A6E8F500C32329 /* SPPermissionPhotoLibrary.swift */; };
 		F4F8D4D022A6E8F500C32329 /* SPPermissionLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8D4A922A6E8F500C32329 /* SPPermissionLocation.swift */; };
 		F4F8D4D122A6E8F500C32329 /* SPPermissionMediaLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8D4AA22A6E8F500C32329 /* SPPermissionMediaLibrary.swift */; };
@@ -42,7 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F4824FE722ABA8A500A0A487 /* PermissionConfiguration.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = PermissionConfiguration.xcconfig; sourceTree = SOURCE_ROOT; };
+		F4824FE922ABAAB700A0A487 /* PermissionConfiguration.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = PermissionConfiguration.xcconfig; sourceTree = "<group>"; };
 		F4F8D4A822A6E8F500C32329 /* SPPermissionPhotoLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionPhotoLibrary.swift; sourceTree = "<group>"; };
 		F4F8D4A922A6E8F500C32329 /* SPPermissionLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionLocation.swift; sourceTree = "<group>"; };
 		F4F8D4AA22A6E8F500C32329 /* SPPermissionMediaLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionMediaLibrary.swift; sourceTree = "<group>"; };
@@ -93,7 +94,7 @@
 		F4824FE422ABA53F00A0A487 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F4824FE722ABA8A500A0A487 /* PermissionConfiguration.xcconfig */,
+				F4824FE922ABAAB700A0A487 /* PermissionConfiguration.xcconfig */,
 				F4F8D4CD22A6E8F500C32329 /* SPPermission.h */,
 				F4F8D4CE22A6E8F500C32329 /* Info.plist */,
 			);
@@ -103,8 +104,8 @@
 		F4F8D4A522A6E8F500C32329 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				F4824FE422ABA53F00A0A487 /* Supporting Files */,
 				F4F8D4A622A6E8F500C32329 /* SPPermission */,
+				F4824FE422ABA53F00A0A487 /* Supporting Files */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -287,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4824FEA22ABAAB700A0A487 /* PermissionConfiguration.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +338,7 @@
 /* Begin XCBuildConfiguration section */
 		F4FAD96C225371A20027C912 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4824FE722ABA8A500A0A487 /* PermissionConfiguration.xcconfig */;
+			baseConfigurationReference = F4824FE922ABAAB700A0A487 /* PermissionConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -401,7 +403,7 @@
 		};
 		F4FAD96D225371A20027C912 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4824FE722ABA8A500A0A487 /* PermissionConfiguration.xcconfig */;
+			baseConfigurationReference = F4824FE922ABAAB700A0A487 /* PermissionConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -460,7 +462,7 @@
 		};
 		F4FAD96F225371A20027C912 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4824FE722ABA8A500A0A487 /* PermissionConfiguration.xcconfig */;
+			baseConfigurationReference = F4824FE922ABAAB700A0A487 /* PermissionConfiguration.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -487,7 +489,7 @@
 		};
 		F4FAD970225371A20027C912 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4824FE722ABA8A500A0A487 /* PermissionConfiguration.xcconfig */;
+			baseConfigurationReference = F4824FE922ABAAB700A0A487 /* PermissionConfiguration.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
