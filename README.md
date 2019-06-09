@@ -68,6 +68,12 @@ pod 'SPPermission/Microphone'
 pod 'SPPermission/Camera'
 ```
 ```ruby
+pod 'SPPermission/Contacts'
+```
+```ruby
+pod 'SPPermission/Calendar'
+```
+```ruby
 pod 'SPPermission/PhotoLibrary'
 ```
 ```ruby
