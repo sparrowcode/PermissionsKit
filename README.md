@@ -17,6 +17,9 @@ See project's backers in [Sponsors](https://github.com/ivanvorobei/SPPermission#
 
 - [Requirements](#requirements)
 - [Installation](#installation)
+    - [CocoaPods](#cocoapods)
+    - [Carthage](#carthage)
+    - [Manually](#manually)
 - [Usage](#usage)
 - [Permissions](#permissions)
 - [Customisation](#customisation)
@@ -118,9 +121,9 @@ carthage build
 
 ### Manually
 
-If you prefer not to use any of the aforementioned dependency managers, you can integrate `SPPermission` into your project manually. Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
+If you prefer not to use any of dependency managers, you can integrate `SPPermission` into your project manually. Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
-After it need implement configuration file. See example project and config file [PermissionConfiguration.xcconfig](https://github.com/ivanvorobei/SPPermission/blob/master/Example/SPPermission/PermissionConfiguration.xcconfig).
+After it need implement configuration file. See example [configuration file](https://github.com/ivanvorobei/SPPermission/blob/master/ExampleConfiguration.xcconfig) or example project.
 
 ## Usage
 
