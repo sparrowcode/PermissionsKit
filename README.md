@@ -9,7 +9,7 @@ Watch timelaps how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7
 
 If you like the project, do not forget to `put star ★` or help visit my store for iOS developers:
 
-[![xcode-shop.com](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Xcode%20Shop%20Button%20-%201.svg)](https://xcode-shop.com)
+[![xcode-shop.com](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Xcode%20Shop%20Button%20-%201.svg)](https://xcode-shop.com)
 
 See project's backers in [Sponsors](https://github.com/ivanvorobei/SPPermission#sponsors) section.
 
