@@ -109,9 +109,12 @@ pod 'SPPermission/MediaLibrary'
 github "ivanvorobei/SPPermission"
 ```
 
-As a workaround, you can provide custom build flags _before_ building the dynamic framework to only compile
-with permissions you request. This is done by adding a configuration file [PermissionConfiguration.xcconfig](https://github.com/ivanvorobei/SPPermission/blob/master/PermissionConfiguration.xcconfig)
-to the root of your project.
+By default available all permissions. You can provide custom build flags _before_ building the dynamic framework to only compile
+with permissions you request. Open file [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermission/blob/master/Source/Supporting%20Files/Configuration.xcconfig) in `Source/Supporting Files`, comment unusable permissions and rebuild:
+
+```ruby
+carthage build
+```
 
 ### Manually
 

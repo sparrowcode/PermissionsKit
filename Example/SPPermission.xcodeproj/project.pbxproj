@@ -159,7 +159,7 @@
 		F4F8D45522A6E2D500C32329 /* SPPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8D3BC22A6E2D500C32329 /* SPPermission.swift */; };
 		F4F8D45622A6E2D500C32329 /* SPPermissionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8D3BD22A6E2D500C32329 /* SPPermissionType.swift */; };
 		F4F8D45722A6E2D500C32329 /* SPRequestPermissionLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8D3BF22A6E2D500C32329 /* SPRequestPermissionLocationHandler.swift */; };
-		F4F8D45922A6E2FB00C32329 /* PermissionConfiguration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F4F8D45822A6E2FB00C32329 /* PermissionConfiguration.xcconfig */; };
+		F4F8D45922A6E2FB00C32329 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F4F8D45822A6E2FB00C32329 /* Configuration.xcconfig */; };
 		F4FADBF5225379E70027C912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FADB33225379E60027C912 /* LaunchScreen.storyboard */; };
 		F4FADBF6225379E70027C912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FADB34225379E60027C912 /* AppDelegate.swift */; };
 		F4FADC80225379E70027C912 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FADBF1225379E70027C912 /* Controller.swift */; };
@@ -322,7 +322,7 @@
 		F4F8D3BC22A6E2D500C32329 /* SPPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermission.swift; sourceTree = "<group>"; };
 		F4F8D3BD22A6E2D500C32329 /* SPPermissionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionType.swift; sourceTree = "<group>"; };
 		F4F8D3BF22A6E2D500C32329 /* SPRequestPermissionLocationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionLocationHandler.swift; sourceTree = "<group>"; };
-		F4F8D45822A6E2FB00C32329 /* PermissionConfiguration.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = PermissionConfiguration.xcconfig; sourceTree = "<group>"; };
+		F4F8D45822A6E2FB00C32329 /* Configuration.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Configuration.xcconfig; sourceTree = "<group>"; };
 		F4FADB1D225379AE0027C912 /* SPPermission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPPermission.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FADB2C225379AF0027C912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4FADB33225379E60027C912 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -922,7 +922,7 @@
 		F4FADB1F225379AE0027C912 /* SPPermission */ = {
 			isa = PBXGroup;
 			children = (
-				F4F8D45822A6E2FB00C32329 /* PermissionConfiguration.xcconfig */,
+				F4F8D45822A6E2FB00C32329 /* Configuration.xcconfig */,
 				F4FADB32225379E60027C912 /* App */,
 				F4FADBF0225379E70027C912 /* Controllers */,
 				F4FADB35225379E60027C912 /* Frameworks */,
@@ -1021,7 +1021,7 @@
 			files = (
 				F4FADC85225379F10027C912 /* Media.xcassets in Resources */,
 				F4FADBF5225379E70027C912 /* LaunchScreen.storyboard in Resources */,
-				F4F8D45922A6E2FB00C32329 /* PermissionConfiguration.xcconfig in Resources */,
+				F4F8D45922A6E2FB00C32329 /* Configuration.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1197,7 +1197,7 @@
 /* Begin XCBuildConfiguration section */
 		F4FADB2D225379AF0027C912 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4F8D45822A6E2FB00C32329 /* PermissionConfiguration.xcconfig */;
+			baseConfigurationReference = F4F8D45822A6E2FB00C32329 /* Configuration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1259,7 +1259,7 @@
 		};
 		F4FADB2E225379AF0027C912 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4F8D45822A6E2FB00C32329 /* PermissionConfiguration.xcconfig */;
+			baseConfigurationReference = F4F8D45822A6E2FB00C32329 /* Configuration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1315,7 +1315,7 @@
 		};
 		F4FADB30225379AF0027C912 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4F8D45822A6E2FB00C32329 /* PermissionConfiguration.xcconfig */;
+			baseConfigurationReference = F4F8D45822A6E2FB00C32329 /* Configuration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1335,7 +1335,7 @@
 		};
 		F4FADB31225379AF0027C912 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4F8D45822A6E2FB00C32329 /* PermissionConfiguration.xcconfig */;
+			baseConfigurationReference = F4F8D45822A6E2FB00C32329 /* Configuration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
