@@ -7,9 +7,9 @@ Request permissions with dialog. You can request many permissions at once. I do 
 
 Watch timelaps how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
 
-If you like the project, do not forget to `put star ★` or help me by donate:
+If you like the project, do not forget to `put star ★` or help visit my store for iOS developers:
 
-[![Patron](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Patron%20Button.svg)](https://patreon.com/ivanvorobei)
+[![xcode-shop.com](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Xcode%20Shop%20Button.svg)](https://xcode-shop.com)
 
 See project's backers in [Sponsors](https://github.com/ivanvorobei/SPPermission#sponsors) section.
 
