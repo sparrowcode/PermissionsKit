@@ -377,7 +377,9 @@ You can download example [Debts - Spending tracker](https://itunes.apple.com/app
 You can download example app [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) from AppStore. If you want to **buy source code** of app this app, please, go to [xcode-shop.com](https://xcode-shop.com).
 
 ## License
+
 `SPPermission` is released under the MIT license. Check `LICENSE.md` for details.
 
 ## Contact
-If you need any application or UI to be developed, message me at hello@ivanvorobei.by or via [telegram](https://t.me/ivanvorobei). I develop iOS apps and designs. I use `swift` for development. To request more functionality, you should create a new issue. You can see my [apps in AppStore](https://itunes.apple.com/developer/id1446635817).
+
+If you need any application or UI to be developed, message me at hello@ivanvorobei.by, [telegram](https://t.me/ivanvorobei) or [twitter](https://twitter.com/varabeis). I develop iOS apps and designs. I use `swift` for development. You can see my [apps in AppStore](https://itunes.apple.com/developer/id1446635817).
