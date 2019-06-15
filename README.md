@@ -7,7 +7,7 @@ Request permissions with dialog. You can request many permissions at once. I do 
 
 Watch timelaps how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
 
-If you like the project, do not forget to `put star ★` or help visit my store for iOS developers:
+If you like the project, do not forget to `put star ★` or visit my store for iOS developers:
 
 [![xcode-shop.com](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Xcode%20Shop%20Button%20-%201.svg)](https://xcode-shop.com)
 
@@ -30,7 +30,7 @@ See project's backers in [Sponsors](https://github.com/ivanvorobei/SPPermission#
     - [Colors](#colors)
     - [Start position](#start-position)
 - [Delegate](#delegate)
-- [String in Info.plist](#string-in-infoplist)
+- [Keys in Info.plist](#key-in-infoplist)
 - [How I do UI](#how-i-do-UI)
 - [Sponsors](#sponsors)
 - [Other Projects +gif](#my-projects)
@@ -313,9 +313,9 @@ SPPermission.Dialog.request(
 )
 ```
 
-## String in Info.plist
+## Keys in Info.plist
 
-You need to add some strings to the `Info.plist` file with description. List of keys:
+You need to add some keys to the `Info.plist` file with description. List of keys:
 
 - NSCameraUsageDescription
 - NSContactsUsageDescription
