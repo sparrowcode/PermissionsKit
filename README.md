@@ -3,9 +3,7 @@
 <img align="left" src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Preview.gif" width="470"/>
 
 ### About
-Request permissions with dialog. You can request many permissions at once. I do UI of dialog in **Apple style**.
-
-Watch timelaps how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
+Request permissions with dialog. You can request many permissions at once. I do UI of dialog in **Apple style**. Watch timelaps how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
 
 Visit my store for iOS developers:
 
@@ -386,4 +384,8 @@ You can download example app [Code - Learn Swift & Design](https://itunes.apple.
 
 ## Contact
 
-If you need any application or UI to be developed, message me at [telegram](https://t.me/ivanvorobei) or [twitter](https://twitter.com/varabeis). I develop iOS apps and designs. I use `swift` for development. You can see my apps [in AppStore](https://itunes.apple.com/developer/id1446635817).
+If you need any application or UI to be developed, contact me via [telegram](https://t.me/ivanvorobei). I develop iOS apps and designs. I use `swift`. You can see my apps [in AppStore](https://itunes.apple.com/developer/id1446635817).
+
+If you want to know more about Xcode, UIKit & Design, follow me on twitter:
+
+[![https://twitter.com/varabeis](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Twitter-2.svg)](https://twitter.com/varabeis)
