@@ -11,7 +11,7 @@ Visit my store for iOS developers:
 
 If you like the project, do not forget to `put star ★` or follow me in twitter:
 
-[![https://twitter.com/varabeis](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Twitter-2.svg)](https://twitter.com/varabeis)
+[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Follow%20me%20-%201.svg)](https://github.com/ivanvorobei)
 
 See project's backers in [Sponsors](https://github.com/ivanvorobei/SPPermission#sponsors) section.
 
