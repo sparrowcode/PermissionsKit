@@ -11,7 +11,7 @@ Visit my store for iOS developers:
 
 If you like the project, do not forget to `put star ★` or
 
-<github-button href="https://github.com/ivanvorobei" aria-label="Follow @ivanvorobei on GitHub">Follow @ivanvorobei</github-button>
+<a class="github-button" href="https://github.com/ivanvorobei" data-size="large" aria-label="Follow @ivanvorobei on GitHub">Follow @ivanvorobei</a>
 
 See project's backers in [Sponsors](https://github.com/ivanvorobei/SPPermission#sponsors) section.
 
