@@ -9,9 +9,9 @@ Visit my store for iOS developers:
 
 [![xcode-shop.com](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Xcode%20Shop%20Button%20-%201.svg)](https://xcode-shop.com)
 
-If you like the project, do not forget to `put star ★` or follow me in twitter:
+If you like the project, do not forget to `put star ★` or
 
-[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Follow%20me%20-%201.svg)](https://github.com/ivanvorobei)
+[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Follow%20me%20-%202.svg)](https://github.com/ivanvorobei)
 
 See project's backers in [Sponsors](https://github.com/ivanvorobei/SPPermission#sponsors) section.
 
