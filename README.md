@@ -1,6 +1,6 @@
 # SPPermission
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Preview.gif" width="480"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Preview.gif" width="470"/>
 
 ### About
 Request permissions with dialog. I do UI of dialog in **Apple style**. Watch timelaps how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
@@ -12,8 +12,6 @@ Visit my store for iOS developers:
 If you like the project, do not forget to `put star ★` and follow me on GitHub:
 
 [![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Follow%20me%20-%2016.svg)](https://github.com/ivanvorobei)
-
-See project's backers in [Sponsors](https://github.com/ivanvorobei/SPPermission#sponsors) section.
 
 ## Navigate
 
