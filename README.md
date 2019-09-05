@@ -140,6 +140,11 @@ class ViewController: UIViewController {
 }
 ```
 
+If you want to request permission only when permission is needed, you can use `requestIfNeeded()` 
+```swift
+SPPermission.Dialog.requestIfNeeded(with: [.camera, .microphone, .notification], on:self)
+```
+
 If you want to know if permission is allowed, you need to call the function:
 
 ```swift
