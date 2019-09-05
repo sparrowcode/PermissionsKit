@@ -38,6 +38,16 @@ extension SPPermission {
                 controller.present(on: viewController)
             }
         }
+        
+        public static func requestIfNeeded(with permissions: [SPPermissionType], on viewController: UIViewController, delegate: SPPermissionDialogDelegate? = nil, dataSource: SPPermissionDialogDataSource? = nil) {
+            
+            request(
+                with: permissions.filter { SPPermission.isAllowed($0) == false },
+                on: viewController,
+                delegate: delegate,
+                dataSource: dataSource
+            )
+        }
     }
 }
 
