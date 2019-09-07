@@ -323,7 +323,7 @@
 		F4F8D3BD22A6E2D500C32329 /* SPPermissionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionType.swift; sourceTree = "<group>"; };
 		F4F8D3BF22A6E2D500C32329 /* SPRequestPermissionLocationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionLocationHandler.swift; sourceTree = "<group>"; };
 		F4F8D45822A6E2FB00C32329 /* Configuration.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Configuration.xcconfig; sourceTree = "<group>"; };
-		F4FADB1D225379AE0027C912 /* SPPermission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPPermission.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4FADB1D225379AE0027C912 /* SPPermissionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPPermissionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FADB2C225379AF0027C912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4FADB33225379E60027C912 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4FADB34225379E60027C912 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -906,7 +906,7 @@
 		F4FADB14225379AE0027C912 = {
 			isa = PBXGroup;
 			children = (
-				F4FADB1F225379AE0027C912 /* SPPermission */,
+				F4FADB1F225379AE0027C912 /* SPPermissionExample */,
 				F4FADB1E225379AE0027C912 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -914,12 +914,12 @@
 		F4FADB1E225379AE0027C912 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4FADB1D225379AE0027C912 /* SPPermission.app */,
+				F4FADB1D225379AE0027C912 /* SPPermissionExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F4FADB1F225379AE0027C912 /* SPPermission */ = {
+		F4FADB1F225379AE0027C912 /* SPPermissionExample */ = {
 			isa = PBXGroup;
 			children = (
 				F4F8D45822A6E2FB00C32329 /* Configuration.xcconfig */,
@@ -928,7 +928,7 @@
 				F4FADB35225379E60027C912 /* Frameworks */,
 				F4FADB2C225379AF0027C912 /* Info.plist */,
 			);
-			path = SPPermission;
+			path = SPPermissionExample;
 			sourceTree = "<group>";
 		};
 		F4FADB32225379E60027C912 /* App */ = {
@@ -964,9 +964,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F4FADB1C225379AE0027C912 /* SPPermission */ = {
+		F4FADB1C225379AE0027C912 /* SPPermissionExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4FADB2F225379AF0027C912 /* Build configuration list for PBXNativeTarget "SPPermission" */;
+			buildConfigurationList = F4FADB2F225379AF0027C912 /* Build configuration list for PBXNativeTarget "SPPermissionExample" */;
 			buildPhases = (
 				F4FADB19225379AE0027C912 /* Sources */,
 				F4FADB1A225379AE0027C912 /* Frameworks */,
@@ -976,9 +976,9 @@
 			);
 			dependencies = (
 			);
-			name = SPPermission;
+			name = SPPermissionExample;
 			productName = SPPermission;
-			productReference = F4FADB1D225379AE0027C912 /* SPPermission.app */;
+			productReference = F4FADB1D225379AE0027C912 /* SPPermissionExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -996,7 +996,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F4FADB18225379AE0027C912 /* Build configuration list for PBXProject "SPPermission" */;
+			buildConfigurationList = F4FADB18225379AE0027C912 /* Build configuration list for PBXProject "SPPermissionExample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1009,7 +1009,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F4FADB1C225379AE0027C912 /* SPPermission */,
+				F4FADB1C225379AE0027C912 /* SPPermissionExample */,
 			);
 		};
 /* End PBXProject section */
@@ -1320,13 +1320,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8JMTA2AAF3;
-				INFOPLIST_FILE = SPPermission/Info.plist;
+				INFOPLIST_FILE = SPPermissionExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.sppermission;
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.sppermissionExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1340,13 +1340,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8JMTA2AAF3;
-				INFOPLIST_FILE = SPPermission/Info.plist;
+				INFOPLIST_FILE = SPPermissionExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.sppermission;
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.sppermissionExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1356,7 +1356,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F4FADB18225379AE0027C912 /* Build configuration list for PBXProject "SPPermission" */ = {
+		F4FADB18225379AE0027C912 /* Build configuration list for PBXProject "SPPermissionExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4FADB2D225379AF0027C912 /* Debug */,
@@ -1365,7 +1365,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4FADB2F225379AF0027C912 /* Build configuration list for PBXNativeTarget "SPPermission" */ = {
+		F4FADB2F225379AF0027C912 /* Build configuration list for PBXNativeTarget "SPPermissionExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4FADB30225379AF0027C912 /* Debug */,

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SPPermission.xcodeproj">
+      location = "self:/Users/seongho/Documents/Develop/SPPermission/Example/SPPermissionExample.xcodeproj">
    </FileRef>
 </Workspace>
