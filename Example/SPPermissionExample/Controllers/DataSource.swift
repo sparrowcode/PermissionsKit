@@ -20,6 +20,7 @@
 // SOFTWARE.
 
 import UIKit
+import SPPermission
 
 extension Controller: SPPermissionDialogDataSource {
     

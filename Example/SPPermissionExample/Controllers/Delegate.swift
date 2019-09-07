@@ -20,6 +20,7 @@
 // SOFTWARE.
 
 import UIKit
+import SPPermission
 
 extension Controller: SPPermissionDialogDelegate {
     
@@ -29,10 +30,10 @@ extension Controller: SPPermissionDialogDelegate {
     }
     
     func didAllow(permission: SPPermissionType) {
-        print("SPPermissionDialogDelegate - didAllow \(permission.name)")
+        print("SPPermissionDialogDelegate - didAllow")
     }
     
     func didDenied(permission: SPPermissionType) {
-        print("SPPermissionDialogDelegate - didDenied \(permission.name)")
+        print("SPPermissionDialogDelegate - didDenied")
     }
 }
