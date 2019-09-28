@@ -137,5 +137,11 @@ extension Controller: SPPermissionDialogDataSource {
     var startTransitionYoffset: CGFloat {
        return 0
     }
+     
+     
     */
+    
+    /*var alwaysVisibleStatusBar: Bool {
+        return true
+    }*/
 }
