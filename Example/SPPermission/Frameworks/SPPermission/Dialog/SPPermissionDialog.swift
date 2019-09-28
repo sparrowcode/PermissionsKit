@@ -66,6 +66,7 @@ extension SPPermission {
     @objc optional var cancelTitle: String { get }
     @objc optional var settingsTitle: String { get }
     @objc optional var startTransitionYoffset: CGFloat { get }
+    @objc optional var alwaysVisibleStatusBar: Bool { get }
 }
 
 @objc public protocol SPPermissionDialogColorSource: class {

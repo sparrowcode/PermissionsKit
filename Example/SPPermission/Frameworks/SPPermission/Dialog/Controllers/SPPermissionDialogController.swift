@@ -218,7 +218,11 @@ public class SPPermissionDialogController: UIViewController {
         self.modalPresentationStyle = .overCurrentContext
         self.modalPresentationCapturesStatusBarAppearance = true
         viewController.present(self, animated: false, completion: {
-            self.isHiddenStatusBar = true
+            if self.dataSource?.alwaysVisibleStatusBar ?? false {
+                self.isHiddenStatusBar = false
+            } else {
+                 self.isHiddenStatusBar = true
+            }
             self.areaView.center = CGPoint.init(
                 x: self.view.center.x,
                 y: self.view.center.y + (self.dataSource?.startTransitionYoffset ?? self.view.center.y * 0.2)
@@ -307,6 +311,9 @@ public class SPPermissionDialogController: UIViewController {
         self.closeButton.frame = CGRect.init(x: 0, y: 0, width: 35, height: 35)
         self.closeButton.frame.origin.x = size.width - 27 - self.closeButton.frame.width
         self.closeButton.frame.origin.y = 23
+        if dataSource?.alwaysVisibleStatusBar ?? false {
+            self.closeButton.frame.origin.y = UIApplication.shared.statusBarFrame.height
+        }
         self.closeButton.layer.cornerRadius = self.closeButton.frame.height / 2
         let shadowPath = UIBezierPath.init(
             roundedRect: CGRect.init(x: 0, y: 9, width: self.closeButton.frame.width, height: self.closeButton.frame.height),
