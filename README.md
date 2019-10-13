@@ -7,11 +7,11 @@ Request permissions with dialog. I do UI of dialog in **Apple style**. Watch tim
 
 Visit my store for iOS developers:
 
-[![xcode-shop.com](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Xcode%20Shop%20Button%20-%201.svg)](https://xcode-shop.com)
+[![xcode-shop.com](https://cdn-ivanvorobei.fra1.digitaloceanspaces.com/github/assets/xcode-shop-blue.svg)](https://xcode-shop.com)
 
 If you like the project, do not forget to `put star ★` and follow me on GitHub:
 
-[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Follow%20me%20-%2016.svg)](https://github.com/ivanvorobei)
+[![https://github.com/ivanvorobei](https://cdn-ivanvorobei.fra1.digitaloceanspaces.com/github/assets/follow-me-on-github.svg)](https://github.com/ivanvorobei)
 
 ## Navigate
 
