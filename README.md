@@ -7,4 +7,4 @@ New version of project. Now in develop.
 
 ## License
 
-`SPPermission` is released under the MIT license. Check `LICENSE.md` for details.
+`SPPermission` is released under the MIT license. Check `LICENSE` for details.
