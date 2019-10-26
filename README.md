@@ -9,6 +9,8 @@ Visit my store for iOS developers:
 
 [![xcode-shop.com](https://cdn-ivanvorobei.fra1.digitaloceanspaces.com/github/assets/xcode-shop-blue.svg)](https://xcode-shop.com)
 
+I am need translate my app [Debts](https://itunes.apple.com/app/id1446635818), if you can help me with it, I can propose you project for free. *Help for help!*
+
 If you like the project, do not forget to `put star ★` and follow me on GitHub:
 
 [![https://github.com/ivanvorobei](https://cdn-ivanvorobei.fra1.digitaloceanspaces.com/github/assets/follow-me-on-github.svg)](https://github.com/ivanvorobei)
