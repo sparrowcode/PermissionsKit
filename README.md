@@ -1,6 +1,6 @@
 # SPPermission
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Preview.gif" width="470"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Preview.gif" width="470"/>
 
 ### About
 Request permissions with dialog. I do UI of dialog in **Apple style**. Watch timelaps how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
@@ -50,55 +50,55 @@ Swift `4.2` & `5.0`. Ready for use on iOS 10+
 
 ### CocoaPods:
 
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `SPPermission` into your Xcode project using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `SPPermissions` into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'SPPermission/Notification'
+pod 'SPPermissions/Notification'
 ```
 
 Due to Apple's new policy regarding permission access you need to specifically define what kind of permissions you want to access using subspecs. For example if you want to access `Camera`, `Location` & `Microphone` you define the following:
 
 ```ruby
-pod 'SPPermission/Camera'
-pod 'SPPermission/Location'
-pod 'SPPermission/Microphone'
+pod 'SPPermissions/Camera'
+pod 'SPPermissions/Location'
+pod 'SPPermissions/Microphone'
 ```
 
 <details><summary>Available subspecs</summary>
 <p>
 
 ```ruby
-pod 'SPPermission/Camera'
+pod 'SPPermissions/Camera'
 ```
 ```ruby
-pod 'SPPermission/Contacts'
+pod 'SPPermissions/Contacts'
 ```
 ```ruby
-pod 'SPPermission/Calendar'
+pod 'SPPermissions/Calendar'
 ```
 ```ruby
-pod 'SPPermission/PhotoLibrary'
+pod 'SPPermissions/PhotoLibrary'
 ```
 ```ruby
-pod 'SPPermission/Notification'
+pod 'SPPermissions/Notification'
 ```
 ```ruby
-pod 'SPPermission/Microphone'
+pod 'SPPermissions/Microphone'
 ```
 ```ruby
-pod 'SPPermission/Reminders'
+pod 'SPPermissions/Reminders'
 ```
 ```ruby
-pod 'SPPermission/SpeechRecognizer'
+pod 'SPPermissions/SpeechRecognizer'
 ```
 ```ruby
-pod 'SPPermission/Location'
+pod 'SPPermissions/Location'
 ```
 ```ruby
-pod 'SPPermission/Motion'
+pod 'SPPermissions/Motion'
 ```
 ```ruby
-pod 'SPPermission/MediaLibrary'
+pod 'SPPermissions/MediaLibrary'
 ```
 
 </p>
@@ -106,14 +106,14 @@ pod 'SPPermission/MediaLibrary'
 
 ### Carthage
 
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate `SPPermission` into your Xcode project using Carthage, specify it in your `Cartfile`:
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate `SPPermissions` into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "ivanvorobei/SPPermission"
+github "ivanvorobei/SPPermissions"
 ```
 
 By default available all permissions. You can provide custom build flags _before_ building the dynamic framework to only compile
-with permissions you request. Open file [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermission/blob/master/Source/Supporting%20Files/Configuration.xcconfig) in `Source/Supporting Files`, comment unusable permissions and rebuild:
+with permissions you request. Open file [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/master/Source/Supporting%20Files/Configuration.xcconfig) in `Source/Supporting Files`, comment unusable permissions and rebuild:
 
 ```ruby
 carthage build
@@ -121,9 +121,9 @@ carthage build
 
 ### Manually
 
-If you prefer not to use any of dependency managers, you can integrate `SPPermission` into your project manually. Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
+If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
-After it need implement configuration file. See example [configuration file](https://github.com/ivanvorobei/SPPermission/blob/master/ExampleConfiguration.xcconfig) or example project.
+After it need implement configuration file. See example [configuration file](https://github.com/ivanvorobei/SPPermissions/blob/master/ExampleConfiguration.xcconfig) or example project.
 
 ## Usage
 
@@ -131,7 +131,7 @@ Call `SPPermission` and use func `request()`. Also, pass the controller on which
 
 ```swift
 import UIKit
-import SPPermission
+import SPPermissions
 
 class ViewController: UIViewController {
 
@@ -159,17 +159,17 @@ To learn how to customize titles and images you can read section [Customisation]
 ## Permissions
 
 <p float="left">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Camera.svg" width="130">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Photo.svg" width="130">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Notification.svg" width="130">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Location.svg" width="130">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Microphone.svg" width="130">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Calendar.svg" width="130">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Contacts.svg" width="130">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Reminder.svg" width="130">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Motion.svg" width="130">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Media.svg" width="130">
-    <img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Permissions/Speech.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Permissions/Camera.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Permissions/Photo.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Permissions/Notification.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Permissions/Location.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Permissions/Microphone.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Permissions/Calendar.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Permissions/Contacts.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Permissions/Reminder.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Permissions/Motion.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Permissions/Media.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Permissions/Speech.svg" width="130">
 </p>
 
 If you want to request notification (or other permissions) without dialog, use the function:
@@ -180,7 +180,7 @@ SPPermission.request(.notification, with: {
 })
 ```
 
-If you want add new permission, create [issue](https://github.com/ivanvorobei/SPPermission/issues).
+If you want add new permission, create [issue](https://github.com/ivanvorobei/SPPermissions/issues).
 
 ## Customisation
 
@@ -244,7 +244,7 @@ var showCloseButton: Bool {
 
 To see what it looks like, see the picture below:
 
-<img src="https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Close%20Button.png"/>
+<img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Close%20Button.png"/>
 
 ### Drag
 
@@ -297,7 +297,7 @@ var startTransitionYoffset: CGFloat {
 
 ## Delegate
 
-To track events of hiding & allowing permissions associated with `SPPermission`, implement protocol `SPPermissionDialogDelegate`:
+To track events of hiding & allowing permissions associated with `SPPermissions`, implement protocol `SPPermissionDialogDelegate`:
 
 ```swift
 @objc public protocol SPPermissionDialogDelegate: class {
@@ -337,9 +337,9 @@ Do not use the description as the name of the key - this causes errors in the la
 
 ## How I do UI
 
-I develop `SPPermission` in Apple-way. For this, I check 30 apps to get UI-elements for it project. I am take screenshoot and draw it in Sketch. For example, `Allow` button is similar to `Get` button in the AppStore. Check [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I am design `SPPermission`:
+I develop `SPPermissions` in Apple-way. For this, I check 30 apps to get UI-elements for it project. I am take screenshoot and draw it in Sketch. For example, `Allow` button is similar to `Get` button in the AppStore. Check [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I am design `SPPermissions`:
 
-[![Timelaps on YouTube](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
+[![Timelaps on YouTube](https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
 
 ## Sponsors
 
@@ -383,4 +383,4 @@ You can download example app [Code - Learn Swift & Design](https://itunes.apple.
 
 ## License
 
-`SPPermission` is released under the MIT license. Check `LICENSE.md` for details.
+`SPPermissions` is released under the MIT license. Check `LICENSE.md` for details.
