@@ -27,3 +27,10 @@ public enum SPPermissions {
         
     }
 }
+
+public enum SPPermissionRequestMode {
+    
+    case native
+    case dialog
+    case fullscreen
+}

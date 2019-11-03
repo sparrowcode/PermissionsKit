@@ -45,8 +45,6 @@
 		F4EA2690236F2DC10070B2BA /* SPPermissions.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F4EA268E236F2DC10070B2BA /* SPPermissions.podspec */; };
 		F4EA2693236F30E70070B2BA /* SPRequestPermissionLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2692236F30E70070B2BA /* SPRequestPermissionLocationHandler.swift */; };
 		F4EA2694236F30FE0070B2BA /* SPRequestPermissionLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2692236F30E70070B2BA /* SPRequestPermissionLocationHandler.swift */; };
-		F4EA2696236F31E90070B2BA /* SPPermissionRequestMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2695236F31E90070B2BA /* SPPermissionRequestMode.swift */; };
-		F4EA2697236F32040070B2BA /* SPPermissionRequestMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2695236F31E90070B2BA /* SPPermissionRequestMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,7 +75,6 @@
 		F4EA268D236F2DC10070B2BA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		F4EA268E236F2DC10070B2BA /* SPPermissions.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPPermissions.podspec; sourceTree = SOURCE_ROOT; };
 		F4EA2692236F30E70070B2BA /* SPRequestPermissionLocationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionLocationHandler.swift; sourceTree = "<group>"; };
-		F4EA2695236F31E90070B2BA /* SPPermissionRequestMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionRequestMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,10 +119,9 @@
 			children = (
 				F4EA2691236F30E70070B2BA /* Handlers */,
 				F4EA2668236F2B890070B2BA /* Permissions */,
-				F4EA2660236ED1790070B2BA /* SPPermissions.swift */,
 				F4EA2665236ED5220070B2BA /* SPPermission.swift */,
+				F4EA2660236ED1790070B2BA /* SPPermissions.swift */,
 				F4EA268A236F2BB90070B2BA /* SPPermissionInterface.swift */,
-				F4EA2695236F31E90070B2BA /* SPPermissionRequestMode.swift */,
 				F43F8DA9236ECD3E00B94208 /* Supporting Files */,
 			);
 			path = Source;
@@ -320,7 +316,6 @@
 			files = (
 				F4EA267D236F2B890070B2BA /* SPPermissionSpeech.swift in Sources */,
 				F4EA2693236F30E70070B2BA /* SPRequestPermissionLocationHandler.swift in Sources */,
-				F4EA2696236F31E90070B2BA /* SPPermissionRequestMode.swift in Sources */,
 				F4EA267B236F2B890070B2BA /* SPPermissionMotion.swift in Sources */,
 				F4EA268B236F2BB90070B2BA /* SPPermissionInterface.swift in Sources */,
 				F4EA267E236F2B890070B2BA /* SPPermissionCalendar.swift in Sources */,
@@ -347,7 +342,6 @@
 				F4EA2694236F30FE0070B2BA /* SPRequestPermissionLocationHandler.swift in Sources */,
 				F4EA268C236F2C260070B2BA /* SPPermissionInterface.swift in Sources */,
 				F4EA2689236F2B8E0070B2BA /* SPPermissionCalendar.swift in Sources */,
-				F4EA2697236F32040070B2BA /* SPPermissionRequestMode.swift in Sources */,
 				F4EA2662236ED20F0070B2BA /* SPPermissions.swift in Sources */,
 				F4EA2685236F2B8E0070B2BA /* SPPermissionMicrophone.swift in Sources */,
 				F4EA2684236F2B8E0070B2BA /* SPPermissionContacts.swift in Sources */,

@@ -44,11 +44,18 @@ public enum SPPermission: String {
         SPPermission.manager(for: self).isDenied
     }
     
-    var description: String {
-        return rawValue.localizedUppercase
+    public func request(completion: @escaping ()->()) {
+        let manager = SPPermission.manager(for: self)
+        if let usageDescriptionKey = usageDescriptionKey {
+            guard let _ = Bundle.main.object(forInfoDictionaryKey: usageDescriptionKey) else {
+                print("SPPermissions Warning - \(usageDescriptionKey) for \(description) not found in Info.plist")
+                return
+            }
+        }
+        manager.request(completion: { completion() })
     }
     
-    var usageDescriptionKey: String? {
+    public var usageDescriptionKey: String? {
         switch self {
         case .camera:
             return "NSCameraUsageDescription"
@@ -76,6 +83,9 @@ public enum SPPermission: String {
             return "NSAppleMusicUsageDescription"
         }
     }
+}
+
+extension SPPermission {
     
     fileprivate static func manager(for permission: SPPermission) -> SPPermissionInterface {
         switch permission {
@@ -155,6 +165,10 @@ public enum SPPermission: String {
     }
     
     fileprivate static func error(_ permission: SPPermission) -> String {
-        return "SPPermissions - \(permission.description) not import. See Readme: https://github.com/ivanvorobei/SPPermission"
+        return "SPPermissions - \(permission.description) not import. Probelm not with \(permission.usageDescriptionKey ?? "usage key"). See Readme: https://github.com/ivanvorobei/SPPermission"
+    }
+    
+    fileprivate var description: String {
+        return rawValue.localizedUppercase
     }
 }

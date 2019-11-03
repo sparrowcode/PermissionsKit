@@ -24,24 +24,21 @@
 import UIKit
 import AVFoundation
 
-extension SPPermissions {
+struct SPMicrophonePermission: SPPermissionInterface {
     
-    struct SPMicrophonePermission: SPPermissionInterface {
-        
-        var isAuthorized: Bool {
-            return AVAudioSession.sharedInstance().recordPermission == .granted
-        }
-        
-        var isDenied: Bool {
-            return AVAudioSession.sharedInstance().recordPermission == .denied
-        }
-        
-        func request(completion: @escaping ()->()?) {
-            AVAudioSession.sharedInstance().requestRecordPermission {
-                granted in
-                DispatchQueue.main.async {
-                    completion()
-                }
+    var isAuthorized: Bool {
+        return AVAudioSession.sharedInstance().recordPermission == .granted
+    }
+    
+    var isDenied: Bool {
+        return AVAudioSession.sharedInstance().recordPermission == .denied
+    }
+    
+    func request(completion: @escaping ()->()?) {
+        AVAudioSession.sharedInstance().requestRecordPermission {
+            granted in
+            DispatchQueue.main.async {
+                completion()
             }
         }
     }
