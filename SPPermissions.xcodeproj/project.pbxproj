@@ -74,6 +74,8 @@
 		F4EA268E236F2DC10070B2BA /* SPPermissions.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPPermissions.podspec; sourceTree = SOURCE_ROOT; };
 		F4EA2692236F30E70070B2BA /* SPRequestPermissionLocationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionLocationHandler.swift; sourceTree = "<group>"; };
 		F4EA275C236F75430070B2BA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		F4EA275E236F7BF90070B2BA /* FUNDING.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = FUNDING.yml; sourceTree = "<group>"; };
+		F4EA2761236F7C660070B2BA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,8 @@
 		F43F8DA8236ECD3100B94208 /* Deployment */ = {
 			isa = PBXGroup;
 			children = (
+				F4EA275D236F7BF90070B2BA /* .github */,
+				F4EA2761236F7C660070B2BA /* .gitignore */,
 				F4EA268D236F2DC10070B2BA /* LICENSE */,
 				F4EA275C236F75430070B2BA /* README.md */,
 				F4EA268E236F2DC10070B2BA /* SPPermissions.podspec */,
@@ -199,6 +203,14 @@
 			);
 			path = Handlers;
 			sourceTree = "<group>";
+		};
+		F4EA275D236F7BF90070B2BA /* .github */ = {
+			isa = PBXGroup;
+			children = (
+				F4EA275E236F7BF90070B2BA /* FUNDING.yml */,
+			);
+			path = .github;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
