@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.source        = { :git => "https://github.com/IvanVorobei/SPPermission.git", :tag => s.version }
   s.license       = { :type => "MIT", :file => "LICENSE" }
   
-  s.author        = { "Ivan Vorobei" => "hello@ivanvorobei.by" }
+  s.author        = { "Ivan Vorobei" => "ivanvorobei@icloud.com" }
   
   s.platform      = :ios
   s.ios.framework = 'UIKit'
