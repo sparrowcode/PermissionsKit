@@ -3,8 +3,8 @@ Pod::Spec.new do |s|
   s.name          = "SPPermissions"
   s.version       = "5.0"
   s.summary       = "API to ask for permissions on Swift. Available diffrents dialogs."
-  s.homepage      = "https://github.com/IvanVorobei/SPPermission"
-  s.source        = { :git => "https://github.com/IvanVorobei/SPPermission.git", :tag => s.version }
+  s.homepage      = "https://github.com/IvanVorobei/SPPermissions"
+  s.source        = { :git => "https://github.com/IvanVorobei/SPPermissions.git", :tag => s.version }
   s.license       = { :type => "MIT", :file => "LICENSE" }
   
   s.author        = { "Ivan Vorobei" => "ivanvorobei@icloud.com" }
@@ -22,57 +22,57 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Camera' do |cm|
-    cm.dependency 'SPPermission/Core'
+    cm.dependency 'SPPermissions/Core'
     cm.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_CAMERA" }
   end
 
   s.subspec 'PhotoLibrary' do |pl|
-    pl.dependency 'SPPermission/Core'
+    pl.dependency 'SPPermissions/Core'
     pl.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_PHOTOLIBRARY" }
   end
 
   s.subspec 'Notification' do |no|
-    no.dependency 'SPPermission/Core'
+    no.dependency 'SPPermissions/Core'
     no.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_NOTIFICATION" }
   end
 
   s.subspec 'Microphone' do |mi|
-    mi.dependency 'SPPermission/Core'
+    mi.dependency 'SPPermissions/Core'
     mi.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_MICROPHONE" }
   end
 
   s.subspec 'Calendar' do |ca|
-    ca.dependency 'SPPermission/Core'
+    ca.dependency 'SPPermissions/Core'
     ca.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_CALENDAR" }
   end
 
   s.subspec 'Contacts' do |cn|
-    cn.dependency 'SPPermission/Core'
+    cn.dependency 'SPPermissions/Core'
     cn.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_CONTACTS" }
   end
 
   s.subspec 'Reminders' do |re|
-    re.dependency 'SPPermission/Core'
+    re.dependency 'SPPermissions/Core'
     re.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_REMINDERS" }
   end
 
   s.subspec 'SpeechRecognizer' do |sr|
-    sr.dependency 'SPPermission/Core'
+    sr.dependency 'SPPermissions/Core'
     sr.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_SPEECH" }
   end
 
   s.subspec 'Location' do |lo|
-    lo.dependency 'SPPermission/Core'
+    lo.dependency 'SPPermissions/Core'
     lo.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_LOCATION" }
   end
 
   s.subspec 'Motion' do |mo|
-    mo.dependency 'SPPermission/Core'
+    mo.dependency 'SPPermissions/Core'
     mo.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_MOTION" }
   end
 
   s.subspec 'MediaLibrary' do |ml|
-    ml.dependency 'SPPermission/Core'
+    ml.dependency 'SPPermissions/Core'
     ml.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_MEDIALIBRARY" }
   end
 
