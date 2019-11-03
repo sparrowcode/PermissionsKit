@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F43F8D9A236ECC9D00B94208"
                BuildableName = "SPPermission.framework"
-               BlueprintName = "SPPermission iOS"
-               ReferencedContainer = "container:SPPermission.xcodeproj">
+               BlueprintName = "SPPermissions iOS"
+               ReferencedContainer = "container:SPPermissions.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -52,8 +52,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F43F8D9A236ECC9D00B94208"
             BuildableName = "SPPermission.framework"
-            BlueprintName = "SPPermission iOS"
-            ReferencedContainer = "container:SPPermission.xcodeproj">
+            BlueprintName = "SPPermissions iOS"
+            ReferencedContainer = "container:SPPermissions.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
