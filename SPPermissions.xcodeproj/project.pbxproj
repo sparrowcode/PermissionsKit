@@ -14,7 +14,6 @@
 		F4EA265A236ECEF70070B2BA /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EA2659236ECEF70070B2BA /* Media.xcassets */; };
 		F4EA2661236ED1790070B2BA /* SPPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2660236ED1790070B2BA /* SPPermissions.swift */; };
 		F4EA2662236ED20F0070B2BA /* SPPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2660236ED1790070B2BA /* SPPermissions.swift */; };
-		F4EA2664236ED29D0070B2BA /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F4EA2663236ED29D0070B2BA /* Configuration.xcconfig */; };
 		F4EA2666236ED5220070B2BA /* SPPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2665236ED5220070B2BA /* SPPermission.swift */; };
 		F4EA2667236ED5A50070B2BA /* SPPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2665236ED5220070B2BA /* SPPermission.swift */; };
 		F4EA2674236F2B890070B2BA /* SPPermissionPhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2669236F2B890070B2BA /* SPPermissionPhotoLibrary.swift */; };
@@ -41,10 +40,9 @@
 		F4EA2689236F2B8E0070B2BA /* SPPermissionCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2673236F2B890070B2BA /* SPPermissionCalendar.swift */; };
 		F4EA268B236F2BB90070B2BA /* SPPermissionInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA268A236F2BB90070B2BA /* SPPermissionInterface.swift */; };
 		F4EA268C236F2C260070B2BA /* SPPermissionInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA268A236F2BB90070B2BA /* SPPermissionInterface.swift */; };
-		F4EA268F236F2DC10070B2BA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F4EA268D236F2DC10070B2BA /* LICENSE */; };
-		F4EA2690236F2DC10070B2BA /* SPPermissions.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F4EA268E236F2DC10070B2BA /* SPPermissions.podspec */; };
 		F4EA2693236F30E70070B2BA /* SPRequestPermissionLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2692236F30E70070B2BA /* SPRequestPermissionLocationHandler.swift */; };
 		F4EA2694236F30FE0070B2BA /* SPRequestPermissionLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2692236F30E70070B2BA /* SPRequestPermissionLocationHandler.swift */; };
+		F4EA275B236F74FF0070B2BA /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F4EA2663236ED29D0070B2BA /* Configuration.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +73,7 @@
 		F4EA268D236F2DC10070B2BA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		F4EA268E236F2DC10070B2BA /* SPPermissions.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPPermissions.podspec; sourceTree = SOURCE_ROOT; };
 		F4EA2692236F30E70070B2BA /* SPRequestPermissionLocationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRequestPermissionLocationHandler.swift; sourceTree = "<group>"; };
+		F4EA275C236F75430070B2BA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,11 +116,11 @@
 		F43F8DA6236ECCEE00B94208 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				F4EA2691236F30E70070B2BA /* Handlers */,
-				F4EA2668236F2B890070B2BA /* Permissions */,
 				F4EA2665236ED5220070B2BA /* SPPermission.swift */,
 				F4EA2660236ED1790070B2BA /* SPPermissions.swift */,
 				F4EA268A236F2BB90070B2BA /* SPPermissionInterface.swift */,
+				F4EA2691236F30E70070B2BA /* Handlers */,
+				F4EA2668236F2B890070B2BA /* Permissions */,
 				F43F8DA9236ECD3E00B94208 /* Supporting Files */,
 			);
 			path = Source;
@@ -131,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				F4EA268D236F2DC10070B2BA /* LICENSE */,
+				F4EA275C236F75430070B2BA /* README.md */,
 				F4EA268E236F2DC10070B2BA /* SPPermissions.podspec */,
 			);
 			path = Deployment;
@@ -139,7 +139,6 @@
 		F43F8DA9236ECD3E00B94208 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F4EA2663236ED29D0070B2BA /* Configuration.xcconfig */,
 				F43F8D9E236ECC9D00B94208 /* SPPermission.h */,
 				F43F8D9F236ECC9D00B94208 /* Info.plist */,
 			);
@@ -159,6 +158,7 @@
 		F4EA2658236ECEE90070B2BA /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F4EA2663236ED29D0070B2BA /* Configuration.xcconfig */,
 				F4EA2645236ECE040070B2BA /* AppDelegate.swift */,
 				F4EA2650236ECE040070B2BA /* LaunchScreen.storyboard */,
 				F4EA2659236ECEF70070B2BA /* Media.xcassets */,
@@ -292,9 +292,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4EA2690236F2DC10070B2BA /* SPPermissions.podspec in Resources */,
-				F4EA268F236F2DC10070B2BA /* LICENSE in Resources */,
-				F4EA2664236ED29D0070B2BA /* Configuration.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +301,7 @@
 			files = (
 				F4EA265A236ECEF70070B2BA /* Media.xcassets in Resources */,
 				F4EA2652236ECE040070B2BA /* LaunchScreen.storyboard in Resources */,
+				F4EA275B236F74FF0070B2BA /* Configuration.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
