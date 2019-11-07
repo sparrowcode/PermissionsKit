@@ -21,6 +21,9 @@
 
 import UIKit
 
+/**
+ Available permissions.
+ */
 public enum SPPermission: String {
     
     case speech = "speech"
@@ -55,6 +58,10 @@ public enum SPPermission: String {
         manager.request(completion: { completion() })
     }
     
+    /**
+     Key which should added in Info.plist file. If key not added, app can crash when request permission.
+     Before request check if key added, if not - show warning in console. Without fatal error.
+     */
     public var usageDescriptionKey: String? {
         switch self {
         case .camera:
@@ -91,75 +98,75 @@ extension SPPermission {
         switch permission {
         case .camera:
             #if SPPERMISSION_CAMERA
-                return SPCameraPermission()
+            return SPCameraPermission()
             #else
-                fatalError(error(permission))
+            fatalError(error(permission))
             #endif
         case .photoLibrary:
             #if SPPERMISSION_PHOTOLIBRARY
-                return SPPhotoLibraryPermission()
+            return SPPhotoLibraryPermission()
             #else
-                fatalError(error(permission))
+            fatalError(error(permission))
             #endif
         case .notification:
             #if SPPERMISSION_NOTIFICATION
-                return SPNotificationPermission()
+            return SPNotificationPermission()
             #else
-                fatalError(error(permission))
+            fatalError(error(permission))
             #endif
         case .microphone:
             #if SPPERMISSION_MICROPHONE
-                return SPMicrophonePermission()
+            return SPMicrophonePermission()
             #else
-                fatalError(error(permission))
+            fatalError(error(permission))
             #endif
         case .calendar:
             #if SPPERMISSION_CALENDAR
-                return SPCalendarPermission()
+            return SPCalendarPermission()
             #else
-                fatalError(error(permission))
+            fatalError(error(permission))
             #endif
         case .contacts:
             #if SPPERMISSION_CONTACTS
-                return SPContactsPermission()
+            return SPContactsPermission()
             #else
-                fatalError(error(permission))
+            fatalError(error(permission))
             #endif
         case .reminders:
             #if SPPERMISSION_REMINDERS
-                return SPRemindersPermission()
+            return SPRemindersPermission()
             #else
-                fatalError(error(permission))
+            fatalError(error(permission))
             #endif
         case .speech:
             #if SPPERMISSION_SPEECH
-                return SPSpeechPermission()
+            return SPSpeechPermission()
             #else
-                fatalError(error(permission))
+            fatalError(error(permission))
             #endif
         case .locationWhenInUse:
             #if SPPERMISSION_LOCATION
-                return SPLocationPermission(type: SPLocationPermission.SPLocationType.WhenInUse)
+            return SPLocationPermission(type: SPLocationPermission.SPLocationType.WhenInUse)
             #else
-                fatalError(error(permission))
+            fatalError(error(permission))
             #endif
         case .locationAlwaysAndWhenInUse:
             #if SPPERMISSION_LOCATION
-                return SPLocationPermission(type: SPLocationPermission.SPLocationType.AlwaysAndWhenInUse)
+            return SPLocationPermission(type: SPLocationPermission.SPLocationType.AlwaysAndWhenInUse)
             #else
-                fatalError(error(permission))
+            fatalError(error(permission))
             #endif
         case .motion:
             #if SPPERMISSION_MOTION
-                return SPMotionPermission()
+            return SPMotionPermission()
             #else
-                fatalError(error(permission))
+            fatalError(error(permission))
             #endif
         case .mediaLibrary:
             #if SPPERMISSION_MEDIALIBRARY
-                return SPMediaLibraryPermission()
+            return SPMediaLibraryPermission()
             #else
-                fatalError(error(permission))
+            fatalError(error(permission))
             #endif
         }
     }
