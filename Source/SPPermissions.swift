@@ -23,14 +23,34 @@ import UIKit
 
 public enum SPPermissions {
     
-    public static func request(mode: SPPermissionRequestMode, permissions: [SPPermission]) {
+    /**
+     Request all permissions by each and with native dialog. Force mode.
+     
+     - parameter permissions: List of permissions for request
+     */
+    public static func requestNative(_ permissions: [SPPermission]) {
+        SPPermissions.requestList([], dataSource: nil, delegate: nil)
+    }
+    
+    /**
+     Request permissions as list in large modal controller. For iOS 12 using full-screen mode.
+     
+     - parameter permissions: List of permissions for request
+     - parameter dataSource: Change texts, colors and icons in interface
+     - parameter delegate: Pass events
+     */
+    public static func requestList(_ permissions: [SPPermission], dataSource: String?, delegate: String?) {
         
     }
-}
-
-public enum SPPermissionRequestMode {
     
-    case native
-    case dialog
-    case fullscreen
+    /**
+     Request permissions as dialog. Available swipe-down for dismiss.
+     
+     - parameter permissions: List of permissions for request
+     - parameter dataSource: Change texts, colors and icons in interface
+     - parameter delegate: Pass events
+     */
+    public static func requestDialog(_ permissions: [SPPermission], dataSource: String?, delegate: String?) {
+        
+    }
 }
