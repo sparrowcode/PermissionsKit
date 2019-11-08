@@ -22,7 +22,8 @@
 import UIKit
 
 /**
- Available permissions.
+ Available permissions. For request permissions recomended use `SPPermissions.requestNative()`.
+ For check permission avability use `.isAuthorized` & `.isDenied` methods.
  */
 public enum SPPermission: String {
     
@@ -39,10 +40,16 @@ public enum SPPermission: String {
     case locationWhenInUse = "location when use"
     case locationAlwaysAndWhenInUse = "location always"
     
+    /**
+     Check permission is allowed.
+     */
     public var isAuthorized: Bool {
         SPPermission.manager(for: self).isAuthorized
     }
     
+    /**
+     Check permission is denied.
+     */
     public var isDenied: Bool {
         SPPermission.manager(for: self).isDenied
     }

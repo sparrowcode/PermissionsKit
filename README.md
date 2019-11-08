@@ -22,7 +22,8 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
     - [Manually](#manually)
 - [Usage](#usage)
 - [Permissions](#permissions)
-- [Keys in Info.plist](#key-in-infoplist)
+- [Keys in Info.plist](#keys-in-infoplist)
+- [Сooperation](#cooperation)
 - [How I do UI](#how-i-do-UI)
 - [Other Projects +gif](#my-projects)
     - [Awesome iOS UI](https://github.com/ivanvorobei/awesome-ios-ui)
@@ -110,7 +111,7 @@ carthage build
 
 ### Manually
 
-If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
+If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Put `/Source` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
 After it need implement configuration file. See example [configuration file](https://github.com/ivanvorobei/SPPermissions/blob/master/Example/App/Configuration.xcconfig) or example project. If you don't know how add configuration file, see this [short video](https://youtube.com/ivanvorobei).
 
@@ -140,6 +141,14 @@ Do not use the description as the name of the key - this causes errors in the la
 I develop `SPPermissions` in Apple-way. For this, I check 30 apps to get UI-elements for it project. I am take screenshoot and draw it in Sketch. For example, `Allow` button is similar to `Get` button in the AppStore. Check [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I am design `SPPermissions`:
 
 [![Timelaps on YouTube](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
+
+## Сooperation
+
+The development of this project is completely free, if you can make a contribution, it will help development. Here list of task what need do:
+
+- Add docs in source files. Description of public methods and parametrs. 
+- Subtitles for [video](https://youtube.com/ivanvorobei) in any your native languages, where I tell you how to connect a configuration file.
+- Help me translate [Debts app](https://itunes.apple.com/app/id1446635818) for other languages. 
 
 ## My projects
 
