@@ -3,7 +3,7 @@
 <img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Preview.gif" width="470"/>
 
 ### About
-Permissions agregator allow request its native, as dialog and other way.  Available check state permissions. I do UI of dialog in **Apple style**. Watch timelaps how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
+Permissions agregator allow request its native, as dialog and other way.  Available check state permissions. I do UI of dialog in **Apple style**. Watch timelaps how I design for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
 
 Visit my store for iOS developers:
 
@@ -144,7 +144,7 @@ I develop `SPPermissions` in Apple-way. For this, I check 30 apps to get UI-elem
 
 ## Сooperation
 
-The development of this project is completely free, if you can make a contribution, it will help development. Here list of task what need do:
+The development of this project is completely free. If you can make a contribution, it will help development. Here list of task what need do:
 
 - Add docs in source files. Description of public methods and parametrs. 
 - Subtitles for [video](https://youtube.com/ivanvorobei) in any your native languages, where I tell you how to connect a configuration file.
