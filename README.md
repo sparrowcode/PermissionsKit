@@ -23,7 +23,7 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
 - [Usage](#usage)
 - [Permissions](#permissions)
 - [Keys in Info.plist](#keys-in-infoplist)
-- [Сooperation](#cooperation)
+- [Сooperation](#сooperation)
 - [How I do UI](#how-i-do-UI)
 - [Other Projects +gif](#my-projects)
     - [Awesome iOS UI](https://github.com/ivanvorobei/awesome-ios-ui)
