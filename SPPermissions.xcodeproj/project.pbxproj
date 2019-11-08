@@ -118,6 +118,7 @@
 		F43F8DA6236ECCEE00B94208 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				F475A2A02375ECC20090824D /* Interface */,
 				F4EA2665236ED5220070B2BA /* SPPermission.swift */,
 				F4EA2660236ED1790070B2BA /* SPPermissions.swift */,
 				F4EA268A236F2BB90070B2BA /* SPPermissionInterface.swift */,
@@ -147,6 +148,29 @@
 				F43F8D9F236ECC9D00B94208 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F475A2A02375ECC20090824D /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				F475A2A22375ECE10090824D /* Dialog */,
+				F475A2A12375ECDB0090824D /* List */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		F475A2A12375ECDB0090824D /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		F475A2A22375ECE10090824D /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dialog;
 			sourceTree = "<group>";
 		};
 		F4EA2644236ECE040070B2BA /* Example */ = {
