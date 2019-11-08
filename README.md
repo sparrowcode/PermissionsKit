@@ -146,6 +146,7 @@ I develop `SPPermissions` in Apple-way. For this, I check 30 apps to get UI-elem
 
 The development of this project is completely free. If you can make a contribution, it will help development. Here list of task what need do:
 
+- Fix mistakes in this Readme. My English so bad.
 - Add docs in source files. Description of public methods and parametrs. 
 - Subtitles for [video](https://youtube.com/ivanvorobei) in any your native languages, where I tell you how to connect a configuration file.
 - Help me translate [Debts app](https://itunes.apple.com/app/id1446635818) for other languages. 
