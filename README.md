@@ -134,7 +134,7 @@ You need to add some keys to the `Info.plist` file with description. List of key
 - NSLocationAlwaysAndWhenInUseUsageDescription
 - NSLocationAlwaysUsageDescription (iOS 10 and earlier)
 
-Do not use the description as the name of the key - this causes errors in the latest version of the new Xcode.
+Do not use the description as the name of the key.
 
 ## How I do UI
 
