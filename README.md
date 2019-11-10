@@ -28,12 +28,12 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
 - [Keys in Info.plist](#keys-in-infoplist)
 - [Сooperation](#сooperation)
 - [How I do UI](#how-i-do-UI)
-- [Other Projects]()
-    - [Awesome iOS UI](https://github.com/ivanvorobei/awesome-ios-ui)
-    - [SPStorkController](https://github.com/ivanvorobe/spstorkcontroller)
-    - [SPLarkController](https://github.com/ivanvorobe/splarkcontroller)
-    - [SPAlert](https://github.com/ivanvorobe/spalert)
 - [License](#license)
+- [My other projects](#)
+    - [Awesome iOS UI](https://github.com/ivanvorobei/awesome-ios-ui)
+    - [SPStorkController](https://github.com/ivanvorobei/spstorkcontroller)
+    - [SPLarkController](https://github.com/ivanvorobei/splarkcontroller)
+    - [SPAlert](https://github.com/ivanvorobei/spalert)
 
 ## Requirements
 
