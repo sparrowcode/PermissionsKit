@@ -138,13 +138,13 @@ Native description.
 
 <p float="left">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Camera.svg" width="130">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Photo.svg" width="130">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Notification.svg" width="130">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Location.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Photos.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Notifications.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Locations.svg" width="130">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Microphone.svg" width="130">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Calendar.svg" width="130">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Contacts.svg" width="130">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Reminder.svg" width="130">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Reminders.svg" width="130">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Motion.svg" width="130">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Media.svg" width="130">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Speech.svg" width="130">
