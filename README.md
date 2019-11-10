@@ -7,7 +7,7 @@ Permissions agregator allow request its native, as dialog and other way.  Availa
 
 Visit my store for iOS developers:
 
-[![xcode-shop.com](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Buttons/xcode-shop.svg)](https://xcode-shop.com)
+[![xcode-shop.com](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Buttons/xcode-shop-2.svg)](https://xcode-shop.com)
 
 If you like the project, do not forget to `put star ★` and follow me on GitHub:
 
