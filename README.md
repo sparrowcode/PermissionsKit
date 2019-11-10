@@ -29,11 +29,6 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
 - [Сooperation](#сooperation)
 - [How I do UI](#how-i-do-UI)
 - [License](#license)
-- My other projects
-    - [Awesome iOS UI](https://github.com/ivanvorobei/awesome-ios-ui)
-    - [SPStorkController](https://github.com/ivanvorobei/spstorkcontroller)
-    - [SPLarkController](https://github.com/ivanvorobei/splarkcontroller)
-    - [SPAlert](https://github.com/ivanvorobei/spalert)
 
 ## Requirements
 
