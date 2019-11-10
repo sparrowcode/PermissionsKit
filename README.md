@@ -1,6 +1,6 @@
 # SPPermission
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Preview.gif" width="460"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/master/Resources/Preview.gif" width="450"/>
 
 ### About
 Request permissions with dialog. I do UI of dialog in **Apple style**. Watch timelaps how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
