@@ -21,6 +21,9 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
     - [Carthage](#carthage)
     - [Manually](#manually)
 - [Usage](#usage)
+    - [Dialog](#dialog)
+    - [List](#list)
+    - [Native](#native)
 - [Permissions](#permissions)
 - [Keys in Info.plist](#keys-in-infoplist)
 - [Сooperation](#сooperation)
@@ -116,6 +119,20 @@ If you prefer not to use any of dependency managers, you can integrate `SPPermis
 After it need implement configuration file. See example [configuration file](https://github.com/ivanvorobei/SPPermissions/blob/master/Example/App/Configuration.xcconfig) or example project. If you don't know how add configuration file, see this [short video](https://youtube.com/ivanvorobei).
 
 ## Usage
+
+Project separates to modules. For now available `Dialog`, `List` and `Native` mode. Each mode has delegates and datasource. See more here:
+
+### Dialog
+
+Dialog description.
+
+### List
+
+List description.
+
+### Native
+
+Native description.
 
 ## Permissions
 
