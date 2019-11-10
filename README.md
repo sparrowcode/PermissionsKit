@@ -5,7 +5,7 @@
 ### About
 Request permissions with dialog. I do UI of dialog in **Apple style**. Watch timelaps how I design UI for this pod [on YouTube](https://youtu.be/1mDdX7fQRv4).
 
-For now I develop version 5.0, if you want help me - check this [tasks](https://github.com/ivanvorobei/SPPermissions/tree/version-5#сooperation).
+For now I develop version 5.0, if you want help me - check cooperation [section](https://github.com/ivanvorobei/SPPermissions/tree/version-5#сooperation). New version now available in branch `version-5`.
 
 Visit my store for iOS developers:
 
