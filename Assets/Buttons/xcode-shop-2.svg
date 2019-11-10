@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="153px" height="31px" viewBox="0 0 153 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#F9FBFB" offset="0%"></stop>
+            <stop stop-color="#EEF2F5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Final---3" transform="translate(-15.000000, -14.000000)">
+            <g id="Group-4" transform="translate(15.000000, 14.000000)">
+                <rect id="Rectangle" stroke="#C7C9CD" fill="url(#linearGradient-1)" x="0.5" y="0.5" width="152" height="30" rx="3"></rect>
+                <text id="xcode-shop.com" font-family="SFProDisplay-Semibold, SF Pro Display" font-size="13" font-weight="500" letter-spacing="0.45" fill="#000000">
+                    <tspan x="36" y="20">xcode-shop.com</tspan>
+                </text>
+                <path d="M15.1645508,22.5712891 L22.6230469,22.5712891 C23.9116211,22.5712891 24.6606445,21.815918 24.6606445,20.4194336 L24.6606445,13.8623047 C24.6606445,12.4594727 23.9052734,11.7104492 22.4960938,11.7104492 L21.6899414,11.7104492 C21.6645508,10.2124023 20.4077148,9 18.8334961,9 C17.2592773,9 15.9960938,10.2124023 15.9707031,11.7104492 L15.1645508,11.7104492 C13.7553711,11.7104492 13,12.4594727 13,13.8623047 L13,20.4194336 C13,21.8222656 13.7553711,22.5712891 15.1645508,22.5712891 Z M18.8334961,10.2441406 C19.684082,10.2441406 20.293457,10.8916016 20.3188477,11.7104492 L17.3481445,11.7104492 C17.3671875,10.8916016 17.9829102,10.2441406 18.8334961,10.2441406 Z M15.2978516,21.1176758 C14.7456055,21.1176758 14.4536133,20.8383789 14.4536133,20.2607422 L14.4536133,14.0209961 C14.4536133,13.4433594 14.7456055,13.1640625 15.2978516,13.1640625 L22.362793,13.1640625 C22.9086914,13.1640625 23.2133789,13.4433594 23.2133789,14.0209961 L23.2133789,20.2607422 C23.2133789,20.8383789 22.9086914,21.1176758 22.4960938,21.1176758 L15.2978516,21.1176758 Z" id="icon" fill="#000000" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
