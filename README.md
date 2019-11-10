@@ -28,11 +28,11 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
 - [Keys in Info.plist](#keys-in-infoplist)
 - [Сooperation](#сooperation)
 - [How I do UI](#how-i-do-UI)
-- [Other Projects +gif](#my-projects)
+- [Other Projects]()
     - [Awesome iOS UI](https://github.com/ivanvorobei/awesome-ios-ui)
-    - [SPStorkController](#spstorkcontroller)
-    - [SPLarkController](#splarkcontroller)
-    - [SPAlert](#spalert)
+    - [SPStorkController](https://github.com/ivanvorobe/spstorkcontroller)
+    - [SPLarkController](https://github.com/ivanvorobe/splarkcontroller)
+    - [SPAlert](https://github.com/ivanvorobe/spalert)
 - [License](#license)
 
 ## Requirements
@@ -182,37 +182,6 @@ The development of this project is completely free. If you can make a contributi
 - Subtitles for [video](https://youtube.com/ivanvorobei) in any your native languages, where I tell you how to connect a configuration file.
 - Help me translate [Debts app](https://itunes.apple.com/app/id1446635818) for other languages. 
 - Support Swift Package Manager.
-
-## My projects
-
-<img align="left" src="https://github.com/ivanvorobei/SPStorkController/blob/master/Resources/Preview.gif" width="220"/>
-
-### SPStorkController
-
-[SPStorkController](https://github.com/ivanvorobei/SPStorkController) is сontroller **as in Apple Music, Podcasts and Mail** apps. Simple adding close button and centering arrow indicator. Customizable height. Using custom TransitionDelegate. Check scroll's bounce for more interactive. Simple adding close button and centering arrow indicator. You can download example [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) app from AppStore.
-
-Alert you can find in [SPAlert](https://github.com/ivanvorobei/SPAlert) project. If you want to **buy source code** of app in preview, please, go to [xcode-shop.com](https://xcode-shop.com)
-
----
-
-<img align="left" src="https://github.com/ivanvorobei/SPLarkController/blob/master/Resources/Preview.gif" width="220"/>
-
-### SPLarkController
-
-[SPLarkController](https://github.com/ivanvorobei/SPLarkController) transition between controllers. Translate to top. Make **settings screen** for application. You can add **buttons and switches**. The amount cells is not limited. You can start using project with just two lines of code and easy customisation. For implement settings as in preiew, see section [Settings Controller](https://github.com/ivanvorobei/SPLarkController#settings-controller).
-
-You can download example app [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) from AppStore. If you want to **buy source code** of app this app, please, go to [xcode-shop.com](https://xcode-shop.com).
-
----
-
-<img align="left" src="https://github.com/ivanvorobei/SPAlert/blob/master/Resources/Preview-Done.gif" width="220"/>
-
-### SPAlert
-
-[SPAlert](https://github.com/ivanvorobei/SPAlert) is **popup from Apple Music & Feedback in AppStore**. Contains `Done` & `Heart` presets. `Done` present with draw path animation. I clone Apple's alerts as much as possible.  
-You can find this alerts in AppStore after feedback, after added song to library in Apple Music. I am also add alert without icon, as simple message.
-
-You can download example [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) app from AppStore. If you want to **buy source code** of app in preview, please, go to [xcode-shop.com](https://xcode-shop.com).
 
 ## License
 
