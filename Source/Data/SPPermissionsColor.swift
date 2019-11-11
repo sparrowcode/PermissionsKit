@@ -68,7 +68,14 @@ enum SPPermissionsColor {
     }
     
     static var buttonArea: UIColor {
-        return UIColor(red: 238/255, green: 238/255, blue: 240/255, alpha: 1)
+        if #available(iOS 13.0, *) {
+            return UIColor { (traits) -> UIColor in
+                return traits.userInterfaceStyle == .dark ? UIColor(red: 61/255, green: 62/255, blue: 66/255, alpha: 1) :
+                    UIColor(red: 238/255, green: 238/255, blue: 240/255, alpha: 1)
+            }
+        } else {
+            return UIColor(red: 238/255, green: 238/255, blue: 240/255, alpha: 1)
+        }
     }
 }
 

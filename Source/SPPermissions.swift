@@ -33,14 +33,14 @@ public enum SPPermissions {
     }
     
     /**
-     Request permissions as list in large modal controller. For iOS 12 using full-screen mode.
+     Request permissions as list in modal controller. In iPad open as `formSheet`.
      
      - warning: Not present it from parent controller method. Use in class method `present(on:)`.
      - parameter permissions: List of permissions for request.
-     - returns: Controller for configure data.
+     - returns: Controller for configure texts. Ready for present.
      */
     public static func list(_ permissions: [SPPermission]) -> SPPermissionsListController {
-        let controller = SPPermissionsListController(permissions)
+        let controller = SPPermissionsListController(removeDublicates(permissions))
         return controller
     }
     
@@ -49,9 +49,16 @@ public enum SPPermissions {
      
      - warning: Not present it from parent controller method. Use in class method `present(on:)`.
      - parameter permissions: List of permissions for request.
-     - returns: Controller for configure data.
+     - returns: Controller for configure data. Ready for present.
      */
     public static func dialog(_ permissions: [SPPermission]) -> SPPermissionsListController {
         fatalError()
+    }
+    
+    /**
+     Remove dublicates permissions if add as mistake.
+     */
+    private static func removeDublicates(_ permissions: [SPPermission]) -> [SPPermission] {
+        return Array(Set(permissions))
     }
 }

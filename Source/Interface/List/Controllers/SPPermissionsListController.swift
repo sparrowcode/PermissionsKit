@@ -55,16 +55,93 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         } else {
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissAnimated))
         }
-        navigationItem.title = titleText
-        navigationItem.largeTitleDisplayMode = .automatic
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = nil
+        navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
+        
         tableView.delaysContentTouches = false
-        tableView.alwaysBounceVertical = false
         tableView.allowsSelection = false
         tableView.register(SPPermissionTableViewCell.self, forCellReuseIdentifier: SPPermissionTableViewCell.id)
-        tableView.register(SPPermissionsListHeaderCommentView.self, forHeaderFooterViewReuseIdentifier: SPPermissionsListHeaderCommentView.id)
+        tableView.register(SPPermissionsListHeaderView.self, forHeaderFooterViewReuseIdentifier: SPPermissionsListHeaderView.id)
         tableView.register(SPPermissionsListFooterCommentView.self, forHeaderFooterViewReuseIdentifier: SPPermissionsListFooterCommentView.id)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
+    
+    /**
+     Process tap on button with permission.
+     */
+    @objc func process(button: SPPermissionActionButton) {
+        let permission = button.permission
+        permission.request {
+            button.update()
+            let isAuthorized = permission.isAuthorized
+            if isAuthorized { SPPermissionsHaptic.impact(.light) }
+            isAuthorized ? self.delegate?.didAllow?(permission: permission) : self.delegate?.didDenied?(permission: permission)
+            
+            // Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
+            if permission == .locationAlwaysAndWhenInUse {
+                if self.permissions.contains(.locationWhenInUse) {
+                    if let index = self.permissions.firstIndex(of: .locationWhenInUse) {
+                        if let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? SPPermissionTableViewCell {
+                            cell.button.update()
+                        }
+                    }
+                }
+            }
+            
+            // Check if all permissions allowed
+            let allowedPermissions = self.permissions.filter { $0.isAuthorized }
+            if allowedPermissions.count == self.permissions.count {
+                SPPermissionsDelay.wait(0.2, closure: {
+                    self.dismissAnimated()
+                })
+            }
+            
+            if permission.isDenied {
+                print("Show alert about settings")
+            }
+        }
+    }
+    
+    /**
+     Call this method for present controller on other controller.
+     In this method controller wrap to navigation and add other configure.
+     
+     - parameter controller: Controller, on which need present `SPPermissions` controller.
+     */
+    func present(on controller: UIViewController) {
+        let navController = UINavigationController(rootViewController: self)
+        navController.modalPresentationStyle = .formSheet
+        navController.preferredContentSize = CGSize.init(width: 480, height: 560)
+        controller.present(navController, animated: true, completion: nil)
+    }
+    
+    /**
+     Update buttons when app launch again. No need call manually.
+     */
+    @objc func applicationDidBecomeActive() {
+        for cell in tableView.visibleCells {
+            if let permissionCell = cell as? SPPermissionTableViewCell {
+                permissionCell.button.update()
+            }
+        }
+    }
+    
+    @objc func dismissAnimated() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+}
+
+extension SPPermissionsListController {
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return permissions.count
@@ -79,8 +156,9 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     }
     
     public override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SPPermissionsListHeaderCommentView.id) as! SPPermissionsListHeaderCommentView
-        view.titleLabel.text = headerText
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SPPermissionsListHeaderView.id) as! SPPermissionsListHeaderView
+        view.titleLabel.text = titleText
+        view.subtitleLabel.text = headerText
         return view
     }
     
@@ -88,38 +166,5 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SPPermissionsListFooterCommentView.id) as! SPPermissionsListFooterCommentView
         view.titleLabel.text = footerText
         return view
-    }
-    
-    @objc func process(button: SPPermissionActionButton) {
-        let permission = button.permission
-        permission.request {
-            UIView.animate(withDuration: 0.3, animations: {
-                let isAuthorized = permission.isAuthorized
-                button.style = isAuthorized ? .allowed : .base
-                isAuthorized ? self.delegate?.didAllow?(permission: permission) : self.delegate?.didDenied?(permission: permission)
-                
-                // Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
-                
-                // Check if last permission when close auto
-                
-            })
-            if permission.isDenied {
-                print("Show alert about settings")
-            }
-        }
-    }
-    
-    @objc func dismissAnimated() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    /**
-     Call this method for present controller on other controller.
-     In this method controller wrap to navigation and add other configure.
-     
-     - parameter controller: Controller, on which need present `SPPermissions` controller.
-     */
-    func present(on controller: UIViewController) {
-        controller.present(UINavigationController(rootViewController: self), animated: true, completion: nil)
     }
 }

@@ -60,6 +60,12 @@ class SPPermissionActionButton: UIButton {
         layer.cornerRadius = self.frame.height / 2
     }
     
+    public func update() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.style = self.permission.isAuthorized ? .allowed : .base
+        })
+    }
+    
     enum Style {
         case base
         case allowed

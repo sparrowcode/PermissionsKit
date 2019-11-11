@@ -39,5 +39,33 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSHomeKitUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Example Describtion</string>
 </dict>
 </plist>
