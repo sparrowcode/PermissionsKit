@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2017 Ivan Vorobei (ivanvorobei@icloud.com)
+// Copyright © 2019 Ivan Vorobei (ivanvorobei@icloud.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -26,31 +26,32 @@ public enum SPPermissions {
     /**
      Request all permissions by each and with native dialog. Force mode.
      
-     - parameter permissions: List of permissions for request
+     - parameter permissions: List of permissions for request.
      */
-    public static func requestNative(_ permissions: [SPPermission]) {
-        SPPermissions.requestList([], dataSource: nil, delegate: nil)
+    public static func native(_ permissions: [SPPermission]) {
+        
     }
     
     /**
      Request permissions as list in large modal controller. For iOS 12 using full-screen mode.
      
-     - parameter permissions: List of permissions for request
-     - parameter dataSource: Change texts, colors and icons in interface
-     - parameter delegate: Pass events
+     - warning: Not present it from parent controller method. Use in class method `present(on:)`.
+     - parameter permissions: List of permissions for request.
+     - returns: Controller for configure data.
      */
-    public static func requestList(_ permissions: [SPPermission], dataSource: String?, delegate: String?) {
-        
+    public static func list(_ permissions: [SPPermission]) -> SPPermissionsListController {
+        let controller = SPPermissionsListController(permissions)
+        return controller
     }
     
     /**
      Request permissions as dialog. Available swipe-down for dismiss.
      
-     - parameter permissions: List of permissions for request
-     - parameter dataSource: Change texts, colors and icons in interface
-     - parameter delegate: Pass events
+     - warning: Not present it from parent controller method. Use in class method `present(on:)`.
+     - parameter permissions: List of permissions for request.
+     - returns: Controller for configure data.
      */
-    public static func requestDialog(_ permissions: [SPPermission], dataSource: String?, delegate: String?) {
-        
+    public static func dialog(_ permissions: [SPPermission]) -> SPPermissionsListController {
+        fatalError()
     }
 }

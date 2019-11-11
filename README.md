@@ -24,8 +24,10 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
     - [Dialog](#dialog)
     - [List](#list)
     - [Native](#native)
+- [Examples Code](#examples-code)
 - [Permissions](#permissions)
 - [Keys in Info.plist](#keys-in-infoplist)
+- [Localization](#localization)
 - [Сooperation](#сooperation)
 - [How I do UI](#how-i-do-UI)
 - [License](#license)
@@ -41,7 +43,7 @@ Swift `4.2` & `5.0`. Ready for use on iOS 10+
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `SPPermissions` into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'SPPermissions/Notification'
+pod 'SPPermissions/Notification', :git => 'https://github.com/ivanvorobei/SPPermissions.git', :branch => 'version-5'
 ```
 
 Due to Apple's new policy regarding permission access you need to specifically define what kind of permissions you want to access using subspecs. For example if you want to access `Camera`, `Location` & `Microphone` you define the following:
@@ -115,19 +117,57 @@ After it need implement configuration file. See example [configuration file](htt
 
 ## Usage
 
-Project separates to modules. For now available `Dialog`, `List` and `Native` mode. Each mode has delegates and datasource. See more here:
+Project separates to modules. For now available `Dialog`, `List` and `Native` mode. Each mode has delegates and datasource. Soon I add preview for each mode. See more here:
 
 ### Dialog
 
-Dialog description.
+Modal alert, which you can see in version 4. I recreate methods for it and usage will be simple.
+
+```swift
+let controller = SPPermissions.dialog([.camera, .photoLibrary])
+
+// Set `DataSource` or `Delegate` if need. 
+// By default using project texts and icons.
+controller.dataSource = self
+controller.delegate = self
+
+// Ovveride texts in controller
+controller.titleText = "Title Text"
+controller.subtitleText = "Subtitle Text"
+controller.commentText = "Comment Text"
+
+// Always use this method for present
+controller.present(on: self)
+```
 
 ### List
 
-List description.
+List it native `UITableViewController` with support iPad. Show description of permissions and icon.  See example of usage:
+
+```swift
+let controller = SPPermissions.list([.calendar, .camera, .contacts])
+
+// Set `DataSource` or `Delegate` if need. 
+// By default using project texts and icons.
+controller.dataSource = self
+controller.delegate = self
+
+// Ovveride texts in controller
+controller.titleText = "Title Text"
+controller.headerText = "Header Text"
+controller.footerText = "Footer Text"
+
+// Always use this method for present
+controller.present(on: self)
+```
 
 ### Native
 
 Native description.
+
+## Examples Code
+
+Here examples of codes and usage `SPPermissions`.
 
 ## Permissions
 
@@ -162,6 +202,10 @@ You need to add some keys to the `Info.plist` file with description. List of key
 
 Do not use the description as the name of the key.
 
+### Localization
+
+Describe here how localize keys.
+
 ## How I do UI
 
 I develop `SPPermissions` in Apple-way. For this, I check 30 apps to get UI-elements for it project. I am take screenshoot and draw it in Sketch. For example, `Allow` button is similar to `Get` button in the AppStore. Check [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I am design `SPPermissions`:
@@ -172,7 +216,7 @@ I develop `SPPermissions` in Apple-way. For this, I check 30 apps to get UI-elem
 
 The development of this project is completely free. If you can make a contribution, it will help development. Here list of task what need do:
 
-- Fix mistakes in this Readme. My English so bad.
+- Fix mistakes in this Readme and docs.. My English so bad.
 - Add docs in source files. Description of public methods and parametrs. 
 - Subtitles for [video](https://youtube.com/ivanvorobei) in any your native languages, where I tell you how to connect a configuration file.
 - Help me translate [Debts app](https://itunes.apple.com/app/id1446635818) for other languages. 

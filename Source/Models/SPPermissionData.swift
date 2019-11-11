@@ -19,30 +19,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSION_REMINDERS
-
 import UIKit
-import EventKit
 
-struct SPRemindersPermission: SPPermissionProtocol {
+/**
+ Texts and icon for permission. Using in Data Source.
+ 
+ - parameter name: Title of permission
+ - parameter description: Why need this permission
+ - parameter image: Custom icon if need. If nil using default value
+ - parameter allowTitle: Title for button when permission not allow yet. Include denied state
+ - parameter allowedTitle: Title for button when permission allowed
+ */
+public struct SPPermissionData {
     
-    var isAuthorized: Bool {
-        return EKEventStore.authorizationStatus(for: EKEntityType.reminder) == .authorized
-    }
-    
-    var isDenied: Bool {
-        return EKEventStore.authorizationStatus(for: EKEntityType.reminder) == .denied
-    }
-    
-    func request(completion: @escaping ()->()?) {
-        let eventStore = EKEventStore()
-        eventStore.requestAccess(to: EKEntityType.reminder, completion: {
-            (accessGranted: Bool, error: Error?) in
-            DispatchQueue.main.async {
-                completion()
-            }
-        })
-    }
+    var name: String
+    var description: String
+    var image: UIImage?
+    var allowTitle: String
+    var allowedTitle: String
 }
-
-#endif

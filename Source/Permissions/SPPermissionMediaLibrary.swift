@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2017 Ivan Vorobei (ivanvorobei@icloud.com)
+// Copyright © 2019 Ivan Vorobei (ivanvorobei@icloud.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,7 @@
 import UIKit
 import MediaPlayer
 
-struct SPMediaLibraryPermission: SPPermissionInterface {
+struct SPMediaLibraryPermission: SPPermissionProtocol {
     
     var isAuthorized: Bool {
         return MPMediaLibrary.authorizationStatus() == .authorized

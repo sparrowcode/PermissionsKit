@@ -19,48 +19,56 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSION_CONTACTS
-
 import UIKit
-import Contacts
-import AddressBook
 
-struct SPContactsPermission: SPPermissionProtocol {
+enum SPPermissionsColor {
     
-    var isAuthorized: Bool {
-        if #available(iOS 9.0, *) {
-            return CNContactStore.authorizationStatus(for: .contacts) == .authorized
+    static var base: UIColor {
+        return UIColor.systemBlue
+    }
+    
+    static var systemBackground: UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor.systemBackground
         } else {
-            return ABAddressBookGetAuthorizationStatus() == .authorized
+            return UIColor.white
         }
     }
     
-    var isDenied: Bool {
-        if #available(iOS 9.0, *) {
-            return CNContactStore.authorizationStatus(for: .contacts) == .denied
+    static var secondarySystemBackground: UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor.secondarySystemBackground
         } else {
-            return ABAddressBookGetAuthorizationStatus() == .denied
+            return UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
         }
     }
     
-    func request(completion: @escaping ()->()?) {
-        if #available(iOS 9.0, *) {
-            let store = CNContactStore()
-            store.requestAccess(for: .contacts, completionHandler: { (granted, error) in
-                DispatchQueue.main.async {
-                    completion()
-                }
-            })
+    static var separator: UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor.separator
         } else {
-            let addressBookRef: ABAddressBook = ABAddressBookCreateWithOptions(nil, nil).takeRetainedValue()
-            ABAddressBookRequestAccessWithCompletion(addressBookRef) {
-                (granted: Bool, error: CFError?) in
-                DispatchQueue.main.async() {
-                    completion()
-                }
-            }
+            return UIColor(red: 60/255, green: 60/255, blue: 67/255, alpha: 1)
         }
+    }
+    
+    static var label: UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor.label
+        } else {
+            return UIColor.black
+        }
+    }
+    
+    static var secondaryLabel: UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor.secondaryLabel
+        } else {
+            return UIColor(red: 60/255, green: 60/255, blue: 67/255, alpha: 1)
+        }
+    }
+    
+    static var buttonArea: UIColor {
+        return UIColor(red: 238/255, green: 238/255, blue: 240/255, alpha: 1)
     }
 }
 
-#endif

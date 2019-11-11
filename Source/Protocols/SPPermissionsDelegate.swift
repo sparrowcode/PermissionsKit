@@ -19,30 +19,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSION_REMINDERS
-
 import UIKit
-import EventKit
 
-struct SPRemindersPermission: SPPermissionProtocol {
+/**
+List of events methods. All optional.
+*/
+@objc public protocol SPPermissionsDelegate: class {
     
-    var isAuthorized: Bool {
-        return EKEventStore.authorizationStatus(for: EKEntityType.reminder) == .authorized
-    }
-    
-    var isDenied: Bool {
-        return EKEventStore.authorizationStatus(for: EKEntityType.reminder) == .denied
-    }
-    
-    func request(completion: @escaping ()->()?) {
-        let eventStore = EKEventStore()
-        eventStore.requestAccess(to: EKEntityType.reminder, completion: {
-            (accessGranted: Bool, error: Error?) in
-            DispatchQueue.main.async {
-                completion()
-            }
-        })
-    }
+    @objc optional func didAllow(permission: SPPermission)
+    @objc optional func didDenied(permission: SPPermission)
 }
-
-#endif
