@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F43F8DA0236ECC9D00B94208 /* SPPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = F43F8D9E236ECC9D00B94208 /* SPPermission.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F43F8DA0236ECC9D00B94208 /* SPPermissions.h in Headers */ = {isa = PBXBuildFile; fileRef = F43F8D9E236ECC9D00B94208 /* SPPermissions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4EA2646236ECE040070B2BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2645236ECE040070B2BA /* AppDelegate.swift */; };
 		F4EA264A236ECE040070B2BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2649236ECE040070B2BA /* ViewController.swift */; };
 		F4EA2652236ECE040070B2BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EA2650236ECE040070B2BA /* LaunchScreen.storyboard */; };
@@ -74,7 +74,7 @@
 
 /* Begin PBXFileReference section */
 		F43F8D9B236ECC9D00B94208 /* SPPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F43F8D9E236ECC9D00B94208 /* SPPermission.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPPermission.h; sourceTree = "<group>"; };
+		F43F8D9E236ECC9D00B94208 /* SPPermissions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPPermissions.h; sourceTree = "<group>"; };
 		F43F8D9F236ECC9D00B94208 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4EA2643236ECE030070B2BA /* SPPermissions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPPermissions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EA2645236ECE040070B2BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				F4FB9E9D2379E96E00F7272C /* Configuration.xcconfig */,
-				F43F8D9E236ECC9D00B94208 /* SPPermission.h */,
+				F43F8D9E236ECC9D00B94208 /* SPPermissions.h */,
 				F43F8D9F236ECC9D00B94208 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -336,7 +336,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F43F8DA0236ECC9D00B94208 /* SPPermission.h in Headers */,
+				F43F8DA0236ECC9D00B94208 /* SPPermissions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
