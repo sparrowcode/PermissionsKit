@@ -37,7 +37,7 @@ class SPPermissionTableViewCell: UITableViewCell {
         
         contentView.addSubview(iconContainerView)
         iconContainerView.translatesAutoresizingMaskIntoConstraints = false
-        iconContainerView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor).isActive = true
+        iconContainerView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor, constant: -2).isActive = true
         iconContainerView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: verticalSpace).isActive = true
         iconContainerView.widthAnchor.constraint(equalToConstant: 45).isActive = true
         iconContainerView.heightAnchor.constraint(equalToConstant: 45).isActive = true
@@ -54,7 +54,7 @@ class SPPermissionTableViewCell: UITableViewCell {
         titleLabel.font = UIFont.systemFont(ofSize: 19, weight: .semibold)
         contentView.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -10).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -15).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: iconContainerView.trailingAnchor, constant: 10).isActive = true
         titleLabel.topAnchor.constraint(equalTo: iconContainerView.topAnchor, constant: 5).isActive = true
         
