@@ -204,7 +204,11 @@ Do not use the description as the name of the key.
 
 ### Localization
 
-Describe here how localize keys.
+If you use xliff localization export, keys will be create automatically. If you prefer do localization file manually, you need create `InfoPlist.strings`, select languages in right side menu and add keys as keys in plist-file. See:
+
+```
+"NSCameraUsageDescription" = "Here description of usage camera";
+```
 
 ## How I do UI
 

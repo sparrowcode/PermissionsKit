@@ -13,16 +13,8 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        /*let controller = SPPermissions.list([.calendar, .camera, .contacts])
-        
-        controller.dataSource = self
-        controller.delegate = self
-        
-        controller.title = ""
-        controller.headerText = ""
-        controller.footerText = ""
-        
-        controller.present(on: self)*/
+        let controller = SPPermissions.list([.calendar, .camera, .notification])
+        controller.present(on: self)
     }
 }
 

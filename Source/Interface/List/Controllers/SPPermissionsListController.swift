@@ -23,8 +23,6 @@ import UIKit
 
 /**
  Controller for List interface.
- 
- - warning: Not present it from parent controller method. Use in class method `present(on:)`.
  */
 public class SPPermissionsListController: UITableViewController, SPPermissionsControllerProtocol {
     
