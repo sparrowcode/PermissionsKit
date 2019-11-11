@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2017 Ivan Vorobei (ivanvorobei@icloud.com)
+// Copyright © 2019 Ivan Vorobei (ivanvorobei@icloud.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -25,20 +25,20 @@ import UIKit
  Available permissions. For request permissions recomended use `SPPermissions.requestNative()`.
  For check permission avability use `.isAuthorized` & `.isDenied` methods.
  */
-public enum SPPermission: String {
+@objc public enum SPPermission: Int {
     
-    case speech = "speech"
-    case motion = "motion"
-    case camera = "camera"
-    case calendar = "calendar"
-    case contacts = "contacts"
-    case reminders = "reminders"
-    case microphone = "microphone"
-    case photoLibrary = "photo library"
-    case notification = "notification"
-    case mediaLibrary = "media library"
-    case locationWhenInUse = "location when use"
-    case locationAlwaysAndWhenInUse = "location always"
+    case camera = 0
+    case photoLibrary = 1
+    case notification = 2
+    case microphone = 3
+    case calendar = 4
+    case contacts = 5
+    case reminders = 6
+    case speech = 7
+    case locationWhenInUse = 9
+    case locationAlwaysAndWhenInUse = 10
+    case motion = 11
+    case mediaLibrary = 12
     
     /**
      Check permission is allowed.
@@ -48,17 +48,20 @@ public enum SPPermission: String {
     }
     
     /**
-     Check permission is denied.
+     Check permission is denied. If permission not requested anytime returned `false`.
      */
     public var isDenied: Bool {
         SPPermission.manager(for: self).isDenied
     }
     
+    /**
+     Request permission now
+     */
     public func request(completion: @escaping ()->()) {
         let manager = SPPermission.manager(for: self)
         if let usageDescriptionKey = usageDescriptionKey {
             guard let _ = Bundle.main.object(forInfoDictionaryKey: usageDescriptionKey) else {
-                print("SPPermissions Warning - \(usageDescriptionKey) for \(description) not found in Info.plist")
+                print("SPPermissions Warning - \(usageDescriptionKey) for \(name) not found in Info.plist")
                 return
             }
         }
@@ -101,7 +104,7 @@ public enum SPPermission: String {
 
 extension SPPermission {
     
-    fileprivate static func manager(for permission: SPPermission) -> SPPermissionInterface {
+    fileprivate static func manager(for permission: SPPermission) -> SPPermissionProtocol {
         switch permission {
         case .camera:
             #if SPPERMISSION_CAMERA
@@ -179,10 +182,10 @@ extension SPPermission {
     }
     
     fileprivate static func error(_ permission: SPPermission) -> String {
-        return "SPPermissions - \(permission.description) not import. Probelm not with \(permission.usageDescriptionKey ?? "usage key"). See Readme: https://github.com/ivanvorobei/SPPermission"
+        return "SPPermissions - \(permission.name) not import. Probelm not with \(permission.usageDescriptionKey ?? "usage key"). See Readme: https://github.com/ivanvorobei/SPPermission"
     }
     
-    fileprivate var description: String {
-        return rawValue.localizedUppercase
+    fileprivate var name: String {
+        return SPPermissionsText.name(for: self)
     }
 }

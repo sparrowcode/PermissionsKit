@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2017 Ivan Vorobei (ivanvorobei@icloud.com)
+// Copyright © 2019 Ivan Vorobei (ivanvorobei@icloud.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,9 +21,12 @@
 
 import UIKit
 
-protocol SPPermissionInterface {
+/**
+Requerid methods for presenter, usually it subsclass of `UIViewController`.
+*/
+protocol SPPermissionsControllerProtocol {
     
-    func request(completion: @escaping ()->()?)
-    var isAuthorized: Bool { get }
-    var isDenied: Bool { get }
+    var dataSource: SPPermissionsDataSource? { get set }
+    var delegate: SPPermissionsDelegate? { get set }
+    func present(on controller: UIViewController)
 }
