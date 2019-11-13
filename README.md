@@ -13,7 +13,7 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
 
 [![https://github.com/ivanvorobei](https://cdn-ivanvorobei.fra1.digitaloceanspaces.com/github/assets/follow-me-on-github.svg)](https://github.com/ivanvorobei)
 
-For now I develop version 5.0, if you want help me - check cooperation [section](https://github.com/ivanvorobei/SPPermissions/tree/version-5#сooperation). New version now available in branch `version-5`.
+For now I develop version 5.0, if you want help me - check cooperation [section](https://github.com/ivanvorobei/SPPermissions/tree/version-5#сooperation). New version now available in branch `version-5`. If you have any questions, create issue or see our [community chat](https://t.me/SPPermissions).
 
 ## Navigate
 
@@ -124,6 +124,8 @@ carthage build
 If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Put `Source/SPPermission` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
 After it need implement configuration file. See example [configuration file](https://github.com/ivanvorobei/SPPermissions/blob/master/ExampleConfiguration.xcconfig) or example project.
+
+If you have any questions, create issue or see our [community chat](https://t.me/SPPermissions).
 
 ## Usage
 
