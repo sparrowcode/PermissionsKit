@@ -13,6 +13,8 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
 
 [![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
 
+If you want help project, see [Сooperation](#сooperation) section or our [chat](https://t.me/sppermissions).
+
 ## Navigate
 
 - [Requirements](#requirements)
