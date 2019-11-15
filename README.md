@@ -1,6 +1,6 @@
 # SPPermissions
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Readme/Preview.gif" width="490"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Readme/Preview.gif" width="460"/>
 
 ### About
 API to ask for permissions on Swift. Available table, dialog & native. Available check state permissions. I do UI in **Apple style**. 
@@ -31,7 +31,6 @@ If you want help project, see [Сooperation](#сooperation) section or our [chat
 - [Keys in Info.plist](#keys-in-infoplist)
 - [Localization](#localization)
 - [Сooperation](#сooperation)
-- [How I do UI](#how-i-do-UI)
 - [License](#license)
 
 ## Requirements
