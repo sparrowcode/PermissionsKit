@@ -127,15 +127,15 @@ Modal alert, which you can see in version 4. I recreate methods for it and usage
 ```swift
 let controller = SPPermissions.dialog([.camera, .photoLibrary])
 
-// Set `DataSource` or `Delegate` if need. 
-// By default using project texts and icons.
-controller.dataSource = self
-controller.delegate = self
-
 // Ovveride texts in controller
 controller.titleText = "Title Text"
 controller.subtitleText = "Subtitle Text"
 controller.commentText = "Comment Text"
+
+// Set `DataSource` or `Delegate` if need. 
+// By default using project texts and icons.
+controller.dataSource = self
+controller.delegate = self
 
 // Always use this method for present
 controller.present(on: self)
@@ -148,15 +148,15 @@ List it native `UITableViewController` with support iPad. Show description of pe
 ```swift
 let controller = SPPermissions.list([.calendar, .camera, .contacts])
 
-// Set `DataSource` or `Delegate` if need. 
-// By default using project texts and icons.
-controller.dataSource = self
-controller.delegate = self
-
 // Ovveride texts in controller
 controller.titleText = "Title Text"
 controller.headerText = "Header Text"
 controller.footerText = "Footer Text"
+
+// Set `DataSource` or `Delegate` if need. 
+// By default using project texts and icons.
+controller.dataSource = self
+controller.delegate = self
 
 // Always use this method for present
 controller.present(on: self)
