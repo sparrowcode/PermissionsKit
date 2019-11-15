@@ -1,6 +1,6 @@
 # SPPermissions
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Readme/Preview.gif" width="460"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Readme/Preview.gif" width="450"/>
 
 ### About
 API to ask for permissions on Swift. Available table, dialog & native. Available check state permissions. I do UI in **Apple style**. 
@@ -211,12 +211,6 @@ If you use xliff localization export, keys will be create automatically. If you 
 "NSCameraUsageDescription" = "Here description of usage camera";
 ```
 
-## How I do UI
-
-I develop `SPPermissions` in Apple-way. For this, I check 30 apps to get UI-elements for it project. I am take screenshoot and draw it in Sketch. For example, `Allow` button is similar to `Get` button in the AppStore. Check [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I am design `SPPermissions`:
-
-[![Timelaps on YouTube](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Readme/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
-
 ## Сooperation
 
 The development of this project is completely free. If you can make a contribution, it will help development. Here list of task what need do:
@@ -226,6 +220,12 @@ The development of this project is completely free. If you can make a contributi
 - Subtitles for [video](https://youtube.com/ivanvorobei) in any your native languages, where I tell you how to connect a configuration file.
 - Help me translate [Debts app](https://itunes.apple.com/app/id1446635818) for other languages. 
 - Support Swift Package Manager.
+
+## How I do UI
+
+I develop `SPPermissions` in Apple-way. For this, I check 30 apps to get UI-elements for it project. I am take screenshoot and draw it in Sketch. For example, `Allow` button is similar to `Get` button in the AppStore. Check [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I am design `SPPermissions`:
+
+[![Timelaps on YouTube](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Readme/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
 
 ## License
 
