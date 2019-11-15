@@ -1,9 +1,9 @@
 # SPPermissions
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Readme/Preview.gif" width="450"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Readme/Preview.gif" width="470"/>
 
 ### About
-API to ask for permissions on Swift. Available table, dialog & native. Available check state permissions. I do UI in **Apple style**. 
+API to ask for permissions on Swift. Available table, dialog & native. I do UI in **Apple style**. Also you can check state permissions.
 
 Visit my store for iOS developers:
 
