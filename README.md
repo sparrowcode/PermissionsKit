@@ -23,6 +23,8 @@ Now I migrate `SPPermissions` to new `5.0` vesion. If you found any bugs or need
 pod 'SPPermissions', '4.1.4'
 ```
 
+I recomended install new version and create issue. I resolve all issue in 24-48 hours.
+
 ## Navigate
 
 - [Requirements](#requirements)
