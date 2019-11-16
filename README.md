@@ -36,8 +36,8 @@ I recomended install new version and create issue. I resolve all issue in 24-48 
     - [Dialog](#dialog)
     - [List](#list)
     - [Native](#native)
-- [Examples Code](#examples-code)
 - [Permissions](#permissions)
+- [Good Practices](#good-practices)
 - [Keys in Info.plist](#keys-in-infoplist)
 - [Localization](#localization)
 - [Сooperation](#сooperation)
@@ -192,6 +192,14 @@ Native description.
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Permissions/Speech.svg" width="105">
 </p>
 
+For check state of any permission, call enum `SPPermission`: 
+
+```swift
+let _ = SPPermission.calendar.isAuthorized
+```
+
+Also available func `isDenied`. This return false, if permission not requested before.
+
 ## Good Practices
 
 I recommend show the all list of permissions, even if some of them are allowed. But if you want to request only none-allowed permissions, use this code:
@@ -254,9 +262,9 @@ The development of this project is completely free. If you can make a contributi
 - Help me translate [Debts app](https://itunes.apple.com/app/id1446635818) for other languages. 
 - Support Swift Package Manager.
 
-## How I do UI
+## Design previous version
 
-I develop `SPPermissions` in Apple-way. For this, I check 30 apps to get UI-elements for it project. I am take screenshoot and draw it in Sketch. For example, `Allow` button is similar to `Get` button in the AppStore. Check [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I am design `SPPermissions`:
+I develop `SPPermissions` in Apple-way. For this, I check 30 apps to get UI-elements for it project. I am take screenshoot and draw it in Sketch. For example, `Allow` button is similar to `Get` button in the AppStore. Check [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I am design `4.0` version of  `SPPermissions`:
 
 [![Timelaps on YouTube](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Readme/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
 
