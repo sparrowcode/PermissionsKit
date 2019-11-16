@@ -68,6 +68,8 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
         let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(self.handleGesture(sender:)))
         panGesture.maximumNumberOfTouches = 1
         dialogView.addGestureRecognizer(panGesture)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     public override func viewDidLayoutSubviews() {
@@ -125,6 +127,17 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     
     @objc func dimissWithDialog() {
         dismiss(withDialog: true)
+    }
+    
+    /**
+     Update buttons when app launch again. No need call manually.
+     */
+    @objc func applicationDidBecomeActive() {
+        for cell in tableView.visibleCells {
+            if let permissionCell = cell as? SPPermissionTableViewCell {
+                permissionCell.button.update()
+            }
+        }
     }
     
     private var dialogCenter: CGPoint {

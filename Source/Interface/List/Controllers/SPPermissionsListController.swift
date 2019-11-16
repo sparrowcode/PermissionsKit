@@ -118,6 +118,14 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         controller.present(navController, animated: true, completion: nil)
     }
     
+    public func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func dismissAnimated() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /**
      Update buttons when app launch again. No need call manually.
      */
@@ -127,14 +135,6 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
                 permissionCell.button.update()
             }
         }
-    }
-    
-    public func dismiss() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @objc func dismissAnimated() {
-        self.dismiss(animated: true, completion: nil)
     }
     
     deinit {
