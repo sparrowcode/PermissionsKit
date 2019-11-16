@@ -187,7 +187,7 @@ controller.present(on: self)
 
 A good way to check or need to show a dialog, check or all permissions are received:
 
-```
+```swift
 let permissions = [.notification, .reminders].filter { !$0.isAuthorized }
 if permissions.isEmpty {
     // No need show dialog
