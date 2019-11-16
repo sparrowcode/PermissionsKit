@@ -35,7 +35,7 @@ class SPPermissionsDialogView: UIView {
         layer.anchorPoint = CGPoint.init(x: 0.5, y: 0.5)
         
         titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.systemFont(ofSize: 31, weight: .bold)
+        titleLabel.font = UIFont.systemFont(ofSize: 29, weight: .bold)
         titleLabel.textColor = SPPermissionsColor.label
         addSubview(titleLabel)
         
