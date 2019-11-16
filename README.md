@@ -39,7 +39,7 @@ I recomended install new version and create issue. I resolve all issues in 24-48
 - [Permissions](#permissions)
 - [Good Practices](#good-practices)
 - [Keys in Info.plist](#keys-in-infoplist)
-- [Localization](#localization)
+- [Localization](#localization-keys)
 - [Сooperation](#сooperation)
 - [License](#license)
 
@@ -174,7 +174,19 @@ controller.present(on: self)
 
 ### Native
 
-Native description.
+Request permissions with native alerts. You can request many permissions at once:
+
+```swift
+let controller = SPPermissions.native([.calendar, .camera, .contacts])
+
+// Set `Delegate` if need. 
+// Datasource never call, igore it.
+controller.delegate = self
+
+// Always use this method for request. 
+//You can pass any controller, this request becouse need implement base protocol.
+controller.present(on: self)
+```
 
 ## Permissions
 
@@ -220,7 +232,7 @@ if permissions.isEmpty {
 }
 ```
 
-If you request locations, you can show twice `.locationWhenInUse` & `.locationAlwaysAndWhenInUse`. If user allowed `always` mode, also change `when in use` mode.
+If you request locations, you can show twice `.locationWhenInUse` & `.locationAlwaysAndWhenInUse`. If user allowed `always` mode, also change `when in use` mode:
 
 ```swift
 let controller = SPPermissions.dialog([.locationWhenInUse, .locationAlwaysAndWhenInUse])
@@ -244,7 +256,7 @@ You need to add some keys to the `Info.plist` file with description. List of key
 
 Do not use the description as the name of the key.
 
-### Localization
+### Localization keys
 
 If you use xliff localization export, keys will be create automatically. If you prefer do localization file manually, you need create `InfoPlist.strings`, select languages in right side menu and add keys as keys in plist-file. See:
 

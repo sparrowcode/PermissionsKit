@@ -22,12 +22,35 @@
 import UIKit
 
 /**
-Requerid methods for presenter, usually it subsclass of `UIViewController`.
-*/
-protocol SPPermissionsControllerProtocol {
+ Controller for Native interface.
+ */
+public class SPPermissionsNativeController: NSObject, SPPermissionsControllerProtocol {
     
-    var dataSource: SPPermissionsDataSource? { get set }
-    var delegate: SPPermissionsDelegate? { get set }
+    public weak var dataSource: SPPermissionsDataSource?
+    public weak var delegate: SPPermissionsDelegate?
     
-    func present(on controller: UIViewController)
+    private var permissions: [SPPermission]
+    
+    init(_ permissions: [SPPermission]) {
+        self.permissions = permissions
+        super.init()
+    }
+    
+    /**
+     Call this method for present controller on other controller.
+     In this method controller configure.
+     
+     - parameter controller: Controller, on which need present `SPPermissions` controller. In this func no need pass actual controller, this method need for implement protocol `SPPermissionsControllerProtocol`.
+     */
+    public func present(on controller: UIViewController) {
+        for permission in permissions {
+            permission.request { [weak self] in
+                if permission.isAuthorized {
+                    self?.delegate?.didAllow?(permission: permission)
+                } else {
+                    self?.delegate?.didDenied?(permission: permission)
+                }
+            }
+        }
+    }
 }
