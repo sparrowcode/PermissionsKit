@@ -3,7 +3,7 @@
 <img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Readme/Preview - 5.0.jpg" width="470"/>
 
 ### About
-API to ask for permissions on Swift. Available table, dialog & native. I do UI in **Apple style**. Also you can check state permissions.
+API to ask permissions on Swift. Available list, dialog & native. I do UI in **Apple style**, support iPad & dark mode. Also you can check state permissions.
 
 Visit my store for iOS developers:
 
@@ -17,7 +17,11 @@ For help project, see [Сooperation](#сooperation) section or our [chat](https:
 
 ## Pay attention
 
-Now I migrate `SPPermissions` to new `5.0` vesion. If you found any bugs or need old functionality - please, create issue or write me.
+Now I migrate `SPPermissions` to new `5.0` vesion. If you found any bugs or need old functionality - please, create issue or write me. If you want install old version, add this to your Podfile:
+
+```ruby
+pod 'SPPermissions', '4.1.4'
+```
 
 ## Navigate
 
