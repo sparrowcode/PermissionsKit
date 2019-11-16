@@ -100,7 +100,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
             }
             
             if permission.isDenied {
-                print("Show alert about settings")
+                SPPermissionsOpener.openSettings()
             }
         }
     }
