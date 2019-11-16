@@ -132,7 +132,7 @@ Project separates to modules. For now available `Dialog`, `List` and `Native` mo
 
 ### Dialog
 
-Modal alert, which you can see in version 4. I recreate methods for it and usage will be simple.
+Modal alert, which you can see in previous version. I recreate methods for it and usage will be simple:
 
 ```swift
 let controller = SPPermissions.dialog([.camera, .photoLibrary])
@@ -153,7 +153,7 @@ controller.present(on: self)
 
 ### List
 
-List it native `UITableViewController` with support iPad. Show description of permissions and icon.  See example of usage:
+Native `UITableViewController` with support iPad. Show description of permissions and icon.  See example of usage:
 
 ```swift
 let controller = SPPermissions.list([.calendar, .camera, .contacts])
@@ -207,7 +207,7 @@ controller.present(on: self)
 For check state of any permission, call enum `SPPermission`: 
 
 ```swift
-let _ = SPPermission.calendar.isAuthorized
+let state = SPPermission.calendar.isAuthorized
 ```
 
 Also available func `isDenied`. This return false, if permission not requested before.
