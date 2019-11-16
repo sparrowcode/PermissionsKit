@@ -21,26 +21,49 @@
 
 import UIKit
 
-class SPPermissionsListHeaderView: UITableViewHeaderFooterView {
+class SPPermissionsGradeBlurView: UIView {
     
-    let titleLabel = UILabel()
+    private var gradeView: UIView = UIView()
+    private var blurView: UIView = UIView()
     
-    static var id = "SPPermissionsListHeaderView"
-
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
-        titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        titleLabel.textColor = SPPermissionsColor.secondaryLabel
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(titleLabel)
-        titleLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: -2).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25).isActive = true
+    init() {
+        super.init(frame: CGRect.zero)
+        backgroundColor = .clear
+        setGradeColor(SPPermissionsColor.black)
+        setGradeAlpha(0)
+        setBlurRadius(0)
+        commonInit()
     }
     
-    required init?(coder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private func commonInit() {
+        blurView = SPPermissionsBlurView()
+        layer.masksToBounds = true
+        addSubview(gradeView)
+        addSubview(blurView)
+    }
+    
+    func setGradeColor(_ color: UIColor) {
+        gradeView.backgroundColor = UIColor.black
+    }
+    
+    func setGradeAlpha(_ alpha: CGFloat) {
+        gradeView.alpha = alpha
+    }
+    
+    func setBlurRadius(_ radius: CGFloat) {
+        if let blurView = self.blurView as? SPPermissionsBlurView {
+            blurView.setBlurRadius(radius)
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradeView.frame = bounds
+        blurView.frame = bounds
+    }
 }
+

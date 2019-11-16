@@ -21,26 +21,33 @@
 
 import UIKit
 
-class SPPermissionsListHeaderView: UITableViewHeaderFooterView {
+public class SPPermissionsBlurView: UIVisualEffectView {
     
-    let titleLabel = UILabel()
-    
-    static var id = "SPPermissionsListHeaderView"
-
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
-        titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        titleLabel.textColor = SPPermissionsColor.secondaryLabel
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(titleLabel)
-        titleLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: -2).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25).isActive = true
+    private let blurEffect: UIBlurEffect
+    open var blurRadius: CGFloat {
+        return blurEffect.value(forKeyPath: "blurRadius") as! CGFloat
     }
     
-    required init?(coder: NSCoder) {
+    public convenience init() {
+        self.init(withRadius: 0)
+    }
+    
+    public init(withRadius radius: CGFloat) {
+        let customBlurClass: AnyObject.Type = NSClassFromString("_UICustomBlurEffect")!
+        let customBlurObject: NSObject.Type = customBlurClass as! NSObject.Type
+        self.blurEffect = customBlurObject.init() as! UIBlurEffect
+        self.blurEffect.setValue(1.0, forKeyPath: "scale")
+        self.blurEffect.setValue(radius, forKeyPath: "blurRadius")
+        super.init(effect: radius == 0 ? nil : self.blurEffect)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    open func setBlurRadius(_ radius: CGFloat) {
+        guard radius != blurRadius else { return }
+        blurEffect.setValue(radius, forKeyPath: "blurRadius")
+        self.effect = blurEffect
     }
 }

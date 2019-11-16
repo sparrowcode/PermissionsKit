@@ -55,13 +55,10 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         } else {
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissAnimated))
         }
-        navigationItem.title = nil
-        navigationItem.largeTitleDisplayMode = .never
-        navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.view.backgroundColor = .clear
+        
+        navigationItem.title = titleText
+        navigationItem.largeTitleDisplayMode = .automatic
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.delaysContentTouches = false
         tableView.allowsSelection = false
@@ -73,7 +70,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     }
     
     /**
-     Process tap on button with permission.
+     Process tap permission button.
      */
     @objc func process(button: SPPermissionActionButton) {
         let permission = button.permission
@@ -98,7 +95,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
             let allowedPermissions = self.permissions.filter { $0.isAuthorized }
             if allowedPermissions.count == self.permissions.count {
                 SPPermissionsDelay.wait(0.2, closure: {
-                    self.dismissAnimated()
+                    self.dismiss()
                 })
             }
             
@@ -114,7 +111,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
      
      - parameter controller: Controller, on which need present `SPPermissions` controller.
      */
-    func present(on controller: UIViewController) {
+    public func present(on controller: UIViewController) {
         let navController = UINavigationController(rootViewController: self)
         navController.modalPresentationStyle = .formSheet
         navController.preferredContentSize = CGSize.init(width: 480, height: 560)
@@ -130,6 +127,10 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
                 permissionCell.button.update()
             }
         }
+    }
+    
+    public func dismiss() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc func dismissAnimated() {
@@ -157,8 +158,7 @@ extension SPPermissionsListController {
     
     public override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SPPermissionsListHeaderView.id) as! SPPermissionsListHeaderView
-        view.titleLabel.text = titleText
-        view.subtitleLabel.text = headerText
+        view.titleLabel.text = headerText
         return view
     }
     
