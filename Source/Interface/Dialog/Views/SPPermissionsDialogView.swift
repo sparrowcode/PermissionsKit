@@ -23,6 +23,7 @@ import UIKit
 
 class SPPermissionsDialogView: UIView {
     
+    let closeButton = SPPermissionsCloseButton()
     let titleLabel = SPPermissionsLabel()
     let subtitleLabel = SPPermissionsLabel()
     let tableView = UITableView(frame: .zero, style: .plain)
@@ -50,6 +51,9 @@ class SPPermissionsDialogView: UIView {
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 45 + 10 - 5, bottom: 0, right: 0)
         tableView.alwaysBounceVertical = false
         addSubview(tableView)
+
+        closeButton.iconView.areaColor = .clear
+        addSubview(closeButton)
     }
     
     required init?(coder: NSCoder) {
@@ -58,7 +62,7 @@ class SPPermissionsDialogView: UIView {
     
     func layout(in view: UIView) {
         var width = view.bounds.width - 20 * 2
-        if view.bounds.width > view.bounds.height * 1.2 {
+        if view.bounds.width > view.bounds.height * 1.35 {
             if width > 550 { width = 550 }
         } else {
             if width > 380 { width = 380 }
@@ -67,12 +71,22 @@ class SPPermissionsDialogView: UIView {
         let maxHeight = (view.bounds.height - view.layoutMargins.top - view.layoutMargins.bottom) * 0.85
         if height > maxHeight { height = maxHeight }
         bounds = CGRect.init(x: 0, y: 0, width: width, height: height)
+        
+        let shadowPath = UIBezierPath.init(roundedRect: CGRect.init(x: 0, y: 9, width: bounds.width, height: bounds.height), cornerRadius: layer.cornerRadius)
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize.zero
+        layer.shadowOpacity = Float(0.07)
+        layer.shadowRadius = layer.cornerRadius
+        layer.masksToBounds = false
+        layer.shadowPath = shadowPath.cgPath
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         let inset: CGFloat = 19
         let contentWidth = bounds.width - inset - inset
+        let closeSide: CGFloat = 34
+        closeButton.frame = CGRect.init(x: bounds.width - inset / 2.5 - closeSide, y: inset / 2.5, width: closeSide, height: closeSide)
         subtitleLabel.layout(x: inset, y: inset, width: contentWidth)
         titleLabel.layout(x: inset, y: subtitleLabel.frame.origin.y + subtitleLabel.frame.height + 2, width: contentWidth)
         let contentHeight = tableView.contentSize.height

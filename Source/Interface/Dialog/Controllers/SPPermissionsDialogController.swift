@@ -59,6 +59,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
         dialogView.tableView.delegate = self
         dialogView.tableView.register(SPPermissionsDialogFooterCommentView.self, forHeaderFooterViewReuseIdentifier: SPPermissionsDialogFooterCommentView.id)
         dialogView.tableView.register(SPPermissionTableViewCell.self, forCellReuseIdentifier: SPPermissionTableViewCell.id)
+        dialogView.closeButton.addTarget(self, action: #selector(self.dimissWithDialog), for: .touchUpInside)
         view.addSubview(dialogView)
         
         animator = UIDynamicAnimator(referenceView: view)
@@ -88,7 +89,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
         dialogView.center = CGPoint.init(x: dialogCenter.x, y: dialogCenter.y * 1.2)
         modalPresentationStyle = .overCurrentContext
         controller.present(self, animated: false, completion: {
-            UIView.animate(withDuration: 0.8, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.backgroundView.setGradeAlpha(0.07)
                 self.backgroundView.setBlurRadius(4)
             }, completion: nil)
@@ -115,14 +116,15 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
             }, completion: nil)
         }
         UIView.animate(withDuration: 0.3, animations: {
-            //close and bottom comment here
-        })
-        UIView.animate(withDuration: 0.6, animations: {
             self.backgroundView.setGradeAlpha(0)
             self.backgroundView.setBlurRadius(0)
         }, completion: { finished in
             self.dismiss(animated: false, completion: nil)
         })
+    }
+    
+    @objc func dimissWithDialog() {
+        dismiss(withDialog: true)
     }
     
     private var dialogCenter: CGPoint {
@@ -162,7 +164,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
             }
             
             if permission.isDenied {
-                print("Show alert about settings")
+                SPPermissionsOpener.openSettings()
             }
         }
     }
