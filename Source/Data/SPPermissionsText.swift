@@ -31,6 +31,10 @@ enum SPPermissionsText {
         return "This permissions need for work app, see description for each permission."
     }
     
+    static var subtitleShortText: String {
+        return "Permissions request"
+    }
+    
     static var commentText: String {
         return "Permissions are necessary for the correct work of the application and the performance of all functions. Push are not required permissions"
     }

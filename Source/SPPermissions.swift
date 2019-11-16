@@ -51,12 +51,13 @@ public enum SPPermissions {
      - parameter permissions: List of permissions for request.
      - returns: Controller for configure data. Ready for present.
      */
-    public static func dialog(_ permissions: [SPPermission]) -> SPPermissionsListController {
-        fatalError()
+    public static func dialog(_ permissions: [SPPermission]) -> SPPermissionsDialogController {
+        let controller = SPPermissionsDialogController(removeDublicates(permissions))
+        return controller
     }
     
     /**
-     Remove dublicates permissions if add as mistake.
+     Remove dublicates permissions if added as mistake.
      */
     private static func removeDublicates(_ permissions: [SPPermission]) -> [SPPermission] {
         return Array(Set(permissions))

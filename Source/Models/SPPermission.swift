@@ -25,7 +25,7 @@ import UIKit
  Available permissions. For request permissions recomended use `SPPermissions.requestNative()`.
  For check permission avability use `.isAuthorized` & `.isDenied` methods.
  */
-@objc public enum SPPermission: Int {
+@objc public enum SPPermission: Int, CaseIterable {
     
     case camera = 0
     case photoLibrary = 1
@@ -185,7 +185,7 @@ extension SPPermission {
         return "SPPermissions - \(permission.name) not import. Probelm not with \(permission.usageDescriptionKey ?? "usage key"). See Readme: https://github.com/ivanvorobei/SPPermission"
     }
     
-    fileprivate var name: String {
+    public var name: String {
         return SPPermissionsText.name(for: self)
     }
 }

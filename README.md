@@ -15,6 +15,10 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
 
 For help project, see [Сooperation](#сooperation) section or our [chat](https://t.me/sppermissions).
 
+## Pay attention
+
+Now I migrate `SPPermissions` to new `5.0` vesion. If you found any bugs or need old functionality - please, create issue or write me.
+
 ## Navigate
 
 - [Requirements](#requirements)

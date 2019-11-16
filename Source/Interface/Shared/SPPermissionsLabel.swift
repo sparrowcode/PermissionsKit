@@ -21,26 +21,12 @@
 
 import UIKit
 
-class SPPermissionsListHeaderView: UITableViewHeaderFooterView {
+class SPPermissionsLabel: UILabel {
     
-    let titleLabel = UILabel()
-    
-    static var id = "SPPermissionsListHeaderView"
-
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
-        titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        titleLabel.textColor = SPPermissionsColor.secondaryLabel
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(titleLabel)
-        titleLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: -2).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25).isActive = true
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func layout(x: CGFloat, y: CGFloat, width: CGFloat) {
+        frame = CGRect.init(x: frame.origin.x, y: frame.origin.y, width: width, height: frame.height)
+        sizeToFit()
+        frame = CGRect.init(x: frame.origin.x, y: frame.origin.y, width: width, height: frame.height)
+        frame.origin = CGPoint.init(x: x, y: y)
     }
 }

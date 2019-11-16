@@ -21,23 +21,22 @@
 
 import UIKit
 
-class SPPermissionsListHeaderView: UITableViewHeaderFooterView {
+class SPPermissionsDialogFooterCommentView: UITableViewHeaderFooterView {
     
     let titleLabel = UILabel()
-    
-    static var id = "SPPermissionsListHeaderView"
+    static var id = "SPPermissionsDialogFooterCommentView"
 
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        titleLabel.textColor = SPPermissionsColor.secondaryLabel
+        titleLabel.font = UIFont.systemFont(ofSize: 11, weight: .regular)
+        titleLabel.textColor = SPPermissionsColor.secondaryLabel.withAlphaComponent(0.5)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(titleLabel)
-        titleLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: -2).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25).isActive = true
+        contentView.addSubview(titleLabel)
+        titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: 2).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {
