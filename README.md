@@ -45,7 +45,7 @@ I recomended install new version and create issue. I resolve all issue in 24-48 
 
 ## Requirements
 
-Swift `4.2` & `5.0`. Ready for use on iOS 10+
+Swift `4.2` & `5.0`. Ready for use on iOS 11+
 
 ## Installation
 
@@ -54,7 +54,7 @@ Swift `4.2` & `5.0`. Ready for use on iOS 10+
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `SPPermissions` into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'SPPermissions/Notification', :git => 'https://github.com/ivanvorobei/SPPermissions.git', :branch => 'version-5'
+pod 'SPPermissions/Notification'
 ```
 
 Due to Apple's new policy regarding permission access you need to specifically define what kind of permissions you want to access using subspecs. For example if you want to access `Camera`, `Location` & `Microphone` you define the following:
@@ -114,7 +114,7 @@ github "ivanvorobei/SPPermissions"
 ```
 
 By default available all permissions. You can provide custom build flags _before_ building the dynamic framework to only compile
-with permissions you request. Open file [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/master/Example/App/Configuration.xcconfig) in `Source/Supporting Files`, comment unusable permissions and rebuild:
+with permissions you request. Open file [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Source/Supporting%20Files/Configuration.xcconfig) in `Source/Supporting Files`, comment unusable permissions and rebuild:
 
 ```ruby
 carthage build
@@ -124,7 +124,7 @@ carthage build
 
 If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Put `/Source` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
-After it need implement configuration file. See example [configuration file](https://github.com/ivanvorobei/SPPermissions/blob/master/Example/App/Configuration.xcconfig) or example project. If you don't know how add configuration file, see this [short video](https://youtube.com/ivanvorobei).
+After it need implement configuration file. See example [configuration file](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Source/Supporting%20Files/Configuration.xcconfig) or example project. If you don't know how add configuration file, see this [short video](https://youtube.com/ivanvorobei).
 
 ## Usage
 
@@ -176,9 +176,32 @@ controller.present(on: self)
 
 Native description.
 
-## Examples Code
+## Good Practices
 
-Here examples of codes and usage `SPPermissions`.
+I recommend show the all list of permissions, even if some of them are allowed. But if you want to request only none-allowed permissions, use this code:
+
+```swift
+let controller = SPPermissions.list([.notification, .reminders].filter { !$0.isAuthorized } )
+controller.present(on: self)
+```
+
+A good way to check or need to show a dialog, check or all permissions are received:
+
+```
+let permissions = [.notification, .reminders].filter { !$0.isAuthorized }
+if permissions.isEmpty {
+    // No need show dialog
+} else {
+    // Show dialog
+}
+```
+
+If you request locations, you can show twice `.locationWhenInUse` & `.locationAlwaysAndWhenInUse`. If user allowed `always` mode, also change `when in use` mode.
+
+```swift
+let controller = SPPermissions.dialog([.locationWhenInUse, .locationAlwaysAndWhenInUse])
+controller.present(on: self)
+```
 
 ## Permissions
 
