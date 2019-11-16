@@ -1,6 +1,6 @@
 # SPPermissions
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Readme/Preview1.jpg" width="470"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/version-5/Assets/Readme/Preview.jpg" width="470"/>
 
 ### About
 API to ask for permissions on Swift. Available table, dialog & native. I do UI in **Apple style**. Also you can check state permissions.
