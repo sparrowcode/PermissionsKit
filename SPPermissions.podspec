@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
 
   s.name          = "SPPermissions"
-  s.version       = "4.1.4"
-  s.summary       = "A unified API to ask for permissions on iOS. Available dialog UI."
+  s.version       = "5.0"
+  s.summary       = "API to ask for permissions on Swift. Available diffrents dialogs."
   s.homepage      = "https://github.com/IvanVorobei/SPPermissions"
   s.source        = { :git => "https://github.com/IvanVorobei/SPPermissions.git", :tag => s.version }
   s.license       = { :type => "MIT", :file => "LICENSE" }
   
-  s.author        = { "Ivan Vorobei" => "hello@ivanvorobei.by" }
+  s.author        = { "Ivan Vorobei" => "ivanvorobei@icloud.com" }
   
   s.platform      = :ios
   s.ios.framework = 'UIKit'
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Core'
 
   s.subspec 'Core' do |co|
-    co.source_files  = "Source/SPPermission/**/*.swift"
+    co.source_files  = "Source/**/*.swift"
   end
 
   s.subspec 'Camera' do |cm|
