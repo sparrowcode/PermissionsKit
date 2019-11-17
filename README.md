@@ -30,6 +30,7 @@ I recomended install new version and create issue. I resolve all issues in 24-48
 - [Requirements](#requirements)
 - [Installation](#installation)
     - [CocoaPods](#cocoapods)
+    - [Swift Package Manager](#swift-package-manager)
     - [Carthage](#carthage)
     - [Manually](#manually)
 - [Usage](#usage)
@@ -105,6 +106,18 @@ pod 'SPPermissions/MediaLibrary'
 </p>
 </details>
 
+### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
+
+To integrate `SPPermissions` into your Xcode project using Xcode 11, specify it in `Project > Swift Packages`:
+
+```ogdl
+https://github.com/ivanvorobei/SPPermissions
+```
+
+After integrate need add configuration. See example [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Source/Supporting%20Files/Configuration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtube.com/ivanvorobei).
+
 ### Carthage
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate `SPPermissions` into your Xcode project using Carthage, specify it in your `Cartfile`:
@@ -124,7 +137,7 @@ carthage build
 
 If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Put `/Source` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
-After it need implement configuration file. See example [configuration file](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Source/Supporting%20Files/Configuration.xcconfig) or example project. If you don't know how add configuration file, see this [short video](https://youtube.com/ivanvorobei).
+After it need add configuration. See example [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Source/Supporting%20Files/Configuration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtube.com/ivanvorobei).
 
 ## Usage
 
@@ -268,7 +281,7 @@ If you use xliff localization export, keys will be create automatically. If you 
 
 The development of this project is completely free. If you can make a contribution, it will help development. Here list of task what need do:
 
-- Fix mistakes in this Readme and docs. My English so bad.
+- Fix mistakes in this Readme and docs. My English so bad. Good create pull request.
 - Add docs in source files. Description of public methods and parametrs. 
 - Subtitles for [video](https://youtube.com/ivanvorobei) in any your native languages, where I tell you how to connect a configuration file.
 - Help me translate [Debts app](https://itunes.apple.com/app/id1446635818) for other languages. 

@@ -133,7 +133,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
      Update buttons when app launch again. No need call manually.
      */
     @objc func applicationDidBecomeActive() {
-        for cell in tableView.visibleCells {
+        for cell in dialogView.tableView.visibleCells {
             if let permissionCell = cell as? SPPermissionTableViewCell {
                 permissionCell.button.update()
             }

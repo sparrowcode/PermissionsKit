@@ -85,6 +85,7 @@
 		F43F8D9B236ECC9D00B94208 /* SPPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43F8D9E236ECC9D00B94208 /* SPPermissions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPPermissions.h; sourceTree = "<group>"; };
 		F43F8D9F236ECC9D00B94208 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F483229523819E2E0061F31D /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 		F499B1E1238006CB00B83B08 /* SPPermissionsDialogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsDialogController.swift; sourceTree = "<group>"; };
 		F499B1EC238009D600B83B08 /* SPPermissionsGradeBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionsGradeBlurView.swift; sourceTree = "<group>"; };
 		F499B1EE23800C1100B83B08 /* SPPermissionsBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsBlurView.swift; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 				F4EA2761236F7C660070B2BA /* .gitignore */,
 				F4EA268D236F2DC10070B2BA /* LICENSE */,
 				F4EA275C236F75430070B2BA /* README.md */,
+				F483229523819E2E0061F31D /* Package.swift */,
 				F4EA268E236F2DC10070B2BA /* SPPermissions.podspec */,
 			);
 			path = Deployment;
