@@ -182,7 +182,7 @@ extension SPPermission {
     }
     
     fileprivate static func error(_ permission: SPPermission) -> String {
-        return "SPPermissions - \(permission.name) not import. Probelm not with \(permission.usageDescriptionKey ?? "usage key"). See Readme: https://github.com/ivanvorobei/SPPermission"
+        return "SPPermissions - \(permission.name) not import. Probelm NOT with \(permission.usageDescriptionKey ?? "usage key"). See Readme: https://github.com/ivanvorobei/SPPermissions"
     }
     
     public var name: String {
