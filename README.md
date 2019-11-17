@@ -141,11 +141,11 @@ After it need add configuration. See example [Configuration.xcconfig](https://gi
 
 ## Usage
 
-Project separates to modules. For now available `Dialog`, `List` and `Native` mode. Each mode has delegates and datasource. Soon I add preview for each mode. See more here:
+Project separates to modules. For now available `Dialog`, `List` and `Native` mode. Each mode has delegates and datasource. Soon I recored preview with review each mode. 
 
 ### Dialog
 
-Modal alert, which you can see in previous version. I recreate methods for it and usage will be simple:
+Modal alert, which you can see in previous version. I recomend use it mode when permissions less than three. Usage will be simple:
 
 ```swift
 let controller = SPPermissions.dialog([.camera, .photoLibrary])
@@ -166,7 +166,7 @@ controller.present(on: self)
 
 ### List
 
-Native `UITableViewController` with support iPad. Show description of permissions and icon.  See example of usage:
+Native `UITableViewController` with support iPad. Use it with more two permissions. How it use:
 
 ```swift
 let controller = SPPermissions.list([.calendar, .camera, .contacts])
