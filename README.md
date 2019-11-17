@@ -193,7 +193,7 @@ Request permissions with native alerts. You can request many permissions at once
 let controller = SPPermissions.native([.calendar, .camera, .contacts])
 
 // Set `Delegate` if need. 
-// Datasource never call, igore it.
+// Datasource never call, ignore it.
 controller.delegate = self
 
 // Always use this method for request. 
