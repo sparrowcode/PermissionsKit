@@ -116,7 +116,7 @@ To integrate `SPPermissions` into your Xcode project using Xcode 11, specify it 
 https://github.com/ivanvorobei/SPPermissions
 ```
 
-After integrate need add configuration. See example [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Source/Supporting%20Files/Configuration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtube.com/ivanvorobei).
+After integrate need add configuration. See example [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Source/Supporting%20Files/Configuration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtu.be/1kR5HGVhJfk).
 
 ### Carthage
 
@@ -137,7 +137,7 @@ carthage build
 
 If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Put `/Source` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
-After it need add configuration. See example [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Source/Supporting%20Files/Configuration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtube.com/ivanvorobei).
+After it need add configuration. See example [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/version-5/Source/Supporting%20Files/Configuration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtu.be/1kR5HGVhJfk).
 
 ## Usage
 
@@ -283,7 +283,7 @@ The development of this project is completely free. If you can make a contributi
 
 - Fix mistakes in this Readme and docs. My English so bad. Good create pull request.
 - Add docs in source files. Description of public methods and parametrs. 
-- Subtitles for [video](https://youtube.com/ivanvorobei) in any your native languages, where I tell you how to connect a configuration file.
+- Subtitles for [video](https://youtu.be/1kR5HGVhJfk) in any your native languages, where I tell you how to connect a configuration file.
 - Help me translate [Debts app](https://itunes.apple.com/app/id1446635818) for other languages. 
 - Support Swift Package Manager.
 
