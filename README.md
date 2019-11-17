@@ -40,7 +40,7 @@ I recomended install new version and create issue. I resolve all issues in 24-48
 - [Permissions](#permissions)
 - [Good Practices](#good-practices)
 - [Keys in Info.plist](#keys-in-infoplist)
-- [Localization](#localization-keys)
+    - [Localization](#localization-keys)
 - [Сooperation](#сooperation)
 - [License](#license)
 
