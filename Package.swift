@@ -8,9 +8,9 @@ let package = Package(
        .iOS(.v11)
     ],
     products: [
-        .library(name: "SPPermissions", targets: ["SPPermissions iOS"])
+        .library(name: "SPPermissions", targets: ["SPPermissions"])
     ],
     targets: [
-        .target(name: "SPPermissions iOS", dependencies: [], path: "Source/")
+        .target(name: "SPPermissions", dependencies: [])
     ]
 )
