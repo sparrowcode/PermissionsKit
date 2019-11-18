@@ -116,7 +116,7 @@ To integrate `SPPermissions` into your Xcode project using Xcode 11, specify it 
 https://github.com/ivanvorobei/SPPermissions
 ```
 
-After integrate need add configuration. See example [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/master/Source/SPPermissions/Supporting%20Files/Configuration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtu.be/1kR5HGVhJfk).
+After integrate need add configuration. See example [SPPermissionsConfiguration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/master/Source/Supporting%20Files/SPPermissionsConfiguration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtu.be/1kR5HGVhJfk).
 
 ### Carthage
 
@@ -127,7 +127,7 @@ github "ivanvorobei/SPPermissions"
 ```
 
 By default available all permissions. You can provide custom build flags _before_ building the dynamic framework to only compile
-with permissions you request. Open file [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/master/Source/SPPermissions/Supporting%20Files/Configuration.xcconfig) in `Source/SPPermissions/Supporting Files`, comment unusable permissions and rebuild:
+with permissions you request. Open file [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/master/Source/Supporting%20Files/SPPermissionsConfiguration.xcconfig) in `Source/SPPermissions/Supporting Files`, comment unusable permissions and rebuild:
 
 ```ruby
 carthage build
@@ -137,7 +137,7 @@ carthage build
 
 If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Put `Source/SPPermissions` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
-After it need add configuration. See example [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/master/Source/SPPermissions/Supporting%20Files/Configuration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtu.be/1kR5HGVhJfk).
+After it need add configuration. See example [SPPermissionsConfiguration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/master/Source/SPPermissions/Supporting%20Files/Configuration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtu.be/1kR5HGVhJfk).
 
 ## Usage
 
