@@ -285,7 +285,6 @@ The development of this project is completely free. If you can make a contributi
 - Add docs in source files. Description of public methods and parametrs. 
 - Subtitles for [video](https://youtu.be/1kR5HGVhJfk) in any your native languages, where I tell you how to connect a configuration file.
 - Help me translate [Debts app](https://itunes.apple.com/app/id1446635818) for other languages. 
-- Support Swift Package Manager.
 
 ## Design previous version
 
