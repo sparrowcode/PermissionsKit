@@ -284,7 +284,7 @@ The development of this project is completely free. If you can make a contributi
 - Fix mistakes in this Readme and docs. My English so bad. Good create pull request.
 - Add docs in source files. Description of public methods and parametrs. 
 - Subtitles for [video](https://youtu.be/1kR5HGVhJfk) in any your native languages, where I tell you how to connect a configuration file.
-- Help me translate [Debts app](https://itunes.apple.com/app/id1446635818) for other languages. 
+- Help me translate my app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) for other languages. 
 
 ## Design previous version
 
