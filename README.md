@@ -135,7 +135,7 @@ carthage build
 
 ### Manually
 
-If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Put `/Source/SPPermissions/` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
+If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Put `Source/SPPermissions` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
 After it need add configuration. See example [Configuration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/master/Source/SPPermissions/Supporting%20Files/Configuration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtu.be/1kR5HGVhJfk).
 
