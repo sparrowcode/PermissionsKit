@@ -141,7 +141,7 @@ After it need add configuration. See example [Configuration.xcconfig](https://gi
 
 ## Usage
 
-Project separates to modules. For now available `Dialog`, `List` and `Native` mode. Each mode has delegates and datasource. Soon I recored preview with review each mode. 
+Project separates to modules. For now available `Dialog`, `List` and `Native` interface. Each interface has delegates and datasource. If you want see example app, open `SPPermissions.xcodeproj` and choose `Example` target. 
 
 ### Dialog
 
