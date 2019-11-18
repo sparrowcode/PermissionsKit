@@ -156,6 +156,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F412045423829ECC009C2AC7 /* SPPermissions */ = {
+			isa = PBXGroup;
+			children = (
+				F4EA2660236ED1790070B2BA /* SPPermissions.swift */,
+				F4FB9E77237971CA00F7272C /* Protocols */,
+				F475A2A02375ECC20090824D /* Interface */,
+				F4FB9E8F23798D1000F7272C /* Models */,
+				F4EA2668236F2B890070B2BA /* Permissions */,
+				F4FB9E7D23797D3500F7272C /* Data */,
+			);
+			path = SPPermissions;
+			sourceTree = "<group>";
+		};
 		F43F8D91236ECC9D00B94208 = {
 			isa = PBXGroup;
 			children = (
@@ -179,12 +192,7 @@
 		F43F8DA6236ECCEE00B94208 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				F4EA2660236ED1790070B2BA /* SPPermissions.swift */,
-				F4FB9E77237971CA00F7272C /* Protocols */,
-				F475A2A02375ECC20090824D /* Interface */,
-				F4FB9E8F23798D1000F7272C /* Models */,
-				F4EA2668236F2B890070B2BA /* Permissions */,
-				F4FB9E7D23797D3500F7272C /* Data */,
+				F412045423829ECC009C2AC7 /* SPPermissions */,
 				F43F8DA9236ECD3E00B94208 /* Supporting Files */,
 			);
 			path = Source;

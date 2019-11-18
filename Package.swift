@@ -11,6 +11,6 @@ let package = Package(
         .library(name: "SPPermissions", targets: ["SPPermissions"])
     ],
     targets: [
-        .target(name: "SPPermissions", path: "Source")
+        .target(name: "SPPermissions")
     ]
 )
