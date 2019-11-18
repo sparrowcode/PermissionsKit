@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "SPPermissions"
-  s.version       = "5.0.2"
+  s.version       = "5.0.3"
   s.summary       = "API to ask for permissions on Swift. Available diffrents dialogs."
   s.homepage      = "https://github.com/IvanVorobei/SPPermissions"
   s.source        = { :git => "https://github.com/IvanVorobei/SPPermissions.git", :tag => s.version }
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Core'
 
   s.subspec 'Core' do |co|
-    co.source_files  = "Source/**/*.swift"
+    co.source_files  = "Source/SPPermissions/**/*.swift"
   end
 
   s.subspec 'Camera' do |cm|
