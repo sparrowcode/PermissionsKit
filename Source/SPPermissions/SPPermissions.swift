@@ -24,7 +24,7 @@ import UIKit
 public enum SPPermissions {
     
     /**
-     Request all permissions by each and with native dialog. Force mode.
+     Request all permissions by each and with native dialog. Force mode. Show alert if permission denied.
      
      - parameter permissions: List of permissions for request.
      */
@@ -58,8 +58,14 @@ public enum SPPermissions {
     
     /**
      Remove dublicates permissions if added as mistake.
+     
+     - parameter permissions: List permissions for uniquary.
      */
     private static func removeDublicates(_ permissions: [SPPermission]) -> [SPPermission] {
-        return Array(Set(permissions))
+        var result = [SPPermission]()
+        for permission in permissions {
+            if !result.contains(permission) { result.append(permission) }
+        }
+        return result
     }
 }

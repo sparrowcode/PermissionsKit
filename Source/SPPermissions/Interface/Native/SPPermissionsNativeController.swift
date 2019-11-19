@@ -40,6 +40,7 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerPro
      Call this method for present controller on other controller. In this method controller configure.
      
      - parameter controller: Controller, on which need present `SPPermissions` controller. In this func no need pass actual controller, this method need for implement protocol `SPPermissionsControllerProtocol`.
+     - warning: `didHide` delegate method not call here.
      */
     public func present(on controller: UIViewController) {
         for permission in permissions {
