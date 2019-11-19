@@ -21,68 +21,59 @@
 
 import UIKit
 
-/**
- Texts and icon for permission. Using in Data Source.
- 
- - parameter name: Title of permission.
- - parameter description: Why need this permission.
- - parameter image: Custom icon if need. If nil using default value.
- - parameter allowTitle: Title for button when permission not allow yet. Include denied state.
- - parameter allowedTitle: Title for button when permission allowed.
- */
 public struct SPPermissionData {
     
     /**
      Short name of permission, like `Camera`.
      */
-    var name: String
+    public var name: String
     
     /**
      Describe why you need it permission.
      */
-    var description: String
+    public var description: String
     
     /**
      Pass custom image if you don't want usage default icon.
      */
-    var image: UIImage?
+    public var image: UIImage?
     
     /**
      Title on button when permission not allowed yet.
      */
-    var allowTitle: String
+    public var allowTitle: String
     
     /**
      Title button if permission allowed.
      */
-    var allowedTitle: String
+    public var allowedTitle: String
     
     /**
      If permission denied, after action show alert with propose open settings and allow this permission. Apply only this permission.
      
      - warning: Also need set alert's text, see class description. By default using universal texts.
      */
-    var showAlertOpenSettingsWhenPermissionDenied = true
+    public var showAlertOpenSettingsWhenPermissionDenied = true
     
     /**
     Title of alert.
     */
-    var alertOpenSettingsDeniedPermissionTitle: String? = nil
+    public var alertOpenSettingsDeniedPermissionTitle: String? = nil
     
     /**
     Subtitle of alert.
     */
-    var alertOpenSettingsDeniedPermissionDescription: String? = nil
+    public var alertOpenSettingsDeniedPermissionDescription: String? = nil
     
     /**
     Title of action button.
     */
-    var alertOpenSettingsDeniedPermissionButtonTitle: String? = nil
+    public var alertOpenSettingsDeniedPermissionButtonTitle: String? = nil
     
     /**
     Title of cancel button.
     */
-    var alertOpenSettingsDeniedPermissionCancelTitle: String? = nil
+    public var alertOpenSettingsDeniedPermissionCancelTitle: String? = nil
     
     public init(name: String, description: String, image: UIImage?, allowTitle: String, allowedTitle: String) {
         self.name = name
