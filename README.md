@@ -37,8 +37,8 @@ I recomended install new version and create issue. I resolve all issues in 24-48
     - [Dialog](#dialog)
     - [List](#list)
     - [Native](#native)
-- [DataSource & Delegate](#datasource-delegate)
 - [Permissions](#permissions)
+- [DataSource & Delegate](#datasource--delegate)
 - [Good Practices](#good-practices)
 - [Keys in Info.plist](#keys-in-infoplist)
     - [Localization](#localization-keys)
@@ -202,38 +202,6 @@ controller.delegate = self
 controller.present(on: self)
 ```
 
-## DataSource & Delegate
-
-You have one method for pass data for each permission. If you return `nil`, using default parametrs.
-
-```swift
-func data(for permission: SPPermission) -> SPPermissionData? {
-    return nil
-}
-```
-If you don't want show alert if permission denied, set `showAlertOpenSettingsWhenPermissionDenied` to false: 
-
-```swift
-let notificationData = SPPermissionData(name: "Notification", description: "Remind about new orders for your account.", image: nil, allowTitle: "Allow", allowedTitle: "Allowed")
-notificationData.showAlertOpenSettingsWhenPermissionDenied = false
-```
-
-If you want show this alert, need configure texts:
-
-```swift
-notificationData.alertOpenSettingsDeniedPermissionTitle = "Notifiaction denied"
-notificationData.alertOpenSettingsDeniedPermissionDescription: String = "Please, go to Settings and allow permission."
-notificationData.alertOpenSettingsDeniedPermissionButtonTitle: String = "Settings"
-notificationData.alertOpenSettingsDeniedPermissionCancelTitle: String = "Cancel"
-```
-
-In delegate you can implement two methods: 
-
-```swift
-func didAllow(permission: SPPermission) {}
-func didDenied(permission: SPPermission) {}
-```
-
 ## Permissions
 
 <p float="left">
@@ -257,6 +225,38 @@ let state = SPPermission.calendar.isAuthorized
 ```
 
 Also available func `isDenied`. This return false, if permission not requested before.
+
+## DataSource & Delegate
+
+You have one method for pass data for each permission. If you return `nil`, using default parametrs.
+
+```swift
+func data(for permission: SPPermission) -> SPPermissionData? {
+    return nil
+}
+```
+If you don't want show alert if permission denied, set `showAlertOpenSettingsWhenPermissionDenied` to false: 
+
+```swift
+let notificationData = SPPermissionData(name: "Notification", description: "Remind about new orders for your account.", image: nil, allowTitle: "Allow", allowedTitle: "Allowed")
+notificationData.showAlertOpenSettingsWhenPermissionDenied = false
+```
+
+If you want show this alert, need configure texts:
+
+```swift
+notificationData.alertOpenSettingsDeniedPermissionTitle = "Notifiaction denied"
+notificationData.alertOpenSettingsDeniedPermissionDescription = "Please, go to Settings and allow permission."
+notificationData.alertOpenSettingsDeniedPermissionButtonTitle = "Settings"
+notificationData.alertOpenSettingsDeniedPermissionCancelTitle = "Cancel"
+```
+
+In delegate you can implement two methods: 
+
+```swift
+func didAllow(permission: SPPermission) {}
+func didDenied(permission: SPPermission) {}
+```
 
 ## Good Practices
 
