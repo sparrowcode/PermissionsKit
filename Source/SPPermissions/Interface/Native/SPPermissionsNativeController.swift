@@ -37,8 +37,7 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerPro
     }
     
     /**
-     Call this method for present controller on other controller.
-     In this method controller configure.
+     Call this method for present controller on other controller. In this method controller configure.
      
      - parameter controller: Controller, on which need present `SPPermissions` controller. In this func no need pass actual controller, this method need for implement protocol `SPPermissionsControllerProtocol`.
      */
@@ -49,6 +48,32 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerPro
                     self?.delegate?.didAllow?(permission: permission)
                 } else {
                     self?.delegate?.didDenied?(permission: permission)
+                    
+                    /**
+                     Show alert with propose go to settings and allow permission. Can disable it in `SPPermissionsDataSource`.
+                     */
+                    if permission.isDenied {
+                        let data = self?.dataSource?.data(for: permission)
+                        if (data?.showAlertOpenSettingsWhenPermissionDenied ?? true) {
+                            let alertController = UIAlertController.init(
+                                title: data?.alertOpenSettingsDeniedPermissionTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionTitle,
+                                message: data?.alertOpenSettingsDeniedPermissionDescription ?? SPPermissionsText.alertOpenSettingsDeniedPermissionDescription,
+                                preferredStyle: .alert
+                            )
+                            alertController.addAction(UIAlertAction.init(
+                                title: data?.alertOpenSettingsDeniedPermissionCancelTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionCancelTitle,
+                                style: UIAlertAction.Style.cancel,
+                                handler: nil)
+                            )
+                            alertController.addAction(UIAlertAction.init(
+                                title: data?.alertOpenSettingsDeniedPermissionButtonTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionButtonTitle,
+                                style: UIAlertAction.Style.default,
+                                handler: { (action) in
+                                    SPPermissionsOpener.openSettings()
+                            }))
+                            controller.present(alertController, animated: true, completion: nil)
+                        }
+                    }
                 }
             }
         }

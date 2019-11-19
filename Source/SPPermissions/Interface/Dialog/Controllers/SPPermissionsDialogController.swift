@@ -29,14 +29,14 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     public weak var dataSource: SPPermissionsDataSource?
     public weak var delegate: SPPermissionsDelegate?
     
-    private var permissions: [SPPermission]
-    
     public var titleText: String = SPPermissionsText.titleText
     public var headerText: String = SPPermissionsText.subtitleShortText
     public var footerText: String = SPPermissionsText.commentText
     
     var dialogView = SPPermissionsDialogView()
     var backgroundView = SPPermissionsGradeBlurView()
+    
+    private var permissions: [SPPermission]
     
     init(_ permissions: [SPPermission]) {
         self.permissions = permissions
@@ -105,10 +105,10 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     }
     
     /**
-    Dismiss animated.
-    
-    - parameter withDialog: Add dismiss animation also content area.
-    */
+     Dismiss animated.
+     
+     - parameter withDialog: Add dismiss animation also content area.
+     */
     public func dismiss(withDialog: Bool) {
         if withDialog {
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .beginFromCurrentState, animations: {
@@ -157,7 +157,9 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
             if isAuthorized { SPPermissionsHaptic.impact(.light) }
             isAuthorized ? self.delegate?.didAllow?(permission: permission) : self.delegate?.didDenied?(permission: permission)
             
-            // Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
+            /**
+             Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
+             */
             if permission == .locationAlwaysAndWhenInUse {
                 if self.permissions.contains(.locationWhenInUse) {
                     if let index = self.permissions.firstIndex(of: .locationWhenInUse) {
@@ -168,7 +170,9 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
                 }
             }
             
-            // Check if all permissions allowed
+            /**
+             Check if all permissions allowed
+             */
             let allowedPermissions = self.permissions.filter { $0.isAuthorized }
             if allowedPermissions.count == self.permissions.count {
                 SPPermissionsDelay.wait(0.2, closure: {
@@ -176,8 +180,30 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
                 })
             }
             
+            /**
+             Show alert with propose go to settings and allow permission. Can disable it in `SPPermissionsDataSource`.
+             */
             if permission.isDenied {
-                SPPermissionsOpener.openSettings()
+                let data = self.dataSource?.data(for: permission)
+                if (data?.showAlertOpenSettingsWhenPermissionDenied ?? true) {
+                    let alertController = UIAlertController.init(
+                        title: data?.alertOpenSettingsDeniedPermissionTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionTitle,
+                        message: data?.alertOpenSettingsDeniedPermissionDescription ?? SPPermissionsText.alertOpenSettingsDeniedPermissionDescription,
+                        preferredStyle: .alert
+                    )
+                    alertController.addAction(UIAlertAction.init(
+                        title: data?.alertOpenSettingsDeniedPermissionCancelTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionCancelTitle,
+                        style: UIAlertAction.Style.cancel,
+                        handler: nil)
+                    )
+                    alertController.addAction(UIAlertAction.init(
+                        title: data?.alertOpenSettingsDeniedPermissionButtonTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionButtonTitle,
+                        style: UIAlertAction.Style.default,
+                        handler: { (action) in
+                            SPPermissionsOpener.openSettings()
+                    }))
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
         }
     }

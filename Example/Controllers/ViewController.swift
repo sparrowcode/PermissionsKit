@@ -51,11 +51,12 @@ class ViewController: UITableViewController {
 /**
  DataSource for each permission. REturn nil if you want use default data.
  */
-extension ViewController: SPPermissionsDataSource {
+extension ViewController: SPPermissionsDataSource, SPPermissionsDelegate {
     
     func data(for permission: SPPermission) -> SPPermissionData? {
         return nil
     }
+    
 }
 
 extension ViewController {
