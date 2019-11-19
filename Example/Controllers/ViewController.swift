@@ -34,15 +34,27 @@ class ViewController: UITableViewController {
         switch segmentControl.selectedSegmentIndex {
         case 0:
             let controller = SPPermissions.list(selectedPermissions)
+            controller.dataSource = self
             controller.present(on: self)
         case 1:
             let controller = SPPermissions.dialog(selectedPermissions)
+            controller.dataSource = self
             controller.present(on: self)
         case 2:
             break
         default:
             break
         }
+    }
+}
+
+/**
+ DataSource for each permission. REturn nil if you want use default data.
+ */
+extension ViewController: SPPermissionsDataSource {
+    
+    func data(for permission: SPPermission) -> SPPermissionData? {
+        return nil
     }
 }
 
