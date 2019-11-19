@@ -152,6 +152,13 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         self.dismiss(animated: true, completion: nil)
     }
     
+    public override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        super.dismiss(animated: flag, completion: {
+            completion?()
+            self.delegate?.didHide?()
+        })
+    }
+    
     /**
      Update buttons when app launch again. No need call manually.
      */

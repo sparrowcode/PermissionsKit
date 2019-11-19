@@ -22,10 +22,22 @@
 import UIKit
 
 /**
-List of events methods. All optional.
-*/
+ List of events methods. All optional.
+ */
 @objc public protocol SPPermissionsDelegate: class {
     
+    /**
+     Call when permission allowed.
+     */
     @objc optional func didAllow(permission: SPPermission)
+    
+    /**
+     Call when permission denied.
+     */
     @objc optional func didDenied(permission: SPPermission)
+    
+    /**
+     Call when controller closed.
+     */
+    @objc optional func didHide()
 }
