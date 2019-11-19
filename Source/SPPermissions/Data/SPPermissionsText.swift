@@ -23,22 +23,6 @@ import UIKit
 
 enum SPPermissionsText {
     
-    static var titleText: String {
-        return "Need Permissions"
-    }
-    
-    static var subtitleText: String {
-        return "This permissions need for work app, see description for each permission."
-    }
-    
-    static var subtitleShortText: String {
-        return "Permissions request"
-    }
-    
-    static var commentText: String {
-        return "Permissions are necessary for the correct work of the application and the performance of all functions. Push are not required permissions"
-    }
-    
     static func name(for permission: SPPermission) -> String {
         switch permission {
         case .camera:
@@ -95,11 +79,16 @@ enum SPPermissionsText {
         }
     }
     
-    static var allow: String {
-        return "Allow"
-    }
+    static var titleText: String = "Need Permissions"
+    static var subtitleText: String = "This permissions need for work app, see description for each permission."
+    static var subtitleShortText: String = "Permissions request"
+    static var commentText: String = "Permissions are necessary for the correct work of the application and the performance of all functions. Push are not required permissions."
     
-    static var allowed: String {
-        return "Allowed"
-    }
+    static var allow: String = "Allow"
+    static var allowed: String = "Allowed"
+    
+    static var alertOpenSettingsDeniedPermissionTitle: String = "Permission denied"
+    static var alertOpenSettingsDeniedPermissionDescription: String = "Please, go to Settings and allow permission."
+    static var alertOpenSettingsDeniedPermissionButtonTitle: String = "Settings"
+    static var alertOpenSettingsDeniedPermissionCancelTitle: String = "Cancel"
 }

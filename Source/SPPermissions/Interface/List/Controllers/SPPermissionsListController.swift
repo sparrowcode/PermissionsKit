@@ -80,7 +80,9 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
             if isAuthorized { SPPermissionsHaptic.impact(.light) }
             isAuthorized ? self.delegate?.didAllow?(permission: permission) : self.delegate?.didDenied?(permission: permission)
             
-            // Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
+            /**
+             Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
+             */
             if permission == .locationAlwaysAndWhenInUse {
                 if self.permissions.contains(.locationWhenInUse) {
                     if let index = self.permissions.firstIndex(of: .locationWhenInUse) {
@@ -91,7 +93,9 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
                 }
             }
             
-            // Check if all permissions allowed
+            /**
+             Check if all permissions allowed
+             */
             let allowedPermissions = self.permissions.filter { $0.isAuthorized }
             if allowedPermissions.count == self.permissions.count {
                 SPPermissionsDelay.wait(0.2, closure: {
@@ -99,8 +103,30 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
                 })
             }
             
+            /**
+             Show alert with propose go to settings and allow permission. Can disable it in `SPPermissionsDataSource`.
+             */
             if permission.isDenied {
-                SPPermissionsOpener.openSettings()
+                let data = self.dataSource?.data(for: permission)
+                if (data?.showAlertOpenSettingsWhenPermissionDenied ?? true) {
+                    let alertController = UIAlertController.init(
+                        title: data?.alertOpenSettingsDeniedPermissionTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionTitle,
+                        message: data?.alertOpenSettingsDeniedPermissionDescription ?? SPPermissionsText.alertOpenSettingsDeniedPermissionDescription,
+                        preferredStyle: .alert
+                    )
+                    alertController.addAction(UIAlertAction.init(
+                        title: data?.alertOpenSettingsDeniedPermissionCancelTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionCancelTitle,
+                        style: UIAlertAction.Style.cancel,
+                        handler: nil)
+                    )
+                    alertController.addAction(UIAlertAction.init(
+                        title: data?.alertOpenSettingsDeniedPermissionButtonTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionButtonTitle,
+                        style: UIAlertAction.Style.default,
+                        handler: { (action) in
+                            SPPermissionsOpener.openSettings()
+                    }))
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
         }
     }

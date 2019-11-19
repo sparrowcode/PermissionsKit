@@ -44,14 +44,14 @@ import UIKit
      Check permission is allowed.
      */
     public var isAuthorized: Bool {
-        SPPermission.manager(for: self).isAuthorized
+        return SPPermission.manager(for: self).isAuthorized
     }
     
     /**
      Check permission is denied. If permission not requested anytime returned `false`.
      */
     public var isDenied: Bool {
-        SPPermission.manager(for: self).isDenied
+        return SPPermission.manager(for: self).isDenied
     }
     
     /**
