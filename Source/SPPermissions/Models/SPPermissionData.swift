@@ -37,4 +37,12 @@ public struct SPPermissionData {
     var image: UIImage?
     var allowTitle: String
     var allowedTitle: String
+    
+    public init(name: String, description: String, image: UIImage?, allowTitle: String, allowedTitle: String) {
+        self.name = name
+        self.description = description
+        self.image = image
+        self.allowTitle = allowTitle
+        self.allowedTitle = allowedTitle
+    }
 }
