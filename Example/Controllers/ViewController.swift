@@ -56,7 +56,6 @@ extension ViewController: SPPermissionsDataSource, SPPermissionsDelegate {
     func data(for permission: SPPermission) -> SPPermissionData? {
         return nil
     }
-    
 }
 
 extension ViewController {
