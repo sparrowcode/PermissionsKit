@@ -33,6 +33,11 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     public var headerText: String = SPPermissionsText.subtitleText
     public var footerText: String = SPPermissionsText.commentText
     
+    /**
+     Allow set small navigation bar. You shoud customize it here, becouse controller add to navigation only before call `present()` func.
+     */
+    public var prefersLargeTitles: Bool = true
+    
     private var permissions: [SPPermission]
     
     init(_ permissions: [SPPermission]) {
@@ -59,7 +64,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         
         navigationItem.title = titleText
         navigationItem.largeTitleDisplayMode = .automatic
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
         navigationController?.presentationController?.delegate = self
         
         tableView.delaysContentTouches = false
