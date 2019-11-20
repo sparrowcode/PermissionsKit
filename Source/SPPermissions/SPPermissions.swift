@@ -28,8 +28,9 @@ public enum SPPermissions {
      
      - parameter permissions: List of permissions for request.
      */
-    public static func native(_ permissions: [SPPermission]) {
-        
+    public static func native(_ permissions: [SPPermission]) -> SPPermissionsNativeController {
+        let controller = SPPermissionsNativeController(removeDublicates(permissions))
+        return controller
     }
     
     /**
