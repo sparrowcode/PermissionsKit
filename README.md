@@ -251,11 +251,12 @@ notificationData.alertOpenSettingsDeniedPermissionButtonTitle = "Settings"
 notificationData.alertOpenSettingsDeniedPermissionCancelTitle = "Cancel"
 ```
 
-In delegate you can implement two methods: 
+In delegate you can implement three methods: 
 
 ```swift
 func didAllow(permission: SPPermission) {}
 func didDenied(permission: SPPermission) {}
+func didHide() {}
 ```
 
 ## Good Practices
