@@ -22,9 +22,12 @@
 import UIKit
 
 /**
-Implement it for customize permission name, description, icon and other.
-*/
+ Implement it for customize permission name, description, icon and other.
+ */
 public protocol SPPermissionsDataSource: class {
     
+    /**
+     Return data for permission. Include optinal image and alerts if permission denied.
+     */
     func data(for permission: SPPermission) -> SPPermissionData?
 }
