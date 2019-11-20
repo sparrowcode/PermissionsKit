@@ -50,6 +50,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
         if #available(iOS 13.0, *) {
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(dismissAnimated))
         } else {
@@ -59,6 +60,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         navigationItem.title = titleText
         navigationItem.largeTitleDisplayMode = .automatic
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.presentationController?.delegate = self
         
         tableView.delaysContentTouches = false
         tableView.allowsSelection = false
@@ -199,5 +201,12 @@ extension SPPermissionsListController {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SPPermissionsListFooterCommentView.id) as! SPPermissionsListFooterCommentView
         view.titleLabel.text = footerText
         return view
+    }
+}
+
+extension SPPermissionsListController: UIAdaptivePresentationControllerDelegate {
+    
+    public func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        self.delegate?.didHide?()
     }
 }
