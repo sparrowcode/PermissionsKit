@@ -49,7 +49,7 @@ class ViewController: UITableViewController {
 }
 
 /**
- DataSource for each permission. REturn nil if you want use default data.
+ DataSource for each permission. Return nil if you want use default data.
  */
 extension ViewController: SPPermissionsDataSource, SPPermissionsDelegate {
     
