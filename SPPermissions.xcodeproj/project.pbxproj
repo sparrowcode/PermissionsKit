@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E50E9B8238B1F1A00B71477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E50E9B7238B1F1A00B71477 /* Assets.xcassets */; };
+		9E50E9BB238B1F1A00B71477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E50E9B9238B1F1A00B71477 /* LaunchScreen.storyboard */; };
+		9E50E9C0238B20E400B71477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2645236ECE040070B2BA /* AppDelegate.swift */; };
+		9E50E9C1238B20E700B71477 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2649236ECE040070B2BA /* ViewController.swift */; };
 		F43F8DA0236ECC9D00B94208 /* SPPermissions.h in Headers */ = {isa = PBXBuildFile; fileRef = F43F8D9E236ECC9D00B94208 /* SPPermissions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F499B1E2238006CB00B83B08 /* SPPermissionsDialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499B1E1238006CB00B83B08 /* SPPermissionsDialogController.swift */; };
 		F499B1ED238009D600B83B08 /* SPPermissionsGradeBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499B1EC238009D600B83B08 /* SPPermissionsGradeBlurView.swift */; };
@@ -80,6 +84,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9E50E9AE238B1EDD00B71477 /* Example tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E50E9B7238B1F1A00B71477 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E50E9BA238B1F1A00B71477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9E50E9BC238B1F1A00B71477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F43F8D9B236ECC9D00B94208 /* SPPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43F8D9E236ECC9D00B94208 /* SPPermissions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPPermissions.h; sourceTree = "<group>"; };
 		F43F8D9F236ECC9D00B94208 /* SPPermissionsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SPPermissionsInfo.plist; sourceTree = "<group>"; };
@@ -138,6 +146,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9E50E9AB238B1EDD00B71477 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F43F8D98236ECC9D00B94208 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,6 +171,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E50E9AF238B1EDD00B71477 /* Example tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				9E50E9C2238B213B00B71477 /* App */,
+				9E50E9BC238B1F1A00B71477 /* Info.plist */,
+			);
+			path = "Example tvOS";
+			sourceTree = "<group>";
+		};
+		9E50E9C2238B213B00B71477 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9E50E9B7238B1F1A00B71477 /* Assets.xcassets */,
+				9E50E9B9238B1F1A00B71477 /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		F412045423829ECC009C2AC7 /* SPPermissions */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +207,8 @@
 			children = (
 				F43F8DA8236ECD3100B94208 /* Deployment */,
 				F43F8DA6236ECCEE00B94208 /* Source */,
-				F4EA2644236ECE040070B2BA /* Example */,
+				F4EA2644236ECE040070B2BA /* Example iOS */,
+				9E50E9AF238B1EDD00B71477 /* Example tvOS */,
 				F43F8D9C236ECC9D00B94208 /* Products */,
 				F499B1E52380076C00B83B08 /* Frameworks */,
 			);
@@ -185,6 +219,7 @@
 			children = (
 				F43F8D9B236ECC9D00B94208 /* SPPermissions.framework */,
 				F4EA2643236ECE030070B2BA /* Permissions.app */,
+				9E50E9AE238B1EDD00B71477 /* Example tvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -305,14 +340,14 @@
 			path = Native;
 			sourceTree = "<group>";
 		};
-		F4EA2644236ECE040070B2BA /* Example */ = {
+		F4EA2644236ECE040070B2BA /* Example iOS */ = {
 			isa = PBXGroup;
 			children = (
 				F4EA2658236ECEE90070B2BA /* App */,
 				F4EA265B236ECF080070B2BA /* Controllers */,
 				F4EA2653236ECE040070B2BA /* Info.plist */,
 			);
-			path = Example;
+			path = "Example iOS";
 			sourceTree = "<group>";
 		};
 		F4EA2658236ECEE90070B2BA /* App */ = {
@@ -431,6 +466,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		9E50E9AD238B1EDD00B71477 /* Example tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E50E9BD238B1F1A00B71477 /* Build configuration list for PBXNativeTarget "Example tvOS" */;
+			buildPhases = (
+				9E50E9AA238B1EDD00B71477 /* Sources */,
+				9E50E9AB238B1EDD00B71477 /* Frameworks */,
+				9E50E9AC238B1EDD00B71477 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Example tvOS";
+			productName = "Example tvOS";
+			productReference = 9E50E9AE238B1EDD00B71477 /* Example tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		F43F8D9A236ECC9D00B94208 /* SPPermissions iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F43F8DA3236ECC9D00B94208 /* Build configuration list for PBXNativeTarget "SPPermissions iOS" */;
@@ -449,9 +501,9 @@
 			productReference = F43F8D9B236ECC9D00B94208 /* SPPermissions.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F4EA2642236ECE030070B2BA /* Example */ = {
+		F4EA2642236ECE030070B2BA /* Example iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4EA2656236ECE040070B2BA /* Build configuration list for PBXNativeTarget "Example" */;
+			buildConfigurationList = F4EA2656236ECE040070B2BA /* Build configuration list for PBXNativeTarget "Example iOS" */;
 			buildPhases = (
 				F4EA263F236ECE030070B2BA /* Sources */,
 				F4EA2640236ECE030070B2BA /* Frameworks */,
@@ -463,7 +515,7 @@
 			dependencies = (
 				F499B1FA2380105200B83B08 /* PBXTargetDependency */,
 			);
-			name = Example;
+			name = "Example iOS";
 			productName = Exampple;
 			productReference = F4EA2643236ECE030070B2BA /* Permissions.app */;
 			productType = "com.apple.product-type.application";
@@ -478,6 +530,9 @@
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Ivan Vorobei";
 				TargetAttributes = {
+					9E50E9AD238B1EDD00B71477 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
 					F43F8D9A236ECC9D00B94208 = {
 						CreatedOnToolsVersion = 11.2;
 						LastSwiftMigration = 1120;
@@ -501,12 +556,22 @@
 			projectRoot = "";
 			targets = (
 				F43F8D9A236ECC9D00B94208 /* SPPermissions iOS */,
-				F4EA2642236ECE030070B2BA /* Example */,
+				F4EA2642236ECE030070B2BA /* Example iOS */,
+				9E50E9AD238B1EDD00B71477 /* Example tvOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9E50E9AC238B1EDD00B71477 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E50E9BB238B1F1A00B71477 /* LaunchScreen.storyboard in Resources */,
+				9E50E9B8238B1F1A00B71477 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F43F8D99236ECC9D00B94208 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -526,6 +591,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9E50E9AA238B1EDD00B71477 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E50E9C0238B20E400B71477 /* AppDelegate.swift in Sources */,
+				9E50E9C1238B20E700B71477 /* ViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F43F8D97236ECC9D00B94208 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -592,6 +666,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9E50E9B9238B1F1A00B71477 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9E50E9BA238B1F1A00B71477 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		F4EA2650236ECE040070B2BA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -603,6 +685,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9E50E9BE238B1F1A00B71477 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/Example tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPPermissions.exampletvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		9E50E9BF238B1F1A00B71477 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/Example tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPPermissions.exampletvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
 		F43F8DA1236ECC9D00B94208 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4FB9E9D2379E96E00F7272C /* SPPermissionsConfiguration.xcconfig */;
@@ -787,14 +907,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8JMTA2AAF3;
-				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Example iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPPermissions.example;
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPPermissions.exampleiOS;
 				PRODUCT_NAME = Permissions;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -808,14 +928,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8JMTA2AAF3;
-				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Example iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPPermissions.example;
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPPermissions.exampleiOS;
 				PRODUCT_NAME = Permissions;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -825,6 +945,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9E50E9BD238B1F1A00B71477 /* Build configuration list for PBXNativeTarget "Example tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E50E9BE238B1F1A00B71477 /* Debug */,
+				9E50E9BF238B1F1A00B71477 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F43F8D95236ECC9D00B94208 /* Build configuration list for PBXProject "SPPermissions" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -843,7 +972,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4EA2656236ECE040070B2BA /* Build configuration list for PBXNativeTarget "Example" */ = {
+		F4EA2656236ECE040070B2BA /* Build configuration list for PBXNativeTarget "Example iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4EA2654236ECE040070B2BA /* Debug */,
