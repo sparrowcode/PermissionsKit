@@ -9,10 +9,11 @@ Pod::Spec.new do |s|
   
   s.author        = { "Ivan Vorobei" => "ivanvorobei@icloud.com" }
   
-  s.platform      = :ios
   s.ios.framework = 'UIKit'
+  s.tvos.framework = 'UIKit'
   s.swift_version = ['4.2', '5.0']
   s.ios.deployment_target = "11.0"
+  s.tvos.deployment_target = "11.0"
   s.requires_arc = true
 
   s.default_subspec = 'Core'
