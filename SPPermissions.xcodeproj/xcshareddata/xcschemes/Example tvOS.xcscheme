@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9E50E9AD238B1EDD00B71477"
-               BuildableName = "Example tvOS.app"
+               BuildableName = "Permissions tvOS.app"
                BlueprintName = "Example tvOS"
                ReferencedContainer = "container:SPPermissions.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9E50E9AD238B1EDD00B71477"
-            BuildableName = "Example tvOS.app"
+            BuildableName = "Permissions tvOS.app"
             BlueprintName = "Example tvOS"
             ReferencedContainer = "container:SPPermissions.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9E50E9AD238B1EDD00B71477"
-            BuildableName = "Example tvOS.app"
+            BuildableName = "Permissions tvOS.app"
             BlueprintName = "Example tvOS"
             ReferencedContainer = "container:SPPermissions.xcodeproj">
          </BuildableReference>

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9E50E9C7238B249C00B71477"
-               BuildableName = "SPPermissions_tvOS.framework"
+               BuildableName = "SPPermissions.framework"
                BlueprintName = "SPPermissions tvOS"
                ReferencedContainer = "container:SPPermissions.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9E50E9C7238B249C00B71477"
-            BuildableName = "SPPermissions_tvOS.framework"
+            BuildableName = "SPPermissions.framework"
             BlueprintName = "SPPermissions tvOS"
             ReferencedContainer = "container:SPPermissions.xcodeproj">
          </BuildableReference>
