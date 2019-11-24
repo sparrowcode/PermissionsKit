@@ -153,8 +153,8 @@ let controller = SPPermissions.dialog([.camera, .photoLibrary])
 
 // Ovveride texts in controller
 controller.titleText = "Title Text"
-controller.subtitleText = "Subtitle Text"
-controller.commentText = "Comment Text"
+controller.headerText = "Subtitle Text"
+controller.footerText = "Comment Text"
 
 // Set `DataSource` or `Delegate` if need. 
 // By default using project texts and icons.
