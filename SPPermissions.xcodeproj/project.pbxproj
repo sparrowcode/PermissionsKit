@@ -847,6 +847,7 @@
 /* Begin XCBuildConfiguration section */
 		9E50E9BE238B1F1A00B71477 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4FB9E9D2379E96E00F7272C /* SPPermissionsConfiguration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				CODE_SIGN_STYLE = Automatic;
@@ -866,6 +867,7 @@
 		};
 		9E50E9BF238B1F1A00B71477 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4FB9E9D2379E96E00F7272C /* SPPermissionsConfiguration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				CODE_SIGN_STYLE = Automatic;
@@ -885,6 +887,7 @@
 		};
 		9E50E9D2238B249C00B71477 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4FB9E9D2379E96E00F7272C /* SPPermissionsConfiguration.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -910,6 +913,7 @@
 		};
 		9E50E9D3238B249C00B71477 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4FB9E9D2379E96E00F7272C /* SPPermissionsConfiguration.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
