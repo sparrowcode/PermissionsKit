@@ -57,8 +57,10 @@ class SPPermissionIconView: UIView {
             SPPermissionsDraw.drawSpeech(frame: rect, resizing: .aspectFit, color: color)
         case .locationWhenInUse:
             SPPermissionsDraw.drawLocations(frame: rect, resizing: .aspectFit, color: color)
+        #if os(iOS)
         case .locationAlwaysAndWhenInUse:
             SPPermissionsDraw.drawLocations(frame: rect, resizing: .aspectFit, color: color)
+        #endif
         case .motion:
             SPPermissionsDraw.drawMotion(frame: rect, resizing: .aspectFit, color: color)
         case .mediaLibrary:
