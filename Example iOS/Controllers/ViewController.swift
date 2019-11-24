@@ -7,11 +7,15 @@ class ViewController: UITableViewController {
     var selectedPermissions: [SPPermission] = []
     
     init() {
+        #if os(iOS)
         if #available(iOS 13.0, *) {
             super.init(style: .insetGrouped)
         } else {
             super.init(style: .plain)
         }
+        #else
+        super.init(style: .plain)
+        #endif
     }
     
     required init?(coder: NSCoder) {
