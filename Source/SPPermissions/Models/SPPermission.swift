@@ -36,7 +36,9 @@ import UIKit
     case reminders = 6
     case speech = 7
     case locationWhenInUse = 9
+    #if os(iOS)
     case locationAlwaysAndWhenInUse = 10
+    #endif
     case motion = 11
     case mediaLibrary = 12
     
@@ -92,8 +94,10 @@ import UIKit
             return "NSSpeechRecognitionUsageDescription"
         case .locationWhenInUse:
             return "NSLocationWhenInUseUsageDescription"
+        #if os(iOS)
         case .locationAlwaysAndWhenInUse:
             return "NSLocationAlwaysAndWhenInUseUsageDescription"
+        #endif
         case .motion:
             return "NSMotionUsageDescription"
         case .mediaLibrary:
@@ -160,12 +164,14 @@ extension SPPermission {
             #else
             fatalError(error(permission))
             #endif
+        #if os(iOS)
         case .locationAlwaysAndWhenInUse:
             #if SPPERMISSION_LOCATION
             return SPLocationPermission(type: SPLocationPermission.SPLocationType.AlwaysAndWhenInUse)
             #else
             fatalError(error(permission))
             #endif
+        #endif
         case .motion:
             #if SPPERMISSION_MOTION
             return SPMotionPermission()
