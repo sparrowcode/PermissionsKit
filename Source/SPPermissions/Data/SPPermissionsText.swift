@@ -43,8 +43,10 @@ enum SPPermissionsText {
             return "Speech"
         case .locationWhenInUse:
             return "Location When Use"
+        #if os(iOS)
         case .locationAlwaysAndWhenInUse:
             return "Location Always"
+        #endif
         case .motion:
             return "Motion"
         case .mediaLibrary:
@@ -70,8 +72,12 @@ enum SPPermissionsText {
             return "Application can create new task"
         case .speech:
             return "Allow to check your voice"
-        case .locationWhenInUse, .locationAlwaysAndWhenInUse:
+        case .locationWhenInUse:
             return "Allow to access your location"
+        #if os(iOS)
+        case .locationAlwaysAndWhenInUse:
+            return "Allow to access your location"
+        #endif
         case .motion:
             return "Allow to report motion and environment-related data"
         case .mediaLibrary:
