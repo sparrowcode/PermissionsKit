@@ -20,38 +20,36 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-    <key>NSAppleMusicUsageDescription</key>
-    <string>Example Describtion</string>
-    <key>NSCalendarsUsageDescription</key>
-    <string>Example Describtion</string>
-    <key>NSCameraUsageDescription</key>
-    <string>Example Describtion</string>
-    <key>NSContactsUsageDescription</key>
-    <string>Example Describtion</string>
-    <key>NSHomeKitUsageDescription</key>
-    <string>Example Describtion</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>Example Describtion</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Example Describtion</string>
-    <key>NSLocationUsageDescription</key>
-    <string>Example Describtion</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Example Describtion</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>Example Describtion</string>
-    <key>NSMotionUsageDescription</key>
-    <string>Example Describtion</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>Example Describtion</string>
-    <key>NSRemindersUsageDescription</key>
-    <string>Example Describtion</string>
-    <key>NSSpeechRecognitionUsageDescription</key>
-    <string>Example Describtion</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSHomeKitUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Example Describtion</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Example Describtion</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>arm64</string>
