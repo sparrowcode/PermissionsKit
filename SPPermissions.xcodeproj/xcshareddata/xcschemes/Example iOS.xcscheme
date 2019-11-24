@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F4EA2642236ECE030070B2BA"
-               BuildableName = "Permissions.app"
+               BuildableName = "Permissions iOS.app"
                BlueprintName = "Example iOS"
                ReferencedContainer = "container:SPPermissions.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4EA2642236ECE030070B2BA"
-            BuildableName = "Permissions.app"
+            BuildableName = "Permissions iOS.app"
             BlueprintName = "Example iOS"
             ReferencedContainer = "container:SPPermissions.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4EA2642236ECE030070B2BA"
-            BuildableName = "Permissions.app"
+            BuildableName = "Permissions iOS.app"
             BlueprintName = "Example iOS"
             ReferencedContainer = "container:SPPermissions.xcodeproj">
          </BuildableReference>
