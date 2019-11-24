@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
     mi.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_MICROPHONE" }
   end
 
-  s.subspec 'Calendar' do |ca|
+  s.ios.subspec 'Calendar' do |ca|
     ca.dependency 'SPPermissions/Core'
     ca.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_CALENDAR" }
   end
