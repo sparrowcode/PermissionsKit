@@ -22,6 +22,7 @@
 import Foundation
 import MapKit
 
+#if os(iOS)
 class SPPermissionAlwaysAuthorizationLocationHandler: NSObject, CLLocationManagerDelegate {
     
     static var shared: SPPermissionAlwaysAuthorizationLocationHandler?
@@ -81,6 +82,7 @@ class SPPermissionAlwaysAuthorizationLocationHandler: NSObject, CLLocationManage
         locationManager.delegate = nil
     }
 }
+#endif
 
 class SPPermissionWhenInUseAuthorizationLocationHandler: NSObject, CLLocationManagerDelegate {
     
@@ -131,10 +133,12 @@ class SPPermissionWhenInUseAuthorizationLocationHandler: NSObject, CLLocationMan
     }
 }
 
+#if os(iOS)
 extension SPPermissionAlwaysAuthorizationLocationHandler {
     
     typealias SPPermissionAuthorizationHandlerCompletionBlock = (Bool) -> Void
 }
+#endif
 
 extension SPPermissionWhenInUseAuthorizationLocationHandler {
     
