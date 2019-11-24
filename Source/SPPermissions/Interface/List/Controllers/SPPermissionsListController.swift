@@ -42,11 +42,15 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     
     init(_ permissions: [SPPermission]) {
         self.permissions = permissions
+        #if os(iOS)
         if #available(iOS 13.0, *) {
             super.init(style: .insetGrouped)
         } else {
             super.init(style: .grouped)
         }
+        #else
+        super.init(style: .grouped)
+        #endif
     }
     
     required init?(coder: NSCoder) {
@@ -56,15 +60,21 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     override public func viewDidLoad() {
         super.viewDidLoad()
         
+        #if os(iOS)
         if #available(iOS 13.0, *) {
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(dismissAnimated))
         } else {
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissAnimated))
         }
+        #else
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissAnimated))
+        #endif
         
         navigationItem.title = titleText
+        #if os(iOS)
         navigationItem.largeTitleDisplayMode = .automatic
         navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
+        #endif
         navigationController?.presentationController?.delegate = self
         
         tableView.delaysContentTouches = false
@@ -84,12 +94,17 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         permission.request {
             button.update()
             let isAuthorized = permission.isAuthorized
-            if isAuthorized { SPPermissionsHaptic.impact(.light) }
+            if isAuthorized {
+                #if os(iOS)
+                SPPermissionsHaptic.impact(.light)
+                #endif
+            }
             isAuthorized ? self.delegate?.didAllow?(permission: permission) : self.delegate?.didDenied?(permission: permission)
             
             /**
              Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
              */
+            #if os(iOS)
             if permission == .locationAlwaysAndWhenInUse {
                 if self.permissions.contains(.locationWhenInUse) {
                     if let index = self.permissions.firstIndex(of: .locationWhenInUse) {
@@ -99,6 +114,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
                     }
                 }
             }
+            #endif
             
             /**
              Check if all permissions allowed
@@ -146,7 +162,11 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
      */
     public func present(on controller: UIViewController) {
         let navController = UINavigationController(rootViewController: self)
+        #if os(iOS)
         navController.modalPresentationStyle = .formSheet
+        #else
+        navController.modalPresentationStyle = .fullScreen
+        #endif
         navController.preferredContentSize = CGSize.init(width: 480, height: 560)
         controller.present(navController, animated: true, completion: nil)
     }
