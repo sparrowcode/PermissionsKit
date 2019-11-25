@@ -6,47 +6,17 @@ class ViewController: UITableViewController {
     var allPermissions: [SPPermission] = SPPermission.allCases
     var selectedPermissions: [SPPermission] = []
     
-    init() {
-        if #available(iOS 13.0, *) {
-            super.init(style: .insetGrouped)
-        } else {
-            super.init(style: .plain)
-        }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Choose Style"
-        let segmentedControl = UISegmentedControl(items: ["List", "Dialog", "Native"])
-        navigationItem.titleView = segmentedControl
-        segmentedControl.selectedSegmentIndex = 0
+        navigationItem.title = "Choose permissions"
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .play, target: self, action: #selector(self.requestPermissions))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
-
+    
     @objc func requestPermissions() {
-        if selectedPermissions.isEmpty { return }
-        guard let segmentControl = navigationItem.titleView as? UISegmentedControl else { return }
-        switch segmentControl.selectedSegmentIndex {
-        case 0:
-            let controller = SPPermissions.list(selectedPermissions)
-            controller.dataSource = self
-            controller.present(on: self)
-        case 1:
-            let controller = SPPermissions.dialog(selectedPermissions)
-            controller.dataSource = self
-            controller.present(on: self)
-        case 2:
-            let controller = SPPermissions.native(selectedPermissions)
-            controller.dataSource = self
-            controller.present(on: self)
-        default:
-            break
-        }
+        let controller = SPPermissions.native(selectedPermissions)
+        controller.dataSource = self
+        controller.present(on: self)
     }
 }
 

@@ -51,7 +51,8 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerPro
                     self?.delegate?.didDenied?(permission: permission)
                     
                     /**
-                     Show alert with propose go to settings and allow permission. Can disable it in `SPPermissionsDataSource`.
+                     Show alert with propose go to settings and allow permission.
+                     Can disable it in `SPPermissionsDataSource`.
                      */
                     if permission.isDenied {
                         let data = self?.dataSource?.data(for: permission)

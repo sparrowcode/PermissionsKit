@@ -21,6 +21,7 @@
 
 import UIKit
 
+#if os(iOS)
 class SPPermissionsGradeBlurView: UIView {
     
     private var gradeView: UIView = UIView()
@@ -66,4 +67,4 @@ class SPPermissionsGradeBlurView: UIView {
         blurView.frame = bounds
     }
 }
-
+#endif

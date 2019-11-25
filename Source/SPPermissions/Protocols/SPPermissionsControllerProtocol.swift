@@ -22,12 +22,22 @@
 import UIKit
 
 /**
-Requerid methods for presenter, usually it subsclass of `UIViewController`.
-*/
+ Requerid methods for presenter, usually it subsclass of `UIViewController`.
+ */
 protocol SPPermissionsControllerProtocol {
     
+    /**
+     Configure data in permission.
+     */
     var dataSource: SPPermissionsDataSource? { get set }
+    
+    /**
+     Detect some event.
+     */
     var delegate: SPPermissionsDelegate? { get set }
     
+    /**
+     Run request permission.
+     */
     func present(on controller: UIViewController)
 }

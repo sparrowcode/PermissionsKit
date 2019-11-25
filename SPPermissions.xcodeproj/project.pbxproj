@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		9E50E9B8238B1F1A00B71477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E50E9B7238B1F1A00B71477 /* Assets.xcassets */; };
 		9E50E9BB238B1F1A00B71477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E50E9B9238B1F1A00B71477 /* LaunchScreen.storyboard */; };
-		9E50E9C0238B20E400B71477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2645236ECE040070B2BA /* AppDelegate.swift */; };
-		9E50E9C1238B20E700B71477 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2649236ECE040070B2BA /* ViewController.swift */; };
 		9E50E9D5238B24B900B71477 /* SPPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2660236ED1790070B2BA /* SPPermissions.swift */; };
 		9E50E9D6238B24BD00B71477 /* SPPermissionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9E782379721D00F7272C /* SPPermissionsDataSource.swift */; };
 		9E50E9D7238B24C000B71477 /* SPPermissionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9E7B2379731100F7272C /* SPPermissionsDelegate.swift */; };
@@ -53,6 +51,8 @@
 		9E50E9FC238B257300B71477 /* SPPermissions.h in Headers */ = {isa = PBXBuildFile; fileRef = F43F8D9E236ECC9D00B94208 /* SPPermissions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E50E9FD238B266A00B71477 /* SPPermissions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E50E9C8238B249C00B71477 /* SPPermissions.framework */; };
 		9E50E9FE238B266A00B71477 /* SPPermissions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E50E9C8238B249C00B71477 /* SPPermissions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F407A7C4238C538400763303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407A7C3238C538400763303 /* AppDelegate.swift */; };
+		F407A7C7238C53AC00763303 /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407A7C6238C53AC00763303 /* ViewControllers.swift */; };
 		F43F8DA0236ECC9D00B94208 /* SPPermissions.h in Headers */ = {isa = PBXBuildFile; fileRef = F43F8D9E236ECC9D00B94208 /* SPPermissions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F499B1E2238006CB00B83B08 /* SPPermissionsDialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499B1E1238006CB00B83B08 /* SPPermissionsDialogController.swift */; };
 		F499B1ED238009D600B83B08 /* SPPermissionsGradeBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499B1EC238009D600B83B08 /* SPPermissionsGradeBlurView.swift */; };
@@ -149,6 +149,8 @@
 		9E50E9BA238B1F1A00B71477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E50E9BC238B1F1A00B71477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E50E9C8238B249C00B71477 /* SPPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F407A7C3238C538400763303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F407A7C6238C53AC00763303 /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
 		F43F8D9B236ECC9D00B94208 /* SPPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43F8D9E236ECC9D00B94208 /* SPPermissions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPPermissions.h; sourceTree = "<group>"; };
 		F43F8D9F236ECC9D00B94208 /* SPPermissionsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SPPermissionsInfo.plist; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				9E50E9C2238B213B00B71477 /* App */,
+				F407A7C5238C539400763303 /* Controllers */,
 				9E50E9BC238B1F1A00B71477 /* Info.plist */,
 			);
 			path = "Example tvOS";
@@ -252,10 +255,19 @@
 		9E50E9C2238B213B00B71477 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F407A7C3238C538400763303 /* AppDelegate.swift */,
 				9E50E9B7238B1F1A00B71477 /* Assets.xcassets */,
 				9E50E9B9238B1F1A00B71477 /* LaunchScreen.storyboard */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		F407A7C5238C539400763303 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F407A7C6238C53AC00763303 /* ViewControllers.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		F412045423829ECC009C2AC7 /* SPPermissions */ = {
@@ -372,15 +384,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		F499B1E02380067B00B83B08 /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				F4EA268A236F2BB90070B2BA /* SPPermissionProtocol.swift */,
-				F4FB9E742379712400F7272C /* SPPermissionsControllerProtocol.swift */,
-			);
-			path = Internal;
-			sourceTree = "<group>";
-		};
 		F499B1E3238006FA00B83B08 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,9 +496,10 @@
 		F4FB9E77237971CA00F7272C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				F4EA268A236F2BB90070B2BA /* SPPermissionProtocol.swift */,
+				F4FB9E742379712400F7272C /* SPPermissionsControllerProtocol.swift */,
 				F4FB9E782379721D00F7272C /* SPPermissionsDataSource.swift */,
 				F4FB9E7B2379731100F7272C /* SPPermissionsDelegate.swift */,
-				F499B1E02380067B00B83B08 /* Internal */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -656,10 +660,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F43F8D9A236ECC9D00B94208 /* SPPermissions iOS */,
 				F4EA2642236ECE030070B2BA /* Example iOS */,
-				9E50E9C7238B249C00B71477 /* SPPermissions tvOS */,
 				9E50E9AD238B1EDD00B71477 /* Example tvOS */,
+				F43F8D9A236ECC9D00B94208 /* SPPermissions iOS */,
+				9E50E9C7238B249C00B71477 /* SPPermissions tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -704,8 +708,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E50E9C0238B20E400B71477 /* AppDelegate.swift in Sources */,
-				9E50E9C1238B20E700B71477 /* ViewController.swift in Sources */,
+				F407A7C7238C53AC00763303 /* ViewControllers.swift in Sources */,
+				F407A7C4238C538400763303 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,6 +21,7 @@
 
 import UIKit
 
+#if os(iOS)
 class SPPermissionsCloseButton: UIButton {
     
     let iconView = CloseIconView()
@@ -52,3 +53,4 @@ class SPPermissionsCloseButton: UIButton {
         }
     }
 }
+#endif

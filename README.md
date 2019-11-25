@@ -3,7 +3,7 @@
 <img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Readme/Preview - 5.0.jpg" width="470"/>
 
 ### About
-API to ask permissions on Swift. Available list, dialog & native. I do UI in **Apple style**, support iPad & dark mode. Also you can check state permissions.
+API to ask permissions on Swift. Available list, dialog & native. I do UI in **Apple style**, support iPad, dark mode & tvOS. Also you can check state permissions.
 
 Visit my store for iOS developers:
 
@@ -319,6 +319,7 @@ The development of this project is completely free. If you can make a contributi
 - Add docs in source files. Description of public methods and parametrs. 
 - Subtitles for [video](https://youtu.be/1kR5HGVhJfk) in any your native languages, where I tell you how to connect a configuration file.
 - Help me translate my app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) for other languages. 
+- Add icon for tv os example target.
 
 ## Design previous version
 

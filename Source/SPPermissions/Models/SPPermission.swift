@@ -24,27 +24,24 @@ import UIKit
 /**
  Available permissions. For request permissions recomended use `SPPermissions.requestNative()`.
  For check permission avability use `.isAuthorized` & `.isDenied` methods.
+ For `tvOS` available only `.notification` & `.locationWhenInUse` permissions,
  */
 @objc public enum SPPermission: Int, CaseIterable {
-
+    
     #if os(iOS)
     case camera = 0
     case photoLibrary = 1
-    #endif
-    case notification = 2
-    #if os(iOS)
     case microphone = 3
     case calendar = 4
     case contacts = 5
     case reminders = 6
     case speech = 7
-    #endif
-    case locationWhenInUse = 9
-    #if os(iOS)
     case locationAlwaysAndWhenInUse = 10
     case motion = 11
     case mediaLibrary = 12
     #endif
+    case notification = 2
+    case locationWhenInUse = 9
     
     /**
      Check permission is allowed.
@@ -80,15 +77,11 @@ import UIKit
      */
     public var usageDescriptionKey: String? {
         switch self {
-        #if os(iOS)
+            #if os(iOS)
         case .camera:
             return "NSCameraUsageDescription"
         case .photoLibrary:
             return "NSPhotoLibraryUsageDescription"
-        #endif
-        case .notification:
-            return nil
-        #if os(iOS)
         case .microphone:
             return "NSMicrophoneUsageDescription"
         case .calendar:
@@ -99,26 +92,29 @@ import UIKit
             return "NSRemindersUsageDescription"
         case .speech:
             return "NSSpeechRecognitionUsageDescription"
-        #endif
-        case .locationWhenInUse:
-            return "NSLocationWhenInUseUsageDescription"
-        #if os(iOS)
         case .locationAlwaysAndWhenInUse:
             return "NSLocationAlwaysAndWhenInUseUsageDescription"
         case .motion:
             return "NSMotionUsageDescription"
         case .mediaLibrary:
             return "NSAppleMusicUsageDescription"
-        #endif
+            #endif
+        case .notification:
+            return nil
+        case .locationWhenInUse:
+            return "NSLocationWhenInUseUsageDescription"
         }
     }
 }
 
 extension SPPermission {
     
+    /**
+     Permission worker. Implement base protocol `SPPermissionProtocol`, can request permission and check it state.
+     */
     fileprivate static func manager(for permission: SPPermission) -> SPPermissionProtocol {
         switch permission {
-        #if os(iOS)
+            #if os(iOS)
         case .camera:
             #if SPPERMISSION_CAMERA
             return SPCameraPermission()
@@ -131,14 +127,6 @@ extension SPPermission {
             #else
             fatalError(error(permission))
             #endif
-        #endif
-        case .notification:
-            #if SPPERMISSION_NOTIFICATION
-            return SPNotificationPermission()
-            #else
-            fatalError(error(permission))
-            #endif
-        #if os(iOS)
         case .microphone:
             #if SPPERMISSION_MICROPHONE
             return SPMicrophonePermission()
@@ -169,14 +157,6 @@ extension SPPermission {
             #else
             fatalError(error(permission))
             #endif
-        #endif
-        case .locationWhenInUse:
-            #if SPPERMISSION_LOCATION
-            return SPLocationPermission(type: SPLocationPermission.SPLocationType.WhenInUse)
-            #else
-            fatalError(error(permission))
-            #endif
-        #if os(iOS)
         case .locationAlwaysAndWhenInUse:
             #if SPPERMISSION_LOCATION
             return SPLocationPermission(type: SPLocationPermission.SPLocationType.AlwaysAndWhenInUse)
@@ -195,14 +175,32 @@ extension SPPermission {
             #else
             fatalError(error(permission))
             #endif
-        #endif
+            #endif
+        case .notification:
+            #if SPPERMISSION_NOTIFICATION
+            return SPNotificationPermission()
+            #else
+            fatalError(error(permission))
+            #endif
+        case .locationWhenInUse:
+            #if SPPERMISSION_LOCATION
+            return SPLocationPermission(type: SPLocationPermission.SPLocationType.WhenInUse)
+            #else
+            fatalError(error(permission))
+            #endif
         }
     }
     
+    /**
+     Description error abut invalid instalation.
+     */
     fileprivate static func error(_ permission: SPPermission) -> String {
         return "SPPermissions - \(permission.name) not import. Probelm NOT with usage description key. I recomend to see installation guide: https://youtu.be/1kR5HGVhJfk. More details in Readme: https://github.com/ivanvorobei/SPPermissions"
     }
     
+    /**
+     Name of permission.
+     */
     public var name: String {
         return SPPermissionsText.name(for: self)
     }

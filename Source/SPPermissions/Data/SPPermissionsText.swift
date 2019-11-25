@@ -30,10 +30,6 @@ enum SPPermissionsText {
             return "Camera"
         case .photoLibrary:
             return "Photo Library"
-        #endif
-        case .notification:
-            return "Notification"
-        #if os(iOS)
         case .microphone:
             return "Microphone"
         case .calendar:
@@ -44,10 +40,6 @@ enum SPPermissionsText {
             return "Reminders"
         case .speech:
             return "Speech"
-        #endif
-        case .locationWhenInUse:
-            return "Location When Use"
-        #if os(iOS)
         case .locationAlwaysAndWhenInUse:
             return "Location Always"
         case .motion:
@@ -55,6 +47,10 @@ enum SPPermissionsText {
         case .mediaLibrary:
             return "Media Library"
         #endif
+        case .notification:
+            return "Notification"
+        case .locationWhenInUse:
+            return "Location When Use"
         }
     }
     
@@ -69,20 +65,12 @@ enum SPPermissionsText {
             return "Access for your contacts and phones"
         case .microphone:
             return "Allow record voice from app"
-        #endif
-        case .notification:
-            return "Get important information without opening app."
-        #if os(iOS)
         case .photoLibrary:
             return "Access for save photos in your gallery"
         case .reminders:
             return "Application can create new task"
         case .speech:
             return "Allow to check your voice"
-        #endif
-        case .locationWhenInUse:
-            return "Allow to access your location"
-        #if os(iOS)
         case .locationAlwaysAndWhenInUse:
             return "Allow to access your location"
         case .motion:
@@ -90,6 +78,10 @@ enum SPPermissionsText {
         case .mediaLibrary:
             return "Allow to check your media"
         #endif
+        case .notification:
+            return "Get important information without opening app."
+        case .locationWhenInUse:
+            return "Allow to access your location"
         }
     }
     

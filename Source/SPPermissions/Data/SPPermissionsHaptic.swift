@@ -23,8 +23,9 @@ import UIKit
 
 enum SPPermissionsHaptic {
     
-    #if os(iOS)
+    
     static func impact(_ style: Style) {
+        #if os(iOS)
         switch style {
         case .light:
             let generator = UIImpactFeedbackGenerator(style: .light)
@@ -45,8 +46,8 @@ enum SPPermissionsHaptic {
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.error)
         }
+        #endif
     }
-    #endif
     
     enum Style {
         
