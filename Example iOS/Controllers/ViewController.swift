@@ -5,6 +5,11 @@ class ViewController: UITableViewController {
     
     var allPermissions: [SPPermission] = SPPermission.allCases
     var selectedPermissions: [SPPermission] = []
+    #if os(iOS)
+    let segmentedControlItems = ["List", "Dialog", "Native"]
+    #else
+    let segmentedControlItems = ["Native"]
+    #endif
     
     init() {
         #if os(iOS)
@@ -25,11 +30,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Choose Style"
-        #if os(iOS)
-        let segmentedControl = UISegmentedControl(items: ["List", "Dialog", "Native"])
-        #else
-        let segmentedControl = UISegmentedControl(items: ["Native"])
-        #endif
+        let segmentedControl = UISegmentedControl(items: segmentedControlItems)
         navigationItem.titleView = segmentedControl
         segmentedControl.selectedSegmentIndex = 0
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(self.requestPermissions))
@@ -41,16 +42,16 @@ class ViewController: UITableViewController {
         guard let segmentControl = navigationItem.titleView as? UISegmentedControl else { return }
         switch segmentControl.selectedSegmentIndex {
         #if os(iOS)
-        case 0:
+        case segmentedControlItems.firstIndex(of: "List"):
             let controller = SPPermissions.list(selectedPermissions)
             controller.dataSource = self
             controller.present(on: self)
-        case 1:
+        case segmentedControlItems.firstIndex(of: "Dialog"):
             let controller = SPPermissions.dialog(selectedPermissions)
             controller.dataSource = self
             controller.present(on: self)
         #endif
-        case 2:
+        case segmentedControlItems.firstIndex(of: "Native"):
             let controller = SPPermissions.native(selectedPermissions)
             controller.dataSource = self
             controller.present(on: self)
