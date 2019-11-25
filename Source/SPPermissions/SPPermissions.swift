@@ -33,6 +33,7 @@ public enum SPPermissions {
         return controller
     }
     
+    #if os(iOS)
     /**
      Request permissions as list in modal controller. In iPad open as `formSheet`.
      
@@ -56,6 +57,7 @@ public enum SPPermissions {
         let controller = SPPermissionsDialogController(removeDublicates(permissions))
         return controller
     }
+    #endif
     
     /**
      Remove dublicates permissions if added as mistake.
