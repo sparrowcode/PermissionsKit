@@ -25,10 +25,14 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Choose Style"
+        #if os(iOS)
         let segmentedControl = UISegmentedControl(items: ["List", "Dialog", "Native"])
+        #else
+        let segmentedControl = UISegmentedControl(items: ["Native"])
+        #endif
         navigationItem.titleView = segmentedControl
         segmentedControl.selectedSegmentIndex = 0
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .play, target: self, action: #selector(self.requestPermissions))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(self.requestPermissions))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
@@ -36,6 +40,7 @@ class ViewController: UITableViewController {
         if selectedPermissions.isEmpty { return }
         guard let segmentControl = navigationItem.titleView as? UISegmentedControl else { return }
         switch segmentControl.selectedSegmentIndex {
+        #if os(iOS)
         case 0:
             let controller = SPPermissions.list(selectedPermissions)
             controller.dataSource = self
@@ -44,8 +49,11 @@ class ViewController: UITableViewController {
             let controller = SPPermissions.dialog(selectedPermissions)
             controller.dataSource = self
             controller.present(on: self)
+        #endif
         case 2:
-            break
+            let controller = SPPermissions.native(selectedPermissions)
+            controller.dataSource = self
+            controller.present(on: self)
         default:
             break
         }
