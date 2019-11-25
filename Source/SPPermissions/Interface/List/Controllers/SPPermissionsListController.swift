@@ -21,6 +21,7 @@
 
 import UIKit
 
+#if os(iOS)
 /**
  Controller for List interface.
  */
@@ -235,3 +236,4 @@ extension SPPermissionsListController: UIAdaptivePresentationControllerDelegate 
         self.delegate?.didHide?()
     }
 }
+#endif
