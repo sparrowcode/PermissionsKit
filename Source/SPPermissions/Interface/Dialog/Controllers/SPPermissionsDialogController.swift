@@ -21,6 +21,7 @@
 
 import UIKit
 
+#if os(iOS)
 /**
  Controller for Dialog interface.
  */
@@ -295,3 +296,4 @@ extension SPPermissionsDialogController: UITableViewDataSource, UITableViewDeleg
         return view
     }
 }
+#endif
