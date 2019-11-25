@@ -3,7 +3,7 @@
 <img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Readme/Preview - 5.0.jpg" width="470"/>
 
 ### About
-API to ask permissions on Swift. Available list, dialog & native. I do UI in **Apple style**, support iPad, dark mode & tvOS. Also you can check state permissions.
+This is an API to ask for user permissions using Swift. The API provides for three UI options (list, dialog & native). The UI/UX is in **Apple style** and supports iPad, dark mode & tvOS. Also you can check the state permissions using the API.
 
 Visit my store for iOS developers:
 
@@ -13,17 +13,17 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
 
 [![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
 
-For help project, see [Сooperation](#сooperation) section or our [chat](https://t.me/sppermissions).
+To help on this project, see [Сooperation](#сooperation) section or our [chat](https://t.me/sppermissions).
 
 ## Pay attention
 
-Now I migrate `SPPermissions` to new `5.0` vesion. If you found any bugs or need old functionality - please, create issue or write me. If you want install old version, add this to your Podfile:
+I have migrated `SPPermissions` to the new `5.0` vesion. If you found any bugs or need old functionality - please, create an issue or write me. If you want install the old version, add this to your Podfile:
 
 ```ruby
 pod 'SPPermissions', '4.1.4'
 ```
 
-I recomended install new version and create issue. I resolve all issues in 24-48 hours.
+I recomended that you install the new version and create issue if you have any. I generally resolve all issues in 24-48 hours.
 
 ## Navigate
 
@@ -142,11 +142,11 @@ After it need add configuration. See example [SPPermissionsConfiguration.xcconfi
 
 ## Usage
 
-Project separates to modules. For now available `Dialog`, `List` and `Native` interface. Each interface has delegates and datasource. If you want see example app, open `SPPermissions.xcodeproj` and choose `Example` target. 
+This project had separate modules for the display UI options. The interfaes are: `Dialog`, `List` and `Native`. Each interface has delegates and a datasource. If you want see an example app, open `SPPermissions.xcodeproj` and choose the `Example` target. 
 
 ### Dialog
 
-Modal alert, which you can see in previous version. I recomend use it mode when permissions less than three. Usage will be simple:
+This is a Modal alert, which was used in the previous version (<5.x). I recomend the use of this alert styly when your requested permissions are less than three. Usage will be:
 
 ```swift
 let controller = SPPermissions.dialog([.camera, .photoLibrary])
@@ -167,7 +167,7 @@ controller.present(on: self)
 
 ### List
 
-Native `UITableViewController` with support iPad. Use it with more two permissions. How it use:
+Native `UITableViewController` with support for the iPad. Use it with more than two permissions. An example of how it is used:
 
 ```swift
 let controller = SPPermissions.list([.calendar, .camera, .contacts])
@@ -218,31 +218,31 @@ controller.present(on: self)
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Speech.svg" width="105">
 </p>
 
-For check state of any permission, call enum `SPPermission`: 
+To check the state of any permission, call enum `SPPermission`: 
 
 ```swift
 let state = SPPermission.calendar.isAuthorized
 ```
 
-Also available func `isDenied`. This return false, if permission not requested before.
+Also available is the func `isDenied`. This returns false if the permission has not been requested before.
 
 ## DataSource & Delegate
 
-You have one method for pass data for each permission. If you return `nil`, using default parametrs.
+You have one method to pass data for each permission. If you return `nil`, SPPermissions will use the default parametrs.
 
 ```swift
 func data(for permission: SPPermission) -> SPPermissionData? {
     return nil
 }
 ```
-If you don't want show alert if permission denied, set `showAlertOpenSettingsWhenPermissionDenied` to false: 
+If you don't want show alert if a permission is denied, set `showAlertOpenSettingsWhenPermissionDenied` to false: 
 
 ```swift
 let notificationData = SPPermissionData(name: "Notification", description: "Remind about new orders for your account.", image: nil, allowTitle: "Allow", allowedTitle: "Allowed")
 notificationData.showAlertOpenSettingsWhenPermissionDenied = false
 ```
 
-If you want show this alert, need configure texts:
+If you want show this alert, you need to configure the texts strings:
 
 ```swift
 notificationData.alertOpenSettingsDeniedPermissionTitle = "Notifiaction denied"
@@ -251,7 +251,7 @@ notificationData.alertOpenSettingsDeniedPermissionButtonTitle = "Settings"
 notificationData.alertOpenSettingsDeniedPermissionCancelTitle = "Cancel"
 ```
 
-In delegate you can implement three methods: 
+In the delegate you can implement three methods: 
 
 ```swift
 func didAllow(permission: SPPermission) {}
@@ -261,14 +261,14 @@ func didHide() {}
 
 ## Good Practices
 
-I recommend show the all list of permissions, even if some of them are allowed. But if you want to request only none-allowed permissions, use this code:
+I recommend that you show the user all of the permission options, even if some of them are already allowed. But if you want to request only none-allowed permissions, use this code:
 
 ```swift
 let controller = SPPermissions.list([.notification, .reminders].filter { !$0.isAuthorized } )
 controller.present(on: self)
 ```
 
-A good way to check or need to show a dialog, check or all permissions are received:
+A good way to check for the need to show a dialog: check that all permissions are currently authorized by the user:
 
 ```swift
 let permissions = [.notification, .reminders].filter { !$0.isAuthorized }
@@ -279,7 +279,7 @@ if permissions.isEmpty {
 }
 ```
 
-If you request locations, you can show twice `.locationWhenInUse` & `.locationAlwaysAndWhenInUse`. If user allowed `always` mode, also change `when in use` mode:
+If you request locations, you can show both `.locationWhenInUse` & `.locationAlwaysAndWhenInUse`. If user allowed `always` mode, they can also change to `when in use` mode:
 
 ```swift
 let controller = SPPermissions.dialog([.locationWhenInUse, .locationAlwaysAndWhenInUse])
@@ -288,7 +288,7 @@ controller.present(on: self)
 
 ## Keys in Info.plist
 
-You need to add some keys to the `Info.plist` file with description. List of keys:
+You need to add some keys to the `Info.plist` file with descriptions. List of keys:
 
 - NSCameraUsageDescription
 - NSContactsUsageDescription
@@ -305,7 +305,7 @@ Do not use the description as the name of the key.
 
 ### Localization keys
 
-If you use xliff localization export, keys will be create automatically. If you prefer do localization file manually, you need create `InfoPlist.strings`, select languages in right side menu and add keys as keys in plist-file. See:
+If you use xliff localization export, keys will be create automatically. If you prefer do the localization file manually, you need to create `InfoPlist.strings`, select languages in the right side menu and add keys as keys in plist-file. See:
 
 ```
 "NSCameraUsageDescription" = "Here description of usage camera";
@@ -313,17 +313,16 @@ If you use xliff localization export, keys will be create automatically. If you 
 
 ## Сooperation
 
-The development of this project is completely free. If you can make a contribution, it will help development. Here list of task what need do:
+The development of this project is completely free. If you can make a contribution, it will help with development. Here list of tasks and what needs to be done:
 
-- Fix mistakes in this Readme and docs. My English so bad. Good create pull request.
-- Add docs in source files. Description of public methods and parametrs. 
-- Subtitles for [video](https://youtu.be/1kR5HGVhJfk) in any your native languages, where I tell you how to connect a configuration file.
+- Add docs in source files. Add a description of public methods and parameters. 
+- Subtitles for [video](https://youtu.be/1kR5HGVhJfk) in any of your native languages, where I tell you how to connect a configuration file.
 - Help me translate my app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) for other languages. 
 - Add icon for tv os example target.
 
 ## Design previous version
 
-I develop `SPPermissions` in Apple-way. For this, I check 30 apps to get UI-elements for it project. I am take screenshoot and draw it in Sketch. For example, `Allow` button is similar to `Get` button in the AppStore. Check [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I am design `4.0` version of  `SPPermissions`:
+I developed `SPPermissions` in an 'Apple-way'. To accomplish this, I checked 30 apps to get UI-elements for this project. I then take the screenshoot and re-draw it in Sketch. For example, the project's `Allow` button is similar to `Get` button in the AppStore. Check [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I designed the `4.0` version of  `SPPermissions`:
 
 [![Timelaps on YouTube](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Readme/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
 
