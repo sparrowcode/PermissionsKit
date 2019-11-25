@@ -21,6 +21,7 @@
 
 import UIKit
 
+#if os(iOS)
 class SPPermissionsListFooterCommentView: UITableViewHeaderFooterView {
     
     let titleLabel = UILabel()
@@ -43,3 +44,4 @@ class SPPermissionsListFooterCommentView: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+#endif

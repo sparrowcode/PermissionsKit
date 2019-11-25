@@ -25,12 +25,15 @@ enum SPPermissionsText {
     
     static func name(for permission: SPPermission) -> String {
         switch permission {
+        #if os(iOS)
         case .camera:
             return "Camera"
         case .photoLibrary:
             return "Photo Library"
+        #endif
         case .notification:
             return "Notification"
+        #if os(iOS)
         case .microphone:
             return "Microphone"
         case .calendar:
@@ -41,19 +44,23 @@ enum SPPermissionsText {
             return "Reminders"
         case .speech:
             return "Speech"
+        #endif
         case .locationWhenInUse:
             return "Location When Use"
+        #if os(iOS)
         case .locationAlwaysAndWhenInUse:
             return "Location Always"
         case .motion:
             return "Motion"
         case .mediaLibrary:
             return "Media Library"
+        #endif
         }
     }
     
     static func description(for permission: SPPermission) -> String {
         switch permission {
+        #if os(iOS)
         case .camera:
             return "Allow app for use camera"
         case .calendar:
@@ -62,20 +69,27 @@ enum SPPermissionsText {
             return "Access for your contacts and phones"
         case .microphone:
             return "Allow record voice from app"
+        #endif
         case .notification:
             return "Get important information without opening app."
+        #if os(iOS)
         case .photoLibrary:
             return "Access for save photos in your gallery"
         case .reminders:
             return "Application can create new task"
         case .speech:
             return "Allow to check your voice"
-        case .locationWhenInUse, .locationAlwaysAndWhenInUse:
+        #endif
+        case .locationWhenInUse:
+            return "Allow to access your location"
+        #if os(iOS)
+        case .locationAlwaysAndWhenInUse:
             return "Allow to access your location"
         case .motion:
             return "Allow to report motion and environment-related data"
         case .mediaLibrary:
             return "Allow to check your media"
+        #endif
         }
     }
     
