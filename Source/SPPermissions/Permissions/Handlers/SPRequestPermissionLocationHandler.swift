@@ -38,10 +38,7 @@ class SPPermissionAlwaysAuthorizationLocationHandler: NSObject, CLLocationManage
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        print("locationManager \(status)")
-        
         if status == .notDetermined {
-            print("2")
             return
         }
 

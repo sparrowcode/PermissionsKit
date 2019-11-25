@@ -21,6 +21,7 @@
 
 import UIKit
 
+#if os(iOS)
 class SPPermissionsLabel: UILabel {
     
     func layout(x: CGFloat, y: CGFloat, width: CGFloat) {
@@ -30,3 +31,4 @@ class SPPermissionsLabel: UILabel {
         frame.origin = CGPoint.init(x: x, y: y)
     }
 }
+#endif

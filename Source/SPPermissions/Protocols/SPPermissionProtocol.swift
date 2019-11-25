@@ -22,11 +22,24 @@
 import UIKit
 
 /**
-Requerid methods and property for permission class.
-*/
+ Requerid methods and property for permission class.
+ */
 protocol SPPermissionProtocol {
-
+    
+    /**
+     Returned if permission authorized.
+     */
     var isAuthorized: Bool { get }
+    
+    /**
+     Return if permission denied.
+     */
     var isDenied: Bool { get }
+    
+    /**
+     Request permission.
+     
+     - parameter complection: Call after permission request complete.
+     */
     func request(completion: @escaping ()->()?)
 }

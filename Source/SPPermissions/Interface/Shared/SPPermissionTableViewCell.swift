@@ -21,6 +21,7 @@
 
 import UIKit
 
+#if os(iOS)
 class SPPermissionTableViewCell: UITableViewCell {
     
     var titleLabel = UILabel()
@@ -104,3 +105,4 @@ class SPPermissionTableViewCell: UITableViewCell {
         iconView.bottomAnchor.constraint(equalTo: iconContainerView.bottomAnchor).isActive = true
     }
 }
+#endif

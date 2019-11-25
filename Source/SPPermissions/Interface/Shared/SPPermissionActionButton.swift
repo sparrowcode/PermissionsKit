@@ -21,6 +21,7 @@
 
 import UIKit
 
+#if os(iOS)
 class SPPermissionActionButton: UIButton {
     
     var allowTitle: String = SPPermissionsText.allow
@@ -71,3 +72,4 @@ class SPPermissionActionButton: UIButton {
         case allowed
     }
 }
+#endif

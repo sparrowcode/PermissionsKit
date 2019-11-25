@@ -67,9 +67,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
         snapBehavior = UISnapBehavior(item: dialogView, snapTo: dialogCenter)
         
         let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(self.handleGesture(sender:)))
-        #if os(iOS)
         panGesture.maximumNumberOfTouches = 1
-        #endif
         dialogView.addGestureRecognizer(panGesture)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
@@ -165,16 +163,13 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
             button.update()
             let isAuthorized = permission.isAuthorized
             if isAuthorized {
-                #if os(iOS)
                 SPPermissionsHaptic.impact(.light)
-                #endif
             }
             isAuthorized ? self.delegate?.didAllow?(permission: permission) : self.delegate?.didDenied?(permission: permission)
             
             /**
              Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
              */
-            #if os(iOS)
             if permission == .locationAlwaysAndWhenInUse {
                 if self.permissions.contains(.locationWhenInUse) {
                     if let index = self.permissions.firstIndex(of: .locationWhenInUse) {
@@ -184,7 +179,6 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
                     }
                 }
             }
-            #endif
             
             /**
              Check if all permissions allowed
@@ -282,9 +276,7 @@ extension SPPermissionsDialogController: UITableViewDataSource, UITableViewDeleg
         cell.contentView.layoutMargins = UIEdgeInsets.zero
         tableView.layoutMargins = UIEdgeInsets.zero
         if indexPath.row == permissions.count - 1 {
-            #if os(iOS)
             cell.separatorInset = UIEdgeInsets(top: 0, left: 100000, bottom: 0, right: 0)
-            #endif
         }
         return cell
     }

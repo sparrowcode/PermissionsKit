@@ -40,9 +40,7 @@ struct SPLocationPermission: SPPermissionProtocol {
     }
     
     var isAuthorized: Bool {
-        
         let status = CLLocationManager.authorizationStatus()
-        
         if status == .authorizedAlways {
             return true
         } else {
@@ -90,5 +88,4 @@ struct SPLocationPermission: SPPermissionProtocol {
         }
     }
 }
-
 #endif

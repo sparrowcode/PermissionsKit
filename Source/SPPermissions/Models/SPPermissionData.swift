@@ -21,6 +21,9 @@
 
 import UIKit
 
+/**
+ Texts, icons and some actions for permissions.
+ */
 public struct SPPermissionData {
     
     /**
@@ -56,23 +59,23 @@ public struct SPPermissionData {
     public var showAlertOpenSettingsWhenPermissionDenied = true
     
     /**
-    Title of alert.
-    */
+     Title of alert.
+     */
     public var alertOpenSettingsDeniedPermissionTitle: String? = nil
     
     /**
-    Subtitle of alert.
-    */
+     Subtitle of alert.
+     */
     public var alertOpenSettingsDeniedPermissionDescription: String? = nil
     
     /**
-    Title of action button.
-    */
+     Title of action button.
+     */
     public var alertOpenSettingsDeniedPermissionButtonTitle: String? = nil
     
     /**
-    Title of cancel button.
-    */
+     Title of cancel button.
+     */
     public var alertOpenSettingsDeniedPermissionCancelTitle: String? = nil
     
     public init(name: String, description: String, image: UIImage?, allowTitle: String, allowedTitle: String) {

@@ -45,7 +45,7 @@ public enum SPPermissions {
         let controller = SPPermissionsListController(removeDublicates(permissions))
         return controller
     }
-    
+
     /**
      Request permissions as dialog. Available swipe-down for dismiss.
      

@@ -21,6 +21,7 @@
 
 import UIKit
 
+#if os(iOS)
 public class SPPermissionsBlurView: UIVisualEffectView {
     
     private let blurEffect: UIBlurEffect
@@ -51,3 +52,4 @@ public class SPPermissionsBlurView: UIVisualEffectView {
         self.effect = blurEffect
     }
 }
+#endif
