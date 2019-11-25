@@ -5,13 +5,22 @@ class ViewController: UITableViewController {
     
     var allPermissions: [SPPermission] = SPPermission.allCases
     var selectedPermissions: [SPPermission] = []
+    #if os(iOS)
+    let segmentedControlItems = ["List", "Dialog", "Native"]
+    #else
+    let segmentedControlItems = ["Native"]
+    #endif
     
     init() {
+        #if os(iOS)
         if #available(iOS 13.0, *) {
             super.init(style: .insetGrouped)
         } else {
             super.init(style: .plain)
         }
+        #else
+        super.init(style: .plain)
+        #endif
     }
     
     required init?(coder: NSCoder) {
@@ -21,10 +30,10 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Choose Style"
-        let segmentedControl = UISegmentedControl(items: ["List", "Dialog", "Native"])
+        let segmentedControl = UISegmentedControl(items: segmentedControlItems)
         navigationItem.titleView = segmentedControl
         segmentedControl.selectedSegmentIndex = 0
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .play, target: self, action: #selector(self.requestPermissions))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(self.requestPermissions))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
@@ -32,16 +41,20 @@ class ViewController: UITableViewController {
         if selectedPermissions.isEmpty { return }
         guard let segmentControl = navigationItem.titleView as? UISegmentedControl else { return }
         switch segmentControl.selectedSegmentIndex {
-        case 0:
+        #if os(iOS)
+        case segmentedControlItems.firstIndex(of: "List"):
             let controller = SPPermissions.list(selectedPermissions)
             controller.dataSource = self
             controller.present(on: self)
-        case 1:
+        case segmentedControlItems.firstIndex(of: "Dialog"):
             let controller = SPPermissions.dialog(selectedPermissions)
             controller.dataSource = self
             controller.present(on: self)
-        case 2:
-            break
+        #endif
+        case segmentedControlItems.firstIndex(of: "Native"):
+            let controller = SPPermissions.native(selectedPermissions)
+            controller.dataSource = self
+            controller.present(on: self)
         default:
             break
         }

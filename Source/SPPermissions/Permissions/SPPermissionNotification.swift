@@ -52,7 +52,7 @@ struct SPNotificationPermission: SPPermissionProtocol {
     }
     
     func request(completion: @escaping ()->()?) {
-        if #available(iOS 10.0, *) {
+        if #available(iOS 10.0, tvOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
             center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
                 DispatchQueue.main.async {
@@ -60,7 +60,9 @@ struct SPNotificationPermission: SPPermissionProtocol {
                 }
             }
         } else {
+            #if os(iOS)
             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+            #endif
             DispatchQueue.main.async {
                 completion()
             }

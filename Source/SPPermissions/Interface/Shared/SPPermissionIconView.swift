@@ -39,12 +39,15 @@ class SPPermissionIconView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         switch permission {
+        #if os(iOS)
         case .camera:
             SPPermissionsDraw.drawCamera(frame: rect, resizing: .aspectFit, color: color)
         case .photoLibrary:
             SPPermissionsDraw.drawPhotos(frame: rect, resizing: .aspectFit, color: color)
+        #endif
         case .notification:
             SPPermissionsDraw.drawNotifications(frame: rect, resizing: .aspectFit, color: color)
+        #if os(iOS)
         case .microphone:
             SPPermissionsDraw.drawMicrophone(frame: rect, resizing: .aspectFit, color: color)
         case .calendar:
@@ -55,14 +58,17 @@ class SPPermissionIconView: UIView {
             SPPermissionsDraw.drawReminders(frame: rect, resizing: .aspectFit, color: color)
         case .speech:
             SPPermissionsDraw.drawSpeech(frame: rect, resizing: .aspectFit, color: color)
+        #endif
         case .locationWhenInUse:
             SPPermissionsDraw.drawLocations(frame: rect, resizing: .aspectFit, color: color)
+        #if os(iOS)
         case .locationAlwaysAndWhenInUse:
             SPPermissionsDraw.drawLocations(frame: rect, resizing: .aspectFit, color: color)
         case .motion:
             SPPermissionsDraw.drawMotion(frame: rect, resizing: .aspectFit, color: color)
         case .mediaLibrary:
             SPPermissionsDraw.drawMedia(frame: rect, resizing: .aspectFit, color: color)
+        #endif
         }
     }
 }

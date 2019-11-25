@@ -21,6 +21,7 @@
 
 import UIKit
 
+#if os(iOS)
 class SPPermissionsDialogView: UIView {
     
     let closeButton = SPPermissionsCloseButton()
@@ -94,3 +95,4 @@ class SPPermissionsDialogView: UIView {
         tableView.frame = CGRect.init(x: inset, y: titleLabel.frame.origin.y + titleLabel.frame.height + 2, width: contentWidth, height: min(contentHeight, maxHeight))
     }
 }
+#endif
