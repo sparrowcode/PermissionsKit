@@ -3,7 +3,7 @@
 <img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Readme/Preview - 5.0.jpg" width="470"/>
 
 ### About
-This is an API to ask for user permissions using Swift. The API provides for three UI options (list, dialog & native). The UI/UX is in **Apple style** and supports iPad, dark mode & tvOS. Also you can check the state permissions using the API.
+SPPermissions is an API to ask for user permissions using Swift. The API provides for three UI options (list, dialog & native). The UI/UX is in an **Apple style** and supports iPad, dark mode & tvOS. Also you can check the state permissions using the API.
 
 Visit my store for iOS developers:
 
@@ -13,17 +13,17 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
 
 [![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
 
-To help on this project, see [Сooperation](#сooperation) section or our [chat](https://t.me/sppermissions).
+To help on this project, see the [Сooperation](#сooperation) section or our [chat](https://t.me/sppermissions).
 
-## Pay attention
+## 5.x Migration - FYI
 
-I have migrated `SPPermissions` to the new `5.0` vesion. If you found any bugs or need old functionality - please, create an issue or write me. If you want install the old version, add this to your Podfile:
+I have migrated `SPPermissions` to a new `5.0` vesion. If you find any bugs or need the old functionality - please, create an issue or write me. If you want install or stay on the old version (4.1.4), add this to your Podfile:
 
 ```ruby
 pod 'SPPermissions', '4.1.4'
 ```
 
-I recomended that you install the new version and create issue if you have any. I generally resolve all issues in 24-48 hours.
+I recomended that you install the new version and create an issue if you have any. I generally respond and resolve all issues within 24-48 hours.
 
 ## Navigate
 
@@ -142,11 +142,11 @@ After it need add configuration. See example [SPPermissionsConfiguration.xcconfi
 
 ## Usage
 
-This project had separate modules for the display UI options. The interfaes are: `Dialog`, `List` and `Native`. Each interface has delegates and a datasource. If you want see an example app, open `SPPermissions.xcodeproj` and choose the `Example` target. 
+This project had separate modules for the display UI options. The interfaces are: `Dialog`, `List` and `Native`. Each interface has delegates and a datasource. If you want see an example app, open `SPPermissions.xcodeproj` and choose the `Example` target. 
 
 ### Dialog
 
-This is a Modal alert, which was used in the previous version (<5.x). I recomend the use of this alert styly when your requested permissions are less than three. Usage will be:
+This is a Modal alert, which was used in the previous version (<5.x). I recomend the use of this alert style when your requested permissions are less than three. Usage will be:
 
 ```swift
 let controller = SPPermissions.dialog([.camera, .photoLibrary])
@@ -228,14 +228,14 @@ Also available is the func `isDenied`. This returns false if the permission has 
 
 ## DataSource & Delegate
 
-You have one method to pass data for each permission. If you return `nil`, SPPermissions will use the default parametrs.
+You have one method to pass data for each permission. If you return `nil`, SPPermissions will use the default parameters.
 
 ```swift
 func data(for permission: SPPermission) -> SPPermissionData? {
     return nil
 }
 ```
-If you don't want show alert if a permission is denied, set `showAlertOpenSettingsWhenPermissionDenied` to false: 
+If you don't want show the alert pop-up if a permission is denied, set `showAlertOpenSettingsWhenPermissionDenied` to false: 
 
 ```swift
 let notificationData = SPPermissionData(name: "Notification", description: "Remind about new orders for your account.", image: nil, allowTitle: "Allow", allowedTitle: "Allowed")
@@ -251,7 +251,7 @@ notificationData.alertOpenSettingsDeniedPermissionButtonTitle = "Settings"
 notificationData.alertOpenSettingsDeniedPermissionCancelTitle = "Cancel"
 ```
 
-In the delegate you can implement three methods: 
+In the delegate you can implement these three methods: 
 
 ```swift
 func didAllow(permission: SPPermission) {}
@@ -261,7 +261,7 @@ func didHide() {}
 
 ## Good Practices
 
-I recommend that you show the user all of the permission options, even if some of them are already allowed. But if you want to request only none-allowed permissions, use this code:
+I recommend that you show the user all of the permission options, even if some of them are already allowed. But if you want to request only non-allowed permissions, use this code:
 
 ```swift
 let controller = SPPermissions.list([.notification, .reminders].filter { !$0.isAuthorized } )
@@ -279,7 +279,7 @@ if permissions.isEmpty {
 }
 ```
 
-If you request locations, you can show both `.locationWhenInUse` & `.locationAlwaysAndWhenInUse`. If user allowed `always` mode, they can also change to `when in use` mode:
+If you are requesting location access, you can show both `.locationWhenInUse` & `.locationAlwaysAndWhenInUse`. If user had already allowed `always` mode, they can change to `when in use` mode:
 
 ```swift
 let controller = SPPermissions.dialog([.locationWhenInUse, .locationAlwaysAndWhenInUse])
@@ -313,16 +313,16 @@ If you use xliff localization export, keys will be create automatically. If you 
 
 ## Сooperation
 
-The development of this project is completely free. If you can make a contribution, it will help with development. Here list of tasks and what needs to be done:
+The use of this project is completely free! If you can make a contribution, it will help with the project's ongoing development. Here is list of tasks and what needs to be done:
 
 - Add docs in source files. Add a description of public methods and parameters. 
-- Subtitles for [video](https://youtu.be/1kR5HGVhJfk) in any of your native languages, where I tell you how to connect a configuration file.
+- Subtitles for this [video](https://youtu.be/1kR5HGVhJfk) in any of your native languages, where I tell you how to connect a configuration file.
 - Help me translate my app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) for other languages. 
-- Add icon for tv os example target.
+- Add icon for the tv os example target.
 
-## Design previous version
+## Design of previous version
 
-I developed `SPPermissions` in an 'Apple-way'. To accomplish this, I checked 30 apps to get UI-elements for this project. I then take the screenshoot and re-draw it in Sketch. For example, the project's `Allow` button is similar to `Get` button in the AppStore. Check [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I designed the `4.0` version of  `SPPermissions`:
+I developed `SPPermissions` in an 'Apple-way'. To accomplish this, I checked 30 apps to get UI-elements for this project. I then took screenshoots and re-drew it in Sketch. For example, the project's `Allow` button is similar to the `Get` button in the AppStore. Check [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I designed the `4.0` version of  `SPPermissions`:
 
 [![Timelaps on YouTube](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Readme/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
 
