@@ -27,15 +27,34 @@ import UIKit
  */
 public class SPPermissionsListController: UITableViewController, SPPermissionsControllerProtocol {
     
+    /**
+     Set for change data in cell. Allow customize text, fonts, colors and other.
+     */
     public weak var dataSource: SPPermissionsDataSource?
+    
+    /**
+     Check some events and denied alert.
+     */
     public weak var delegate: SPPermissionsDelegate?
     
+    /**
+     Large title.
+     */
     public var titleText: String = SPPermissionsText.titleText
+    
+    /**
+     Header text before large title.
+     */
     public var headerText: String = SPPermissionsText.subtitleText
+    
+    /**
+     Small description in bottom.
+     */
     public var footerText: String = SPPermissionsText.commentText
     
     /**
-     Allow set small navigation bar. You shoud customize it here, becouse controller add to navigation only before call `present()` func.
+     Allow set small navigation bar. You shoud customize it here,
+     becouse controller add to navigation only before call `present()` func.
      */
     public var prefersLargeTitles: Bool = true
     
@@ -63,7 +82,6 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissAnimated))
         }
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissAnimated))
         navigationItem.title = titleText
         navigationItem.largeTitleDisplayMode = .automatic
         navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
@@ -84,11 +102,10 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     @objc func process(button: SPPermissionActionButton) {
         let permission = button.permission
         permission.request {
+            
             button.update()
             let isAuthorized = permission.isAuthorized
-            if isAuthorized {
-                SPPermissionsHaptic.impact(.light)
-            }
+            if isAuthorized { SPPermissionsHaptic.impact(.light) }
             isAuthorized ? self.delegate?.didAllow?(permission: permission) : self.delegate?.didDenied?(permission: permission)
             
             /**
@@ -115,29 +132,32 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
             }
             
             /**
-             Show alert with propose go to settings and allow permission. Can disable it in `SPPermissionsDataSource`.
+             Show alert with propose go to settings and allow permission.
+             For disable it implement protocol `SPPermissionsDelegate`.
              */
             if permission.isDenied {
-                let data = self.dataSource?.data(for: permission)
-                if (data?.showAlertOpenSettingsWhenPermissionDenied ?? true) {
-                    let alertController = UIAlertController.init(
-                        title: data?.alertOpenSettingsDeniedPermissionTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionTitle,
-                        message: data?.alertOpenSettingsDeniedPermissionDescription ?? SPPermissionsText.alertOpenSettingsDeniedPermissionDescription,
-                        preferredStyle: .alert
-                    )
-                    alertController.addAction(UIAlertAction.init(
-                        title: data?.alertOpenSettingsDeniedPermissionCancelTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionCancelTitle,
-                        style: UIAlertAction.Style.cancel,
-                        handler: nil)
-                    )
-                    alertController.addAction(UIAlertAction.init(
-                        title: data?.alertOpenSettingsDeniedPermissionButtonTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionButtonTitle,
-                        style: UIAlertAction.Style.default,
-                        handler: { (action) in
-                            SPPermissionsOpener.openSettings()
-                    }))
-                    self.present(alertController, animated: true, completion: nil)
+                var data = SPPermissionDeniedAlertData()
+                if self.delegate != nil {
+                    guard let userData = self.delegate?.deniedData?(for: permission) else { return }
+                    data = userData
                 }
+                let alertController = UIAlertController.init(
+                    title: data.alertOpenSettingsDeniedPermissionTitle,
+                    message: data.alertOpenSettingsDeniedPermissionDescription,
+                    preferredStyle: .alert
+                )
+                alertController.addAction(UIAlertAction.init(
+                    title: data.alertOpenSettingsDeniedPermissionCancelTitle,
+                    style: UIAlertAction.Style.cancel,
+                    handler: nil)
+                )
+                alertController.addAction(UIAlertAction.init(
+                    title: data.alertOpenSettingsDeniedPermissionButtonTitle,
+                    style: UIAlertAction.Style.default,
+                    handler: { (action) in
+                        SPPermissionsOpener.openSettings()
+                }))
+                self.present(alertController, animated: true, completion: nil)
             }
         }
     }
@@ -186,6 +206,8 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     }
 }
 
+// MARK: Table Data Source & Delegate
+
 extension SPPermissionsListController {
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -193,9 +215,10 @@ extension SPPermissionsListController {
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionTableViewCell.id, for: indexPath) as! SPPermissionTableViewCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionTableViewCell.id, for: indexPath) as! SPPermissionTableViewCell
         let permission = permissions[indexPath.row]
-        cell.set(dataSource?.data(for: permission), permission: permission)
+        cell.defaultConfigure(for: permission)
+        cell = dataSource?.configure(cell, for: permission) ?? cell
         cell.button.addTarget(self, action: #selector(self.process(button:)), for: .touchUpInside)
         return cell
     }

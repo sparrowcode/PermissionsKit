@@ -22,11 +22,29 @@
 import UIKit
 
 #if os(iOS)
+/**
+ Dialog area view.
+ */
 class SPPermissionsDialogView: UIView {
     
+    /**
+     Close button. Not recomended hide it.
+     */
     let closeButton = SPPermissionsCloseButton()
+    
+    /**
+     Big title.
+     */
     let titleLabel = SPPermissionsLabel()
+    
+    /**
+     Smaller whan title, but on top view.
+     */
     let subtitleLabel = SPPermissionsLabel()
+    
+    /**
+     List with permissions.
+     */
     let tableView = UITableView(frame: .zero, style: .plain)
     
     init() {
@@ -34,10 +52,12 @@ class SPPermissionsDialogView: UIView {
         backgroundColor = SPPermissionsColor.systemBackground
         layer.cornerRadius = 15
         layer.anchorPoint = CGPoint.init(x: 0.5, y: 0.5)
+        insetsLayoutMarginsFromSafeArea = false
         
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.systemFont(ofSize: 29, weight: .bold)
         titleLabel.textColor = SPPermissionsColor.label
+        
         addSubview(titleLabel)
         
         subtitleLabel.numberOfLines = 0
@@ -45,14 +65,20 @@ class SPPermissionsDialogView: UIView {
         subtitleLabel.textColor = SPPermissionsColor.secondaryLabel
         addSubview(subtitleLabel)
         
+        tableView.contentInsetAdjustmentBehavior = .never
         tableView.showsVerticalScrollIndicator = false
+        tableView.showsHorizontalScrollIndicator = false
         tableView.delaysContentTouches = false
-        tableView.preservesSuperviewLayoutMargins = true
+        tableView.insetsContentViewsToSafeArea = false
+        tableView.preservesSuperviewLayoutMargins = false
+        tableView.insetsLayoutMarginsFromSafeArea = false
         tableView.allowsSelection = false
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 45 + 10 - 5, bottom: 0, right: 0)
         tableView.alwaysBounceVertical = false
+        tableView.layer.cornerRadius = layer.cornerRadius
+        tableView.layer.masksToBounds = true
         addSubview(tableView)
-
+        
         closeButton.iconView.areaColor = .clear
         addSubview(closeButton)
     }
@@ -61,6 +87,9 @@ class SPPermissionsDialogView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /**
+     Layout manually and add shadow.
+     */
     func layout(in view: UIView) {
         var width = view.bounds.width - 20 * 2
         if view.bounds.width > view.bounds.height * 1.35 {
@@ -92,7 +121,8 @@ class SPPermissionsDialogView: UIView {
         titleLabel.layout(x: inset, y: subtitleLabel.frame.origin.y + subtitleLabel.frame.height + 2, width: contentWidth)
         let contentHeight = tableView.contentSize.height
         let maxHeight = bounds.height - tableView.frame.origin.y
-        tableView.frame = CGRect.init(x: inset, y: titleLabel.frame.origin.y + titleLabel.frame.height + 2, width: contentWidth, height: min(contentHeight, maxHeight))
+        tableView.frame = CGRect.init(x: 0, y: titleLabel.frame.origin.y + titleLabel.frame.height + 2, width: bounds.width, height: min(contentHeight, maxHeight))
+        tableView.layoutMargins = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
     }
 }
 #endif

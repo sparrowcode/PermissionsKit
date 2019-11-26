@@ -40,4 +40,9 @@ import UIKit
      Call when controller closed.
      */
     @objc optional func didHide()
+    
+    /**
+     If permission denied, after action show alert with propose open settings and allow this permission.
+     */
+    @objc optional func deniedData(for permission: SPPermission) -> SPPermissionDeniedAlertData?
 }

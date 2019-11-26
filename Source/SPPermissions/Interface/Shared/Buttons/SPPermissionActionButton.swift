@@ -22,51 +22,101 @@
 import UIKit
 
 #if os(iOS)
-class SPPermissionActionButton: UIButton {
+/**
+ Action button. Have 2 state: allow & allowed.
+ For each state can set colors and title.
+ */
+public class SPPermissionActionButton: UIButton {
     
-    var allowTitle: String = SPPermissionsText.allow
-    var allowedTitle: String = SPPermissionsText.allowed
-    var allowColor: UIColor = SPPermissionsColor.buttonArea
-    var allowedColor: UIColor = SPPermissionsColor.base
+    /**
+     Title of button when permissin not authorized yet.
+     */
+    public var allowTitle: String = SPPermissionsText.allow { didSet { applyStyle() } }
     
+    /**
+     Title of button when permission authorized.
+     */
+    public var allowedTitle: String = SPPermissionsText.allowed { didSet { applyStyle() } }
+    
+    /**
+     Title color for button when permissin not authorized yet.
+     */
+    public var allowTitleColor: UIColor = SPPermissionsColor.base { didSet { applyStyle() } }
+    
+    /**
+     Background button color when permissin not authorized yet.
+     */
+    public var allowBackgroundColor: UIColor = SPPermissionsColor.buttonArea { didSet { applyStyle() } }
+    
+    /**
+     Title color for button when permissin authorized.
+     */
+    public var allowedTitleColor: UIColor = SPPermissionsColor.white { didSet { applyStyle() } }
+    
+    /**
+     Background button color when permission authorized.
+     */
+    public var allowedBackgroundColor: UIColor = SPPermissionsColor.base { didSet { applyStyle() } }
+    
+    /**
+     For which permission generate this button.
+     */
     var permission: SPPermission = .notification
     
+    /**
+     Button has 2 styles: `.base` & `.allowed`.
+     For each style can set title and colors.
+     */
     var style: Style = .base {
         didSet {
             switch self.style {
             case .base:
                 setTitle(allowTitle, for: .normal)
-                setTitleColor(allowedColor, for: .normal)
-                setTitleColor(allowedColor.withAlphaComponent(0.7), for: .highlighted)
-                backgroundColor = self.allowColor
+                setTitleColor(allowTitleColor, for: .normal)
+                setTitleColor(allowTitleColor.withAlphaComponent(0.7), for: .highlighted)
+                backgroundColor = self.allowBackgroundColor
                 titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
                 contentEdgeInsets = UIEdgeInsets.init(top: 6, left: 15, bottom: 6, right: 15)
             case .allowed:
                 setTitle(allowedTitle, for: .normal)
-                backgroundColor = self.allowedColor
-                setTitleColor(UIColor.white, for: .normal)
-                setTitleColor(UIColor.white.withAlphaComponent(0.7), for: .highlighted)
+                backgroundColor = allowedBackgroundColor
+                setTitleColor(allowedTitleColor, for: .normal)
+                setTitleColor(allowedTitleColor.withAlphaComponent(0.7), for: .highlighted)
                 titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
                 contentEdgeInsets = UIEdgeInsets.init(top: 6, left: 15, bottom: 6, right: 15)
             }
         }
     }
     
-    override func setTitle(_ title: String?, for state: UIControl.State) {
+    /**
+     Ovveride for always uppercased title.
+     */
+    override public func setTitle(_ title: String?, for state: UIControl.State) {
         super.setTitle(title?.uppercased(), for: state)
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = self.frame.height / 2
     }
     
+    /**
+     Animatable update button style.
+     */
     public func update() {
         UIView.animate(withDuration: 0.3, animations: {
             self.style = self.permission.isAuthorized ? .allowed : .base
         })
     }
     
+    private func applyStyle() {
+        var current = self.style
+        self.style = current
+    }
+    
+    /**
+     Button style.
+     */
     enum Style {
         case base
         case allowed

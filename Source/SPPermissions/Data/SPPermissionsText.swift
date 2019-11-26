@@ -92,9 +92,4 @@ enum SPPermissionsText {
     
     static var allow: String = "Allow"
     static var allowed: String = "Allowed"
-    
-    static var alertOpenSettingsDeniedPermissionTitle: String = "Permission denied"
-    static var alertOpenSettingsDeniedPermissionDescription: String = "Please, go to Settings and allow permission."
-    static var alertOpenSettingsDeniedPermissionButtonTitle: String = "Settings"
-    static var alertOpenSettingsDeniedPermissionCancelTitle: String = "Cancel"
 }
