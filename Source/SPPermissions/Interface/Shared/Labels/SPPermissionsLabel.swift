@@ -22,6 +22,9 @@
 import UIKit
 
 #if os(iOS)
+/**
+ Layout with dinamic height. For it call `layout()`.
+ */
 class SPPermissionsLabel: UILabel {
     
     func layout(x: CGFloat, y: CGFloat, width: CGFloat) {

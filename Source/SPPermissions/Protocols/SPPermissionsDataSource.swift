@@ -21,13 +21,15 @@
 
 import UIKit
 
+#if os(iOS)
 /**
  Implement it for customize permission name, description, icon and other.
  */
 public protocol SPPermissionsDataSource: class {
     
     /**
-     Return data for permission. Include optinal image and alerts if permission denied.
+     Configure cell here. Soon add description for each property.
      */
-    func data(for permission: SPPermission) -> SPPermissionData?
+    func configure(_ cell: SPPermissionTableViewCell, for permission: SPPermission) -> SPPermissionTableViewCell
 }
+#endif

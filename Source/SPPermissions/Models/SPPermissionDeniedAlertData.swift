@@ -21,35 +21,28 @@
 
 import UIKit
 
-#if os(iOS)
-public class SPPermissionsBlurView: UIVisualEffectView {
+/**
+ If permission denied, after action show alert with propose open settings and allow this permission.
+ */
+public class SPPermissionDeniedAlertData: NSObject {
+        
+    /**
+     Title of alert.
+     */
+    public var alertOpenSettingsDeniedPermissionTitle: String = "Permission denied"
     
-    private let blurEffect: UIBlurEffect
-    open var blurRadius: CGFloat {
-        return blurEffect.value(forKeyPath: "blurRadius") as! CGFloat
-    }
+    /**
+     Subtitle of alert.
+     */
+    public var alertOpenSettingsDeniedPermissionDescription: String = "Please, go to Settings and allow permission."
     
-    public convenience init() {
-        self.init(withRadius: 0)
-    }
+    /**
+     Title of action button.
+     */
+    public var alertOpenSettingsDeniedPermissionButtonTitle: String = "Settings"
     
-    public init(withRadius radius: CGFloat) {
-        let customBlurClass: AnyObject.Type = NSClassFromString("_UICustomBlurEffect")!
-        let customBlurObject: NSObject.Type = customBlurClass as! NSObject.Type
-        self.blurEffect = customBlurObject.init() as! UIBlurEffect
-        self.blurEffect.setValue(1.0, forKeyPath: "scale")
-        self.blurEffect.setValue(radius, forKeyPath: "blurRadius")
-        super.init(effect: radius == 0 ? nil : self.blurEffect)
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    open func setBlurRadius(_ radius: CGFloat) {
-        guard radius != blurRadius else { return }
-        blurEffect.setValue(radius, forKeyPath: "blurRadius")
-        self.effect = blurEffect
-    }
+    /**
+     Title of cancel button.
+     */
+    public var alertOpenSettingsDeniedPermissionCancelTitle: String = "Cancel"
 }
-#endif

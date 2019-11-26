@@ -24,10 +24,16 @@ import UIKit
 #if os(iOS)
 class SPPermissionsListHeaderView: UITableViewHeaderFooterView {
     
+    /**
+     Text for header view.
+     */
     let titleLabel = UILabel()
     
+    /**
+     ID for register in table view.
+     */
     static var id = "SPPermissionsListHeaderView"
-
+    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         titleLabel.numberOfLines = 0

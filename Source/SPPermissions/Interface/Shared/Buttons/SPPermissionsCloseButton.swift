@@ -24,6 +24,9 @@ import UIKit
 #if os(iOS)
 class SPPermissionsCloseButton: UIButton {
     
+    /**
+     Draw close icon.
+     */
     let iconView = CloseIconView()
     
     init() {
@@ -43,9 +46,19 @@ class SPPermissionsCloseButton: UIButton {
         iconView.frame = bounds
     }
     
+    /**
+     Drawable close icon.
+     */
     class CloseIconView: UIView {
         
+        /**
+         Color of icon.
+         */
         var elementColor: UIColor = SPPermissionsColor.secondaryLabel
+        
+        /**
+         Background color.
+         */
         var areaColor: UIColor = SPPermissionsColor.secondarySystemBackground
         
         override func draw(_ rect: CGRect) {

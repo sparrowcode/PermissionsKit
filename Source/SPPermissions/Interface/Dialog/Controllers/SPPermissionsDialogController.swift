@@ -27,15 +27,40 @@ import UIKit
  */
 public class SPPermissionsDialogController: UIViewController, SPPermissionsControllerProtocol {
     
+    /**
+     Set for change data in cell. Allow customize text, fonts, colors and other.
+     */
     public weak var dataSource: SPPermissionsDataSource?
+    
+    /**
+     Check some events and denied alert.
+     */
     public weak var delegate: SPPermissionsDelegate?
     
+    /**
+     Large title.
+     */
     public var titleText: String = SPPermissionsText.titleText
+    
+    /**
+     Header text before large title.
+     */
     public var headerText: String = SPPermissionsText.subtitleShortText
+    
+    /**
+     Small description in bottom.
+     */
     public var footerText: String = SPPermissionsText.commentText
     
-    var dialogView = SPPermissionsDialogView()
-    var backgroundView = SPPermissionsGradeBlurView()
+    /**
+     View with content.
+     */
+    let dialogView = SPPermissionsDialogView()
+    
+    /**
+     Blur and grade on background.
+     */
+    let backgroundView = SPPermissionsGradeBlurView()
     
     private var permissions: [SPPermission]
     
@@ -148,6 +173,9 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
         }
     }
     
+    /**
+     Get center without matgins.
+     */
     private var dialogCenter: CGPoint {
         let width = view.frame.width - view.layoutMargins.left - view.layoutMargins.right
         let height = view.frame.height - view.layoutMargins.top - view.layoutMargins.bottom
@@ -168,7 +196,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
             isAuthorized ? self.delegate?.didAllow?(permission: permission) : self.delegate?.didDenied?(permission: permission)
             
             /**
-             Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
+             Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`.
              */
             if permission == .locationAlwaysAndWhenInUse {
                 if self.permissions.contains(.locationWhenInUse) {
@@ -181,7 +209,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
             }
             
             /**
-             Check if all permissions allowed
+             Check if all permissions allowed.
              */
             let allowedPermissions = self.permissions.filter { $0.isAuthorized }
             if allowedPermissions.count == self.permissions.count {
@@ -191,34 +219,38 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
             }
             
             /**
-             Show alert with propose go to settings and allow permission. Can disable it in `SPPermissionsDataSource`.
+             Show alert with propose go to settings and allow permission.
+             For disable it implement protocol `SPPermissionsDelegate`.
              */
             if permission.isDenied {
-                let data = self.dataSource?.data(for: permission)
-                if (data?.showAlertOpenSettingsWhenPermissionDenied ?? true) {
-                    let alertController = UIAlertController.init(
-                        title: data?.alertOpenSettingsDeniedPermissionTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionTitle,
-                        message: data?.alertOpenSettingsDeniedPermissionDescription ?? SPPermissionsText.alertOpenSettingsDeniedPermissionDescription,
-                        preferredStyle: .alert
-                    )
-                    alertController.addAction(UIAlertAction.init(
-                        title: data?.alertOpenSettingsDeniedPermissionCancelTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionCancelTitle,
-                        style: UIAlertAction.Style.cancel,
-                        handler: nil)
-                    )
-                    alertController.addAction(UIAlertAction.init(
-                        title: data?.alertOpenSettingsDeniedPermissionButtonTitle ?? SPPermissionsText.alertOpenSettingsDeniedPermissionButtonTitle,
-                        style: UIAlertAction.Style.default,
-                        handler: { (action) in
-                            SPPermissionsOpener.openSettings()
-                    }))
-                    self.present(alertController, animated: true, completion: nil)
+                var data = SPPermissionDeniedAlertData()
+                if self.delegate != nil {
+                    guard let userData = self.delegate?.deniedData?(for: permission) else { return }
+                    data = userData
                 }
+                let alertController = UIAlertController.init(
+                    title: data.alertOpenSettingsDeniedPermissionTitle,
+                    message: data.alertOpenSettingsDeniedPermissionDescription,
+                    preferredStyle: .alert
+                )
+                alertController.addAction(UIAlertAction.init(
+                    title: data.alertOpenSettingsDeniedPermissionCancelTitle,
+                    style: UIAlertAction.Style.cancel,
+                    handler: nil)
+                )
+                alertController.addAction(UIAlertAction.init(
+                    title: data.alertOpenSettingsDeniedPermissionButtonTitle,
+                    style: UIAlertAction.Style.default,
+                    handler: { (action) in
+                        SPPermissionsOpener.openSettings()
+                }))
+                self.present(alertController, animated: true, completion: nil)
             }
         }
     }
     
-    //MARK: - Animator
+    // MARK: Animator
+    
     var animator = UIDynamicAnimator()
     var attachmentBehavior : UIAttachmentBehavior!
     var gravityBehaviour : UIGravityBehavior!
@@ -259,6 +291,8 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     }
 }
 
+// MARK: Table Data Source & Delegate
+
 extension SPPermissionsDialogController: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -266,18 +300,13 @@ extension SPPermissionsDialogController: UITableViewDataSource, UITableViewDeleg
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionTableViewCell.id, for: indexPath) as! SPPermissionTableViewCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionTableViewCell.id, for: indexPath) as! SPPermissionTableViewCell
         let permission = permissions[indexPath.row]
-        cell.set(dataSource?.data(for: permission), permission: permission)
+        cell.defaultConfigure(for: permission)
+        cell = dataSource?.configure(cell, for: permission) ?? cell
         cell.button.addTarget(self, action: #selector(self.process(button:)), for: .touchUpInside)
-        cell.preservesSuperviewLayoutMargins = true
-        cell.contentView.preservesSuperviewLayoutMargins = true
-        cell.layoutMargins = UIEdgeInsets.zero
-        cell.contentView.layoutMargins = UIEdgeInsets.zero
-        tableView.layoutMargins = UIEdgeInsets.zero
-        if indexPath.row == permissions.count - 1 {
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 100000, bottom: 0, right: 0)
-        }
+        cell.insetsLayoutMarginsFromSafeArea = false
+        cell.contentView.insetsLayoutMarginsFromSafeArea = false
         return cell
     }
     

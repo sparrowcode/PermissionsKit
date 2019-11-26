@@ -1,3 +1,24 @@
+// The MIT License (MIT)
+// Copyright © 2019 Ivan Vorobei (ivanvorobei@icloud.com)
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
 import UIKit
 import SPPermissions
 
@@ -35,14 +56,16 @@ class ViewController: UITableViewController {
         case 0:
             let controller = SPPermissions.list(selectedPermissions)
             controller.dataSource = self
+            controller.delegate = self
             controller.present(on: self)
         case 1:
             let controller = SPPermissions.dialog(selectedPermissions)
             controller.dataSource = self
+            controller.delegate = self
             controller.present(on: self)
         case 2:
             let controller = SPPermissions.native(selectedPermissions)
-            controller.dataSource = self
+            controller.delegate = self
             controller.present(on: self)
         default:
             break
@@ -50,15 +73,55 @@ class ViewController: UITableViewController {
     }
 }
 
-/**
- DataSource for each permission. Return nil if you want use default data.
- */
+// MARK: SPPermissions Data Source & Delegate
+
 extension ViewController: SPPermissionsDataSource, SPPermissionsDelegate {
     
-    func data(for permission: SPPermission) -> SPPermissionData? {
-        return nil
+    /**
+     Configure permission cell here.
+     You can return permission if want use default values.
+     */
+    func configure(_ cell: SPPermissionTableViewCell, for permission: SPPermission) -> SPPermissionTableViewCell {
+        
+        /*
+        // Titles
+        cell.permissionTitleLabel.text = "Notifications"
+        cell.permissionDescriptionLabel.text = "Remind about payment to your bank"
+        cell.button.allowTitle = "Allow"
+        cell.button.allowedTitle = "Allowed"
+        
+        // Colors
+        cell.iconView.color = .systemBlue
+        cell.button.allowedBackgroundColor = .systemBlue
+        cell.button.allowTitleColor = .systemBlue
+        
+        // If you want set custom image.
+        cell.set(UIImage(named: "IMAGE-NAME")!)
+        */
+        
+        return cell
+    }
+    
+    /**
+     Alert if permission denied. For disable alert return `nil`.
+     If this method not implement, alert will be show with default titles.
+     */
+    func deniedData(for permission: SPPermission) -> SPPermissionDeniedAlertData? {
+        if permission == .notification {
+            let data = SPPermissionDeniedAlertData()
+            data.alertOpenSettingsDeniedPermissionTitle = "Permission denied"
+            data.alertOpenSettingsDeniedPermissionDescription = "Please, go to Settings and allow permission."
+            data.alertOpenSettingsDeniedPermissionButtonTitle = "Settings"
+            data.alertOpenSettingsDeniedPermissionCancelTitle = "Cancel"
+            return data
+        } else {
+            // If returned nil, alert will not show.
+            return nil
+        }
     }
 }
+
+// MARK: Table Data Source & Delegate
 
 extension ViewController {
     

@@ -27,17 +27,12 @@ import UIKit
 protocol SPPermissionsControllerProtocol {
     
     /**
-     Configure data in permission.
-     */
-    var dataSource: SPPermissionsDataSource? { get set }
-    
-    /**
-     Detect some event.
+     Detect some event. Also can customize alert about denied permission.
      */
     var delegate: SPPermissionsDelegate? { get set }
     
     /**
-     Run request permission.
+     Run request permission now.
      */
     func present(on controller: UIViewController)
 }

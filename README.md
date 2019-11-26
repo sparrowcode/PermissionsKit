@@ -194,7 +194,6 @@ Request permissions with native alerts. You can request many permissions at once
 let controller = SPPermissions.native([.calendar, .camera, .contacts])
 
 // Set `Delegate` if need. 
-// Datasource never call, ignore it.
 controller.delegate = self
 
 // Always use this method for request. 
@@ -228,36 +227,69 @@ Also available is the func `isDenied`. This returns false if the permission has 
 
 ## DataSource & Delegate
 
-You have one method to pass data for each permission. If you return `nil`, SPPermissions will use the default parametrs.
+For customize permssions view, implement `SPPermissionsDataSource`:
 
 ```swift
-func data(for permission: SPPermission) -> SPPermissionData? {
-    return nil
+func configure(_ cell: SPPermissionTableViewCell, for permission: SPPermission) -> SPPermissionTableViewCell {
+    return cell
 }
 ```
-If you don't want show alert if a permission is denied, set `showAlertOpenSettingsWhenPermissionDenied` to false: 
+
+Here you can customize texts, colors and icons. For default view configure with default values. After configure return cell.
+
+You can customize:
 
 ```swift
-let notificationData = SPPermissionData(name: "Notification", description: "Remind about new orders for your account.", image: nil, allowTitle: "Allow", allowedTitle: "Allowed")
-notificationData.showAlertOpenSettingsWhenPermissionDenied = false
+// Titles
+cell.permissionTitleLabel.text = "Notifications"
+cell.permissionDescriptionLabel.text = "Remind about payment to your bank"
+cell.button.allowTitle = "Allow"
+cell.button.allowedTitle = "Allowed"
+
+// Colors
+cell.iconView.color = .systemBlue
+cell.button.allowedBackgroundColor = .systemBlue
+cell.button.allowTitleColor = .systemBlue
+
+// If you want set custom image.
+cell.set(UIImage(named: "IMAGE-NAME")!)
 ```
 
-If you want show this alert, you need to configure the texts strings:
+### Delegate
+
+In the delegate you can implement this methods: 
 
 ```swift
-notificationData.alertOpenSettingsDeniedPermissionTitle = "Notifiaction denied"
-notificationData.alertOpenSettingsDeniedPermissionDescription = "Please, go to Settings and allow permission."
-notificationData.alertOpenSettingsDeniedPermissionButtonTitle = "Settings"
-notificationData.alertOpenSettingsDeniedPermissionCancelTitle = "Cancel"
-```
-
-In the delegate you can implement three methods: 
-
-```swift
+// Events
 func didAllow(permission: SPPermission) {}
 func didDenied(permission: SPPermission) {}
 func didHide() {}
+
+// Denied alert. Show alert if permission denied.
+func deniedData(for permission: SPPermission) -> SPPermissionDeniedAlertData?
 ```
+
+### Denied alert
+
+If you don't want show alert if a permission is denied, return `nil` in delegate. You can set only text in alert: 
+
+```swift
+func deniedData(for permission: SPPermission) -> SPPermissionDeniedAlertData? {
+    if permission == .notification {
+        let data = SPPermissionDeniedAlertData()
+        data.alertOpenSettingsDeniedPermissionTitle = "Permission denied"
+        data.alertOpenSettingsDeniedPermissionDescription = "Please, go to Settings and allow permission."
+        data.alertOpenSettingsDeniedPermissionButtonTitle = "Settings"
+        data.alertOpenSettingsDeniedPermissionCancelTitle = "Cancel"
+        return data
+    } else {
+        // If returned nil, alert will not show.
+        return nil
+    }
+}
+```
+
+If you can't implement this method, alert appear with default text. For disable alert need return `nil`.
 
 ## Good Practices
 

@@ -25,10 +25,17 @@ import UIKit
 /**
  Draw with code icon for permission.
  */
-class SPPermissionIconView: UIView {
+public class SPPermissionIconView: UIView {
     
+    /**
+     Icon for this permission draw in view.
+     */
     var permission: SPPermission { didSet { self.setNeedsDisplay() } }
-    var color = SPPermissionsColor.base { didSet { self.setNeedsDisplay() } }
+    
+    /**
+     Color if icon.
+     */
+    public var color = SPPermissionsColor.base { didSet { self.setNeedsDisplay() } }
     
     init(_ permission: SPPermission) {
         self.permission = permission
@@ -40,7 +47,10 @@ class SPPermissionIconView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func draw(_ rect: CGRect) {
+    /**
+     Using draw with code. No images.
+     */
+    override public func draw(_ rect: CGRect) {
         super.draw(rect)
         switch permission {
         case .camera:

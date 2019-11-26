@@ -24,9 +24,16 @@ import UIKit
 #if os(iOS)
 class SPPermissionsListFooterCommentView: UITableViewHeaderFooterView {
     
+    /**
+     Title for footer.
+     */
     let titleLabel = UILabel()
+    
+    /**
+     ID for register in table view.
+     */
     static var id = "SPPermissionsListFooterCommentView"
-
+    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         titleLabel.numberOfLines = 0
