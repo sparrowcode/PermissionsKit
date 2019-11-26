@@ -110,7 +110,7 @@ public class SPPermissionActionButton: UIButton {
     }
     
     private func applyStyle() {
-        var current = self.style
+        let current = self.style
         self.style = current
     }
     
