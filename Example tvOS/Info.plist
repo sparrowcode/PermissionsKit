@@ -49,7 +49,7 @@
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Example Describtion</string>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>LaunchScreen∫</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>arm64</string>
