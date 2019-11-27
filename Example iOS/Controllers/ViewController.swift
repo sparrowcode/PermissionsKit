@@ -48,7 +48,7 @@ class ViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .play, target: self, action: #selector(self.requestPermissions))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
-
+    
     @objc func requestPermissions() {
         if selectedPermissions.isEmpty { return }
         guard let segmentControl = navigationItem.titleView as? UISegmentedControl else { return }
@@ -80,31 +80,46 @@ extension ViewController: SPPermissionsDataSource, SPPermissionsDelegate {
     /**
      Configure permission cell here.
      You can return permission if want use default values.
+     
+     - parameter cell: Cell for configure. You can change all data.
+     - parameter permission: Configure cell for it permission.
      */
     func configure(_ cell: SPPermissionTableViewCell, for permission: SPPermission) -> SPPermissionTableViewCell {
         
         /*
-        // Titles
-        cell.permissionTitleLabel.text = "Notifications"
-        cell.permissionDescriptionLabel.text = "Remind about payment to your bank"
-        cell.button.allowTitle = "Allow"
-        cell.button.allowedTitle = "Allowed"
-        
-        // Colors
-        cell.iconView.color = .systemBlue
-        cell.button.allowedBackgroundColor = .systemBlue
-        cell.button.allowTitleColor = .systemBlue
-        
-        // If you want set custom image.
-        cell.set(UIImage(named: "IMAGE-NAME")!)
-        */
+         // Titles
+         cell.permissionTitleLabel.text = "Notifications"
+         cell.permissionDescriptionLabel.text = "Remind about payment to your bank"
+         cell.button.allowTitle = "Allow"
+         cell.button.allowedTitle = "Allowed"
+         
+         // Colors
+         cell.iconView.color = .systemBlue
+         cell.button.allowedBackgroundColor = .systemBlue
+         cell.button.allowTitleColor = .systemBlue
+         
+         // If you want set custom image.
+         cell.set(UIImage(named: "IMAGE-NAME")!)
+         */
         
         return cell
     }
     
     /**
+     Call when controller closed.
+     
+     - parameter ids: Permissions ids, which using this controller.
+     */
+    func didHide(permissions ids: [Int]) {
+        let permissions = ids.map { SPPermission(rawValue: $0)! }
+        print("Did hide with permissions: ", permissions.map { $0.name })
+    }
+    
+    /**
      Alert if permission denied. For disable alert return `nil`.
      If this method not implement, alert will be show with default titles.
+     
+     - parameter permission: Denied alert data for this permission.
      */
     func deniedData(for permission: SPPermission) -> SPPermissionDeniedAlertData? {
         if permission == .notification {
