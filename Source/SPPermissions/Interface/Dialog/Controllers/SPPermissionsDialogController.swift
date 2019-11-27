@@ -158,7 +158,8 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     public override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         super.dismiss(animated: flag, completion: {
             completion?()
-            self.delegate?.didHide?()
+            let ids: [Int] = self.permissions.map { $0.rawValue }
+            self.delegate?.didHide?(permissions: ids)
         })
     }
     

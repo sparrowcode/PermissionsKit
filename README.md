@@ -263,10 +263,16 @@ In the delegate you can implement these methods:
 // Events
 func didAllow(permission: SPPermission) {}
 func didDenied(permission: SPPermission) {}
-func didHide() {}
+func didHide(permissions ids: [Int])
 
 // Denied alert. Show alert if permission denied.
 func deniedData(for permission: SPPermission) -> SPPermissionDeniedAlertData?
+```
+
+For `didHide` no way return array of `SPPermission`, becouse array of enum can't represented in objc. But you can detect permissions with it ID:
+
+```swift
+let permissions = ids.map { SPPermission(rawValue: $0) }
 ```
 
 ### Denied alert
