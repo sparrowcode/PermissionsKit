@@ -355,6 +355,7 @@ The use of this project is completely free. If you can make a contribution, it w
 
 - Add docs in source files. Add a description of public methods and parameters. 
 - Subtitles for this [video](https://youtu.be/1kR5HGVhJfk) in any of your native languages, where I tell you how to connect a configuration file.
+- Fix SPM support. Now SPM ignore config flags.
 - Help me translate my app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) for other languages. 
 - Add an icon for tv os example target.
 
