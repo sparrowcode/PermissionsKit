@@ -53,7 +53,8 @@ struct SPLocationPermission: SPPermissionProtocol {
     }
     
     var isDenied: Bool {
-        return CLLocationManager.authorizationStatus() == .denied
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+        return authorizationStatus == .denied || authorizationStatus == .restricted
     }
     
     func request(completion: @escaping ()->()?) {
