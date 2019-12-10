@@ -25,10 +25,10 @@ import UIKit
 class SPPermissionsDraw: NSObject {
     
     @objc dynamic public class func drawClose(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 28, height: 28), resizing: ResizingBehavior = .aspectFit, background: UIColor = UIColor(red: 0.937, green: 0.937, blue: 0.941, alpha: 1.000), element: UIColor = UIColor(red: 0.518, green: 0.518, blue: 0.533, alpha: 1.000)) {
-        //// General Declarations
+        
         let context = UIGraphicsGetCurrentContext()!
         
-        //// Resize to Target Frame
+        
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 28, height: 28), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
@@ -79,17 +79,15 @@ class SPPermissionsDraw: NSObject {
     }
 
     @objc dynamic public class func drawCalendar(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
-        //// General Declarations
+        
         let context = UIGraphicsGetCurrentContext()!
         
-        //// Resize to Target Frame
+        
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 150, height: 150), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 150, y: resizedFrame.height / 150)
 
-
-        //// Bezier Drawing
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 41.33, y: 120.89))
         bezierPath.addLine(to: CGPoint(x: 108.03, y: 120.89))
@@ -219,17 +217,15 @@ class SPPermissionsDraw: NSObject {
     }
 
     @objc dynamic public class func drawCamera(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
-        //// General Declarations
+        
         let context = UIGraphicsGetCurrentContext()!
         
-        //// Resize to Target Frame
+        
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 150, height: 150), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 150, y: resizedFrame.height / 150)
 
-
-        //// Bezier Drawing
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 32.33, y: 122.12))
         bezierPath.addLine(to: CGPoint(x: 116.41, y: 122.12))
@@ -275,17 +271,15 @@ class SPPermissionsDraw: NSObject {
     }
 
     @objc dynamic public class func drawContacts(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
-        //// General Declarations
+        
         let context = UIGraphicsGetCurrentContext()!
         
-        //// Resize to Target Frame
+        
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 150, height: 150), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 150, y: resizedFrame.height / 150)
 
-
-        //// Bezier Drawing
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 52.15, y: 110.78))
         bezierPath.addCurve(to: CGPoint(x: 68.12, y: 115.52), controlPoint1: CGPoint(x: 60.3, y: 110.78), controlPoint2: CGPoint(x: 65.72, y: 113.81))
@@ -319,17 +313,15 @@ class SPPermissionsDraw: NSObject {
     }
 
     @objc dynamic public class func drawLocations(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
-        //// General Declarations
+        
         let context = UIGraphicsGetCurrentContext()!
         
-        //// Resize to Target Frame
+        
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 150, height: 150), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 150, y: resizedFrame.height / 150)
 
-
-        //// Bezier Drawing
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 33.4, y: 78.1))
         bezierPath.addCurve(to: CGPoint(x: 25, y: 72.19), controlPoint1: CGPoint(x: 28.61, y: 78.1), controlPoint2: CGPoint(x: 25, y: 75.95))
@@ -353,17 +345,15 @@ class SPPermissionsDraw: NSObject {
     }
 
     @objc dynamic public class func drawMedia(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
-        //// General Declarations
+        
         let context = UIGraphicsGetCurrentContext()!
         
-        //// Resize to Target Frame
+        
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 150, height: 150), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 150, y: resizedFrame.height / 150)
 
-
-        //// Bezier Drawing
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 22.55, y: 107.05))
         bezierPath.addLine(to: CGPoint(x: 126.31, y: 107.05))
@@ -408,17 +398,15 @@ class SPPermissionsDraw: NSObject {
     }
 
     @objc dynamic public class func drawMicrophone(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
-        //// General Declarations
+        
         let context = UIGraphicsGetCurrentContext()!
         
-        //// Resize to Target Frame
+        
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 150, height: 150), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 150, y: resizedFrame.height / 150)
 
-
-        //// Bezier Drawing
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 89.37, y: 32.61))
         bezierPath.addLine(to: CGPoint(x: 116.27, y: 59.51))
@@ -460,17 +448,15 @@ class SPPermissionsDraw: NSObject {
     }
 
     @objc dynamic public class func drawMotion(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
-        //// General Declarations
+        
         let context = UIGraphicsGetCurrentContext()!
         
-        //// Resize to Target Frame
+        
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 150, height: 150), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 150, y: resizedFrame.height / 150)
 
-
-        //// Bezier Drawing
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 78.12, y: 119.17))
         bezierPath.addCurve(to: CGPoint(x: 89.54, y: 117.73), controlPoint1: CGPoint(x: 81.16, y: 119.17), controlPoint2: CGPoint(x: 83.85, y: 117.73))
@@ -532,17 +518,15 @@ class SPPermissionsDraw: NSObject {
     }
 
     @objc dynamic public class func drawNotifications(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
-        //// General Declarations
+        
         let context = UIGraphicsGetCurrentContext()!
         
-        //// Resize to Target Frame
+        
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 150, height: 150), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 150, y: resizedFrame.height / 150)
 
-
-        //// Bezier Drawing
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 35.37, y: 107.25))
         bezierPath.addLine(to: CGPoint(x: 112.77, y: 107.25))
@@ -573,17 +557,15 @@ class SPPermissionsDraw: NSObject {
     }
 
     @objc dynamic public class func drawPhotos(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
-        //// General Declarations
+        
         let context = UIGraphicsGetCurrentContext()!
         
-        //// Resize to Target Frame
+        
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 150, height: 150), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 150, y: resizedFrame.height / 150)
 
-
-        //// Bezier Drawing
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 32.33, y: 120.89))
         bezierPath.addLine(to: CGPoint(x: 116.8, y: 120.89))
@@ -624,17 +606,15 @@ class SPPermissionsDraw: NSObject {
     }
 
     @objc dynamic public class func drawReminders(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
-        //// General Declarations
+        
         let context = UIGraphicsGetCurrentContext()!
         
-        //// Resize to Target Frame
+        
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 150, height: 150), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 150, y: resizedFrame.height / 150)
 
-
-        //// Bezier Drawing
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 31.33, y: 117.35))
         bezierPath.addLine(to: CGPoint(x: 115.8, y: 117.35))
@@ -691,17 +671,15 @@ class SPPermissionsDraw: NSObject {
     }
 
     @objc dynamic public class func drawSpeech(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
-        //// General Declarations
+        
         let context = UIGraphicsGetCurrentContext()!
         
-        //// Resize to Target Frame
+        
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 150, height: 150), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 150, y: resizedFrame.height / 150)
 
-
-        //// Bezier Drawing
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 89.37, y: 32.61))
         bezierPath.addLine(to: CGPoint(x: 116.27, y: 59.51))
@@ -741,9 +719,54 @@ class SPPermissionsDraw: NSObject {
         context.restoreGState()
 
     }
+    
+    @objc dynamic public class func drawBluetooth(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
+        
+        let context = UIGraphicsGetCurrentContext()!
+        
+        
+        context.saveGState()
+        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 150, height: 150), target: targetFrame)
+        context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
+        context.scaleBy(x: resizedFrame.width / 150, y: resizedFrame.height / 150)
 
+        let bezierPath = UIBezierPath()
+        bezierPath.move(to: CGPoint(x: 102.34, y: 94.92))
+        bezierPath.addLine(to: CGPoint(x: 78.9, y: 75.5))
+        bezierPath.addLine(to: CGPoint(x: 102.34, y: 56.08))
+        bezierPath.addCurve(to: CGPoint(x: 102.34, y: 49.02), controlPoint1: CGPoint(x: 104.55, y: 54.24), controlPoint2: CGPoint(x: 104.55, y: 50.86))
+        bezierPath.addLine(to: CGPoint(x: 74.65, y: 26.07))
+        bezierPath.addCurve(to: CGPoint(x: 67.08, y: 29.6), controlPoint1: CGPoint(x: 71.64, y: 23.58), controlPoint2: CGPoint(x: 67.08, y: 25.71))
+        bezierPath.addLine(to: CGPoint(x: 67.08, y: 64.42))
+        bezierPath.addLine(to: CGPoint(x: 51.88, y: 49.3))
+        bezierPath.addCurve(to: CGPoint(x: 45.35, y: 49.3), controlPoint1: CGPoint(x: 50.08, y: 47.51), controlPoint2: CGPoint(x: 47.15, y: 47.51))
+        bezierPath.addCurve(to: CGPoint(x: 45.35, y: 55.8), controlPoint1: CGPoint(x: 43.55, y: 51.1), controlPoint2: CGPoint(x: 43.55, y: 54))
+        bezierPath.addLine(to: CGPoint(x: 65.17, y: 75.5))
+        bezierPath.addLine(to: CGPoint(x: 45.35, y: 95.2))
+        bezierPath.addCurve(to: CGPoint(x: 45.35, y: 101.7), controlPoint1: CGPoint(x: 43.55, y: 97), controlPoint2: CGPoint(x: 43.55, y: 99.9))
+        bezierPath.addCurve(to: CGPoint(x: 51.88, y: 101.7), controlPoint1: CGPoint(x: 47.15, y: 103.49), controlPoint2: CGPoint(x: 50.08, y: 103.49))
+        bezierPath.addLine(to: CGPoint(x: 67.08, y: 86.58))
+        bezierPath.addLine(to: CGPoint(x: 67.08, y: 121.4))
+        bezierPath.addCurve(to: CGPoint(x: 74.65, y: 124.93), controlPoint1: CGPoint(x: 67.08, y: 125.29), controlPoint2: CGPoint(x: 71.64, y: 127.42))
+        bezierPath.addLine(to: CGPoint(x: 102.34, y: 101.98))
+        bezierPath.addCurve(to: CGPoint(x: 102.34, y: 94.92), controlPoint1: CGPoint(x: 104.55, y: 100.14), controlPoint2: CGPoint(x: 104.55, y: 96.76))
+        bezierPath.close()
+        bezierPath.move(to: CGPoint(x: 76, y: 39))
+        bezierPath.addLine(to: CGPoint(x: 92, y: 52))
+        bezierPath.addLine(to: CGPoint(x: 76, y: 65))
+        bezierPath.addLine(to: CGPoint(x: 76, y: 39))
+        bezierPath.close()
+        bezierPath.move(to: CGPoint(x: 76, y: 111))
+        bezierPath.addLine(to: CGPoint(x: 76, y: 85))
+        bezierPath.addLine(to: CGPoint(x: 92, y: 98))
+        bezierPath.addLine(to: CGPoint(x: 76, y: 111))
+        bezierPath.close()
+        color.setFill()
+        bezierPath.fill()
+        
+        context.restoreGState()
 
-
+    }
 
     @objc(StyleKitNameResizingBehavior)
     public enum ResizingBehavior: Int {

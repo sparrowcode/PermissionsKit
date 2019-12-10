@@ -39,6 +39,7 @@ import UIKit
     case locationAlwaysAndWhenInUse = 10
     case motion = 11
     case mediaLibrary = 12
+    case bluetooth = 13
     #endif
     case notification = 2
     case locationWhenInUse = 9
@@ -98,6 +99,8 @@ import UIKit
             return "NSMotionUsageDescription"
         case .mediaLibrary:
             return "NSAppleMusicUsageDescription"
+        case .bluetooth:
+            return "NSBluetoothAlwaysUsageDescription"
             #endif
         case .notification:
             return nil
@@ -185,6 +188,12 @@ extension SPPermission {
         case .locationWhenInUse:
             #if SPPERMISSION_LOCATION
             return SPLocationPermission(type: SPLocationPermission.SPLocationType.WhenInUse)
+            #else
+            fatalError(error(permission))
+            #endif
+        case .bluetooth:
+            #if SPPERMISSION_BLUETOOTH
+            return SPBluetoothPermission()
             #else
             fatalError(error(permission))
             #endif
