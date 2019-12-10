@@ -364,6 +364,7 @@ The use of this project is completely free. If you can make a contribution, it w
 - Fix SPM support. Now SPM ignore config flags. Issue [#156](https://github.com/ivanvorobei/SPPermissions/issues/156)
 - Help me translate my app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) for other languages. 
 - Add an icon for tv os example target.
+- Add code for `Bluetooth` request permission. For now after request `Bluetooth` developers get error.
 
 ## Design previous version
 
