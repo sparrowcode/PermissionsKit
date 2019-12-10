@@ -29,17 +29,17 @@
 		9E50E9E7238B24FB00B71477 /* SPPermissionsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9E6E23796E5400F7272C /* SPPermissionsListController.swift */; };
 		9E50E9E8238B24FF00B71477 /* SPPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2665236ED5220070B2BA /* SPPermission.swift */; };
 		9E50E9EA238B250700B71477 /* SPRequestPermissionLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2692236F30E70070B2BA /* SPRequestPermissionLocationHandler.swift */; };
-		9E50E9EB238B250900B71477 /* SPPermissionPhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2669236F2B890070B2BA /* SPPermissionPhotoLibrary.swift */; };
-		9E50E9EC238B250C00B71477 /* SPPermissionLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266A236F2B890070B2BA /* SPPermissionLocation.swift */; };
-		9E50E9ED238B250E00B71477 /* SPPermissionMediaLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266B236F2B890070B2BA /* SPPermissionMediaLibrary.swift */; };
-		9E50E9EE238B251100B71477 /* SPPermissionNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266C236F2B890070B2BA /* SPPermissionNotification.swift */; };
-		9E50E9EF238B251400B71477 /* SPPermissionCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266D236F2B890070B2BA /* SPPermissionCamera.swift */; };
-		9E50E9F0238B251800B71477 /* SPPermissionContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266E236F2B890070B2BA /* SPPermissionContacts.swift */; };
-		9E50E9F1238B251A00B71477 /* SPPermissionMicrophone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266F236F2B890070B2BA /* SPPermissionMicrophone.swift */; };
-		9E50E9F2238B251D00B71477 /* SPPermissionMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2670236F2B890070B2BA /* SPPermissionMotion.swift */; };
-		9E50E9F3238B251F00B71477 /* SPPermissionReminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2671236F2B890070B2BA /* SPPermissionReminders.swift */; };
-		9E50E9F4238B252100B71477 /* SPPermissionSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2672236F2B890070B2BA /* SPPermissionSpeech.swift */; };
-		9E50E9F5238B252300B71477 /* SPPermissionCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2673236F2B890070B2BA /* SPPermissionCalendar.swift */; };
+		9E50E9EB238B250900B71477 /* SPPhotoLibraryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2669236F2B890070B2BA /* SPPhotoLibraryPermission.swift */; };
+		9E50E9EC238B250C00B71477 /* SPLocationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266A236F2B890070B2BA /* SPLocationPermission.swift */; };
+		9E50E9ED238B250E00B71477 /* SPMediaLibraryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266B236F2B890070B2BA /* SPMediaLibraryPermission.swift */; };
+		9E50E9EE238B251100B71477 /* SPNotificationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266C236F2B890070B2BA /* SPNotificationPermission.swift */; };
+		9E50E9EF238B251400B71477 /* SPCameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266D236F2B890070B2BA /* SPCameraPermission.swift */; };
+		9E50E9F0238B251800B71477 /* SPContactsPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266E236F2B890070B2BA /* SPContactsPermission.swift */; };
+		9E50E9F1238B251A00B71477 /* SPMicrophonePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266F236F2B890070B2BA /* SPMicrophonePermission.swift */; };
+		9E50E9F2238B251D00B71477 /* SPMotionPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2670236F2B890070B2BA /* SPMotionPermission.swift */; };
+		9E50E9F3238B251F00B71477 /* SPRemindersPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2671236F2B890070B2BA /* SPRemindersPermission.swift */; };
+		9E50E9F4238B252100B71477 /* SPSpeechPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2672236F2B890070B2BA /* SPSpeechPermission.swift */; };
+		9E50E9F5238B252300B71477 /* SPCalendarPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2673236F2B890070B2BA /* SPCalendarPermission.swift */; };
 		9E50E9F6238B252700B71477 /* SPPermissionsDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9E962379903A00F7272C /* SPPermissionsDraw.swift */; };
 		9E50E9F7238B252A00B71477 /* SPPermissionsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9E7E23797D4700F7272C /* SPPermissionsColor.swift */; };
 		9E50E9F8238B252C00B71477 /* SPPermissionsText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9E8C2379887000F7272C /* SPPermissionsText.swift */; };
@@ -62,6 +62,8 @@
 		F499B205238084D300B83B08 /* SPPermissionsOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499B204238084D300B83B08 /* SPPermissionsOpener.swift */; };
 		F499B207238087A800B83B08 /* SPPermissionsCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499B206238087A800B83B08 /* SPPermissionsCloseButton.swift */; };
 		F499B2092380A0A000B83B08 /* SPPermissionsNativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499B2082380A0A000B83B08 /* SPPermissionsNativeController.swift */; };
+		F4CD097623A026BC00DF6FEF /* SPBluetoothPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD097423A0218E00DF6FEF /* SPBluetoothPermission.swift */; };
+		F4CD097723A026C500DF6FEF /* SPBluetoothPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD097423A0218E00DF6FEF /* SPBluetoothPermission.swift */; };
 		F4D3CD55238D457F006C3DE2 /* SPPermissionDeniedAlertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D3CD53238D452B006C3DE2 /* SPPermissionDeniedAlertData.swift */; };
 		F4D3CD56238D457F006C3DE2 /* SPPermissionDeniedAlertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D3CD53238D452B006C3DE2 /* SPPermissionDeniedAlertData.swift */; };
 		F4EA2646236ECE040070B2BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2645236ECE040070B2BA /* AppDelegate.swift */; };
@@ -70,17 +72,17 @@
 		F4EA265A236ECEF70070B2BA /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EA2659236ECEF70070B2BA /* Media.xcassets */; };
 		F4EA2661236ED1790070B2BA /* SPPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2660236ED1790070B2BA /* SPPermissions.swift */; };
 		F4EA2666236ED5220070B2BA /* SPPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2665236ED5220070B2BA /* SPPermission.swift */; };
-		F4EA2674236F2B890070B2BA /* SPPermissionPhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2669236F2B890070B2BA /* SPPermissionPhotoLibrary.swift */; };
-		F4EA2675236F2B890070B2BA /* SPPermissionLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266A236F2B890070B2BA /* SPPermissionLocation.swift */; };
-		F4EA2676236F2B890070B2BA /* SPPermissionMediaLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266B236F2B890070B2BA /* SPPermissionMediaLibrary.swift */; };
-		F4EA2677236F2B890070B2BA /* SPPermissionNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266C236F2B890070B2BA /* SPPermissionNotification.swift */; };
-		F4EA2678236F2B890070B2BA /* SPPermissionCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266D236F2B890070B2BA /* SPPermissionCamera.swift */; };
-		F4EA2679236F2B890070B2BA /* SPPermissionContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266E236F2B890070B2BA /* SPPermissionContacts.swift */; };
-		F4EA267A236F2B890070B2BA /* SPPermissionMicrophone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266F236F2B890070B2BA /* SPPermissionMicrophone.swift */; };
-		F4EA267B236F2B890070B2BA /* SPPermissionMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2670236F2B890070B2BA /* SPPermissionMotion.swift */; };
-		F4EA267C236F2B890070B2BA /* SPPermissionReminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2671236F2B890070B2BA /* SPPermissionReminders.swift */; };
-		F4EA267D236F2B890070B2BA /* SPPermissionSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2672236F2B890070B2BA /* SPPermissionSpeech.swift */; };
-		F4EA267E236F2B890070B2BA /* SPPermissionCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2673236F2B890070B2BA /* SPPermissionCalendar.swift */; };
+		F4EA2674236F2B890070B2BA /* SPPhotoLibraryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2669236F2B890070B2BA /* SPPhotoLibraryPermission.swift */; };
+		F4EA2675236F2B890070B2BA /* SPLocationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266A236F2B890070B2BA /* SPLocationPermission.swift */; };
+		F4EA2676236F2B890070B2BA /* SPMediaLibraryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266B236F2B890070B2BA /* SPMediaLibraryPermission.swift */; };
+		F4EA2677236F2B890070B2BA /* SPNotificationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266C236F2B890070B2BA /* SPNotificationPermission.swift */; };
+		F4EA2678236F2B890070B2BA /* SPCameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266D236F2B890070B2BA /* SPCameraPermission.swift */; };
+		F4EA2679236F2B890070B2BA /* SPContactsPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266E236F2B890070B2BA /* SPContactsPermission.swift */; };
+		F4EA267A236F2B890070B2BA /* SPMicrophonePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA266F236F2B890070B2BA /* SPMicrophonePermission.swift */; };
+		F4EA267B236F2B890070B2BA /* SPMotionPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2670236F2B890070B2BA /* SPMotionPermission.swift */; };
+		F4EA267C236F2B890070B2BA /* SPRemindersPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2671236F2B890070B2BA /* SPRemindersPermission.swift */; };
+		F4EA267D236F2B890070B2BA /* SPSpeechPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2672236F2B890070B2BA /* SPSpeechPermission.swift */; };
+		F4EA267E236F2B890070B2BA /* SPCalendarPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2673236F2B890070B2BA /* SPCalendarPermission.swift */; };
 		F4EA268B236F2BB90070B2BA /* SPPermissionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA268A236F2BB90070B2BA /* SPPermissionProtocol.swift */; };
 		F4EA2693236F30E70070B2BA /* SPRequestPermissionLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2692236F30E70070B2BA /* SPRequestPermissionLocationHandler.swift */; };
 		F4FB9E6F23796E5400F7272C /* SPPermissionsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9E6E23796E5400F7272C /* SPPermissionsListController.swift */; };
@@ -161,6 +163,7 @@
 		F499B204238084D300B83B08 /* SPPermissionsOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsOpener.swift; sourceTree = "<group>"; };
 		F499B206238087A800B83B08 /* SPPermissionsCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsCloseButton.swift; sourceTree = "<group>"; };
 		F499B2082380A0A000B83B08 /* SPPermissionsNativeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsNativeController.swift; sourceTree = "<group>"; };
+		F4CD097423A0218E00DF6FEF /* SPBluetoothPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPBluetoothPermission.swift; sourceTree = "<group>"; };
 		F4D3CD53238D452B006C3DE2 /* SPPermissionDeniedAlertData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionDeniedAlertData.swift; sourceTree = "<group>"; };
 		F4EA2643236ECE030070B2BA /* Permissions iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Permissions iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EA2645236ECE040070B2BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,17 +173,17 @@
 		F4EA2659236ECEF70070B2BA /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		F4EA2660236ED1790070B2BA /* SPPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissions.swift; sourceTree = "<group>"; };
 		F4EA2665236ED5220070B2BA /* SPPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermission.swift; sourceTree = "<group>"; };
-		F4EA2669236F2B890070B2BA /* SPPermissionPhotoLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionPhotoLibrary.swift; sourceTree = "<group>"; };
-		F4EA266A236F2B890070B2BA /* SPPermissionLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionLocation.swift; sourceTree = "<group>"; };
-		F4EA266B236F2B890070B2BA /* SPPermissionMediaLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionMediaLibrary.swift; sourceTree = "<group>"; };
-		F4EA266C236F2B890070B2BA /* SPPermissionNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionNotification.swift; sourceTree = "<group>"; };
-		F4EA266D236F2B890070B2BA /* SPPermissionCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionCamera.swift; sourceTree = "<group>"; };
-		F4EA266E236F2B890070B2BA /* SPPermissionContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionContacts.swift; sourceTree = "<group>"; };
-		F4EA266F236F2B890070B2BA /* SPPermissionMicrophone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionMicrophone.swift; sourceTree = "<group>"; };
-		F4EA2670236F2B890070B2BA /* SPPermissionMotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionMotion.swift; sourceTree = "<group>"; };
-		F4EA2671236F2B890070B2BA /* SPPermissionReminders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionReminders.swift; sourceTree = "<group>"; };
-		F4EA2672236F2B890070B2BA /* SPPermissionSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionSpeech.swift; sourceTree = "<group>"; };
-		F4EA2673236F2B890070B2BA /* SPPermissionCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionCalendar.swift; sourceTree = "<group>"; };
+		F4EA2669236F2B890070B2BA /* SPPhotoLibraryPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPhotoLibraryPermission.swift; sourceTree = "<group>"; };
+		F4EA266A236F2B890070B2BA /* SPLocationPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLocationPermission.swift; sourceTree = "<group>"; };
+		F4EA266B236F2B890070B2BA /* SPMediaLibraryPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPMediaLibraryPermission.swift; sourceTree = "<group>"; };
+		F4EA266C236F2B890070B2BA /* SPNotificationPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNotificationPermission.swift; sourceTree = "<group>"; };
+		F4EA266D236F2B890070B2BA /* SPCameraPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCameraPermission.swift; sourceTree = "<group>"; };
+		F4EA266E236F2B890070B2BA /* SPContactsPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPContactsPermission.swift; sourceTree = "<group>"; };
+		F4EA266F236F2B890070B2BA /* SPMicrophonePermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPMicrophonePermission.swift; sourceTree = "<group>"; };
+		F4EA2670236F2B890070B2BA /* SPMotionPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPMotionPermission.swift; sourceTree = "<group>"; };
+		F4EA2671236F2B890070B2BA /* SPRemindersPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRemindersPermission.swift; sourceTree = "<group>"; };
+		F4EA2672236F2B890070B2BA /* SPSpeechPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSpeechPermission.swift; sourceTree = "<group>"; };
+		F4EA2673236F2B890070B2BA /* SPCalendarPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCalendarPermission.swift; sourceTree = "<group>"; };
 		F4EA268A236F2BB90070B2BA /* SPPermissionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionProtocol.swift; sourceTree = "<group>"; };
 		F4EA268D236F2DC10070B2BA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		F4EA268E236F2DC10070B2BA /* SPPermissions.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPPermissions.podspec; sourceTree = SOURCE_ROOT; };
@@ -473,17 +476,18 @@
 			isa = PBXGroup;
 			children = (
 				F4EA2691236F30E70070B2BA /* Handlers */,
-				F4EA2669236F2B890070B2BA /* SPPermissionPhotoLibrary.swift */,
-				F4EA266A236F2B890070B2BA /* SPPermissionLocation.swift */,
-				F4EA266B236F2B890070B2BA /* SPPermissionMediaLibrary.swift */,
-				F4EA266C236F2B890070B2BA /* SPPermissionNotification.swift */,
-				F4EA266D236F2B890070B2BA /* SPPermissionCamera.swift */,
-				F4EA266E236F2B890070B2BA /* SPPermissionContacts.swift */,
-				F4EA266F236F2B890070B2BA /* SPPermissionMicrophone.swift */,
-				F4EA2670236F2B890070B2BA /* SPPermissionMotion.swift */,
-				F4EA2671236F2B890070B2BA /* SPPermissionReminders.swift */,
-				F4EA2672236F2B890070B2BA /* SPPermissionSpeech.swift */,
-				F4EA2673236F2B890070B2BA /* SPPermissionCalendar.swift */,
+				F4EA2669236F2B890070B2BA /* SPPhotoLibraryPermission.swift */,
+				F4EA266A236F2B890070B2BA /* SPLocationPermission.swift */,
+				F4EA266B236F2B890070B2BA /* SPMediaLibraryPermission.swift */,
+				F4EA266C236F2B890070B2BA /* SPNotificationPermission.swift */,
+				F4EA266D236F2B890070B2BA /* SPCameraPermission.swift */,
+				F4EA266E236F2B890070B2BA /* SPContactsPermission.swift */,
+				F4EA266F236F2B890070B2BA /* SPMicrophonePermission.swift */,
+				F4EA2670236F2B890070B2BA /* SPMotionPermission.swift */,
+				F4EA2671236F2B890070B2BA /* SPRemindersPermission.swift */,
+				F4EA2672236F2B890070B2BA /* SPSpeechPermission.swift */,
+				F4EA2673236F2B890070B2BA /* SPCalendarPermission.swift */,
+				F4CD097423A0218E00DF6FEF /* SPBluetoothPermission.swift */,
 			);
 			path = Permissions;
 			sourceTree = "<group>";
@@ -749,9 +753,9 @@
 				F4D3CD56238D457F006C3DE2 /* SPPermissionDeniedAlertData.swift in Sources */,
 				9E50E9F6238B252700B71477 /* SPPermissionsDraw.swift in Sources */,
 				9E50E9FA238B253000B71477 /* SPPermissionsHaptic.swift in Sources */,
-				9E50E9EB238B250900B71477 /* SPPermissionPhotoLibrary.swift in Sources */,
+				9E50E9EB238B250900B71477 /* SPPhotoLibraryPermission.swift in Sources */,
 				9E50E9E8238B24FF00B71477 /* SPPermission.swift in Sources */,
-				9E50E9F5238B252300B71477 /* SPPermissionCalendar.swift in Sources */,
+				9E50E9F5238B252300B71477 /* SPCalendarPermission.swift in Sources */,
 				9E50E9E4238B24F000B71477 /* SPPermissionsDialogFooterCommentView.swift in Sources */,
 				9E50E9F8238B252C00B71477 /* SPPermissionsText.swift in Sources */,
 				9E50E9E5238B24F500B71477 /* SPPermissionsListHeaderView.swift in Sources */,
@@ -761,11 +765,12 @@
 				9E50E9F9238B252E00B71477 /* SPPermissionsDelay.swift in Sources */,
 				9E50E9D9238B24C500B71477 /* SPPermissionsControllerProtocol.swift in Sources */,
 				9E50E9E1238B24E500B71477 /* SPPermissionsCloseButton.swift in Sources */,
-				9E50E9EC238B250C00B71477 /* SPPermissionLocation.swift in Sources */,
+				9E50E9EC238B250C00B71477 /* SPLocationPermission.swift in Sources */,
 				9E50E9E3238B24EE00B71477 /* SPPermissionsDialogView.swift in Sources */,
+				F4CD097723A026C500DF6FEF /* SPBluetoothPermission.swift in Sources */,
 				9E50E9E2238B24EA00B71477 /* SPPermissionsDialogController.swift in Sources */,
-				9E50E9F2238B251D00B71477 /* SPPermissionMotion.swift in Sources */,
-				9E50E9F1238B251A00B71477 /* SPPermissionMicrophone.swift in Sources */,
+				9E50E9F2238B251D00B71477 /* SPMotionPermission.swift in Sources */,
+				9E50E9F1238B251A00B71477 /* SPMicrophonePermission.swift in Sources */,
 				9E50E9EA238B250700B71477 /* SPRequestPermissionLocationHandler.swift in Sources */,
 				9E50E9DD238B24DC00B71477 /* SPPermissionTableViewCell.swift in Sources */,
 				9E50E9DE238B24DF00B71477 /* SPPermissionsGradeBlurView.swift in Sources */,
@@ -775,13 +780,13 @@
 				9E50E9D7238B24C000B71477 /* SPPermissionsDelegate.swift in Sources */,
 				9E50E9D8238B24C300B71477 /* SPPermissionProtocol.swift in Sources */,
 				9E50E9FB238B253200B71477 /* SPPermissionsOpener.swift in Sources */,
-				9E50E9ED238B250E00B71477 /* SPPermissionMediaLibrary.swift in Sources */,
-				9E50E9F4238B252100B71477 /* SPPermissionSpeech.swift in Sources */,
+				9E50E9ED238B250E00B71477 /* SPMediaLibraryPermission.swift in Sources */,
+				9E50E9F4238B252100B71477 /* SPSpeechPermission.swift in Sources */,
 				9E50E9E6238B24F700B71477 /* SPPermissionsListFooterCommentView.swift in Sources */,
-				9E50E9EF238B251400B71477 /* SPPermissionCamera.swift in Sources */,
-				9E50E9EE238B251100B71477 /* SPPermissionNotification.swift in Sources */,
-				9E50E9F0238B251800B71477 /* SPPermissionContacts.swift in Sources */,
-				9E50E9F3238B251F00B71477 /* SPPermissionReminders.swift in Sources */,
+				9E50E9EF238B251400B71477 /* SPCameraPermission.swift in Sources */,
+				9E50E9EE238B251100B71477 /* SPNotificationPermission.swift in Sources */,
+				9E50E9F0238B251800B71477 /* SPContactsPermission.swift in Sources */,
+				9E50E9F3238B251F00B71477 /* SPRemindersPermission.swift in Sources */,
 				9E50E9DC238B24DA00B71477 /* SPPermissionActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -790,7 +795,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4EA267D236F2B890070B2BA /* SPPermissionSpeech.swift in Sources */,
+				F4EA267D236F2B890070B2BA /* SPSpeechPermission.swift in Sources */,
 				F4D3CD55238D457F006C3DE2 /* SPPermissionDeniedAlertData.swift in Sources */,
 				F4FB9E7F23797D4700F7272C /* SPPermissionsColor.swift in Sources */,
 				F499B20323805AA300B83B08 /* SPPermissionsDialogFooterCommentView.swift in Sources */,
@@ -799,35 +804,36 @@
 				F4FB9E972379903A00F7272C /* SPPermissionsDraw.swift in Sources */,
 				F4FB9E8D2379887000F7272C /* SPPermissionsText.swift in Sources */,
 				F4EA2693236F30E70070B2BA /* SPRequestPermissionLocationHandler.swift in Sources */,
-				F4EA267B236F2B890070B2BA /* SPPermissionMotion.swift in Sources */,
+				F4EA267B236F2B890070B2BA /* SPMotionPermission.swift in Sources */,
 				F4FB9E9A2379963000F7272C /* SPPermissionActionButton.swift in Sources */,
 				F4EA268B236F2BB90070B2BA /* SPPermissionProtocol.swift in Sources */,
-				F4EA267E236F2B890070B2BA /* SPPermissionCalendar.swift in Sources */,
+				F4EA267E236F2B890070B2BA /* SPCalendarPermission.swift in Sources */,
 				F4EA2661236ED1790070B2BA /* SPPermissions.swift in Sources */,
 				F499B2012380471100B83B08 /* SPPermissionsLabel.swift in Sources */,
 				F4FB9E8A2379860B00F7272C /* SPPermissionsListFooterCommentView.swift in Sources */,
 				F4FB9E7C2379731100F7272C /* SPPermissionsDelegate.swift in Sources */,
 				F4FB9E842379833500F7272C /* SPPermissionTableViewCell.swift in Sources */,
-				F4EA267A236F2B890070B2BA /* SPPermissionMicrophone.swift in Sources */,
-				F4EA2679236F2B890070B2BA /* SPPermissionContacts.swift in Sources */,
+				F4CD097623A026BC00DF6FEF /* SPBluetoothPermission.swift in Sources */,
+				F4EA267A236F2B890070B2BA /* SPMicrophonePermission.swift in Sources */,
+				F4EA2679236F2B890070B2BA /* SPContactsPermission.swift in Sources */,
 				F499B207238087A800B83B08 /* SPPermissionsCloseButton.swift in Sources */,
 				F4EA2666236ED5220070B2BA /* SPPermission.swift in Sources */,
-				F4EA2678236F2B890070B2BA /* SPPermissionCamera.swift in Sources */,
+				F4EA2678236F2B890070B2BA /* SPCameraPermission.swift in Sources */,
 				F499B1FF23801B0000B83B08 /* SPPermissionsDialogView.swift in Sources */,
 				F4FB9E9423798DE800F7272C /* SPPermissionIconView.swift in Sources */,
 				F4FB9E752379712400F7272C /* SPPermissionsControllerProtocol.swift in Sources */,
-				F4EA2677236F2B890070B2BA /* SPPermissionNotification.swift in Sources */,
+				F4EA2677236F2B890070B2BA /* SPNotificationPermission.swift in Sources */,
 				F4FB9EB6237A0DD100F7272C /* SPPermissionsDelay.swift in Sources */,
 				F4FB9E87237983AA00F7272C /* SPPermissionsListHeaderView.swift in Sources */,
 				F499B1ED238009D600B83B08 /* SPPermissionsGradeBlurView.swift in Sources */,
 				F499B205238084D300B83B08 /* SPPermissionsOpener.swift in Sources */,
 				F499B1E2238006CB00B83B08 /* SPPermissionsDialogController.swift in Sources */,
 				F499B2092380A0A000B83B08 /* SPPermissionsNativeController.swift in Sources */,
-				F4EA267C236F2B890070B2BA /* SPPermissionReminders.swift in Sources */,
+				F4EA267C236F2B890070B2BA /* SPRemindersPermission.swift in Sources */,
 				F4FB9E792379721D00F7272C /* SPPermissionsDataSource.swift in Sources */,
-				F4EA2675236F2B890070B2BA /* SPPermissionLocation.swift in Sources */,
-				F4EA2676236F2B890070B2BA /* SPPermissionMediaLibrary.swift in Sources */,
-				F4EA2674236F2B890070B2BA /* SPPermissionPhotoLibrary.swift in Sources */,
+				F4EA2675236F2B890070B2BA /* SPLocationPermission.swift in Sources */,
+				F4EA2676236F2B890070B2BA /* SPMediaLibraryPermission.swift in Sources */,
+				F4EA2674236F2B890070B2BA /* SPPhotoLibraryPermission.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

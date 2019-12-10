@@ -46,6 +46,8 @@ enum SPPermissionsText {
             return "Motion"
         case .mediaLibrary:
             return "Media Library"
+        case .bluetooth:
+            return "Bluetooth"
         #endif
         case .notification:
             return "Notification"
@@ -77,6 +79,8 @@ enum SPPermissionsText {
             return "Allow to report motion and environment-related data"
         case .mediaLibrary:
             return "Allow to check your media"
+        case .bluetooth:
+            return "Allow access to bluetooth"
         #endif
         case .notification:
             return "Get important information without opening app."

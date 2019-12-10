@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "SPPermissions"
-  s.version       = "5.2.5"
+  s.version       = "5.2.6"
   s.summary       = "Ask permissions on Swift. Available List, Dialog & Native interface. Can check state permission."
   s.homepage      = "https://github.com/IvanVorobei/SPPermissions"
   s.source        = { :git => "https://github.com/IvanVorobei/SPPermissions.git", :tag => s.version }
@@ -75,6 +75,11 @@ Pod::Spec.new do |s|
   s.subspec 'MediaLibrary' do |ml|
     ml.dependency 'SPPermissions/Core'
     ml.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_MEDIALIBRARY" }
+  end
+  
+  s.subspec 'Bluetooth' do |ml|
+    ml.dependency 'SPPermissions/Core'
+    ml.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_BLUETOOTH" }
   end
 
 end

@@ -103,6 +103,9 @@ pod 'SPPermissions/Motion'
 ```ruby
 pod 'SPPermissions/MediaLibrary'
 ```
+```ruby
+pod 'SPPermissions/Bluetooth'
+```
 
 </p>
 </details>
@@ -215,6 +218,7 @@ controller.present(on: self)
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Motion.svg" width="105">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Media.svg" width="105">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Speech.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Bluetooth.svg" width="105">
 </p>
 
 To check the state of any permission, call enum `SPPermission`: 
@@ -338,6 +342,8 @@ You need to add some keys to the `Info.plist` file with descriptions. List of ke
 - NSLocationWhenInUseUsageDescription
 - NSLocationAlwaysAndWhenInUseUsageDescription
 - NSLocationAlwaysUsageDescription (iOS 10 and earlier)
+- NSBluetoothAlwaysUsageDescription
+- NSBluetoothPeripheralUsageDescription (iOS 12 and earlier)
 
 Do not use the description as the name of the key.
 

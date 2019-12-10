@@ -19,19 +19,30 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-SPPERMISSION_CAMERA            = SPPERMISSION_CAMERA
-SPPERMISSION_PHOTOLIBRARY      = SPPERMISSION_PHOTOLIBRARY
-SPPERMISSION_NOTIFICATION      = SPPERMISSION_NOTIFICATION
-SPPERMISSION_MICROPHONE        = SPPERMISSION_MICROPHONE
-SPPERMISSION_CALENDAR          = SPPERMISSION_CALENDAR
-SPPERMISSION_CONTACTS          = SPPERMISSION_CONTACTS
-SPPERMISSION_REMINDERS         = SPPERMISSION_REMINDERS
-SPPERMISSION_SPEECH            = SPPERMISSION_SPEECH
-SPPERMISSION_LOCATION          = SPPERMISSION_LOCATION
-SPPERMISSION_MOTION            = SPPERMISSION_MOTION
-SPPERMISSION_MEDIALIBRARY      = SPPERMISSION_MEDIALIBRARY
-SPPERMISSION_BLUETOOTH         = SPPERMISSION_BLUETOOTH
+#if os(iOS) && SPPERMISSION_BLUETOOTH
 
-SPPERMISSION_FLAGS = $(SPPERMISSION_CAMERA) $(SPPERMISSION_PHOTOLIBRARY) $(SPPERMISSION_NOTIFICATION) $(SPPERMISSION_MICROPHONE) $(SPPERMISSION_CALENDAR) $(SPPERMISSION_CONTACTS) $(SPPERMISSION_REMINDERS) $(SPPERMISSION_SPEECH) $(SPPERMISSION_LOCATION) $(SPPERMISSION_MOTION) $(SPPERMISSION_MEDIALIBRARY) $(SPPERMISSION_BLUETOOTH) //&(SPPERMISSION_BLUETOOTH)
+import UIKit
+import CoreBluetooth
 
-SWIFT_ACTIVE_COMPILATION_CONDITIONS= $(inherited) $(SPPERMISSION_FLAGS)
+struct SPBluetoothPermission: SPPermissionProtocol {
+    
+    var isAuthorized: Bool {
+        if #available(iOS 13.0, *) {
+            return CBCentralManager().authorization == .allowedAlways
+        }
+        return CBPeripheralManager.authorizationStatus() == .authorized
+    }
+    
+    var isDenied: Bool {
+        if #available(iOS 13.0, *) {
+            return CBCentralManager().authorization == .denied
+        }
+        return CBPeripheralManager.authorizationStatus() == .denied
+    }
+    
+    func request(completion: @escaping ()->()?) {
+        fatalError("SPPerission - Request for Bluetooth not implement, if you know how add request, paste code here and create pull request. Also you can write me, I add code manually. Thanks!")
+    }
+}
+
+#endif

@@ -77,6 +77,8 @@ public class SPPermissionIconView: UIView {
             SPPermissionsDraw.drawMotion(frame: rect, resizing: .aspectFit, color: color)
         case .mediaLibrary:
             SPPermissionsDraw.drawMedia(frame: rect, resizing: .aspectFit, color: color)
+        case .bluetooth:
+            SPPermissionsDraw.drawBluetooth(frame: rect, resizing: .aspectFit, color: color)
         }
     }
 }
