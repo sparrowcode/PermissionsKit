@@ -178,6 +178,12 @@ extension SPPermission {
             #else
             fatalError(error(permission))
             #endif
+        case .bluetooth:
+            #if SPPERMISSION_BLUETOOTH
+            return SPBluetoothPermission()
+            #else
+            fatalError(error(permission))
+            #endif
             #endif
         case .notification:
             #if SPPERMISSION_NOTIFICATION
@@ -188,12 +194,6 @@ extension SPPermission {
         case .locationWhenInUse:
             #if SPPERMISSION_LOCATION
             return SPLocationPermission(type: SPLocationPermission.SPLocationType.WhenInUse)
-            #else
-            fatalError(error(permission))
-            #endif
-        case .bluetooth:
-            #if SPPERMISSION_BLUETOOTH
-            return SPBluetoothPermission()
             #else
             fatalError(error(permission))
             #endif
