@@ -274,7 +274,7 @@ func didHide(permissions ids: [Int])
 func deniedData(for permission: SPPermission) -> SPPermissionDeniedAlertData?
 ```
 
-For `didHide` no way return array of `SPPermission`, becouse array of enum can't represented in objc. But you can detect permissions with it ID:
+You can detect permission values as follows:
 
 ```swift
 let permissions = ids.map { SPPermission(rawValue: $0) }
@@ -300,7 +300,7 @@ func deniedData(for permission: SPPermission) -> SPPermissionDeniedAlertData? {
 }
 ```
 
-If you don't implement this method, the alert will appear with default text. To disable the alert need return `nil`.
+If you don't implement this method, the alert will appear with default text. To disable the alert you just need return `nil`.
 
 ## Good Practices
 
@@ -367,7 +367,7 @@ The use of this project is completely free. If you can make a contribution, it w
 - Add an icon for tv os example target.
 - Add code for `Bluetooth` request permission. For now after request `Bluetooth` developers get error.
 
-## Design previous version
+## Design of previous version
 
 I developed `SPPermissions` in an 'Apple-way'. To accomplish this, I checked 30 apps to get UI-elements for this project. I then took screenshots and re-drew the elements in Sketch. For example, the project's `Allow` button is similar to the `Get` button in the AppStore. Check this [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I designed the `4.0` version of  `SPPermissions`:
 
