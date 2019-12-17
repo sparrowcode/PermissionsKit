@@ -39,6 +39,7 @@ I recomended that you install the new version and create an issue if you have a 
     - [Native](#native)
 - [Permissions](#permissions)
 - [DataSource & Delegate](#datasource--delegate)
+- [Denied alert](#denied-alert)
 - [Good Practices](#good-practices)
 - [Keys in Info.plist](#keys-in-infoplist)
     - [Localization](#localization-keys)
