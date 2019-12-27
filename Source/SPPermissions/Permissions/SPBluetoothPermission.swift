@@ -41,7 +41,9 @@ struct SPBluetoothPermission: SPPermissionProtocol {
     }
     
     func request(completion: @escaping ()->()?) {
-        fatalError("SPPerission - Request for Bluetooth not implement, if you know how add request, paste code here and create pull request. Also you can write me, I add code manually. Thanks!")
+        DispatchQueue.main.async {
+            completion()
+        }
     }
 }
 
