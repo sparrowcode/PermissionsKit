@@ -101,8 +101,13 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
      */
     @objc func process(button: SPPermissionActionButton) {
         let permission = button.permission
+        delegate?.willAccess?(permission: permission) { [weak self] in
+            self?.processPermission(permission, button: button)
+        }
+    }
+    
+    private func processPermission(_ permission: SPPermission, button: SPPermissionActionButton) {
         permission.request {
-            
             button.update()
             let isAuthorized = permission.isAuthorized
             if isAuthorized { SPPermissionsHaptic.impact(.light) }

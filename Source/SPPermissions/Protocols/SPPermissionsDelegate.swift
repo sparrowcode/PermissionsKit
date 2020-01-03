@@ -33,6 +33,8 @@ import UIKit
      */
     @objc optional func didAllow(permission: SPPermission)
     
+    @objc optional func willAccess(permission: SPPermission, completion: () -> ())
+    
     /**
      Call when permission denied.
      
