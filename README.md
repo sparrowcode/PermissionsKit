@@ -13,7 +13,7 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
 
 [![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
 
-To help on this project, see the [Сooperation](#сooperation) section or our [chat](https://t.me/sppermissions).
+To help on this project, see the [Сooperation](#сooperation) section.
 
 ## 5.x Migration
 
