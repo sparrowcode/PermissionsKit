@@ -13,8 +13,7 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
 
 [![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
 
-To help on this project, see the [Сooperation](#сooperation) section. 
-You can check example usage in app _Debts - Spending tracker_ for [iOS](https://itunes.apple.com/app/id1446635818) and [macOS](https://apps.apple.com/app/id1496914334).
+You can check example usage in app _Debts - Spending tracker_ for [iOS](https://itunes.apple.com/app/id1446635818) and [macOS](https://apps.apple.com/app/id1496914334). To help on `SPPermission` project, see the [Сooperation](#сooperation) section. 
 
 ## 5.x Migration
 
