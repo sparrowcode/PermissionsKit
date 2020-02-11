@@ -43,12 +43,13 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerPro
      - warning: `didHide` delegate method not call here.
      */
     public func present(on controller: UIViewController) {
+        let delegate = self.delegate
         for permission in permissions {
-            permission.request { [weak self] in
+            permission.request {
                 if permission.isAuthorized {
-                    self?.delegate?.didAllow?(permission: permission)
+                    delegate?.didAllow?(permission: permission)
                 } else {
-                    self?.delegate?.didDenied?(permission: permission)
+                    delegate?.didDenied?(permission: permission)
                     
                     /**
                      Show alert with propose go to settings and allow permission.
@@ -56,8 +57,8 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerPro
                      */
                     if permission.isDenied {
                         var data = SPPermissionDeniedAlertData()
-                        if self?.delegate != nil {
-                            guard let userData = self?.delegate?.deniedData?(for: permission) else { return }
+                        if delegate != nil {
+                            guard let userData = delegate?.deniedData?(for: permission) else { return }
                             data = userData
                         }
                         let alertController = UIAlertController.init(

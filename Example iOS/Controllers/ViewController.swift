@@ -116,6 +116,26 @@ extension ViewController: SPPermissionsDataSource, SPPermissionsDelegate {
     }
     
     /**
+    Call when permission allowed.
+    Also call if you try request allowed permission.
+    
+    - parameter permission: Permission which allowed.
+    */
+    func didAllow(permission: SPPermission) {
+        print("Did allow: ", permission.name)
+    }
+    
+    /**
+    Call when permission denied.
+    Also call if you try request denied permission.
+    
+    - parameter permission: Permission which denied.
+    */
+    func didDenied(permission: SPPermission) {
+        print("Did denied: ", permission.name)
+    }
+    
+    /**
      Alert if permission denied. For disable alert return `nil`.
      If this method not implement, alert will be show with default titles.
      
@@ -131,6 +151,7 @@ extension ViewController: SPPermissionsDataSource, SPPermissionsDelegate {
             return data
         } else {
             // If returned nil, alert will not show.
+            print("Alert for \(permission.name) not show, becouse in datasource returned nil for configure data. If you need alert, configure this.")
             return nil
         }
     }
