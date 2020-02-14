@@ -201,10 +201,10 @@ extension SPPermission {
     }
     
     /**
-     Description error abut invalid instalation.
+     Description error about invalid installation.
      */
     fileprivate static func error(_ permission: SPPermission) -> String {
-        return "SPPermissions - \(permission.name) not import. Probelm NOT with usage description key. I recomend to see installation guide: https://youtu.be/1kR5HGVhJfk. More details in Readme: https://github.com/ivanvorobei/SPPermissions"
+        return "SPPermissions - \(permission.name) not import. Problem NOT with usage description key. I recomend to see installation guide: https://youtu.be/1kR5HGVhJfk. More details in Readme: https://github.com/ivanvorobei/SPPermissions"
     }
     
     /**
