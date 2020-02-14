@@ -201,7 +201,7 @@ let controller = SPPermissions.native([.calendar, .camera, .contacts])
 controller.delegate = self
 
 // Always use this method for request. 
-// You can pass any controller, this request becouse need implement base protocol.
+// You can pass any controller, this request because need implement base protocol.
 controller.present(on: self)
 ```
 
