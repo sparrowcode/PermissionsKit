@@ -62,6 +62,13 @@ class ViewController: UITableViewController {
             let controller = SPPermissions.dialog(selectedPermissions)
             controller.dataSource = self
             controller.delegate = self
+            
+            /**
+             You can disable bouns animation and gester if need.
+             Removed start annimation, removed gester drag dialog.
+             */
+            controller.bounceAnimationEnabled = false
+            
             controller.present(on: self)
         case 2:
             let controller = SPPermissions.native(selectedPermissions)

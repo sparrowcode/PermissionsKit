@@ -53,6 +53,11 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     public var footerText: String = SPPermissionsText.commentText
     
     /**
+     You can disable bound appearance and handle gester for dialog.
+     */
+    public var bounceAnimationEnabled: Bool = false
+    
+    /**
      View with content.
      */
     let dialogView = SPPermissionsDialogView()
@@ -102,7 +107,12 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
         super.viewDidLayoutSubviews()
         backgroundView.frame = view.bounds
         dialogView.layout(in: view)
-        snapBehavior.snapPoint = dialogCenter
+        
+        if bounceAnimationEnabled {
+            snapBehavior.snapPoint = dialogCenter
+        } else {
+            dialogView.center = dialogCenter
+        }
     }
     
     /**
@@ -125,7 +135,9 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
                 self.dialogView.alpha = 1
             }, completion: nil)
             SPPermissionsDelay.wait(0.21, closure: {
-                self.animator.addBehavior(self.snapBehavior)
+                if self.bounceAnimationEnabled {
+                    self.animator.addBehavior(self.snapBehavior)
+                }
             })
         })
     }
@@ -258,6 +270,10 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     var snapBehavior : UISnapBehavior!
     
     @objc func handleGesture(sender: UIPanGestureRecognizer) {
+        
+        guard bounceAnimationEnabled else {
+            return
+        }
         
         let location = sender.location(in: view)
         let boxLocation = sender.location(in: dialogView)
