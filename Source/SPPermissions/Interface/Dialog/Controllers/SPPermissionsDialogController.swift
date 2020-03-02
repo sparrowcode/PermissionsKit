@@ -55,7 +55,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     /**
      You can disable bound appearance and handle gester for dialog.
      */
-    public var bounceAnimationEnabled: Bool = false
+    public var bounceAnimationEnabled: Bool = true
     
     /**
      View with content.
