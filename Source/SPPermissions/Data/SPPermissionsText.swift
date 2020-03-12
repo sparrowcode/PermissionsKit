@@ -90,9 +90,9 @@ enum SPPermissionsText {
     }
     
     static var titleText: String = "Need Permissions"
-    static var subtitleText: String = "This permissions need for work app, see description for each permission."
+    static var subtitleText: String = "These are the permissions the app requires to work properly. Please see description for each permission."
     static var subtitleShortText: String = "Permissions request"
-    static var commentText: String = "Permissions are necessary for the correct work of the application and the performance of all functions. Push are not required permissions."
+    static var commentText: String = "Permissions are necessary for the application to work and perform correctly. Push are not required permissions."
     
     static var allow: String = "Allow"
     static var allowed: String = "Allowed"
