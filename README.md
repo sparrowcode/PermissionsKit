@@ -15,16 +15,6 @@ If you like the project, do not forget to `put star ★` and follow me on GitHub
 
 You can check example usage in app _Debts - Spending tracker_ for [iOS](https://itunes.apple.com/app/id1446635818) and [macOS](https://apps.apple.com/app/id1496914334). To help on `SPPermission` project, see the [Сooperation](#сooperation) section. 
 
-## 5.x Migration
-
-I have migrated `SPPermissions` to the new `5.0` vesion. If you find any bugs or need any of the old functionality - please create an issue or write me. If you want stay on the old version (4.x), add this to your Podfile:
-
-```ruby
-pod 'SPPermissions', '4.1.4'
-```
-
-I recomended that you install the new version and create an issue if you have a problem. I generally response to and resolve all issues in 24-48 hours.
-
 ## Navigate
 
 - [Requirements](#requirements)
