@@ -50,7 +50,7 @@ public class SPPermissionTableViewCell: UITableViewCell {
     /**
      View for custom `UIImage`.
      */
-    private let iconImageView = UIImageView()
+    public let iconImageView = UIImageView()
     
     /**
      Container of icons view.

@@ -107,6 +107,10 @@ extension ViewController: SPPermissionsDataSource, SPPermissionsDelegate {
          
          // If you want set custom image.
          cell.set(UIImage(named: "IMAGE-NAME")!)
+         
+         // Maybe need set custom color for your custom image
+         // For it set rendering mode and set tint color
+         cell.iconImageView.tintColor = .systemRed
          */
         
         return cell
