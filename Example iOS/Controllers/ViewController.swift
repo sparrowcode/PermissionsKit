@@ -65,7 +65,7 @@ class ViewController: UITableViewController {
             
             /**
              You can disable bouns animation and gester if need.
-             Removed start annimation, removed gester drag dialog.
+             Removed start animation, removed gester drag dialog.
              */
             // controller.bounceAnimationEnabled = false
             
