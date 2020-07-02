@@ -5,15 +5,13 @@
 ### About
 `SPPermissions` is an API to ask for user permissions using Swift. The API provides for three UI options (list, dialog & native). The UI/UX is in an **Apple style** and supports iPad, dark mode, & tvOS. Also you can check the state permissions using the API.
 
+If you like the project, don't forget to `put star ★` and follow me on GitHub:
+
+[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/Assets/blob/master/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
+
 Visit my store for iOS developers:
 
-[![xcode-shop.com](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/xcode-shop.svg)](https://xcode-shop.com)
-
-If you like the project, do not forget to `put star ★` and follow me on GitHub:
-
-[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
-
-You can check example usage in app _Debts - Spending tracker_ for [iOS](https://itunes.apple.com/app/id1446635818) and [macOS](https://apps.apple.com/app/id1496914334). To help on `SPPermission` project, see the [Сooperation](#сooperation) section. 
+[![xcode-shop.com](https://github.com/ivanvorobei/Assets/blob/master/Buttons/xcode-shop.svg)](https://xcode-shop.com)
 
 ## Navigate
 
@@ -33,7 +31,8 @@ You can check example usage in app _Debts - Spending tracker_ for [iOS](https://
 - [Good Practices](#good-practices)
 - [Keys in Info.plist](#keys-in-infoplist)
     - [Localization](#localization-keys)
-- [Сooperation](#сooperation)
+- [Other Projects](#other-projects)
+- [Russian Community](#russian-community)
 - [License](#license)
 
 ## Requirements
@@ -346,22 +345,27 @@ If you use xliff localization export, keys will be create automatically. If you 
 "NSCameraUsageDescription" = "Here description of usage camera";
 ```
 
-## Сooperation
-
-The use of this project is completely free. If you can make a contribution, it will help with development. Here is a list of tasks and what needs to be done:
-
-- Add docs in source files. Add a description of public methods and parameters. 
-- Subtitles for this [video](https://youtu.be/1kR5HGVhJfk) in any of your native languages, where I tell you how to connect a configuration file.
-- Fix SPM support. Now SPM ignore config flags. Issue [#156](https://github.com/ivanvorobei/SPPermissions/issues/156)
-- Help me translate my app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) for other languages. 
-- Add an icon for tv os example target.
-- Add code for `Bluetooth` request permission. For now after request `Bluetooth` developers get error.
-
 ## Design of previous version
 
 I developed `SPPermissions` in an 'Apple-way'. To accomplish this, I checked 30 apps to get UI-elements for this project. I then took screenshots and re-drew the elements in Sketch. For example, the project's `Allow` button is similar to the `Get` button in the AppStore. Check this [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I designed the `4.0` version of  `SPPermissions`:
 
 [![Timelaps on YouTube](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Readme/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
+
+## Other Projects
+
+#### [SPAlert](https://github.com/ivanvorobei/SPAlert)
+It is popup from Apple Music & Feedback in AppStore. Contains Done & Heart presets. Done present with draw path animation. I clone Apple's alerts as much as possible.
+You can find this alerts in AppStore after feedback, after added song to library in Apple Music. I am also add alert without icon, as simple message.
+
+#### [SPDiffable](https://github.com/ivanvorobei/SPDiffable)
+Apple's diffable API requerid models for each object type. If you want use it in many place, you pass many time to implemenet and get over duplicates codes. This project help you do it elegant with shared models and special cell providers for one-usage models.
+
+## Russian Community
+
+Присоединяйтесь в телеграм канал [Код Воробья](https://sparrowcode.ivanvorobei.by/telegram), там найдете заметки о iOS разработке и дизайне.
+Большие туториалы выклыдываю на [YouTube](https://sparrowcode.ivanvorobei.by/youtube).
+
+[![Tutorials on YouTube](https://github.com/ivanvorobei/Assets/blob/master/Russian%20Community/youtube-preview.png)](https://sparrowcode.ivanvorobei.by/youtube)
 
 ## License
 
