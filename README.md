@@ -364,4 +364,4 @@ Apple's diffable API requerid models for each object type. If you want use it in
 Присоединяйтесь в телеграм канал [Код Воробья](https://sparrowcode.ivanvorobei.by/telegram), там найдете заметки о iOS разработке и дизайне.
 Большие туториалы выклыдываю на [YouTube](https://sparrowcode.ivanvorobei.by/youtube).
 
-[![Tutorials on YouTube](https://github.com/ivanvorobei/Assets/blob/master/Russian%20Community/youtube-preview.png)](https://sparrowcode.ivanvorobei.by/youtube)
+[![Tutorials on YouTube](https://github.com/ivanvorobei/Assets/blob/master/Russian%20Community/youtube-preview.jpg)](https://sparrowcode.ivanvorobei.by/youtube)
