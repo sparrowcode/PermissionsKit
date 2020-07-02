@@ -33,7 +33,6 @@ Visit my store for iOS developers:
     - [Localization](#localization-keys)
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
-- [License](#license)
 
 ## Requirements
 
@@ -366,7 +365,3 @@ Apple's diffable API requerid models for each object type. If you want use it in
 Большие туториалы выклыдываю на [YouTube](https://sparrowcode.ivanvorobei.by/youtube).
 
 [![Tutorials on YouTube](https://github.com/ivanvorobei/Assets/blob/master/Russian%20Community/youtube-preview.png)](https://sparrowcode.ivanvorobei.by/youtube)
-
-## License
-
-`SPPermissions` is released under the MIT license. Check `LICENSE` for details.
