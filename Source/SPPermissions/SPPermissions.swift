@@ -64,7 +64,7 @@ public enum SPPermissions {
      
      - parameter permissions: List permissions for uniquary.
      */
-    private static func removeDublicates(_ permissions: [SPPermission]) -> [SPPermission] {
+    private static func removeDuplicates(_ permissions: [SPPermission]) -> [SPPermission] {
         var result = [SPPermission]()
         for permission in permissions {
             if !result.contains(permission) { result.append(permission) }
