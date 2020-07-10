@@ -53,6 +53,8 @@ enum SPPermissionsText {
             return "Notification"
         case .locationWhenInUse:
             return "Location When Use"
+        case .tracking:
+            return "Tracking"
         }
     }
     
@@ -86,6 +88,8 @@ enum SPPermissionsText {
             return "Get important information without opening app."
         case .locationWhenInUse:
             return "Allow to access your location"
+        case .tracking:
+            return "Allow to access app-related data"
         }
     }
     
