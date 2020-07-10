@@ -79,6 +79,9 @@ public class SPPermissionIconView: UIView {
             SPPermissionsDraw.drawMedia(frame: rect, resizing: .aspectFit, color: color)
         case .bluetooth:
             SPPermissionsDraw.drawBluetooth(frame: rect, resizing: .aspectFit, color: color)
+        case .tracking:
+            // TODO: Add a new icon for tracking
+            SPPermissionsDraw.drawBluetooth(frame: rect, resizing: .aspectFit, color: color)
         }
     }
 }
