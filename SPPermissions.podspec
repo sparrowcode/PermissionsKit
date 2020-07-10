@@ -6,9 +6,9 @@ Pod::Spec.new do |s|
   s.homepage      = "https://github.com/IvanVorobei/SPPermissions"
   s.source        = { :git => "https://github.com/IvanVorobei/SPPermissions.git", :tag => s.version }
   s.license       = { :type => "MIT", :file => "LICENSE" }
-  
+
   s.author        = { "Ivan Vorobei" => "ivanvorobei@icloud.com" }
-  
+
   s.requires_arc = true
   s.ios.framework = 'UIKit'
   s.tvos.framework = 'UIKit'
@@ -76,10 +76,15 @@ Pod::Spec.new do |s|
     ml.dependency 'SPPermissions/Core'
     ml.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_MEDIALIBRARY" }
   end
-  
-  s.subspec 'Bluetooth' do |ml|
-    ml.dependency 'SPPermissions/Core'
-    ml.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_BLUETOOTH" }
+
+  s.subspec 'Bluetooth' do |bl|
+    bl.dependency 'SPPermissions/Core'
+    bl.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_BLUETOOTH" }
+  end
+
+  s.subspec 'Tracking' do |tr|
+    tr.dependency 'SPPermissions/Core'
+    tr.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_TRACKING" }
   end
 
 end
