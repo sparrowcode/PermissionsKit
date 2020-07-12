@@ -24,7 +24,11 @@
 import UIKit
 import CoreBluetooth
 
-struct SPBluetoothPermission: SPPermissionProtocol {
+class SPBluetoothPermission: NSObject, SPPermissionProtocol {
+    
+    typealias SPBluetoothPermissionHandler = ()->()?
+    private var completion: SPBluetoothPermissionHandler?
+    private var manager: CBCentralManager?
     
     var isAuthorized: Bool {
         if #available(iOS 13.0, *) {
@@ -41,8 +45,31 @@ struct SPBluetoothPermission: SPPermissionProtocol {
     }
     
     func request(completion: @escaping ()->()?) {
-        fatalError("SPPerission - Request for Bluetooth not implement, if you know how add request, paste code here and create pull request. Also you can write me, I add code manually. Thanks!")
+        self.completion = completion
+        self.manager = CBCentralManager(delegate: self, queue: nil, options: [:])
     }
+}
+
+extension SPBluetoothPermission: CBCentralManagerDelegate {
+    
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        if #available(iOS 13.0, *) {
+            switch central.authorization {
+            case .notDetermined:
+                break
+            default:
+                self.completion?()
+            }
+        } else {
+            switch CBPeripheralManager.authorizationStatus() {
+            case .notDetermined:
+                break
+            default:
+                self.completion?()
+            }
+        }
+    }
+    
 }
 
 #endif
