@@ -48,6 +48,8 @@
 	<string>Example Describtion</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Example Describtion</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Example Describtion</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen∫</string>
 	<key>UIRequiredDeviceCapabilities</key>

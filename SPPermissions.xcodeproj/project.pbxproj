@@ -49,6 +49,8 @@
 		9E50E9FC238B257300B71477 /* SPPermissions.h in Headers */ = {isa = PBXBuildFile; fileRef = F43F8D9E236ECC9D00B94208 /* SPPermissions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E50E9FD238B266A00B71477 /* SPPermissions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E50E9C8238B249C00B71477 /* SPPermissions.framework */; };
 		9E50E9FE238B266A00B71477 /* SPPermissions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E50E9C8238B249C00B71477 /* SPPermissions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E32A92DA24B8DB1E00E4DCC5 /* SPTrackingPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A92D924B8DB1E00E4DCC5 /* SPTrackingPermission.swift */; };
+		E32A92DB24B8DB1E00E4DCC5 /* SPTrackingPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A92D924B8DB1E00E4DCC5 /* SPTrackingPermission.swift */; };
 		F407A7C4238C538400763303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407A7C3238C538400763303 /* AppDelegate.swift */; };
 		F407A7C7238C53AC00763303 /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407A7C6238C53AC00763303 /* ViewControllers.swift */; };
 		F43F8DA0236ECC9D00B94208 /* SPPermissions.h in Headers */ = {isa = PBXBuildFile; fileRef = F43F8D9E236ECC9D00B94208 /* SPPermissions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -149,6 +151,7 @@
 		9E50E9BA238B1F1A00B71477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E50E9BC238B1F1A00B71477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E50E9C8238B249C00B71477 /* SPPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E32A92D924B8DB1E00E4DCC5 /* SPTrackingPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTrackingPermission.swift; sourceTree = "<group>"; };
 		F407A7C3238C538400763303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F407A7C6238C53AC00763303 /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
 		F43F8D9B236ECC9D00B94208 /* SPPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -488,6 +491,7 @@
 				F4EA2672236F2B890070B2BA /* SPSpeechPermission.swift */,
 				F4EA2673236F2B890070B2BA /* SPCalendarPermission.swift */,
 				F4CD097423A0218E00DF6FEF /* SPBluetoothPermission.swift */,
+				E32A92D924B8DB1E00E4DCC5 /* SPTrackingPermission.swift */,
 			);
 			path = Permissions;
 			sourceTree = "<group>";
@@ -777,6 +781,7 @@
 				9E50E9D5238B24B900B71477 /* SPPermissions.swift in Sources */,
 				9E50E9F7238B252A00B71477 /* SPPermissionsColor.swift in Sources */,
 				9E50E9DB238B24D800B71477 /* SPPermissionIconView.swift in Sources */,
+				E32A92DB24B8DB1E00E4DCC5 /* SPTrackingPermission.swift in Sources */,
 				9E50E9D7238B24C000B71477 /* SPPermissionsDelegate.swift in Sources */,
 				9E50E9D8238B24C300B71477 /* SPPermissionProtocol.swift in Sources */,
 				9E50E9FB238B253200B71477 /* SPPermissionsOpener.swift in Sources */,
@@ -823,6 +828,7 @@
 				F4FB9E9423798DE800F7272C /* SPPermissionIconView.swift in Sources */,
 				F4FB9E752379712400F7272C /* SPPermissionsControllerProtocol.swift in Sources */,
 				F4EA2677236F2B890070B2BA /* SPNotificationPermission.swift in Sources */,
+				E32A92DA24B8DB1E00E4DCC5 /* SPTrackingPermission.swift in Sources */,
 				F4FB9EB6237A0DD100F7272C /* SPPermissionsDelay.swift in Sources */,
 				F4FB9E87237983AA00F7272C /* SPPermissionsListHeaderView.swift in Sources */,
 				F499B1ED238009D600B83B08 /* SPPermissionsGradeBlurView.swift in Sources */,

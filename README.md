@@ -95,6 +95,9 @@ pod 'SPPermissions/MediaLibrary'
 ```ruby
 pod 'SPPermissions/Bluetooth'
 ```
+```ruby
+pod 'SPPermissions/Tracking'
+```
 
 </p>
 </details>
@@ -333,6 +336,7 @@ You need to add some keys to the `Info.plist` file with descriptions. List of ke
 - NSLocationAlwaysUsageDescription (iOS 10 and earlier)
 - NSBluetoothAlwaysUsageDescription
 - NSBluetoothPeripheralUsageDescription (iOS 12 and earlier)
+- NSUserTrackingUsageDescription
 
 Do not use the description as the name of the key.
 
