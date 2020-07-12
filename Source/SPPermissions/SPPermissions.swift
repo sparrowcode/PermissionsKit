@@ -29,7 +29,7 @@ public enum SPPermissions {
      - parameter permissions: List of permissions for request.
      */
     public static func native(_ permissions: [SPPermission]) -> SPPermissionsNativeController {
-        let controller = SPPermissionsNativeController(removeDublicates(permissions))
+        let controller = SPPermissionsNativeController(removeDuplicates(permissions))
         return controller
     }
     
@@ -42,7 +42,7 @@ public enum SPPermissions {
      - returns: Controller for configure texts. Ready for present.
      */
     public static func list(_ permissions: [SPPermission]) -> SPPermissionsListController {
-        let controller = SPPermissionsListController(removeDublicates(permissions))
+        let controller = SPPermissionsListController(removeDuplicates(permissions))
         return controller
     }
 
@@ -54,7 +54,7 @@ public enum SPPermissions {
      - returns: Controller for configure data. Ready for present.
      */
     public static func dialog(_ permissions: [SPPermission]) -> SPPermissionsDialogController {
-        let controller = SPPermissionsDialogController(removeDublicates(permissions))
+        let controller = SPPermissionsDialogController(removeDuplicates(permissions))
         return controller
     }
     #endif
