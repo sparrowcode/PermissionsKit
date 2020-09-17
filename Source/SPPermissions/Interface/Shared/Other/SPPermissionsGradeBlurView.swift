@@ -80,12 +80,18 @@ public class SPPermissionsBlurView: UIVisualEffectView {
     }
     
     public init(withRadius radius: CGFloat) {
-        let customBlurClass: AnyObject.Type = NSClassFromString("_UICustomBlurEffect")!
-        let customBlurObject: NSObject.Type = customBlurClass as! NSObject.Type
-        self.blurEffect = customBlurObject.init() as! UIBlurEffect
-        self.blurEffect.setValue(1.0, forKeyPath: "scale")
-        self.blurEffect.setValue(radius, forKeyPath: "blurRadius")
-        super.init(effect: radius == 0 ? nil : self.blurEffect)
+        if #available(iOS 14, *) {
+            self.blurEffect = UIBlurEffect(style: .prominent)
+            super.init(effect: blurEffect)
+            alpha = 0
+        } else {
+            let customBlurClass: AnyObject.Type = NSClassFromString("_UICustomBlurEffect")!
+            let customBlurObject: NSObject.Type = customBlurClass as! NSObject.Type
+            blurEffect = customBlurObject.init() as! UIBlurEffect
+            blurEffect.setValue(1.0, forKeyPath: "scale")
+            blurEffect.setValue(radius, forKeyPath: "blurRadius")
+            super.init(effect: radius == 0 ? nil : self.blurEffect)
+        }
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -93,9 +99,13 @@ public class SPPermissionsBlurView: UIVisualEffectView {
     }
     
     open func setBlurRadius(_ radius: CGFloat) {
-        guard radius != blurRadius else { return }
-        blurEffect.setValue(radius, forKeyPath: "blurRadius")
-        self.effect = blurEffect
+        if #available(iOS 14, *) {
+            alpha = (radius == 0) ? 0 : 1
+        } else {
+            guard radius != blurRadius else { return }
+            blurEffect.setValue(radius, forKeyPath: "blurRadius")
+            self.effect = blurEffect
+        }
     }
 }
 #endif
