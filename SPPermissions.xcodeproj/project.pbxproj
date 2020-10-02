@@ -154,10 +154,15 @@
 		E32A92D924B8DB1E00E4DCC5 /* SPTrackingPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTrackingPermission.swift; sourceTree = "<group>"; };
 		F407A7C3238C538400763303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F407A7C6238C53AC00763303 /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
+		F4342383251CDBEB0094F319 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F4342384251CDBEB0094F319 /* SPPermissions.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPPermissions.podspec; sourceTree = "<group>"; };
+		F4342385251CDBEB0094F319 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F4342387251CDBEB0094F319 /* FUNDING.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = FUNDING.yml; sourceTree = "<group>"; };
+		F4342388251CDBEB0094F319 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		F4342389251CDBEB0094F319 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F43F8D9B236ECC9D00B94208 /* SPPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43F8D9E236ECC9D00B94208 /* SPPermissions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPPermissions.h; sourceTree = "<group>"; };
 		F43F8D9F236ECC9D00B94208 /* SPPermissionsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SPPermissionsInfo.plist; sourceTree = "<group>"; };
-		F483229523819E2E0061F31D /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 		F499B1E1238006CB00B83B08 /* SPPermissionsDialogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsDialogController.swift; sourceTree = "<group>"; };
 		F499B1EC238009D600B83B08 /* SPPermissionsGradeBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionsGradeBlurView.swift; sourceTree = "<group>"; };
 		F499B1FE23801B0000B83B08 /* SPPermissionsDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsDialogView.swift; sourceTree = "<group>"; };
@@ -188,12 +193,7 @@
 		F4EA2672236F2B890070B2BA /* SPSpeechPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSpeechPermission.swift; sourceTree = "<group>"; };
 		F4EA2673236F2B890070B2BA /* SPCalendarPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCalendarPermission.swift; sourceTree = "<group>"; };
 		F4EA268A236F2BB90070B2BA /* SPPermissionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionProtocol.swift; sourceTree = "<group>"; };
-		F4EA268D236F2DC10070B2BA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
-		F4EA268E236F2DC10070B2BA /* SPPermissions.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPPermissions.podspec; sourceTree = SOURCE_ROOT; };
 		F4EA2692236F30E70070B2BA /* SPPermissionLocationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionLocationHandler.swift; sourceTree = "<group>"; };
-		F4EA275C236F75430070B2BA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		F4EA275E236F7BF90070B2BA /* FUNDING.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = FUNDING.yml; sourceTree = "<group>"; };
-		F4EA2761236F7C660070B2BA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		F4FB9E6E23796E5400F7272C /* SPPermissionsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsListController.swift; sourceTree = "<group>"; };
 		F4FB9E742379712400F7272C /* SPPermissionsControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsControllerProtocol.swift; sourceTree = "<group>"; };
 		F4FB9E782379721D00F7272C /* SPPermissionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsDataSource.swift; sourceTree = "<group>"; };
@@ -286,15 +286,27 @@
 			path = SPPermissions;
 			sourceTree = "<group>";
 		};
+		F4342386251CDBEB0094F319 /* .github */ = {
+			isa = PBXGroup;
+			children = (
+				F4342387251CDBEB0094F319 /* FUNDING.yml */,
+			);
+			path = .github;
+			sourceTree = "<group>";
+		};
 		F43F8D91236ECC9D00B94208 = {
 			isa = PBXGroup;
 			children = (
-				F43F8DA8236ECD3100B94208 /* Deployment */,
+				F4342386251CDBEB0094F319 /* .github */,
+				F4342383251CDBEB0094F319 /* .gitignore */,
+				F4342385251CDBEB0094F319 /* LICENSE */,
+				F4342388251CDBEB0094F319 /* Package.swift */,
+				F4342389251CDBEB0094F319 /* README.md */,
+				F4342384251CDBEB0094F319 /* SPPermissions.podspec */,
 				F43F8DA6236ECCEE00B94208 /* Source */,
 				F4EA2644236ECE040070B2BA /* Example iOS */,
 				9E50E9AF238B1EDD00B71477 /* Example tvOS */,
 				F43F8D9C236ECC9D00B94208 /* Products */,
-				F499B1E52380076C00B83B08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -316,19 +328,6 @@
 				F43F8DA9236ECD3E00B94208 /* Supporting Files */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		F43F8DA8236ECD3100B94208 /* Deployment */ = {
-			isa = PBXGroup;
-			children = (
-				F4EA275D236F7BF90070B2BA /* .github */,
-				F4EA2761236F7C660070B2BA /* .gitignore */,
-				F4EA268D236F2DC10070B2BA /* LICENSE */,
-				F4EA275C236F75430070B2BA /* README.md */,
-				F483229523819E2E0061F31D /* Package.swift */,
-				F4EA268E236F2DC10070B2BA /* SPPermissions.podspec */,
-			);
-			path = Deployment;
 			sourceTree = "<group>";
 		};
 		F43F8DA9236ECD3E00B94208 /* Supporting Files */ = {
@@ -396,13 +395,6 @@
 				F4D3CD4C238D3E90006C3DE2 /* Buttons */,
 			);
 			path = Shared;
-			sourceTree = "<group>";
-		};
-		F499B1E52380076C00B83B08 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F499B1EB238007D700B83B08 /* Native */ = {
@@ -503,14 +495,6 @@
 			);
 			path = Handlers;
 			sourceTree = "<group>";
-		};
-		F4EA275D236F7BF90070B2BA /* .github */ = {
-			isa = PBXGroup;
-			children = (
-				F4EA275E236F7BF90070B2BA /* FUNDING.yml */,
-			);
-			path = .github;
-			sourceTree = SOURCE_ROOT;
 		};
 		F4FB9E7023796F4F00F7272C /* Controllers */ = {
 			isa = PBXGroup;
