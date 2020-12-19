@@ -19,23 +19,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if os(iOS) && SPPERMISSION_MOTION
+
 import UIKit
+import CoreMotion
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+struct SPMotionPermission: SPPermissionProtocol {
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        launch(UINavigationController(rootViewController: ViewController()))
-        return true
+    var isAuthorized: Bool {
+        if #available(iOS 11.0, *) {
+            return CMMotionActivityManager.authorizationStatus() == .authorized
+        }
+        return false
     }
     
-    func launch(_ viewController: UIViewController) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+    var isDenied: Bool {
+        if #available(iOS 11.0, *) {
+            return CMMotionActivityManager.authorizationStatus() == .denied
+        }
+        return false
+    }
+    
+    func request(completion: @escaping ()->()?) {
+        let manager = CMMotionActivityManager()
+        let today = Date()
+        
+        manager.queryActivityStarting(from: today, to: today, to: OperationQueue.main, withHandler: { (activities: [CMMotionActivity]?, error: Error?) -> () in
+            completion()
+            manager.stopActivityUpdates()
+        })
     }
 }
 
+#endif

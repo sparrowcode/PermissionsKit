@@ -303,7 +303,7 @@
 				F4342388251CDBEB0094F319 /* Package.swift */,
 				F4342389251CDBEB0094F319 /* README.md */,
 				F4342384251CDBEB0094F319 /* SPPermissions.podspec */,
-				F43F8DA6236ECCEE00B94208 /* Source */,
+				F43F8DA6236ECCEE00B94208 /* Sources */,
 				F4EA2644236ECE040070B2BA /* Example iOS */,
 				9E50E9AF238B1EDD00B71477 /* Example tvOS */,
 				F43F8D9C236ECC9D00B94208 /* Products */,
@@ -321,13 +321,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F43F8DA6236ECCEE00B94208 /* Source */ = {
+		F43F8DA6236ECCEE00B94208 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				F412045423829ECC009C2AC7 /* SPPermissions */,
 				F43F8DA9236ECD3E00B94208 /* Supporting Files */,
 			);
-			path = Source;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		F43F8DA9236ECD3E00B94208 /* Supporting Files */ = {

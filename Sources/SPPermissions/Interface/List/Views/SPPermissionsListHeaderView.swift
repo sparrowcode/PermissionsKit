@@ -21,21 +21,34 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+#if os(iOS)
+class SPPermissionsListHeaderView: UITableViewHeaderFooterView {
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        launch(UINavigationController(rootViewController: ViewController()))
-        return true
+    /**
+     Text for header view.
+     */
+    let titleLabel = UILabel()
+    
+    /**
+     ID for register in table view.
+     */
+    static var id = "SPPermissionsListHeaderView"
+    
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
+        titleLabel.numberOfLines = 0
+        titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        titleLabel.textColor = SPPermissionsColor.secondaryLabel
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(titleLabel)
+        titleLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: -2).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25).isActive = true
     }
     
-    func launch(_ viewController: UIViewController) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
-
+#endif

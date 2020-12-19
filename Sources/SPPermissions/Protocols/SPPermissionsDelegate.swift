@@ -21,21 +21,37 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+/**
+ List of events methods. All optional.
+ */
+@objc public protocol SPPermissionsDelegate: class {
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        launch(UINavigationController(rootViewController: ViewController()))
-        return true
-    }
+    /**
+     Call when permission allowed.
+     
+     - parameter permission: Which permission did allowed.
+     */
+    @objc optional func didAllow(permission: SPPermission)
     
-    func launch(_ viewController: UIViewController) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
-    }
+    /**
+     Call when permission denied.
+     
+     - parameter permission: Which permission did denied.
+     */
+    @objc optional func didDenied(permission: SPPermission)
+    
+    /**
+     Call when controller closed.
+     
+     - parameter ids: IDs permissions which showed in this controller. Also include permisssions, which not requested.
+     No way pass array of `SPPermission` becouse array of enum can't represented in objc.
+     */
+    @objc optional func didHide(permissions ids: [Int])
+    
+    /**
+     If permission denied, after action show alert with propose open settings and allow this permission.
+     
+     - parameter permission: Denied data for this permission.
+     */
+    @objc optional func deniedData(for permission: SPPermission) -> SPPermissionDeniedAlertData?
 }
-

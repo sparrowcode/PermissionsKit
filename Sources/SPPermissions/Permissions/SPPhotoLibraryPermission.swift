@@ -19,23 +19,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if SPPERMISSION_PHOTOLIBRARY
+
 import UIKit
+import Photos
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+struct SPPhotoLibraryPermission: SPPermissionProtocol {
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        launch(UINavigationController(rootViewController: ViewController()))
-        return true
+    var isAuthorized: Bool {
+        return PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized
     }
     
-    func launch(_ viewController: UIViewController) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+    var isDenied: Bool {
+        return PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.denied
+    }
+    
+    func request(completion: @escaping ()->()?) {
+        PHPhotoLibrary.requestAuthorization({
+            finished in
+            DispatchQueue.main.async {
+                completion()
+            }
+        })
     }
 }
 
+#endif

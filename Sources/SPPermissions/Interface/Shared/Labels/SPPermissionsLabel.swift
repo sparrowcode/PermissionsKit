@@ -21,21 +21,17 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+#if os(iOS)
+/**
+ Layout with dinamic height. For it call `layout()`.
+ */
+class SPPermissionsLabel: UILabel {
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        launch(UINavigationController(rootViewController: ViewController()))
-        return true
-    }
-    
-    func launch(_ viewController: UIViewController) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+    func layout(x: CGFloat, y: CGFloat, width: CGFloat) {
+        frame = CGRect.init(x: frame.origin.x, y: frame.origin.y, width: width, height: frame.height)
+        sizeToFit()
+        frame = CGRect.init(x: frame.origin.x, y: frame.origin.y, width: width, height: frame.height)
+        frame.origin = CGPoint.init(x: x, y: y)
     }
 }
-
+#endif

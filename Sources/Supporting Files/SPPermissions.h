@@ -19,23 +19,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import UIKit
+#import <Foundation/Foundation.h>
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+//! Project version number for SPPermissions.
+FOUNDATION_EXPORT double SPPermissionsVersionNumber;
 
-    var window: UIWindow?
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        launch(UINavigationController(rootViewController: ViewController()))
-        return true
-    }
-    
-    func launch(_ viewController: UIViewController) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
-    }
-}
+//! Project version string for SPPermissions.
+FOUNDATION_EXPORT const unsigned char SPPermissionsVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <SPPermissions/PublicHeader.h>
+
+
+
+
 

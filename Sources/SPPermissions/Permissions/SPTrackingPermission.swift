@@ -17,25 +17,41 @@
 // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
+// SOFTWARE. 
 
+#if SPPERMISSION_TRACKING
+
+/*
+import AppTrackingTransparency
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        launch(UINavigationController(rootViewController: ViewController()))
-        return true
+struct SPTrackingPermission: SPPermissionProtocol {
+    var isAuthorized: Bool {
+        if #available(iOS 14, tvOS 14, *) {
+            return ATTrackingManager.trackingAuthorizationStatus == .authorized
+        } else {
+            return false
+        }
     }
     
-    func launch(_ viewController: UIViewController) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+    var isDenied: Bool {
+        if #available(iOS 14, tvOS 14, *) {
+            return ATTrackingManager.trackingAuthorizationStatus == .denied
+        } else {
+            return false
+        }
+    }
+    
+    func request(completion: @escaping () -> Void?) {
+        if #available(iOS 14, tvOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { _ in
+                DispatchQueue.main.async {
+                    completion()
+                }
+            }
+        }
     }
 }
+ */
 
+#endif
