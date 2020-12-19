@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
 
   s.name          = "SPPermissions"
-  s.version       = "5.4"
+  s.version       = "5.4.1"
   s.summary       = "Ask permissions on Swift. Available List, Dialog & Native interface. Can check state permission."
-  s.homepage      = "https://github.com/IvanVorobei/SPPermissions"
-  s.source        = { :git => "https://github.com/IvanVorobei/SPPermissions.git", :tag => s.version }
+  s.homepage      = "https://github.com/varabeis/SPPermissions"
+  s.source        = { :git => "https://github.com/varabeis/SPPermissions.git", :tag => s.version }
   s.license       = { :type => "MIT", :file => "LICENSE" }
 
-  s.author        = { "Ivan Vorobei" => "ivanvorobei@icloud.com" }
+  s.author        = { "Ivan Vorobei" => "hello@ivanvorobei.by" }
 
   s.requires_arc = true
   s.ios.framework = 'UIKit'
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Core'
 
   s.subspec 'Core' do |co|
-    co.source_files  = "Source/SPPermissions/**/*.swift"
+    co.source_files  = "Sources/SPPermissions/**/*.swift"
   end
 
   s.subspec 'Camera' do |cm|

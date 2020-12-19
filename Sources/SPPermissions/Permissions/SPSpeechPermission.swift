@@ -19,23 +19,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if os(iOS) && SPPERMISSION_SPEECH
+
 import UIKit
+import Speech
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+struct SPSpeechPermission: SPPermissionProtocol {
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        launch(UINavigationController(rootViewController: ViewController()))
-        return true
+    var isAuthorized: Bool {
+        return SFSpeechRecognizer.authorizationStatus() == .authorized
     }
     
-    func launch(_ viewController: UIViewController) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+    var isDenied: Bool {
+        return SFSpeechRecognizer.authorizationStatus() == .denied
+    }
+    
+    func request(completion: @escaping ()->()?) {
+        SFSpeechRecognizer.requestAuthorization { status in
+            DispatchQueue.main.async {
+                completion()
+            }
+        }
     }
 }
 
+#endif

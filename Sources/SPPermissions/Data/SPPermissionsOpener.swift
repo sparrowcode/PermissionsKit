@@ -21,21 +21,25 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+enum SPPermissionsOpener {
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        launch(UINavigationController(rootViewController: ViewController()))
-        return true
-    }
-    
-    func launch(_ viewController: UIViewController) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+    static func openSettings() {
+        DispatchQueue.main.async {
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+            
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                        print("SPApp - Settings opened: \(success)")
+                    })
+                } else {
+                    UIApplication.shared.openURL(settingsUrl as URL)
+                }
+            } else {
+                print("SPApp - Settings not opened")
+            }
+        }
     }
 }
-

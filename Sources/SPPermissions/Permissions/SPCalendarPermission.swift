@@ -19,23 +19,30 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if os(iOS) && SPPERMISSION_CALENDAR
+
 import UIKit
+import EventKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+struct SPCalendarPermission: SPPermissionProtocol {
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        launch(UINavigationController(rootViewController: ViewController()))
-        return true
+    var isAuthorized: Bool {
+        return EKEventStore.authorizationStatus(for: EKEntityType.event) == .authorized
     }
     
-    func launch(_ viewController: UIViewController) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+    var isDenied: Bool {
+        return EKEventStore.authorizationStatus(for: EKEntityType.event) == .denied
+    }
+    
+    func request(completion: @escaping ()->()?) {
+        let eventStore = EKEventStore()
+        eventStore.requestAccess(to: EKEntityType.event, completion: {
+            (accessGranted: Bool, error: Error?) in
+            DispatchQueue.main.async {
+                completion()
+            }
+        })
     }
 }
 
+#endif

@@ -19,23 +19,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if os(iOS) && SPPERMISSION_MICROPHONE
+
 import UIKit
+import AVFoundation
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+struct SPMicrophonePermission: SPPermissionProtocol {
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        launch(UINavigationController(rootViewController: ViewController()))
-        return true
+    var isAuthorized: Bool {
+        return AVAudioSession.sharedInstance().recordPermission == .granted
     }
     
-    func launch(_ viewController: UIViewController) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+    var isDenied: Bool {
+        return AVAudioSession.sharedInstance().recordPermission == .denied
+    }
+    
+    func request(completion: @escaping ()->()?) {
+        AVAudioSession.sharedInstance().requestRecordPermission {
+            granted in
+            DispatchQueue.main.async {
+                completion()
+            }
+        }
     }
 }
 
+#endif

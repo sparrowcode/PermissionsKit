@@ -21,21 +21,49 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+#if os(iOS)
+class SPPermissionsCloseButton: UIButton {
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        launch(UINavigationController(rootViewController: ViewController()))
-        return true
+    /**
+     Draw close icon.
+     */
+    let iconView = CloseIconView()
+    
+    init() {
+        super.init(frame: .zero)
+        backgroundColor = .clear
+        iconView.backgroundColor = .clear
+        iconView.isUserInteractionEnabled = false
+        addSubview(iconView)
     }
     
-    func launch(_ viewController: UIViewController) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        iconView.frame = bounds
+    }
+    
+    /**
+     Drawable close icon.
+     */
+    class CloseIconView: UIView {
+        
+        /**
+         Color of icon.
+         */
+        var elementColor: UIColor = SPPermissionsColor.secondaryLabel
+        
+        /**
+         Background color.
+         */
+        var areaColor: UIColor = SPPermissionsColor.secondarySystemBackground
+        
+        override func draw(_ rect: CGRect) {
+            SPPermissionsDraw.drawClose(frame: rect, resizing: .aspectFit, background: areaColor, element: elementColor)
+        }
     }
 }
-
+#endif

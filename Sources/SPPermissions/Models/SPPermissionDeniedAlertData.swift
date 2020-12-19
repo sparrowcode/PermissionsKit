@@ -21,21 +21,28 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+/**
+ If permission denied, after action show alert with propose open settings and allow this permission.
+ */
+public class SPPermissionDeniedAlertData: NSObject {
+        
+    /**
+     Title of alert.
+     */
+    public var alertOpenSettingsDeniedPermissionTitle: String = "Permission denied"
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        launch(UINavigationController(rootViewController: ViewController()))
-        return true
-    }
+    /**
+     Subtitle of alert.
+     */
+    public var alertOpenSettingsDeniedPermissionDescription: String = "Please, go to Settings and allow permission."
     
-    func launch(_ viewController: UIViewController) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
-    }
+    /**
+     Title of action button.
+     */
+    public var alertOpenSettingsDeniedPermissionButtonTitle: String = "Settings"
+    
+    /**
+     Title of cancel button.
+     */
+    public var alertOpenSettingsDeniedPermissionCancelTitle: String = "Cancel"
 }
-

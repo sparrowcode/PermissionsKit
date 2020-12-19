@@ -19,23 +19,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if os(iOS) && SPPERMISSION_MEDIALIBRARY
+
 import UIKit
+import MediaPlayer
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+struct SPMediaLibraryPermission: SPPermissionProtocol {
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        launch(UINavigationController(rootViewController: ViewController()))
-        return true
+    var isAuthorized: Bool {
+        return MPMediaLibrary.authorizationStatus() == .authorized
     }
     
-    func launch(_ viewController: UIViewController) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+    var isDenied: Bool {
+        return MPMediaLibrary.authorizationStatus() == .denied
+    }
+    
+    func request(completion: @escaping ()->()?) {
+        MPMediaLibrary.requestAuthorization() { status in
+            DispatchQueue.main.async {
+                completion()
+            }
+        }
     }
 }
 
+#endif

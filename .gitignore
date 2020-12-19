@@ -1,39 +1,14 @@
-# Mac OS X
+# OS X temporary files
 .DS_Store
+.Trashes
 
-# Xcode
-## Build generated
-build/
-DerivedData
-
-## Various settings
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata
-
-## Other
-*.xccheckout
-*.moved-aside
-*.xcuserstate
-*.xcscmblueprint
-
-## Obj-C/Swift specific
-*.hmap
-*.ipa
-
-## Playgrounds
-timeline.xctimeline
-playground.xcworkspace
+# Xcode User settings
+xcuserdata/
 
 # Swift Package Manager
-.build/
-.swiftpm/
+Packages/
+Package.resolved
+.swiftpm
 
-# Carthage
-Carthage/Build
+# Pods
+Pods/
