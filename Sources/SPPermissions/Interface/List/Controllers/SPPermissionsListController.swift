@@ -40,17 +40,17 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     /**
      Large title.
      */
-    public var titleText: String = SPPermissionsText.titleText
+    public var titleText: String = SPPermissions.text.titleText
     
     /**
      Header text before large title.
      */
-    public var headerText: String = SPPermissionsText.subtitleText
+    public var headerText: String = SPPermissions.text.subtitleText
     
     /**
      Small description in bottom.
      */
-    public var footerText: String = SPPermissionsText.commentText
+    public var footerText: String = SPPermissions.text.commentText
     
     /**
      Allow set small navigation bar. You shoud customize it here,

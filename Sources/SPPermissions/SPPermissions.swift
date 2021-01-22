@@ -21,7 +21,9 @@
 
 import UIKit
 
-public enum SPPermissions {
+public class SPPermissions {
+    
+    public static var text: SPPermissionsTextProtocol = SPPermissionsText()
     
     /**
      Request all permissions by each and with native dialog. Force mode. Show alert if permission denied.

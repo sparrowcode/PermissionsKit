@@ -31,12 +31,12 @@ public class SPPermissionActionButton: UIButton {
     /**
      Title of button when permissin not authorized yet.
      */
-    public var allowTitle: String = SPPermissionsText.allow { didSet { applyStyle() } }
+    public var allowTitle: String = SPPermissions.text.allow { didSet { applyStyle() } }
     
     /**
      Title of button when permission authorized.
      */
-    public var allowedTitle: String = SPPermissionsText.allowed { didSet { applyStyle() } }
+    public var allowedTitle: String = SPPermissions.text.allowed { didSet { applyStyle() } }
     
     /**
      Title color for button when permissin not authorized yet.

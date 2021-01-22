@@ -221,6 +221,6 @@ extension SPPermission {
      Name of permission.
      */
     public var name: String {
-        return SPPermissionsText.name(for: self)
+        return SPPermissions.text.name(for: self)
     }
 }

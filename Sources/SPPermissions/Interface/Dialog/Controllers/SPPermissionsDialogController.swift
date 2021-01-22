@@ -40,17 +40,17 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     /**
      Large title.
      */
-    public var titleText: String = SPPermissionsText.titleText
+    public var titleText: String = SPPermissions.text.titleText
     
     /**
      Header text before large title.
      */
-    public var headerText: String = SPPermissionsText.subtitleShortText
+    public var headerText: String = SPPermissions.text.subtitleShortText
     
     /**
      Small description in bottom.
      */
-    public var footerText: String = SPPermissionsText.commentText
+    public var footerText: String = SPPermissions.text.commentText
     
     /**
      You can disable bound appearance and handle gester for dialog.

@@ -121,12 +121,12 @@ public class SPPermissionTableViewCell: UITableViewCell {
      */
     func defaultConfigure(for permission: SPPermission) {
         
-        permissionTitleLabel.text = SPPermissionsText.name(for: permission)
-        permissionDescriptionLabel.text = SPPermissionsText.description(for: permission)
+        permissionTitleLabel.text = SPPermissions.text.name(for: permission)
+        permissionDescriptionLabel.text = SPPermissions.text.description(for: permission)
         
         button.permission = permission
-        button.allowTitle = SPPermissionsText.allow
-        button.allowedTitle = SPPermissionsText.allowed
+        button.allowTitle = SPPermissions.text.allow
+        button.allowedTitle = SPPermissions.text.allowed
         button.allowTitleColor = SPPermissionsColor.base
         button.allowBackgroundColor = SPPermissionsColor.buttonArea
         button.allowedTitleColor = SPPermissionsColor.white

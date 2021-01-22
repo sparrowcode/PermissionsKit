@@ -28,6 +28,7 @@ class ViewController: UITableViewController {
     var selectedPermissions: [SPPermission] = []
     
     init() {
+        SPPermissions.text = AppPermissionsText()
         if #available(iOS 13.0, *) {
             super.init(style: .insetGrouped)
         } else {

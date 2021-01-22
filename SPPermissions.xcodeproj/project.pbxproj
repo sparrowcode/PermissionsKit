@@ -49,6 +49,9 @@
 		9E50E9FC238B257300B71477 /* SPPermissions.h in Headers */ = {isa = PBXBuildFile; fileRef = F43F8D9E236ECC9D00B94208 /* SPPermissions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E50E9FD238B266A00B71477 /* SPPermissions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E50E9C8238B249C00B71477 /* SPPermissions.framework */; };
 		9E50E9FE238B266A00B71477 /* SPPermissions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E50E9C8238B249C00B71477 /* SPPermissions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AD48871225BB5F4D00CD472C /* SPPermissionTextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48871125BB5F4D00CD472C /* SPPermissionTextProtocol.swift */; };
+		AD48871325BB5F4D00CD472C /* SPPermissionTextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48871125BB5F4D00CD472C /* SPPermissionTextProtocol.swift */; };
+		ADF7403D25BB79190044513A /* AppPermissionsText.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7403C25BB79190044513A /* AppPermissionsText.swift */; };
 		E32A92DA24B8DB1E00E4DCC5 /* SPTrackingPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A92D924B8DB1E00E4DCC5 /* SPTrackingPermission.swift */; };
 		E32A92DB24B8DB1E00E4DCC5 /* SPTrackingPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A92D924B8DB1E00E4DCC5 /* SPTrackingPermission.swift */; };
 		F407A7C4238C538400763303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407A7C3238C538400763303 /* AppDelegate.swift */; };
@@ -151,6 +154,8 @@
 		9E50E9BA238B1F1A00B71477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E50E9BC238B1F1A00B71477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E50E9C8238B249C00B71477 /* SPPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD48871125BB5F4D00CD472C /* SPPermissionTextProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionTextProtocol.swift; sourceTree = "<group>"; };
+		ADF7403C25BB79190044513A /* AppPermissionsText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPermissionsText.swift; sourceTree = "<group>"; };
 		E32A92D924B8DB1E00E4DCC5 /* SPTrackingPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTrackingPermission.swift; sourceTree = "<group>"; };
 		F407A7C3238C538400763303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F407A7C6238C53AC00763303 /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
@@ -442,6 +447,7 @@
 		F4EA2644236ECE040070B2BA /* Example iOS */ = {
 			isa = PBXGroup;
 			children = (
+				ADF7403C25BB79190044513A /* AppPermissionsText.swift */,
 				F4EA2658236ECEE90070B2BA /* App */,
 				F4EA265B236ECF080070B2BA /* Controllers */,
 				F4EA2653236ECE040070B2BA /* Info.plist */,
@@ -520,6 +526,7 @@
 				F4FB9E742379712400F7272C /* SPPermissionsControllerProtocol.swift */,
 				F4FB9E782379721D00F7272C /* SPPermissionsDataSource.swift */,
 				F4FB9E7B2379731100F7272C /* SPPermissionsDelegate.swift */,
+				AD48871125BB5F4D00CD472C /* SPPermissionTextProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -649,7 +656,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Ivan Vorobei";
 				TargetAttributes = {
 					9E50E9AD238B1EDD00B71477 = {
@@ -771,6 +778,7 @@
 				9E50E9FB238B253200B71477 /* SPPermissionsOpener.swift in Sources */,
 				9E50E9ED238B250E00B71477 /* SPMediaLibraryPermission.swift in Sources */,
 				9E50E9F4238B252100B71477 /* SPSpeechPermission.swift in Sources */,
+				AD48871325BB5F4D00CD472C /* SPPermissionTextProtocol.swift in Sources */,
 				9E50E9E6238B24F700B71477 /* SPPermissionsListFooterCommentView.swift in Sources */,
 				9E50E9EF238B251400B71477 /* SPCameraPermission.swift in Sources */,
 				9E50E9EE238B251100B71477 /* SPNotificationPermission.swift in Sources */,
@@ -818,6 +826,7 @@
 				F499B1ED238009D600B83B08 /* SPPermissionsGradeBlurView.swift in Sources */,
 				F499B205238084D300B83B08 /* SPPermissionsOpener.swift in Sources */,
 				F499B1E2238006CB00B83B08 /* SPPermissionsDialogController.swift in Sources */,
+				AD48871225BB5F4D00CD472C /* SPPermissionTextProtocol.swift in Sources */,
 				F499B2092380A0A000B83B08 /* SPPermissionsNativeController.swift in Sources */,
 				F4EA267C236F2B890070B2BA /* SPRemindersPermission.swift in Sources */,
 				F4FB9E792379721D00F7272C /* SPPermissionsDataSource.swift in Sources */,
@@ -833,6 +842,7 @@
 			files = (
 				F4EA264A236ECE040070B2BA /* ViewController.swift in Sources */,
 				F4EA2646236ECE040070B2BA /* AppDelegate.swift in Sources */,
+				ADF7403D25BB79190044513A /* AppPermissionsText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

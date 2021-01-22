@@ -21,9 +21,9 @@
 
 import UIKit
 
-enum SPPermissionsText {
+public class SPPermissionsText: SPPermissionsTextProtocol {
     
-    static func name(for permission: SPPermission) -> String {
+    public func name(for permission: SPPermission) -> String {
         switch permission {
         #if os(iOS)
         case .camera:
@@ -58,7 +58,7 @@ enum SPPermissionsText {
         }
     }
     
-    static func description(for permission: SPPermission) -> String {
+    public func description(for permission: SPPermission) -> String {
         switch permission {
         #if os(iOS)
         case .camera:
@@ -93,11 +93,11 @@ enum SPPermissionsText {
         }
     }
     
-    static var titleText: String = "Need Permissions"
-    static var subtitleText: String = "These are the permissions the app requires to work properly. Please see description for each permission."
-    static var subtitleShortText: String = "Permissions request"
-    static var commentText: String = "Permissions are necessary for the application to work and perform correctly. Push are not required permissions."
+    public let titleText: String = "Need Permissions"
+    public let subtitleText: String = "These are the permissions the app requires to work properly. Please see description for each permission."
+    public let subtitleShortText: String = "Permissions request"
+    public let commentText: String = "Permissions are necessary for the application to work and perform correctly. Push are not required permissions."
     
-    static var allow: String = "Allow"
-    static var allowed: String = "Allowed"
+    public let allow: String = "Allow"
+    public let allowed: String = "Allowed"
 }
