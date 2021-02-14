@@ -342,7 +342,7 @@ Collection of native Swift extensions to boost your development. Support tvOS an
 
 Для русского комьюнити
 
-## Russian-specking Community
+## Russian Community
 
 В телеграм-канале [Код Воробья](https://ivanvorobei.by/sparrowcode/telegram) пишу о iOS разработке. Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/youtube):
 
