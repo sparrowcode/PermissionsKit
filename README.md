@@ -1,6 +1,6 @@
 # SPPermissions
 
-<img align="left" src="https://github.com/varabeis/SPPermissions/blob/master/Assets/Readme/Preview - 5.0.jpg" width="420"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Readme/Preview - 5.0.jpg" width="420"/>
 
 ### About
 `SPPermissions` is an API to ask for user permissions using Swift. The API provides for three UI options (list, dialog & native). 
@@ -11,7 +11,7 @@ Also you can check the state permissions using the API.
 
 If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
-[![https://github.com/varabeis](https://github.com/varabeis/Readme/blob/main/Buttons/follow-me-varabeis.svg)](https://github.com/varabeis)
+[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/Readme/blob/main/Buttons/follow-me-ivanvorobei.svg)](https://github.com/ivanvorobei)
 
 ## Navigate
 
@@ -105,7 +105,7 @@ pod 'SPPermissions/Tracking'
 
 If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Put `Source/SPPermissions` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
-After it need add configuration. See example [SPPermissionsConfiguration.xcconfig](https://github.com/varabeis/SPPermissions/blob/master/Source/SPPermissions/Supporting%20Files/SPPermissionsConfiguration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtu.be/1kR5HGVhJfk).
+After it need add configuration. See example [SPPermissionsConfiguration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/master/Source/SPPermissions/Supporting%20Files/SPPermissionsConfiguration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtu.be/1kR5HGVhJfk).
 
 ## Usage
 
@@ -171,18 +171,18 @@ controller.present(on: self)
 ## Permissions
 
 <p float="left">
-    <img src="https://github.com/varabeis/SPPermissions/blob/master/Assets/Permissions/Camera.svg" width="105">
-    <img src="https://github.com/varabeis/SPPermissions/blob/master/Assets/Permissions/Photos.svg" width="105">
-    <img src="https://github.com/varabeis/SPPermissions/blob/master/Assets/Permissions/Notifications.svg" width="105">
-    <img src="https://github.com/varabeis/SPPermissions/blob/master/Assets/Permissions/Locations.svg" width="105">
-    <img src="https://github.com/varabeis/SPPermissions/blob/master/Assets/Permissions/Microphone.svg" width="105">
-    <img src="https://github.com/varabeis/SPPermissions/blob/master/Assets/Permissions/Calendar.svg" width="105">
-    <img src="https://github.com/varabeis/SPPermissions/blob/master/Assets/Permissions/Contacts.svg" width="105">
-    <img src="https://github.com/varabeis/SPPermissions/blob/master/Assets/Permissions/Reminders.svg" width="105">
-    <img src="https://github.com/varabeis/SPPermissions/blob/master/Assets/Permissions/Motion.svg" width="105">
-    <img src="https://github.com/varabeis/SPPermissions/blob/master/Assets/Permissions/Media.svg" width="105">
-    <img src="https://github.com/varabeis/SPPermissions/blob/master/Assets/Permissions/Speech.svg" width="105">
-    <img src="https://github.com/varabeis/SPPermissions/blob/master/Assets/Permissions/Bluetooth.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Camera.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Photos.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Notifications.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Locations.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Microphone.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Calendar.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Contacts.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Reminders.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Motion.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Media.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Speech.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Bluetooth.svg" width="105">
 </p>
 
 To check the state of any permission, call enum `SPPermission`: 
@@ -324,20 +324,20 @@ If you use xliff localization export, keys will be create automatically. If you 
 
 I developed `SPPermissions` in an 'Apple-way'. To accomplish this, I checked 30 apps to get UI-elements for this project. I then took screenshots and re-drew the elements in Sketch. For example, the project's `Allow` button is similar to the `Get` button in the AppStore. Check this [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I designed the `4.0` version of  `SPPermissions`:
 
-[![Timelaps on YouTube](https://github.com/varabeis/SPPermissions/blob/master/Assets/Readme/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
+[![Timelaps on YouTube](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Readme/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
 
 ## Other Projects
 
-#### [SPAlert](https://github.com/varabeis/SPAlert)
+#### [SPAlert](https://github.com/ivanvorobei/SPAlert)
 You can find this alerts in AppStore after feedback or after added song to library in Apple Music. Contains popular Done, Heart presets and many other. Done preset present with draw path animation like original. Also available simple present message without icon. Usage in one line code.
 
-#### [SPPerspective](https://github.com/varabeis/SPPerspective)
+#### [SPPerspective](https://github.com/ivanvorobei/SPPerspective)
 Animation of widgets from iOS 14. 3D transform with dynamic shadow. Look [video preview](https://ivanvorobei.by/github/spperspective/video-preview). Available deep customisation 3D and shadow. Also you can use static transform without animation.
 
-#### [SPDiffable](https://github.com/varabeis/SPDiffable)
+#### [SPDiffable](https://github.com/ivanvorobei/SPDiffable)
 Simplifies working with animated changes in table and collections. Apple's diffable API required models for each object type. If you want use it in many place, you pass time to implement it and get over duplicates codes. This project help do it elegant with shared models and special cell providers. Support side bar iOS14 and already has native cell providers and views.
 
-#### [SparrowKit](https://github.com/varabeis/SparrowKit)
+#### [SparrowKit](https://github.com/ivanvorobei/SparrowKit)
 Collection of native Swift extensions to boost your development. Support tvOS and watchOS.
 
 Для русского комьюнити
