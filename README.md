@@ -349,6 +349,6 @@ You can import stikers for Telegram about iOS Development. Stickers with Xcode e
 
 [![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://ivanvorobei.by/youtube)
 
-Стикеры в телеграм про iOS разработку.
+[Стикеры в телеграм](https://ivanvorobei.by/sparrowcode/telegram) про iOS разработку:
 
 [![https://sparrowcode.by/telegram/stickers](https://github.com/ivanvorobei/Readme/blob/main/Buttons/open-telegram-stikers.svg)](https://sparrowcode.by/telegram/stickers)
