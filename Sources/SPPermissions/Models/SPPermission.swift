@@ -202,8 +202,7 @@ extension SPPermission {
             #endif
         case .tracking:
             #if SPPERMISSION_TRACKING
-            fatalError("Now not supported Tracking. Only in Beta now.")
-            /*return SPTrackingPermission()*/
+            return SPTrackingPermission()
             #else
             fatalError(error(permission))
             #endif
