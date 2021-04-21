@@ -345,12 +345,12 @@ You can import stikers for Telegram about iOS Development. Stickers with Xcode e
 
 ## Russian Community
 
-В телеграм-канале [Код Воробья](https://ivanvorobei.by/sparrowcode/telegram) пишу о iOS разработке. Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/youtube):
+В телеграм-канале [Код Воробья](https://sparrowcode.by/telegram) пишу о iOS разработке. Видео-туториалы выклыдываю на [YouTube](https://sparrowcode.by/youtube):
 
-[![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://ivanvorobei.by/youtube)
+[![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://sparrowcode.by/youtube)
 
-[Стикеры в телеграм](https://ivanvorobei.by/sparrowcode/telegram) про iOS разработку:
+[Стикеры в телеграм](https://sparrowcode.by/telegram/stickers) про iOS разработку:
 
-[![Telegram Stikers](https://cdn.ivanvorobei.by/github/readme/telegram-stikers-preview.png)](https://ivanvorobei.by/sparrowcode/telegram)
+[![Telegram Stikers](https://cdn.ivanvorobei.by/github/readme/telegram-stikers-preview.png)](https://sparrowcode.by/telegram/stickers)
 
 
