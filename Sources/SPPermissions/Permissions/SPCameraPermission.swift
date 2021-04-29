@@ -24,6 +24,7 @@
 import UIKit
 import AVFoundation
 
+@available(macCatalyst 14.0, *)
 struct SPCameraPermission: SPPermissionProtocol {
     
     var isAuthorized: Bool {

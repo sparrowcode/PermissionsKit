@@ -123,7 +123,11 @@ extension SPPermission {
             #if os(iOS)
         case .camera:
             #if SPPERMISSION_CAMERA
-            return SPCameraPermission()
+            if #available(macCatalyst 14.0, *) {
+                return SPCameraPermission()
+            } else {
+                fatalError(error(permission))
+            }
             #else
             fatalError(error(permission))
             #endif
