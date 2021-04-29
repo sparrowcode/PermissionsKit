@@ -24,7 +24,7 @@ import UIKit
 /**
  List of events methods. All optional.
  */
-@objc public protocol SPPermissionsDelegate: class {
+@objc public protocol SPPermissionsDelegate: AnyObject {
     
     /**
      Call when permission allowed.

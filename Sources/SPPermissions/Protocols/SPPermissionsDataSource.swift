@@ -25,7 +25,7 @@ import UIKit
 /**
  Implement it for customize permission name, description, icon and other.
  */
-public protocol SPPermissionsDataSource: class {
+public protocol SPPermissionsDataSource: AnyObject {
     
     /**
      Configure cell here. Soon add description for each property.
