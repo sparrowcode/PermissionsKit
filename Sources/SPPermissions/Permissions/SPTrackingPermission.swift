@@ -25,6 +25,7 @@ import AppTrackingTransparency
 import UIKit
 
 struct SPTrackingPermission: SPPermissionProtocol {
+    
     var isAuthorized: Bool {
         if #available(iOS 14, tvOS 14, *) {
             return ATTrackingManager.trackingAuthorizationStatus == .authorized
