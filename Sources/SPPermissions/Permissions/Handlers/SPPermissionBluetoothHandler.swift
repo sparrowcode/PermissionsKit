@@ -19,30 +19,43 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSION_BLUETOOTH
-
 import UIKit
 import CoreBluetooth
 
-class SPBluetoothPermission: NSObject, SPPermissionProtocol {
+#if os(iOS)
+class SPPermissionBluetoothHandler: NSObject, CBCentralManagerDelegate {
     
-    var isAuthorized: Bool {
-        if #available(iOS 13.0, *) {
-            return CBCentralManager().authorization == .allowedAlways
-        }
-        return CBPeripheralManager.authorizationStatus() == .authorized
+    static let shared: SPPermissionBluetoothHandler = .init()
+    
+    var manager: CBCentralManager?
+    var completion: SPBluetoothPermissionHandler?
+    
+    override init() {
+        super.init()
+        self.manager = CBCentralManager(delegate: self, queue: nil, options: [:])
     }
     
-    var isDenied: Bool {
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if #available(iOS 13.0, *) {
-            return CBCentralManager().authorization == .denied
+            switch central.authorization {
+            case .notDetermined:
+                break
+            default:
+                self.completion?()
+            }
+        } else {
+            switch CBPeripheralManager.authorizationStatus() {
+            case .notDetermined:
+                break
+            default:
+                self.completion?()
+            }
         }
-        return CBPeripheralManager.authorizationStatus() == .denied
-    }
-    
-    func request(completion: @escaping ()->()?) {
-        SPPermissionBluetoothHandler.shared.completion = completion
     }
 }
 
+extension SPPermissionBluetoothHandler {
+    
+    typealias SPBluetoothPermissionHandler = ()->()?
+}
 #endif
