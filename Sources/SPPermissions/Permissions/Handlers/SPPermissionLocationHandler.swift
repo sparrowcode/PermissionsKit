@@ -22,7 +22,7 @@
 import Foundation
 import MapKit
 
-#if os(iOS)
+#if os(iOS) && SPPERMISSION_LOCATION
 class SPPermissionAlwaysAuthorizationLocationHandler: NSObject, CLLocationManagerDelegate {
     
     static var shared: SPPermissionAlwaysAuthorizationLocationHandler?

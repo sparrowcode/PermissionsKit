@@ -22,7 +22,7 @@
 import UIKit
 import CoreBluetooth
 
-#if os(iOS)
+#if os(iOS) && SPPERMISSION_BLUETOOTH
 class SPPermissionBluetoothHandler: NSObject, CBCentralManagerDelegate {
     
     static let shared: SPPermissionBluetoothHandler = .init()
