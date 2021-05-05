@@ -81,6 +81,7 @@ class SPPermissionAlwaysAuthorizationLocationHandler: NSObject, CLLocationManage
 }
 #endif
 
+#if SPPERMISSION_LOCATION
 class SPPermissionWhenInUseAuthorizationLocationHandler: NSObject, CLLocationManagerDelegate {
     
     static var shared: SPPermissionWhenInUseAuthorizationLocationHandler?
@@ -129,15 +130,18 @@ class SPPermissionWhenInUseAuthorizationLocationHandler: NSObject, CLLocationMan
         locationManager.delegate = nil
     }
 }
+#endif
 
-#if os(iOS)
+#if os(iOS) && SPPERMISSION_LOCATION
 extension SPPermissionAlwaysAuthorizationLocationHandler {
     
     typealias SPPermissionAuthorizationHandlerCompletionBlock = (Bool) -> Void
 }
 #endif
 
+#if SPPERMISSION_LOCATION
 extension SPPermissionWhenInUseAuthorizationLocationHandler {
     
     typealias SPPermissionAuthorizationHandlerCompletionBlock = (Bool) -> Void
 }
+#endif
