@@ -1,6 +1,6 @@
 # SPPermissions
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Readme/Preview - 5.0.jpg" width="420"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/Preview - 5.0.jpg" width="420"/>
 
 ### About
 `SPPermissions` is an API to ask for user permissions using Swift. The API provides for three UI options (list, dialog & native). 
@@ -105,7 +105,7 @@ pod 'SPPermissions/Tracking'
 
 If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Put `Source/SPPermissions` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
-After it need add configuration. See example [SPPermissionsConfiguration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/master/Source/SPPermissions/Supporting%20Files/SPPermissionsConfiguration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtu.be/1kR5HGVhJfk).
+After it need add configuration. See example [SPPermissionsConfiguration.xcconfig](https://github.com/ivanvorobei/SPPermissions/blob/main/Source/SPPermissions/Supporting%20Files/SPPermissionsConfiguration.xcconfig) file or example project. If you don't know how add configuration file, see this [short video](https://youtu.be/1kR5HGVhJfk).
 
 ## Usage
 
@@ -171,18 +171,18 @@ controller.present(on: self)
 ## Permissions
 
 <p float="left">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Camera.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Photos.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Notifications.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Locations.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Microphone.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Calendar.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Contacts.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Reminders.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Motion.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Media.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Speech.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Permissions/Bluetooth.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Camera.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Photos.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Notifications.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Locations.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Microphone.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Calendar.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Contacts.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Reminders.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Motion.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Media.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Speech.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Bluetooth.svg" width="105">
 </p>
 
 To check the state of any permission, call enum `SPPermission`: 
@@ -324,7 +324,7 @@ If you use xliff localization export, keys will be create automatically. If you 
 
 I developed `SPPermissions` in an 'Apple-way'. To accomplish this, I checked 30 apps to get UI-elements for this project. I then took screenshots and re-drew the elements in Sketch. For example, the project's `Allow` button is similar to the `Get` button in the AppStore. Check this [timelapse](https://youtu.be/1mDdX7fQRv4) to see how I designed the `4.0` version of  `SPPermissions`:
 
-[![Timelaps on YouTube](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Readme/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
+[![Timelaps on YouTube](https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/YouTube.jpg)](https://youtu.be/1mDdX7fQRv4)
 
 ## Other Projects
 
