@@ -42,6 +42,7 @@ class SPBluetoothPermission: NSObject, SPPermissionProtocol {
     
     func request(completion: @escaping ()->()?) {
         SPPermissionBluetoothHandler.shared.completion = completion
+        SPPermissionBluetoothHandler.shared.reqeustUpdate()
     }
 }
 
