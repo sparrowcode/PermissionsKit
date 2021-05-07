@@ -32,7 +32,14 @@ class SPPermissionBluetoothHandler: NSObject, CBCentralManagerDelegate {
     
     override init() {
         super.init()
-        self.manager = CBCentralManager(delegate: self, queue: nil, options: [:])
+    }
+    
+    func reqeustUpdate() {
+        if manager == nil {
+            self.manager = CBCentralManager(delegate: self, queue: nil, options: [:])
+        } else {
+            completion?()
+        }
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
