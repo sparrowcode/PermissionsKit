@@ -15,13 +15,13 @@ let package = Package(
         .target(
             name: "Notifications",
             cSettings: [
-                .define("SPPERMISSIONS_NOTIFICATIONS", to: "1")
+                .define("SPPERMISSIONS_NOTIFICATIONS", to: true)
             ]
         ),
         .target(
             name: "PhotoLibrary",
             cSettings: [
-                .define("SPPERMISSIONS_PHOTOLIBRARY", to: "1")
+                .define("SPPERMISSIONS_PHOTOLIBRARY", to: true)
             ]
         )
     ]
