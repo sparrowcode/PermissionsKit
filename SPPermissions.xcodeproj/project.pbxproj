@@ -64,6 +64,10 @@
 		F499B205238084D300B83B08 /* SPPermissionsOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499B204238084D300B83B08 /* SPPermissionsOpener.swift */; };
 		F499B207238087A800B83B08 /* SPPermissionsCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499B206238087A800B83B08 /* SPPermissionsCloseButton.swift */; };
 		F499B2092380A0A000B83B08 /* SPPermissionsNativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499B2082380A0A000B83B08 /* SPPermissionsNativeController.swift */; };
+		F4B9ACA826490EB8001A0426 /* SPPERMISSIONS_PHOTOLIBRARY.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9ACA526490EB8001A0426 /* SPPERMISSIONS_PHOTOLIBRARY.swift */; };
+		F4B9ACA926490EB8001A0426 /* SPPERMISSIONS_PHOTOLIBRARY.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9ACA526490EB8001A0426 /* SPPERMISSIONS_PHOTOLIBRARY.swift */; };
+		F4B9ACAA26490EB8001A0426 /* SPPERMISSIONS_NOTIFICATIONS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9ACA726490EB8001A0426 /* SPPERMISSIONS_NOTIFICATIONS.swift */; };
+		F4B9ACAB26490EB8001A0426 /* SPPERMISSIONS_NOTIFICATIONS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9ACA726490EB8001A0426 /* SPPERMISSIONS_NOTIFICATIONS.swift */; };
 		F4CD097623A026BC00DF6FEF /* SPBluetoothPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD097423A0218E00DF6FEF /* SPBluetoothPermission.swift */; };
 		F4CD097723A026C500DF6FEF /* SPBluetoothPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD097423A0218E00DF6FEF /* SPBluetoothPermission.swift */; };
 		F4CFBFF62641240700BA1903 /* SPPermissionBluetoothHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CFBFF52641240700BA1903 /* SPPermissionBluetoothHandler.swift */; };
@@ -175,6 +179,8 @@
 		F499B204238084D300B83B08 /* SPPermissionsOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsOpener.swift; sourceTree = "<group>"; };
 		F499B206238087A800B83B08 /* SPPermissionsCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsCloseButton.swift; sourceTree = "<group>"; };
 		F499B2082380A0A000B83B08 /* SPPermissionsNativeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsNativeController.swift; sourceTree = "<group>"; };
+		F4B9ACA526490EB8001A0426 /* SPPERMISSIONS_PHOTOLIBRARY.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPERMISSIONS_PHOTOLIBRARY.swift; sourceTree = "<group>"; };
+		F4B9ACA726490EB8001A0426 /* SPPERMISSIONS_NOTIFICATIONS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPERMISSIONS_NOTIFICATIONS.swift; sourceTree = "<group>"; };
 		F4CD097423A0218E00DF6FEF /* SPBluetoothPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPBluetoothPermission.swift; sourceTree = "<group>"; };
 		F4CFBFF52641240700BA1903 /* SPPermissionBluetoothHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionBluetoothHandler.swift; sourceTree = "<group>"; };
 		F4CFBFF82641276E00BA1903 /* CODESTYLE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODESTYLE.md; sourceTree = "<group>"; };
@@ -331,6 +337,8 @@
 		F43F8DA6236ECCEE00B94208 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F4B9ACA626490EB8001A0426 /* Notifications */,
+				F4B9ACA426490EB8001A0426 /* PhotoLibrary */,
 				F412045423829ECC009C2AC7 /* SPPermissions */,
 				F43F8DA9236ECD3E00B94208 /* Supporting Files */,
 			);
@@ -410,6 +418,22 @@
 				F499B2082380A0A000B83B08 /* SPPermissionsNativeController.swift */,
 			);
 			path = Native;
+			sourceTree = "<group>";
+		};
+		F4B9ACA426490EB8001A0426 /* PhotoLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				F4B9ACA526490EB8001A0426 /* SPPERMISSIONS_PHOTOLIBRARY.swift */,
+			);
+			path = PhotoLibrary;
+			sourceTree = "<group>";
+		};
+		F4B9ACA626490EB8001A0426 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				F4B9ACA726490EB8001A0426 /* SPPERMISSIONS_NOTIFICATIONS.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		F4D3CD4C238D3E90006C3DE2 /* Buttons */ = {
@@ -767,6 +791,7 @@
 				9E50E9EC238B250C00B71477 /* SPLocationPermission.swift in Sources */,
 				9E50E9E3238B24EE00B71477 /* SPPermissionsDialogView.swift in Sources */,
 				F4CD097723A026C500DF6FEF /* SPBluetoothPermission.swift in Sources */,
+				F4B9ACAB26490EB8001A0426 /* SPPERMISSIONS_NOTIFICATIONS.swift in Sources */,
 				9E50E9E2238B24EA00B71477 /* SPPermissionsDialogController.swift in Sources */,
 				9E50E9F2238B251D00B71477 /* SPMotionPermission.swift in Sources */,
 				9E50E9F1238B251A00B71477 /* SPMicrophonePermission.swift in Sources */,
@@ -781,6 +806,7 @@
 				9E50E9D8238B24C300B71477 /* SPPermissionProtocol.swift in Sources */,
 				9E50E9FB238B253200B71477 /* SPPermissionsOpener.swift in Sources */,
 				9E50E9ED238B250E00B71477 /* SPMediaLibraryPermission.swift in Sources */,
+				F4B9ACA926490EB8001A0426 /* SPPERMISSIONS_PHOTOLIBRARY.swift in Sources */,
 				9E50E9F4238B252100B71477 /* SPSpeechPermission.swift in Sources */,
 				9E50E9E6238B24F700B71477 /* SPPermissionsListFooterCommentView.swift in Sources */,
 				9E50E9EF238B251400B71477 /* SPCameraPermission.swift in Sources */,
@@ -815,6 +841,7 @@
 				F4FB9E7C2379731100F7272C /* SPPermissionsDelegate.swift in Sources */,
 				F4FB9E842379833500F7272C /* SPPermissionTableViewCell.swift in Sources */,
 				F4CD097623A026BC00DF6FEF /* SPBluetoothPermission.swift in Sources */,
+				F4B9ACAA26490EB8001A0426 /* SPPERMISSIONS_NOTIFICATIONS.swift in Sources */,
 				F4EA267A236F2B890070B2BA /* SPMicrophonePermission.swift in Sources */,
 				F4EA2679236F2B890070B2BA /* SPContactsPermission.swift in Sources */,
 				F499B207238087A800B83B08 /* SPPermissionsCloseButton.swift in Sources */,
@@ -829,6 +856,7 @@
 				F4FB9E87237983AA00F7272C /* SPPermissionsListHeaderView.swift in Sources */,
 				F499B1ED238009D600B83B08 /* SPPermissionsGradeBlurView.swift in Sources */,
 				F499B205238084D300B83B08 /* SPPermissionsOpener.swift in Sources */,
+				F4B9ACA826490EB8001A0426 /* SPPERMISSIONS_PHOTOLIBRARY.swift in Sources */,
 				F499B1E2238006CB00B83B08 /* SPPermissionsDialogController.swift in Sources */,
 				F499B2092380A0A000B83B08 /* SPPermissionsNativeController.swift in Sources */,
 				F4EA267C236F2B890070B2BA /* SPRemindersPermission.swift in Sources */,
