@@ -8,7 +8,6 @@
 
 /* Begin PBXFileReference section */
 		F4B9AD232649226F001A0426 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		F4B9AD242649226F001A0426 /* CODESTYLE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODESTYLE.md; sourceTree = "<group>"; };
 		F4B9AD272649226F001A0426 /* SPPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissions.swift; sourceTree = "<group>"; };
 		F4B9AD292649226F001A0426 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F4B9AD2A2649226F001A0426 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -25,7 +24,6 @@
 				F4B9AD2C26492297001A0426 /* .github */,
 				F4B9AD282649226F001A0426 /* Assets */,
 				F4B9AD252649226F001A0426 /* Sources */,
-				F4B9AD242649226F001A0426 /* CODESTYLE.md */,
 				F4B9AD3C264928B7001A0426 /* AGREEMENTS.md */,
 				F4B9AD2A2649226F001A0426 /* README.md */,
 				F4B9AD232649226F001A0426 /* LICENSE */,
