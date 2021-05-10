@@ -15,7 +15,7 @@ let package = Package(
         .target(
             name: "Notifications",
             cSettings: [
-                .define("-DSPPERMISSIONS_NOTIFICATIONS")
+                .define("SPPERMISSIONS_NOTIFICATIONS")
             ]
         ),
         .target(
