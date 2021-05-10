@@ -21,7 +21,7 @@ let package = Package(
         .target(
             name: "PhotoLibrary",
             cSettings: [
-                .define(["SPPERMISSIONS_PHOTOLIBRARY"])
+                .define("SPPERMISSIONS_PHOTOLIBRARY")
             ]
         )
     ]
