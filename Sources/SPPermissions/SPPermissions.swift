@@ -72,3 +72,17 @@ public enum SPPermissions {
         return result
     }
 }
+
+#if SPPERMISSIONS_NOTIFICATIONS
+enum SPPERMISSIONS_NOTIFICATIONS {
+    
+    case example
+}
+#endif
+
+#if SPPERMISSIONS_PHOTOLIBRARY
+enum SPPERMISSIONS_PHOTOLIBRARY {
+    
+    case example
+}
+#endif
