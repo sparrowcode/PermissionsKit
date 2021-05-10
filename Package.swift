@@ -17,7 +17,7 @@ let package = Package(
             cSettings: [
                 .define("SPPERMISSIONS_NOTIFICATIONS", to: "1")
             ]
-        )
+        ),
         .target(
             name: "PhotoLibrary",
             cSettings: [
