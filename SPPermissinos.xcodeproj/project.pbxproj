@@ -1,0 +1,225 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXFileReference section */
+		F4B9AD232649226F001A0426 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F4B9AD242649226F001A0426 /* CODESTYLE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODESTYLE.md; sourceTree = "<group>"; };
+		F4B9AD272649226F001A0426 /* SPPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissions.swift; sourceTree = "<group>"; };
+		F4B9AD292649226F001A0426 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		F4B9AD2A2649226F001A0426 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F4B9AD2B2649228C001A0426 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F4B9AD2D26492297001A0426 /* FUNDING.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = FUNDING.yml; sourceTree = "<group>"; };
+		F4B9AD2E264922B6001A0426 /* SPPermissions.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPPermissions.podspec; sourceTree = "<group>"; };
+		F4B9AD3C264928B7001A0426 /* AGREEMENTS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AGREEMENTS.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		F4B9AD11264920FC001A0426 = {
+			isa = PBXGroup;
+			children = (
+				F4B9AD2C26492297001A0426 /* .github */,
+				F4B9AD282649226F001A0426 /* Assets */,
+				F4B9AD252649226F001A0426 /* Sources */,
+				F4B9AD242649226F001A0426 /* CODESTYLE.md */,
+				F4B9AD3C264928B7001A0426 /* AGREEMENTS.md */,
+				F4B9AD2A2649226F001A0426 /* README.md */,
+				F4B9AD232649226F001A0426 /* LICENSE */,
+				F4B9AD292649226F001A0426 /* Package.swift */,
+				F4B9AD2E264922B6001A0426 /* SPPermissions.podspec */,
+				F4B9AD2B2649228C001A0426 /* .gitignore */,
+			);
+			sourceTree = "<group>";
+		};
+		F4B9AD252649226F001A0426 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F4B9AD262649226F001A0426 /* SPPermissions */,
+				F4B9AD36264927F8001A0426 /* SPPermissionsBluetooth */,
+				F4B9AD37264927F8001A0426 /* SPPermissionsCalendar */,
+				F4B9AD3A264927F8001A0426 /* SPPermissionsCamera */,
+				F4B9AD33264927F8001A0426 /* SPPermissionsContacts */,
+				F4B9AD39264927F8001A0426 /* SPPermissionsLocation */,
+				F4B9AD35264927F8001A0426 /* SPPermissionsMediaLibrary */,
+				F4B9AD2F264927F8001A0426 /* SPPermissionsMicrophone */,
+				F4B9AD3B264927F8001A0426 /* SPPermissionsMotion */,
+				F4B9AD34264927F8001A0426 /* SPPermissionsNotification */,
+				F4B9AD31264927F8001A0426 /* SPPermissionsPhotoLibrary */,
+				F4B9AD30264927F8001A0426 /* SPPermissionsReminders */,
+				F4B9AD32264927F8001A0426 /* SPPermissionsSpeechRecognizer */,
+				F4B9AD38264927F8001A0426 /* SPPermissionsTracking */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		F4B9AD262649226F001A0426 /* SPPermissions */ = {
+			isa = PBXGroup;
+			children = (
+				F4B9AD272649226F001A0426 /* SPPermissions.swift */,
+			);
+			path = SPPermissions;
+			sourceTree = "<group>";
+		};
+		F4B9AD282649226F001A0426 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F4B9AD2C26492297001A0426 /* .github */ = {
+			isa = PBXGroup;
+			children = (
+				F4B9AD2D26492297001A0426 /* FUNDING.yml */,
+			);
+			path = .github;
+			sourceTree = "<group>";
+		};
+		F4B9AD2F264927F8001A0426 /* SPPermissionsMicrophone */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPPermissionsMicrophone;
+			sourceTree = "<group>";
+		};
+		F4B9AD30264927F8001A0426 /* SPPermissionsReminders */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPPermissionsReminders;
+			sourceTree = "<group>";
+		};
+		F4B9AD31264927F8001A0426 /* SPPermissionsPhotoLibrary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPPermissionsPhotoLibrary;
+			sourceTree = "<group>";
+		};
+		F4B9AD32264927F8001A0426 /* SPPermissionsSpeechRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPPermissionsSpeechRecognizer;
+			sourceTree = "<group>";
+		};
+		F4B9AD33264927F8001A0426 /* SPPermissionsContacts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPPermissionsContacts;
+			sourceTree = "<group>";
+		};
+		F4B9AD34264927F8001A0426 /* SPPermissionsNotification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPPermissionsNotification;
+			sourceTree = "<group>";
+		};
+		F4B9AD35264927F8001A0426 /* SPPermissionsMediaLibrary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPPermissionsMediaLibrary;
+			sourceTree = "<group>";
+		};
+		F4B9AD36264927F8001A0426 /* SPPermissionsBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPPermissionsBluetooth;
+			sourceTree = "<group>";
+		};
+		F4B9AD37264927F8001A0426 /* SPPermissionsCalendar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPPermissionsCalendar;
+			sourceTree = "<group>";
+		};
+		F4B9AD38264927F8001A0426 /* SPPermissionsTracking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPPermissionsTracking;
+			sourceTree = "<group>";
+		};
+		F4B9AD39264927F8001A0426 /* SPPermissionsLocation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPPermissionsLocation;
+			sourceTree = "<group>";
+		};
+		F4B9AD3A264927F8001A0426 /* SPPermissionsCamera */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPPermissionsCamera;
+			sourceTree = "<group>";
+		};
+		F4B9AD3B264927F8001A0426 /* SPPermissionsMotion */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPPermissionsMotion;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		F4B9AD12264920FC001A0426 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+			};
+			buildConfigurationList = F4B9AD15264920FC001A0426 /* Build configuration list for PBXProject "SPPermissinos" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4B9AD11264920FC001A0426;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		F4B9AD16264920FC001A0426 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		F4B9AD17264920FC001A0426 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4B9AD15264920FC001A0426 /* Build configuration list for PBXProject "SPPermissinos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4B9AD16264920FC001A0426 /* Debug */,
+				F4B9AD17264920FC001A0426 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4B9AD12264920FC001A0426 /* Project object */;
+}

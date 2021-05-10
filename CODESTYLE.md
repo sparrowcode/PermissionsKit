@@ -1,6 +1,6 @@
-# Documentation 
+# Codestyle 
 
-## Using marks
+## Marks
 
 For clean struct code good is using marks. 
 
