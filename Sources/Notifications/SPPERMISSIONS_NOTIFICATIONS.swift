@@ -34,3 +34,8 @@ public enum SPPERMISSIONS_PHOTOLIBRARY_FAKE {
     case example
 }
 #endif
+
+public enum SPPERMISSIONS_SHARED_EXAMPLE {
+    
+    case example
+}
