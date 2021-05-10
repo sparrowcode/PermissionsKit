@@ -21,7 +21,7 @@ let package = Package(
         .target(
             name: "PhotoLibrary",
             cSettings: [
-                .unsafeFlags(["-D SPPERMISSIONS_PHOTOLIBRARY"])
+                .define(["SPPERMISSIONS_PHOTOLIBRARY"])
             ]
         )
     ]
