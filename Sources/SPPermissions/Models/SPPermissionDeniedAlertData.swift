@@ -21,31 +21,10 @@
 
 import UIKit
 
-public enum SPPermissions {
-    
-    // MARK: - Styles
-    
-    public static func native(_ permissions: [SPPermission]) -> UIViewController {
-        fatalError()
-    }
-    
-    #if os(iOS)
-    public static func list(_ permissions: [SPPermission]) -> UIViewController {
-        fatalError()
-    }
-
-    public static func dialog(_ permissions: [SPPermission]) -> UIViewController {
-        fatalError()
-    }
-    #endif
-    
-    // MARK: - Internal
-    
-    private static func removeDuplicates(_ permissions: [SPPermission]) -> [SPPermission] {
-        var result = [SPPermission]()
-        for permission in permissions {
-            if !result.contains(permission) { result.append(permission) }
-        }
-        return result
-    }
+public class SPPermissionDeniedAlertData: NSObject {
+        
+    public var alertOpenSettingsDeniedPermissionTitle: String = "Permission denied"
+    public var alertOpenSettingsDeniedPermissionDescription: String = "Please, go to Settings and allow permission."
+    public var alertOpenSettingsDeniedPermissionButtonTitle: String = "Settings"
+    public var alertOpenSettingsDeniedPermissionCancelTitle: String = "Cancel"
 }
