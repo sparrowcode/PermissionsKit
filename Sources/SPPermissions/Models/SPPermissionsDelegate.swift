@@ -21,31 +21,11 @@
 
 import UIKit
 
-public enum SPPermissions {
+@objc public protocol SPPermissionsDelegate: AnyObject {
     
-    // MARK: - Styles
+    @objc optional func didAllow(permission: SPPermission)
     
-    public static func native(_ permissions: [SPPermission]) -> UIViewController {
-        fatalError()
-    }
+    @objc optional func didDenied(permission: SPPermission)
     
-    #if os(iOS)
-    public static func list(_ permissions: [SPPermission]) -> UIViewController {
-        fatalError()
-    }
-
-    public static func dialog(_ permissions: [SPPermission]) -> UIViewController {
-        fatalError()
-    }
-    #endif
-    
-    // MARK: - Internal
-    
-    private static func removeDuplicates(_ permissions: [SPPermission]) -> [SPPermission] {
-        var result = [SPPermission]()
-        for permission in permissions {
-            if !result.contains(permission) { result.append(permission) }
-        }
-        return result
-    }
+    @objc optional func didHide(permissions ids: [Int])
 }

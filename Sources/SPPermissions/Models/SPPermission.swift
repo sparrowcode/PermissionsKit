@@ -21,31 +21,23 @@
 
 import UIKit
 
-public enum SPPermissions {
-    
-    // MARK: - Styles
-    
-    public static func native(_ permissions: [SPPermission]) -> UIViewController {
-        fatalError()
-    }
+@objc public enum SPPermission: Int, CaseIterable {
     
     #if os(iOS)
-    public static func list(_ permissions: [SPPermission]) -> UIViewController {
-        fatalError()
-    }
-
-    public static func dialog(_ permissions: [SPPermission]) -> UIViewController {
-        fatalError()
-    }
+    case camera = 0
+    case photoLibrary = 1
+    case microphone = 3
+    case calendar = 4
+    case contacts = 5
+    case reminders = 6
+    case speech = 7
+    case locationAlwaysAndWhenInUse = 10
+    case motion = 11
+    case mediaLibrary = 12
+    case bluetooth = 13
+    case tracking = 14
     #endif
+    case notification = 2
+    case locationWhenInUse = 9
     
-    // MARK: - Internal
-    
-    private static func removeDuplicates(_ permissions: [SPPermission]) -> [SPPermission] {
-        var result = [SPPermission]()
-        for permission in permissions {
-            if !result.contains(permission) { result.append(permission) }
-        }
-        return result
-    }
 }
