@@ -4,6 +4,11 @@ import PackageDescription
 
 let package = Package(
     name: "SPPermissions",
+    platforms: [
+        .iOS(.v11),
+        .tvOS(.v11),
+        .watchOS(.v3)
+    ],
     products: [
         .library(
             name: "SPPermissions",
@@ -17,120 +22,95 @@ let package = Package(
         ),
         .target(
             name: "SPPermissionsCamera",
-            dependencies: [
-                "SPPermissions"
-            ],
+            dependencies: ["SPPermissions"],
             swiftSettings: [
                 .define("SPPERMISSIONS_CAMERA")
             ]
         ),
         .target(
             name: "SPPermissionsContacts",
-            dependencies: [
-                "SPPermissions"
-            ],
+            dependencies: ["SPPermissions"],
             swiftSettings: [
                 .define("SPPERMISSIONS_CONTACTS")
             ]
         ),
         .target(
             name: "SPPermissionsCalendar",
-            dependencies: [
-                "SPPermissions"
-            ],
+            dependencies: ["SPPermissions"],
             swiftSettings: [
                 .define("SPPERMISSIONS_CALENDAR")
             ]
         ),
         .target(
             name: "SPPermissionsPhotoLibrary",
-            dependencies: [
-                "SPPermissions"
-            ],
+            dependencies: ["SPPermissions"],
             swiftSettings: [
                 .define("SPPERMISSIONS_PHOTOLIBRARY")
             ]
         ),
         .target(
             name: "SPPermissionsNotification",
-            dependencies: [
-                "SPPermissions"
-            ],
+            dependencies: ["SPPermissions"],
             swiftSettings: [
                 .define("SPPERMISSIONS_NOTIFICATION")
             ]
         ),
         .target(
             name: "SPPermissionsMicrophone",
-            dependencies: [
-                "SPPermissions"
-            ],
+            dependencies: ["SPPermissions"],
             swiftSettings: [
                 .define("SPPERMISSIONS_MICROPHONE")
             ]
         ),
         .target(
             name: "SPPermissionsReminders",
-            dependencies: [
-                "SPPermissions"
-            ],
+            dependencies: ["SPPermissions"],
             swiftSettings: [
                 .define("SPPERMISSIONS_REMINDERS")
             ]
         ),
         .target(
             name: "SPPermissionsSpeechRecognizer",
-            dependencies: [
-                "SPPermissions"
-            ],
+            dependencies: ["SPPermissions"],
             swiftSettings: [
                 .define("SPPERMISSIONS_SPEECHRECOGNIZER")
             ]
         ),
         .target(
             name: "SPPermissionsLocation",
-            dependencies: [
-                "SPPermissions"
-            ],
+            dependencies: ["SPPermissions"],
             swiftSettings: [
                 .define("SPPERMISSIONS_LOCATION")
             ]
         ),
         .target(
             name: "SPPermissionsMotion",
-            dependencies: [
-                "SPPermissions"
-            ],
+            dependencies: ["SPPermissions"],
             swiftSettings: [
                 .define("SPPERMISSIONS_MOTION")
             ]
         ),
         .target(
             name: "SPPermissionsMediaLibrary",
-            dependencies: [
-                "SPPermissions"
-            ],
+            dependencies: ["SPPermissions"],
             swiftSettings: [
                 .define("SPPERMISSIONS_MEDIALIBRARY")
             ]
         ),
         .target(
             name: "SPPermissionsBluetooth",
-            dependencies: [
-                "SPPermissions"
-            ],
+            dependencies: ["SPPermissions"],
             swiftSettings: [
                 .define("SPPERMISSIONS_BLUETOOTH")
             ]
         ),
         .target(
             name: "SPPermissionsTracking",
-            dependencies: [
-                "SPPermissions"
-            ],
+            dependencies: ["SPPermissions"],
             swiftSettings: [
                 .define("SPPERMISSIONS_TRACKING")
             ]
         )
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
