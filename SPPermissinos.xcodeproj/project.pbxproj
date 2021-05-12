@@ -34,6 +34,7 @@
 		F4BA22CD264C32D20095BF28 /* SPRemindersPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22CC264C32D20095BF28 /* SPRemindersPermission.swift */; };
 		F4BA22CF264C32ED0095BF28 /* SPSpeechPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22CE264C32ED0095BF28 /* SPSpeechPermission.swift */; };
 		F4BA22D1264C33080095BF28 /* SPTrackingPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22D0264C33080095BF28 /* SPTrackingPermission.swift */; };
+		F4BA22D3264C33AA0095BF28 /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = F4BA22D2264C33AA0095BF28 /* TODO.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		F4BA22CC264C32D20095BF28 /* SPRemindersPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPRemindersPermission.swift; sourceTree = "<group>"; };
 		F4BA22CE264C32ED0095BF28 /* SPSpeechPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSpeechPermission.swift; sourceTree = "<group>"; };
 		F4BA22D0264C33080095BF28 /* SPTrackingPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTrackingPermission.swift; sourceTree = "<group>"; };
+		F4BA22D2264C33AA0095BF28 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 				F4B9AD252649226F001A0426 /* Sources */,
 				F4B9AD3C264928B7001A0426 /* AGREEMENTS.md */,
 				F4B9AD2A2649226F001A0426 /* README.md */,
+				F4BA22D2264C33AA0095BF28 /* TODO.md */,
 				F4B9AD232649226F001A0426 /* LICENSE */,
 				F4B9AD292649226F001A0426 /* Package.swift */,
 				F4B9AD2E264922B6001A0426 /* SPPermissions.podspec */,
@@ -478,6 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BA22D3264C33AA0095BF28 /* TODO.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
