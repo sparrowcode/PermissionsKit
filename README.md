@@ -4,6 +4,7 @@ Branch created for new version `6.0`. Its early beta, not recomended use it in a
 New features
 
 - New struct
+- Added `.notDetermined` for all permissions
 - Support SPM
 - Localisations
 

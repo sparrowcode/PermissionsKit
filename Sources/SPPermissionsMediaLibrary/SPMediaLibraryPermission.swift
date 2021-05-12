@@ -26,12 +26,22 @@ import MediaPlayer
 
 class SPMediaLibraryPermission: SPPermissionInterface {
     
-    var isAuthorized: Bool {
-        return MPMediaLibrary.authorizationStatus() == .authorized
-    }
+    // MARK: Check State
     
-    var isDenied: Bool {
-        return MPMediaLibrary.authorizationStatus() == .denied
+    var notDetermined: Bool { status == .notDetermined }
+    var authorized: Bool { status == .authorized }
+    var denied: Bool { status == .denied }
+    
+    // MARK: Logic
+    
+    var status: SPPermissionState {
+        switch MPMediaLibrary.authorizationStatus() {
+        case .authorized: return .authorized
+        case .denied: return .denied
+        case .notDetermined: return .notDetermined
+        case .restricted: return .denied
+        @unknown default: return .denied
+        }
     }
     
     func request(completion: @escaping ()->()?) {

@@ -35,6 +35,9 @@
 		F4BA22CF264C32ED0095BF28 /* SPSpeechPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22CE264C32ED0095BF28 /* SPSpeechPermission.swift */; };
 		F4BA22D1264C33080095BF28 /* SPTrackingPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22D0264C33080095BF28 /* SPTrackingPermission.swift */; };
 		F4BA22D3264C33AA0095BF28 /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = F4BA22D2264C33AA0095BF28 /* TODO.md */; };
+		F4BA22D5264C5C930095BF28 /* SPPermissionsControllerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22D4264C5C930095BF28 /* SPPermissionsControllerInterface.swift */; };
+		F4BA22D9264C5D530095BF28 /* SPPermissionsNativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22D8264C5D530095BF28 /* SPPermissionsNativeController.swift */; };
+		F4BA22DB264C60500095BF28 /* SPPermissionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22DA264C60500095BF28 /* SPPermissionStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,9 @@
 		F4BA22CE264C32ED0095BF28 /* SPSpeechPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSpeechPermission.swift; sourceTree = "<group>"; };
 		F4BA22D0264C33080095BF28 /* SPTrackingPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTrackingPermission.swift; sourceTree = "<group>"; };
 		F4BA22D2264C33AA0095BF28 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		F4BA22D4264C5C930095BF28 /* SPPermissionsControllerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsControllerInterface.swift; sourceTree = "<group>"; };
+		F4BA22D8264C5D530095BF28 /* SPPermissionsNativeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsNativeController.swift; sourceTree = "<group>"; };
+		F4BA22DA264C60500095BF28 /* SPPermissionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				F471BDAE264A5915000693BC /* SPPermission.swift */,
+				F4BA22DA264C60500095BF28 /* SPPermissionStatus.swift */,
 				F471BDF9264A6106000693BC /* SPPermissionDeniedAlertData.swift */,
 			);
 			path = Models;
@@ -189,6 +196,7 @@
 				F471BDF3264A601F000693BC /* SPPermissionInterface.swift */,
 				F471BDF5264A6085000693BC /* SPPermissionsDataSource.swift */,
 				F471BDF7264A60BF000693BC /* SPPermissionsDelegate.swift */,
+				F4BA22D4264C5C930095BF28 /* SPPermissionsControllerInterface.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -253,6 +261,7 @@
 		F4B9AD262649226F001A0426 /* SPPermissions */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA22D6264C5D340095BF28 /* Interface */,
 				F471BDF2264A6017000693BC /* Protocols */,
 				F471BDAD264A5903000693BC /* Models */,
 				F4B9AD272649226F001A0426 /* SPPermissions.swift */,
@@ -377,6 +386,22 @@
 				F4BA22C6264C32070095BF28 /* SPMotionPermission.swift */,
 			);
 			path = SPPermissionsMotion;
+			sourceTree = "<group>";
+		};
+		F4BA22D6264C5D340095BF28 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				F4BA22D7264C5D3E0095BF28 /* Native Style */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		F4BA22D7264C5D3E0095BF28 /* Native Style */ = {
+			isa = PBXGroup;
+			children = (
+				F4BA22D8264C5D530095BF28 /* SPPermissionsNativeController.swift */,
+			);
+			path = "Native Style";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,7 +540,10 @@
 				F4BA22B5264C228C0095BF28 /* SPBluetoothPermission.swift in Sources */,
 				F4BA22BB264C23DB0095BF28 /* SPCameraPermission.swift in Sources */,
 				F471BDF6264A6085000693BC /* SPPermissionsDataSource.swift in Sources */,
+				F4BA22D5264C5C930095BF28 /* SPPermissionsControllerInterface.swift in Sources */,
+				F4BA22DB264C60500095BF28 /* SPPermissionStatus.swift in Sources */,
 				F4BA22C9264C323C0095BF28 /* SPNotificationPermission.swift in Sources */,
+				F4BA22D9264C5D530095BF28 /* SPPermissionsNativeController.swift in Sources */,
 				F4BA22D1264C33080095BF28 /* SPTrackingPermission.swift in Sources */,
 				F471BDF4264A601F000693BC /* SPPermissionInterface.swift in Sources */,
 				F4BA22C3264C31C30095BF28 /* SPMediaLibraryPermission.swift in Sources */,
@@ -757,7 +785,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -834,7 +862,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

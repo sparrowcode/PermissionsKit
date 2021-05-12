@@ -26,12 +26,22 @@ import Contacts
 
 class SPContactsPermission: SPPermissionInterface {
     
-    var isAuthorized: Bool {
-        return CNContactStore.authorizationStatus(for: .contacts) == .authorized
-    }
+    // MARK: Check State
     
-    var isDenied: Bool {
-        return CNContactStore.authorizationStatus(for: .contacts) == .denied
+    var notDetermined: Bool { status == .notDetermined }
+    var authorized: Bool { status == .authorized }
+    var denied: Bool { status == .denied }
+    
+    // MARK: Logic
+    
+    var status: SPPermissionState {
+        switch CNContactStore.authorizationStatus(for: .contacts) {
+        case .authorized: return .authorized
+        case .denied: return .denied
+        case .notDetermined: return .notDetermined
+        case .restricted: return .denied
+        @unknown default: return .denied
+        }
     }
     
     func request(completion: @escaping ()->()?) {

@@ -26,37 +26,55 @@ import MapKit
 
 class SPLocationPermission: SPPermissionInterface {
     
+    // MARK: Check State
+    
+    var notDetermined: Bool { status == .notDetermined }
+    var authorized: Bool { status == .authorized }
+    var denied: Bool { status == .denied }
+    
+    // MARK: Logic
+    
+    var status: SPPermissionState {
+        
+        let authorizationStatus: CLAuthorizationStatus = {
+            let locationManager = CLLocationManager()
+            if #available(iOS 14.0, *) {
+                return locationManager.authorizationStatus
+            } else {
+                return CLLocationManager.authorizationStatus()
+            }
+        }()
+        
+        switch authorizationStatus {
+        case .authorized: return .authorized
+        case .denied: return .denied
+        case .notDetermined: return .notDetermined
+        case .restricted: return .denied
+        case .authorizedAlways:
+            if type == .always { return .authorized }
+            return .denied
+        case .authorizedWhenInUse:
+            if type == .always { return .authorized }
+            if type == .whenInUse { return .authorized }
+            return .denied
+        @unknown default: return .denied
+        }
+    }
+    
+    // MARK: Internal
+    
     var type: SPLocationType
     
     enum SPLocationType {
-        case WhenInUse
+        
         #if os(iOS)
-        case AlwaysAndWhenInUse
+        case always
         #endif
+        case whenInUse
     }
     
     init(type: SPLocationType) {
         self.type = type
-    }
-    
-    var isAuthorized: Bool {
-        let locationManager = CLLocationManager()
-        let status = locationManager.authorizationStatus
-        if status == .authorizedAlways {
-            return true
-        } else {
-            if type == .WhenInUse {
-                return status == .authorizedWhenInUse
-            } else {
-                return false
-            }
-        }
-    }
-    
-    var isDenied: Bool {
-        let locationManager = CLLocationManager()
-        let authorizationStatus = locationManager.authorizationStatus
-        return authorizationStatus == .denied || authorizationStatus == .restricted
     }
     
     func request(completion: @escaping ()->()?) {

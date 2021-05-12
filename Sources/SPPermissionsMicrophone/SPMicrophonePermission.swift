@@ -26,12 +26,21 @@ import AVFoundation
 
 class SPMicrophonePermission: SPPermissionInterface {
     
-    var isAuthorized: Bool {
-        return AVAudioSession.sharedInstance().recordPermission == .granted
-    }
+    // MARK: Check State
     
-    var isDenied: Bool {
-        return AVAudioSession.sharedInstance().recordPermission == .denied
+    var notDetermined: Bool { status == .notDetermined }
+    var authorized: Bool { status == .authorized }
+    var denied: Bool { status == .denied }
+    
+    // MARK: Logic
+    
+    var status: SPPermissionState {
+        switch  AVAudioSession.sharedInstance().recordPermission {
+        case .granted: return .authorized
+        case .denied: return .denied
+        case .undetermined: return .notDetermined
+        @unknown default: return .denied
+        }
     }
     
     func request(completion: @escaping ()->()?) {

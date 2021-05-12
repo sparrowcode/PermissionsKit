@@ -24,15 +24,20 @@
 import UIKit
 import CoreBluetooth
 
-// https://medium.com/flawless-app-stories/handling-ios-13-bluetooth-permissions-26c6a8cbb816
+// https://medium.com/flawless-app-stories/
+// handling-ios-13-bluetooth-permissions-26c6a8cbb816
 #warning("todo")
 class SPBluetoothPermission: SPPermissionInterface {
     
-    var isAuthorized: Bool {
-        fatalError()
-    }
+    // MARK: Check State
     
-    var isDenied: Bool {
+    var notDetermined: Bool { status == .notDetermined }
+    var authorized: Bool { status == .authorized }
+    var denied: Bool { status == .denied }
+    
+    // MARK: Logic
+    
+    var status: SPPermissionState {
         fatalError()
     }
     

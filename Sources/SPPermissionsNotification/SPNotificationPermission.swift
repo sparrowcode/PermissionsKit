@@ -26,14 +26,24 @@ import UserNotifications
 
 class SPNotificationPermission: SPPermissionInterface {
     
-    var isAuthorized: Bool {
-        guard let authorizationStatus = fetchAuthorizationStatus() else { return false }
-        return authorizationStatus == .authorized
-    }
+    // MARK: Check State
     
-    var isDenied: Bool {
-        guard let authorizationStatus = fetchAuthorizationStatus() else { return false }
-        return authorizationStatus == .denied
+    var notDetermined: Bool { status == .notDetermined }
+    var authorized: Bool { status == .authorized }
+    var denied: Bool { status == .denied }
+    
+    // MARK: Logic
+    
+    var status: SPPermissionState {
+        guard let authorizationStatus = fetchAuthorizationStatus() else { return .notDetermined }
+        switch authorizationStatus {
+        case .authorized: return .authorized
+        case .denied: return .denied
+        case .notDetermined: return .notDetermined
+        case .provisional: return .authorized
+        case .ephemeral: return .authorized
+        @unknown default: return .denied
+        }
     }
     
     private func fetchAuthorizationStatus() -> UNAuthorizationStatus? {

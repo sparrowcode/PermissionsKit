@@ -18,12 +18,18 @@ class Example {
 }
 ```
 
-Here you find all which using in project.
+Here you find all which using in project:
 
 - // MARK: - Init
 - // MARK: - Lifecycle
 - // MARK: - Layout
 - // MARK: - Helpers
+
+Specific for permissions classes: 
+
+- // MARK: Check State
+- // MARK: Logic
+- // MARK: Internal
 
 If you can't find valid, add new to codestyle agreements please. Other can be use if class is large and need struct it even without adding to codestyle agreements.
 
