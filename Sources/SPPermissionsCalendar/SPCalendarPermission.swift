@@ -19,13 +19,30 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import UIKit
+#if os(iOS) && SPPERMISSIONS_CALENDAR
 
-protocol SPPermissionsPermissionInterface {
+import UIKit
+import EventKit
+
+class SPCalendarPermission: SPPermissionInterface {
     
-    var isAuthorized: Bool { get }
+    var isAuthorized: Bool {
+        return EKEventStore.authorizationStatus(for: EKEntityType.event) == .authorized
+    }
     
-    var isDenied: Bool { get }
+    var isDenied: Bool {
+        return EKEventStore.authorizationStatus(for: EKEntityType.event) == .denied
+    }
     
-    func request(completion: @escaping ()->()?)
+    func request(completion: @escaping ()->()?) {
+        let eventStore = EKEventStore()
+        eventStore.requestAccess(to: EKEntityType.event, completion: {
+            (accessGranted: Bool, error: Error?) in
+            DispatchQueue.main.async {
+                completion()
+            }
+        })
+    }
 }
+
+#endif

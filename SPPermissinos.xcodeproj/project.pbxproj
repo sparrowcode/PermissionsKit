@@ -17,10 +17,23 @@
 		F471BDEC264A5C9F000693BC /* SPPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDAE264A5915000693BC /* SPPermission.swift */; };
 		F471BDED264A5CA2000693BC /* SPPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9AD272649226F001A0426 /* SPPermissions.swift */; };
 		F471BDEF264A5E78000693BC /* Sources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F471BDE0264A5C00000693BC /* Sources.framework */; };
-		F471BDF4264A601F000693BC /* SPPermissionsPermissionInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDF3264A601F000693BC /* SPPermissionsPermissionInterface.swift */; };
+		F471BDF4264A601F000693BC /* SPPermissionInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDF3264A601F000693BC /* SPPermissionInterface.swift */; };
 		F471BDF6264A6085000693BC /* SPPermissionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDF5264A6085000693BC /* SPPermissionsDataSource.swift */; };
 		F471BDF8264A60BF000693BC /* SPPermissionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDF7264A60BF000693BC /* SPPermissionsDelegate.swift */; };
 		F471BDFA264A6106000693BC /* SPPermissionDeniedAlertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDF9264A6106000693BC /* SPPermissionDeniedAlertData.swift */; };
+		F4BA22B5264C228C0095BF28 /* SPBluetoothPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22B4264C228C0095BF28 /* SPBluetoothPermission.swift */; };
+		F4BA22B9264C239A0095BF28 /* SPCalendarPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22B8264C239A0095BF28 /* SPCalendarPermission.swift */; };
+		F4BA22BB264C23DB0095BF28 /* SPCameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22BA264C23DB0095BF28 /* SPCameraPermission.swift */; };
+		F4BA22BF264C297D0095BF28 /* SPContactsPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22BE264C297D0095BF28 /* SPContactsPermission.swift */; };
+		F4BA22C1264C2B040095BF28 /* SPLocationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22C0264C2B040095BF28 /* SPLocationPermission.swift */; };
+		F4BA22C3264C31C30095BF28 /* SPMediaLibraryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22C2264C31C30095BF28 /* SPMediaLibraryPermission.swift */; };
+		F4BA22C5264C31E50095BF28 /* SPMicrophonePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22C4264C31E50095BF28 /* SPMicrophonePermission.swift */; };
+		F4BA22C7264C32070095BF28 /* SPMotionPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22C6264C32070095BF28 /* SPMotionPermission.swift */; };
+		F4BA22C9264C323C0095BF28 /* SPNotificationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22C8264C323C0095BF28 /* SPNotificationPermission.swift */; };
+		F4BA22CB264C32B50095BF28 /* SPPhotoLibraryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22CA264C32B50095BF28 /* SPPhotoLibraryPermission.swift */; };
+		F4BA22CD264C32D20095BF28 /* SPRemindersPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22CC264C32D20095BF28 /* SPRemindersPermission.swift */; };
+		F4BA22CF264C32ED0095BF28 /* SPSpeechPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22CE264C32ED0095BF28 /* SPSpeechPermission.swift */; };
+		F4BA22D1264C33080095BF28 /* SPTrackingPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22D0264C33080095BF28 /* SPTrackingPermission.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +78,7 @@
 		F471BDE0264A5C00000693BC /* Sources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F471BDE2264A5C00000693BC /* SPPermissions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPPermissions.h; sourceTree = "<group>"; };
 		F471BDE3264A5C00000693BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F471BDF3264A601F000693BC /* SPPermissionsPermissionInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SPPermissionsPermissionInterface.swift; path = Sources/SPPermissions/Models/SPPermissionsPermissionInterface.swift; sourceTree = SOURCE_ROOT; };
+		F471BDF3264A601F000693BC /* SPPermissionInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SPPermissionInterface.swift; path = Sources/SPPermissions/Models/SPPermissionInterface.swift; sourceTree = SOURCE_ROOT; };
 		F471BDF5264A6085000693BC /* SPPermissionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SPPermissionsDataSource.swift; path = Sources/SPPermissions/Models/SPPermissionsDataSource.swift; sourceTree = SOURCE_ROOT; };
 		F471BDF7264A60BF000693BC /* SPPermissionsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SPPermissionsDelegate.swift; path = Sources/SPPermissions/Models/SPPermissionsDelegate.swift; sourceTree = SOURCE_ROOT; };
 		F471BDF9264A6106000693BC /* SPPermissionDeniedAlertData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionDeniedAlertData.swift; sourceTree = "<group>"; };
@@ -77,6 +90,20 @@
 		F4B9AD2D26492297001A0426 /* FUNDING.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = FUNDING.yml; sourceTree = "<group>"; };
 		F4B9AD2E264922B6001A0426 /* SPPermissions.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPPermissions.podspec; sourceTree = "<group>"; };
 		F4B9AD3C264928B7001A0426 /* AGREEMENTS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AGREEMENTS.md; sourceTree = "<group>"; };
+		F4BA22B4264C228C0095BF28 /* SPBluetoothPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPBluetoothPermission.swift; sourceTree = "<group>"; };
+		F4BA22B8264C239A0095BF28 /* SPCalendarPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCalendarPermission.swift; sourceTree = "<group>"; };
+		F4BA22BA264C23DB0095BF28 /* SPCameraPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCameraPermission.swift; sourceTree = "<group>"; };
+		F4BA22BC264C24B00095BF28 /* SPPermissionsConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SPPermissionsConfiguration.xcconfig; sourceTree = "<group>"; };
+		F4BA22BE264C297D0095BF28 /* SPContactsPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPContactsPermission.swift; sourceTree = "<group>"; };
+		F4BA22C0264C2B040095BF28 /* SPLocationPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPLocationPermission.swift; sourceTree = "<group>"; };
+		F4BA22C2264C31C30095BF28 /* SPMediaLibraryPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPMediaLibraryPermission.swift; sourceTree = "<group>"; };
+		F4BA22C4264C31E50095BF28 /* SPMicrophonePermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPMicrophonePermission.swift; sourceTree = "<group>"; };
+		F4BA22C6264C32070095BF28 /* SPMotionPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPMotionPermission.swift; sourceTree = "<group>"; };
+		F4BA22C8264C323C0095BF28 /* SPNotificationPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPNotificationPermission.swift; sourceTree = "<group>"; };
+		F4BA22CA264C32B50095BF28 /* SPPhotoLibraryPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPhotoLibraryPermission.swift; sourceTree = "<group>"; };
+		F4BA22CC264C32D20095BF28 /* SPRemindersPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPRemindersPermission.swift; sourceTree = "<group>"; };
+		F4BA22CE264C32ED0095BF28 /* SPSpeechPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSpeechPermission.swift; sourceTree = "<group>"; };
+		F4BA22D0264C33080095BF28 /* SPTrackingPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTrackingPermission.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +160,7 @@
 			children = (
 				F471BDB6264A5993000693BC /* AppDelegate.swift */,
 				F471BDC1264A5995000693BC /* LaunchScreen.storyboard */,
+				F4BA22BC264C24B00095BF28 /* SPPermissionsConfiguration.xcconfig */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -156,7 +184,7 @@
 		F471BDF2264A6017000693BC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				F471BDF3264A601F000693BC /* SPPermissionsPermissionInterface.swift */,
+				F471BDF3264A601F000693BC /* SPPermissionInterface.swift */,
 				F471BDF5264A6085000693BC /* SPPermissionsDataSource.swift */,
 				F471BDF7264A60BF000693BC /* SPPermissionsDelegate.swift */,
 			);
@@ -247,6 +275,7 @@
 		F4B9AD2F264927F8001A0426 /* SPPermissionsMicrophone */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA22C4264C31E50095BF28 /* SPMicrophonePermission.swift */,
 			);
 			path = SPPermissionsMicrophone;
 			sourceTree = "<group>";
@@ -254,6 +283,7 @@
 		F4B9AD30264927F8001A0426 /* SPPermissionsReminders */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA22CC264C32D20095BF28 /* SPRemindersPermission.swift */,
 			);
 			path = SPPermissionsReminders;
 			sourceTree = "<group>";
@@ -261,6 +291,7 @@
 		F4B9AD31264927F8001A0426 /* SPPermissionsPhotoLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA22CA264C32B50095BF28 /* SPPhotoLibraryPermission.swift */,
 			);
 			path = SPPermissionsPhotoLibrary;
 			sourceTree = "<group>";
@@ -268,6 +299,7 @@
 		F4B9AD32264927F8001A0426 /* SPPermissionsSpeechRecognizer */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA22CE264C32ED0095BF28 /* SPSpeechPermission.swift */,
 			);
 			path = SPPermissionsSpeechRecognizer;
 			sourceTree = "<group>";
@@ -275,6 +307,7 @@
 		F4B9AD33264927F8001A0426 /* SPPermissionsContacts */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA22BE264C297D0095BF28 /* SPContactsPermission.swift */,
 			);
 			path = SPPermissionsContacts;
 			sourceTree = "<group>";
@@ -282,6 +315,7 @@
 		F4B9AD34264927F8001A0426 /* SPPermissionsNotification */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA22C8264C323C0095BF28 /* SPNotificationPermission.swift */,
 			);
 			path = SPPermissionsNotification;
 			sourceTree = "<group>";
@@ -289,6 +323,7 @@
 		F4B9AD35264927F8001A0426 /* SPPermissionsMediaLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA22C2264C31C30095BF28 /* SPMediaLibraryPermission.swift */,
 			);
 			path = SPPermissionsMediaLibrary;
 			sourceTree = "<group>";
@@ -296,6 +331,7 @@
 		F4B9AD36264927F8001A0426 /* SPPermissionsBluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA22B4264C228C0095BF28 /* SPBluetoothPermission.swift */,
 			);
 			path = SPPermissionsBluetooth;
 			sourceTree = "<group>";
@@ -303,6 +339,7 @@
 		F4B9AD37264927F8001A0426 /* SPPermissionsCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA22B8264C239A0095BF28 /* SPCalendarPermission.swift */,
 			);
 			path = SPPermissionsCalendar;
 			sourceTree = "<group>";
@@ -310,6 +347,7 @@
 		F4B9AD38264927F8001A0426 /* SPPermissionsTracking */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA22D0264C33080095BF28 /* SPTrackingPermission.swift */,
 			);
 			path = SPPermissionsTracking;
 			sourceTree = "<group>";
@@ -317,6 +355,7 @@
 		F4B9AD39264927F8001A0426 /* SPPermissionsLocation */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA22C0264C2B040095BF28 /* SPLocationPermission.swift */,
 			);
 			path = SPPermissionsLocation;
 			sourceTree = "<group>";
@@ -324,6 +363,7 @@
 		F4B9AD3A264927F8001A0426 /* SPPermissionsCamera */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA22BA264C23DB0095BF28 /* SPCameraPermission.swift */,
 			);
 			path = SPPermissionsCamera;
 			sourceTree = "<group>";
@@ -331,6 +371,7 @@
 		F4B9AD3B264927F8001A0426 /* SPPermissionsMotion */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA22C6264C32070095BF28 /* SPMotionPermission.swift */,
 			);
 			path = SPPermissionsMotion;
 			sourceTree = "<group>";
@@ -456,12 +497,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BA22BF264C297D0095BF28 /* SPContactsPermission.swift in Sources */,
+				F4BA22C1264C2B040095BF28 /* SPLocationPermission.swift in Sources */,
+				F4BA22C5264C31E50095BF28 /* SPMicrophonePermission.swift in Sources */,
+				F4BA22CF264C32ED0095BF28 /* SPSpeechPermission.swift in Sources */,
 				F471BDEC264A5C9F000693BC /* SPPermission.swift in Sources */,
+				F4BA22CB264C32B50095BF28 /* SPPhotoLibraryPermission.swift in Sources */,
+				F4BA22CD264C32D20095BF28 /* SPRemindersPermission.swift in Sources */,
 				F471BDFA264A6106000693BC /* SPPermissionDeniedAlertData.swift in Sources */,
+				F4BA22C7264C32070095BF28 /* SPMotionPermission.swift in Sources */,
 				F471BDF8264A60BF000693BC /* SPPermissionsDelegate.swift in Sources */,
 				F471BDED264A5CA2000693BC /* SPPermissions.swift in Sources */,
+				F4BA22B5264C228C0095BF28 /* SPBluetoothPermission.swift in Sources */,
+				F4BA22BB264C23DB0095BF28 /* SPCameraPermission.swift in Sources */,
 				F471BDF6264A6085000693BC /* SPPermissionsDataSource.swift in Sources */,
-				F471BDF4264A601F000693BC /* SPPermissionsPermissionInterface.swift in Sources */,
+				F4BA22C9264C323C0095BF28 /* SPNotificationPermission.swift in Sources */,
+				F4BA22D1264C33080095BF28 /* SPTrackingPermission.swift in Sources */,
+				F471BDF4264A601F000693BC /* SPPermissionInterface.swift in Sources */,
+				F4BA22C3264C31C30095BF28 /* SPMediaLibraryPermission.swift in Sources */,
+				F4BA22B9264C239A0095BF28 /* SPCalendarPermission.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +548,7 @@
 /* Begin XCBuildConfiguration section */
 		F471BDC6264A5995000693BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4BA22BC264C24B00095BF28 /* SPPermissionsConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -569,6 +624,7 @@
 		};
 		F471BDC7264A5995000693BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4BA22BC264C24B00095BF28 /* SPPermissionsConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -638,6 +694,7 @@
 		};
 		F471BDEA264A5C00000693BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4BA22BC264C24B00095BF28 /* SPPermissionsConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -709,7 +766,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(SPPERMISSIONS_FLAGS)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -720,6 +777,7 @@
 		};
 		F471BDEB264A5C00000693BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4BA22BC264C24B00095BF28 /* SPPermissionsConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -784,6 +842,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(SPPERMISSIONS_FLAGS)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -796,12 +855,14 @@
 		};
 		F4B9AD16264920FC001A0426 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4BA22BC264C24B00095BF28 /* SPPermissionsConfiguration.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		F4B9AD17264920FC001A0426 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4BA22BC264C24B00095BF28 /* SPPermissionsConfiguration.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
