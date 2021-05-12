@@ -25,8 +25,9 @@ public enum SPPermissions {
     
     // MARK: - Styles
     
-    public static func native(_ permissions: [SPPermission]) -> UIViewController {
-        fatalError()
+    public static func native(_ permissions: [SPPermission]) -> SPPermissionsNativeController {
+        let controller = SPPermissionsNativeController(removeDuplicates(permissions))
+        return controller
     }
     
     #if os(iOS)
@@ -41,11 +42,115 @@ public enum SPPermissions {
     
     // MARK: - Internal
     
+    static func manager(for permission: SPPermission) -> SPPermissionInterface {
+        switch permission {
+            #if os(iOS)
+        case .camera:
+            #if SPPERMISSIONS_CAMERA
+            if #available(iOS 11.0, macCatalyst 14.0, *) {
+                return SPCameraPermission()
+            } else {
+                fatalError(error(permission))
+            }
+            #else
+            fatalError(error(permission))
+            #endif
+        case .photoLibrary:
+            #if SPPERMISSIONS_PHOTOLIBRARY
+            return SPPhotoLibraryPermission()
+            #else
+            fatalError(error(permission))
+            #endif
+        case .microphone:
+            #if SPPERMISSIONS_MICROPHONE
+            return SPMicrophonePermission()
+            #else
+            fatalError(error(permission))
+            #endif
+        case .calendar:
+            #if SPPERMISSIONS_CALENDAR
+            return SPCalendarPermission()
+            #else
+            fatalError(error(permission))
+            #endif
+        case .contacts:
+            #if SPPERMISSIONS_CONTACTS
+            return SPContactsPermission()
+            #else
+            fatalError(error(permission))
+            #endif
+        case .reminders:
+            #if SPPERMISSIONS_REMINDERS
+            return SPRemindersPermission()
+            #else
+            fatalError(error(permission))
+            #endif
+        case .speech:
+            #if SPPERMISSIONS_SPEECH
+            return SPSpeechPermission()
+            #else
+            fatalError(error(permission))
+            #endif
+        case .locationAlwaysAndWhenInUse:
+            #if SPPERMISSIONS_LOCATION
+            return SPLocationPermission(type: .always)
+            #else
+            fatalError(error(permission))
+            #endif
+        case .motion:
+            #if SPPERMISSIONS_MOTION
+            return SPMotionPermission()
+            #else
+            fatalError(error(permission))
+            #endif
+        case .mediaLibrary:
+            #if SPPERMISSIONS_MEDIALIBRARY
+            return SPMediaLibraryPermission()
+            #else
+            fatalError(error(permission))
+            #endif
+        case .bluetooth:
+            #if SPPERMISSIONS_BLUETOOTH
+            return SPBluetoothPermission()
+            #else
+            fatalError(error(permission))
+            #endif
+            #endif
+        case .notification:
+            #if SPPERMISSIONS_NOTIFICATION
+            return SPNotificationPermission()
+            #else
+            fatalError(error(permission))
+            #endif
+        case .locationWhenInUse:
+            #if SPPERMISSIONS_LOCATION
+            return SPLocationPermission(type: .whenInUse)
+            #else
+            fatalError(error(permission))
+            #endif
+        case .tracking:
+            #if SPPERMISSIONS_TRACKING
+            if #available(iOS 14.5, *) {
+                return SPTrackingPermission()
+            } else {
+                fatalError(error(permission))
+            }
+            #else
+            fatalError(error(permission))
+            #endif
+        }
+    }
+    
     private static func removeDuplicates(_ permissions: [SPPermission]) -> [SPPermission] {
         var result = [SPPermission]()
         for permission in permissions {
             if !result.contains(permission) { result.append(permission) }
         }
         return result
+    }
+    
+    private static func error(_ permission: SPPermission) -> String {
+        #warning("todo")
+        return "SPPermissions - \(permission.rawValue) not import. Problem NOT with usage description key. I recomend to see installation guide: https://youtu.be/1kR5HGVhJfk. More details in Readme: https://github.com/ivanvorobei/SPPermissions"
     }
 }

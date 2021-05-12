@@ -25,12 +25,23 @@ import Photos
 
 class SPPhotoLibraryPermission: SPPermissionInterface {
     
-    var isAuthorized: Bool {
-        return PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized
-    }
+    // MARK: Check State
     
-    var isDenied: Bool {
-        return PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.denied
+    var notDetermined: Bool { status == .notDetermined }
+    var authorized: Bool { status == .authorized }
+    var denied: Bool { status == .denied }
+    
+    // MARK: Logic
+    
+    var status: SPPermissionState {
+        switch PHPhotoLibrary.authorizationStatus() {
+        case .authorized: return .authorized
+        case .denied: return .denied
+        case .notDetermined: return .notDetermined
+        case .restricted: return .denied
+        case .limited: return .authorized
+        @unknown default: return .denied
+        }
     }
     
     func request(completion: @escaping ()->()?) {

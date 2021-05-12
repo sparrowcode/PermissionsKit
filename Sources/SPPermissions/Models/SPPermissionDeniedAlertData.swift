@@ -23,8 +23,8 @@ import UIKit
 
 public class SPPermissionDeniedAlertData: NSObject {
         
-    public var alertOpenSettingsDeniedPermissionTitle: String = "Permission denied"
-    public var alertOpenSettingsDeniedPermissionDescription: String = "Please, go to Settings and allow permission."
-    public var alertOpenSettingsDeniedPermissionButtonTitle: String = "Settings"
-    public var alertOpenSettingsDeniedPermissionCancelTitle: String = "Cancel"
+    public var titleText = "Permission denied"
+    public var descriptionText = "Please, go to Settings and allow permission."
+    public var buttonText = "Settings"
+    public var cancelText = "Cancel"
 }

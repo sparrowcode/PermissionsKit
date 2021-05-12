@@ -19,38 +19,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_TRACKING
+import UIKit
 
-import AppTrackingTransparency
-
-@available(iOS 14, *)
-class SPTrackingPermission: SPPermissionInterface {
+public enum SPPermissionState {
     
-    // MARK: Check State
+    case authorized
     
-    var notDetermined: Bool { status == .notDetermined }
-    var authorized: Bool { status == .authorized }
-    var denied: Bool { status == .denied }
+    case denied
     
-    // MARK: Logic
-
-    var status: SPPermissionState {
-        switch ATTrackingManager.trackingAuthorizationStatus {
-        case .authorized: return .authorized
-        case .denied: return .denied
-        case .notDetermined: return .notDetermined
-        case .restricted : return .denied
-        @unknown default: return .denied
-        }
-    }
-    
-    func request(completion: @escaping () -> Void?) {
-        ATTrackingManager.requestTrackingAuthorization { _ in
-            DispatchQueue.main.async {
-                completion()
-            }
-        }
-    }
+    case notDetermined
 }
-
-#endif

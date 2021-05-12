@@ -21,10 +21,15 @@
 
 import UIKit
 
-@objc public enum SPPermission: Int, CaseIterable {
+@objc public enum SPPermission: Int {
+    
+    // MARK: iOS Permissions
     
     #if os(iOS)
+    
+    @available(iOS 11.0, macCatalyst 14.0, *)
     case camera = 0
+    
     case photoLibrary = 1
     case microphone = 3
     case calendar = 4
@@ -35,9 +40,14 @@ import UIKit
     case motion = 11
     case mediaLibrary = 12
     case bluetooth = 13
+    
+    @available(iOS 14.5, *)
     case tracking = 14
+    
     #endif
+    
+    // MARK: Shared Permissions
+    
     case notification = 2
     case locationWhenInUse = 9
-    
 }

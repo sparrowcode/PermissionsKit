@@ -27,12 +27,22 @@ import AVFoundation
 @available(iOS 11.0, macCatalyst 14.0, *)
 class SPCameraPermission: SPPermissionInterface {
     
-    var isAuthorized: Bool {
-        return AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == AVAuthorizationStatus.authorized
-    }
+    // MARK: Check State
     
-    var isDenied: Bool {
-        return AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == AVAuthorizationStatus.denied
+    var notDetermined: Bool { status == .notDetermined }
+    var authorized: Bool { status == .authorized }
+    var denied: Bool { status == .denied }
+    
+    // MARK: Logic
+    
+    var status: SPPermissionState {
+        switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {
+        case .authorized: return .authorized
+        case .denied: return .denied
+        case .notDetermined: return .notDetermined
+        case .restricted: return .denied
+        @unknown default: return .denied
+        }
     }
     
     func request(completion: @escaping ()->()?) {

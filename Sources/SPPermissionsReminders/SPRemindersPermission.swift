@@ -25,12 +25,22 @@ import EventKit
 
 class SPRemindersPermission: SPPermissionInterface {
     
-    var isAuthorized: Bool {
-        return EKEventStore.authorizationStatus(for: EKEntityType.reminder) == .authorized
-    }
+    // MARK: Check State
     
-    var isDenied: Bool {
-        return EKEventStore.authorizationStatus(for: EKEntityType.reminder) == .denied
+    var notDetermined: Bool { status == .notDetermined }
+    var authorized: Bool { status == .authorized }
+    var denied: Bool { status == .denied }
+    
+    // MARK: Logic
+    
+    var status: SPPermissionState {
+        switch EKEventStore.authorizationStatus(for: EKEntityType.reminder) {
+        case .authorized: return .authorized
+        case .denied: return .denied
+        case .notDetermined: return .notDetermined
+        case .restricted: return .denied
+        @unknown default: return .denied
+        }
     }
     
     func request(completion: @escaping ()->()?) {
