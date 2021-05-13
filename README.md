@@ -7,6 +7,7 @@ New features
 - Added `.notDetermined` for all permissions
 - Support SPM
 - Localisations
+- RTL Support
 
 ## Other Projects
 
