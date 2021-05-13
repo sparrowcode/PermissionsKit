@@ -26,14 +26,6 @@ import EventKit
 
 class SPCalendarPermission: SPPermissionInterface {
     
-    // MARK: Check State
-    
-    var notDetermined: Bool { status == .notDetermined }
-    var authorized: Bool { status == .authorized }
-    var denied: Bool { status == .denied }
-    
-    // MARK: Logic
-    
     var status: SPPermissionState {
         switch EKEventStore.authorizationStatus(for: EKEntityType.event) {
         case .authorized: return .authorized
@@ -44,7 +36,7 @@ class SPCalendarPermission: SPPermissionInterface {
         }
     }
     
-    func request(completion: @escaping ()->()?) {
+    func request(completion: @escaping ()->Void) {
         let eventStore = EKEventStore()
         eventStore.requestAccess(to: EKEntityType.event, completion: {
             (accessGranted: Bool, error: Error?) in

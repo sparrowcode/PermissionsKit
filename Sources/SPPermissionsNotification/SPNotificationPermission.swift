@@ -26,14 +26,6 @@ import UserNotifications
 
 class SPNotificationPermission: SPPermissionInterface {
     
-    // MARK: Check State
-    
-    var notDetermined: Bool { status == .notDetermined }
-    var authorized: Bool { status == .authorized }
-    var denied: Bool { status == .denied }
-    
-    // MARK: Logic
-    
     var status: SPPermissionState {
         guard let authorizationStatus = fetchAuthorizationStatus() else { return .notDetermined }
         switch authorizationStatus {
@@ -59,7 +51,7 @@ class SPNotificationPermission: SPPermissionInterface {
         return notificationSettings?.authorizationStatus
     }
     
-    func request(completion: @escaping ()->()?) {
+    func request(completion: @escaping ()->Void) {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
             DispatchQueue.main.async {

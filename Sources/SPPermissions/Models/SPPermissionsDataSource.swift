@@ -26,6 +26,6 @@ import UIKit
     
     @objc optional func configure(_ cell: UITableViewCell, for permission: SPPermission) -> UITableViewCell
     
-    @objc optional func deniedData(for permission: SPPermission) -> SPPermissionDeniedAlertData?
+    @objc func deniedAlertTexts(for permission: SPPermission) -> SPPermissionDeniedAlertTexts?
 }
 #endif

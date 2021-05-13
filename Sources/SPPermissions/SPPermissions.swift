@@ -34,7 +34,7 @@ public enum SPPermissions {
     public static func list(_ permissions: [SPPermission]) -> UIViewController {
         fatalError()
     }
-
+    
     public static func dialog(_ permissions: [SPPermission]) -> UIViewController {
         fatalError()
     }
@@ -44,7 +44,7 @@ public enum SPPermissions {
     
     static func manager(for permission: SPPermission) -> SPPermissionInterface {
         switch permission {
-            #if os(iOS)
+        #if os(iOS)
         case .camera:
             #if SPPERMISSIONS_CAMERA
             if #available(iOS 11.0, macCatalyst 14.0, *) {
@@ -115,7 +115,7 @@ public enum SPPermissions {
             #else
             fatalError(error(permission))
             #endif
-            #endif
+        #endif
         case .notification:
             #if SPPERMISSIONS_NOTIFICATION
             return SPNotificationPermission()
@@ -150,7 +150,6 @@ public enum SPPermissions {
     }
     
     private static func error(_ permission: SPPermission) -> String {
-        #warning("todo")
-        return "SPPermissions - \(permission.rawValue) not import. Problem NOT with usage description key. I recomend to see installation guide: https://youtu.be/1kR5HGVhJfk. More details in Readme: https://github.com/ivanvorobei/SPPermissions"
+        return "SPPermissions: \(permission.name) not imported correct. It may happen with 2 ways, or code not correctly imported or macros ignoring. In any case please create new issue here https://github.com/ivanvorobei/SPPermissions and provide all details."
     }
 }

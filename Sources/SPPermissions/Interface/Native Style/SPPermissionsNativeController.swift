@@ -24,6 +24,7 @@ import UIKit
 public class SPPermissionsNativeController: NSObject, SPPermissionsControllerInterface {
     
     public weak var delegate: SPPermissionsDelegate?
+    public weak var dataSource: SPPermissionsDataSource?
     
     private var permissions: [SPPermission]
     
@@ -33,50 +34,35 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerInt
     }
     
     public func present(on controller: UIViewController) {
-        fatalError()
-        
         for permission in permissions {
             let manager = SPPermissions.manager(for: permission)
-            
-        }
-        /*let delegate = self.delegate
-        for permission in permissions {
-            permission.request {
-                if permission.isAuthorized {
-                    delegate?.didAllow?(permission: permission)
+            manager.request(completion: { [weak self] in
+                if manager.status == .authorized {
+                    self?.delegate?.didAllowPermission?(permission)
                 } else {
-                    delegate?.didDenied?(permission: permission)
+                    self?.delegate?.didDeniedPermission?(permission)
                     
-                    /**
-                     Show alert with propose go to settings and allow permission.
-                     For disable it implement protocol `SPPermissionsDelegate`.
+                    // Show alert with propose go to settings and allow permission.
+                    
+                    let data = self?.dataSource?.deniedAlertTexts(for: permission)
+                    
+                    /*
+                     Text is nil and data sources was set.
+                     So developer spcial return nil for alert texts.
+                     In this case developer don't want show alert.
                      */
-                    if permission.isDenied {
-                        var data = SPPermissionDeniedAlertData()
-                        if delegate != nil {
-                            guard let userData = delegate?.deniedData?(for: permission) else { return }
-                            data = userData
-                        }
-                        let alertController = UIAlertController.init(
-                            title: data.alertOpenSettingsDeniedPermissionTitle,
-                            message: data.alertOpenSettingsDeniedPermissionDescription,
-                            preferredStyle: .alert
-                        )
-                        alertController.addAction(UIAlertAction.init(
-                                                    title: data.alertOpenSettingsDeniedPermissionCancelTitle,
-                                                    style: UIAlertAction.Style.cancel,
-                                                    handler: nil)
-                        )
-                        alertController.addAction(UIAlertAction.init(
-                                                    title: data.alertOpenSettingsDeniedPermissionButtonTitle,
-                                                    style: UIAlertAction.Style.default,
-                                                    handler: { (action) in
-                                                        SPPermissionsOpener.openSettings()
-                                                    }))
-                        controller.present(alertController, animated: true, completion: nil)
-                    }
+                    if (data == nil) && (self?.dataSource != nil) { return }
+                    
+                    let texts = data ?? SPPermissionDeniedAlertTexts.default
+                    
+                    let alertController = UIAlertController(title: texts.titleText, message: texts.descriptionText, preferredStyle: .alert)
+                    alertController.addAction(.init(title: texts.cancelText, style: .cancel))
+                    alertController.addAction(.init(title: texts.buttonText, style: .default, handler: { _ in
+                        SPOpenService.openSettings()
+                    }))
+                    controller.present(alertController, animated: true, completion: nil)
                 }
-            }
-        }*/
+            })
+        }
     }
 }
