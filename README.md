@@ -36,7 +36,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 ## Develop V6
 
-I am in progress with develop new version of `SPPermissions` with support SPM and new stuff. You can propose any features via email `hello@ivanvorobei.by` or [by create issue](https://github.com/ivanvorobei/SPPermissions). Now I not recomended use it in production apps.
+I am in progress with develop new version of `SPPermissions` with support SPM and new stuff. You can propose any features via email `hello@ivanvorobei.by` or [by create issue](https://github.com/ivanvorobei/SPPermissions). Now I not recomended use it in production apps, but if you want, check branch `dev6`.
 
 ## Requirements
 
