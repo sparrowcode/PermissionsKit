@@ -50,4 +50,27 @@ import UIKit
     
     case notification = 2
     case locationWhenInUse = 9
+    
+    // MARK: - Status
+    
+    public var authorized: Bool {
+        let manager = SPPermissions.manager(for: self)
+        return manager.status == .authorized
+    }
+    
+    public var denied: Bool {
+        let manager = SPPermissions.manager(for: self)
+        return manager.status == .denied
+    }
+    
+    public var notDetermined: Bool {
+        let manager = SPPermissions.manager(for: self)
+        return manager.status == .notDetermined
+    }
+    
+    // MARK: - Texts
+    
+    public var name: String {
+        return SPTexts.permission_name(self)
+    }
 }

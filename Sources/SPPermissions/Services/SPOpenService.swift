@@ -19,29 +19,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_SPEECH
+import UIKit
 
-import Speech
-
-class SPSpeechPermission: SPPermissionInterface {
+enum SPOpenService {
     
-    var status: SPPermissionState {
-        switch SFSpeechRecognizer.authorizationStatus() {
-        case .authorized: return .authorized
-        case .denied: return .denied
-        case .notDetermined: return .notDetermined
-        case .restricted: return .denied
-        @unknown default: return .denied
-        }
-    }
-    
-    func request(completion: @escaping ()->Void) {
-        SFSpeechRecognizer.requestAuthorization { status in
-            DispatchQueue.main.async {
-                completion()
+    static func openSettings() {
+        
+        DispatchQueue.main.async {
+            
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+            
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: nil)
             }
         }
     }
 }
-
-#endif

@@ -25,14 +25,6 @@ import Photos
 
 class SPPhotoLibraryPermission: SPPermissionInterface {
     
-    // MARK: Check State
-    
-    var notDetermined: Bool { status == .notDetermined }
-    var authorized: Bool { status == .authorized }
-    var denied: Bool { status == .denied }
-    
-    // MARK: Logic
-    
     var status: SPPermissionState {
         switch PHPhotoLibrary.authorizationStatus() {
         case .authorized: return .authorized
@@ -44,7 +36,7 @@ class SPPhotoLibraryPermission: SPPermissionInterface {
         }
     }
     
-    func request(completion: @escaping ()->()?) {
+    func request(completion: @escaping ()->Void) {
         PHPhotoLibrary.requestAuthorization({
             finished in
             DispatchQueue.main.async {

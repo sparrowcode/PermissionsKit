@@ -25,14 +25,6 @@ import EventKit
 
 class SPRemindersPermission: SPPermissionInterface {
     
-    // MARK: Check State
-    
-    var notDetermined: Bool { status == .notDetermined }
-    var authorized: Bool { status == .authorized }
-    var denied: Bool { status == .denied }
-    
-    // MARK: Logic
-    
     var status: SPPermissionState {
         switch EKEventStore.authorizationStatus(for: EKEntityType.reminder) {
         case .authorized: return .authorized
@@ -43,7 +35,7 @@ class SPRemindersPermission: SPPermissionInterface {
         }
     }
     
-    func request(completion: @escaping ()->()?) {
+    func request(completion: @escaping ()->Void) {
         let eventStore = EKEventStore()
         eventStore.requestAccess(to: EKEntityType.reminder, completion: {
             (accessGranted: Bool, error: Error?) in

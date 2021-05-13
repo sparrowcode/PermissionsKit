@@ -26,14 +26,6 @@ import AVFoundation
 
 class SPMicrophonePermission: SPPermissionInterface {
     
-    // MARK: Check State
-    
-    var notDetermined: Bool { status == .notDetermined }
-    var authorized: Bool { status == .authorized }
-    var denied: Bool { status == .denied }
-    
-    // MARK: Logic
-    
     var status: SPPermissionState {
         switch  AVAudioSession.sharedInstance().recordPermission {
         case .granted: return .authorized
@@ -43,7 +35,7 @@ class SPMicrophonePermission: SPPermissionInterface {
         }
     }
     
-    func request(completion: @escaping ()->()?) {
+    func request(completion: @escaping ()->Void) {
         AVAudioSession.sharedInstance().requestRecordPermission {
             granted in
             DispatchQueue.main.async {

@@ -23,13 +23,7 @@ import UIKit
 
 protocol SPPermissionInterface: AnyObject {
     
-    var authorized: Bool { get }
-    
-    var denied: Bool { get }
-    
-    var notDetermined: Bool { get }
-    
     var status: SPPermissionState { get }
     
-    func request(completion: @escaping ()->()?)
+    func request(completion: @escaping ()->Void)
 }

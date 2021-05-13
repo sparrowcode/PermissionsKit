@@ -19,29 +19,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_SPEECH
+import UIKit
 
-import Speech
-
-class SPSpeechPermission: SPPermissionInterface {
+public class SPPermissionDeniedAlertTexts: NSObject {
+        
+    public var titleText = "Permission denied"
+    public var descriptionText = "Please, go to Settings and allow permission."
+    public var buttonText = "Settings"
+    public var cancelText = "Cancel"
     
-    var status: SPPermissionState {
-        switch SFSpeechRecognizer.authorizationStatus() {
-        case .authorized: return .authorized
-        case .denied: return .denied
-        case .notDetermined: return .notDetermined
-        case .restricted: return .denied
-        @unknown default: return .denied
-        }
+    public override init() {
+        super.init()
     }
     
-    func request(completion: @escaping ()->Void) {
-        SFSpeechRecognizer.requestAuthorization { status in
-            DispatchQueue.main.async {
-                completion()
-            }
-        }
+    public init(title: String, description: String, button: String, cancel: String) {
+        self.titleText = title
+        self.descriptionText = description
+        self.buttonText = button
+        self.cancelText = cancel
+        super.init()
+    }
+    
+    public static var `default`: SPPermissionDeniedAlertTexts {
+        return SPPermissionDeniedAlertTexts()
     }
 }
-
-#endif

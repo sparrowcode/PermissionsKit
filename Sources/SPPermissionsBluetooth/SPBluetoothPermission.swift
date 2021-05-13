@@ -29,19 +29,11 @@ import CoreBluetooth
 #warning("todo")
 class SPBluetoothPermission: SPPermissionInterface {
     
-    // MARK: Check State
-    
-    var notDetermined: Bool { status == .notDetermined }
-    var authorized: Bool { status == .authorized }
-    var denied: Bool { status == .denied }
-    
-    // MARK: Logic
-    
     var status: SPPermissionState {
         fatalError()
     }
     
-    func request(completion: @escaping ()->()?) {
+    func request(completion: @escaping ()->Void) {
         fatalError()
     }
 }

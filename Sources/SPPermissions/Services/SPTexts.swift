@@ -21,10 +21,40 @@
 
 import UIKit
 
-public class SPPermissionDeniedAlertData: NSObject {
-        
-    public var titleText = "Permission denied"
-    public var descriptionText = "Please, go to Settings and allow permission."
-    public var buttonText = "Settings"
-    public var cancelText = "Cancel"
+enum SPTexts {
+    
+    static func permission_name(_ permission: SPPermission) -> String {
+        switch permission {
+        #if os(iOS)
+        case .camera:
+            return "Camera"
+        case .photoLibrary:
+            return "Photo Library"
+        case .microphone:
+            return "Microphone"
+        case .calendar:
+            return "Calendar"
+        case .contacts:
+            return "Contacts"
+        case .reminders:
+            return "Reminders"
+        case .speech:
+            return "Speech"
+        case .locationAlwaysAndWhenInUse:
+            return "Location Always"
+        case .motion:
+            return "Motion"
+        case .mediaLibrary:
+            return "Media Library"
+        case .bluetooth:
+            return "Bluetooth"
+        #endif
+        case .notification:
+            return "Notification"
+        case .locationWhenInUse:
+            return "Location When Use"
+        case .tracking:
+            return "Tracking"
+        }
+    }
 }

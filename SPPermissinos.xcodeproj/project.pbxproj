@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4122F1E264D5AAC00EB6BCE /* SPOpenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4122F1D264D5AAC00EB6BCE /* SPOpenService.swift */; };
+		F4122F21264D5E5200EB6BCE /* SparrowKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4122F20264D5E5200EB6BCE /* SparrowKit */; };
+		F4122F23264D688200EB6BCE /* SPTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4122F22264D688200EB6BCE /* SPTexts.swift */; };
 		F471BDB7264A5993000693BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDB6264A5993000693BC /* AppDelegate.swift */; };
-		F471BDBB264A5993000693BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDBA264A5993000693BC /* ViewController.swift */; };
+		F471BDBB264A5993000693BC /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDBA264A5993000693BC /* RootController.swift */; };
 		F471BDC0264A5995000693BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F471BDBF264A5995000693BC /* Assets.xcassets */; };
 		F471BDC3264A5995000693BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F471BDC1264A5995000693BC /* LaunchScreen.storyboard */; };
 		F471BDE4264A5C00000693BC /* SPPermissions.h in Headers */ = {isa = PBXBuildFile; fileRef = F471BDE2264A5C00000693BC /* SPPermissions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,7 +23,7 @@
 		F471BDF4264A601F000693BC /* SPPermissionInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDF3264A601F000693BC /* SPPermissionInterface.swift */; };
 		F471BDF6264A6085000693BC /* SPPermissionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDF5264A6085000693BC /* SPPermissionsDataSource.swift */; };
 		F471BDF8264A60BF000693BC /* SPPermissionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDF7264A60BF000693BC /* SPPermissionsDelegate.swift */; };
-		F471BDFA264A6106000693BC /* SPPermissionDeniedAlertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDF9264A6106000693BC /* SPPermissionDeniedAlertData.swift */; };
+		F471BDFA264A6106000693BC /* SPPermissionDeniedAlertTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDF9264A6106000693BC /* SPPermissionDeniedAlertTexts.swift */; };
 		F4BA22B5264C228C0095BF28 /* SPBluetoothPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22B4264C228C0095BF28 /* SPBluetoothPermission.swift */; };
 		F4BA22B9264C239A0095BF28 /* SPCalendarPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22B8264C239A0095BF28 /* SPCalendarPermission.swift */; };
 		F4BA22BB264C23DB0095BF28 /* SPCameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22BA264C23DB0095BF28 /* SPCameraPermission.swift */; };
@@ -72,10 +75,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F4122F1D264D5AAC00EB6BCE /* SPOpenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPOpenService.swift; sourceTree = "<group>"; };
+		F4122F22264D688200EB6BCE /* SPTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTexts.swift; sourceTree = "<group>"; };
 		F471BDAE264A5915000693BC /* SPPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermission.swift; sourceTree = "<group>"; };
 		F471BDB3264A5993000693BC /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F471BDB6264A5993000693BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F471BDBA264A5993000693BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F471BDBA264A5993000693BC /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
 		F471BDBF264A5995000693BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F471BDC2264A5995000693BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F471BDC4264A5995000693BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,7 +90,7 @@
 		F471BDF3264A601F000693BC /* SPPermissionInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SPPermissionInterface.swift; path = Sources/SPPermissions/Models/SPPermissionInterface.swift; sourceTree = SOURCE_ROOT; };
 		F471BDF5264A6085000693BC /* SPPermissionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SPPermissionsDataSource.swift; path = Sources/SPPermissions/Models/SPPermissionsDataSource.swift; sourceTree = SOURCE_ROOT; };
 		F471BDF7264A60BF000693BC /* SPPermissionsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SPPermissionsDelegate.swift; path = Sources/SPPermissions/Models/SPPermissionsDelegate.swift; sourceTree = SOURCE_ROOT; };
-		F471BDF9264A6106000693BC /* SPPermissionDeniedAlertData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionDeniedAlertData.swift; sourceTree = "<group>"; };
+		F471BDF9264A6106000693BC /* SPPermissionDeniedAlertTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionDeniedAlertTexts.swift; sourceTree = "<group>"; };
 		F4B9AD232649226F001A0426 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F4B9AD272649226F001A0426 /* SPPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissions.swift; sourceTree = "<group>"; };
 		F4B9AD292649226F001A0426 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -121,6 +126,7 @@
 			files = (
 				F471BDE7264A5C00000693BC /* Sources.framework in Frameworks */,
 				F471BDEF264A5E78000693BC /* Sources.framework in Frameworks */,
+				F4122F21264D5E5200EB6BCE /* SparrowKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,12 +140,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4122F1C264D5AA100EB6BCE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F4122F22264D688200EB6BCE /* SPTexts.swift */,
+				F4122F1D264D5AAC00EB6BCE /* SPOpenService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F471BDAD264A5903000693BC /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				F471BDAE264A5915000693BC /* SPPermission.swift */,
 				F4BA22DA264C60500095BF28 /* SPPermissionStatus.swift */,
-				F471BDF9264A6106000693BC /* SPPermissionDeniedAlertData.swift */,
+				F471BDF9264A6106000693BC /* SPPermissionDeniedAlertTexts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -204,7 +219,7 @@
 		F471BDFB264A6291000693BC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F471BDBA264A5993000693BC /* ViewController.swift */,
+				F471BDBA264A5993000693BC /* RootController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -261,6 +276,7 @@
 		F4B9AD262649226F001A0426 /* SPPermissions */ = {
 			isa = PBXGroup;
 			children = (
+				F4122F1C264D5AA100EB6BCE /* Services */,
 				F4BA22D6264C5D340095BF28 /* Interface */,
 				F471BDF2264A6017000693BC /* Protocols */,
 				F471BDAD264A5903000693BC /* Models */,
@@ -434,6 +450,9 @@
 				F471BDF1264A5E78000693BC /* PBXTargetDependency */,
 			);
 			name = "iOS Example";
+			packageProductDependencies = (
+				F4122F20264D5E5200EB6BCE /* SparrowKit */,
+			);
 			productName = "iOS Example";
 			productReference = F471BDB3264A5993000693BC /* iOS Example.app */;
 			productType = "com.apple.product-type.application";
@@ -482,6 +501,9 @@
 				Base,
 			);
 			mainGroup = F4B9AD11264920FC001A0426;
+			packageReferences = (
+				F4122F1F264D5E5200EB6BCE /* XCRemoteSwiftPackageReference "SparrowKit" */,
+			);
 			productRefGroup = F471BDB4264A5993000693BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -517,7 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F471BDBB264A5993000693BC /* ViewController.swift in Sources */,
+				F471BDBB264A5993000693BC /* RootController.swift in Sources */,
 				F471BDB7264A5993000693BC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,10 +555,11 @@
 				F471BDEC264A5C9F000693BC /* SPPermission.swift in Sources */,
 				F4BA22CB264C32B50095BF28 /* SPPhotoLibraryPermission.swift in Sources */,
 				F4BA22CD264C32D20095BF28 /* SPRemindersPermission.swift in Sources */,
-				F471BDFA264A6106000693BC /* SPPermissionDeniedAlertData.swift in Sources */,
+				F471BDFA264A6106000693BC /* SPPermissionDeniedAlertTexts.swift in Sources */,
 				F4BA22C7264C32070095BF28 /* SPMotionPermission.swift in Sources */,
 				F471BDF8264A60BF000693BC /* SPPermissionsDelegate.swift in Sources */,
 				F471BDED264A5CA2000693BC /* SPPermissions.swift in Sources */,
+				F4122F23264D688200EB6BCE /* SPTexts.swift in Sources */,
 				F4BA22B5264C228C0095BF28 /* SPBluetoothPermission.swift in Sources */,
 				F4BA22BB264C23DB0095BF28 /* SPCameraPermission.swift in Sources */,
 				F471BDF6264A6085000693BC /* SPPermissionsDataSource.swift in Sources */,
@@ -546,6 +569,7 @@
 				F4BA22D9264C5D530095BF28 /* SPPermissionsNativeController.swift in Sources */,
 				F4BA22D1264C33080095BF28 /* SPTrackingPermission.swift in Sources */,
 				F471BDF4264A601F000693BC /* SPPermissionInterface.swift in Sources */,
+				F4122F1E264D5AAC00EB6BCE /* SPOpenService.swift in Sources */,
 				F4BA22C3264C31C30095BF28 /* SPMediaLibraryPermission.swift in Sources */,
 				F4BA22B9264C239A0095BF28 /* SPCalendarPermission.swift in Sources */,
 			);
@@ -636,7 +660,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "iOS Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -706,7 +730,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "iOS Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -930,6 +954,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F4122F1F264D5E5200EB6BCE /* XCRemoteSwiftPackageReference "SparrowKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SparrowKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4122F20264D5E5200EB6BCE /* SparrowKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4122F1F264D5E5200EB6BCE /* XCRemoteSwiftPackageReference "SparrowKit" */;
+			productName = SparrowKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F4B9AD12264920FC001A0426 /* Project object */;
 }

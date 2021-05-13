@@ -25,14 +25,6 @@ import AppTrackingTransparency
 
 @available(iOS 14, *)
 class SPTrackingPermission: SPPermissionInterface {
-    
-    // MARK: Check State
-    
-    var notDetermined: Bool { status == .notDetermined }
-    var authorized: Bool { status == .authorized }
-    var denied: Bool { status == .denied }
-    
-    // MARK: Logic
 
     var status: SPPermissionState {
         switch ATTrackingManager.trackingAuthorizationStatus {
@@ -44,7 +36,7 @@ class SPTrackingPermission: SPPermissionInterface {
         }
     }
     
-    func request(completion: @escaping () -> Void?) {
+    func request(completion: @escaping ()->Void) {
         ATTrackingManager.requestTrackingAuthorization { _ in
             DispatchQueue.main.async {
                 completion()
