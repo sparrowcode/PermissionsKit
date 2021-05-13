@@ -15,6 +15,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 ## Navigate
 
+- [Develop V6](#develop-v6)
 - [Requirements](#requirements)
 - [Installation](#installation)
     - [CocoaPods](#cocoapods)
@@ -32,6 +33,10 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
     - [Localization](#localization-keys)
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
+
+## Develop V6
+
+I am in rpogress with develop new version of `SPPermissions` with support SPM and new stuff. You can propose any features via email `hello@ivanvorobei.by` or [by create issue](https://github.com/ivanvorobei/SPPermissions). Now I not recomended use it in production apps.
 
 ## Requirements
 
