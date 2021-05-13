@@ -8,6 +8,7 @@ New features
 - Support SPM
 - Localisations
 - RTL Support
+- HealthKit (maybe)
 
 ## Other Projects
 
