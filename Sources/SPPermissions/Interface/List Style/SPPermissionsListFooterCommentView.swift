@@ -19,30 +19,30 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_TRACKING
+import UIKit
 
-import AppTrackingTransparency
-
-@available(iOS 14.5, *)
-class SPTrackingPermission: SPPermissionInterface {
-
-    var status: SPPermissionState {
-        switch ATTrackingManager.trackingAuthorizationStatus {
-        case .authorized: return .authorized
-        case .denied: return .denied
-        case .notDetermined: return .notDetermined
-        case .restricted : return .denied
-        @unknown default: return .denied
-        }
+#if os(iOS)
+class SPPermissionsListFooterCommentView: UITableViewHeaderFooterView {
+    
+    let titleLabel = UILabel()
+    
+    static var id = "SPPermissionsListFooterCommentView"
+    
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
+        titleLabel.numberOfLines = 0
+        titleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        titleLabel.textColor = UIColor.Compability.secondaryLabel
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(titleLabel)
+        titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: 3).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor).isActive = true
     }
     
-    func request(completion: @escaping ()->Void) {
-        ATTrackingManager.requestTrackingAuthorization { _ in
-            DispatchQueue.main.async {
-                completion()
-            }
-        }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
-
 #endif

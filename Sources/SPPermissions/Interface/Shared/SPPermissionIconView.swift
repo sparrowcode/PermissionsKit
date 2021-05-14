@@ -21,40 +21,24 @@
 
 import UIKit
 
-enum SPTexts {
+#if os(iOS)
+
+public class SPPermissionIconView: UIView {
     
-    static func permission_name(_ permission: SPPermission) -> String {
-        switch permission {
-        #if os(iOS)
-        case .camera:
-            return "Camera"
-        case .photoLibrary:
-            return "Photo Library"
-        case .microphone:
-            return "Microphone"
-        case .calendar:
-            return "Calendar"
-        case .contacts:
-            return "Contacts"
-        case .reminders:
-            return "Reminders"
-        case .speech:
-            return "Speech"
-        case .locationAlwaysAndWhenInUse:
-            return "Location Always"
-        case .motion:
-            return "Motion"
-        case .mediaLibrary:
-            return "Media Library"
-        case .bluetooth:
-            return "Bluetooth"
-        #endif
-        case .notification:
-            return "Notification"
-        case .locationWhenInUse:
-            return "Location When Use"
-        case .tracking:
-            return "Tracking"
-        }
+    var permission: SPPermission?
+    
+    init() {
+        super.init(frame: CGRect.zero)
+        commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func commonInit() {
+        self.backgroundColor = UIColor.clear
     }
 }
+
+#endif

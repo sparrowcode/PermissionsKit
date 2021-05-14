@@ -21,61 +21,10 @@
 
 import UIKit
 
-@objc public enum SPPermission: Int {
+enum Text {
     
-    // MARK: iOS Permissions
-    
-    #if os(iOS)
-    
-    @available(iOS 11.0, macCatalyst 14.0, *)
-    case camera = 0
-    
-    case photoLibrary = 1
-    case microphone = 3
-    case calendar = 4
-    case contacts = 5
-    case reminders = 6
-    case speech = 7
-    case locationAlwaysAndWhenInUse = 10
-    case motion = 11
-    case mediaLibrary = 12
-    case bluetooth = 13
-    
-    @available(iOS 14.5, *)
-    case tracking = 14
-    
-    #endif
-    
-    // MARK: Shared Permissions
-    
-    case notification = 2
-    case locationWhenInUse = 9
-    
-    // MARK: - Status
-    
-    public var authorized: Bool {
-        let manager = SPPermissions.manager(for: self)
-        return manager.status == .authorized
-    }
-    
-    public var denied: Bool {
-        let manager = SPPermissions.manager(for: self)
-        return manager.status == .denied
-    }
-    
-    public var notDetermined: Bool {
-        let manager = SPPermissions.manager(for: self)
-        return manager.status == .notDetermined
-    }
-    
-    // MARK: - Texts
-    
-    var debugDescription: String {
-        return ""
-    }
-    
-    public var name: String {
-        switch self {
+    static func permission_name(_ permission: SPPermission) -> String {
+        switch permission {
         #if os(iOS)
         case .camera:
             return "Camera"
@@ -108,4 +57,49 @@ import UIKit
             return "Tracking"
         }
     }
+    
+    static func permission_description(_ permission: SPPermission) -> String {
+        switch permission {
+        #if os(iOS)
+        case .camera:
+            return "Allow app for use camera"
+        case .calendar:
+            return "Application can add events to calendar"
+        case .contacts:
+            return "Access for your contacts and phones"
+        case .microphone:
+            return "Allow record voice from app"
+        case .photoLibrary:
+            return "Access for save photos in your gallery"
+        case .reminders:
+            return "Application can create new task"
+        case .speech:
+            return "Allow to check your voice"
+        case .locationAlwaysAndWhenInUse:
+            return "Allow to access your location"
+        case .motion:
+            return "Allow to report motion and environment-related data"
+        case .mediaLibrary:
+            return "Allow to check your media"
+        case .bluetooth:
+            return "Allow access to bluetooth"
+        #endif
+        case .notification:
+            return "Get important information without opening app."
+        case .locationWhenInUse:
+            return "Allow to access your location"
+        case .tracking:
+            return "Allow to access app-related data"
+        }
+    }
+    
+    // MARK: - Action Button
+    
+    static var allow_permission_action: String { return "Allow" }
+    static var allowed_permission_action: String { return "Allowed" }
+    
+    static var header: String = "Need Permissions"
+    static var sub_header: String = "Permissions request"
+    static var description: String = "These are the permissions the app requires to work properly. Please see description for each permission."
+    static var comment: String = "Permissions are necessary for the application to work and perform correctly. Push are not required permissions."
 }
