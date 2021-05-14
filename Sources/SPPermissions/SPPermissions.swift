@@ -31,8 +31,9 @@ public enum SPPermissions {
     }
     
     #if os(iOS)
-    public static func list(_ permissions: [SPPermission]) -> UIViewController {
-        fatalError()
+    public static func list(_ permissions: [SPPermission]) -> SPPermissionsListController {
+        let controller = SPPermissionsListController(removeDuplicates(permissions))
+        return controller
     }
     
     public static func dialog(_ permissions: [SPPermission]) -> UIViewController {

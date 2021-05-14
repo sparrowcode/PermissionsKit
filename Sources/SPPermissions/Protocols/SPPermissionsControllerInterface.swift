@@ -23,6 +23,8 @@ import UIKit
 
 protocol SPPermissionsControllerInterface {
     
+    var dataSource: SPPermissionsDataSource? { get set }
+    
     var delegate: SPPermissionsDelegate? { get set }
     
     func present(on controller: UIViewController)

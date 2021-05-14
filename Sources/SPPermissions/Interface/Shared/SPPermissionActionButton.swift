@@ -19,29 +19,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_TRACKING
+import UIKit
 
-import AppTrackingTransparency
+#if os(iOS)
 
-@available(iOS 14.5, *)
-class SPTrackingPermission: SPPermissionInterface {
-
-    var status: SPPermissionState {
-        switch ATTrackingManager.trackingAuthorizationStatus {
-        case .authorized: return .authorized
-        case .denied: return .denied
-        case .notDetermined: return .notDetermined
-        case .restricted : return .denied
-        @unknown default: return .denied
-        }
+public class SPPermissionActionButton: UIButton {
+    
+    public var allowTitle: String = Text.allow_permission_action { didSet { updateInterface(animated: false) } }
+    public var allowedTitle: String = Text.allowed_permission_action { didSet { updateInterface(animated: false) } }
+    public var allowTitleColor: UIColor = UIColor.tint { didSet { updateInterface(animated: false) } }
+    public var allowBackgroundColor: UIColor = UIColor.buttonArea { didSet { updateInterface(animated: false) } }
+    public var allowedTitleColor: UIColor = UIColor.white { didSet { updateInterface(animated: false) } }
+    public var allowedBackgroundColor: UIColor = UIColor.tint { didSet { updateInterface(animated: false) } }
+    
+    var permission: SPPermission = .notification
+    
+    // MARK: - Helpers
+    
+    func updateInterface(animated: Bool) {
+        let _: AuthorizedStyle = permission.authorized ? .allowed : .default
     }
     
-    func request(completion: @escaping ()->Void) {
-        ATTrackingManager.requestTrackingAuthorization { _ in
-            DispatchQueue.main.async {
-                completion()
-            }
-        }
+    enum AuthorizedStyle {
+        
+        case `default`
+        case allowed
     }
 }
 

@@ -26,12 +26,14 @@ class RootController: UIViewController, SPPermissionsDataSource, SPPermissionsDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .red
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let controller = SPPermissions.native([.notification])
+        let controller = SPPermissions.list([.notification, .calendar, .mediaLibrary])
         controller.dataSource = self
         controller.delegate = self
         controller.present(on: self)
