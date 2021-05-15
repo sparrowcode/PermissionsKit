@@ -23,7 +23,7 @@ import UIKit
 
 #if os(iOS)
 
-public class SPPermissionActionButton: UIButton {
+public class SPPermissionsActionButton: UIButton {
     
     var permission: SPPermission?
     

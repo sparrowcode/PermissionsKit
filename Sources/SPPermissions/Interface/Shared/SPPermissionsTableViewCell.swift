@@ -23,12 +23,12 @@ import UIKit
 
 #if os(iOS)
 
-public class SPPermissionTableViewCell: UITableViewCell {
+public class SPPermissionsTableViewCell: UITableViewCell {
     
     public let permissionTitleLabel = UILabel()
     public let permissionDescriptionLabel = UILabel()
-    public let permissionButton = SPPermissionActionButton()
-    public let permissionDrawIconView = SPPermissionDrawIconView()
+    public let permissionButton = SPPermissionsActionButton()
+    public let permissionDrawIconView = SPPermissionsDrawIconView()
     
     public let permissionIconImageView = UIImageView()
     private let permissionIconContainerView = UIView()
