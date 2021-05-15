@@ -23,7 +23,7 @@
 
 import Speech
 
-class SPSpeechPermission: SPPermissionInterface {
+class SPSpeechPermission: SPPermissionsPermissionInterface {
     
     var status: SPPermissions.Permission.State {
         switch SFSpeechRecognizer.authorizationStatus() {

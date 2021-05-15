@@ -24,8 +24,12 @@
 import UIKit
 import AVFoundation
 
+#if canImport(SPPermissions)
+import SPPermissions
+#endif
+
 @available(iOS 11.0, macCatalyst 14.0, *)
-class SPCameraPermission: SPPermissionInterface {
+class SPCameraPermission: SPPermissionsPermissionInterface {
     
     var status: SPPermissions.Permission.State {
         switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {

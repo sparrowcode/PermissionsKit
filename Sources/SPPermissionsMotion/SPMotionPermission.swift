@@ -24,7 +24,11 @@
 import UIKit
 import CoreMotion
 
-class SPMotionPermission: SPPermissionInterface {
+#if canImport(SPPermissions)
+import SPPermissions
+#endif
+
+class SPMotionPermission: SPPermissionsPermissionInterface {
     
     var status: SPPermissions.Permission.State {
         switch CMMotionActivityManager.authorizationStatus() {

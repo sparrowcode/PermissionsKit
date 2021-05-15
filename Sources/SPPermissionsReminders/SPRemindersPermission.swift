@@ -23,7 +23,11 @@
 
 import EventKit
 
-class SPRemindersPermission: SPPermissionInterface {
+#if canImport(SPPermissions)
+import SPPermissions
+#endif
+
+class SPRemindersPermission: SPPermissionsPermissionInterface {
     
     var status: SPPermissions.Permission.State {
         switch EKEventStore.authorizationStatus(for: EKEntityType.reminder) {

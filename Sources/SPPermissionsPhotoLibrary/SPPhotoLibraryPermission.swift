@@ -23,7 +23,11 @@
 
 import Photos
 
-class SPPhotoLibraryPermission: SPPermissionInterface {
+#if canImport(SPPermissions)
+import SPPermissions
+#endif
+
+class SPPhotoLibraryPermission: SPPermissionsPermissionInterface {
     
     var status: SPPermissions.Permission.State {
         switch PHPhotoLibrary.authorizationStatus() {

@@ -4,6 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "SPPermissions",
+    defaultLocalization: "en",
     platforms: [
         .iOS(.v11),
         .tvOS(.v11),

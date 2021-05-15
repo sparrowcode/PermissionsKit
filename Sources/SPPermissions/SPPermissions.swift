@@ -173,7 +173,7 @@ extension SPPermissions.Permission {
     
     // MARK: - Internal
     
-    internal static func manager(for permission: SPPermissions.Permission) -> SPPermissionInterface {
+    internal static func manager(for permission: SPPermissions.Permission) -> SPPermissionsPermissionInterface {
         switch permission {
         #if os(iOS)
         case .camera:

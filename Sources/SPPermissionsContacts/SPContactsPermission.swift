@@ -24,7 +24,11 @@
 import UIKit
 import Contacts
 
-class SPContactsPermission: SPPermissionInterface {
+#if canImport(SPPermissions)
+import SPPermissions
+#endif
+
+class SPContactsPermission: SPPermissionsPermissionInterface {
     
     var status: SPPermissions.Permission.State {
         switch CNContactStore.authorizationStatus(for: .contacts) {

@@ -27,7 +27,8 @@ enum Text {
         switch permission {
         #if os(iOS)
         case .camera:
-            return "Camera"
+            return NSLocalizedString("permission camera name", bundle: .main, comment: "")
+            //return "Camera"
         case .photoLibrary:
             return "Photo Library"
         case .microphone:

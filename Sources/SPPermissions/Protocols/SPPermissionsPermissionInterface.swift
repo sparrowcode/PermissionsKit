@@ -21,7 +21,7 @@
 
 import UIKit
 
-protocol SPPermissionInterface: AnyObject {
+public protocol SPPermissionsPermissionInterface: AnyObject {
     
     var status: SPPermissions.Permission.State { get }
     
