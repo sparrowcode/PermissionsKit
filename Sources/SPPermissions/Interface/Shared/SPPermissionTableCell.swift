@@ -23,12 +23,12 @@ import UIKit
 
 #if os(iOS)
 
-public class SPPermissionTableViewCell: UITableViewCell {
+public class SPPermissionTableCell: UITableViewCell {
     
     public let permissionTitleLabel = UILabel()
     public let permissionDescriptionLabel = UILabel()
     public let permissionButton = SPPermissionActionButton()
-    public let permissionIconView = SPPermissionIconView()
+    public let permissionDrawIconView = SPPermissionDrawIconView()
     
     public let permissionIconImageView = UIImageView()
     private let permissionIconContainerView = UIView()
@@ -39,10 +39,32 @@ public class SPPermissionTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        commonInit()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func commonInit() {
+        let verticalSpace: CGFloat = 16
+        contentView.layoutMargins = .init(top: verticalSpace, left: 0, bottom: verticalSpace, right: 0)
+        
+        permissionTitleLabel.numberOfLines = 0
+        permissionTitleLabel.textColor = UIColor.Compability.label
+        permissionTitleLabel.font = UIFont.preferredFont(forTextStyle: .title2, weight: .semibold)
+        addSubview(permissionTitleLabel)
+        
+        permissionDescriptionLabel.numberOfLines = 0
+        permissionDescriptionLabel.textColor = UIColor.Compability.secondaryLabel
+        permissionDescriptionLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        addSubview(permissionDescriptionLabel)
+        
+        addSubview(permissionButton)
+        
+        permissionIconContainerView.addSubview(permissionDrawIconView)
+        permissionIconContainerView.addSubview(permissionIconImageView)
+        addSubview(permissionIconContainerView)
     }
     
     // MARK: - Lifecycle
@@ -54,18 +76,36 @@ public class SPPermissionTableViewCell: UITableViewCell {
         permissionButton.removeTarget(nil, action: nil, for: .allEvents)
         permissionIconImageView.image = nil
         permissionIconImageView.isHidden = true
-        permissionIconView.isHidden = false
+        permissionDrawIconView.isHidden = false
     }
     
     // MARK: - Layout
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        permissionIconContainerView.frame = .init(x: contentView.layoutMargins.left - 2, y: contentView.layoutMargins.top, width: 45, height: 45)
+        permissionButton.sizeToFit()
+        permissionButton.frame.origin.y = contentView.frame.width - contentView.layoutMargins.right - permissionButton.frame.width
+        
+        let leftContentLeadingSpace: CGFloat = 10
+        let leftContentTrailingSpace: CGFloat = 15
+        let leftContentXPosition = contentView.layoutMargins.left + permissionIconContainerView.frame.width + leftContentLeadingSpace
+        let leftContentWidth = contentView.frame.width - leftContentXPosition - permissionButton.frame.width - leftContentTrailingSpace
+        
+        permissionTitleLabel.frame = .init(x: leftContentXPosition, y: contentView.layoutMargins.top, width: leftContentWidth, height: permissionTitleLabel.frame.height)
+        permissionTitleLabel.sizeToFit()
+        
+        permissionDescriptionLabel.frame = .init(x: leftContentXPosition, y: permissionTitleLabel.frame.origin.y + permissionTitleLabel.frame.height + 3, width: leftContentWidth, height: permissionDescriptionLabel.frame.height)
+        permissionDescriptionLabel.sizeToFit()
+        
+        permissionDrawIconView.frame = permissionIconContainerView.bounds
+        permissionIconImageView.frame = permissionIconContainerView.bounds
     }
     
     public override func sizeThatFits(_ size: CGSize) -> CGSize {
         let superSize = super.sizeThatFits(size)
-        return CGSize.init(width: superSize.width, height: 100)
+        layoutSubviews()
+        return CGSize.init(width: superSize.width, height: permissionDescriptionLabel.frame.origin.y + permissionDescriptionLabel.frame.height + contentView.layoutMargins.bottom)
     }
     
     // MARK: - Helpers
@@ -82,8 +122,8 @@ public class SPPermissionTableViewCell: UITableViewCell {
         permissionButton.allowedTitleColor = UIColor.white
         permissionButton.allowedBackgroundColor = UIColor.tint
         
-        permissionIconView.permission = permission
-        permissionIconView.tintColor = permissionButton.allowedBackgroundColor
+        permissionDrawIconView.permission = permission
+        permissionDrawIconView.tintColor = permissionButton.allowedBackgroundColor
         
         permissionIconImageView.image = nil
         permissionIconImageView.contentMode = .scaleAspectFit
