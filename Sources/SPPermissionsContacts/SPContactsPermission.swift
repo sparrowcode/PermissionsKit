@@ -26,7 +26,7 @@ import Contacts
 
 class SPContactsPermission: SPPermissionInterface {
     
-    var status: SPPermissionState {
+    var status: SPPermissions.Permission.State {
         switch CNContactStore.authorizationStatus(for: .contacts) {
         case .authorized: return .authorized
         case .denied: return .denied

@@ -29,7 +29,7 @@ import CoreBluetooth
 #warning("todo")
 class SPBluetoothPermission: SPPermissionInterface {
     
-    var status: SPPermissionState {
+    var status: SPPermissions.Permission.State {
         fatalError()
     }
     

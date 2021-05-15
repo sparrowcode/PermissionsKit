@@ -25,7 +25,7 @@ import EventKit
 
 class SPRemindersPermission: SPPermissionInterface {
     
-    var status: SPPermissionState {
+    var status: SPPermissions.Permission.State {
         switch EKEventStore.authorizationStatus(for: EKEntityType.reminder) {
         case .authorized: return .authorized
         case .denied: return .denied

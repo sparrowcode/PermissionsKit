@@ -27,7 +27,7 @@ import AVFoundation
 @available(iOS 11.0, macCatalyst 14.0, *)
 class SPCameraPermission: SPPermissionInterface {
     
-    var status: SPPermissionState {
+    var status: SPPermissions.Permission.State {
         switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {
         case .authorized: return .authorized
         case .denied: return .denied

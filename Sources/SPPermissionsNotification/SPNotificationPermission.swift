@@ -26,7 +26,7 @@ import UserNotifications
 
 class SPNotificationPermission: SPPermissionInterface {
     
-    var status: SPPermissionState {
+    var status: SPPermissions.Permission.State {
         guard let authorizationStatus = fetchAuthorizationStatus() else { return .notDetermined }
         switch authorizationStatus {
         case .authorized: return .authorized

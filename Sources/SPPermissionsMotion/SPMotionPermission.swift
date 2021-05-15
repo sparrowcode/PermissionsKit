@@ -26,7 +26,7 @@ import CoreMotion
 
 class SPMotionPermission: SPPermissionInterface {
     
-    var status: SPPermissionState {
+    var status: SPPermissions.Permission.State {
         switch CMMotionActivityManager.authorizationStatus() {
         case .authorized: return .authorized
         case .denied: return .denied

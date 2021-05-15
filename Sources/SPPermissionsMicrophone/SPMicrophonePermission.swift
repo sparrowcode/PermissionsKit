@@ -26,7 +26,7 @@ import AVFoundation
 
 class SPMicrophonePermission: SPPermissionInterface {
     
-    var status: SPPermissionState {
+    var status: SPPermissions.Permission.State {
         switch  AVAudioSession.sharedInstance().recordPermission {
         case .granted: return .authorized
         case .denied: return .denied

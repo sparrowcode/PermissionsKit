@@ -25,7 +25,7 @@ import Speech
 
 class SPSpeechPermission: SPPermissionInterface {
     
-    var status: SPPermissionState {
+    var status: SPPermissions.Permission.State {
         switch SFSpeechRecognizer.authorizationStatus() {
         case .authorized: return .authorized
         case .denied: return .denied

@@ -26,7 +26,7 @@ import MapKit
 
 class SPLocationPermission: SPPermissionInterface {
     
-    var status: SPPermissionState {
+    var status: SPPermissions.Permission.State {
         
         let authorizationStatus: CLAuthorizationStatus = {
             let locationManager = CLLocationManager()

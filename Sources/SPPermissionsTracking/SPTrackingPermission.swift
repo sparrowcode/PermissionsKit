@@ -26,7 +26,7 @@ import AppTrackingTransparency
 @available(iOS 14.5, *)
 class SPTrackingPermission: SPPermissionInterface {
 
-    var status: SPPermissionState {
+    var status: SPPermissions.Permission.State {
         switch ATTrackingManager.trackingAuthorizationStatus {
         case .authorized: return .authorized
         case .denied: return .denied

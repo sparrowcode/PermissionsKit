@@ -21,11 +21,34 @@
 
 import UIKit
 
-public enum SPPermissionState {
+public extension SPPermissions {
     
-    case authorized
+    // MARK: - Present Styles
     
-    case denied
+    static func native(_ permissions: [SPPermissions.Permission]) -> SPPermissionsNativeController {
+        let controller = SPPermissionsNativeController(removeDuplicates(permissions))
+        return controller
+    }
     
-    case notDetermined
+    #if os(iOS)
+    static func list(_ permissions: [SPPermissions.Permission]) -> SPPermissionsListController {
+        let controller = SPPermissionsListController(removeDuplicates(permissions))
+        return controller
+    }
+    
+    static func dialog(_ permissions: [SPPermissions.Permission]) -> SPPermissionsDialogController {
+        let controller = SPPermissionsDialogController(removeDuplicates(permissions))
+        return controller
+    }
+    #endif
+    
+    // MARK: - Internal
+    
+    private static func removeDuplicates(_ permissions: [SPPermissions.Permission]) -> [SPPermissions.Permission] {
+        var result = [SPPermissions.Permission]()
+        for permission in permissions {
+            if !result.contains(permission) { result.append(permission) }
+        }
+        return result
+    }
 }

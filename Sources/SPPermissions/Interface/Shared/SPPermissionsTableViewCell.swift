@@ -123,7 +123,7 @@ public class SPPermissionsTableViewCell: UITableViewCell {
     
     // MARK: - Helpers
     
-    func defaultConfigure(for permission: SPPermission) {
+    func defaultConfigure(for permission: SPPermissions.Permission) {
         
         permissionTitleLabel.text = Text.permission_name(permission)
         permissionDescriptionLabel.text = Text.permission_description(permission)

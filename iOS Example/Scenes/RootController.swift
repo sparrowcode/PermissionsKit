@@ -24,9 +24,9 @@ import Sources
 
 class RootController: UITableViewController {
     
-    var availablePermissions: [SPPermission] = [.camera, .microphone, .calendar, .contacts, .reminders, .speech, .locationAlwaysAndWhenInUse, .motion, .mediaLibrary, .bluetooth]
+    var availablePermissions: [SPPermissions.Permission] = [.camera, .microphone, .calendar, .contacts, .reminders, .speech, .locationAlways, .motion, .mediaLibrary, .bluetooth]
     
-    var selectedPermissions: [SPPermission] = []
+    var selectedPermissions: [SPPermissions.Permission] = []
     
     // MARK: Init
     
@@ -88,11 +88,11 @@ class RootController: UITableViewController {
 
 extension RootController: SPPermissionsDataSource {
     
-    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermission) -> SPPermissionsTableViewCell {
+    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) -> SPPermissionsTableViewCell {
         return cell
     }
     
-    func deniedAlertTexts(for permission: SPPermission) -> SPPermissionDeniedAlertTexts? {
+    func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts? {
         if permission == .notification {
             
             // If returned nil, alert will not show.
@@ -125,15 +125,15 @@ extension RootController: SPPermissionsDataSource {
 extension RootController: SPPermissionsDelegate {
     
     func didHidePermissions(_ ids: [Int]) {
-        let permissions = ids.map { SPPermission(rawValue: $0)! }
+        let permissions = ids.map { SPPermissions.Permission(rawValue: $0)! }
         print("Example App: did hide with permissions: ", permissions.map { $0.name })
     }
     
-    func didAllowPermission(_ permission: SPPermission) {
+    func didAllowPermission(_ permission: SPPermissions.Permission) {
         print("Example App: did allow: ", permission.name)
     }
     
-    func didDenied(permission: SPPermission) {
+    func didDenied(permission: SPPermissions.Permission) {
         print("Example App: did denied: ", permission.name)
     }
 }
