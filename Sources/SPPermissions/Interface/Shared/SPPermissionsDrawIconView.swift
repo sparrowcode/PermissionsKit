@@ -23,7 +23,7 @@ import UIKit
 
 #if os(iOS)
 
-public class SPPermissionDrawIconView: UIView {
+public class SPPermissionsDrawIconView: UIView {
     
     var permission: SPPermission? {
         didSet {
@@ -36,7 +36,6 @@ public class SPPermissionDrawIconView: UIView {
     init() {
         super.init(frame: CGRect.zero)
         commonInit()
-        backgroundColor = UIColor.clear
     }
     
     required init?(coder: NSCoder) {

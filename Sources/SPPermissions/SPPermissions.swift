@@ -21,9 +21,139 @@
 
 import UIKit
 
-public enum SPPermissions {
+public enum SPPermissions: Int {
     
-    // MARK: - Styles
+    // MARK: iOS Permissions
+    
+    #if os(iOS)
+    
+    @available(iOS 11.0, macCatalyst 14.0, *)
+    case camera = 0
+    
+    case photoLibrary = 1
+    case microphone = 3
+    case calendar = 4
+    case contacts = 5
+    case reminders = 6
+    case speech = 7
+    case locationAlwaysAndWhenInUse = 10
+    case motion = 11
+    case mediaLibrary = 12
+    case bluetooth = 13
+    
+    @available(iOS 14.5, *)
+    case tracking = 14
+    
+    #endif
+    
+    // MARK: Shared Permissions
+    
+    case notification = 2
+    case locationWhenInUse = 9
+    
+    // MARK: - Status
+    
+    public var authorized: Bool {
+        let manager = manager(for: self)
+        return manager.status == .authorized
+    }
+    
+    public var denied: Bool {
+        let manager = manager(for: self)
+        return manager.status == .denied
+    }
+    
+    public var notDetermined: Bool {
+        let manager = manager(for: self)
+        return manager.status == .notDetermined
+    }
+    
+    // MARK: - Request
+    
+    public func request(completion: @escaping ()->()) {
+        let manager = SPPermissions.manager(for: self)
+        if let usageDescriptionKey = self.usageDescriptionKey {
+            guard let _ = Bundle.main.object(forInfoDictionaryKey: usageDescriptionKey) else {
+                print("SPPermissions Warning: \(usageDescriptionKey) for \(name) not found in Info.plist.")
+                return
+            }
+        }
+        manager.request(completion: completion)
+    }
+    
+    public var usageDescriptionKey: String? {
+        switch self {
+            #if os(iOS)
+        case .camera:
+            return "NSCameraUsageDescription"
+        case .photoLibrary:
+            return "NSPhotoLibraryUsageDescription"
+        case .microphone:
+            return "NSMicrophoneUsageDescription"
+        case .calendar:
+            return "NSCalendarsUsageDescription"
+        case .contacts:
+            return "NSContactsUsageDescription"
+        case .reminders:
+            return "NSRemindersUsageDescription"
+        case .speech:
+            return "NSSpeechRecognitionUsageDescription"
+        case .locationAlwaysAndWhenInUse:
+            return "NSLocationAlwaysAndWhenInUseUsageDescription"
+        case .motion:
+            return "NSMotionUsageDescription"
+        case .mediaLibrary:
+            return "NSAppleMusicUsageDescription"
+        case .bluetooth:
+            return "NSBluetoothAlwaysUsageDescription"
+            #endif
+        case .notification:
+            return nil
+        case .locationWhenInUse:
+            return "NSLocationWhenInUseUsageDescription"
+        case .tracking:
+            return "NSUserTrackingUsageDescription"
+        }
+    }
+    
+    // MARK: - Texts
+    
+    public var name: String {
+        switch self {
+        #if os(iOS)
+        case .camera:
+            return "Camera"
+        case .photoLibrary:
+            return "Photo Library"
+        case .microphone:
+            return "Microphone"
+        case .calendar:
+            return "Calendar"
+        case .contacts:
+            return "Contacts"
+        case .reminders:
+            return "Reminders"
+        case .speech:
+            return "Speech"
+        case .locationAlwaysAndWhenInUse:
+            return "Location Always"
+        case .motion:
+            return "Motion"
+        case .mediaLibrary:
+            return "Media Library"
+        case .bluetooth:
+            return "Bluetooth"
+        #endif
+        case .notification:
+            return "Notification"
+        case .locationWhenInUse:
+            return "Location When Use"
+        case .tracking:
+            return "Tracking"
+        }
+    }
+    
+    // MARK: - Present Styles
     
     public static func native(_ permissions: [SPPermission]) -> SPPermissionsNativeController {
         let controller = SPPermissionsNativeController(removeDuplicates(permissions))
@@ -36,8 +166,9 @@ public enum SPPermissions {
         return controller
     }
     
-    public static func dialog(_ permissions: [SPPermission]) -> UIViewController {
-        fatalError()
+    public static func dialog(_ permissions: [SPPermission]) -> SPPermissionsDialogController {
+        let controller = SPPermissionsDialogController(removeDuplicates(permissions))
+        return controller
     }
     #endif
     

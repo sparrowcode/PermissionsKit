@@ -24,7 +24,7 @@ import UIKit
 #if os(iOS)
 @objc public protocol SPPermissionsDataSource: AnyObject {
     
-    @objc optional func configure(_ cell: SPPermissionTableViewCell, for permission: SPPermission) -> SPPermissionTableViewCell
+    @objc optional func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermission) -> SPPermissionsTableViewCell
     
     @objc func deniedAlertTexts(for permission: SPPermission) -> SPPermissionDeniedAlertTexts?
 }

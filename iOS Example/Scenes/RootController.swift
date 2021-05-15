@@ -69,7 +69,11 @@ class RootController: UITableViewController {
             controller.delegate = self
             controller.present(on: self)
         case 1:
-            fatalError()
+            let controller = SPPermissions.dialog(selectedPermissions)
+            controller.dataSource = self
+            controller.delegate = self
+            // controller.bounceAnimationEnabled = false
+            controller.present(on: self)
         case 2:
             let controller = SPPermissions.native(selectedPermissions)
             controller.delegate = self
@@ -84,7 +88,7 @@ class RootController: UITableViewController {
 
 extension RootController: SPPermissionsDataSource {
     
-    func configure(_ cell: SPPermissionTableViewCell, for permission: SPPermission) -> SPPermissionTableViewCell {
+    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermission) -> SPPermissionsTableViewCell {
         return cell
     }
     
