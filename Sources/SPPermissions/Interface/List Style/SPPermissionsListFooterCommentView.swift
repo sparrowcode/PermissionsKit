@@ -35,10 +35,22 @@ class SPPermissionsListFooterCommentView: UITableViewHeaderFooterView {
         titleLabel.textColor = UIColor.Compability.secondaryLabel
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
-        titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: 3).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor).isActive = true
+
+        let leadingAnchor = titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor)
+        leadingAnchor.priority = .init(900)
+        leadingAnchor.isActive = true
+        
+        let trailingAnchor = titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
+        trailingAnchor.priority = .init(900)
+        trailingAnchor.isActive = true
+        
+        let topAnchor = titleLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: 3)
+        topAnchor.priority = .init(900)
+        topAnchor.isActive = true
+        
+        let bottomAnchor = titleLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
+        bottomAnchor.priority = .init(900)
+        bottomAnchor.isActive = true
     }
     
     required init?(coder: NSCoder) {

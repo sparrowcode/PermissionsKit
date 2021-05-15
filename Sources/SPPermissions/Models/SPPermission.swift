@@ -68,11 +68,55 @@ import UIKit
         return manager.status == .notDetermined
     }
     
-    // MARK: - Texts
+    // MARK: - Request
     
-    var debugDescription: String {
-        return ""
+    public func request(completion: @escaping ()->()) {
+        let manager = SPPermissions.manager(for: self)
+        if let usageDescriptionKey = self.usageDescriptionKey {
+            guard let _ = Bundle.main.object(forInfoDictionaryKey: usageDescriptionKey) else {
+                print("SPPermissions Warning: \(usageDescriptionKey) for \(name) not found in Info.plist.")
+                return
+            }
+        }
+        manager.request(completion: completion)
     }
+    
+    public var usageDescriptionKey: String? {
+        switch self {
+            #if os(iOS)
+        case .camera:
+            return "NSCameraUsageDescription"
+        case .photoLibrary:
+            return "NSPhotoLibraryUsageDescription"
+        case .microphone:
+            return "NSMicrophoneUsageDescription"
+        case .calendar:
+            return "NSCalendarsUsageDescription"
+        case .contacts:
+            return "NSContactsUsageDescription"
+        case .reminders:
+            return "NSRemindersUsageDescription"
+        case .speech:
+            return "NSSpeechRecognitionUsageDescription"
+        case .locationAlwaysAndWhenInUse:
+            return "NSLocationAlwaysAndWhenInUseUsageDescription"
+        case .motion:
+            return "NSMotionUsageDescription"
+        case .mediaLibrary:
+            return "NSAppleMusicUsageDescription"
+        case .bluetooth:
+            return "NSBluetoothAlwaysUsageDescription"
+            #endif
+        case .notification:
+            return nil
+        case .locationWhenInUse:
+            return "NSLocationWhenInUseUsageDescription"
+        case .tracking:
+            return "NSUserTrackingUsageDescription"
+        }
+    }
+    
+    // MARK: - Texts
     
     public var name: String {
         switch self {

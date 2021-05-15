@@ -25,32 +25,65 @@ import UIKit
 
 public class SPPermissionActionButton: UIButton {
     
-    public var allowTitle: String = Text.allow_permission_action { didSet { updateInterface(animated: false) } }
-    public var allowedTitle: String = Text.allowed_permission_action { didSet { updateInterface(animated: false) } }
-    public var allowTitleColor: UIColor = UIColor.tint { didSet { updateInterface(animated: false) } }
-    public var allowBackgroundColor: UIColor = UIColor.buttonArea { didSet { updateInterface(animated: false) } }
-    public var allowedTitleColor: UIColor = UIColor.white { didSet { updateInterface(animated: false) } }
-    public var allowedBackgroundColor: UIColor = UIColor.tint { didSet { updateInterface(animated: false) } }
+    var permission: SPPermission?
     
-    var permission: SPPermission = .notification
+    public var allowTitle: String = Text.allow_permission_action
+    public var allowedTitle: String = Text.allowed_permission_action
+    public var allowTitleColor: UIColor = UIColor.tint
+    public var allowBackgroundColor: UIColor = UIColor.buttonArea
+    public var allowedTitleColor: UIColor = UIColor.white
+    public var allowedBackgroundColor: UIColor = UIColor.tint
+    
+    // MARK: - Init
+    
+    init() {
+        super.init(frame: .zero)
+        contentEdgeInsets = UIEdgeInsets.init(top: 5, left: 13, bottom: 5, right: 13)
+        titleLabel?.font = UIFont.preferredFont(forTextStyle: .body, weight: .bold, addPoints: -2)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Helpers
     
-    func updateInterface(animated: Bool) {
-        let _: AuthorizedStyle = permission.authorized ? .allowed : .default
+    func updateInterface() {
+        guard let permission = self.permission else { return }
+        let style: AuthorizedStyle = permission.authorized ? .allowed : .default
+        switch style {
+        case .default:
+            setTitle(allowTitle, for: .normal)
+            setTitleColor(allowTitleColor, for: .normal)
+            setTitleColor(allowTitleColor.withAlphaComponent(0.7), for: .highlighted)
+            backgroundColor = allowBackgroundColor
+        case .allowed:
+            setTitle(allowedTitle, for: .normal)
+            backgroundColor = allowedBackgroundColor
+            setTitleColor(allowedTitleColor, for: .normal)
+            setTitleColor(allowedTitleColor.withAlphaComponent(0.7), for: .highlighted)
+        }
     }
+    
+    // MARK: - Layout
+    
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = self.frame.height / 2
+    }
+    
+    // MARK: - Ovveride
+    
+    override public func setTitle(_ title: String?, for state: UIControl.State) {
+        super.setTitle(title?.uppercased(), for: state)
+    }
+    
+    // MARK: - Models
     
     enum AuthorizedStyle {
         
         case `default`
         case allowed
-    }
-    
-    // MARK: - Layout
-    
-    public override func sizeThatFits(_ size: CGSize) -> CGSize {
-        let superSize = super.sizeThatFits(size)
-        return .init(width: 60, height: 40)
     }
 }
 

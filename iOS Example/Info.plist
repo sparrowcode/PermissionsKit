@@ -41,5 +41,39 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSAppleMusicUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSContactsUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSHomeKitUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSLocationUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSMotionUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSRemindersUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Example Description</string>
+    <key>NSUserTrackingUsageDescription</key>
+    <string>Example Description</string>
 </dict>
 </plist>

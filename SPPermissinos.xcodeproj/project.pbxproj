@@ -25,14 +25,18 @@
 		F471BDF8264A60BF000693BC /* SPPermissionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDF7264A60BF000693BC /* SPPermissionsDelegate.swift */; };
 		F471BDFA264A6106000693BC /* SPPermissionDeniedAlertTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDF9264A6106000693BC /* SPPermissionDeniedAlertTexts.swift */; };
 		F47CBAD1264E53A600A8A00F /* SPPermissionsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBAD0264E53A600A8A00F /* SPPermissionsListController.swift */; };
-		F47CBAD4264E5C7800A8A00F /* SPPermissionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBAD3264E5C7800A8A00F /* SPPermissionTableCell.swift */; };
+		F47CBAD4264E5C7800A8A00F /* SPPermissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBAD3264E5C7800A8A00F /* SPPermissionTableViewCell.swift */; };
 		F47CBAD6264E5CEC00A8A00F /* SPPermissionActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBAD5264E5CEC00A8A00F /* SPPermissionActionButton.swift */; };
 		F47CBAD8264E5D4700A8A00F /* SPPermissionDrawIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBAD7264E5D4700A8A00F /* SPPermissionDrawIconView.swift */; };
 		F47CBADA264E5F0400A8A00F /* SPPermissionsListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBAD9264E5F0400A8A00F /* SPPermissionsListHeaderView.swift */; };
 		F47CBADC264E5F1D00A8A00F /* SPPermissionsListFooterCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBADB264E5F1D00A8A00F /* SPPermissionsListFooterCommentView.swift */; };
 		F47CBADE264E5F6800A8A00F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBADD264E5F6800A8A00F /* Color.swift */; };
-		F47CBAE0264FA69E00A8A00F /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBADF264FA69E00A8A00F /* Font.swift */; };
+		F47CBAE0264FA69E00A8A00F /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBADF264FA69E00A8A00F /* UIFontExtension.swift */; };
 		F47CBAE2264FAA5000A8A00F /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBAE1264FAA5000A8A00F /* Draw.swift */; };
+		F47CBAE4264FEF5000A8A00F /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBAE3264FEF5000A8A00F /* Haptic.swift */; };
+		F47CBAE6264FEFD200A8A00F /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBAE5264FEFD200A8A00F /* Delay.swift */; };
+		F47CBAE8264FF1A100A8A00F /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBAE7264FF1A100A8A00F /* Presenter.swift */; };
+		F47CBAEA265001FF00A8A00F /* RootControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBAE9265001FF00A8A00F /* RootControllerExtension.swift */; };
 		F4BA22B5264C228C0095BF28 /* SPBluetoothPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22B4264C228C0095BF28 /* SPBluetoothPermission.swift */; };
 		F4BA22B9264C239A0095BF28 /* SPCalendarPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22B8264C239A0095BF28 /* SPCalendarPermission.swift */; };
 		F4BA22BB264C23DB0095BF28 /* SPCameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22BA264C23DB0095BF28 /* SPCameraPermission.swift */; };
@@ -50,6 +54,7 @@
 		F4BA22D5264C5C930095BF28 /* SPPermissionsControllerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22D4264C5C930095BF28 /* SPPermissionsControllerInterface.swift */; };
 		F4BA22D9264C5D530095BF28 /* SPPermissionsNativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22D8264C5D530095BF28 /* SPPermissionsNativeController.swift */; };
 		F4BA22DB264C60500095BF28 /* SPPermissionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA22DA264C60500095BF28 /* SPPermissionStatus.swift */; };
+		F4D9DA35264FDE4F008A1A51 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9DA34264FDE4F008A1A51 /* UILabelExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,14 +106,18 @@
 		F471BDF7264A60BF000693BC /* SPPermissionsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SPPermissionsDelegate.swift; path = Sources/SPPermissions/Models/SPPermissionsDelegate.swift; sourceTree = SOURCE_ROOT; };
 		F471BDF9264A6106000693BC /* SPPermissionDeniedAlertTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionDeniedAlertTexts.swift; sourceTree = "<group>"; };
 		F47CBAD0264E53A600A8A00F /* SPPermissionsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsListController.swift; sourceTree = "<group>"; };
-		F47CBAD3264E5C7800A8A00F /* SPPermissionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionTableCell.swift; sourceTree = "<group>"; };
+		F47CBAD3264E5C7800A8A00F /* SPPermissionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionTableViewCell.swift; sourceTree = "<group>"; };
 		F47CBAD5264E5CEC00A8A00F /* SPPermissionActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionActionButton.swift; sourceTree = "<group>"; };
 		F47CBAD7264E5D4700A8A00F /* SPPermissionDrawIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionDrawIconView.swift; sourceTree = "<group>"; };
 		F47CBAD9264E5F0400A8A00F /* SPPermissionsListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsListHeaderView.swift; sourceTree = "<group>"; };
 		F47CBADB264E5F1D00A8A00F /* SPPermissionsListFooterCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsListFooterCommentView.swift; sourceTree = "<group>"; };
 		F47CBADD264E5F6800A8A00F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		F47CBADF264FA69E00A8A00F /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		F47CBADF264FA69E00A8A00F /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		F47CBAE1264FAA5000A8A00F /* Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
+		F47CBAE3264FEF5000A8A00F /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
+		F47CBAE5264FEFD200A8A00F /* Delay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
+		F47CBAE7264FF1A100A8A00F /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		F47CBAE9265001FF00A8A00F /* RootControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootControllerExtension.swift; sourceTree = "<group>"; };
 		F4B9AD232649226F001A0426 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F4B9AD272649226F001A0426 /* SPPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissions.swift; sourceTree = "<group>"; };
 		F4B9AD292649226F001A0426 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -135,6 +144,7 @@
 		F4BA22D4264C5C930095BF28 /* SPPermissionsControllerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsControllerInterface.swift; sourceTree = "<group>"; };
 		F4BA22D8264C5D530095BF28 /* SPPermissionsNativeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionsNativeController.swift; sourceTree = "<group>"; };
 		F4BA22DA264C60500095BF28 /* SPPermissionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPermissionStatus.swift; sourceTree = "<group>"; };
+		F4D9DA34264FDE4F008A1A51 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +174,10 @@
 				F4122F22264D688200EB6BCE /* Text.swift */,
 				F4122F1D264D5AAC00EB6BCE /* OpenService.swift */,
 				F47CBADD264E5F6800A8A00F /* Color.swift */,
-				F47CBADF264FA69E00A8A00F /* Font.swift */,
 				F47CBAE1264FAA5000A8A00F /* Draw.swift */,
+				F47CBAE3264FEF5000A8A00F /* Haptic.swift */,
+				F47CBAE5264FEFD200A8A00F /* Delay.swift */,
+				F47CBAE7264FF1A100A8A00F /* Presenter.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -241,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				F471BDBA264A5993000693BC /* RootController.swift */,
+				F47CBAE9265001FF00A8A00F /* RootControllerExtension.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -266,7 +279,7 @@
 		F47CBAD2264E5C6700A8A00F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				F47CBAD3264E5C7800A8A00F /* SPPermissionTableCell.swift */,
+				F47CBAD3264E5C7800A8A00F /* SPPermissionTableViewCell.swift */,
 				F47CBAD5264E5CEC00A8A00F /* SPPermissionActionButton.swift */,
 				F47CBAD7264E5D4700A8A00F /* SPPermissionDrawIconView.swift */,
 			);
@@ -317,6 +330,7 @@
 		F4B9AD262649226F001A0426 /* SPPermissions */ = {
 			isa = PBXGroup;
 			children = (
+				F4D9DA33264FDE43008A1A51 /* Extensions */,
 				F4122F1C264D5AA100EB6BCE /* Services */,
 				F4BA22D6264C5D340095BF28 /* Interface */,
 				F471BDF2264A6017000693BC /* Protocols */,
@@ -463,6 +477,15 @@
 			path = "Native Style";
 			sourceTree = "<group>";
 		};
+		F4D9DA33264FDE43008A1A51 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F47CBADF264FA69E00A8A00F /* UIFontExtension.swift */,
+				F4D9DA34264FDE4F008A1A51 /* UILabelExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -582,6 +605,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47CBAEA265001FF00A8A00F /* RootControllerExtension.swift in Sources */,
 				F471BDBB264A5993000693BC /* RootController.swift in Sources */,
 				F471BDB7264A5993000693BC /* AppDelegate.swift in Sources */,
 			);
@@ -593,14 +617,16 @@
 			files = (
 				F4BA22BF264C297D0095BF28 /* SPContactsPermission.swift in Sources */,
 				F4BA22C1264C2B040095BF28 /* SPLocationPermission.swift in Sources */,
+				F4D9DA35264FDE4F008A1A51 /* UILabelExtension.swift in Sources */,
 				F4BA22C5264C31E50095BF28 /* SPMicrophonePermission.swift in Sources */,
 				F47CBAE2264FAA5000A8A00F /* Draw.swift in Sources */,
 				F4BA22CF264C32ED0095BF28 /* SPSpeechPermission.swift in Sources */,
+				F47CBAE4264FEF5000A8A00F /* Haptic.swift in Sources */,
 				F471BDEC264A5C9F000693BC /* SPPermission.swift in Sources */,
 				F47CBADE264E5F6800A8A00F /* Color.swift in Sources */,
 				F4BA22CB264C32B50095BF28 /* SPPhotoLibraryPermission.swift in Sources */,
 				F4BA22CD264C32D20095BF28 /* SPRemindersPermission.swift in Sources */,
-				F47CBAD4264E5C7800A8A00F /* SPPermissionTableCell.swift in Sources */,
+				F47CBAD4264E5C7800A8A00F /* SPPermissionTableViewCell.swift in Sources */,
 				F471BDFA264A6106000693BC /* SPPermissionDeniedAlertTexts.swift in Sources */,
 				F4BA22C7264C32070095BF28 /* SPMotionPermission.swift in Sources */,
 				F47CBADA264E5F0400A8A00F /* SPPermissionsListHeaderView.swift in Sources */,
@@ -620,10 +646,12 @@
 				F4BA22D1264C33080095BF28 /* SPTrackingPermission.swift in Sources */,
 				F471BDF4264A601F000693BC /* SPPermissionInterface.swift in Sources */,
 				F4122F1E264D5AAC00EB6BCE /* OpenService.swift in Sources */,
-				F47CBAE0264FA69E00A8A00F /* Font.swift in Sources */,
+				F47CBAE0264FA69E00A8A00F /* UIFontExtension.swift in Sources */,
 				F47CBAD8264E5D4700A8A00F /* SPPermissionDrawIconView.swift in Sources */,
+				F47CBAE6264FEFD200A8A00F /* Delay.swift in Sources */,
 				F4BA22C3264C31C30095BF28 /* SPMediaLibraryPermission.swift in Sources */,
 				F4BA22B9264C239A0095BF28 /* SPCalendarPermission.swift in Sources */,
+				F47CBAE8264FF1A100A8A00F /* Presenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,7 +722,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = T9Z76HLJ3T;
+				DEVELOPMENT_TEAM = 8JMTA2AAF3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -770,7 +798,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = T9Z76HLJ3T;
+				DEVELOPMENT_TEAM = 8JMTA2AAF3;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
