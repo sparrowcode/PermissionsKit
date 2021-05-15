@@ -26,9 +26,9 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerInt
     public weak var delegate: SPPermissionsDelegate?
     public weak var dataSource: SPPermissionsDataSource?
     
-    private var permissions: [SPPermission]
+    private var permissions: [SPPermissions.Permission]
     
-    init(_ permissions: [SPPermission]) {
+    init(_ permissions: [SPPermissions.Permission]) {
         self.permissions = permissions
         super.init()
     }

@@ -25,7 +25,7 @@ import Photos
 
 class SPPhotoLibraryPermission: SPPermissionInterface {
     
-    var status: SPPermissionState {
+    var status: SPPermissions.Permission.State {
         switch PHPhotoLibrary.authorizationStatus() {
         case .authorized: return .authorized
         case .denied: return .denied

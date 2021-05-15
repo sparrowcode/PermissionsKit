@@ -25,7 +25,7 @@ import UIKit
 
 public class SPPermissionsDrawIconView: UIView {
     
-    var permission: SPPermission? {
+    var permission: SPPermissions.Permission? {
         didSet {
             setNeedsDisplay()
         }
@@ -69,7 +69,7 @@ public class SPPermissionsDrawIconView: UIView {
             Draw.drawSpeech(frame: rect, resizing: .aspectFit, color: tintColor)
         case .locationWhenInUse:
             Draw.drawLocations(frame: rect, resizing: .aspectFit, color: tintColor)
-        case .locationAlwaysAndWhenInUse:
+        case .locationAlways:
             Draw.drawLocations(frame: rect, resizing: .aspectFit, color: tintColor)
         case .motion:
             Draw.drawMotion(frame: rect, resizing: .aspectFit, color: tintColor)

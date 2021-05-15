@@ -2,7 +2,7 @@ import UIKit
 
 enum Presenter {
     
-    static func presentAlertAboutDeniedPermission(_ permission: SPPermission, dataSource: SPPermissionsDataSource?, on controller: UIViewController) {
+    static func presentAlertAboutDeniedPermission(_ permission: SPPermissions.Permission, dataSource: SPPermissionsDataSource?, on controller: UIViewController) {
         
         let data = dataSource?.deniedAlertTexts(for: permission)
         

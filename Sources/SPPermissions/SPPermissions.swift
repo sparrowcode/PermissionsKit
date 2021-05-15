@@ -21,57 +21,64 @@
 
 import UIKit
 
-public enum SPPermissions: Int {
+public enum SPPermissions {
     
-    // MARK: iOS Permissions
-    
-    #if os(iOS)
-    
-    @available(iOS 11.0, macCatalyst 14.0, *)
-    case camera = 0
-    
-    case photoLibrary = 1
-    case microphone = 3
-    case calendar = 4
-    case contacts = 5
-    case reminders = 6
-    case speech = 7
-    case locationAlwaysAndWhenInUse = 10
-    case motion = 11
-    case mediaLibrary = 12
-    case bluetooth = 13
-    
-    @available(iOS 14.5, *)
-    case tracking = 14
-    
-    #endif
-    
-    // MARK: Shared Permissions
-    
-    case notification = 2
-    case locationWhenInUse = 9
+    @objc public enum Permission: Int {
+        
+        // MARK: iOS Permissions
+        
+        #if os(iOS)
+        
+        @available(iOS 11.0, macCatalyst 14.0, *)
+        case camera = 0
+        
+        case photoLibrary = 1
+        case microphone = 3
+        case calendar = 4
+        case contacts = 5
+        case reminders = 6
+        case speech = 7
+        case locationAlways = 10
+        case motion = 11
+        case mediaLibrary = 12
+        case bluetooth = 13
+        
+        @available(iOS 14.5, *)
+        case tracking = 14
+        
+        #endif
+        
+        // MARK: Shared Permissions
+        
+        case notification = 2
+        case locationWhenInUse = 9
+        
+    }
+}
+
+extension SPPermissions.Permission {
     
     // MARK: - Status
     
     public var authorized: Bool {
-        let manager = manager(for: self)
+        let manager = Self.manager(for: self)
         return manager.status == .authorized
     }
     
     public var denied: Bool {
-        let manager = manager(for: self)
+        let manager = Self.manager(for: self)
         return manager.status == .denied
     }
     
     public var notDetermined: Bool {
-        let manager = manager(for: self)
+        let manager = Self.manager(for: self)
         return manager.status == .notDetermined
     }
     
     // MARK: - Request
     
     public func request(completion: @escaping ()->()) {
-        let manager = SPPermissions.manager(for: self)
+        let manager = Self.manager(for: self)
         if let usageDescriptionKey = self.usageDescriptionKey {
             guard let _ = Bundle.main.object(forInfoDictionaryKey: usageDescriptionKey) else {
                 print("SPPermissions Warning: \(usageDescriptionKey) for \(name) not found in Info.plist.")
@@ -83,7 +90,7 @@ public enum SPPermissions: Int {
     
     public var usageDescriptionKey: String? {
         switch self {
-            #if os(iOS)
+        #if os(iOS)
         case .camera:
             return "NSCameraUsageDescription"
         case .photoLibrary:
@@ -98,7 +105,7 @@ public enum SPPermissions: Int {
             return "NSRemindersUsageDescription"
         case .speech:
             return "NSSpeechRecognitionUsageDescription"
-        case .locationAlwaysAndWhenInUse:
+        case .locationAlways:
             return "NSLocationAlwaysAndWhenInUseUsageDescription"
         case .motion:
             return "NSMotionUsageDescription"
@@ -106,7 +113,7 @@ public enum SPPermissions: Int {
             return "NSAppleMusicUsageDescription"
         case .bluetooth:
             return "NSBluetoothAlwaysUsageDescription"
-            #endif
+        #endif
         case .notification:
             return nil
         case .locationWhenInUse:
@@ -135,7 +142,7 @@ public enum SPPermissions: Int {
             return "Reminders"
         case .speech:
             return "Speech"
-        case .locationAlwaysAndWhenInUse:
+        case .locationAlways:
             return "Location Always"
         case .motion:
             return "Motion"
@@ -153,28 +160,20 @@ public enum SPPermissions: Int {
         }
     }
     
-    // MARK: - Present Styles
+    // MARK: - Models
     
-    public static func native(_ permissions: [SPPermission]) -> SPPermissionsNativeController {
-        let controller = SPPermissionsNativeController(removeDuplicates(permissions))
-        return controller
+    public enum State {
+        
+        case authorized
+        
+        case denied
+        
+        case notDetermined
     }
-    
-    #if os(iOS)
-    public static func list(_ permissions: [SPPermission]) -> SPPermissionsListController {
-        let controller = SPPermissionsListController(removeDuplicates(permissions))
-        return controller
-    }
-    
-    public static func dialog(_ permissions: [SPPermission]) -> SPPermissionsDialogController {
-        let controller = SPPermissionsDialogController(removeDuplicates(permissions))
-        return controller
-    }
-    #endif
     
     // MARK: - Internal
     
-    static func manager(for permission: SPPermission) -> SPPermissionInterface {
+    internal static func manager(for permission: SPPermissions.Permission) -> SPPermissionInterface {
         switch permission {
         #if os(iOS)
         case .camera:
@@ -223,7 +222,7 @@ public enum SPPermissions: Int {
             #else
             fatalError(error(permission))
             #endif
-        case .locationAlwaysAndWhenInUse:
+        case .locationAlways:
             #if SPPERMISSIONS_LOCATION
             return SPLocationPermission(type: .always)
             #else
@@ -273,15 +272,7 @@ public enum SPPermissions: Int {
         }
     }
     
-    private static func removeDuplicates(_ permissions: [SPPermission]) -> [SPPermission] {
-        var result = [SPPermission]()
-        for permission in permissions {
-            if !result.contains(permission) { result.append(permission) }
-        }
-        return result
-    }
-    
-    private static func error(_ permission: SPPermission) -> String {
+    private static func error(_ permission: SPPermissions.Permission) -> String {
         return "SPPermissions: \(permission.name) not imported. It may happen with 2 ways, or code not correctly imported or macros ignoring. In any case please create new issue here https://github.com/ivanvorobei/SPPermissions and provide all details."
     }
 }

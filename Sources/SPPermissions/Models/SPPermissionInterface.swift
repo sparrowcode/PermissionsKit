@@ -23,7 +23,7 @@ import UIKit
 
 protocol SPPermissionInterface: AnyObject {
     
-    var status: SPPermissionState { get }
+    var status: SPPermissions.Permission.State { get }
     
     func request(completion: @escaping ()->Void)
 }

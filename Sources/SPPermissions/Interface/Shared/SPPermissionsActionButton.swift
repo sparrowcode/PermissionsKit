@@ -25,7 +25,7 @@ import UIKit
 
 public class SPPermissionsActionButton: UIButton {
     
-    var permission: SPPermission?
+    var permission: SPPermissions.Permission?
     
     public var allowTitle: String = Text.allow_permission_action
     public var allowedTitle: String = Text.allowed_permission_action

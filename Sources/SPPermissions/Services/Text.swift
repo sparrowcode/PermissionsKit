@@ -23,7 +23,7 @@ import UIKit
 
 enum Text {
     
-    static func permission_name(_ permission: SPPermission) -> String {
+    static func permission_name(_ permission: SPPermissions.Permission) -> String {
         switch permission {
         #if os(iOS)
         case .camera:
@@ -40,7 +40,7 @@ enum Text {
             return "Reminders"
         case .speech:
             return "Speech"
-        case .locationAlwaysAndWhenInUse:
+        case .locationAlways:
             return "Location Always"
         case .motion:
             return "Motion"
@@ -58,7 +58,7 @@ enum Text {
         }
     }
     
-    static func permission_description(_ permission: SPPermission) -> String {
+    static func permission_description(_ permission: SPPermissions.Permission) -> String {
         switch permission {
         #if os(iOS)
         case .camera:
@@ -75,7 +75,7 @@ enum Text {
             return "Application can create new task"
         case .speech:
             return "Allow to check your voice"
-        case .locationAlwaysAndWhenInUse:
+        case .locationAlways:
             return "Allow to access your location"
         case .motion:
             return "Allow to report motion and environment-related data"
@@ -97,6 +97,8 @@ enum Text {
     
     static var allow_permission_action: String { return "Allow" }
     static var allowed_permission_action: String { return "Allowed" }
+    
+    // MARK: - Titles & Comments
     
     static var header: String = "Need Permissions"
     static var sub_header: String = "Permissions request"

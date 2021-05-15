@@ -33,11 +33,11 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     public var footerText = Text.comment
     public var prefersLargeTitles = true
     
-    private var permissions: [SPPermission]
+    private var permissions: [SPPermissions.Permission]
     
     // MARK: - Init
     
-    init(_ permissions: [SPPermission]) {
+    init(_ permissions: [SPPermissions.Permission]) {
         self.permissions = permissions
         if #available(iOS 13.0, *) {
             super.init(style: .insetGrouped)
@@ -106,7 +106,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
             
             // Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
             
-            if permission == .locationAlwaysAndWhenInUse {
+            if permission == .locationAlways {
                 if self.permissions.contains(.locationWhenInUse) {
                     if let index = self.permissions.firstIndex(of: .locationWhenInUse) {
                         if let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? SPPermissionsTableViewCell {

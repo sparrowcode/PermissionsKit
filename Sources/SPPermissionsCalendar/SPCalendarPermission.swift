@@ -26,7 +26,7 @@ import EventKit
 
 class SPCalendarPermission: SPPermissionInterface {
     
-    var status: SPPermissionState {
+    var status: SPPermissions.Permission.State {
         switch EKEventStore.authorizationStatus(for: EKEntityType.event) {
         case .authorized: return .authorized
         case .denied: return .denied

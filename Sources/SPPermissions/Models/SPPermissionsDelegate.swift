@@ -23,9 +23,9 @@ import UIKit
 
 @objc public protocol SPPermissionsDelegate: AnyObject {
     
-    @objc optional func didAllowPermission(_ permission: SPPermission)
+    @objc optional func didAllowPermission(_ permission: SPPermissions.Permission)
     
-    @objc optional func didDeniedPermission(_ permission: SPPermission)
+    @objc optional func didDeniedPermission(_ permission: SPPermissions.Permission)
     
     @objc optional func didHidePermissions(_ ids: [Int])
 }
