@@ -72,7 +72,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         
         tableView.delaysContentTouches = false
         tableView.allowsSelection = false
-        tableView.register(SPPermissionTableCell.self, forCellReuseIdentifier: SPPermissionTableCell.id)
+        tableView.register(SPPermissionTableViewCell.self, forCellReuseIdentifier: SPPermissionTableViewCell.id)
         tableView.register(SPPermissionsListHeaderView.self, forHeaderFooterViewReuseIdentifier: SPPermissionsListHeaderView.id)
         tableView.register(SPPermissionsListFooterCommentView.self, forHeaderFooterViewReuseIdentifier: SPPermissionsListFooterCommentView.id)
         
@@ -93,7 +93,51 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     }
     
     @objc func process(button: SPPermissionActionButton) {
-        
+        guard let permission = button.permission else { return }
+        permission.request { [weak self] in
+            
+            guard let self = self else { return }
+            if let cell = button.superview as? SPPermissionTableViewCell {
+                cell.updateInterface(animated: true)
+            }
+            
+            let authorized = permission.authorized
+            if authorized { Haptic.impact(.light) }
+            
+            // Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
+            
+            if permission == .locationAlwaysAndWhenInUse {
+                if self.permissions.contains(.locationWhenInUse) {
+                    if let index = self.permissions.firstIndex(of: .locationWhenInUse) {
+                        if let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? SPPermissionTableViewCell {
+                            cell.updateInterface(animated: true)
+                        }
+                    }
+                }
+            }
+            
+            // Check if all permissions allowed
+            
+            let allowedPermissions = self.permissions.filter { $0.authorized }
+            if allowedPermissions.count == self.permissions.count {
+                Delay.wait(0.2, closure: {
+                    self.dismiss(animated: true)
+                })
+            }
+            
+            if permission.authorized {
+                self.delegate?.didAllowPermission?(permission)
+            } else {
+                self.delegate?.didDeniedPermission?(permission)
+                
+                // Delay using for fix animation freeze.
+                
+                Delay.wait(0.3, closure: { [weak self] in
+                    guard let self = self else { return }
+                    Presenter.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: self)
+                })
+            }
+        }
     }
     
     @objc func dismissAnimated() {
@@ -123,7 +167,7 @@ extension SPPermissionsListController {
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let permission = permissions[indexPath.row]
-        var cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionTableCell.id, for: indexPath) as! SPPermissionTableCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionTableViewCell.id, for: indexPath) as! SPPermissionTableViewCell
         cell.defaultConfigure(for: permission)
         cell = dataSource?.configure?(cell, for: permission) ?? cell
         cell.permissionButton.addTarget(self, action: #selector(self.process(button:)), for: .touchUpInside)

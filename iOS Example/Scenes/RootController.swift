@@ -22,50 +22,114 @@
 import UIKit
 import Sources
 
-class RootController: UIViewController, SPPermissionsDataSource, SPPermissionsDelegate {
+class RootController: UITableViewController {
+    
+    var availablePermissions: [SPPermission] = [.camera, .microphone, .calendar, .contacts, .reminders, .speech, .locationAlwaysAndWhenInUse, .motion, .mediaLibrary, .bluetooth]
+    
+    var selectedPermissions: [SPPermission] = []
+    
+    // MARK: Init
+    
+    init() {
+        if #available(iOS 13.0, *) {
+            super.init(style: .insetGrouped)
+        } else {
+            super.init(style: .plain)
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Choose Style"
         
-        view.backgroundColor = .red
+        // Available styles: List, Dialog & Native.
+        let segmentedControl = UISegmentedControl(items: ["List", "Dialog", "Native"])
+        
+        navigationItem.titleView = segmentedControl
+        segmentedControl.selectedSegmentIndex = 0
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .play, target: self, action: #selector(self.requestPermissions))
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        let controller = SPPermissions.list([.notification, .calendar, .mediaLibrary])
-        controller.dataSource = self
-        controller.delegate = self
-        controller.present(on: self)
-    }
+    // MARK: Actions
     
-    // MARK: - SPPermissionsDataSource
-    
-    func deniedAlertTexts(for permission: SPPermission) -> SPPermissionDeniedAlertTexts? {
-        
-        // 1. For hide alert, return nil here:
-        // return nil
-        
-        // 2. For use fault texts, leave it:
-        return .default
-        
-        // 3. If you want have custom text:
-        // return SPPermissionDeniedAlertTexts.init(title: "Your title", description: "Description", button: "Open Settings", cancel: "Cancel")
-    }
-    
-    // MARK: - SPPermissionsDelegate
-    
-    func didAllowPermission(_ permission: SPPermission) {
-        print("Example App: Did allow permission\(permission.name)")
-    }
-    
-    func didDeniedPermission(_ permission: SPPermission) {
-        print("Example App: Did denied permission \(permission.name)")
-    }
-    
-    func didHidePermissions(_ ids: [Int]) {
-        let permissions = ids.map { SPPermission(rawValue: $0)! }
-        print("Example App: Did hide with permissions: ", permissions.map { $0.name })
+    @objc func requestPermissions() {
+        if selectedPermissions.isEmpty { return }
+        guard let segmentControl = navigationItem.titleView as? UISegmentedControl else { return }
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            let controller = SPPermissions.list(selectedPermissions)
+            controller.dataSource = self
+            controller.delegate = self
+            controller.present(on: self)
+        case 1:
+            fatalError()
+        case 2:
+            let controller = SPPermissions.native(selectedPermissions)
+            controller.delegate = self
+            controller.present(on: self)
+        default:
+            break
+        }
     }
 }
 
+// MARK: - SPPermissions Data Source
+
+extension RootController: SPPermissionsDataSource {
+    
+    func configure(_ cell: SPPermissionTableViewCell, for permission: SPPermission) -> SPPermissionTableViewCell {
+        return cell
+    }
+    
+    func deniedAlertTexts(for permission: SPPermission) -> SPPermissionDeniedAlertTexts? {
+        if permission == .notification {
+            
+            // If returned nil, alert will not show.
+            
+            print("Alert for \(permission.name) not show, becouse in datasource returned nil. If you need alert, configure this.")
+            return nil
+            
+        } else {
+            
+            // You can create custom texts
+            
+            /*
+             let texts = SPPermissionDeniedAlertTexts()
+             texts.titleText = "Permission denied"
+             texts.descriptionText = "Please, go to Settings and allow permission."
+             texts.buttonText = "Settings"
+             texts.cancelText = "Cancel"
+             return texts
+             */
+            
+            // or use default texts.
+            
+            return .default
+        }
+    }
+}
+
+// MARK: - SPPermissions Delegate
+
+extension RootController: SPPermissionsDelegate {
+    
+    func didHidePermissions(_ ids: [Int]) {
+        let permissions = ids.map { SPPermission(rawValue: $0)! }
+        print("Example App: did hide with permissions: ", permissions.map { $0.name })
+    }
+    
+    func didAllowPermission(_ permission: SPPermission) {
+        print("Example App: did allow: ", permission.name)
+    }
+    
+    func didDenied(permission: SPPermission) {
+        print("Example App: did denied: ", permission.name)
+    }
+}

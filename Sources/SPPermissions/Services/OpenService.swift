@@ -21,7 +21,7 @@
 
 import UIKit
 
-enum SPOpenService {
+enum OpenService {
     
     static func openSettings() {
         

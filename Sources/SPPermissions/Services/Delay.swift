@@ -20,14 +20,13 @@
 // SOFTWARE.
 
 import UIKit
-import SparrowKit
 
-@main
-class AppDelegate: SPAppWindowDelegate {
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        makeKeyAndVisible(RootController().wrapToNavigationController(prefersLargeTitles: false), tint: .systemBlue)
-        return true
+enum Delay {
+    
+    public static func wait(_ delay: Double, closure: @escaping ()->()) {
+        let when = DispatchTime.now() + delay
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            closure()
+        }
     }
 }
-

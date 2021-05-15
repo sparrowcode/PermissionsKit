@@ -151,6 +151,6 @@ public enum SPPermissions {
     }
     
     private static func error(_ permission: SPPermission) -> String {
-        return "SPPermissions: \(permission.name) not imported correct. It may happen with 2 ways, or code not correctly imported or macros ignoring. In any case please create new issue here https://github.com/ivanvorobei/SPPermissions and provide all details."
+        return "SPPermissions: \(permission.name) not imported. It may happen with 2 ways, or code not correctly imported or macros ignoring. In any case please create new issue here https://github.com/ivanvorobei/SPPermissions and provide all details."
     }
 }

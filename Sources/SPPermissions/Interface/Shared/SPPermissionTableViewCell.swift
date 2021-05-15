@@ -23,7 +23,7 @@ import UIKit
 
 #if os(iOS)
 
-public class SPPermissionTableCell: UITableViewCell {
+public class SPPermissionTableViewCell: UITableViewCell {
     
     public let permissionTitleLabel = UILabel()
     public let permissionDescriptionLabel = UILabel()
@@ -83,34 +83,48 @@ public class SPPermissionTableCell: UITableViewCell {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        permissionIconContainerView.frame = .init(x: contentView.layoutMargins.left - 2, y: contentView.layoutMargins.top, width: 45, height: 45)
-        permissionButton.sizeToFit()
-        permissionButton.frame.origin.y = contentView.frame.width - contentView.layoutMargins.right - permissionButton.frame.width
         
-        let leftContentLeadingSpace: CGFloat = 10
-        let leftContentTrailingSpace: CGFloat = 15
-        let leftContentXPosition = contentView.layoutMargins.left + permissionIconContainerView.frame.width + leftContentLeadingSpace
-        let leftContentWidth = contentView.frame.width - leftContentXPosition - permissionButton.frame.width - leftContentTrailingSpace
+        // Icons
         
-        permissionTitleLabel.frame = .init(x: leftContentXPosition, y: contentView.layoutMargins.top, width: leftContentWidth, height: permissionTitleLabel.frame.height)
-        permissionTitleLabel.sizeToFit()
-        
-        permissionDescriptionLabel.frame = .init(x: leftContentXPosition, y: permissionTitleLabel.frame.origin.y + permissionTitleLabel.frame.height + 3, width: leftContentWidth, height: permissionDescriptionLabel.frame.height)
-        permissionDescriptionLabel.sizeToFit()
-        
+        permissionIconContainerView.frame = .init(x: contentView.layoutMargins.left - 2, y: contentView.layoutMargins.top, width: 42, height: 42)
         permissionDrawIconView.frame = permissionIconContainerView.bounds
         permissionIconImageView.frame = permissionIconContainerView.bounds
+        
+        // Button
+        
+        permissionButton.sizeToFit()
+        permissionButton.frame.origin.x = contentView.frame.width - contentView.layoutMargins.right - permissionButton.frame.width
+        
+        // Titles
+        
+        let leftContentLeadingSpace: CGFloat = 13
+        let leftContentTrailingSpace: CGFloat = 13
+        let leftContentXPosition = contentView.layoutMargins.left + permissionIconContainerView.frame.width + leftContentLeadingSpace
+        let leftContentWidth = contentView.frame.width - leftContentXPosition - permissionButton.frame.width - leftContentTrailingSpace - contentView.layoutMargins.right
+        
+        permissionTitleLabel.layoutDynamicHeight(x: leftContentXPosition, y: contentView.layoutMargins.top, width: leftContentWidth)
+        
+        permissionDescriptionLabel.layoutDynamicHeight(x: leftContentXPosition, y: permissionTitleLabel.frame.origin.y + permissionTitleLabel.frame.height + 3, width: leftContentWidth)
+        
+        // Button Vertical Centering
+        
+        permissionButton.center.y = calculatedHeight / 2
+    }
+    
+    private var calculatedHeight: CGFloat {
+        return permissionDescriptionLabel.frame.origin.y + permissionDescriptionLabel.frame.height + contentView.layoutMargins.bottom
     }
     
     public override func sizeThatFits(_ size: CGSize) -> CGSize {
         let superSize = super.sizeThatFits(size)
         layoutSubviews()
-        return CGSize.init(width: superSize.width, height: permissionDescriptionLabel.frame.origin.y + permissionDescriptionLabel.frame.height + contentView.layoutMargins.bottom)
+        return CGSize.init(width: superSize.width, height: calculatedHeight)
     }
     
     // MARK: - Helpers
     
     func defaultConfigure(for permission: SPPermission) {
+        
         permissionTitleLabel.text = Text.permission_name(permission)
         permissionDescriptionLabel.text = Text.permission_description(permission)
         
@@ -128,6 +142,27 @@ public class SPPermissionTableCell: UITableViewCell {
         permissionIconImageView.image = nil
         permissionIconImageView.contentMode = .scaleAspectFit
         permissionIconImageView.tintColor = permissionButton.allowedBackgroundColor
+        
+        permissionButton.updateInterface()
+        layoutSubviews()
+    }
+    
+    func updateInterface(animated: Bool) {
+    
+        let changes = { [weak self] in
+            guard let self = self else { return }
+            self.permissionButton.updateInterface()
+            self.layoutSubviews()
+        }
+        
+        if animated {
+            UIView.animate(withDuration: 0.3, animations: {
+                changes()
+            })
+        } else {
+            changes()
+        }
     }
 }
+
 #endif
