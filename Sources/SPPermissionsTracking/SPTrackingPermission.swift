@@ -23,8 +23,12 @@
 
 import AppTrackingTransparency
 
+#if canImport(SPPermissions)
+import SPPermissions
+#endif
+
 @available(iOS 14.5, *)
-class SPTrackingPermission: SPPermissionInterface {
+class SPTrackingPermission: SPPermissionsPermissionInterface {
 
     var status: SPPermissions.Permission.State {
         switch ATTrackingManager.trackingAuthorizationStatus {

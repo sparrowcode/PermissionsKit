@@ -24,7 +24,11 @@
 import UIKit
 import UserNotifications
 
-class SPNotificationPermission: SPPermissionInterface {
+#if canImport(SPPermissions)
+import SPPermissions
+#endif
+
+class SPNotificationPermission: SPPermissionsPermissionInterface {
     
     var status: SPPermissions.Permission.State {
         guard let authorizationStatus = fetchAuthorizationStatus() else { return .notDetermined }

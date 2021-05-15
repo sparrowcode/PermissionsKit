@@ -24,7 +24,11 @@
 import UIKit
 import MediaPlayer
 
-class SPMediaLibraryPermission: SPPermissionInterface {
+#if canImport(SPPermissions)
+import SPPermissions
+#endif
+
+class SPMediaLibraryPermission: SPPermissionsPermissionInterface {
     
     var status: SPPermissions.Permission.State {
         switch MPMediaLibrary.authorizationStatus() {

@@ -24,7 +24,11 @@
 import UIKit
 import EventKit
 
-class SPCalendarPermission: SPPermissionInterface {
+#if canImport(SPPermissions)
+import SPPermissions
+#endif
+
+class SPCalendarPermission: SPPermissionsPermissionInterface {
     
     var status: SPPermissions.Permission.State {
         switch EKEventStore.authorizationStatus(for: EKEntityType.event) {

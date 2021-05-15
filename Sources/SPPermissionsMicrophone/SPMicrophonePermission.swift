@@ -24,7 +24,11 @@
 import UIKit
 import AVFoundation
 
-class SPMicrophonePermission: SPPermissionInterface {
+#if canImport(SPPermissions)
+import SPPermissions
+#endif
+
+class SPMicrophonePermission: SPPermissionsPermissionInterface {
     
     var status: SPPermissions.Permission.State {
         switch  AVAudioSession.sharedInstance().recordPermission {

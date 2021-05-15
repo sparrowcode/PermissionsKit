@@ -24,7 +24,11 @@
 import UIKit
 import MapKit
 
-class SPLocationPermission: SPPermissionInterface {
+#if canImport(SPPermissions)
+import SPPermissions
+#endif
+
+class SPLocationPermission: SPPermissionsPermissionInterface {
     
     var status: SPPermissions.Permission.State {
         
