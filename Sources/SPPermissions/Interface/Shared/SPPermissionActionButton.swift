@@ -45,6 +45,13 @@ public class SPPermissionActionButton: UIButton {
         case `default`
         case allowed
     }
+    
+    // MARK: - Layout
+    
+    public override func sizeThatFits(_ size: CGSize) -> CGSize {
+        let superSize = super.sizeThatFits(size)
+        return .init(width: 60, height: 40)
+    }
 }
 
 #endif

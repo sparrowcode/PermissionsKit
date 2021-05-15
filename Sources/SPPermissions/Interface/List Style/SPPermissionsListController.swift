@@ -72,7 +72,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         
         tableView.delaysContentTouches = false
         tableView.allowsSelection = false
-        tableView.register(SPPermissionTableViewCell.self, forCellReuseIdentifier: SPPermissionTableViewCell.id)
+        tableView.register(SPPermissionTableCell.self, forCellReuseIdentifier: SPPermissionTableCell.id)
         tableView.register(SPPermissionsListHeaderView.self, forHeaderFooterViewReuseIdentifier: SPPermissionsListHeaderView.id)
         tableView.register(SPPermissionsListFooterCommentView.self, forHeaderFooterViewReuseIdentifier: SPPermissionsListFooterCommentView.id)
         
@@ -123,7 +123,7 @@ extension SPPermissionsListController {
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let permission = permissions[indexPath.row]
-        var cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionTableViewCell.id, for: indexPath) as! SPPermissionTableViewCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionTableCell.id, for: indexPath) as! SPPermissionTableCell
         cell.defaultConfigure(for: permission)
         cell = dataSource?.configure?(cell, for: permission) ?? cell
         cell.permissionButton.addTarget(self, action: #selector(self.process(button:)), for: .touchUpInside)
