@@ -19,11 +19,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if SPPERMISSIONS_SPM
+import SPPermissions
+#endif
+
 #if os(iOS) && SPPERMISSIONS_CONTACTS
 
 import Foundation
 import Contacts
-import SPPermissions
 
 public extension SPPermissions.Permission {
 

@@ -19,11 +19,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
-import AVFoundation
+#if SPPERMISSIONS_SPM
 import SPPermissions
+#endif
 
 #if os(iOS) && SPPERMISSIONS_CAMERA
+
+import Foundation
+import AVFoundation
 
 @available(iOS 11.0, macCatalyst 14.0, *)
 public extension SPPermissions.Permission {
