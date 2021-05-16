@@ -26,78 +26,90 @@ enum Text {
     static func permission_name(_ permission: SPPermissions.PermissionType) -> String {
         switch permission {
         case .camera:
-            return NSLocalizedString("permission camera name", bundle: .module, comment: "")
+            return NSLocalizedString("permission camera name", bundle: bundle, comment: "")
         case .photoLibrary:
-            return NSLocalizedString("permission photoLibrary name", bundle: .module, comment: "")
+            return NSLocalizedString("permission photoLibrary name", bundle: bundle, comment: "")
         case .microphone:
-            return NSLocalizedString("permission microphone name", bundle: .module, comment: "")
+            return NSLocalizedString("permission microphone name", bundle: bundle, comment: "")
         case .calendar:
-            return NSLocalizedString("permission calendar name", bundle: .module, comment: "")
+            return NSLocalizedString("permission calendar name", bundle: bundle, comment: "")
         case .contacts:
-            return NSLocalizedString("permission contacts name", bundle: .module, comment: "")
+            return NSLocalizedString("permission contacts name", bundle: bundle, comment: "")
         case .reminders:
-            return NSLocalizedString("permission reminders name", bundle: .module, comment: "")
+            return NSLocalizedString("permission reminders name", bundle: bundle, comment: "")
         case .speech:
-            return NSLocalizedString("permission speech name", bundle: .module, comment: "")
+            return NSLocalizedString("permission speech name", bundle: bundle, comment: "")
         case .motion:
-            return NSLocalizedString("permission motion name", bundle: .module, comment: "")
+            return NSLocalizedString("permission motion name", bundle: bundle, comment: "")
         case .mediaLibrary:
-            return NSLocalizedString("permission media library name", bundle: .module, comment: "")
+            return NSLocalizedString("permission media library name", bundle: bundle, comment: "")
         case .bluetooth:
-            return NSLocalizedString("permission bluetooth name", bundle: .module, comment: "")
+            return NSLocalizedString("permission bluetooth name", bundle: bundle, comment: "")
         case .notification:
-            return NSLocalizedString("permission notification name", bundle: .module, comment: "")
+            return NSLocalizedString("permission notification name", bundle: bundle, comment: "")
         case .locationWhenInUse:
-            return NSLocalizedString("permission location when in use name", bundle: .module, comment: "")
+            return NSLocalizedString("permission location when in use name", bundle: bundle, comment: "")
         case .locationAlways:
-            return NSLocalizedString("permission location always name", bundle: .module, comment: "")
+            return NSLocalizedString("permission location always name", bundle: bundle, comment: "")
         case .tracking:
-            return NSLocalizedString("permission tracking name", bundle: .module, comment: "")
+            return NSLocalizedString("permission tracking name", bundle: bundle, comment: "")
         }
     }
     
     static func permission_description(_ permission: SPPermissions.PermissionType) -> String {
         switch permission {
         case .camera:
-            return NSLocalizedString("permission camera description", bundle: .module, comment: "")
+            return NSLocalizedString("permission camera description", bundle: bundle, comment: "")
         case .photoLibrary:
-            return NSLocalizedString("permission photoLibrary description", bundle: .module, comment: "")
+            return NSLocalizedString("permission photoLibrary description", bundle: bundle, comment: "")
         case .microphone:
-            return NSLocalizedString("permission microphone description", bundle: .module, comment: "")
+            return NSLocalizedString("permission microphone description", bundle: bundle, comment: "")
         case .calendar:
-            return NSLocalizedString("permission calendar description", bundle: .module, comment: "")
+            return NSLocalizedString("permission calendar description", bundle: bundle, comment: "")
         case .contacts:
-            return NSLocalizedString("permission contacts description", bundle: .module, comment: "")
+            return NSLocalizedString("permission contacts description", bundle: bundle, comment: "")
         case .reminders:
-            return NSLocalizedString("permission reminders description", bundle: .module, comment: "")
+            return NSLocalizedString("permission reminders description", bundle: bundle, comment: "")
         case .speech:
-            return NSLocalizedString("permission speech description", bundle: .module, comment: "")
+            return NSLocalizedString("permission speech description", bundle: bundle, comment: "")
         case .motion:
-            return NSLocalizedString("permission motion description", bundle: .module, comment: "")
+            return NSLocalizedString("permission motion description", bundle: bundle, comment: "")
         case .mediaLibrary:
-            return NSLocalizedString("permission media library description", bundle: .module, comment: "")
+            return NSLocalizedString("permission media library description", bundle: bundle, comment: "")
         case .bluetooth:
-            return NSLocalizedString("permission bluetooth description", bundle: .module, comment: "")
+            return NSLocalizedString("permission bluetooth description", bundle: bundle, comment: "")
         case .notification:
-            return NSLocalizedString("permission notification description", bundle: .module, comment: "")
+            return NSLocalizedString("permission notification description", bundle: bundle, comment: "")
         case .locationWhenInUse:
-            return NSLocalizedString("permission location when in use description", bundle: .module, comment: "")
+            return NSLocalizedString("permission location when in use description", bundle: bundle, comment: "")
         case .locationAlways:
-            return NSLocalizedString("permission location always description", bundle: .module, comment: "")
+            return NSLocalizedString("permission location always description", bundle: bundle, comment: "")
         case .tracking:
-            return NSLocalizedString("permission tracking description", bundle: .module, comment: "")
+            return NSLocalizedString("permission tracking description", bundle: bundle, comment: "")
         }
     }
     
     // MARK: - Action Button
     
-    static var allow_permission_action: String { NSLocalizedString("action allow", bundle: .module, comment: "") }
-    static var allowed_permission_action: String { NSLocalizedString("action allowed", bundle: .module, comment: "") }
+    static var allow_permission_action: String { NSLocalizedString("action allow", bundle: bundle, comment: "") }
+    static var allowed_permission_action: String { NSLocalizedString("action allowed", bundle: bundle, comment: "") }
     
     // MARK: - Titles & Comments
     
-    static var header: String { NSLocalizedString("titles header", bundle: .module, comment: "") }
-    static var sub_header: String { NSLocalizedString("titles sub header", bundle: .module, comment: "") }
-    static var description: String { NSLocalizedString("titles description", bundle: .module, comment: "") }
-    static var comment: String { NSLocalizedString("titles comment", bundle: .module, comment: "") }
+    static var header: String { NSLocalizedString("titles header", bundle: bundle, comment: "") }
+    static var sub_header: String { NSLocalizedString("titles sub header", bundle: bundle, comment: "") }
+    static var description: String { NSLocalizedString("titles description", bundle: bundle, comment: "") }
+    static var comment: String { NSLocalizedString("titles comment", bundle: bundle, comment: "") }
+    
+    // MARK: - Internal
+    
+    static var bundle: Bundle {
+        #if SPPERMISSIONS_SPM
+        return .module
+        #else
+        let path = Bundle(for: SPPermissions.Permission.self).path(forResource: "SPPermissions", ofType: "bundle") ?? ""
+        let bundle = Bundle(path: path) ?? Bundle.main
+        return bundle
+        #endif
+    }
 }

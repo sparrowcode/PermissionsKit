@@ -20,6 +20,9 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |subspec|
     subspec.source_files  = "Sources/SPPermissions/**/*.swift"
+    subspec.resource_bundles = {
+        "SPPermissions" => ["Sources/SPPermissions/Resources/*.lproj/*.strings"]
+    }
   end
 
   s.subspec 'Camera' do |subspec|
