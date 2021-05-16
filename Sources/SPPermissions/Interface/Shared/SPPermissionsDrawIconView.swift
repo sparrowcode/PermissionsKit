@@ -78,8 +78,7 @@ public class SPPermissionsDrawIconView: UIView {
         case .bluetooth:
             Draw.drawBluetooth(frame: rect, resizing: .aspectFit, color: tintColor)
         case .tracking:
-            #warning("todo")
-            Draw.drawBluetooth(frame: rect, resizing: .aspectFit, color: tintColor)
+            Draw.drawTracking(frame: rect, resizing: .aspectFit, color: tintColor)
         case .none:
             break
         }
