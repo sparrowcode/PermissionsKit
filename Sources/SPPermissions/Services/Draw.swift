@@ -722,15 +722,11 @@ enum Draw {
     }
     
     public static func drawBluetooth(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
-        
         let context = UIGraphicsGetCurrentContext()!
-        
-        
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 150, height: 150), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 150, y: resizedFrame.height / 150)
-        
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 102.34, y: 94.92))
         bezierPath.addLine(to: CGPoint(x: 78.9, y: 75.5))
@@ -767,6 +763,32 @@ enum Draw {
         
         context.restoreGState()
         
+    }
+    
+    public static func drawTracking(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
+        
+        let context = UIGraphicsGetCurrentContext()!
+        
+        context.saveGState()
+        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 150, height: 150), target: targetFrame)
+        context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
+        context.scaleBy(x: resizedFrame.width / 150, y: resizedFrame.height / 150)
+        
+        let bezierPath = UIBezierPath()
+        bezierPath.move(to: CGPoint(x: 75, y: 127.43))
+        bezierPath.addCurve(to: CGPoint(x: 83.2, y: 124.32), controlPoint1: CGPoint(x: 77.52, y: 127.43), controlPoint2: CGPoint(x: 80.31, y: 126.31))
+        bezierPath.addCurve(to: CGPoint(x: 131, y: 59.89), controlPoint1: CGPoint(x: 112.19, y: 105.49), controlPoint2: CGPoint(x: 131, y: 82.53))
+        bezierPath.addCurve(to: CGPoint(x: 98.69, y: 24), controlPoint1: CGPoint(x: 131, y: 38.38), controlPoint2: CGPoint(x: 116.69, y: 24))
+        bezierPath.addCurve(to: CGPoint(x: 75, y: 38.97), controlPoint1: CGPoint(x: 88.29, y: 24), controlPoint2: CGPoint(x: 80.31, y: 29.15))
+        bezierPath.addCurve(to: CGPoint(x: 51.31, y: 24), controlPoint1: CGPoint(x: 69.69, y: 29.15), controlPoint2: CGPoint(x: 61.71, y: 24))
+        bezierPath.addCurve(to: CGPoint(x: 19, y: 59.89), controlPoint1: CGPoint(x: 33.31, y: 24), controlPoint2: CGPoint(x: 19, y: 38.38))
+        bezierPath.addCurve(to: CGPoint(x: 66.75, y: 124.32), controlPoint1: CGPoint(x: 19, y: 82.53), controlPoint2: CGPoint(x: 37.76, y: 105.49))
+        bezierPath.addCurve(to: CGPoint(x: 75, y: 127.43), controlPoint1: CGPoint(x: 69.69, y: 126.31), controlPoint2: CGPoint(x: 72.48, y: 127.43))
+        bezierPath.close()
+        color.setFill()
+        bezierPath.fill()
+        
+        context.restoreGState()
     }
     
     @objc(StyleKitNameResizingBehavior)

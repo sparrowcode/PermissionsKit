@@ -39,19 +39,19 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 No any changes in UI, but big things here. **If you got any bug, please, create issue. I will fix it super fast.**
 
-### Support SPM 🔥
+#### Support SPM 🔥
 
 Now it work, you can simple remove cocoapods dependec and move to SPM. More details about instalation process read in [Instalation section](#swift-package-manager). Cocoapods saved and continue support.
 
-### Added `.notDetermined`
+#### Added `.notDetermined`
 
 You can check if permission request before.
 
-### New Struct
+#### New Struct
 
 Changed delegate and data source. **If you use delegates or datasources** before, please, check again. Some methods renamed. Permissions now its not enum. It happen becouse no way support moduls and shared schemes.
 
-### Localisation
+#### Localisation
 
 All defaults text ready to localiaztion. I going to add more in this week, you can support me and add your localisation. Check `Sources/Recourses` folder.
 
