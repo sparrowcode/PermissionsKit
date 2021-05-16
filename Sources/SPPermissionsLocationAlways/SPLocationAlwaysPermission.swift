@@ -65,8 +65,13 @@ public class SPLocationAlwaysPermission: SPPermissions.Permission {
     }
     
     public override func request(completion: @escaping () -> Void) {
-        #warning("todo")
-        fatalError()
+        SPLocationAlwaysHandler.shared = SPLocationAlwaysHandler()
+        SPLocationAlwaysHandler.shared?.requestPermission {
+            DispatchQueue.main.async {
+                completion()
+                SPLocationAlwaysHandler.shared = nil
+            }
+        }
     }
 }
 

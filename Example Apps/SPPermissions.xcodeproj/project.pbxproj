@@ -10,14 +10,14 @@
 		F471BDB7264A5993000693BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDB6264A5993000693BC /* AppDelegate.swift */; };
 		F471BDBB264A5993000693BC /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDBA264A5993000693BC /* RootController.swift */; };
 		F471BDC0264A5995000693BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F471BDBF264A5995000693BC /* Assets.xcassets */; };
-		F471BDC3264A5995000693BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F471BDC1264A5995000693BC /* LaunchScreen.storyboard */; };
 		F47CBAEA265001FF00A8A00F /* RootControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBAE9265001FF00A8A00F /* RootControllerExtension.swift */; };
 		F47CBB10265182DD00A8A00F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47CBB0A265182DC00A8A00F /* Assets.xcassets */; };
-		F47CBB11265182DD00A8A00F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47CBB0B265182DC00A8A00F /* LaunchScreen.storyboard */; };
 		F47CBB12265182DD00A8A00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBB0D265182DC00A8A00F /* AppDelegate.swift */; };
 		F47CBB13265182DD00A8A00F /* RootControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBB0F265182DC00A8A00F /* RootControllers.swift */; };
 		F47CBB152651830600A8A00F /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = F47CBB142651830600A8A00F /* Dependencies */; };
 		F47CBB17265186CD00A8A00F /* RootControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBB16265186CD00A8A00F /* RootControllerExtension.swift */; };
+		F4E350E02651B5EB00D2CA45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E350DF2651B5EB00D2CA45 /* LaunchScreen.storyboard */; };
+		F4E350E22651B5FB00D2CA45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E350E12651B5FB00D2CA45 /* LaunchScreen.storyboard */; };
 		F4FD4D342651053E00B53BD9 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = F4FD4D332651053E00B53BD9 /* Dependencies */; };
 /* End PBXBuildFile section */
 
@@ -49,16 +49,16 @@
 		F471BDB6264A5993000693BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F471BDBA264A5993000693BC /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
 		F471BDBF264A5995000693BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F471BDC2264A5995000693BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F471BDC4264A5995000693BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47CBAE9265001FF00A8A00F /* RootControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootControllerExtension.swift; sourceTree = "<group>"; };
 		F47CBAF72651826100A8A00F /* tvOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47CBB052651826300A8A00F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47CBB0A265182DC00A8A00F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F47CBB0C265182DC00A8A00F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F47CBB0D265182DC00A8A00F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F47CBB0F265182DC00A8A00F /* RootControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootControllers.swift; sourceTree = "<group>"; };
 		F47CBB16265186CD00A8A00F /* RootControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootControllerExtension.swift; sourceTree = "<group>"; };
+		F4E350DF2651B5EB00D2CA45 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F4E350E12651B5FB00D2CA45 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "iOS Example/App/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
 		F4FD4D2B2651008300B53BD9 /* SPPermissions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SPPermissions; path = ..; sourceTree = "<group>"; };
 		F4FD4D322651040300B53BD9 /* Dependencies */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dependencies; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				F471BDB6264A5993000693BC /* AppDelegate.swift */,
-				F471BDC1264A5995000693BC /* LaunchScreen.storyboard */,
+				F4E350DF2651B5EB00D2CA45 /* LaunchScreen.storyboard */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -151,7 +151,7 @@
 			children = (
 				F47CBB0D265182DC00A8A00F /* AppDelegate.swift */,
 				F47CBB0A265182DC00A8A00F /* Assets.xcassets */,
-				F47CBB0B265182DC00A8A00F /* LaunchScreen.storyboard */,
+				F4E350E12651B5FB00D2CA45 /* LaunchScreen.storyboard */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -265,7 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F471BDC3264A5995000693BC /* LaunchScreen.storyboard in Resources */,
+				F4E350E02651B5EB00D2CA45 /* LaunchScreen.storyboard in Resources */,
 				F471BDC0264A5995000693BC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,8 +274,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E350E22651B5FB00D2CA45 /* LaunchScreen.storyboard in Resources */,
 				F47CBB10265182DD00A8A00F /* Assets.xcassets in Resources */,
-				F47CBB11265182DD00A8A00F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,25 +311,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		F471BDC1264A5995000693BC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F471BDC2264A5995000693BC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		F47CBB0B265182DC00A8A00F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F47CBB0C265182DC00A8A00F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		F471BDC6264A5995000693BC /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -337,7 +318,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -412,7 +393,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -480,7 +461,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -554,7 +535,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

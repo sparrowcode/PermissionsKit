@@ -30,7 +30,7 @@ import MapKit
 import SPPermissions
 
 public extension SPPermissions.Permission {
-
+    
     static var locationWhenInUse: SPPermissions.Permission {
         return SPLocationWhenInUsePermission()
     }
@@ -65,8 +65,13 @@ public class SPLocationWhenInUsePermission: SPPermissions.Permission {
     }
     
     public override func request(completion: @escaping () -> Void) {
-        #warning("todo")
-        fatalError()
+        SLocationWhenInUseHandler.shared = SLocationWhenInUseHandler()
+        SLocationWhenInUseHandler.shared?.requestPermission {
+            DispatchQueue.main.async {
+                completion()
+                SLocationWhenInUseHandler.shared = nil
+            }
+        }
     }
 }
 
