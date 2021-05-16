@@ -33,7 +33,7 @@ public class SPPermissionsTableViewCell: UITableViewCell {
     public let permissionIconImageView = UIImageView()
     private let permissionIconContainerView = UIView()
     
-    static var id = "SPPermissionTableViewCell"
+    static var id = "SPPermissionsTableViewCell"
     
     // MARK: - Init
     
