@@ -283,6 +283,8 @@ extension Controller: SPPermissionsDataSource {
 
 ### Denied alert
 
+[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermissions/blob/dev6/Assets/Readme/Denied%20Alert.pdf)](https://github.com/ivanvorobei)
+
 <img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/dev6/Assets/Readme/Denied%20Alert.pdf" width="240"/>
 
 If permission denied, you can provide alert to user for propose open settings. Here you can customise text of it alert:
