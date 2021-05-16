@@ -19,24 +19,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_BLUETOOTH
+#if SPPERMISSIONS_BLUETOOTH
 
-import UIKit
+import Foundation
 import CoreBluetooth
 import SPPermissions
 
 // https://medium.com/flawless-app-stories/
 // handling-ios-13-bluetooth-permissions-26c6a8cbb816
 #warning("todo")
-class SPBluetoothPermission: SPPermissionsPermissionInterface {
+
+public extension SPPermissions.Permission {
+
+    static var bluetooth: SPPermissions.Permission {
+        return SPBluetoothPermission()
+    }
+}
+
+public class SPBluetoothPermission: SPPermissions.Permission {
     
-    var status: SPPermissions.Permission.State {
+    open override var type: SPPermissions.PermissionType { .bluetooth }
+    open override var usageDescriptionKey: String? { "NSBluetoothAlwaysUsageDescription" }
+    
+    public override var status: SPPermissions.PermissionStatus {
         fatalError()
     }
     
-    func request(completion: @escaping ()->Void) {
+    public override func request(completion: @escaping () -> Void) {
         fatalError()
     }
 }
 
 #endif
+

@@ -19,14 +19,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_SPEECH
+#if SPPERMISSIONS_SPEECH
 
+import Foundation
 import Speech
 import SPPermissions
 
-class SPSpeechPermission: SPPermissionsPermissionInterface {
+public extension SPPermissions.Permission {
+
+    static var speech: SPPermissions.Permission {
+        return SPSpeechPermission()
+    }
+}
+
+public class SPSpeechPermission: SPPermissions.Permission {
     
-    var status: SPPermissions.Permission.State {
+    open override var type: SPPermissions.PermissionType { .speech }
+    open override var usageDescriptionKey: String? { "NSSpeechRecognitionUsageDescription" }
+    
+    public override var status: SPPermissions.PermissionStatus {
         switch SFSpeechRecognizer.authorizationStatus() {
         case .authorized: return .authorized
         case .denied: return .denied
@@ -36,7 +47,7 @@ class SPSpeechPermission: SPPermissionsPermissionInterface {
         }
     }
     
-    func request(completion: @escaping ()->Void) {
+    public override func request(completion: @escaping () -> Void) {
         SFSpeechRecognizer.requestAuthorization { status in
             DispatchQueue.main.async {
                 completion()

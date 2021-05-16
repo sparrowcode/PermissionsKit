@@ -126,9 +126,9 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
             }
             
             if permission.authorized {
-                self.delegate?.didAllowPermission?(permission)
+                self.delegate?.didAllowPermission(permission)
             } else {
-                self.delegate?.didDeniedPermission?(permission)
+                self.delegate?.didDeniedPermission(permission)
                 
                 // Delay using for fix animation freeze.
                 
@@ -152,8 +152,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     }
     
     private func processDissmissedEvent() {
-        let ids: [Int] = self.permissions.map { $0.type.rawValue }
-        self.delegate?.didHidePermissions?(ids)
+        self.delegate?.didHidePermissions(permissions)
     }
 }
 
@@ -169,7 +168,7 @@ extension SPPermissionsListController {
         let permission = permissions[indexPath.row]
         var cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionsTableViewCell.id, for: indexPath) as! SPPermissionsTableViewCell
         cell.defaultConfigure(for: permission)
-        cell = dataSource?.configure?(cell, for: permission) ?? cell
+        cell = dataSource?.configure(cell, for: permission) ?? cell
         cell.permissionButton.addTarget(self, action: #selector(self.process(button:)), for: .touchUpInside)
         return cell
     }

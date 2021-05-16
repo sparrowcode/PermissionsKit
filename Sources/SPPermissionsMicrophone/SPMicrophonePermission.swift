@@ -19,15 +19,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_MICROPHONE
+#if SPPERMISSIONS_MICROPHONE
 
-import UIKit
+import Foundation
 import AVFoundation
 import SPPermissions
 
-class SPMicrophonePermission: SPPermissionsPermissionInterface {
+public extension SPPermissions.Permission {
+
+    static var microphone: SPPermissions.Permission {
+        return SPMicrophonePermission()
+    }
+}
+
+public class SPMicrophonePermission: SPPermissions.Permission {
     
-    var status: SPPermissions.Permission.State {
+    open override var type: SPPermissions.PermissionType { .microphone }
+    open override var usageDescriptionKey: String? { "NSMicrophoneUsageDescription" }
+    
+    public override var status: SPPermissions.PermissionStatus {
         switch  AVAudioSession.sharedInstance().recordPermission {
         case .granted: return .authorized
         case .denied: return .denied
@@ -36,7 +46,7 @@ class SPMicrophonePermission: SPPermissionsPermissionInterface {
         }
     }
     
-    func request(completion: @escaping ()->Void) {
+    public override func request(completion: @escaping () -> Void) {
         AVAudioSession.sharedInstance().requestRecordPermission {
             granted in
             DispatchQueue.main.async {

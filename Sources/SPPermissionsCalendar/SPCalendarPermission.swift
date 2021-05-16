@@ -19,22 +19,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if SPPERMISSIONS_CALENDAR
+
 import Foundation
 import EventKit
 import SPPermissions
 
-extension SPPermissions.Permission {
-    
-    public static var calendar: SPCalendarPermission {
+public extension SPPermissions.Permission {
+
+    static var calendar: SPPermissions.Permission {
         return SPCalendarPermission()
     }
 }
 
 public class SPCalendarPermission: SPPermissions.Permission {
     
-    // MARK: - Implementation
-    
     open override var type: SPPermissions.PermissionType { .calendar }
+    open override var usageDescriptionKey: String? { "NSCalendarsUsageDescription" }
     
     public override var status: SPPermissions.PermissionStatus {
         switch EKEventStore.authorizationStatus(for: EKEntityType.event) {
@@ -56,3 +57,5 @@ public class SPCalendarPermission: SPPermissions.Permission {
         })
     }
 }
+
+#endif

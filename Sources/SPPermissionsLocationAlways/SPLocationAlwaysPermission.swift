@@ -19,43 +19,49 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_PHOTOLIBRARY
+#if SPPERMISSIONS_LOCATION_ALWAYS
 
-import Photos
+import Foundation
+import MapKit
 import SPPermissions
 
 public extension SPPermissions.Permission {
 
-    static var photoLibrary: SPPermissions.Permission {
-        return SPPhotoLibraryPermission()
+    static var locationAlways: SPPermissions.Permission {
+        return SPLocationAlwaysPermission()
     }
 }
 
-public class SPPhotoLibraryPermission: SPPermissions.Permission {
+public class SPLocationAlwaysPermission: SPPermissions.Permission {
     
-    open override var type: SPPermissions.PermissionType { .photoLibrary }
-    open override var usageDescriptionKey: String? { "NSPhotoLibraryUsageDescription" }
+    open override var type: SPPermissions.PermissionType { .locationAlways }
+    open override var usageDescriptionKey: String? { "NSLocationAlwaysAndWhenInUseUsageDescription" }
     
     public override var status: SPPermissions.PermissionStatus {
-        switch PHPhotoLibrary.authorizationStatus() {
+        let authorizationStatus: CLAuthorizationStatus = {
+            let locationManager = CLLocationManager()
+            if #available(iOS 14.0, *) {
+                return locationManager.authorizationStatus
+            } else {
+                return CLLocationManager.authorizationStatus()
+            }
+        }()
+        
+        switch authorizationStatus {
         case .authorized: return .authorized
         case .denied: return .denied
         case .notDetermined: return .notDetermined
         case .restricted: return .denied
-        case .limited: return .authorized
+        case .authorizedAlways: return .authorized
+        case .authorizedWhenInUse: return .denied
         @unknown default: return .denied
         }
     }
     
     public override func request(completion: @escaping () -> Void) {
-        PHPhotoLibrary.requestAuthorization({
-            finished in
-            DispatchQueue.main.async {
-                completion()
-            }
-        })
+        #warning("todo")
+        fatalError()
     }
 }
 
 #endif
-

@@ -26,81 +26,78 @@ enum Text {
     static func permission_name(_ permission: SPPermissions.PermissionType) -> String {
         switch permission {
         case .camera:
-            return NSLocalizedString("permission camera name", bundle: .main, comment: "")
-            //return "Camera"
+            return NSLocalizedString("permission camera name", bundle: .module, comment: "")
         case .photoLibrary:
-            return "Photo Library"
+            return NSLocalizedString("permission photoLibrary name", bundle: .module, comment: "")
         case .microphone:
-            return "Microphone"
+            return NSLocalizedString("permission microphone name", bundle: .module, comment: "")
         case .calendar:
-            return "Calendar"
+            return NSLocalizedString("permission calendar name", bundle: .module, comment: "")
         case .contacts:
-            return "Contacts"
+            return NSLocalizedString("permission contacts name", bundle: .module, comment: "")
         case .reminders:
-            return "Reminders"
+            return NSLocalizedString("permission reminders name", bundle: .module, comment: "")
         case .speech:
-            return "Speech"
-        case .locationAlways:
-            return "Location Always"
+            return NSLocalizedString("permission speech name", bundle: .module, comment: "")
         case .motion:
-            return "Motion"
+            return NSLocalizedString("permission motion name", bundle: .module, comment: "")
         case .mediaLibrary:
-            return "Media Library"
+            return NSLocalizedString("permission media library name", bundle: .module, comment: "")
         case .bluetooth:
-            return "Bluetooth"
+            return NSLocalizedString("permission bluetooth name", bundle: .module, comment: "")
         case .notification:
-            return "Notification"
+            return NSLocalizedString("permission notification name", bundle: .module, comment: "")
         case .locationWhenInUse:
-            return "Location When Use"
+            return NSLocalizedString("permission location when in use name", bundle: .module, comment: "")
+        case .locationAlways:
+            return NSLocalizedString("permission location always name", bundle: .module, comment: "")
         case .tracking:
-            return "Tracking"
+            return NSLocalizedString("permission tracking name", bundle: .module, comment: "")
         }
     }
     
     static func permission_description(_ permission: SPPermissions.PermissionType) -> String {
         switch permission {
-        #if os(iOS)
         case .camera:
-            return "Allow app for use camera"
-        case .calendar:
-            return "Application can add events to calendar"
-        case .contacts:
-            return "Access for your contacts and phones"
-        case .microphone:
-            return "Allow record voice from app"
+            return NSLocalizedString("permission camera description", bundle: .module, comment: "")
         case .photoLibrary:
-            return "Access for save photos in your gallery"
+            return NSLocalizedString("permission photoLibrary description", bundle: .module, comment: "")
+        case .microphone:
+            return NSLocalizedString("permission microphone description", bundle: .module, comment: "")
+        case .calendar:
+            return NSLocalizedString("permission calendar description", bundle: .module, comment: "")
+        case .contacts:
+            return NSLocalizedString("permission contacts description", bundle: .module, comment: "")
         case .reminders:
-            return "Application can create new task"
+            return NSLocalizedString("permission reminders description", bundle: .module, comment: "")
         case .speech:
-            return "Allow to check your voice"
-        case .locationAlways:
-            return "Allow to access your location"
+            return NSLocalizedString("permission speech description", bundle: .module, comment: "")
         case .motion:
-            return "Allow to report motion and environment-related data"
+            return NSLocalizedString("permission motion description", bundle: .module, comment: "")
         case .mediaLibrary:
-            return "Allow to check your media"
+            return NSLocalizedString("permission media library description", bundle: .module, comment: "")
         case .bluetooth:
-            return "Allow access to bluetooth"
-        #endif
+            return NSLocalizedString("permission bluetooth description", bundle: .module, comment: "")
         case .notification:
-            return "Get important information without opening app."
+            return NSLocalizedString("permission notification description", bundle: .module, comment: "")
         case .locationWhenInUse:
-            return "Allow to access your location"
+            return NSLocalizedString("permission location when in use description", bundle: .module, comment: "")
+        case .locationAlways:
+            return NSLocalizedString("permission location always description", bundle: .module, comment: "")
         case .tracking:
-            return "Allow to access app-related data"
+            return NSLocalizedString("permission tracking description", bundle: .module, comment: "")
         }
     }
     
     // MARK: - Action Button
     
-    static var allow_permission_action: String { return "Allow" }
-    static var allowed_permission_action: String { return "Allowed" }
+    static var allow_permission_action: String { NSLocalizedString("action allow", bundle: .module, comment: "") }
+    static var allowed_permission_action: String { NSLocalizedString("action allowed", bundle: .module, comment: "") }
     
     // MARK: - Titles & Comments
     
-    static var header: String = "Need Permissions"
-    static var sub_header: String = "Permissions request"
-    static var description: String = "These are the permissions the app requires to work properly. Please see description for each permission."
-    static var comment: String = "Permissions are necessary for the application to work and perform correctly. Push are not required permissions."
+    static var header: String { NSLocalizedString("titles header", bundle: .module, comment: "") }
+    static var sub_header: String { NSLocalizedString("titles sub header", bundle: .module, comment: "") }
+    static var description: String { NSLocalizedString("titles description", bundle: .module, comment: "") }
+    static var comment: String { NSLocalizedString("titles comment", bundle: .module, comment: "") }
 }

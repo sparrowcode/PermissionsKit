@@ -35,7 +35,7 @@ If you can't find valid, add new to codestyle agreements please. Other can be us
 
 ## Active Compilation Conditions
 
-If you need manually use `SPPermissions`, you shoud set active compilation conditions. List of all is it:
+List of using all it is:
 
 - SPPERMISSIONS_CAMERA
 - SPPERMISSIONS_CONTACTS
@@ -45,7 +45,8 @@ If you need manually use `SPPermissions`, you shoud set active compilation condi
 - SPPERMISSIONS_MICROPHONE
 - SPPERMISSIONS_REMINDERS
 - SPPERMISSIONS_SPEECHRECOGNIZER
-- SPPERMISSIONS_LOCATION
+- SPPERMISSIONS_LOCATION_WHENINUSE
+- SPPERMISSIONS_LOCATION_ALWAYS
 - SPPERMISSIONS_MOTION
 - SPPERMISSIONS_MEDIALIBRARY
 - SPPERMISSIONS_BLUETOOTH

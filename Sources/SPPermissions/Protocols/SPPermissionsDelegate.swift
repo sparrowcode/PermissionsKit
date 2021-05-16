@@ -21,11 +21,22 @@
 
 import UIKit
 
-@objc public protocol SPPermissionsDelegate: AnyObject {
+public protocol SPPermissionsDelegate: AnyObject {
     
-    @objc optional func didAllowPermission(_ permission: SPPermissions.Permission)
+    func didAllowPermission(_ permission: SPPermissions.Permission)
     
-    @objc optional func didDeniedPermission(_ permission: SPPermissions.Permission)
+    func didDeniedPermission(_ permission: SPPermissions.Permission)
     
-    @objc optional func didHidePermissions(_ ids: [Int])
+    func didHidePermissions(_ permissions: [SPPermissions.Permission])
+}
+
+// Using like default for allow it like optional.
+
+public extension SPPermissionsDelegate {
+    
+    func didAllowPermission(_ permission: SPPermissions.Permission) {}
+    
+    func didDeniedPermission(_ permission: SPPermissions.Permission) {}
+    
+    func didHidePermissions(_ permissions: [SPPermissions.Permission]) {}
 }

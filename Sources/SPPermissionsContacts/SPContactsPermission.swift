@@ -19,15 +19,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_CONTACTS
+#if SPPERMISSIONS_CONTACTS
 
-import UIKit
+import Foundation
 import Contacts
 import SPPermissions
 
-class SPContactsPermission: SPPermissionsPermissionInterface {
+public extension SPPermissions.Permission {
+
+    static var contacts: SPPermissions.Permission {
+        return SPContactsPermission()
+    }
+}
+
+public class SPContactsPermission: SPPermissions.Permission {
     
-    var status: SPPermissions.Permission.State {
+    open override var type: SPPermissions.PermissionType { .contacts }
+    open override var usageDescriptionKey: String? { "NSContactsUsageDescription" }
+    
+    public override var status: SPPermissions.PermissionStatus {
         switch CNContactStore.authorizationStatus(for: .contacts) {
         case .authorized: return .authorized
         case .denied: return .denied
@@ -37,7 +47,7 @@ class SPContactsPermission: SPPermissionsPermissionInterface {
         }
     }
     
-    func request(completion: @escaping ()->Void) {
+    public override func request(completion: @escaping () -> Void) {
         let store = CNContactStore()
         store.requestAccess(for: .contacts, completionHandler: { (granted, error) in
             DispatchQueue.main.async {

@@ -19,14 +19,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_REMINDERS
+#if SPPERMISSIONS_REMINDERS
 
+import Foundation
 import EventKit
 import SPPermissions
 
-class SPRemindersPermission: SPPermissionsPermissionInterface {
+public extension SPPermissions.Permission {
+
+    static var reminders: SPPermissions.Permission {
+        return SPRemindersPermission()
+    }
+}
+
+public class SPRemindersPermission: SPPermissions.Permission {
     
-    var status: SPPermissions.Permission.State {
+    open override var type: SPPermissions.PermissionType { .reminders }
+    open override var usageDescriptionKey: String? { "NSRemindersUsageDescription" }
+    
+    public override var status: SPPermissions.PermissionStatus {
         switch EKEventStore.authorizationStatus(for: EKEntityType.reminder) {
         case .authorized: return .authorized
         case .denied: return .denied
@@ -36,7 +47,7 @@ class SPRemindersPermission: SPPermissionsPermissionInterface {
         }
     }
     
-    func request(completion: @escaping ()->Void) {
+    public override func request(completion: @escaping () -> Void) {
         let eventStore = EKEventStore()
         eventStore.requestAccess(to: EKEntityType.reminder, completion: {
             (accessGranted: Bool, error: Error?) in
