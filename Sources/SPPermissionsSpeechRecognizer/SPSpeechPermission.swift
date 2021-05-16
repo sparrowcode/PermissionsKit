@@ -22,6 +22,7 @@
 #if os(iOS) && SPPERMISSIONS_SPEECH
 
 import Speech
+import SPPermissions
 
 class SPSpeechPermission: SPPermissionsPermissionInterface {
     

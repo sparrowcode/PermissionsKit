@@ -23,10 +23,7 @@
 
 import UIKit
 import CoreMotion
-
-#if canImport(SPPermissions)
 import SPPermissions
-#endif
 
 class SPMotionPermission: SPPermissionsPermissionInterface {
     

@@ -50,7 +50,7 @@ public class SPPermissionsDrawIconView: UIView {
     
     override public func draw(_ rect: CGRect) {
         super.draw(rect)
-        switch permission {
+        switch permission?.type {
         case .camera:
             Draw.drawCamera(frame: rect, resizing: .aspectFit, color: tintColor)
         case .photoLibrary:

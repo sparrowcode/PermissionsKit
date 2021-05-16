@@ -23,9 +23,8 @@ import UIKit
 
 enum Text {
     
-    static func permission_name(_ permission: SPPermissions.Permission) -> String {
+    static func permission_name(_ permission: SPPermissions.PermissionType) -> String {
         switch permission {
-        #if os(iOS)
         case .camera:
             return NSLocalizedString("permission camera name", bundle: .main, comment: "")
             //return "Camera"
@@ -49,7 +48,6 @@ enum Text {
             return "Media Library"
         case .bluetooth:
             return "Bluetooth"
-        #endif
         case .notification:
             return "Notification"
         case .locationWhenInUse:
@@ -59,7 +57,7 @@ enum Text {
         }
     }
     
-    static func permission_description(_ permission: SPPermissions.Permission) -> String {
+    static func permission_description(_ permission: SPPermissions.PermissionType) -> String {
         switch permission {
         #if os(iOS)
         case .camera:

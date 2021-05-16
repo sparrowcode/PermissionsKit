@@ -23,10 +23,7 @@
 
 import UIKit
 import UserNotifications
-
-#if canImport(SPPermissions)
 import SPPermissions
-#endif
 
 class SPNotificationPermission: SPPermissionsPermissionInterface {
     

@@ -23,10 +23,7 @@
 
 import UIKit
 import MapKit
-
-#if canImport(SPPermissions)
 import SPPermissions
-#endif
 
 class SPLocationPermission: SPPermissionsPermissionInterface {
     

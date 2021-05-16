@@ -106,9 +106,9 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
             
             // Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
             
-            if permission == .locationAlways {
-                if self.permissions.contains(.locationWhenInUse) {
-                    if let index = self.permissions.firstIndex(of: .locationWhenInUse) {
+            if permission.type == .locationAlways {
+                if self.permissions.contains(where: { $0.type == .locationWhenInUse }) {
+                    if let index = self.permissions.firstIndex(where: { $0.type == .locationWhenInUse }) {
                         if let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? SPPermissionsTableViewCell {
                             cell.updateInterface(animated: true)
                         }
@@ -152,7 +152,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     }
     
     private func processDissmissedEvent() {
-        let ids: [Int] = self.permissions.map { $0.rawValue }
+        let ids: [Int] = self.permissions.map { $0.type.rawValue }
         self.delegate?.didHidePermissions?(ids)
     }
 }

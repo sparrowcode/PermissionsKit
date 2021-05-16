@@ -23,10 +23,7 @@
 
 import UIKit
 import CoreBluetooth
-
-#if canImport(SPPermissions)
 import SPPermissions
-#endif
 
 // https://medium.com/flawless-app-stories/
 // handling-ios-13-bluetooth-permissions-26c6a8cbb816

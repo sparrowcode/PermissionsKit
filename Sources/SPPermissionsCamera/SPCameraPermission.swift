@@ -19,19 +19,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_CAMERA
-
-import UIKit
+import Foundation
 import AVFoundation
-
-#if canImport(SPPermissions)
 import SPPermissions
-#endif
+
+public extension SPPermissions.Permission {
+    
+    @available(iOS 11.0, macCatalyst 14.0, *)
+    static var camera: SPCameraPermission {
+        return SPCameraPermission()
+    }
+}
 
 @available(iOS 11.0, macCatalyst 14.0, *)
-class SPCameraPermission: SPPermissionsPermissionInterface {
+public class SPCameraPermission: SPPermissions.Permission {
     
-    var status: SPPermissions.Permission.State {
+    open override var type: SPPermissions.PermissionType { .camera }
+    
+    public override var status: SPPermissions.PermissionStatus {
         switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {
         case .authorized: return .authorized
         case .denied: return .denied
@@ -41,7 +46,7 @@ class SPCameraPermission: SPPermissionsPermissionInterface {
         }
     }
     
-    func request(completion: @escaping ()->Void) {
+    public override func request(completion: @escaping () -> Void) {
         AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: {
             finished in
             DispatchQueue.main.async {
@@ -51,4 +56,3 @@ class SPCameraPermission: SPPermissionsPermissionInterface {
     }
 }
 
-#endif

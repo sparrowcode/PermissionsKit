@@ -22,10 +22,7 @@
 #if os(iOS) && SPPERMISSIONS_TRACKING
 
 import AppTrackingTransparency
-
-#if canImport(SPPermissions)
 import SPPermissions
-#endif
 
 @available(iOS 14.5, *)
 class SPTrackingPermission: SPPermissionsPermissionInterface {
