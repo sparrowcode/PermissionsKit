@@ -26,7 +26,6 @@ import SPPermissions
 #if SPPERMISSIONS_TRACKING
 
 import AppTrackingTransparency
-import SPPermissions
 
 @available(iOS 14.5, tvOS 14.5, *)
 public extension SPPermissions.Permission {

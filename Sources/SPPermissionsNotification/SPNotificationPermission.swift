@@ -26,7 +26,6 @@ import SPPermissions
 #if SPPERMISSIONS_NOTIFICATION
 
 import UserNotifications
-import SPPermissions
 
 public extension SPPermissions.Permission {
 

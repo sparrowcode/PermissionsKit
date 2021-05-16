@@ -27,7 +27,6 @@ import SPPermissions
 
 import Foundation
 import Speech
-import SPPermissions
 
 public extension SPPermissions.Permission {
 

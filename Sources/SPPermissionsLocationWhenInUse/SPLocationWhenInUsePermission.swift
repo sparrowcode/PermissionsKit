@@ -27,7 +27,6 @@ import SPPermissions
 
 import Foundation
 import MapKit
-import SPPermissions
 
 public extension SPPermissions.Permission {
     

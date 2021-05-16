@@ -23,7 +23,6 @@
 
 import Foundation
 import MapKit
-import SPPermissions
 
 class SLocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
         

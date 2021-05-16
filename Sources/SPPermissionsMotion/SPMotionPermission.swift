@@ -27,7 +27,6 @@ import SPPermissions
 
 import Foundation
 import CoreMotion
-import SPPermissions
 
 public extension SPPermissions.Permission {
 

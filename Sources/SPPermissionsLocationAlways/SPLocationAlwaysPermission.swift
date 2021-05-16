@@ -23,11 +23,10 @@
 import SPPermissions
 #endif
 
-#if SPPERMISSIONS_LOCATION_ALWAYS
+#if os(iOS) && SPPERMISSIONS_LOCATION_ALWAYS
 
 import Foundation
 import MapKit
-import SPPermissions
 
 public extension SPPermissions.Permission {
 

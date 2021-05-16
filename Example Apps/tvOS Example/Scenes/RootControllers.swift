@@ -40,7 +40,7 @@ import SPPermissionsTracking
 
 class RootController: SPTableViewController {
     
-    var availablePermissions: [SPPermissions.Permission] = [.photoLibrary, .notification, .locationWhenInUse, .locationAlways, .bluetooth, /*.tracking*/]
+    var availablePermissions: [SPPermissions.Permission] = [.photoLibrary, .notification, .locationWhenInUse, .bluetooth, /*.tracking*/]
     
     var selectedPermissions: [SPPermissions.Permission] = []
     

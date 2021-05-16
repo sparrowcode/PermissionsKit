@@ -49,7 +49,7 @@ class SPPermissionBluetoothHandler: NSObject, CBCentralManagerDelegate {
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        if #available(iOS 13.0, *) {
+        if #available(iOS 13.0, tvOS 13, *) {
             switch central.authorization {
             case .notDetermined:
                 break

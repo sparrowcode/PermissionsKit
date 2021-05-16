@@ -20,5 +20,3 @@
 // SOFTWARE.
 
 import Foundation
-import SparrowKit
-import SPPermissions

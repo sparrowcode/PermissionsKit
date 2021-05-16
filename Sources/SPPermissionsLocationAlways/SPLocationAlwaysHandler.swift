@@ -19,11 +19,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_LOCATION_ALWAYS
+#if os(iOS) && SPPERMISSIONS_LOCATION_ALWAYS
 
 import Foundation
 import MapKit
-import SPPermissions
 
 class SPLocationAlwaysHandler: NSObject, CLLocationManagerDelegate {
         
