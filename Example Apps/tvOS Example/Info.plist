@@ -20,15 +20,9 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>arm64</string>
-	</array>
-	<key>UIUserInterfaceStyle</key>
-	<string>Automatic</string>
-	<key>NSPhotoLibraryUsageDescription</key>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Example Description</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Example Description</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Example Description</string>
@@ -38,11 +32,17 @@
 	<string>Example Description</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Example Description</string>
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Example Description</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
+	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Example Description</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>Example Description</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arm64</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Automatic</string>
 </dict>
 </plist>

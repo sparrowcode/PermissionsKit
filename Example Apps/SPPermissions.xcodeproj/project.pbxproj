@@ -377,7 +377,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "by.ivanvorobei.sppermissions-example-ios.iOS-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.sppermissions.iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(SPPERMISSIONS_FLAGS)";
@@ -445,7 +445,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "by.ivanvorobei.sppermissions-example-ios.iOS-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.sppermissions.iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -519,7 +519,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "by.ivanvorobei.sppermissions-example-ios.tvOS-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.sppermissions.tvOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -586,7 +586,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "by.ivanvorobei.sppermissions-example-ios.tvOS-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.sppermissions.tvOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_COMPILATION_MODE = wholemodule;
