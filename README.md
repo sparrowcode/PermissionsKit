@@ -159,7 +159,7 @@ If you install via [CocoaPods](#cocoapods), you shoud simple import  one class:
 import SPPermissions
 ```
 
-Its required becouse library split to modules. After import you see available permission by typing `SPPermissions.Permission.camera`.
+Its required becouse library split to modules. After import you see available permission by typing `SPPermissions.Permission.camera` for example.
 
 ## Easy Start
 
@@ -185,7 +185,7 @@ For more details check [usage](#usage) section.
 
 ## Usage
 
-This project had separate modules for the display UI options. The interfaces are: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `SPPermissions.xcodeproj`.
+Now available 3 present styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `SPPermissions.xcodeproj`.
 
 ### Dialog
 
@@ -282,6 +282,8 @@ extension Controller: SPPermissionsDataSource {
 ```
 
 ### Denied alert
+
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/dev6/Assets/Readme/Denied Alert.pdf" width="240"/>
 
 If permission denied, you can provide alert to user for propose open settings. Here you can customise text of it alert:
 
