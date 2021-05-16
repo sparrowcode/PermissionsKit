@@ -44,7 +44,7 @@ public enum SPPermissions {
     
     // MARK: - Models
     
-    @objc open class Permission: NSObject {
+    open class Permission: Equatable {
         
         public final var authorized: Bool {
             return status == .authorized
@@ -67,11 +67,11 @@ public enum SPPermissions {
             return type.name
         }
         
-        public var usageDescriptionKey: String? {
-            return type.usageDescriptionKey
-        }
-        
         // MARK: Must Ovveride
+        
+        open var usageDescriptionKey: String? {
+            preconditionFailure("This method must be overridden.")
+        }
         
         open var type: PermissionType {
             preconditionFailure("This method must be overridden.")
@@ -84,6 +84,14 @@ public enum SPPermissions {
         open func request(completion: @escaping ()->Void) {
             preconditionFailure("This method must be overridden.")
         }
+        
+        // MARK: Internal
+        
+        public static func == (lhs: SPPermissions.Permission, rhs: SPPermissions.Permission) -> Bool {
+            return lhs.type == rhs.type
+        }
+        
+        public init() {}
     }
     
     @objc public enum PermissionStatus: Int {
@@ -109,39 +117,6 @@ public enum SPPermissions {
         case mediaLibrary = 12
         case bluetooth = 13
         case tracking = 14
-        
-        public var usageDescriptionKey: String? {
-            switch self {
-            case .camera:
-                return "NSCameraUsageDescription"
-            case .photoLibrary:
-                return "NSPhotoLibraryUsageDescription"
-            case .microphone:
-                return "NSMicrophoneUsageDescription"
-            case .calendar:
-                return "NSCalendarsUsageDescription"
-            case .contacts:
-                return "NSContactsUsageDescription"
-            case .reminders:
-                return "NSRemindersUsageDescription"
-            case .speech:
-                return "NSSpeechRecognitionUsageDescription"
-            case .locationAlways:
-                return "NSLocationAlwaysAndWhenInUseUsageDescription"
-            case .motion:
-                return "NSMotionUsageDescription"
-            case .mediaLibrary:
-                return "NSAppleMusicUsageDescription"
-            case .bluetooth:
-                return "NSBluetoothAlwaysUsageDescription"
-            case .notification:
-                return nil
-            case .locationWhenInUse:
-                return "NSLocationWhenInUseUsageDescription"
-            case .tracking:
-                return "NSUserTrackingUsageDescription"
-            }
-        }
         
         public var name: String {
             switch self {

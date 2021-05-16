@@ -23,11 +23,18 @@ import UIKit
 
 #if os(iOS)
 
-@objc public protocol SPPermissionsDataSource: AnyObject {
+public protocol SPPermissionsDataSource: AnyObject {
     
-    @objc optional func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) -> SPPermissionsTableViewCell
+    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) -> SPPermissionsTableViewCell
     
-    @objc func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts?
+    func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts?
+}
+
+// Using like default for allow it like optional.
+
+public extension SPPermissionsDataSource {
+    
+    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) -> SPPermissionsTableViewCell { return cell }
 }
 
 #endif

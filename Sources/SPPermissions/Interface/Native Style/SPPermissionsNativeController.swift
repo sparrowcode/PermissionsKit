@@ -38,9 +38,9 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerInt
             permission.request(completion: { [weak self] in
                 guard let self = self else { return }
                 if permission.authorized {
-                    self.delegate?.didAllowPermission?(permission)
+                    self.delegate?.didAllowPermission(permission)
                 } else {
-                    self.delegate?.didDeniedPermission?(permission)
+                    self.delegate?.didDeniedPermission(permission)
                     Presenter.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: controller)
                 }
             })

@@ -27,8 +27,19 @@ let package = Package(
             dependencies: [
                 .product(name: "SparrowKit", package: "SparrowKit"),
                 .product(name: "SPPermissionsCamera", package: "SPPermissions"),
+                .product(name: "SPPermissionsPhotoLibrary", package: "SPPermissions"),
+                .product(name: "SPPermissionsNotification", package: "SPPermissions"),
+                .product(name: "SPPermissionsMicrophone", package: "SPPermissions"),
                 .product(name: "SPPermissionsCalendar", package: "SPPermissions"),
-                
+                .product(name: "SPPermissionsContacts", package: "SPPermissions"),
+                .product(name: "SPPermissionsReminders", package: "SPPermissions"),
+                .product(name: "SPPermissionsSpeechRecognizer", package: "SPPermissions"),
+                .product(name: "SPPermissionsLocationWhenInUse", package: "SPPermissions"),
+                .product(name: "SPPermissionsLocationAlways", package: "SPPermissions"),
+                .product(name: "SPPermissionsMotion", package: "SPPermissions"),
+                .product(name: "SPPermissionsMediaLibrary", package: "SPPermissions"),
+                .product(name: "SPPermissionsBluetooth", package: "SPPermissions"),
+                .product(name: "SPPermissionsTracking", package: "SPPermissions")
             ]
         ),
     ]

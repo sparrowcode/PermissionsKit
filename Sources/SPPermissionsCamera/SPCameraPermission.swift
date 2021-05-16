@@ -25,10 +25,10 @@ import SPPermissions
 
 #if SPPERMISSIONS_CAMERA
 
+@available(iOS 11.0, macCatalyst 14.0, *)
 public extension SPPermissions.Permission {
     
-    @available(iOS 11.0, macCatalyst 14.0, *)
-    static var camera: SPCameraPermission {
+    static var camera: SPPermissions.Permission {
         return SPCameraPermission()
     }
 }
@@ -37,6 +37,7 @@ public extension SPPermissions.Permission {
 public class SPCameraPermission: SPPermissions.Permission {
     
     open override var type: SPPermissions.PermissionType { .camera }
+    open override var usageDescriptionKey: String? { "NSCameraUsageDescription" }
     
     public override var status: SPPermissions.PermissionStatus {
         switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {

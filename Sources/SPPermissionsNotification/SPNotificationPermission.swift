@@ -21,13 +21,22 @@
 
 #if SPPERMISSIONS_NOTIFICATION
 
-import UIKit
 import UserNotifications
 import SPPermissions
 
-class SPNotificationPermission: SPPermissionsPermissionInterface {
+public extension SPPermissions.Permission {
+
+    static var notification: SPPermissions.Permission {
+        return SPNotificationPermission()
+    }
+}
+
+public class SPNotificationPermission: SPPermissions.Permission {
     
-    var status: SPPermissions.Permission.State {
+    open override var type: SPPermissions.PermissionType { .notification }
+    open override var usageDescriptionKey: String? { return nil }
+    
+    public override var status: SPPermissions.PermissionStatus {
         guard let authorizationStatus = fetchAuthorizationStatus() else { return .notDetermined }
         switch authorizationStatus {
         case .authorized: return .authorized
@@ -52,7 +61,7 @@ class SPNotificationPermission: SPPermissionsPermissionInterface {
         return notificationSettings?.authorizationStatus
     }
     
-    func request(completion: @escaping ()->Void) {
+    public override func request(completion: @escaping () -> Void) {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
             DispatchQueue.main.async {

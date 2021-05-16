@@ -19,15 +19,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_TRACKING
+#if SPPERMISSIONS_TRACKING
 
 import AppTrackingTransparency
 import SPPermissions
 
 @available(iOS 14.5, *)
-class SPTrackingPermission: SPPermissionsPermissionInterface {
+public extension SPPermissions.Permission {
 
-    var status: SPPermissions.Permission.State {
+    static var tracking: SPPermissions.Permission {
+        return SPTrackingPermission()
+    }
+}
+
+@available(iOS 14.5, *)
+public class SPTrackingPermission: SPPermissions.Permission {
+    
+    open override var type: SPPermissions.PermissionType { .tracking }
+    open override var usageDescriptionKey: String? { "NSUserTrackingUsageDescription" }
+    
+    public override var status: SPPermissions.PermissionStatus {
         switch ATTrackingManager.trackingAuthorizationStatus {
         case .authorized: return .authorized
         case .denied: return .denied
@@ -37,7 +48,7 @@ class SPTrackingPermission: SPPermissionsPermissionInterface {
         }
     }
     
-    func request(completion: @escaping ()->Void) {
+    public override func request(completion: @escaping () -> Void) {
         ATTrackingManager.requestTrackingAuthorization { _ in
             DispatchQueue.main.async {
                 completion()

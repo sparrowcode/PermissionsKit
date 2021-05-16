@@ -21,13 +21,26 @@
 
 import UIKit
 import SparrowKit
+
 import SPPermissions
 import SPPermissionsCamera
+import SPPermissionsPhotoLibrary
+import SPPermissionsNotification
+import SPPermissionsMicrophone
 import SPPermissionsCalendar
+import SPPermissionsContacts
+import SPPermissionsReminders
+import SPPermissionsSpeechRecognizer
+import SPPermissionsLocationWhenInUse
+import SPPermissionsLocationAlways
+import SPPermissionsMotion
+import SPPermissionsMediaLibrary
+import SPPermissionsBluetooth
+import SPPermissionsTracking
 
 class RootController: SPTableViewController {
     
-    var availablePermissions: [SPPermissions.Permission] = [.camera, .calendar]
+    var availablePermissions: [SPPermissions.Permission] = [.camera, .photoLibrary, .notification, .microphone, .calendar, .contacts, .reminders, .speech, .locationWhenInUse, .locationAlways, .motion, .mediaLibrary, .bluetooth, /*.tracking*/]
     
     var selectedPermissions: [SPPermissions.Permission] = []
     
@@ -127,16 +140,15 @@ extension RootController: SPPermissionsDataSource {
 
 extension RootController: SPPermissionsDelegate {
     
-    func didHidePermissions(_ ids: [Int]) {
-        let permissions = ids.map { SPPermissions.PermissionType(rawValue: $0)! }
-        print("Example App: did hide with permissions", permissions.map { $0.name })
+    func didHidePermissions(_ permissions: [SPPermissions.Permission]) {
+        print("Example App: did hide with permissions", permissions.map { $0.debugName })
     }
     
     func didAllowPermission(_ permission: SPPermissions.Permission) {
         print("Example App: did allow", permission.debugName)
     }
     
-    func didDenied(permission: SPPermissions.Permission) {
+    func didDeniedPermission(_ permission: SPPermissions.Permission) {
         print("Example App: did denied", permission.debugName)
     }
 }

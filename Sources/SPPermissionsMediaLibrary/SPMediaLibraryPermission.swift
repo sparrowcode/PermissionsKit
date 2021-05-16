@@ -19,15 +19,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_MEDIALIBRARY
+#if SPPERMISSIONS_MEDIALIBRARY
 
-import UIKit
+import Foundation
 import MediaPlayer
 import SPPermissions
 
-class SPMediaLibraryPermission: SPPermissionsPermissionInterface {
+public extension SPPermissions.Permission {
+
+    static var mediaLibrary: SPPermissions.Permission {
+        return SPMediaLibraryPermission()
+    }
+}
+
+public class SPMediaLibraryPermission: SPPermissions.Permission {
     
-    var status: SPPermissions.Permission.State {
+    open override var type: SPPermissions.PermissionType { .mediaLibrary }
+    open override var usageDescriptionKey: String? { "NSAppleMusicUsageDescription" }
+    
+    public override var status: SPPermissions.PermissionStatus {
         switch MPMediaLibrary.authorizationStatus() {
         case .authorized: return .authorized
         case .denied: return .denied
@@ -37,7 +47,7 @@ class SPMediaLibraryPermission: SPPermissionsPermissionInterface {
         }
     }
     
-    func request(completion: @escaping ()->Void) {
+    public override func request(completion: @escaping () -> Void) {
         MPMediaLibrary.requestAuthorization() { status in
             DispatchQueue.main.async {
                 completion()

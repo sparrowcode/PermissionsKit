@@ -19,16 +19,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_LOCATION
+#if SPPERMISSIONS_LOCATION_WHENINUSE
 
-import UIKit
+import Foundation
 import MapKit
 import SPPermissions
 
-class SPLocationPermission: SPPermissionsPermissionInterface {
+public extension SPPermissions.Permission {
+
+    static var locationWhenInUse: SPPermissions.Permission {
+        return SPLocationWhenInUsePermission()
+    }
+}
+
+public class SPLocationWhenInUsePermission: SPPermissions.Permission {
     
-    var status: SPPermissions.Permission.State {
-        
+    open override var type: SPPermissions.PermissionType { .locationWhenInUse }
+    open override var usageDescriptionKey: String? { "NSLocationWhenInUseUsageDescription" }
+    
+    public override var status: SPPermissions.PermissionStatus {
         let authorizationStatus: CLAuthorizationStatus = {
             let locationManager = CLLocationManager()
             if #available(iOS 14.0, *) {
@@ -43,36 +52,16 @@ class SPLocationPermission: SPPermissionsPermissionInterface {
         case .denied: return .denied
         case .notDetermined: return .notDetermined
         case .restricted: return .denied
-        case .authorizedAlways:
-            if type == .always { return .authorized }
-            return .denied
-        case .authorizedWhenInUse:
-            if type == .always { return .authorized }
-            if type == .whenInUse { return .authorized }
-            return .denied
+        case .authorizedAlways: return .authorized
+        case .authorizedWhenInUse: return .authorized
         @unknown default: return .denied
         }
     }
     
-    // MARK: Internal
-    
-    var type: SPLocationType
-    
-    enum SPLocationType {
-        
-        #if os(iOS)
-        case always
-        #endif
-        case whenInUse
-    }
-    
-    init(type: SPLocationType) {
-        self.type = type
-    }
-    
-    func request(completion: @escaping ()->Void) {
+    public override func request(completion: @escaping () -> Void) {
         #warning("todo")
         fatalError()
     }
 }
+
 #endif

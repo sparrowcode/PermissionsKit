@@ -167,9 +167,9 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
             }
             
             if permission.authorized {
-                self.delegate?.didAllowPermission?(permission)
+                self.delegate?.didAllowPermission(permission)
             } else {
-                self.delegate?.didDeniedPermission?(permission)
+                self.delegate?.didDeniedPermission(permission)
                 
                 // Delay using for fix animation freeze.
                 
@@ -204,8 +204,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     public override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         super.dismiss(animated: flag, completion: {
             completion?()
-            let ids: [Int] = self.permissions.map { $0.type.rawValue }
-            self.delegate?.didHidePermissions?(ids)
+            self.delegate?.didHidePermissions(self.permissions)
         })
     }
     
@@ -263,7 +262,7 @@ extension SPPermissionsDialogController: UITableViewDataSource, UITableViewDeleg
         var cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionsTableViewCell.id, for: indexPath) as! SPPermissionsTableViewCell
         let permission = permissions[indexPath.row]
         cell.defaultConfigure(for: permission)
-        cell = dataSource?.configure?(cell, for: permission) ?? cell
+        cell = dataSource?.configure(cell, for: permission) ?? cell
         cell.permissionButton.addTarget(self, action: #selector(self.process(button:)), for: .touchUpInside)
         cell.insetsLayoutMarginsFromSafeArea = false
         cell.contentView.insetsLayoutMarginsFromSafeArea = false

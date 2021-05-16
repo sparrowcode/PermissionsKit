@@ -19,15 +19,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_MOTION
+#if SPPERMISSIONS_MOTION
 
-import UIKit
+import Foundation
 import CoreMotion
 import SPPermissions
 
-class SPMotionPermission: SPPermissionsPermissionInterface {
+public extension SPPermissions.Permission {
+
+    static var motion: SPPermissions.Permission {
+        return SPMotionPermission()
+    }
+}
+
+public class SPMotionPermission: SPPermissions.Permission {
     
-    var status: SPPermissions.Permission.State {
+    open override var type: SPPermissions.PermissionType { .motion }
+    open override var usageDescriptionKey: String? { "NSMotionUsageDescription" }
+    
+    public override var status: SPPermissions.PermissionStatus {
         switch CMMotionActivityManager.authorizationStatus() {
         case .authorized: return .authorized
         case .denied: return .denied
@@ -37,7 +47,7 @@ class SPMotionPermission: SPPermissionsPermissionInterface {
         }
     }
     
-    func request(completion: @escaping ()->Void) {
+    public override func request(completion: @escaping () -> Void) {
         let manager = CMMotionActivityManager()
         let today = Date()
         
