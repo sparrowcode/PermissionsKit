@@ -147,9 +147,9 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
             
             // Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
             
-            if permission == .locationAlways {
-                if self.permissions.contains(.locationWhenInUse) {
-                    if let index = self.permissions.firstIndex(of: .locationWhenInUse) {
+            if permission.type == .locationAlways {
+                if self.permissions.contains(where: { $0.type == .locationWhenInUse }) {
+                    if let index = self.permissions.firstIndex(where: { $0.type == .locationWhenInUse }) {
                         if let cell = self.dialogView.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? SPPermissionsTableViewCell {
                             cell.updateInterface(animated: true)
                         }
@@ -204,7 +204,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     public override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         super.dismiss(animated: flag, completion: {
             completion?()
-            let ids: [Int] = self.permissions.map { $0.rawValue }
+            let ids: [Int] = self.permissions.map { $0.type.rawValue }
             self.delegate?.didHidePermissions?(ids)
         })
     }

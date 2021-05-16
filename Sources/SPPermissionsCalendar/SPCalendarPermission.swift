@@ -19,18 +19,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_CALENDAR
-
-import UIKit
+import Foundation
 import EventKit
-
-#if canImport(SPPermissions)
 import SPPermissions
-#endif
 
-class SPCalendarPermission: SPPermissionsPermissionInterface {
+extension SPPermissions.Permission {
     
-    var status: SPPermissions.Permission.State {
+    public static var calendar: SPCalendarPermission {
+        return SPCalendarPermission()
+    }
+}
+
+public class SPCalendarPermission: SPPermissions.Permission {
+    
+    // MARK: - Implementation
+    
+    open override var type: SPPermissions.PermissionType { .calendar }
+    
+    public override var status: SPPermissions.PermissionStatus {
         switch EKEventStore.authorizationStatus(for: EKEntityType.event) {
         case .authorized: return .authorized
         case .denied: return .denied
@@ -40,7 +46,7 @@ class SPCalendarPermission: SPPermissionsPermissionInterface {
         }
     }
     
-    func request(completion: @escaping ()->Void) {
+    public override func request(completion: @escaping () -> Void) {
         let eventStore = EKEventStore()
         eventStore.requestAccess(to: EKEntityType.event, completion: {
             (accessGranted: Bool, error: Error?) in
@@ -50,5 +56,3 @@ class SPCalendarPermission: SPPermissionsPermissionInterface {
         })
     }
 }
-
-#endif

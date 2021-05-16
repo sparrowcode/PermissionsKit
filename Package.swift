@@ -12,8 +12,12 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "SPPermissions",
-            targets: ["SPPermissions"]
+            name: "SPPermissionsCamera",
+            targets: ["SPPermissionsCamera"]
+        ),
+        .library(
+            name: "SPPermissionsCalendar",
+            targets: ["SPPermissionsCalendar"]
         ),
     ],
     dependencies: [],
@@ -23,93 +27,18 @@ let package = Package(
         ),
         .target(
             name: "SPPermissionsCamera",
-            dependencies: ["SPPermissions"],
+            dependencies: [.target(name: "SPPermissions")],
             swiftSettings: [
-                .define("SPPERMISSIONS_CAMERA")
-            ]
-        ),
-        .target(
-            name: "SPPermissionsContacts",
-            dependencies: ["SPPermissions"],
-            swiftSettings: [
-                .define("SPPERMISSIONS_CONTACTS")
+                .define("SPPERMISSIONS_CAMERA"),
+                .define("SPPERMISSIONS_SPM")
             ]
         ),
         .target(
             name: "SPPermissionsCalendar",
-            dependencies: ["SPPermissions"],
+            dependencies: [.target(name: "SPPermissions")],
             swiftSettings: [
-                .define("SPPERMISSIONS_CALENDAR")
-            ]
-        ),
-        .target(
-            name: "SPPermissionsPhotoLibrary",
-            dependencies: ["SPPermissions"],
-            swiftSettings: [
-                .define("SPPERMISSIONS_PHOTOLIBRARY")
-            ]
-        ),
-        .target(
-            name: "SPPermissionsNotification",
-            dependencies: ["SPPermissions"],
-            swiftSettings: [
-                .define("SPPERMISSIONS_NOTIFICATION")
-            ]
-        ),
-        .target(
-            name: "SPPermissionsMicrophone",
-            dependencies: ["SPPermissions"],
-            swiftSettings: [
-                .define("SPPERMISSIONS_MICROPHONE")
-            ]
-        ),
-        .target(
-            name: "SPPermissionsReminders",
-            dependencies: ["SPPermissions"],
-            swiftSettings: [
-                .define("SPPERMISSIONS_REMINDERS")
-            ]
-        ),
-        .target(
-            name: "SPPermissionsSpeechRecognizer",
-            dependencies: ["SPPermissions"],
-            swiftSettings: [
-                .define("SPPERMISSIONS_SPEECHRECOGNIZER")
-            ]
-        ),
-        .target(
-            name: "SPPermissionsLocation",
-            dependencies: ["SPPermissions"],
-            swiftSettings: [
-                .define("SPPERMISSIONS_LOCATION")
-            ]
-        ),
-        .target(
-            name: "SPPermissionsMotion",
-            dependencies: ["SPPermissions"],
-            swiftSettings: [
-                .define("SPPERMISSIONS_MOTION")
-            ]
-        ),
-        .target(
-            name: "SPPermissionsMediaLibrary",
-            dependencies: ["SPPermissions"],
-            swiftSettings: [
-                .define("SPPERMISSIONS_MEDIALIBRARY")
-            ]
-        ),
-        .target(
-            name: "SPPermissionsBluetooth",
-            dependencies: ["SPPermissions"],
-            swiftSettings: [
-                .define("SPPERMISSIONS_BLUETOOTH")
-            ]
-        ),
-        .target(
-            name: "SPPermissionsTracking",
-            dependencies: ["SPPermissions"],
-            swiftSettings: [
-                .define("SPPERMISSIONS_TRACKING")
+                .define("SPPERMISSIONS_CALENDAR"),
+                .define("SPPERMISSIONS_SPM")
             ]
         )
     ],

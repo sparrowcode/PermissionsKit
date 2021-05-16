@@ -23,10 +23,7 @@
 
 import UIKit
 import Contacts
-
-#if canImport(SPPermissions)
 import SPPermissions
-#endif
 
 class SPContactsPermission: SPPermissionsPermissionInterface {
     

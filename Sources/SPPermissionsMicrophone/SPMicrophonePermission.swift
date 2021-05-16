@@ -23,10 +23,7 @@
 
 import UIKit
 import AVFoundation
-
-#if canImport(SPPermissions)
 import SPPermissions
-#endif
 
 class SPMicrophonePermission: SPPermissionsPermissionInterface {
     

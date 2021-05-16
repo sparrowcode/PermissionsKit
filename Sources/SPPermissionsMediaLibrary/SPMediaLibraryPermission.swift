@@ -23,10 +23,7 @@
 
 import UIKit
 import MediaPlayer
-
-#if canImport(SPPermissions)
 import SPPermissions
-#endif
 
 class SPMediaLibraryPermission: SPPermissionsPermissionInterface {
     

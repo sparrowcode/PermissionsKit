@@ -22,10 +22,7 @@
 #if os(iOS) && SPPERMISSIONS_REMINDERS
 
 import EventKit
-
-#if canImport(SPPermissions)
 import SPPermissions
-#endif
 
 class SPRemindersPermission: SPPermissionsPermissionInterface {
     

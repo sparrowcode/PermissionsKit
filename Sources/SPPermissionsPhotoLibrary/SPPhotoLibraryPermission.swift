@@ -22,10 +22,7 @@
 #if SPPERMISSIONS_PHOTOLIBRARY
 
 import Photos
-
-#if canImport(SPPermissions)
 import SPPermissions
-#endif
 
 class SPPhotoLibraryPermission: SPPermissionsPermissionInterface {
     
