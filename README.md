@@ -21,6 +21,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
     - [Swift Package Manager](#swift-package-manager)
     - [CocoaPods](#cocoapods)
     - [Manually](#manually)
+- [Imports](#imports)
 - [Easy Start](#easy-start)
 - [Usage](#usage)
     - [Dialog](#dialog)
@@ -39,7 +40,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 No any changes in UI, but big things here. **If you got any bug, please, create issue. I will fix it super fast.**
 
-#### Support SPM 🔥
+#### Support Swift Package Manager 🔥
 
 Now it work, you can simple remove cocoapods dependec and move to SPM. More details about instalation process read in [Instalation section](#swift-package-manager). Cocoapods saved and continue support.
 
@@ -142,6 +143,24 @@ pod 'SPPermissions/Tracking'
 
 If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Copy code and add compile flags from [AGREEMENTS.md](https://github.com/ivanvorobei/SPPermissions/AGREEMENTS.md) file.
 
+## Imports
+
+If you install via  [Swift Package Manager](#swift-package-manager), you shoud import each module:
+
+```swift
+import SPPermissions
+import SPPermissionsCamera
+import SPPermissionsPhotoLibrary
+```
+
+If you install via [CocoaPods](#cocoapods), you shoud simple import  one class:
+
+```swift
+import SPPermissions
+```
+
+Its required becouse library split to modules. After import you see available permission by typing `SPPermissions.Permission.camera`.
+
 ## Easy Start
 
 ```swift
@@ -167,22 +186,6 @@ For more details check [usage](#usage) section.
 ## Usage
 
 This project had separate modules for the display UI options. The interfaces are: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `SPPermissions.xcodeproj`.
-
-If you install via [CocoaPods](#cocoapods), you shoud simple import  one class:
-
-```swift
-import SPPermissions
-```
-
-If you install via  [Swift Package Manager](#swift-package-manager), you shoud import each module:
-
-```swift
-import SPPermissions
-import SPPermissionsCamera
-import SPPermissionsPhotoLibrary
-```
-
-Its required becouse library split to modules. After import you see available permission by typing `SPPermissions.Permission.camera`.
 
 ### Dialog
 
