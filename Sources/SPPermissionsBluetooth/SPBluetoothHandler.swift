@@ -19,52 +19,52 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
-#endif
-
 #if SPPERMISSIONS_BLUETOOTH
 
 import Foundation
 import CoreBluetooth
 
-public extension SPPermissions.Permission {
-
-    static var bluetooth: SPPermissions.Permission {
-        return SPBluetoothPermission()
+class SPPermissionBluetoothHandler: NSObject, CBCentralManagerDelegate {
+    
+    var completion: ()->Void = {}
+    
+    // MARK: - Init
+    
+    static let shared: SPPermissionBluetoothHandler = .init()
+    
+    override init() {
+        super.init()
     }
-}
-
-public class SPBluetoothPermission: SPPermissions.Permission {
     
-    open override var type: SPPermissions.PermissionType { .bluetooth }
-    open override var usageDescriptionKey: String? { "NSBluetoothAlwaysUsageDescription" }
+    // MARK: - Manager
     
-    public override var status: SPPermissions.PermissionStatus {
-        if #available(iOS 13.0, *) {
-            switch CBCentralManager().authorization {
-            case .allowedAlways: return .authorized
-            case .notDetermined: return .notDetermined
-            case .restricted: return .denied
-            case .denied: return .denied
-            @unknown default: return .denied
-            }
+    var manager: CBCentralManager?
+    
+    func reqeustUpdate() {
+        if manager == nil {
+            self.manager = CBCentralManager(delegate: self, queue: nil, options: [:])
         } else {
-            switch CBPeripheralManager.authorizationStatus() {
-            case .authorized: return .authorized
-            case .denied: return .denied
-            case .restricted: return .denied
-            case .notDetermined: return .notDetermined
-            @unknown default: return .denied
-            }
+            completion()
         }
     }
     
-    public override func request(completion: @escaping () -> Void) {
-        SPPermissionBluetoothHandler.shared.completion = completion
-        SPPermissionBluetoothHandler.shared.reqeustUpdate()
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        if #available(iOS 13.0, *) {
+            switch central.authorization {
+            case .notDetermined:
+                break
+            default:
+                self.completion()
+            }
+        } else {
+            switch CBPeripheralManager.authorizationStatus() {
+            case .notDetermined:
+                break
+            default:
+                self.completion()
+            }
+        }
     }
 }
 
 #endif
-
