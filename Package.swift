@@ -71,7 +71,10 @@ let package = Package(
     dependencies: [],
     targets: [
         .target(
-            name: "SPPermissions"
+            name: "SPPermissions",
+            swiftSettings: [
+                .define("SPPERMISSIONS_SPM")
+            ]
         ),
         .target(
             name: "SPPermissionsCamera",
