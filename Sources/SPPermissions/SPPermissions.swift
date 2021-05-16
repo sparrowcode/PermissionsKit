@@ -63,8 +63,7 @@ public enum SPPermissions {
         }
         
         public var localisedName: String {
-            #warning("todo")
-            return type.name
+            return Text.permission_name(type)
         }
         
         // MARK: Must Ovveride
