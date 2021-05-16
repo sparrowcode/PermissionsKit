@@ -40,7 +40,7 @@ public class SPLocationWhenInUsePermission: SPPermissions.Permission {
     public override var status: SPPermissions.PermissionStatus {
         let authorizationStatus: CLAuthorizationStatus = {
             let locationManager = CLLocationManager()
-            if #available(iOS 14.0, *) {
+            if #available(iOS 14.0, tvOS 14.0, *) {
                 return locationManager.authorizationStatus
             } else {
                 return CLLocationManager.authorizationStatus()
@@ -48,7 +48,9 @@ public class SPLocationWhenInUsePermission: SPPermissions.Permission {
         }()
         
         switch authorizationStatus {
+        #if os(iOS)
         case .authorized: return .authorized
+        #endif
         case .denied: return .denied
         case .notDetermined: return .notDetermined
         case .restricted: return .denied

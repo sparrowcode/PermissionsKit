@@ -23,7 +23,7 @@ import Foundation
 import AVFoundation
 import SPPermissions
 
-#if SPPERMISSIONS_CAMERA
+#if os(iOS) && SPPERMISSIONS_CAMERA
 
 @available(iOS 11.0, macCatalyst 14.0, *)
 public extension SPPermissions.Permission {
