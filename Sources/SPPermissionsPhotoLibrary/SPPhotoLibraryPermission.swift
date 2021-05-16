@@ -26,7 +26,6 @@ import SPPermissions
 #if SPPERMISSIONS_PHOTOLIBRARY
 
 import Photos
-import SPPermissions
 
 public extension SPPermissions.Permission {
 

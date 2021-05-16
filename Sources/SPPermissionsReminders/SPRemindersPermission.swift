@@ -27,7 +27,6 @@ import SPPermissions
 
 import Foundation
 import EventKit
-import SPPermissions
 
 public extension SPPermissions.Permission {
 

@@ -27,7 +27,6 @@ import SPPermissions
 
 import Foundation
 import MediaPlayer
-import SPPermissions
 
 public extension SPPermissions.Permission {
 
