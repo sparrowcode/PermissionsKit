@@ -1,14 +1,358 @@
 # SPPermissions
 
-Branch created for new version `6.0`. Its early beta, not recomended use it in any proejcts.
-New features
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/Preview - 5.0.jpg" width="420"/>
 
-- New struct
-- Added `.notDetermined` for all permissions
-- Support SPM
-- Localisations
-- RTL Support
-- HealthKit (maybe)
+### About
+`SPPermissions` is an API to ask for user permissions using Swift. The API provides for three UI options: list, dialog & native. 
+
+The UI/UX is in an **Apple style** and supports iPad, dark mode, & tvOS. 
+
+Also you can check the state permissions using the API.
+
+If you like the project, don't forget to `put star ★` and follow me on GitHub:
+
+[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/Readme/blob/main/Buttons/follow-me-ivanvorobei.svg)](https://github.com/ivanvorobei)
+
+## Navigate
+
+- [New 6.x version](#new-6.x-version)
+- [Requirements](#requirements)
+- [Installation](#installation)
+    - [Swift Package Manager](#swift-package-manager)
+    - [CocoaPods](#cocoapods)
+    - [Manually](#manually)
+- [Easy Start](#easy-start)
+- [Usage](#usage)
+    - [Dialog](#dialog)
+    - [List](#list)
+    - [Native](#native)
+- [Permissions](#permissions)
+- [DataSource](#datasource)
+    - [Denied alert](#denied-alert)
+- [Delegate](#delegate)
+- [Keys in Info.plist](#keys-in-infoplist)
+- [FAQ](#faq)
+- [Other Projects](#other-projects)
+- [Russian Community](#russian-community)
+
+## New 6.x version
+
+No any changes in UI, but big things here. **If you got any bug, please, create issue. I will fix it super fast.**
+
+### Support SPM 🔥
+
+Now it work, you can simple remove cocoapods dependec and move to SPM. More details about instalation process read in [Instalation section](#swift-package-manager). Cocoapods saved and continue support.
+
+### Added `.notDetermined`
+
+You can check if permission request before.
+
+### New Struct
+
+Changed delegate and data source. **If you use delegates or datasources** before, please, check again. Some methods renamed. Permissions now its not enum. It happen becouse no way support moduls and shared schemes.
+
+### Localisation
+
+All defaults text ready to localiaztion. I going to add more in this week, you can support me and add your localisation. Check `Sources/Recourses` folder.
+
+## Requirements
+
+Ready for use on iOS 11+.
+
+## Installation
+
+### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
+
+To integrate `SPPermissions` into your Xcode project using Xcode 12, specify it in `File > Swift Packages > Add Package Dependency...`:
+
+```ogdl
+https://github.com/ivanvorobei/SPPermissions
+```
+
+Next choose permissions, which you need. Don't add all permissions, becouse apple will reject you app.
+
+### CocoaPods:
+
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `SPPermissions` into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+pod 'SPPermissions/Notification'
+```
+
+Due to Apple's new policy regarding permission access you need to specifically define what kind of permissions you want to access using subspecs. For example if you want to access `Camera`, `Location` & `Microphone` you define the following:
+
+```ruby
+pod 'SPPermissions/Camera'
+pod 'SPPermissions/LocationAlways'
+pod 'SPPermissions/Microphone'
+```
+
+<details><summary>Available subspecs</summary>
+<p>
+
+```ruby
+pod 'SPPermissions/Camera'
+```
+```ruby
+pod 'SPPermissions/Contacts'
+```
+```ruby
+pod 'SPPermissions/Calendar'
+```
+```ruby
+pod 'SPPermissions/PhotoLibrary'
+```
+```ruby
+pod 'SPPermissions/Notification'
+```
+```ruby
+pod 'SPPermissions/Microphone'
+```
+```ruby
+pod 'SPPermissions/Reminders'
+```
+```ruby
+pod 'SPPermissions/SpeechRecognizer'
+```
+```ruby
+pod 'SPPermissions/LocationWhenInUse'
+```
+```ruby
+pod 'SPPermissions/LocationAlways'
+```
+```ruby
+pod 'SPPermissions/Motion'
+```
+```ruby
+pod 'SPPermissions/MediaLibrary'
+```
+```ruby
+pod 'SPPermissions/Bluetooth'
+```
+```ruby
+pod 'SPPermissions/Tracking'
+```
+
+</p>
+</details>
+
+### Manually
+
+If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Copy code and add compile flags from [AGREEMENTS.md](https://github.com/ivanvorobei/SPPermissions/AGREEMENTS.md) file.
+
+## Easy Start
+
+```swift
+// 1. Choose permissions, which you need:
+let permissions: [SPPermissions.Permission] = [.camera, .notification]
+
+// 2. Choose present style:
+// 2a. List Style
+let controller = SPPermissions.list(permissions)
+controller.present(on: self)
+
+// 2b. Dialog Style
+let controller = SPPermissions.dialog(permissions)
+controller.present(on: self)
+
+// 2c. Dialog Style
+let controller = SPPermissions.native(permissions)
+controller.present(on: self)
+```
+
+For more details check [usage](#usage) section.
+
+## Usage
+
+This project had separate modules for the display UI options. The interfaces are: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `SPPermissions.xcodeproj`.
+
+If you install via [CocoaPods](#cocoapods), you shoud simple import  one class:
+
+```swift
+import SPPermissions
+```
+
+If you install via  [Swift Package Manager](#swift-package-manager), you shoud import each module:
+
+```swift
+import SPPermissions
+import SPPermissionsCamera
+import SPPermissionsPhotoLibrary
+```
+
+Its required becouse library split to modules. After import you see available permission by typing `SPPermissions.Permission.camera`.
+
+### Dialog
+
+This is a modal alert, which was used in the previous version (<5.x). I recommend to use of this alert style when your requested permissions are less than three. Usage example:
+
+```swift
+let controller = SPPermissions.dialog([.camera, .photoLibrary])
+
+// Ovveride texts in controller
+controller.titleText = "Title Text"
+controller.headerText = "Header Text"
+controller.footerText = "Footer Text"
+
+// Set `DataSource` or `Delegate` if need. 
+// By default using project texts and icons.
+controller.dataSource = self
+controller.delegate = self
+
+// Always use this method for present
+controller.present(on: self)
+```
+
+### List
+
+Native `UITableViewController` with support for the iPad. Use it with more than two permissions. An example of how it is used:
+
+```swift
+let controller = SPPermissions.list([.calendar, .camera, .contacts])
+
+// Ovveride texts in controller
+controller.titleText = "Title Text"
+controller.headerText = "Header Text"
+controller.footerText = "Footer Text"
+
+// Set `DataSource` or `Delegate` if need. 
+// By default using project texts and icons.
+controller.dataSource = self
+controller.delegate = self
+
+// Always use this method for present
+controller.present(on: self)
+```
+
+### Native
+
+Request permissions with native alerts. You can request many permissions at once:
+
+```swift
+let controller = SPPermissions.native([.calendar, .camera, .contacts])
+
+// Set `Delegate` if need. 
+controller.delegate = self
+
+// Always use this method for request. 
+controller.present(on: self)
+```
+## Permissions
+
+<p float="left">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Camera.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Photos.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Notifications.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Locations.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Microphone.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Calendar.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Contacts.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Reminders.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Motion.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Media.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Speech.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Bluetooth.svg" width="105">
+</p>
+
+To check the state of any permission, call `SPPermissions.Permission`: 
+
+```swift
+let state = SPPermissions.Permission.calendar.authorized
+```
+
+Also available `denied` & `notDetermined`.
+
+## DataSource
+
+For data source using protocol `SPPermissionsDataSource`. You can customise cell for permission or provide denied alert texts.
+
+```swift
+extension Controller: SPPermissionsDataSource {
+    
+    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) -> SPPermissionsTableViewCell {
+        // Here you can customise cell, like texts or colors.
+        return cell
+    }
+}
+```
+
+### Denied alert
+
+If permission denied, you can provide alert to user for propose open settings. Here you can customise text of it alert:
+
+```swift
+func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts? {
+    // You can create custom texts
+
+    /*
+     let texts = SPPermissionDeniedAlertTexts()
+     texts.titleText = "Permission denied"
+     texts.descriptionText = "Please, go to Settings and allow permission."
+     texts.buttonText = "Settings"
+     texts.cancelText = "Cancel"
+     return texts
+     */
+
+    // or use default texts.
+
+    return .default
+}
+```
+
+## Delegate
+
+For get events about hide, allowed or denied, set delegate of protocol `SPPermissionsDelegate`:
+
+```swift
+extension Controller: SPPermissionsDelegate {
+    
+    func didHidePermissions(_ permissions: [SPPermissions.Permission]) {}
+    func didAllowPermission(_ permission: SPPermissions.Permission) {}
+    func didDeniedPermission(_ permission: SPPermissions.Permission) {}
+}
+```
+
+## Keys in Info.plist
+
+You need to add some keys to the `Info.plist` file with descriptions. List of keys:
+
+- NSCameraUsageDescription
+- NSContactsUsageDescription
+- NSCalendarsUsageDescription
+- NSMicrophoneUsageDescription
+- NSAppleMusicUsageDescription
+- NSSpeechRecognitionUsageDescription
+- NSMotionUsageDescription
+- NSLocationWhenInUseUsageDescription
+- NSLocationAlwaysAndWhenInUseUsageDescription
+- NSLocationAlwaysUsageDescription (iOS 10 and earlier)
+- NSBluetoothAlwaysUsageDescription
+- NSBluetoothPeripheralUsageDescription (iOS 12 and earlier)
+- NSUserTrackingUsageDescription
+
+Do not use the description as the name of the key.
+
+If you use xliff localization export, keys will be create automatically. If you prefer do the localization file manually, you need to create `InfoPlist.strings`, select languages in the right side menu and add keys as keys in plist-file. See:
+
+```
+"NSCameraUsageDescription" = "Here description of usage camera";
+```
+
+## FAQ
+
+### Why library looks complex and have modules? 
+
+Apple reject app with you import all frameworks and not request it. `SPPermissions` imported only code, which you choose. Support moduls struct is hard and may looks complex. I tried to make using the library as simple as possible.
+
+### Why I not see permission?
+
+Check imports if you install via [Swift Package Manager](#swift-package-manager). If you install via [CocoaPods](#cocoapods), you podfile shoud have second path with module name.
+
+### I want make PR
+
+Thanks for contribution! Please, support code style and test `iOS` and `tvOS` versions before. For more details about codestyle see [AGREEMENTS.md](https://github.com/ivanvorobei/SPPermissions/AGREEMENTS.md).
 
 ## Other Projects
 
