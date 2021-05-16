@@ -288,21 +288,22 @@ extension Controller: SPPermissionsDataSource {
 If permission denied, you can provide alert to user for propose open settings. Here you can customise text of it alert:
 
 ```swift
+let texts = SPPermissionDeniedAlertTexts()
+texts.titleText = "Permission denied"
+texts.descriptionText = "Please, go to Settings and allow permission."
+texts.buttonText = "Settings"
+texts.cancelText = "Cancel"
+```
+
+Next implement method and return
+```swift
 func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts? {
-    // You can create custom texts
-
-    /*
-     let texts = SPPermissionDeniedAlertTexts()
-     texts.titleText = "Permission denied"
-     texts.descriptionText = "Please, go to Settings and allow permission."
-     texts.buttonText = "Settings"
-     texts.cancelText = "Cancel"
-     return texts
-     */
-
-    // or use default texts.
-
-    return .default
+    
+    // Custom texts:
+    return texts
+    
+    // or default texts:
+    // return .default
 }
 ```
 
