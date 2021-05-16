@@ -283,7 +283,7 @@ extension Controller: SPPermissionsDataSource {
 
 ### Denied alert
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/dev6/Assets/Readme/Denied%20Alert.jpg" width="320"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/dev6/Assets/Readme/Preview%20-%20Denied%20Alert.jpg" width="320"/>
 
 If permission denied, you can provide alert to user for propose open settings. Here you can customise text of it alert:
 
@@ -295,7 +295,8 @@ texts.buttonText = "Settings"
 texts.cancelText = "Cancel"
 ```
 
-Next implement method and return
+Next implement method and return:
+
 ```swift
 func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts? {
     
