@@ -20,23 +20,22 @@
 // SOFTWARE.
 
 import UIKit
+import SparrowKit
 
-public protocol SPPermissionsDataSource: AnyObject {
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
     
-    #if os(iOS)
-    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) -> SPPermissionsTableViewCell
-    #endif
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        launch(RootController().wrapToNavigationController(prefersLargeTitles: true))
+        return true
+    }
     
-    func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts?
+    func launch(_ viewController: UIViewController) {
+        let frame = UIScreen.main.bounds
+        window = UIWindow(frame: frame)
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
+    }
 }
-
-// Using like default for allow it like optional.
-
-public extension SPPermissionsDataSource {
-    
-    #if os(iOS)
-    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) -> SPPermissionsTableViewCell { return cell }
-    #endif
-}
-
-
