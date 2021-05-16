@@ -19,11 +19,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if SPPERMISSIONS_SPM
+import SPPermissions
+#endif
+
 #if SPPERMISSIONS_BLUETOOTH
 
 import Foundation
 import CoreBluetooth
-import SPPermissions
 
 // https://medium.com/flawless-app-stories/
 // handling-ios-13-bluetooth-permissions-26c6a8cbb816

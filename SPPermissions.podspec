@@ -25,7 +25,10 @@ Pod::Spec.new do |s|
   s.subspec 'Camera' do |subspec|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsCamera/**/*.swift"
-    subspec.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_CAMERA" }
+    subspec.pod_target_xcconfig = {
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_CAMERA"
+    }
+}
   end
 
   s.subspec 'PhotoLibrary' do |subspec|
