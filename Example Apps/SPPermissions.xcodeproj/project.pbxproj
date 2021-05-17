@@ -105,10 +105,10 @@
 		F471BDB5264A5993000693BC /* iOS Example */ = {
 			isa = PBXGroup;
 			children = (
-				F42F10C326524EA400D5B314 /* Localization */,
 				F471BDC8264A5B5F000693BC /* App */,
 				F471BDFC264A629A000693BC /* Data */,
 				F471BDFB264A6291000693BC /* Scenes */,
+				F42F10C326524EA400D5B314 /* Localization */,
 				F471BDC4264A5995000693BC /* Info.plist */,
 			);
 			path = "iOS Example";
