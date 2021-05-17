@@ -16,7 +16,6 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 ## Navigate
 
 - [New 6.x version](#new-6.x-version)
-- [Requirements](#requirements)
 - [Installation](#installation)
     - [Swift Package Manager](#swift-package-manager)
     - [CocoaPods](#cocoapods)
@@ -57,11 +56,9 @@ Changed delegate and data source. **If you use delegates or datasources** before
 
 All defaults text ready to localiaztion. I going to add more in this week, you can support me and add your localisation. Check `Sources/Recourses` folder.
 
-## Requirements
-
-Ready for use on iOS 11+.
-
 ## Installation
+
+Ready for use on iOS 11+. Support iOS, tvOS and SwiftUI. Works with Swift 5+.
 
 <img align="right" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/SPM%20Install%20Preview.png" width="520"/>
 
@@ -284,9 +281,9 @@ extension Controller: SPPermissionsDataSource {
 }
 ```
 
-### Denied alert
-
 <img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/Preview%20-%20Denied%20Alert.png" width="320"/>
+
+### Denied alert
 
 If permission denied, you can provide alert to user for propose open settings. Here you can customise text of it alert:
 
