@@ -5,7 +5,7 @@
 ### About
 `SPPermissions` is an API to ask for user permissions using Swift. The API provides for three UI options: list, dialog & native. 
 
-The UI/UX is in an **Apple style** and supports iPad, dark mode, & tvOS. 
+The UI/UX is in an **Apple style**. Support iPad, dark mode & tvOS. 
 
 Also you can check the state permissions using the API.
 
