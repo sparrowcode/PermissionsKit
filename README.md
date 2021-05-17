@@ -63,7 +63,7 @@ Ready for use on iOS 11+.
 
 ## Installation
 
-<img align="right" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/SPM%20Install.png" width="580"/>
+<img align="right" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/SPM%20Install%20Preview.png" width="500"/>
 
 ### Swift Package Manager
 
