@@ -31,6 +31,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 - [DataSource](#datasource)
     - [Denied alert](#denied-alert)
 - [Delegate](#delegate)
+- [Localizations](#localizations)
 - [Keys in Info.plist](#keys-in-infoplist)
 - [FAQ](#faq)
 - [Other Projects](#other-projects)
@@ -52,7 +53,7 @@ You can check if permission request before.
 
 Changed delegate and data source. **If you use delegates or datasources** before, please, check again. Some methods renamed. Permissions now its not enum. It happen becouse no way support moduls and shared schemes.
 
-#### Localisation
+#### Localisation & RTL
 
 All defaults text ready to localiaztion. I going to add more in this week, you can support me and add your localisation. Check `Sources/Recourses` folder.
 
@@ -283,7 +284,7 @@ extension Controller: SPPermissionsDataSource {
 
 ### Denied alert
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/Preview%20-%20Denied%20Alert.jpg" width="320"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/Preview%20-%20Denied%20Alert.jpg" width="300"/>
 
 If permission denied, you can provide alert to user for propose open settings. Here you can customise text of it alert:
 
@@ -320,6 +321,12 @@ extension Controller: SPPermissionsDelegate {
     func didDeniedPermission(_ permission: SPPermissions.Permission) {}
 }
 ```
+
+## Localizations
+
+App has ready-use localisation stirngs for `en`, `ar` & `ru`. If you want add more, please, create folder `language-id.lproj` and make pull request.
+
+If you want use your custom strings, check [DataSource](#datasource) section.
 
 ## Keys in Info.plist
 

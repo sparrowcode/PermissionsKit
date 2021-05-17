@@ -109,6 +109,15 @@ public class SPPermissionsTableViewCell: UITableViewCell {
         // Button Vertical Centering
         
         permissionButton.center.y = calculatedHeight / 2
+        
+        // RTL
+        
+        if UIApplication.shared.userInterfaceRightToLeft {
+            permissionIconContainerView.frame.origin.x = contentView.frame.width - contentView.layoutMargins.right - permissionIconContainerView.frame.width
+            permissionButton.frame.origin.x = contentView.layoutMargins.right
+            permissionTitleLabel.frame.origin.x = permissionIconContainerView.frame.origin.x - leftContentLeadingSpace - permissionTitleLabel.frame.width
+            permissionDescriptionLabel.frame.origin.x = permissionTitleLabel.frame.origin.x
+        }
     }
     
     private var calculatedHeight: CGFloat {
