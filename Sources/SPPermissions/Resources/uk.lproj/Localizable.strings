@@ -1,68 +1,68 @@
-"action allow" = "Allow";
+"action allow" = "Дозвольте";
 
-"action allowed" = "Allowed";
+"action allowed" = "Дозволено";
 
-"titles header" = "Need Permission";
+"titles header" = "Потрібен дозвіл";
 
-"titles sub header" = "Permissions request";
+"titles sub header" = "Запит на дозвіл";
 
-"titles description" = "These are the permissions the app requires to work properly. Please see description for each permission.";
+"titles description" = "Це дозволи, які вимагає програма для належної роботи. Будь ласка, див. Опис кожного дозволу.";
 
-"titles comment" = "Permissions are necessary for the application to work and perform correctly. Push are not required permissions";
+"titles comment" = "Дозволи необхідні для того, щоб програма працювала та працювала правильно. Push не потрібні дозволи";
 
-"permission camera name" = "Camera";
+"permission camera name" = "Камера";
 
-"permission camera description" = "Allow app for use camera";
+"permission camera description" = "Дозволити програмі використовувати камеру";
 
-"permission photoLibrary name" = "Photo Library";
+"permission photoLibrary name" = "Фототека";
 
-"permission photoLibrary description" = "Access for save photos in your gallery";
+"permission photoLibrary description" = "Доступ для збереження фотографій у вашій галереї";
 
-"permission microphone name" = "Microphone";
+"permission microphone name" = "Мікрофон";
 
-"permission microphone description" = "Allow record voice from app";
+"permission microphone description" = "Дозволити записувати голос із програми";
 
-"permission calendar name" = "Calendar";
+"permission calendar name" = "Календар";
 
-"permission calendar description" = "Application can add events to calendar";
+"permission calendar description" = "Додаток може додавати події до календаря";
 
-"permission contacts name" = "Contacts";
+"permission contacts name" = "Контакти";
 
-"permission contacts description" = "Access for your contacts and phones";
+"permission contacts description" = "Доступ для ваших контактів і телефонів";
 
-"permission reminders name" = "Reminders";
+"permission reminders name" = "Нагадування";
 
-"permission reminders description" = "Application can create new task";
+"permission reminders description" = "Додаток може створити нове завдання";
 
-"permission speech name" = "Speech";
+"permission speech name" = "Мовлення";
 
-"permission speech description" = "Allow to check your voice";
+"permission speech description" = "Дозвольте перевірити свій голос";
 
-"permission motion name" = "Motion";
+"permission motion name" = "Рух";
 
-"permission motion description" = "Allow to record motion and environment-related data";
+"permission motion description" = "Дозволити записувати дані про рух та навколишнє середовище";
 
-"permission media library name" = "Media Library";
+"permission media library name" = "Медіатека";
 
-"permission media library description" = "Allow to check your media";
+"permission media library description" = "Дозвольте перевірити медіа";
 
 "permission bluetooth name" = "Bluetooth";
 
-"permission bluetooth description" = "Allow access to bluetooth";
+"permission bluetooth description" = "Дозволити доступ до Bluetooth";
 
-"permission notification name" = "Notification";
+"permission notification name" = "Повідомлення";
 
-"permission notification description" = "Get important information without opening app.";
+"permission notification description" = "Отримуйте важливу інформацію, не відкриваючи додаток.";
 
-"permission location when in use name" = "Location When Use";
+"permission location when in use name" = "Розташування під час використання";
 
-"permission location when in use description" = "Allow to access your location";
+"permission location when in use description" = "Дозволити доступ до вашого місцезнаходження";
 
-"permission location always name" = "Location Always";
+"permission location always name" = "Розташування Завжди";
 
-"permission location always description" = "Allow to access your location";
+"permission location always description" = "Дозволити доступ до вашого місцезнаходження";
 
-"permission tracking name" = "Tracking";
+"permission tracking name" = "Відстеження";
 
-"permission tracking description" = "Allow to access app-related data";
+"permission tracking description" = "Дозволити доступ до даних, пов’язаних із додатками";
 

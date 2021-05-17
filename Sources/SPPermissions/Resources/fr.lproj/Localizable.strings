@@ -1,68 +1,68 @@
-"action allow" = "Allow";
+"action allow" = "Autoriser";
 
-"action allowed" = "Allowed";
+"action allowed" = "Autorisé";
 
-"titles header" = "Need Permission";
+"titles header" = "Besoin d'une autorisation";
 
-"titles sub header" = "Permissions request";
+"titles sub header" = "Demande de permissions";
 
-"titles description" = "These are the permissions the app requires to work properly. Please see description for each permission.";
+"titles description" = "Il s'agit des autorisations dont l'application a besoin pour fonctionner correctement. Veuillez consulter la description de chaque autorisation.";
 
-"titles comment" = "Permissions are necessary for the application to work and perform correctly. Push are not required permissions";
+"titles comment" = "Les permissions sont nécessaires pour que l'application fonctionne et s'exécute correctement. Les permissions ne sont pas nécessaires";
 
-"permission camera name" = "Camera";
+"permission camera name" = "Caméra";
 
-"permission camera description" = "Allow app for use camera";
+"permission camera description" = "Autoriser l'application à utiliser la caméra";
 
-"permission photoLibrary name" = "Photo Library";
+"permission photoLibrary name" = "Photothèque";
 
-"permission photoLibrary description" = "Access for save photos in your gallery";
+"permission photoLibrary description" = "Accès pour sauvegarder les photos dans votre galerie";
 
 "permission microphone name" = "Microphone";
 
-"permission microphone description" = "Allow record voice from app";
+"permission microphone description" = "Permet d'enregistrer la voix à partir de l'application";
 
-"permission calendar name" = "Calendar";
+"permission calendar name" = "Calendrier";
 
-"permission calendar description" = "Application can add events to calendar";
+"permission calendar description" = "L'application peut ajouter des événements au calendrier";
 
 "permission contacts name" = "Contacts";
 
-"permission contacts description" = "Access for your contacts and phones";
+"permission contacts description" = "Accès à vos contacts et téléphones";
 
-"permission reminders name" = "Reminders";
+"permission reminders name" = "Rappels";
 
-"permission reminders description" = "Application can create new task";
+"permission reminders description" = "L'application peut créer une nouvelle tâche";
 
-"permission speech name" = "Speech";
+"permission speech name" = "Voix";
 
-"permission speech description" = "Allow to check your voice";
+"permission speech description" = "Permet de vérifier votre voix";
 
-"permission motion name" = "Motion";
+"permission motion name" = "Mouvement";
 
-"permission motion description" = "Allow to record motion and environment-related data";
+"permission motion description" = "Permet d'enregistrer les mouvements et les données liées à l'environnement";
 
-"permission media library name" = "Media Library";
+"permission media library name" = "Médiathèque";
 
-"permission media library description" = "Allow to check your media";
+"permission media library description" = "Permet de vérifier vos médias";
 
 "permission bluetooth name" = "Bluetooth";
 
-"permission bluetooth description" = "Allow access to bluetooth";
+"permission bluetooth description" = "Permet d'accéder à Bluetooth";
 
 "permission notification name" = "Notification";
 
-"permission notification description" = "Get important information without opening app.";
+"permission notification description" = "Obtenez des informations importantes sans ouvrir l'application.";
 
-"permission location when in use name" = "Location When Use";
+"permission location when in use name" = "Localisation lors de l'utilisation";
 
-"permission location when in use description" = "Allow to access your location";
+"permission location when in use description" = "Autorisez l'accès à votre localisation";
 
-"permission location always name" = "Location Always";
+"permission location always name" = "Localisation Toujours";
 
-"permission location always description" = "Allow to access your location";
+"permission location always description" = "Autorisez l'accès à votre emplacement";
 
-"permission tracking name" = "Tracking";
+"permission tracking name" = "Suivi du site";
 
-"permission tracking description" = "Allow to access app-related data";
+"permission tracking description" = "Autoriser l'accès aux données liées à l'application";
 
