@@ -65,10 +65,9 @@ Ready for use on iOS 11+.
 
 ### Swift Package Manager
 
+<img align="right" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/SPM%20Install.png" width="420"/>
+
 The [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
-
-
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/SPM%20Install.png" width="320"/>
 
 To integrate `SPPermissions` into your Xcode project using Xcode 12, specify it in `File > Swift Packages > Add Package Dependency...`:
 
