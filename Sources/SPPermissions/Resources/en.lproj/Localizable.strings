@@ -40,7 +40,7 @@
 
 "permission motion name" = "Motion";
 
-"permission motion description" = "Allow to report motion and environment-related data";
+"permission motion description" = "Allow to record motion and environment-related data";
 
 "permission media library name" = "Media Library";
 

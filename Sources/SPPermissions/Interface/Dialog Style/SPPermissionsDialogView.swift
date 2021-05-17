@@ -106,6 +106,12 @@ class SPPermissionsDialogView: UIView {
         let maxHeight = bounds.height - tableView.frame.origin.y
         tableView.frame = CGRect.init(x: 0, y: titleLabel.frame.origin.y + titleLabel.frame.height + 2, width: bounds.width, height: min(contentHeight, maxHeight))
         tableView.layoutMargins = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
+        
+        // RTL
+        
+        if UIApplication.shared.userInterfaceRightToLeft {
+            closeButton.frame.origin.x = inset / 2.5
+        }
     }
 }
 

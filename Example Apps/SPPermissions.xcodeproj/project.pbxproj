@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F42F10C626524EC600D5B314 /* InfoPlist.strings in Sources */ = {isa = PBXBuildFile; fileRef = F42F10C826524EC600D5B314 /* InfoPlist.strings */; };
 		F471BDB7264A5993000693BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDB6264A5993000693BC /* AppDelegate.swift */; };
 		F471BDBB264A5993000693BC /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDBA264A5993000693BC /* RootController.swift */; };
 		F471BDC0264A5995000693BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F471BDBF264A5995000693BC /* Assets.xcassets */; };
@@ -44,6 +45,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F42F10C726524EC600D5B314 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F42F10C926524EC900D5B314 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F42F10CA265254A100D5B314 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F471BDB3264A5993000693BC /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F471BDB6264A5993000693BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F471BDBA264A5993000693BC /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F42F10C326524EA400D5B314 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				F42F10C826524EC600D5B314 /* InfoPlist.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		F471BDB4264A5993000693BC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +105,7 @@
 		F471BDB5264A5993000693BC /* iOS Example */ = {
 			isa = PBXGroup;
 			children = (
+				F42F10C326524EA400D5B314 /* Localization */,
 				F471BDC8264A5B5F000693BC /* App */,
 				F471BDFC264A629A000693BC /* Data */,
 				F471BDFB264A6291000693BC /* Scenes */,
@@ -243,6 +256,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				ru,
 			);
 			mainGroup = F4B9AD11264920FC001A0426;
 			packageReferences = (
@@ -284,6 +299,7 @@
 			files = (
 				F47CBAEA265001FF00A8A00F /* RootControllerExtension.swift in Sources */,
 				F471BDBB264A5993000693BC /* RootController.swift in Sources */,
+				F42F10C626524EC600D5B314 /* InfoPlist.strings in Sources */,
 				F471BDB7264A5993000693BC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +322,19 @@
 			targetProxy = F471BDF0264A5E78000693BC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F42F10C826524EC600D5B314 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F42F10C726524EC600D5B314 /* en */,
+				F42F10C926524EC900D5B314 /* ar */,
+				F42F10CA265254A100D5B314 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F471BDC6264A5995000693BC /* Debug */ = {

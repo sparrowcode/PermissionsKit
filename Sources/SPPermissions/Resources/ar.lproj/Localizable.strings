@@ -1,0 +1,68 @@
+"action allow" = "تسمح";
+
+"action allowed" = "مسموح";
+
+"titles header" = "تحتاج إذن";
+
+"titles sub header" = "طلب أذونات";
+
+"titles description" = "هذه هي الأذونات التي يتطلبها التطبيق للعمل بشكل صحيح. يرجى الاطلاع على وصف لكل إذن.";
+
+"titles comment" = "الأذونات ضرورية للتطبيق لكي يعمل ويعمل بشكل صحيح. الدفع ليست أذونات مطلوبة";
+
+"permission camera name" = "آلة تصوير";
+
+"permission camera description" = "السماح للتطبيق باستخدام الكاميرا";
+
+"permission photoLibrary name" = "مكتبة الصور";
+
+"permission photoLibrary description" = "الوصول لحفظ الصور في معرض الصور الخاص بك";
+
+"permission microphone name" = "ميكروفون";
+
+"permission microphone description" = "السماح بتسجيل الصوت من التطبيق";
+
+"permission calendar name" = "تقويم";
+
+"permission calendar description" = "يمكن للتطبيق إضافة الأحداث إلى التقويم";
+
+"permission contacts name" = "جهات الاتصال";
+
+"permission contacts description" = "الوصول إلى جهات الاتصال والهواتف الخاصة بك";
+
+"permission reminders name" = "تذكير";
+
+"permission reminders description" = "يمكن للتطبيق إنشاء مهمة جديدة";
+
+"permission speech name" = "خطاب";
+
+"permission speech description" = "اسمح للتحقق من صوتك";
+
+"permission motion name" = "اقتراح";
+
+"permission motion description" = "السماح بتسجيل البيانات المتعلقة بالحركة والبيئة";
+
+"permission media library name" = "مكتبة الوسائط";
+
+"permission media library description" = "السماح للتحقق من وسائل الإعلام الخاصة بك";
+
+"permission bluetooth name" = "بلوتوث";
+
+"permission bluetooth description" = "اسمح بالوصول إلى البلوتوث";
+
+"permission notification name" = "تنبيه";
+
+"permission notification description" = "احصل على معلومات مهمة دون فتح التطبيق.";
+
+"permission location when in use name" = "الموقع عند الاستخدام";
+
+"permission location when in use description" = "السماح للوصول إلى موقعك";
+
+"permission location always name" = "الموقع دائما";
+
+"permission location always description" = "السماح للوصول إلى موقعك";
+
+"permission tracking name" = "تتبع";
+
+"permission tracking description" = "السماح بالوصول إلى البيانات المتعلقة بالتطبيق";
+
