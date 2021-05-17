@@ -63,7 +63,7 @@ Ready for use on iOS 11+.
 
 ## Installation
 
-<img align="right" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/SPM%20Install%20Preview.png" width="500"/>
+<img align="right" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/SPM%20Install%20Preview.png" width="520"/>
 
 ### Swift Package Manager
 
@@ -286,7 +286,7 @@ extension Controller: SPPermissionsDataSource {
 
 ### Denied alert
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/Preview%20-%20Denied%20Alert.jpg" width="320"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/Preview%20-%20Denied%20Alert%20New.jpg" width="320"/>
 
 If permission denied, you can provide alert to user for propose open settings. Here you can customise text of it alert:
 
