@@ -29,7 +29,7 @@ If you can't find valid, add new to codestyle agreements please. Other can be us
 
 ## Active Compilation Conditions
 
-List of using all it is:
+List of using for permissions:
 
 - SPPERMISSIONS_CAMERA
 - SPPERMISSIONS_CONTACTS
@@ -45,4 +45,9 @@ List of using all it is:
 - SPPERMISSIONS_MEDIALIBRARY
 - SPPERMISSIONS_BLUETOOTH
 - SPPERMISSIONS_TRACKING
+
+List of using for code manage: 
+
+- SPPERMISSIONS_SPM
+- SPPERMISSIONS_COCOAPODS
 

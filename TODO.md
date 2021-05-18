@@ -7,4 +7,5 @@ Here provided ideas or features which will be implemented soon.
 - Loading animation for action button for permission.
 - Native icons for permissions.
 - Docs.
+- Add `SPPERMISSIONS_COCOAPODS` to compile flags.
 
