@@ -37,21 +37,21 @@ class SPPermissionsListFooterCommentView: UITableViewHeaderFooterView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
 
-        let leadingAnchor = titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor)
-        leadingAnchor.priority = .init(900)
-        leadingAnchor.isActive = true
+        let leadingAnchorConstraint = titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor)
+        leadingAnchorConstraint.priority = .init(900)
+        leadingAnchorConstraint.isActive = true
         
-        let trailingAnchor = titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
-        trailingAnchor.priority = .init(900)
-        trailingAnchor.isActive = true
+        let trailingAnchorConstraint = titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
+        trailingAnchorConstraint.priority = .init(900)
+        trailingAnchorConstraint.isActive = true
         
-        let topAnchor = titleLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: 3)
-        topAnchor.priority = .init(900)
-        topAnchor.isActive = true
+        let topAnchorConstraint = titleLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: 3)
+        topAnchorConstraint.priority = .init(900)
+        topAnchorConstraint.isActive = true
         
-        let bottomAnchor = titleLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
-        bottomAnchor.priority = .init(900)
-        bottomAnchor.isActive = true
+        let bottomAnchorConstraint = titleLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
+        bottomAnchorConstraint.priority = .init(900)
+        bottomAnchorConstraint.isActive = true
     }
     
     required init?(coder: NSCoder) {
