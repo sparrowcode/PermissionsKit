@@ -104,12 +104,7 @@ class RootController: SPTableViewController {
 
 extension RootController: SPPermissionsDataSource {
     
-    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) {
-        
-        cell.permissionDrawIconView.tintColor = .systemPurple
-        cell.permissionButton.allowedBackgroundColor = .systemPurple
-        cell.permissionButton.allowTitleColor = .systemPurple
-    }
+    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) {}
     
     func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts? {
         if permission.type == .notification {
