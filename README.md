@@ -3,9 +3,9 @@
 <img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/Preview - 5.0.jpg" width="420"/>
 
 ### About
-`SPPermissions` is an API to ask for user permissions using Swift.  You can check state of permissions, available `.authorized`, `.denied` & `.notDetermined`.
+Library for ask permissions.  You can check state of permissions, available `.authorized`, `.denied` & `.notDetermined`.
 
-Available ready-use controllers for reqeust permissions: list, dialog & native. Support iPad, dark mode and RTL. Interface in an Apple style.  For start you can check [Easy Start section](#easy-start).
+Available ready-use controllers for reqeust permissions: list, dialog & native. Support iPad, dark mode and RTL. Interface in an Apple style.  For beginner see [Easy Start](#easy-start).
 
 If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
