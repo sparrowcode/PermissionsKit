@@ -151,8 +151,7 @@ public class SPPermissionsTableViewCell: UITableViewCell {
         permissionIconImageView.image = nil
         permissionIconImageView.contentMode = .scaleAspectFit
         permissionIconImageView.tintColor = permissionButton.allowedBackgroundColor
-        
-        permissionButton.updateInterface()
+    
         layoutSubviews()
     }
     

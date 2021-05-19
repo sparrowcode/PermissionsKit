@@ -33,7 +33,7 @@ public protocol SPPermissionsDataSource: AnyObject {
      - parameter cell: Default cell object of class `SPPermissionsTableViewCell`.
      - parameter permission: For which permissions cell configuring.
      */
-    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) -> SPPermissionsTableViewCell
+    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission)
     #endif
     
     /**

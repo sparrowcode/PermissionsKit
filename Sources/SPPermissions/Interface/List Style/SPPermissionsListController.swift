@@ -166,10 +166,11 @@ extension SPPermissionsListController {
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let permission = permissions[indexPath.row]
-        var cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionsTableViewCell.id, for: indexPath) as! SPPermissionsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionsTableViewCell.id, for: indexPath) as! SPPermissionsTableViewCell
         cell.defaultConfigure(for: permission)
-        cell = dataSource?.configure(cell, for: permission) ?? cell
+        dataSource?.configure(cell, for: permission)
         cell.permissionButton.addTarget(self, action: #selector(self.process(button:)), for: .touchUpInside)
+        cell.updateInterface(animated: false)
         return cell
     }
     
