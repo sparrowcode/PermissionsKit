@@ -21,11 +21,25 @@
 
 import UIKit
 
+/**
+ SPPermissions: Protocol using for implement all same properties for each interface style.
+ */
 protocol SPPermissionsControllerInterface {
     
+    /**
+     SPPermissions: Data source object.
+     */
     var dataSource: SPPermissionsDataSource? { get set }
     
+    /**
+     SPPermissions: Delegate object.
+     */
     var delegate: SPPermissionsDelegate? { get set }
     
+    /**
+     SPPermissions: Using for process present logic.
+     
+     - Note: Better use native logic for custom presenting controller. Now added to next feature.
+     */
     func present(on controller: UIViewController)
 }

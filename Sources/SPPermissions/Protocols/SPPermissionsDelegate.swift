@@ -21,12 +21,30 @@
 
 import UIKit
 
+/**
+ SPPermissions: Get notifications about events.
+ */
 public protocol SPPermissionsDelegate: AnyObject {
     
+    /**
+     SPPermissions: Called when permission allowed.
+     
+     - parameter permission: For which permission action invocation.
+     */
     func didAllowPermission(_ permission: SPPermissions.Permission)
     
+    /**
+     SPPermissions: Called when permission denied.
+     
+     - parameter permission: For which permission action invocation.
+     */
     func didDeniedPermission(_ permission: SPPermissions.Permission)
     
+    /**
+     SPPermissions: Called when permission hided.
+     
+     - parameter permission: For which permission action invocation.
+     */
     func didHidePermissions(_ permissions: [SPPermissions.Permission])
 }
 

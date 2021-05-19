@@ -3,11 +3,9 @@
 <img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/Preview - 5.0.jpg" width="420"/>
 
 ### About
-`SPPermissions` is an API to ask for user permissions using Swift. The API provides for three UI options: list, dialog & native. 
+`SPPermissions` is an API to ask for user permissions using Swift.  You can check state of permissions, available `.authorized`, `.denied` & `.notDetermined`.
 
-The UI/UX is in an **Apple style**. Support iPad, dark mode & tvOS. 
-
-Also you can check the state permissions using the API.
+Available ready-use controllers for reqeust permissions: list, dialog & native. Support iPad, dark mode and RTL. Interface in an Apple style.  For start you can check [Easy Start section](#easy-start).
 
 If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
@@ -15,7 +13,6 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 ## Navigate
 
-- [New 6.x version](#new-6.x-version)
 - [Installation](#installation)
     - [Swift Package Manager](#swift-package-manager)
     - [CocoaPods](#cocoapods)
@@ -36,29 +33,9 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
 
-## New 6.x version
-
-No any changes in UI, but big things here. **If you got any bug, please, create issue. I will fix it super fast.**
-
-#### Support Swift Package Manager 🔥
-
-Now it work, you can simple remove cocoapods dependec and move to SPM. More details about instalation process read in [Instalation section](#swift-package-manager). Cocoapods saved and continue support.
-
-#### Added `.notDetermined`
-
-You can check if permission request before.
-
-#### New Struct
-
-Changed delegate and data source. **If you use delegates or datasources** before, please, check again. Some methods renamed. Permissions now its not enum. It happen becouse no way support moduls and shared schemes.
-
-#### Localisation & RTL
-
-All defaults text ready to localiaztion. I going to add more in this week, you can support me and add your localisation. Check `Sources/Recourses` folder.
-
 ## Installation
 
-Ready for use on iOS 11+. Support iOS, tvOS and SwiftUI. Works with Swift 5+.
+Ready for use on iOS 11+. Support iOS, tvOS and SwiftUI. Works with Swift 5+. Required Xcode 12.5 and higher.
 
 <img align="right" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/SPM%20Install%20Preview.png" width="520"/>
 
@@ -185,7 +162,7 @@ For more details check [usage](#usage) section.
 
 ## Usage
 
-Now available 3 present styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `SPPermissions.xcodeproj`.
+Now available 3 present styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `Example Apps/SPPermissions.xcodeproj`.
 
 ### Dialog
 

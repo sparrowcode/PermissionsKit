@@ -21,12 +21,27 @@
 
 import UIKit
 
+/**
+ SPPermissions: Protocol using for configure permission cell and alert texts.
+ */
 public protocol SPPermissionsDataSource: AnyObject {
     
     #if os(iOS)
+    /**
+     SPPermissions: After default configure you can apply your changes like texts or custom icon.
+     
+     - parameter cell: Default cell object of class `SPPermissionsTableViewCell`.
+     - parameter permission: For which permissions cell configuring.
+     */
     func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) -> SPPermissionsTableViewCell
     #endif
     
+    /**
+     SPPermissions: Provide here alert texts if permission denied.
+     If you return `nil` for alert texts, alert won't show.
+     
+     - parameter permission: Text for this permission.
+     */
     func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts?
 }
 

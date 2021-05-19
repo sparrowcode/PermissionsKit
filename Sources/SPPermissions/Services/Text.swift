@@ -104,9 +104,15 @@ enum Text {
     // MARK: - Internal
     
     static var bundle: Bundle {
+        
+        // If installed via SPM, will be available bundle .module.
+        
         #if SPPERMISSIONS_SPM
         return .module
         #else
+        
+        // If installed via Cocoapods, should use bundle from podspec.
+        
         let path = Bundle(for: SPPermissions.Permission.self).path(forResource: "SPPermissions", ofType: "bundle") ?? ""
         let bundle = Bundle(path: path) ?? Bundle.main
         return bundle
