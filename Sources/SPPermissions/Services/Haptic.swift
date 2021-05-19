@@ -21,10 +21,12 @@
 
 import UIKit
 
+#if os(iOS)
+
 enum Haptic {
     
     static func impact(_ style: Style) {
-        #if os(iOS)
+        
         switch style {
         case .light:
             let generator = UIImpactFeedbackGenerator(style: .light)
@@ -45,7 +47,6 @@ enum Haptic {
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.error)
         }
-        #endif
     }
     
     enum Style {
@@ -58,3 +59,5 @@ enum Haptic {
         case warning
     }
 }
+
+#endif
