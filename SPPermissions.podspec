@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "SPPermissions"
-  s.version       = "6.0.6"
+  s.version       = "6.0.7"
   s.summary       = "Ask permissions on Swift. Available List, Dialog & Native interface. Can check state permission."
   s.homepage      = "https://github.com/ivanvorobei/SPPermissions"
   s.source        = { :git => "https://github.com/ivanvorobei/SPPermissions.git", :tag => s.version }
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsCamera/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_CAMERA" + "SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_CAMERA"
     }
   end
 
@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsPhotoLibrary/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_PHOTOLIBRARY" + "SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_PHOTOLIBRARY"
     }
   end
 
@@ -45,7 +45,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsNotification/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_NOTIFICATION" + "SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_NOTIFICATION"
     }
   end
 
@@ -53,7 +53,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsMicrophone/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_MICROPHONE" + "SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_MICROPHONE"
     }
   end
 
@@ -61,7 +61,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsCalendar/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_CALENDAR" + "SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_CALENDAR"
     }
   end
 
@@ -69,7 +69,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsContacts/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_CONTACTS" + "SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_CONTACTS"
     }
   end
 
@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsReminders/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_REMINDERS" + "SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_REMINDERS"
     }
   end
 
@@ -85,7 +85,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsSpeechRecognizer/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_SPEECH" + "SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_SPEECH"
     }
   end
 
@@ -93,7 +93,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsLocationWhenInUse/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_LOCATION_WHENINUSE" + "SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_LOCATION_WHENINUSE"
     }
   end
   
@@ -101,7 +101,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsLocationAlways/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_LOCATION_ALWAYS" + "SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_LOCATION_ALWAYS"
     }
   end
 
@@ -109,7 +109,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsMotion/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_MOTION" + "SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_MOTION"
     }
   end
 
@@ -117,7 +117,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsMediaLibrary/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_MEDIALIBRARY" + "SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_MEDIALIBRARY"
     }
   end
 
@@ -125,7 +125,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsBluetooth/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_BLUETOOTH" + "SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_BLUETOOTH"
     }
   end
 
@@ -133,7 +133,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsTracking/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_TRACKING" + "SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_TRACKING"
     }
   end
 
