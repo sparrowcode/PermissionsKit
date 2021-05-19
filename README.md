@@ -166,7 +166,7 @@ Now available 3 present styles: `Dialog`, `List` and `Native`. Each interface ha
 
 ### Dialog
 
-This is a modal alert, which was used in the previous version (<5.x). I recommend to use of this alert style when your requested permissions are less than three. Usage example:
+This is a modal alert. I recommend to use of this alert style when your requested permissions are less than three. Usage example:
 
 ```swift
 let controller = SPPermissions.dialog([.camera, .photoLibrary])
@@ -251,9 +251,8 @@ For data source using protocol `SPPermissionsDataSource`. You can customise cell
 ```swift
 extension Controller: SPPermissionsDataSource {
     
-    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) -> SPPermissionsTableViewCell {
+    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) {
         // Here you can customise cell, like texts or colors.
-        return cell
     }
 }
 ```
