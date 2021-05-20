@@ -145,7 +145,6 @@ Its required becouse library split to modules. After import you see available pe
 let permissions: [SPPermissions.Permission] = [.camera, .notification]
 
 // 2. Choose present style:
-
 // 2a. List Style
 let controller = SPPermissions.list(permissions)
 controller.present(on: self)
@@ -158,7 +157,7 @@ controller.present(on: self)
 let controller = SPPermissions.native(permissions)
 controller.present(on: self)
 
-// 3. Optional: Check permission state (available `.authorized`, `.denied`, `.notDetermined`):
+// 3. Optional: Check permission state (available `authorized`, `denied`, `notDetermined`):
 let authorized = SPPermissions.Permission.calendar.authorized
 ```
 
