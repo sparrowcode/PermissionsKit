@@ -37,7 +37,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 Ready for use on iOS 11+. Support iOS, tvOS and SwiftUI. Works with Swift 5+. Required Xcode 12.5 and higher.
 
-<img align="right" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/SPM%20Install%20Preview.png" width="560"/>
+<img align="right" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/SPM%20Install%20Preview.png" width="490"/>
 
 ### Swift Package Manager
 
