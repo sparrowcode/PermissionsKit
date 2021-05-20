@@ -5,7 +5,7 @@
 ### About
 Library for ask permissions.  You can check state of permissions, available `.authorized`, `.denied` & `.notDetermined`.
 
-Available ready-use controllers for reqeust permissions: list, dialog & native. Support iPad, dark mode and RTL. Interface in an Apple style.  For beginner see [Easy Start](#easy-start).
+Available ready-use controllers for reqeust permissions: list, dialog & native. Support iPad, dark mode and RTL. Interface in an Apple style.  For beginner see [Quick Start](#quick-start).
 
 If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
@@ -18,7 +18,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
     - [CocoaPods](#cocoapods)
     - [Manually](#manually)
 - [Imports](#imports)
-- [Easy Start](#easy-start)
+- [Quick Start](#quick-start)
 - [Usage](#usage)
     - [Dialog](#dialog)
     - [List](#list)
@@ -138,13 +138,14 @@ import SPPermissions
 
 Its required becouse library split to modules. After import you see available permission by typing `SPPermissions.Permission.camera` for example.
 
-## Easy Start
+## Quick Start
 
 ```swift
 // 1. Choose permissions, which you need:
 let permissions: [SPPermissions.Permission] = [.camera, .notification]
 
 // 2. Choose present style:
+
 // 2a. List Style
 let controller = SPPermissions.list(permissions)
 controller.present(on: self)
@@ -153,9 +154,12 @@ controller.present(on: self)
 let controller = SPPermissions.dialog(permissions)
 controller.present(on: self)
 
-// 2c. Dialog Style
+// 2c. Native Style
 let controller = SPPermissions.native(permissions)
 controller.present(on: self)
+
+// 3. Optional: Check permission state (available `.authorized`, `.denied`, `.notDetermined`):
+let authorized = SPPermissions.Permission.calendar.authorized
 ```
 
 For more details check [usage](#usage) section.
@@ -239,7 +243,7 @@ controller.present(on: self)
 To check the state of any permission, call `SPPermissions.Permission`: 
 
 ```swift
-let state = SPPermissions.Permission.calendar.authorized
+let authorized = SPPermissions.Permission.calendar.authorized
 ```
 
 Also available `denied` & `notDetermined`.
