@@ -265,6 +265,7 @@ extension SPPermissionsDialogController: UITableViewDataSource, UITableViewDeleg
         cell.permissionDescriptionLabel.font = UIFont.preferredFont(forTextStyle: .body, weight: .regular, addPoints: -1)
         dataSource?.configure(cell, for: permission)
         cell.permissionButton.addTarget(self, action: #selector(self.process(button:)), for: .touchUpInside)
+        cell.updateInterface(animated: false)
         return cell
     }
     
