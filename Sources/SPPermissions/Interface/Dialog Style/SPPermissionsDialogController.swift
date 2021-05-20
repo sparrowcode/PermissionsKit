@@ -259,13 +259,12 @@ extension SPPermissionsDialogController: UITableViewDataSource, UITableViewDeleg
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionsTableViewCell.id, for: indexPath) as! SPPermissionsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionsTableViewCell.id, for: indexPath) as! SPPermissionsTableViewCell
         let permission = permissions[indexPath.row]
         cell.defaultConfigure(for: permission)
-        cell = dataSource?.configure(cell, for: permission) ?? cell
+        cell.permissionDescriptionLabel.font = UIFont.preferredFont(forTextStyle: .body, weight: .regular, addPoints: -1)
+        dataSource?.configure(cell, for: permission)
         cell.permissionButton.addTarget(self, action: #selector(self.process(button:)), for: .touchUpInside)
-        cell.insetsLayoutMarginsFromSafeArea = false
-        cell.contentView.insetsLayoutMarginsFromSafeArea = false
         return cell
     }
     
