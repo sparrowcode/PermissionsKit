@@ -118,7 +118,7 @@ pod 'SPPermissions/Tracking'
 
 ### Manually
 
-If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Copy code and add compile flags from [AGREEMENTS.md](https://github.com/ivanvorobei/SPPermissions/AGREEMENTS.md) file.
+If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Copy code and add compile flags from [CONTRIBUTING.md](https://github.com/ivanvorobei/SPPermissions/CONTRIBUTING.md) file.
 
 ## Imports
 
