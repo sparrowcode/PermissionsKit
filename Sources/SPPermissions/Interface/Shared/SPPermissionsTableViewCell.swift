@@ -65,6 +65,9 @@ public class SPPermissionsTableViewCell: UITableViewCell {
         permissionIconContainerView.addSubview(permissionDrawIconView)
         permissionIconContainerView.addSubview(permissionIconImageView)
         addSubview(permissionIconContainerView)
+        
+        insetsLayoutMarginsFromSafeArea = false
+        contentView.insetsLayoutMarginsFromSafeArea = false
     }
     
     // MARK: - Lifecycle
@@ -104,7 +107,7 @@ public class SPPermissionsTableViewCell: UITableViewCell {
         
         permissionTitleLabel.layoutDynamicHeight(x: leftContentXPosition, y: contentView.layoutMargins.top, width: leftContentWidth)
         
-        permissionDescriptionLabel.layoutDynamicHeight(x: leftContentXPosition, y: permissionTitleLabel.frame.origin.y + permissionTitleLabel.frame.height + 3, width: leftContentWidth)
+        permissionDescriptionLabel.layoutDynamicHeight(x: leftContentXPosition, y: permissionTitleLabel.frame.origin.y + permissionTitleLabel.frame.height + 4, width: leftContentWidth)
         
         // Button Vertical Centering
         

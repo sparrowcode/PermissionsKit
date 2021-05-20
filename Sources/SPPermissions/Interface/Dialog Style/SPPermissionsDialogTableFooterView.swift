@@ -32,7 +32,7 @@ class SPPermissionsDialogTableFooterView: UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.systemFont(ofSize: 11, weight: .regular)
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .footnote, weight: .regular, addPoints: -1)
         titleLabel.textColor = UIColor.Compability.secondaryLabel.withAlphaComponent(0.5)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
