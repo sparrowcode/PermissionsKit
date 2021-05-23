@@ -348,6 +348,9 @@ Thanks for contribution! Please, support code style and test `iOS` and `tvOS` ve
 
 ## Other Projects
 
+#### [SPIndicator](https://github.com/ivanvorobei/SPIndicator)
+Floating indicator, mimicrate to indicator which appear when silent mode turn on / off. Support large texts and has ready-use animatable icons like `done` and `error`.
+
 #### [SPAlert](https://github.com/ivanvorobei/SPAlert)
 You can find this alerts in AppStore after feedback or after added song to library in Apple Music. Contains popular Done, Heart presets and many other. Done preset present with draw path animation like original. Also available simple present message without icon. Usage in one line code.
 
