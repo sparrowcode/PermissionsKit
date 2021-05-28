@@ -1,6 +1,6 @@
 # SPPermissions
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/Preview - 5.0.jpg" width="420"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/preview-v5.0.jpg" width="420"/>
 
 ### About
 Library for ask permissions.  You can check state of permissions, available `.authorized`, `.denied` & `.notDetermined`.
@@ -225,18 +225,18 @@ controller.present(on: self)
 ## Permissions
 
 <p float="left">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Camera.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Photos.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Notifications.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Locations.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Microphone.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Calendar.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Contacts.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Reminders.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Motion.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Media.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Speech.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/Bluetooth.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/camera.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/photos.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/notifications.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/locations.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/microphone.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/calendar.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/contacts.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/reminders.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/motion.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/media.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/speech.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/bluetooth.svg" width="105">
 </p>
 
 To check the state of any permission, call `SPPermissions.Permission`: 
@@ -260,7 +260,7 @@ extension Controller: SPPermissionsDataSource {
 }
 ```
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/Preview%20-%20Denied%20Alert.png" width="320"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/preview-denied-alert.png" width="320"/>
 
 ### Denied alert
 
