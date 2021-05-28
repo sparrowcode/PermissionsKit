@@ -344,7 +344,7 @@ Check imports if you install via [Swift Package Manager](#swift-package-manager)
 
 ### I want make PR
 
-Thanks for contribution! Please, support code style and test `iOS` and `tvOS` versions before. For more details about codestyle see [AGREEMENTS.md](https://github.com/ivanvorobei/SPPermissions/AGREEMENTS.md).
+Thanks for contribution! Please, support code style and test `iOS` and `tvOS` versions before. For more details about codestyle see [CONTRIBUTING.md](https://github.com/ivanvorobei/SPPermissions/blob/main/CONTRIBUTING.md).
 
 ## Other Projects
 
