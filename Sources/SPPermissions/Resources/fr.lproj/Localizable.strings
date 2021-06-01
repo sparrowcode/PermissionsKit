@@ -66,10 +66,10 @@
 
 "permission tracking description" = "Autoriser l'accès aux données liées à l'application";
 
-"denied alert title" = "";
+"denied alert title" = "Permission refusée";
 
-"denied alert description" = "";
+"denied alert description" = "Veuillez aller dans Paramètres et autoriser la permission.";
 
-"denied alert action" = "";
+"denied alert action" = "Paramètres";
 
-"denied alert cancel" = "";
+"denied alert cancel" = "Annuler";
