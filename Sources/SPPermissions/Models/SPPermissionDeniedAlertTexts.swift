@@ -21,21 +21,25 @@
 
 import UIKit
 
+/**
+ SPPermissions: Content for denied alert.
+ */
 public class SPPermissionDeniedAlertTexts: NSObject {
-        
-    public var titleText = "Permission denied"
-    public var descriptionText = "Please, go to Settings and allow permission."
-    public var buttonText = "Settings"
-    public var cancelText = "Cancel"
+    
+    public var titleText = Text.denied_alert_title
+    public var descriptionText = Text.denied_alert_description
+    public var actionText = Text.denied_alert_action
+    public var cancelText = Text.denied_alert_cancel
     
     public override init() {
         super.init()
     }
     
-    public init(title: String, description: String, button: String, cancel: String) {
+    public init(title: String, description: String, action: String, cancel: String) {
         self.titleText = title
+        
         self.descriptionText = description
-        self.buttonText = button
+        self.actionText = action
         self.cancelText = cancel
         super.init()
     }

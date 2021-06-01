@@ -274,7 +274,7 @@ If permission denied, you can provide alert to user for propose open settings. H
 let texts = SPPermissionDeniedAlertTexts()
 texts.titleText = "Permission denied"
 texts.descriptionText = "Please, go to Settings and allow permission."
-texts.buttonText = "Settings"
+texts.actionText = "Settings"
 texts.cancelText = "Cancel"
 ```
 
@@ -306,7 +306,7 @@ extension Controller: SPPermissionsDelegate {
 
 ## Localizations
 
-App has ready-use localisation stirngs for `en`, `ar` & `ru`. If you want add more, please, create folder `language-id.lproj` and make pull request.
+App has ready-use localisation stirngs for `en`, `ar`, `de`, `es`, `fr`, `pl`, `pt`, `uk` & `ru`. If you want add more, please, create folder `language-id.lproj` and make pull request.
 
 If you want use your custom strings, check [DataSource](#datasource) section.
 

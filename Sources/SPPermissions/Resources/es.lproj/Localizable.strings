@@ -67,3 +67,10 @@
 
 "permission tracking description" = "Permitir el acceso a los datos relacionados con la aplicación";
 
+"denied alert title" = "";
+
+"denied alert description" = "";
+
+"denied alert action" = "";
+
+"denied alert cancel" = "";

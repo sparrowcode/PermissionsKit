@@ -23,6 +23,9 @@ import UIKit
 
 #if os(iOS)
 
+/**
+ SPPermissions: Wrapper of native feedback generator.
+ */
 enum Haptic {
     
     static func impact(_ style: Style) {
