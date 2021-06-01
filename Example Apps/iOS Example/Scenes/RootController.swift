@@ -122,7 +122,7 @@ extension RootController: SPPermissionsDataSource {
              let texts = SPPermissionDeniedAlertTexts()
              texts.titleText = "Permission denied"
              texts.descriptionText = "Please, go to Settings and allow permission."
-             texts.buttonText = "Settings"
+             texts.actionText = "Settings"
              texts.cancelText = "Cancel"
              return texts
              */

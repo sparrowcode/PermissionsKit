@@ -101,6 +101,13 @@ enum Text {
     static var description: String { NSLocalizedString("titles description", bundle: bundle, comment: "") }
     static var comment: String { NSLocalizedString("titles comment", bundle: bundle, comment: "") }
     
+    // MARK: - Denied Alert
+    
+    static var denied_alert_title: String { NSLocalizedString("denied alert title", bundle: bundle, comment: "") }
+    static var denied_alert_description: String { NSLocalizedString("denied alert description", bundle: bundle, comment: "") }
+    static var denied_alert_action: String { NSLocalizedString("denied alert action", bundle: bundle, comment: "") }
+    static var denied_alert_cancel: String { NSLocalizedString("denied alert cancel", bundle: bundle, comment: "") }
+    
     // MARK: - Internal
     
     static var bundle: Bundle {

@@ -21,6 +21,9 @@
 
 import UIKit
 
+/**
+ SPPermissions: Interface for get ready-use present styles and basic services.
+ */
 public enum SPPermissions {
     
     // MARK: - Present Styles
