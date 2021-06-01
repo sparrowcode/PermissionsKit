@@ -66,10 +66,10 @@
 
 "permission tracking description" = "Дозволити доступ до даних, пов’язаних із додатками";
 
-"denied alert title" = "";
+"denied alert title" = "Дозвіл відмовлено";
 
-"denied alert description" = "";
+"denied alert description" = "Перейдіть у Налаштування та надайте дозвіл.";
 
-"denied alert action" = "";
+"denied alert action" = "Налаштування";
 
-"denied alert cancel" = "";
+"denied alert cancel" = "Скасувати";

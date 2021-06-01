@@ -66,10 +66,10 @@
 
 "permission tracking description" = "Zugriff auf app-bezogene Daten zulassen";
 
-"denied alert title" = "";
+"denied alert title" = "Berechtigung verweigert";
 
-"denied alert description" = "";
+"denied alert description" = "Bitte gehen Sie zu Einstellungen und erlauben Sie die Erlaubnis.";
 
-"denied alert action" = "";
+"denied alert action" = "Einstellungen";
 
-"denied alert cancel" = "";
+"denied alert cancel" = "Abbrechen";

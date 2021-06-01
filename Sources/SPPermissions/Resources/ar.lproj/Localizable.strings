@@ -66,10 +66,10 @@
 
 "permission tracking description" = "السماح بالوصول إلى البيانات المتعلقة بالتطبيق";
 
-"denied alert title" = "";
+"denied alert title" = "طلب الاذن مرفوض";
 
-"denied alert description" = "";
+"denied alert description" = "من فضلك ، انتقل إلى الإعدادات واسمح بالإذن.";
 
-"denied alert action" = "";
+"denied alert action" = "إعدادات";
 
-"denied alert cancel" = "";
+"denied alert cancel" = "يلغي";

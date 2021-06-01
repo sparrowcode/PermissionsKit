@@ -66,10 +66,10 @@
 
 "permission tracking description" = "Разрешить отслеживание с помощью рекламного идентификатора";
 
-"denied alert title" = "";
+"denied alert title" = "Разрешение заблокировано";
 
-"denied alert description" = "";
+"denied alert description" = "Пожалуйста, перейдите в настройки и измените доступ к разрешению.";
 
-"denied alert action" = "";
+"denied alert action" = "Открыть Настройки";
 
-"denied alert cancel" = "";
+"denied alert cancel" = "Отменить";
