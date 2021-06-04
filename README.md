@@ -229,18 +229,19 @@ controller.present(on: self)
 ## Permissions
 
 <p float="left">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/camera.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/photos.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/notifications.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/locations.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/microphone.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/calendar.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/contacts.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/reminders.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/motion.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/media.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/speech.svg" width="105">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/bluetooth.svg" width="105">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/camera.png" width="87">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/photos.png" width="87">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/notifications.png" width="87">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/locations.png" width="87">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/microphone.png" width="87">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/calendar.png" width="87">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/contacts.png" width="87">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/reminders.png" width="87">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/motion.png" width="87">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/media.png" width="87">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/speech.png" width="87">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/bluetooth.png" width="87">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/tracking.png" width="87">
 </p>
 
 To check the state of any permission, call `SPPermissions.Permission`: 
