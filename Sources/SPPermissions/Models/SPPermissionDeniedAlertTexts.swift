@@ -26,10 +26,10 @@ import UIKit
  */
 public class SPPermissionDeniedAlertTexts: NSObject {
     
-    public var titleText = Text.denied_alert_title
-    public var descriptionText = Text.denied_alert_description
-    public var actionText = Text.denied_alert_action
-    public var cancelText = Text.denied_alert_cancel
+    public var titleText = Texts.denied_alert_title
+    public var descriptionText = Texts.denied_alert_description
+    public var actionText = Texts.denied_alert_action
+    public var cancelText = Texts.denied_alert_cancel
     
     public override init() {
         super.init()

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "SPPermissions"
-  s.version       = "6.1.2"
+  s.version       = "6.2.0"
   s.summary       = "Ask permissions on Swift. Available List, Dialog & Native interface. Can check state permission."
   s.homepage      = "https://github.com/ivanvorobei/SPPermissions"
   s.source        = { :git => "https://github.com/ivanvorobei/SPPermissions.git", :tag => s.version }
@@ -24,7 +24,10 @@ Pod::Spec.new do |s|
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_COCOAPODS"
     }
     subspec.resource_bundles = {
-        "SPPermissions" => ["Sources/SPPermissions/Resources/*.lproj/*.strings"]
+        "SPPermissions" => [
+            "Sources/SPPermissions/Resources/Localization/*.lproj/*.strings",
+            "Sources/Resources/Assets.xcassets",
+        ]
     }
   end
 

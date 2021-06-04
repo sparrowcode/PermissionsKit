@@ -21,7 +21,7 @@
 
 import UIKit
 
-enum Text {
+enum Texts {
     
     static func permission_name(_ permission: SPPermissions.PermissionType) -> String {
         switch permission {
