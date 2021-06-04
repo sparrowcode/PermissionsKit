@@ -238,7 +238,7 @@ controller.present(on: self)
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/contacts.png" width="29">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/reminders.png" width="29">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/motion.png" width="29">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/media.png" width="87">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/media.png" width="29">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/speech.png" width="29">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/bluetooth.png" width="29">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/tracking.png" width="29">
