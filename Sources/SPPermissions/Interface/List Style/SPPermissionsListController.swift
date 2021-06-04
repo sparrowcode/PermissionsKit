@@ -28,9 +28,9 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     public weak var dataSource: SPPermissionsDataSource?
     public weak var delegate: SPPermissionsDelegate?
     
-    public var titleText = Text.header
-    public var headerText = Text.description
-    public var footerText = Text.comment
+    public var titleText = Texts.header
+    public var headerText = Texts.description
+    public var footerText = Texts.comment
     public var prefersLargeTitles = true
     
     private var permissions: [SPPermissions.Permission]

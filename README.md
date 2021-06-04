@@ -1,6 +1,6 @@
 # SPPermissions
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/preview-v5.0.jpg" width="420"/>
+<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/preview-v6.2.0.jpg" width="420"/>
 
 ### About
 Library for ask permissions.  You can check state of permissions, available `.authorized`, `.denied` & `.notDetermined`.
@@ -259,7 +259,17 @@ For data source using protocol `SPPermissionsDataSource`. You can customise cell
 extension Controller: SPPermissionsDataSource {
     
     func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) {
+        
         // Here you can customise cell, like texts or colors.
+        
+        cell.permissionTitleLabel.text = "Title"
+        cell.permissionDescriptionLabel.text = "Description"
+        
+        // If you need change icon, choose one of this:
+        
+        cell.permissionIconView.setPermissionType(.bluetooth)
+        cell.permissionIconView.setCustomImage(UIImage.init(named: "custom-name"))
+        cell.permissionIconView.setCustomView(YourView())
     }
 }
 ```

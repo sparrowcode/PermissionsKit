@@ -27,8 +27,8 @@ public class SPPermissionsActionButton: UIButton {
     
     var permission: SPPermissions.Permission?
     
-    public var allowTitle: String = Text.allow_permission_action
-    public var allowedTitle: String = Text.allowed_permission_action
+    public var allowTitle: String = Texts.allow_permission_action
+    public var allowedTitle: String = Texts.allowed_permission_action
     public var allowTitleColor: UIColor = UIColor.tint
     public var allowBackgroundColor: UIColor = UIColor.buttonArea
     public var allowedTitleColor: UIColor = UIColor.white

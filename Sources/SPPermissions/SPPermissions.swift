@@ -99,7 +99,14 @@ public enum SPPermissions {
          Allowed using in interface.
          */
         public var localisedName: String {
-            return Text.permission_name(type)
+            return Texts.permission_name(type)
+        }
+        
+        /**
+         SPPermissions: Icon of permission.
+         */
+        public var iconImage: UIImage {
+            return Images.permission_icon(for: type)
         }
         
         // MARK: Must Ovveride

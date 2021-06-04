@@ -104,7 +104,23 @@ class RootController: SPTableViewController {
 
 extension RootController: SPPermissionsDataSource {
     
-    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) {}
+    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) {
+
+        // Here you can customise cell, like texts or colors.
+        
+        /*
+        cell.permissionTitleLabel.text = "Title"
+        cell.permissionDescriptionLabel.text = "Description"
+        */
+        
+        // If you need change icon, choose one of this:
+        
+        /*
+        cell.permissionIconView.setPermissionType(.bluetooth)
+        cell.permissionIconView.setCustomImage(UIImage.init(named: "custom-name"))
+        cell.permissionIconView.setCustomView(YourView())
+        */
+    }
     
     func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts? {
         if permission.type == .notification {

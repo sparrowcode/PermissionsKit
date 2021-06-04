@@ -28,9 +28,9 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     public weak var dataSource: SPPermissionsDataSource?
     public weak var delegate: SPPermissionsDelegate?
     
-    public var titleText = Text.header
-    public var headerText = Text.sub_header
-    public var footerText = Text.comment
+    public var titleText = Texts.header
+    public var headerText = Texts.sub_header
+    public var footerText = Texts.comment
     public var bounceAnimationEnabled = true
     
     private let dialogView = SPPermissionsDialogView()

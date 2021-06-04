@@ -28,10 +28,7 @@ public class SPPermissionsTableViewCell: UITableViewCell {
     public let permissionTitleLabel = UILabel()
     public let permissionDescriptionLabel = UILabel()
     public let permissionButton = SPPermissionsActionButton()
-    public let permissionDrawIconView = SPPermissionsDrawIconView()
-    
-    public let permissionIconImageView = UIImageView()
-    private let permissionIconContainerView = UIView()
+    public let permissionIconView = SPPermissionsPermissionIconView()
     
     static var id = "SPPermissionsTableViewCell"
     
@@ -61,10 +58,7 @@ public class SPPermissionsTableViewCell: UITableViewCell {
         addSubview(permissionDescriptionLabel)
         
         addSubview(permissionButton)
-        
-        permissionIconContainerView.addSubview(permissionDrawIconView)
-        permissionIconContainerView.addSubview(permissionIconImageView)
-        addSubview(permissionIconContainerView)
+        addSubview(permissionIconView)
         
         insetsLayoutMarginsFromSafeArea = false
         contentView.insetsLayoutMarginsFromSafeArea = false
@@ -77,9 +71,6 @@ public class SPPermissionsTableViewCell: UITableViewCell {
         permissionTitleLabel.text = nil
         permissionDescriptionLabel.text = nil
         permissionButton.removeTarget(nil, action: nil, for: .allEvents)
-        permissionIconImageView.image = nil
-        permissionIconImageView.isHidden = true
-        permissionDrawIconView.isHidden = false
     }
     
     // MARK: - Layout
@@ -89,10 +80,8 @@ public class SPPermissionsTableViewCell: UITableViewCell {
         
         // Icons
         
-        permissionIconContainerView.frame = .init(x: contentView.layoutMargins.left - 2, y: contentView.layoutMargins.top, width: 42, height: 42)
-        permissionDrawIconView.frame = permissionIconContainerView.bounds
-        permissionIconImageView.frame = permissionIconContainerView.bounds
-        
+        permissionIconView.frame = .init(x: contentView.layoutMargins.left - 2, y: contentView.layoutMargins.top, width: 29, height: 29)
+
         // Button
         
         permissionButton.sizeToFit()
@@ -102,7 +91,7 @@ public class SPPermissionsTableViewCell: UITableViewCell {
         
         let leftContentLeadingSpace: CGFloat = 13
         let leftContentTrailingSpace: CGFloat = 13
-        let leftContentXPosition = contentView.layoutMargins.left + permissionIconContainerView.frame.width + leftContentLeadingSpace
+        let leftContentXPosition = contentView.layoutMargins.left + permissionIconView.frame.width + leftContentLeadingSpace
         let leftContentWidth = contentView.frame.width - leftContentXPosition - permissionButton.frame.width - leftContentTrailingSpace - contentView.layoutMargins.right
         
         permissionTitleLabel.layoutDynamicHeight(x: leftContentXPosition, y: contentView.layoutMargins.top, width: leftContentWidth)
@@ -116,9 +105,9 @@ public class SPPermissionsTableViewCell: UITableViewCell {
         // RTL
         
         if UIApplication.shared.userInterfaceRightToLeft {
-            permissionIconContainerView.frame.origin.x = contentView.frame.width - contentView.layoutMargins.right - permissionIconContainerView.frame.width
+            permissionIconView.frame.origin.x = contentView.frame.width - contentView.layoutMargins.right - permissionIconView.frame.width
             permissionButton.frame.origin.x = contentView.layoutMargins.right
-            permissionTitleLabel.frame.origin.x = permissionIconContainerView.frame.origin.x - leftContentLeadingSpace - permissionTitleLabel.frame.width
+            permissionTitleLabel.frame.origin.x = permissionIconView.frame.origin.x - leftContentLeadingSpace - permissionTitleLabel.frame.width
             permissionDescriptionLabel.frame.origin.x = permissionTitleLabel.frame.origin.x
         }
     }
@@ -137,29 +126,23 @@ public class SPPermissionsTableViewCell: UITableViewCell {
     
     func defaultConfigure(for permission: SPPermissions.Permission) {
         
-        permissionTitleLabel.text = Text.permission_name(permission.type)
-        permissionDescriptionLabel.text = Text.permission_description(permission.type)
+        permissionTitleLabel.text = Texts.permission_name(permission.type)
+        permissionDescriptionLabel.text = Texts.permission_description(permission.type)
         
         permissionButton.permission = permission
-        permissionButton.allowTitle = Text.allow_permission_action
-        permissionButton.allowedTitle = Text.allowed_permission_action
+        permissionButton.allowTitle = Texts.allow_permission_action
+        permissionButton.allowedTitle = Texts.allowed_permission_action
         permissionButton.allowTitleColor = UIColor.tint
         permissionButton.allowBackgroundColor = UIColor.buttonArea
         permissionButton.allowedTitleColor = UIColor.white
         permissionButton.allowedBackgroundColor = UIColor.tint
         
-        permissionDrawIconView.permission = permission
-        permissionDrawIconView.tintColor = permissionButton.allowedBackgroundColor
+        permissionIconView.setPermissionType(permission.type)
         
-        permissionIconImageView.image = nil
-        permissionIconImageView.contentMode = .scaleAspectFit
-        permissionIconImageView.tintColor = permissionButton.allowedBackgroundColor
-    
         layoutSubviews()
     }
     
     func updateInterface(animated: Bool) {
-    
         let changes = { [weak self] in
             guard let self = self else { return }
             self.permissionButton.updateInterface()
