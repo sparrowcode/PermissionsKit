@@ -317,7 +317,7 @@ extension Controller: SPPermissionsDelegate {
 
 ## Localizations
 
-App has ready-use localisation stirngs for `en`, `ar`, `de`, `es`, `fr`, `pl`, `pt`, `uk` & `ru`. If you want add more, please, create folder `language-id.lproj` and make pull request.
+App has ready-use localisation stirngs for `en`, `ar`, `de`, `es`, `fr`, `pl`, `pt`, `uk`, `ru` & `zh-Hans`. If you want add more, please, create folder `language-id.lproj` and make pull request.
 
 If you want use your custom strings, check [DataSource](#datasource) section.
 
