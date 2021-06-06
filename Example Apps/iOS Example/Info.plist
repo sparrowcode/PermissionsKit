@@ -56,6 +56,10 @@
 	<string>Example Description</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>Example Description</string>
+	<key>NSSiriUsageDescription</key>
+	<string>Example Description</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Example Description</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

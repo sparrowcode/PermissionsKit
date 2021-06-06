@@ -19,15 +19,44 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import UIKit
-import SparrowKit
+#if SPPERMISSIONS_SPM
+import SPPermissions
+#endif
 
-@main
-class AppDelegate: SPAppWindowDelegate {
+#if os(iOS) && SPPERMISSIONS_SIRI
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        makeKeyAndVisible(viewController: RootController().wrapToNavigationController(prefersLargeTitles: false), tint: .systemBlue)
-        return true
+import Foundation
+import Intents
+
+public extension SPPermissions.Permission {
+
+    static var siri: SPSiriPermission {
+        return SPSiriPermission()
     }
 }
 
+public class SPSiriPermission: SPPermissions.Permission {
+    
+    open override var type: SPPermissions.PermissionType { .siri }
+    open var usageDescriptionKey: String? { "NSSiriUsageDescription" }
+    
+    public override var status: SPPermissions.PermissionStatus {
+        switch INPreferences.siriAuthorizationStatus() {
+        case .authorized: return .authorized
+        case .denied: return .denied
+        case .notDetermined: return .notDetermined
+        case .restricted: return .denied
+        @unknown default: return .denied
+        }
+    }
+    
+    public override func request(completion: @escaping () -> Void) {
+        INPreferences.requestSiriAuthorization { _ in
+            DispatchQueue.main.async {
+                completion()
+            }
+        }
+    }
+}
+
+#endif

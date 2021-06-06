@@ -70,6 +70,10 @@
 
 "permission faceid description" = "允许使用Face ID身份";
 
+"permission siri name" = "Siri";
+
+"permission siri description" = "You will be able to use Siri";
+
 "denied alert title" = "已拒绝授权";
 
 "denied alert description" = "请跳转至设置并允许授权";
