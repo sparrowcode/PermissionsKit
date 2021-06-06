@@ -196,12 +196,6 @@ let authorized = SPPermissions.Permission.calendar.authorized
 
 Also available `denied` & `notDetermined`.
 
-You can get plist keys for permission:
-
-```swift
-let key = SPPermissions.Permission.bluetooth.usageDescriptionKey
-```
-
 ## Request
 
 Now available 3 present styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `Example Apps/SPPermissions.xcodeproj`.
@@ -333,18 +327,26 @@ If you want use your custom strings, check [DataSource](#datasource) section.
 
 ## Keys in Info.plist
 
-You need to add some keys to the `Info.plist` file with descriptions. List of keys:
+You need to add some keys to the `Info.plist` file with descriptions. You can get plist keys for permission:
+
+```swift
+let key = SPPermissions.Permission.bluetooth.usageDescriptionKey
+```
+
+List of keys:
 
 - NSCameraUsageDescription
 - NSContactsUsageDescription
 - NSCalendarsUsageDescription
 - NSMicrophoneUsageDescription
 - NSAppleMusicUsageDescription
+- NSRemindersUsageDescription
+- NSPhotoLibraryUsageDescription
+- NSPhotoLibraryAddUsageDescription
 - NSSpeechRecognitionUsageDescription
 - NSMotionUsageDescription
 - NSLocationWhenInUseUsageDescription
 - NSLocationAlwaysAndWhenInUseUsageDescription
-- NSLocationAlwaysUsageDescription (iOS 10 and earlier)
 - NSBluetoothAlwaysUsageDescription
 - NSBluetoothPeripheralUsageDescription (iOS 12 and earlier)
 - NSUserTrackingUsageDescription
