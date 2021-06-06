@@ -56,8 +56,8 @@ let package = Package(
             targets: ["SPPermissionsMotion"]
         ),
         .library(
-            name: "SPPermissionsMediaLibrary",
-            targets: ["SPPermissionsMediaLibrary"]
+            name: "SPPermissionsMusic",
+            targets: ["SPPermissionsMusic"]
         ),
         .library(
             name: "SPPermissionsBluetooth",
@@ -66,6 +66,10 @@ let package = Package(
         .library(
             name: "SPPermissionsTracking",
             targets: ["SPPermissionsTracking"]
+        ),
+        .library(
+            name: "SPPermissionsFaceID",
+            targets: ["SPPermissionsFaceID"]
         ),
     ],
     dependencies: [],
@@ -168,10 +172,10 @@ let package = Package(
             ]
         ),
         .target(
-            name: "SPPermissionsMediaLibrary",
+            name: "SPPermissionsMusic",
             dependencies: [.target(name: "SPPermissions")],
             swiftSettings: [
-                .define("SPPERMISSIONS_MEDIALIBRARY"),
+                .define("SPPERMISSIONS_MUSIC"),
                 .define("SPPERMISSIONS_SPM")
             ]
         ),
@@ -188,6 +192,14 @@ let package = Package(
             dependencies: [.target(name: "SPPermissions")],
             swiftSettings: [
                 .define("SPPERMISSIONS_TRACKING"),
+                .define("SPPERMISSIONS_SPM")
+            ]
+        ),
+        .target(
+            name: "SPPermissionsFaceID",
+            dependencies: [.target(name: "SPPermissions")],
+            swiftSettings: [
+                .define("SPPERMISSIONS_FACEID"),
                 .define("SPPERMISSIONS_SPM")
             ]
         )

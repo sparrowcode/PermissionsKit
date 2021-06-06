@@ -149,6 +149,7 @@ public enum SPPermissions {
         case authorized
         case denied
         case notDetermined
+        case notSupported
     }
     
     /**
@@ -172,6 +173,7 @@ public enum SPPermissions {
         case mediaLibrary = 12
         case bluetooth = 13
         case tracking = 14
+        case faceID = 15
         
         public var name: String {
             switch self {
@@ -203,6 +205,8 @@ public enum SPPermissions {
                 return "Location When Use"
             case .tracking:
                 return "Tracking"
+            case .faceID:
+                return "FaceID"
             }
         }
     }

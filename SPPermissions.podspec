@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "SPPermissions"
-  s.version       = "6.4.1"
+  s.version       = "6.4.4"
   s.summary       = "Ask permissions on Swift. Available List, Dialog & Native interface. Can check state permission."
   s.homepage      = "https://github.com/ivanvorobei/SPPermissions"
   s.source        = { :git => "https://github.com/ivanvorobei/SPPermissions.git", :tag => s.version }
@@ -119,11 +119,11 @@ Pod::Spec.new do |s|
     }
   end
 
-  s.subspec 'MediaLibrary' do |subspec|
+  s.subspec 'Music' do |subspec|
     subspec.dependency 'SPPermissions/Core'
-    subspec.source_files = "Sources/SPPermissionsMediaLibrary/**/*.swift"
+    subspec.source_files = "Sources/SPPermissionsMusic/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_MEDIALIBRARY SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_Music SPPERMISSIONS_COCOAPODS"
     }
   end
 

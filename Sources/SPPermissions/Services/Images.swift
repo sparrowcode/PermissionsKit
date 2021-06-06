@@ -53,6 +53,8 @@ enum Images {
             return UIImage.init(named: "Location", in: bundle, compatibleWith: nil) ?? UIImage()
         case .tracking:
             return UIImage.init(named: "Tracking", in: bundle, compatibleWith: nil) ?? UIImage()
+        case .faceID:
+            return UIImage.init(named: "FaceID", in: bundle, compatibleWith: nil) ?? UIImage()
         }
     }
     

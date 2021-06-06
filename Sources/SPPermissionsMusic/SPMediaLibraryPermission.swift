@@ -23,7 +23,7 @@
 import SPPermissions
 #endif
 
-#if os(iOS) && SPPERMISSIONS_MEDIALIBRARY
+#if os(iOS) && SPPERMISSIONS_MUSIC
 
 import Foundation
 import MediaPlayer

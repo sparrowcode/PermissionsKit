@@ -34,13 +34,14 @@ import SPPermissionsSpeechRecognizer
 import SPPermissionsLocationWhenInUse
 import SPPermissionsLocationAlways
 import SPPermissionsMotion
-import SPPermissionsMediaLibrary
+import SPPermissionsMusic
 import SPPermissionsBluetooth
 import SPPermissionsTracking
+import SPPermissionsFaceID
 
 class RootController: SPTableViewController {
     
-    var availablePermissions: [SPPermissions.Permission] = [.camera, .photoLibrary, .notification, .microphone, .calendar, .contacts, .reminders, .speech, .locationWhenInUse, .locationAlways, .motion, .mediaLibrary, .bluetooth, /*.tracking*/]
+    var availablePermissions: [SPPermissions.Permission] = [.camera, .photoLibrary, .notification, .microphone, .calendar, .contacts, .reminders, .speech, .locationWhenInUse, .locationAlways, .motion, .mediaLibrary, .bluetooth, /*.tracking,*/ .faceID]
     
     var selectedPermissions: [SPPermissions.Permission] = []
     

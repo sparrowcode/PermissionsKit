@@ -23,10 +23,11 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/contacts.png" width="38">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/reminders.png" width="38">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/motion.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/media.png" width="38">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/music.png" width="38">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/speech.png" width="38">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/bluetooth.png" width="38">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/tracking.png" width="38">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/faceid.png" width="38">
 </p>
 
 ## Navigate
@@ -123,13 +124,16 @@ pod 'SPPermissions/LocationAlways'
 pod 'SPPermissions/Motion'
 ```
 ```ruby
-pod 'SPPermissions/MediaLibrary'
+pod 'SPPermissions/Music'
 ```
 ```ruby
 pod 'SPPermissions/Bluetooth'
 ```
 ```ruby
 pod 'SPPermissions/Tracking'
+```
+```ruby
+pod 'SPPermissions/FaceID'
 ```
 
 </p>
@@ -350,6 +354,7 @@ List of keys:
 - NSBluetoothAlwaysUsageDescription
 - NSBluetoothPeripheralUsageDescription (iOS 12 and earlier)
 - NSUserTrackingUsageDescription
+- NSFaceIDUsageDescription
 
 Do not use the description as the name of the key.
 

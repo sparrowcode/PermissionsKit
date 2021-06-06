@@ -39,9 +39,10 @@ let package = Package(
                 .product(name: "SPPermissionsLocationWhenInUse", package: "SPPermissions"),
                 .product(name: "SPPermissionsLocationAlways", package: "SPPermissions"),
                 .product(name: "SPPermissionsMotion", package: "SPPermissions"),
-                .product(name: "SPPermissionsMediaLibrary", package: "SPPermissions"),
+                .product(name: "SPPermissionsMusic", package: "SPPermissions"),
                 .product(name: "SPPermissionsBluetooth", package: "SPPermissions"),
-                .product(name: "SPPermissionsTracking", package: "SPPermissions")
+                .product(name: "SPPermissionsTracking", package: "SPPermissions"),
+                .product(name: "SPPermissionsFaceID", package: "SPPermissions")
             ]
         ),
     ]
