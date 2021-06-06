@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>speech</title>
+    <defs>
+        <path d="M142.505593,199.776349 C162.751678,199.776349 177.181208,197.540464 187.583893,187.255391 C197.87472,176.858525 200,162.660653 200,142.314097 L200,57.4622515 C200,37.1156955 197.87472,22.8060298 187.583893,12.5209575 C177.069351,2.23588527 162.751678,0 142.505593,0 L56.8232662,0 C37.4720358,0 22.9306488,2.23588527 12.5279642,12.6327518 C2.23713647,22.917824 0,37.2274898 0,56.7914859 L0,142.314097 C0,162.660653 2.12527964,176.970319 12.5279642,187.255391 C22.9306488,197.540464 37.2483221,199.776349 57.606264,199.776349 L142.505593,199.776349 Z" id="path-1"></path>
+    </defs>
+    <g id="speech" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="GitHub-Preview-Mask" transform="translate(0.000000, 0.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        </g>
+        <g id="Icon">
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="200" height="200"></rect>
+            <rect id="Background" fill="#A3AAB4" x="0" y="0" width="200" height="200"></rect>
+            <g id="Paths" transform="translate(11.000000, 45.000000)" fill="#FFFFFF">
+                <rect id="Path" x="84" y="0" width="11" height="112" rx="5.5"></rect>
+                <rect id="Path" x="42" y="10" width="11" height="92" rx="5.5"></rect>
+                <rect id="Path" x="63" y="34" width="11" height="44" rx="5.5"></rect>
+                <rect id="Path" x="21" y="42" width="11" height="28" rx="5.5"></rect>
+                <rect id="Path" x="0" y="47" width="11" height="18" rx="5.5"></rect>
+                <rect id="Path" x="105" y="30" width="11" height="52" rx="5.5"></rect>
+                <rect id="Path" x="126" y="17" width="11" height="78" rx="5.5"></rect>
+                <rect id="Path" x="147" y="42" width="11" height="28" rx="5.5"></rect>
+                <rect id="Path" x="168" y="49" width="11" height="14" rx="5.5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
