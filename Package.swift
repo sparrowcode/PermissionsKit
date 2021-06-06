@@ -75,6 +75,10 @@ let package = Package(
             name: "SPPermissionsSiri",
             targets: ["SPPermissionsSiri"]
         ),
+        .library(
+            name: "SPPermissionsHealth",
+            targets: ["SPPermissionsHealth"]
+        ),
     ],
     dependencies: [],
     targets: [
@@ -212,6 +216,14 @@ let package = Package(
             dependencies: [.target(name: "SPPermissions")],
             swiftSettings: [
                 .define("SPPERMISSIONS_SIRI"),
+                .define("SPPERMISSIONS_SPM")
+            ]
+        ),
+        .target(
+            name: "SPPermissionsHealth",
+            dependencies: [.target(name: "SPPermissions")],
+            swiftSettings: [
+                .define("SPPERMISSIONS_HEALTH"),
                 .define("SPPERMISSIONS_SPM")
             ]
         )

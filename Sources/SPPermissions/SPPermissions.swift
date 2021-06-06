@@ -34,7 +34,7 @@ public enum SPPermissions {
      - parameter permissions: List if permissions for request, using model `SPPermissions.Permission`.
      */
     public static func native(_ permissions: [SPPermissions.Permission]) -> SPPermissionsNativeController {
-        let controller = SPPermissionsNativeController(permissions.removedDuplicates())
+        let controller = SPPermissionsNativeController(prepare(permissions))
         return controller
     }
     
@@ -46,7 +46,7 @@ public enum SPPermissions {
      - parameter permissions: List if permissions for request, using model `SPPermissions.Permission`.
      */
     public static func list(_ permissions: [SPPermissions.Permission]) -> SPPermissionsListController {
-        let controller = SPPermissionsListController(permissions.removedDuplicates())
+        let controller = SPPermissionsListController(prepare(permissions))
         return controller
     }
     
@@ -56,11 +56,30 @@ public enum SPPermissions {
      - parameter permissions: List if permissions for request, using model `SPPermissions.Permission`.
      */
     public static func dialog(_ permissions: [SPPermissions.Permission]) -> SPPermissionsDialogController {
-        let controller = SPPermissionsDialogController(permissions.removedDuplicates())
+        let controller = SPPermissionsDialogController(prepare(permissions))
         return controller
     }
     
     #endif
+    
+    // MARK: - Helpers
+    
+    static func prepare(_ permissions: [SPPermissions.Permission]) -> [SPPermissions.Permission] {
+        
+        for duplicate in permissions.duplicates {
+            console("Got duplicate permission \(duplicate.debugName), it will be filtered")
+        }
+        
+        for unvailable in permissions.filter({ !$0.canBePresentWithCustomInterface }) {
+            console("Permission \(unvailable.debugName) can't be present with custom interface. Use `SPPermissions.Permission.NAME.request()` with requerid parametrs. Permission \(unvailable.debugName) will be filtered")
+        }
+        
+        return permissions.removedDuplicates().filter({ $0.canBePresentWithCustomInterface })
+    }
+    
+    static func console( _ message: String) {
+        print("SPPermissions: \(message).")
+    }
     
     // MARK: - Models
     
@@ -72,15 +91,15 @@ public enum SPPermissions {
      */
     open class Permission: Equatable {
         
-        public final var authorized: Bool {
+        open var authorized: Bool {
             return status == .authorized
         }
         
-        public final var denied: Bool {
+        open var denied: Bool {
             return status == .denied
         }
         
-        public final var notDetermined: Bool {
+        open var notDetermined: Bool {
             return status == .notDetermined
         }
         
@@ -89,7 +108,7 @@ public enum SPPermissions {
          
          Don't use it in your interface. Only for console debug.
          */
-        public var debugName: String {
+        open var debugName: String {
             return type.name
         }
         
@@ -98,14 +117,14 @@ public enum SPPermissions {
          
          Allowed using in interface.
          */
-        public var localisedName: String {
+        open var localisedName: String {
             return Texts.permission_name(type)
         }
         
         /**
          SPPermissions: Icon of permission.
          */
-        public var iconImage: UIImage {
+        open var iconImage: UIImage {
             return Images.permission_icon(for: type)
         }
         
@@ -136,6 +155,13 @@ public enum SPPermissions {
         
         public static func == (lhs: SPPermissions.Permission, rhs: SPPermissions.Permission) -> Bool {
             return lhs.type == rhs.type
+        }
+        
+        /**
+        SPPermissions: If flag is `false`, permission will be filtered if try present in ready-use controllers.
+         */
+        open var canBePresentWithCustomInterface: Bool {
+            return true
         }
         
         public init() {}
@@ -175,6 +201,7 @@ public enum SPPermissions {
         case tracking = 14
         case faceID = 15
         case siri = 16
+        case health = 17
         
         public var name: String {
             switch self {
@@ -210,6 +237,8 @@ public enum SPPermissions {
                 return "FaceID"
             case .siri:
                 return "Siri"
+            case .health:
+                return "Health"
             }
         }
     }

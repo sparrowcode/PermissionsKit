@@ -43,7 +43,8 @@ let package = Package(
                 .product(name: "SPPermissionsBluetooth", package: "SPPermissions"),
                 .product(name: "SPPermissionsTracking", package: "SPPermissions"),
                 .product(name: "SPPermissionsFaceID", package: "SPPermissions"),
-                .product(name: "SPPermissionsSiri", package: "SPPermissions")
+                .product(name: "SPPermissionsSiri", package: "SPPermissions"),
+                .product(name: "SPPermissionsHealth", package: "SPPermissions")
             ]
         ),
     ]

@@ -79,7 +79,7 @@ public class SPPermissionsDrawIconView: UIView {
             Draw.drawBluetooth(frame: rect, resizing: .aspectFit, color: tintColor)
         case .tracking:
             Draw.drawTracking(frame: rect, resizing: .aspectFit, color: tintColor)
-        case .faceID, .siri:
+        case .faceID, .siri, .health:
             // Not implemented old style icons.
             break
         case .none:

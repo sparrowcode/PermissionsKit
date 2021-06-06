@@ -26,6 +26,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/music.png" width="38">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/speech.png" width="38">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/bluetooth.png" width="38">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/health.png" width="38">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/tracking.png" width="38">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/faceid.png" width="38">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/siri.png" width="38">
@@ -138,6 +139,9 @@ pod 'SPPermissions/FaceID'
 ```
 ```ruby
 pod 'SPPermissions/Siri'
+```
+```ruby
+pod 'SPPermissions/Health'
 ```
 
 </p>
@@ -371,6 +375,8 @@ List of keys:
 - NSUserTrackingUsageDescription
 - NSFaceIDUsageDescription
 - NSSiriUsageDescription
+- NSHealthUpdateUsageDescription
+- NSHealthShareUsageDescription
 
 Do not use the description as the name of the key.
 
