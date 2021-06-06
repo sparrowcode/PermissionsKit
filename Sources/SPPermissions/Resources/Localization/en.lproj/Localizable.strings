@@ -68,7 +68,7 @@
 
 "permission faceid name" = "FaceID";
 
-"permission faceid description" = "Allow using Face ID identity.";
+"permission faceid description" = "Allow using Face ID identity";
 
 "denied alert title" = "Permission denied";
 

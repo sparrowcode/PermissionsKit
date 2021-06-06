@@ -66,6 +66,10 @@
 
 "permission tracking description" = "Разрешить отслеживание с помощью рекламного идентификатора";
 
+"permission faceid name" = "FaceID";
+
+"permission faceid description" = "Разрешите идентификацию с помощью Face ID";
+
 "denied alert title" = "Разрешение заблокировано";
 
 "denied alert description" = "Пожалуйста, перейдите в настройки и измените доступ к разрешению.";

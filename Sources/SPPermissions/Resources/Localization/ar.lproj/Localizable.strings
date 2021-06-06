@@ -66,6 +66,10 @@
 
 "permission tracking description" = "السماح بالوصول إلى البيانات المتعلقة بالتطبيق";
 
+"permission faceid name" = "FaceID";
+
+"permission faceid description" = "السماح باستخدام هوية Face ID";
+
 "denied alert title" = "طلب الاذن مرفوض";
 
 "denied alert description" = "من فضلك ، انتقل إلى الإعدادات واسمح بالإذن.";
