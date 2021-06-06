@@ -80,7 +80,7 @@ public class SPPermissionsTableViewCell: UITableViewCell {
         
         // Icons
         
-        permissionIconView.frame = .init(x: contentView.layoutMargins.left - 2, y: contentView.layoutMargins.top, width: 29, height: 29)
+        permissionIconView.frame = .init(x: contentView.layoutMargins.left - 2, y: contentView.layoutMargins.top, width: 36, height: 36)
 
         // Button
         
