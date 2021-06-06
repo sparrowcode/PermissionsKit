@@ -66,6 +66,10 @@
 
 "permission tracking description" = "Дозволити доступ до даних, пов’язаних із додатками";
 
+"permission faceid name" = "FaceID";
+
+"permission faceid description" = "Дозволити використання ідентифікатора обличчя Face ID";
+
 "denied alert title" = "Дозвіл відмовлено";
 
 "denied alert description" = "Перейдіть у Налаштування та надайте дозвіл.";

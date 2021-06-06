@@ -66,6 +66,10 @@
 
 "permission tracking description" = "Zugriff auf app-bezogene Daten zulassen";
 
+"permission faceid name" = "FaceID";
+
+"permission faceid description" = "Erlauben Sie die Verwendung der Face ID-Identität";
+
 "denied alert title" = "Berechtigung verweigert";
 
 "denied alert description" = "Bitte gehen Sie zu Einstellungen und erlauben Sie die Erlaubnis.";
