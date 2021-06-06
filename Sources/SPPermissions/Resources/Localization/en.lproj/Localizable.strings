@@ -74,6 +74,10 @@
 
 "permission siri description" = "You will be able to use Siri";
 
+"permission health name" = "Health";
+
+"permission health description" = "Allow to access health data";
+
 "denied alert title" = "Permission denied";
 
 "denied alert description" = "Please, go to Settings and allow permission.";

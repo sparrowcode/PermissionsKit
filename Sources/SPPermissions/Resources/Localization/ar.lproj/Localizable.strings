@@ -74,6 +74,10 @@
 
 "permission siri description" = "You will be able to use Siri";
 
+"permission health name" = "Health";
+
+"permission health description" = "Allow to access health data";
+
 "denied alert title" = "طلب الاذن مرفوض";
 
 "denied alert description" = "من فضلك ، انتقل إلى الإعدادات واسمح بالإذن.";
