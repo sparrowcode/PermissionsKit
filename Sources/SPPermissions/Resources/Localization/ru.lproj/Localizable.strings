@@ -72,6 +72,10 @@
 
 "denied alert title" = "Разрешение заблокировано";
 
+"permission siri name" = "Siri";
+
+"permission siri description" = "You will be able to use Siri";
+
 "denied alert description" = "Пожалуйста, перейдите в настройки и измените доступ к разрешению.";
 
 "denied alert action" = "Открыть Настройки";

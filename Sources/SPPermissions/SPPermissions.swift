@@ -174,6 +174,7 @@ public enum SPPermissions {
         case bluetooth = 13
         case tracking = 14
         case faceID = 15
+        case siri = 16
         
         public var name: String {
             switch self {
@@ -207,6 +208,8 @@ public enum SPPermissions {
                 return "Tracking"
             case .faceID:
                 return "FaceID"
+            case .siri:
+                return "Siri"
             }
         }
     }

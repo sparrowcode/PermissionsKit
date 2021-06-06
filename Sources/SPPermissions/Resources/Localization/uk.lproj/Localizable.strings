@@ -72,6 +72,10 @@
 
 "denied alert title" = "Дозвіл відмовлено";
 
+"permission siri name" = "Siri";
+
+"permission siri description" = "You will be able to use Siri";
+
 "denied alert description" = "Перейдіть у Налаштування та надайте дозвіл.";
 
 "denied alert action" = "Налаштування";

@@ -38,10 +38,11 @@ import SPPermissionsMusic
 import SPPermissionsBluetooth
 import SPPermissionsTracking
 import SPPermissionsFaceID
+import SPPermissionsSiri
 
 class RootController: SPTableViewController {
     
-    var availablePermissions: [SPPermissions.Permission] = [.camera, .photoLibrary, .notification, .microphone, .calendar, .contacts, .reminders, .speech, .locationWhenInUse, .locationAlways, .motion, .mediaLibrary, .bluetooth, /*.tracking,*/ .faceID]
+    var availablePermissions: [SPPermissions.Permission] = [.camera, .photoLibrary, .notification, .microphone, .calendar, .contacts, .reminders, .speech, .locationWhenInUse, .locationAlways, .motion, .mediaLibrary, .bluetooth, /*.tracking,*/ .faceID, .siri]
     
     var selectedPermissions: [SPPermissions.Permission] = []
     

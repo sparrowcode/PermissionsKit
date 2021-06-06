@@ -70,6 +70,10 @@
 
 "permission faceid description" = "Allow using Face ID identity";
 
+"permission siri name" = "Siri";
+
+"permission siri description" = "You will be able to use Siri";
+
 "denied alert title" = "Permission denied";
 
 "denied alert description" = "Please, go to Settings and allow permission.";

@@ -71,6 +71,10 @@ let package = Package(
             name: "SPPermissionsFaceID",
             targets: ["SPPermissionsFaceID"]
         ),
+        .library(
+            name: "SPPermissionsSiri",
+            targets: ["SPPermissionsSiri"]
+        ),
     ],
     dependencies: [],
     targets: [
@@ -200,6 +204,14 @@ let package = Package(
             dependencies: [.target(name: "SPPermissions")],
             swiftSettings: [
                 .define("SPPERMISSIONS_FACEID"),
+                .define("SPPERMISSIONS_SPM")
+            ]
+        ),
+        .target(
+            name: "SPPermissionsSiri",
+            dependencies: [.target(name: "SPPermissions")],
+            swiftSettings: [
+                .define("SPPERMISSIONS_SIRI"),
                 .define("SPPERMISSIONS_SPM")
             ]
         )

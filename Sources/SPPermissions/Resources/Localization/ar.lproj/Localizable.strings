@@ -70,6 +70,10 @@
 
 "permission faceid description" = "السماح باستخدام هوية Face ID";
 
+"permission siri name" = "Siri";
+
+"permission siri description" = "You will be able to use Siri";
+
 "denied alert title" = "طلب الاذن مرفوض";
 
 "denied alert description" = "من فضلك ، انتقل إلى الإعدادات واسمح بالإذن.";
