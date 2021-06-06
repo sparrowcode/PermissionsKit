@@ -11,7 +11,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 [![https://github.com/ivanvorobei](https://github.com/ivanvorobei/Readme/blob/main/Buttons/follow-me-ivanvorobei.svg)](https://github.com/ivanvorobei)
 
-## Permissions
+### Permissions
 
 <p float="left">
     <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/camera.svg" width="50">
@@ -37,11 +37,11 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
     - [Manually](#manually)
 - [Imports](#imports)
 - [Quick Start](#quick-start)
-- [Usage](#usage)
+- [Status](#status)
+- [Request](#request)
     - [Dialog](#dialog)
     - [List](#list)
     - [Native](#native)
-- [Permission State](#permission-state)
 - [DataSource](#datasource)
     - [Denied alert](#denied-alert)
 - [Delegate](#delegate)
@@ -184,9 +184,19 @@ controller.present(on: self)
 let authorized = SPPermissions.Permission.calendar.authorized
 ```
 
-For more details check [usage](#usage) section.
+For more details check [usage](#Request) section.
 
-## Usage
+## Status
+
+To check the state of any permission, call `SPPermissions.Permission`: 
+
+```swift
+let authorized = SPPermissions.Permission.calendar.authorized
+```
+
+Also available `denied` & `notDetermined`.
+
+## Request
 
 Now available 3 present styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `Example Apps/SPPermissions.xcodeproj`.
 
@@ -245,16 +255,6 @@ controller.delegate = self
 // Always use this method for request. 
 controller.present(on: self)
 ```
-
-## Permission State
-
-To check the state of any permission, call `SPPermissions.Permission`: 
-
-```swift
-let authorized = SPPermissions.Permission.calendar.authorized
-```
-
-Also available `denied` & `notDetermined`.
 
 ## DataSource
 
