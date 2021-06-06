@@ -14,19 +14,19 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 ### Permissions
 
 <p float="left">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/camera.svg" width="50">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/photos.svg" width="50">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/notifications.svg" width="50">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/location.svg" width="50">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/microphone.svg" width="50">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/calendar.svg" width="50">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/contacts.svg" width="50">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/reminders.svg" width="50">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/motion.svg" width="50">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/media.svg" width="50">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/speech.svg" width="50">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/bluetooth.svg" width="50">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/tracking.svg" width="50">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/camera.svg" width="42">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/photos.svg" width="42">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/notifications.svg" width="42">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/location.svg" width="42">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/microphone.svg" width="42">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/calendar.svg" width="42">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/contacts.svg" width="42">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/reminders.svg" width="42">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/motion.svg" width="42">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/media.svg" width="42">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/speech.svg" width="42">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/bluetooth.svg" width="42">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/tracking.svg" width="42">
 </p>
 
 ## Navigate
@@ -184,7 +184,7 @@ controller.present(on: self)
 let authorized = SPPermissions.Permission.calendar.authorized
 ```
 
-For more details check [usage](#Request) section.
+For more details check [Request](#Request) section.
 
 ## Status
 
