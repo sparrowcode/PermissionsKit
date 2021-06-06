@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>calendar</title>
+    <defs>
+        <path d="M142.505593,199.776349 C162.751678,199.776349 177.181208,197.540464 187.583893,187.255391 C197.87472,176.858525 200,162.660653 200,142.314097 L200,57.4622515 C200,37.1156955 197.87472,22.8060298 187.583893,12.5209575 C177.069351,2.23588527 162.751678,0 142.505593,0 L56.8232662,0 C37.4720358,0 22.9306488,2.23588527 12.5279642,12.6327518 C2.23713647,22.917824 0,37.2274898 0,56.7914859 L0,142.314097 C0,162.660653 2.12527964,176.970319 12.5279642,187.255391 C22.9306488,197.540464 37.2483221,199.776349 57.606264,199.776349 L142.505593,199.776349 Z" id="path-1"></path>
+    </defs>
+    <g id="calendar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="GitHub-Preview-Mask" transform="translate(0.000000, 0.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        </g>
+        <g id="Icon">
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="200" height="200"></rect>
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="200" height="200"></rect>
+            <rect id="Area" fill="#FF3B30" x="0" y="0" width="200" height="47"></rect>
+            <g id="Dots" transform="translate(33.000000, 69.000000)">
+                <rect id="Rectangle" fill="#000000" x="42" y="0" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="42" y="32" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="42" y="32" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="63" y="32" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="84" y="32" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="105" y="32" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="126" y="32" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="126" y="63" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="105" y="63" width="7" height="7"></rect>
+                <circle id="Oval" fill="#FF3B30" cx="87.5" cy="66.5" r="12.5"></circle>
+                <rect id="Rectangle" fill="#000000" x="63" y="63" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="42" y="64" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="21" y="64" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="0" y="64" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="0" y="95" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="21" y="95" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="42" y="95" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="63" y="94" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="86" y="94" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="21" y="32" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="0" y="32" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="63" y="0" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="84" y="0" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="105" y="0" width="7" height="7"></rect>
+                <rect id="Rectangle" fill="#000000" x="126" y="0" width="7" height="7"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

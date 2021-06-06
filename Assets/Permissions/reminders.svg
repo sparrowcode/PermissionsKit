@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>reminders</title>
+    <defs>
+        <path d="M142.505593,199.776349 C162.751678,199.776349 177.181208,197.540464 187.583893,187.255391 C197.87472,176.858525 200,162.660653 200,142.314097 L200,57.4622515 C200,37.1156955 197.87472,22.8060298 187.583893,12.5209575 C177.069351,2.23588527 162.751678,0 142.505593,0 L56.8232662,0 C37.4720358,0 22.9306488,2.23588527 12.5279642,12.6327518 C2.23713647,22.917824 0,37.2274898 0,56.7914859 L0,142.314097 C0,162.660653 2.12527964,176.970319 12.5279642,187.255391 C22.9306488,197.540464 37.2483221,199.776349 57.606264,199.776349 L142.505593,199.776349 Z" id="path-1"></path>
+        <ellipse id="path-3" cx="9.77690289" cy="9.83606557" rx="9.77690289" ry="9.83606557"></ellipse>
+        <ellipse id="path-4" cx="9.77690289" cy="60" rx="9.77690289" ry="9.83606557"></ellipse>
+        <ellipse id="path-5" cx="9.77690289" cy="110.163934" rx="9.77690289" ry="9.83606557"></ellipse>
+    </defs>
+    <g id="reminders" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="GitHub-Preview-Mask" transform="translate(0.000000, 0.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        </g>
+        <g id="Icon">
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="200" height="200"></rect>
+            <rect id="Background" fill="#FFFFFF" x="0" y="0" width="200" height="200"></rect>
+            <g transform="translate(28.000000, 40.000000)">
+                <rect id="Path" fill="#D1D1D6" x="45.3648294" y="8.06557377" width="103.635171" height="3.3442623" rx="1.666"></rect>
+                <rect id="Path" fill="#D1D1D6" x="45.3648294" y="58.2295082" width="103.635171" height="3.3442623" rx="1.666"></rect>
+                <rect id="Path" fill="#D1D1D6" x="45.3648294" y="108.393443" width="103.635171" height="3.3442623" rx="1.666"></rect>
+                <g id="Dot">
+                    <ellipse stroke="#007AFF" stroke-width="7.056" fill="#007AFF" fill-rule="evenodd" cx="9.77690289" cy="9.83606557" rx="13.3049029" ry="13.3640656"></ellipse>
+                    <ellipse stroke="#FFFFFF" stroke-width="3.528" cx="9.77690289" cy="9.83606557" rx="11.5409029" ry="11.6000656"></ellipse>
+                </g>
+                <g id="Dot">
+                    <ellipse stroke="#FF3B30" stroke-width="7.056" fill="#FF3B30" fill-rule="evenodd" cx="9.77690289" cy="60" rx="13.3049029" ry="13.3640656"></ellipse>
+                    <ellipse stroke="#FFFFFF" stroke-width="3.528" cx="9.77690289" cy="60" rx="11.5409029" ry="11.6000656"></ellipse>
+                </g>
+                <g id="Dot">
+                    <ellipse stroke="#FF9500" stroke-width="7.056" fill="#FF9500" fill-rule="evenodd" cx="9.77690289" cy="110.163934" rx="13.3049029" ry="13.3640656"></ellipse>
+                    <ellipse stroke="#FFFFFF" stroke-width="3.528" cx="9.77690289" cy="110.163934" rx="11.5409029" ry="11.6000656"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
