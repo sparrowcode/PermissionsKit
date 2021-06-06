@@ -29,7 +29,8 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 - [Delegate](#delegate)
 - [Localizations](#localizations)
 - [Keys in Info.plist](#keys-in-infoplist)
-- [FAQ](#faq)
+- [Apple Review](#apple-review)
+- [Сontribution](#сontribution)
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
 
@@ -317,7 +318,7 @@ extension Controller: SPPermissionsDelegate {
 
 ## Localizations
 
-App has ready-use localisation stirngs for `en`, `ar`, `de`, `es`, `fr`, `pl`, `pt`, `uk`, `ru` & `zh-Hans`. If you want add more, please, create folder `language-id.lproj` and make pull request.
+App has ready-use localisation stirngs for `English (en)`, `Arabic (ar)`, `German (de)`, `Spanish (es)`, `French (fr)`, `Polish (pl)`, `Portuguese (pt)`, `Ukrainian (uk)`, `Russian (ru)` & `Chinese Simplified Han (zh_Hans)`. If you want add more, please, create folder `language_id.lproj` and make pull request.
 
 If you want use your custom strings, check [DataSource](#datasource) section.
 
@@ -347,19 +348,20 @@ If you use xliff localization export, keys will be create automatically. If you 
 "NSCameraUsageDescription" = "Here description of usage camera";
 ```
 
-## FAQ
+## Apple Review
 
-### Why library looks complex and have modules? 
+Apple changed review guidlines. Now if you apper process permission, user always shoud run request. For it reason now close button hidden. If you force need it, run next code:
 
-Apple reject app with you import all frameworks and not request it. `SPPermissions` imported only code, which you choose. Support moduls struct is hard and may looks complex. I tried to make using the library as simple as possible.
+```swift
+// Work for any style
+controller.showCloseButton = true
+```
 
-### Why I not see permission?
+Also changed title for button. Insted of  `allow` now using `continue`. It's ask of Apple Review Team. You can get more about changes in [this issue](https://github.com/ivanvorobei/SPPermissions/issues/229). 
 
-Check imports if you install via [Swift Package Manager](#swift-package-manager). If you install via [CocoaPods](#cocoapods), you podfile shoud have second path with module name.
+## Сontribution
 
-### I want make PR
-
-Thanks for contribution! Please, support code style and test `iOS` and `tvOS` versions before. For more details about codestyle see [CONTRIBUTING.md](https://github.com/ivanvorobei/SPPermissions/blob/main/CONTRIBUTING.md).
+My English is very bad. You can see this once you read the documentation. I would really like to have clean and nice documentation. If you can fix Readme, please contact me hello@ivanvorobei.by or make Pull Request. I'm willing to pay if need.
 
 ## Other Projects
 

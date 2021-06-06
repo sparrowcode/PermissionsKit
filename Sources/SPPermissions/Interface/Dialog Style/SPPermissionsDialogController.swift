@@ -25,6 +25,8 @@ import UIKit
 
 public class SPPermissionsDialogController: UIViewController, SPPermissionsControllerInterface {
     
+    public var showCloseButton: Bool = false
+    
     public weak var dataSource: SPPermissionsDataSource?
     public weak var delegate: SPPermissionsDelegate?
     
@@ -71,6 +73,8 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
         dialogView.tableView.register(SPPermissionsTableViewCell.self, forCellReuseIdentifier: SPPermissionsTableViewCell.id)
         dialogView.closeButton.addTarget(self, action: #selector(self.dimissWithDialog), for: .touchUpInside)
         view.addSubview(dialogView)
+        
+        dialogView.closeButton.isHidden = !showCloseButton
         
         // Animator
         
