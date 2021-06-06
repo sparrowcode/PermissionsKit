@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "SPPermissions"
-  s.version       = "6.4.6"
+  s.version       = "6.4.7"
   s.summary       = "Ask permissions on Swift. Available List, Dialog & Native interface. Can check state permission."
   s.homepage      = "https://github.com/ivanvorobei/SPPermissions"
   s.source        = { :git => "https://github.com/ivanvorobei/SPPermissions.git", :tag => s.version }
@@ -123,7 +123,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'SPPermissions/Core'
     subspec.source_files = "Sources/SPPermissionsMusic/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_Music SPPERMISSIONS_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_MUSIC SPPERMISSIONS_COCOAPODS"
     }
   end
 
@@ -140,6 +140,14 @@ Pod::Spec.new do |s|
     subspec.source_files = "Sources/SPPermissionsTracking/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_TRACKING SPPERMISSIONS_COCOAPODS"
+    }
+  end
+
+  s.subspec 'Siri' do |subspec|
+    subspec.dependency 'SPPermissions/Core'
+    subspec.source_files = "Sources/SPPermissionsSiri/**/*.swift"
+    subspec.pod_target_xcconfig = {
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_SIRI SPPERMISSIONS_COCOAPODS"
     }
   end
 
