@@ -53,6 +53,8 @@ enum Texts {
             return NSLocalizedString("permission location always name", bundle: bundle, comment: "")
         case .tracking:
             return NSLocalizedString("permission tracking name", bundle: bundle, comment: "")
+        case .faceID:
+            return NSLocalizedString("permission faceid name", bundle: bundle, comment: "")
         }
     }
     
@@ -86,6 +88,8 @@ enum Texts {
             return NSLocalizedString("permission location always description", bundle: bundle, comment: "")
         case .tracking:
             return NSLocalizedString("permission tracking description", bundle: bundle, comment: "")
+        case .faceID:
+            return NSLocalizedString("permission faceid description", bundle: bundle, comment: "")
         }
     }
     
