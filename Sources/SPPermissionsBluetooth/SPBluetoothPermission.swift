@@ -41,7 +41,15 @@ public class SPBluetoothPermission: SPPermissions.Permission {
     open var usageDescriptionKey: String? { "NSBluetoothAlwaysUsageDescription" }
     
     public override var status: SPPermissions.PermissionStatus {
-        if #available(iOS 13.0, tvOS 13, *) {
+        if #available(iOS 13.1, tvOS 13.1, *) {
+            switch CBCentralManager.authorization {
+            case .allowedAlways: return .authorized
+            case .notDetermined: return .notDetermined
+            case .restricted: return .denied
+            case .denied: return .denied
+            @unknown default: return .denied
+            }
+        } else if #available(iOS 13.0, tvOS 13.0, *) {
             switch CBCentralManager().authorization {
             case .allowedAlways: return .authorized
             case .notDetermined: return .notDetermined
