@@ -11,6 +11,24 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 [![https://github.com/ivanvorobei](https://github.com/ivanvorobei/Readme/blob/main/Buttons/follow-me-ivanvorobei.svg)](https://github.com/ivanvorobei)
 
+## Permissions
+
+<p float="left">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/camera.svg" width="50">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/photos.svg" width="50">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/notifications.svg" width="50">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/location.svg" width="50">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/microphone.svg" width="50">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/calendar.svg" width="50">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/contacts.svg" width="50">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/reminders.svg" width="50">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/motion.svg" width="50">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/media.svg" width="50">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/speech.svg" width="50">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/bluetooth.svg" width="50">
+    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/tracking.svg" width="50">
+</p>
+
 ## Navigate
 
 - [Installation](#installation)
@@ -23,7 +41,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
     - [Dialog](#dialog)
     - [List](#list)
     - [Native](#native)
-- [Permissions](#permissions)
+- [Permission State](#permission-state)
 - [DataSource](#datasource)
     - [Denied alert](#denied-alert)
 - [Delegate](#delegate)
@@ -227,23 +245,8 @@ controller.delegate = self
 // Always use this method for request. 
 controller.present(on: self)
 ```
-## Permissions
 
-<p float="left">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/camera.svg" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/photos.svg" width="44">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/notifications.svg" width="44">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/location.svg" width="44">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/microphone.svg" width="44">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/calendar.svg" width="44">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/contacts.svg" width="44">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/reminders.svg" width="44">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/motion.svg" width="44">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/media.svg" width="44">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/speech.svg" width="44">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/bluetooth.svg" width="44">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/tracking.svg" width="44">
-</p>
+## Permission State
 
 To check the state of any permission, call `SPPermissions.Permission`: 
 
