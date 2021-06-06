@@ -196,6 +196,12 @@ let authorized = SPPermissions.Permission.calendar.authorized
 
 Also available `denied` & `notDetermined`.
 
+You can get plist keys for permission:
+
+```swift
+let key = SPPermissions.Permission.bluetooth.usageDescriptionKey
+```
+
 ## Request
 
 Now available 3 present styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `Example Apps/SPPermissions.xcodeproj`.

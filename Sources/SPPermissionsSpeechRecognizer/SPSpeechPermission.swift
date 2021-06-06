@@ -30,7 +30,7 @@ import Speech
 
 public extension SPPermissions.Permission {
 
-    static var speech: SPPermissions.Permission {
+    static var speech: SPSpeechPermission {
         return SPSpeechPermission()
     }
 }
@@ -38,7 +38,7 @@ public extension SPPermissions.Permission {
 public class SPSpeechPermission: SPPermissions.Permission {
     
     open override var type: SPPermissions.PermissionType { .speech }
-    open override var usageDescriptionKey: String? { "NSSpeechRecognitionUsageDescription" }
+    open var usageDescriptionKey: String? { "NSSpeechRecognitionUsageDescription" }
     
     public override var status: SPPermissions.PermissionStatus {
         switch SFSpeechRecognizer.authorizationStatus() {

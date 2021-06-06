@@ -114,13 +114,6 @@ public enum SPPermissions {
         /**
          SPPermissions: Permission type.
          */
-        open var usageDescriptionKey: String? {
-            preconditionFailure("This method must be overridden.")
-        }
-        
-        /**
-         SPPermissions: Permission type.
-         */
         open var type: PermissionType {
             preconditionFailure("This method must be overridden.")
         }

@@ -30,7 +30,7 @@ import EventKit
 
 public extension SPPermissions.Permission {
 
-    static var calendar: SPPermissions.Permission {
+    static var calendar: SPCalendarPermission {
         return SPCalendarPermission()
     }
 }
@@ -38,7 +38,7 @@ public extension SPPermissions.Permission {
 public class SPCalendarPermission: SPPermissions.Permission {
     
     open override var type: SPPermissions.PermissionType { .calendar }
-    open override var usageDescriptionKey: String? { "NSCalendarsUsageDescription" }
+    open var usageDescriptionKey: String? { "NSCalendarsUsageDescription" }
     
     public override var status: SPPermissions.PermissionStatus {
         switch EKEventStore.authorizationStatus(for: EKEntityType.event) {

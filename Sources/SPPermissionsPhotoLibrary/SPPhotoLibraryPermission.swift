@@ -29,7 +29,7 @@ import Photos
 
 public extension SPPermissions.Permission {
 
-    static var photoLibrary: SPPermissions.Permission {
+    static var photoLibrary: SPPhotoLibraryPermission {
         return SPPhotoLibraryPermission()
     }
 }
@@ -37,7 +37,14 @@ public extension SPPermissions.Permission {
 public class SPPhotoLibraryPermission: SPPermissions.Permission {
     
     open override var type: SPPermissions.PermissionType { .photoLibrary }
-    open override var usageDescriptionKey: String? { "NSPhotoLibraryUsageDescription" }
+    
+    open var fullAccessUsageDescriptionKey: String? {
+        "NSPhotoLibraryUsageDescription"
+    }
+    
+    open var addingOnlyUsageDescriptionKey: String? {
+        "NSPhotoLibraryAddUsageDescription"
+    }
     
     public override var status: SPPermissions.PermissionStatus {
         switch PHPhotoLibrary.authorizationStatus() {

@@ -29,7 +29,7 @@ import UserNotifications
 
 public extension SPPermissions.Permission {
 
-    static var notification: SPPermissions.Permission {
+    static var notification: SPNotificationPermission {
         return SPNotificationPermission()
     }
 }
@@ -37,7 +37,6 @@ public extension SPPermissions.Permission {
 public class SPNotificationPermission: SPPermissions.Permission {
     
     open override var type: SPPermissions.PermissionType { .notification }
-    open override var usageDescriptionKey: String? { return nil }
     
     public override var status: SPPermissions.PermissionStatus {
         guard let authorizationStatus = fetchAuthorizationStatus() else { return .notDetermined }

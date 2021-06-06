@@ -30,7 +30,7 @@ import CoreMotion
 
 public extension SPPermissions.Permission {
 
-    static var motion: SPPermissions.Permission {
+    static var motion: SPMotionPermission {
         return SPMotionPermission()
     }
 }
@@ -38,7 +38,7 @@ public extension SPPermissions.Permission {
 public class SPMotionPermission: SPPermissions.Permission {
     
     open override var type: SPPermissions.PermissionType { .motion }
-    open override var usageDescriptionKey: String? { "NSMotionUsageDescription" }
+    open var usageDescriptionKey: String? { "NSMotionUsageDescription" }
     
     public override var status: SPPermissions.PermissionStatus {
         switch CMMotionActivityManager.authorizationStatus() {

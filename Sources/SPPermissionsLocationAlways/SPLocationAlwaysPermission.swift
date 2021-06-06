@@ -30,7 +30,7 @@ import MapKit
 
 public extension SPPermissions.Permission {
 
-    static var locationAlways: SPPermissions.Permission {
+    static var locationAlways: SPLocationAlwaysPermission {
         return SPLocationAlwaysPermission()
     }
 }
@@ -38,7 +38,7 @@ public extension SPPermissions.Permission {
 public class SPLocationAlwaysPermission: SPPermissions.Permission {
     
     open override var type: SPPermissions.PermissionType { .locationAlways }
-    open override var usageDescriptionKey: String? { "NSLocationAlwaysAndWhenInUseUsageDescription" }
+    open var usageDescriptionKey: String? { "NSLocationAlwaysAndWhenInUseUsageDescription" }
     
     public override var status: SPPermissions.PermissionStatus {
         let authorizationStatus: CLAuthorizationStatus = {
