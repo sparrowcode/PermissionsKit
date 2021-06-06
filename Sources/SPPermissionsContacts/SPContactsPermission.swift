@@ -30,7 +30,7 @@ import Contacts
 
 public extension SPPermissions.Permission {
 
-    static var contacts: SPPermissions.Permission {
+    static var contacts: SPContactsPermission {
         return SPContactsPermission()
     }
 }
@@ -38,7 +38,7 @@ public extension SPPermissions.Permission {
 public class SPContactsPermission: SPPermissions.Permission {
     
     open override var type: SPPermissions.PermissionType { .contacts }
-    open override var usageDescriptionKey: String? { "NSContactsUsageDescription" }
+    open var usageDescriptionKey: String? { "NSContactsUsageDescription" }
     
     public override var status: SPPermissions.PermissionStatus {
         switch CNContactStore.authorizationStatus(for: .contacts) {

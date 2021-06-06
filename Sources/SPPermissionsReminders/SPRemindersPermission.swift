@@ -30,7 +30,7 @@ import EventKit
 
 public extension SPPermissions.Permission {
 
-    static var reminders: SPPermissions.Permission {
+    static var reminders: SPRemindersPermission {
         return SPRemindersPermission()
     }
 }
@@ -38,7 +38,7 @@ public extension SPPermissions.Permission {
 public class SPRemindersPermission: SPPermissions.Permission {
     
     open override var type: SPPermissions.PermissionType { .reminders }
-    open override var usageDescriptionKey: String? { "NSRemindersUsageDescription" }
+    open var usageDescriptionKey: String? { "NSRemindersUsageDescription" }
     
     public override var status: SPPermissions.PermissionStatus {
         switch EKEventStore.authorizationStatus(for: EKEntityType.reminder) {

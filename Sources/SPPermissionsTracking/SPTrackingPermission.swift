@@ -30,7 +30,7 @@ import AppTrackingTransparency
 @available(iOS 14.5, tvOS 14.5, *)
 public extension SPPermissions.Permission {
 
-    static var tracking: SPPermissions.Permission {
+    static var tracking: SPTrackingPermission {
         return SPTrackingPermission()
     }
 }
@@ -39,7 +39,7 @@ public extension SPPermissions.Permission {
 public class SPTrackingPermission: SPPermissions.Permission {
     
     open override var type: SPPermissions.PermissionType { .tracking }
-    open override var usageDescriptionKey: String? { "NSUserTrackingUsageDescription" }
+    open var usageDescriptionKey: String? { "NSUserTrackingUsageDescription" }
     
     public override var status: SPPermissions.PermissionStatus {
         switch ATTrackingManager.trackingAuthorizationStatus {

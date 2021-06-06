@@ -30,7 +30,7 @@ import CoreBluetooth
 
 public extension SPPermissions.Permission {
 
-    static var bluetooth: SPPermissions.Permission {
+    static var bluetooth: SPBluetoothPermission {
         return SPBluetoothPermission()
     }
 }
@@ -38,7 +38,7 @@ public extension SPPermissions.Permission {
 public class SPBluetoothPermission: SPPermissions.Permission {
     
     open override var type: SPPermissions.PermissionType { .bluetooth }
-    open override var usageDescriptionKey: String? { "NSBluetoothAlwaysUsageDescription" }
+    open var usageDescriptionKey: String? { "NSBluetoothAlwaysUsageDescription" }
     
     public override var status: SPPermissions.PermissionStatus {
         if #available(iOS 13.0, tvOS 13, *) {

@@ -30,7 +30,7 @@ import AVFoundation
 
 public extension SPPermissions.Permission {
 
-    static var microphone: SPPermissions.Permission {
+    static var microphone: SPMicrophonePermission {
         return SPMicrophonePermission()
     }
 }
@@ -38,7 +38,7 @@ public extension SPPermissions.Permission {
 public class SPMicrophonePermission: SPPermissions.Permission {
     
     open override var type: SPPermissions.PermissionType { .microphone }
-    open override var usageDescriptionKey: String? { "NSMicrophoneUsageDescription" }
+    open var usageDescriptionKey: String? { "NSMicrophoneUsageDescription" }
     
     public override var status: SPPermissions.PermissionStatus {
         switch  AVAudioSession.sharedInstance().recordPermission {

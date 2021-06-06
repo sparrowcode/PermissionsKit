@@ -30,7 +30,7 @@ import MediaPlayer
 
 public extension SPPermissions.Permission {
 
-    static var mediaLibrary: SPPermissions.Permission {
+    static var mediaLibrary: SPMediaLibraryPermission {
         return SPMediaLibraryPermission()
     }
 }
@@ -38,7 +38,7 @@ public extension SPPermissions.Permission {
 public class SPMediaLibraryPermission: SPPermissions.Permission {
     
     open override var type: SPPermissions.PermissionType { .mediaLibrary }
-    open override var usageDescriptionKey: String? { "NSAppleMusicUsageDescription" }
+    open var usageDescriptionKey: String? { "NSAppleMusicUsageDescription" }
     
     public override var status: SPPermissions.PermissionStatus {
         switch MPMediaLibrary.authorizationStatus() {
