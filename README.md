@@ -325,9 +325,20 @@ extension Controller: SPPermissionsDelegate {
 
 ## Localizations
 
-App has ready-use localisation stirngs for `English (en)`, `Arabic (ar)`, `German (de)`, `Spanish (es)`, `French (fr)`, `Polish (pl)`, `Portuguese (pt)`, `Ukrainian (uk)`, `Russian (ru)` & `Chinese Simplified Han (zh_Hans)`. If you want add more, please, create folder `language_id.lproj` and make pull request.
+App has ready-use localisation for:
 
-If you want use your custom strings, check [DataSource](#datasource) section.
+- English `en`
+- Arabic `ar`
+- German `de`
+- Spanish `es`
+- French `fr`
+- Polish `pl`
+- Portuguese `pt`
+- Ukrainian `uk`
+- Russian `ru`
+- Chinese Simplified Han `zh_Hans`
+
+If you want add more, please, create folder `language_id.lproj` and make pull request. If you want use your custom strings, check [DataSource](#datasource) section.
 
 ## Keys in Info.plist
 
