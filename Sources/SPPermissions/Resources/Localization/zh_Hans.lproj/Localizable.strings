@@ -72,11 +72,11 @@
 
 "permission siri name" = "Siri";
 
-"permission siri description" = "You will be able to use Siri";
+"permission siri description" = "你将能够使用Siri";
 
-"permission health name" = "Health";
+"permission health name" = "健康";
 
-"permission health description" = "Allow to access health data";
+"permission health description" = "允许访问健康数据";
 
 "denied alert title" = "已拒绝授权";
 
