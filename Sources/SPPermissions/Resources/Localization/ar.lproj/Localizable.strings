@@ -72,11 +72,11 @@
 
 "permission siri name" = "Siri";
 
-"permission siri description" = "You will be able to use Siri";
+"permission siri description" = "ستتمكن من استخدام Siri";
 
-"permission health name" = "Health";
+"permission health name" = "صحة";
 
-"permission health description" = "Allow to access health data";
+"permission health description" = "السماح بالوصول إلى البيانات الصحية";
 
 "denied alert title" = "طلب الاذن مرفوض";
 
