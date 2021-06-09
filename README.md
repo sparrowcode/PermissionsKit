@@ -345,6 +345,7 @@ App has ready-use localisation for:
 - Ukrainian `uk`
 - Russian `ru`
 - Chinese Simplified Han `zh_Hans`
+- Italian `it`
 
 If you want add more, please, create folder `language_id.lproj` and make pull request. If you want use your custom strings, check [DataSource](#datasource) section.
 
