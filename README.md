@@ -57,7 +57,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 ## Installation
 
-Ready for use on iOS 11+. Support iOS, tvOS and SwiftUI. Works with Swift 5+. Required Xcode 12.5 and higher.
+Ready to use on iOS 11+. Supports iOS, tvOS and SwiftUI. Works with Swift 5+. Requires Xcode 12.5 and higher.
 
 <img align="right" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/spm-install-preview.png" width="490"/>
 
@@ -71,7 +71,7 @@ To integrate `SPPermissions` into your Xcode project using Xcode 12, specify it 
 https://github.com/ivanvorobei/SPPermissions
 ```
 
-Next choose permissions, which you need. Don't add all permissions, becouse apple will reject you app.
+Next choose the permissions you need. But don't add all of them, because apple will reject your app.
 
 ### CocoaPods:
 
@@ -161,19 +161,19 @@ import SPPermissionsCamera
 import SPPermissionsPhotoLibrary
 ```
 
-If you install via [CocoaPods](#cocoapods), you shoud simple import  one class:
+If you install via [CocoaPods](#cocoapods), you only need to import one class:
 
 ```swift
 import SPPermissions
 ```
 
-Its required becouse library split to modules. After import you see available permission by typing `SPPermissions.Permission.camera` for example.
+Its required because library split to modules. After importing you'll see available permissions by typing `SPPermissions.Permission.camera` for example.
 
 ## Quick Start
 
 ```swift
 
-// MARK: 1. Choose permissions, which you need:
+// MARK: 1. Choose the permissions you need:
 
 let permissions: [SPPermissions.Permission] = [.camera, .notification]
 
@@ -214,7 +214,7 @@ Now available 3 present styles: `Dialog`, `List` and `Native`. Each interface ha
 
 ### Dialog
 
-This is a modal alert. I recommend to use of this alert style when your requested permissions are less than three. Usage example:
+This is a modal alert. I recommend using this alert style when you have less than three requested permissions. Usage example:
 
 ```swift
 let controller = SPPermissions.dialog([.camera, .photoLibrary])
@@ -235,7 +235,7 @@ controller.present(on: self)
 
 ### List
 
-Native `UITableViewController` with support for the iPad. Use it with more than two permissions. An example of how it is used:
+Native `UITableViewController` with support for the iPad. Use it when you have more than two permissions. An example of how it is used:
 
 ```swift
 let controller = SPPermissions.list([.calendar, .camera, .contacts])
@@ -270,7 +270,7 @@ controller.present(on: self)
 
 ## DataSource
 
-For data source using protocol `SPPermissionsDataSource`. You can customise cell for permission or provide denied alert texts.
+For data source using protocol `SPPermissionsDataSource`. You can customise the permission cells / provide denied alert texts.
 
 ```swift
 extension Controller: SPPermissionsDataSource {
@@ -295,7 +295,7 @@ extension Controller: SPPermissionsDataSource {
 
 ### Denied alert
 
-If permission denied, you can provide alert to user for propose open settings. Here you can customise text of it alert:
+If permission denied, you can provide alert to user with an option to open settings. Here you can customise the alert text:
 
 ```swift
 let texts = SPPermissionDeniedAlertTexts()
@@ -320,7 +320,7 @@ func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionD
 
 ## Delegate
 
-For get events about hide, allowed or denied, set delegate of protocol `SPPermissionsDelegate`:
+To get "hidden", "allowed" or "denied" events , set the delegate with protocol `SPPermissionsDelegate`:
 
 ```swift
 extension Controller: SPPermissionsDelegate {
@@ -389,14 +389,14 @@ If you use xliff localization export, keys will be create automatically. If you 
 
 ## Apple Review
 
-Apple changed review guidlines. Now if you apper process permission, user always shoud run request. For it reason now close button hidden. If you force need it, run next code:
+Apple changed its review guidelines. When requesting permissions, apps should users to always request and make a decision whether to allow or decline. For this reason,  the close button is hidden by default. If you want to force show the close button, run the following code:
 
 ```swift
 // Work for any style
 controller.showCloseButton = true
 ```
 
-Also changed title for button. Insted of  `allow` now using `continue`. It's ask of Apple Review Team. You can get more about changes in [this issue](https://github.com/ivanvorobei/SPPermissions/issues/229). 
+Also changed title for button. Instead of  `allow` now using `continue`. The Apple Review Team asked for this. For details, check out[this issue](https://github.com/ivanvorobei/SPPermissions/issues/229). 
 
 ## Сontribution
 
