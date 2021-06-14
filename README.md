@@ -3,9 +3,11 @@
 <img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/preview-v6.2.0.jpg" width="420"/>
 
 ### About
-Library for ask permissions.  You can check state of permissions, available `.authorized`, `.denied` & `.notDetermined`.
+SPPermissions is a library to improve the user flow when asking for iOS user permissions. You can also check state of permissions (available states are: `.authorized`, `.denied` & `.notDetermined`.)
 
-Available ready-use controllers for reqeust permissions: list, dialog & native. Support iPad, dark mode and RTL. Interface in an Apple style.  For beginner see [Quick Start](#quick-start).
+The library has three ready-use controllers for requesting permissions: list, dialog & native. The library supports iPad, dark mode, and localization(s).  The interface has been developed in an Apple-style. 
+
+To get going with using the library, see [Quick Start](#quick-start).
 
 If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
@@ -57,7 +59,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 ## Installation
 
-Ready to use on iOS 11+. Supports iOS, tvOS and SwiftUI. Works with Swift 5+. Requires Xcode 12.5 and higher.
+SPPermisions is ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.  SPPermissions works with Swift 5+, and requires Xcode 12.5 or higher.
 
 <img align="right" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/spm-install-preview.png" width="490"/>
 
@@ -206,11 +208,11 @@ To check the state of any permission, call `SPPermissions.Permission`:
 let authorized = SPPermissions.Permission.calendar.authorized
 ```
 
-Also available `denied` & `notDetermined`.
+Also available are status for: `denied` & `notDetermined`.
 
 ## Request
 
-Now available 3 present styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `Example Apps/SPPermissions.xcodeproj`.
+SPPermissions has three presentation styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `Example Apps/SPPermissions.xcodeproj`.
 
 ### Dialog
 
@@ -295,7 +297,7 @@ extension Controller: SPPermissionsDataSource {
 
 ### Denied alert
 
-If permission denied, you can provide alert to user with an option to open settings. Here you can customise the alert text:
+If a permission is denied, you can provide an alert to the user with an option to open settings. An example of how you can customize the alert text:
 
 ```swift
 let texts = SPPermissionDeniedAlertTexts()
@@ -305,7 +307,7 @@ texts.actionText = "Settings"
 texts.cancelText = "Cancel"
 ```
 
-Next implement method and return:
+Next implement the following method and return:
 
 ```swift
 func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts? {
@@ -333,7 +335,7 @@ extension Controller: SPPermissionsDelegate {
 
 ## Localizations
 
-App has ready-use localisation for:
+SPPermissions has ready-to-use localizations for:
 
 - English `en`
 - Arabic `ar`
@@ -347,11 +349,11 @@ App has ready-use localisation for:
 - Chinese Simplified Han `zh_Hans`
 - Italian `it`
 
-If you want add more, please, create folder `language_id.lproj` and make pull request. If you want use your custom strings, check [DataSource](#datasource) section.
+If you want to add more, please, create folder `language_id.lproj` and make a pull request. If you want to use your custom strings, check the [DataSource](#datasource) section.
 
 ## Keys in Info.plist
 
-You need to add some keys to the `Info.plist` file with descriptions. You can get plist keys for permission:
+You need to add some keys to the `Info.plist` file with descriptions, per Apple's requirement(s). You can get a plist of keys for permissions as follows:
 
 ```swift
 let key = SPPermissions.Permission.bluetooth.usageDescriptionKey
@@ -389,7 +391,7 @@ If you use xliff localization export, keys will be create automatically. If you 
 
 ## Apple Review
 
-Apple changed its review guidelines. When requesting permissions, apps should users to always request and make a decision whether to allow or decline. For this reason,  the close button is hidden by default. If you want to force show the close button, run the following code:
+Apple changed its review guidelines in May/June 2021. When requesting permissions, apps should require users to always request and make a decision whether to allow or decline the permission. For this reason, the close button in SPPermissions is hidden by default. If you want to force show the close button, run the following code:
 
 ```swift
 // Work for any style
@@ -400,7 +402,7 @@ Also changed title for button. Instead of  `allow` now using `continue`. The App
 
 ## Сontribution
 
-My English is very bad. You can see this once you read the documentation. I would really like to have clean and nice documentation. If you can fix Readme, please contact me hello@ivanvorobei.by or make Pull Request. I'm willing to pay if need.
+My English is very bad. You can see this once you read the documentation. I would really like to have clean and nice documentation. If you see gramatical errors and can help fix the Readme, please contact me hello@ivanvorobei.by or make a Pull Request. Thank you in advance!
 
 ## Other Projects
 
