@@ -4,9 +4,9 @@
 
 ### About
 
-`SPPermissions` is a library to improve the user flow when asking permissions. You can also check state, available are: `.authorized`, `.denied` & `.notDetermined`.
+`SPPermissions` is a library to improve the user flow when asking permissions. You can also check state of permissions, available are: `.authorized`, `.denied` & `.notDetermined`.
 
-The library has three ready-use controllers for requesting permissions: list, dialog & native. The library supports iPad, dark mode, and localizations.  The interface has been developed in an Apple-style. To get going with using the library, see [Quick Start](#quick-start).
+The library has three ready-use controllers: list, dialog & native. The library supports iPad, dark mode, and localizations. To get going with using the library, see [Quick Start](#quick-start).
 
 If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
