@@ -155,6 +155,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     
     @objc func process(button: SPPermissionsActionButton) {
         guard let permission = button.permission else { return }
+        let firstRequest = permission.status == .notDetermined
         permission.request { [weak self] in
             
             guard let self = self else { return }
@@ -191,12 +192,15 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
             } else {
                 self.delegate?.didDeniedPermission(permission)
                 
-                // Delay using for fix animation freeze.
+                if !firstRequest {
+                    
+                    // Delay using for fix animation freeze.
+                    Delay.wait(0.3, closure: { [weak self] in
+                        guard let self = self else { return }
+                        Presenter.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: self)
+                    })
+                }
                 
-                Delay.wait(0.3, closure: { [weak self] in
-                    guard let self = self else { return }
-                    Presenter.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: self)
-                })
             }
         }
     }
