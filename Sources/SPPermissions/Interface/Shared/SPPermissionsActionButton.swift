@@ -28,11 +28,16 @@ public class SPPermissionsActionButton: UIButton {
     var permission: SPPermissions.Permission?
     
     public var allowTitle: String = Texts.allow_permission_action
-    public var allowedTitle: String = Texts.allowed_permission_action
     public var allowTitleColor: UIColor = UIColor.tint
     public var allowBackgroundColor: UIColor = UIColor.buttonArea
+    
+    public var allowedTitle: String = Texts.allowed_permission_action
     public var allowedTitleColor: UIColor = UIColor.white
     public var allowedBackgroundColor: UIColor = UIColor.tint
+    
+    public var deniedTitle: String = Texts.denied_permission_action
+    public var deniedTitleColor: UIColor = UIColor.tint
+    public var deniedBackgroundColor: UIColor = UIColor.buttonArea
     
     // MARK: - Init
     
@@ -50,18 +55,22 @@ public class SPPermissionsActionButton: UIButton {
     
     func updateInterface() {
         guard let permission = self.permission else { return }
-        let style: AuthorizedStyle = permission.authorized ? .allowed : .default
-        switch style {
-        case .default:
+        switch permission.status {
+        case .notDetermined, .notSupported:
             setTitle(allowTitle, for: .normal)
             setTitleColor(allowTitleColor, for: .normal)
             setTitleColor(allowTitleColor.withAlphaComponent(0.7), for: .highlighted)
             backgroundColor = allowBackgroundColor
-        case .allowed:
+        case .authorized:
             setTitle(allowedTitle, for: .normal)
             backgroundColor = allowedBackgroundColor
             setTitleColor(allowedTitleColor, for: .normal)
             setTitleColor(allowedTitleColor.withAlphaComponent(0.7), for: .highlighted)
+        case .denied:
+            setTitle(deniedTitle, for: .normal)
+            backgroundColor = deniedBackgroundColor
+            setTitleColor(deniedTitleColor, for: .normal)
+            setTitleColor(deniedTitleColor.withAlphaComponent(0.7), for: .highlighted)
         }
     }
     
@@ -76,14 +85,6 @@ public class SPPermissionsActionButton: UIButton {
     
     override public func setTitle(_ title: String?, for state: UIControl.State) {
         super.setTitle(title?.uppercased(), for: state)
-    }
-    
-    // MARK: - Models
-    
-    enum AuthorizedStyle {
-        
-        case `default`
-        case allowed
     }
 }
 

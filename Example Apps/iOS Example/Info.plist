@@ -34,6 +34,8 @@
 	<string>Example Description</string>
 	<key>NSContactsUsageDescription</key>
 	<string>Example Description</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Example Description</string>
 	<key>NSHomeKitUsageDescription</key>
 	<string>Example Description</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
@@ -52,13 +54,11 @@
 	<string>Example Description</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>Example Description</string>
+	<key>NSSiriUsageDescription</key>
+	<string>Example Description</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Example Description</string>
 	<key>NSUserTrackingUsageDescription</key>
-	<string>Example Description</string>
-	<key>NSSiriUsageDescription</key>
-	<string>Example Description</string>
-	<key>NSFaceIDUsageDescription</key>
 	<string>Example Description</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>

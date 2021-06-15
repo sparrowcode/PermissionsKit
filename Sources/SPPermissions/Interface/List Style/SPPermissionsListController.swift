@@ -25,7 +25,18 @@ import UIKit
 
 public class SPPermissionsListController: UITableViewController, SPPermissionsControllerInterface {
     
+    /**
+     SPPermissions: Show or hide close button. By default `false`.
+     
+     New guidelines not allow has it, so for clean review you shoud left it `false`.
+     */
     public var showCloseButton: Bool = false
+    
+    /**
+     SPPermissions: Disable or allow dismiss controller with swipe.
+     Default value is `true`.
+     */
+    public var allowSwipeDismiss: Bool = false
     
     public weak var dataSource: SPPermissionsDataSource?
     public weak var delegate: SPPermissionsDelegate?
@@ -98,6 +109,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     
     @objc func process(button: SPPermissionsActionButton) {
         guard let permission = button.permission else { return }
+        let firstRequest = permission.status == .notDetermined
         permission.request { [weak self] in
             
             guard let self = self else { return }
@@ -134,12 +146,14 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
             } else {
                 self.delegate?.didDeniedPermission(permission)
                 
-                // Delay using for fix animation freeze.
-                
-                Delay.wait(0.3, closure: { [weak self] in
-                    guard let self = self else { return }
-                    Presenter.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: self)
-                })
+                if !firstRequest {
+                    
+                    // Delay using for fix animation freeze.
+                    Delay.wait(0.3, closure: { [weak self] in
+                        guard let self = self else { return }
+                        Presenter.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: self)
+                    })
+                } 
             }
         }
     }
@@ -194,6 +208,10 @@ extension SPPermissionsListController {
 // MARK: - UIAdaptivePresentationControllerDelegate
 
 extension SPPermissionsListController: UIAdaptivePresentationControllerDelegate {
+    
+    public func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
+        return allowSwipeDismiss
+    }
     
     public func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         self.processDissmissedEvent()

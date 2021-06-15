@@ -25,7 +25,24 @@ import UIKit
 
 public class SPPermissionsDialogController: UIViewController, SPPermissionsControllerInterface {
     
+    /**
+     SPPermissions: Show or hide close button. By default `false`.
+     
+     New guidelines not allow has it, so for clean review you shoud left it `false`.
+     */
     public var showCloseButton: Bool = false
+    
+    /**
+     SPPermissions: Disable or allow dismiss dialog with gester.
+     Default value is `true`.
+     */
+    public var allowSwipeDismiss: Bool = false
+    
+    /**
+     SPPermissions: Manage bounce animation. If `false`,
+     dialog can't be tracked. Default value is `true`.
+     */
+    public var bounceAnimationEnabled = true
     
     public weak var dataSource: SPPermissionsDataSource?
     public weak var delegate: SPPermissionsDelegate?
@@ -33,8 +50,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     public var titleText = Texts.header
     public var headerText = Texts.sub_header
     public var footerText = Texts.comment
-    public var bounceAnimationEnabled = true
-    
+
     private let dialogView = SPPermissionsDialogView()
     private let backgroundView = SPPermissionsDialogGradeBlurView()
     
@@ -221,7 +237,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     
     @objc func handleGesture(sender: UIPanGestureRecognizer) {
         
-        guard bounceAnimationEnabled else {
+        guard bounceAnimationEnabled, allowSwipeDismiss else {
             return
         }
         

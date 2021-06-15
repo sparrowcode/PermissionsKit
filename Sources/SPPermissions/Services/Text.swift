@@ -105,6 +105,7 @@ enum Texts {
     
     static var allow_permission_action: String { NSLocalizedString("action allow", bundle: bundle, comment: "") }
     static var allowed_permission_action: String { NSLocalizedString("action allowed", bundle: bundle, comment: "") }
+    static var denied_permission_action: String { NSLocalizedString("action denied", bundle: bundle, comment: "") }
     
     // MARK: - Titles & Comments
     

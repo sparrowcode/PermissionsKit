@@ -85,3 +85,5 @@
 "denied alert action" = "Налаштування";
 
 "denied alert cancel" = "Скасувати";
+
+"action denied" = "Denied";

@@ -91,11 +91,14 @@ class RootController: SPTableViewController {
             let controller = SPPermissions.dialog(selectedPermissions)
             controller.dataSource = self
             controller.delegate = self
-            // controller.bounceAnimationEnabled = false
+            // controller.allowSwipeDismiss = true
+            // controller.showCloseButton = true
             controller.present(on: self)
         case 2:
             let controller = SPPermissions.native(selectedPermissions)
             controller.delegate = self
+            // controller.allowSwipeDismiss = true
+            // controller.showCloseButton = true
             controller.present(on: self)
         default:
             break
@@ -126,30 +129,23 @@ extension RootController: SPPermissionsDataSource {
     }
     
     func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts? {
-        if permission.type == .notification {
-            
-            // If returned nil, alert will not show.
-            
-            print("Alert for \(permission.debugName) not show, becouse in datasource returned nil. If you need alert, configure this.")
-            return nil
-            
-        } else {
-            
-            // You can create custom texts
-            
-            /*
-             let texts = SPPermissionDeniedAlertTexts()
-             texts.titleText = "Permission denied"
-             texts.descriptionText = "Please, go to Settings and allow permission."
-             texts.actionText = "Settings"
-             texts.cancelText = "Cancel"
-             return texts
-             */
-            
-            // or use default texts.
-            
-            return .default
-        }
+        // You can create custom texts
+        
+        /*
+         let texts = SPPermissionDeniedAlertTexts()
+         texts.titleText = "Permission denied"
+         texts.descriptionText = "Please, go to Settings and allow permission."
+         texts.actionText = "Settings"
+         texts.cancelText = "Cancel"
+         return texts
+         */
+        
+        // or use default texts.
+        
+        return .default
+        
+        // For hide alert, simple return nil.
+        // return nil
     }
 }
 
