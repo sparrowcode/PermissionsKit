@@ -85,3 +85,5 @@
 "denied alert action" = "Paramètres";
 
 "denied alert cancel" = "Annuler";
+
+"action denied" = "Denied";

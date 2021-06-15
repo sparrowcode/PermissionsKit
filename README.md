@@ -3,7 +3,7 @@
 <img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/preview-v6.2.0.jpg" width="420"/>
 
 ### About
-SPPermissions is a library to improve the user flow when asking for iOS user permissions. You can also check state of permissions (available states are: `.authorized`, `.denied` & `.notDetermined`.)
+`SPPermissions` is a library to improve the user flow when asking for iOS user permissions. You can also check state of permissions (available states are: `.authorized`, `.denied` & `.notDetermined`.)
 
 The library has three ready-use controllers for requesting permissions: list, dialog & native. The library supports iPad, dark mode, and localization(s).  The interface has been developed in an Apple-style. 
 
@@ -59,7 +59,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
 ## Installation
 
-SPPermisions is ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.  SPPermissions works with Swift 5+, and requires Xcode 12.5 or higher.
+SPPermisions is ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.  `SPPermissions` works with Swift 5+, and requires Xcode 12.5 or higher.
 
 <img align="right" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/spm-install-preview.png" width="490"/>
 
@@ -212,7 +212,7 @@ Also available are status for: `denied` & `notDetermined`.
 
 ## Request
 
-SPPermissions has three presentation styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `Example Apps/SPPermissions.xcodeproj`.
+`SPPermissions` has three presentation styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `Example Apps/SPPermissions.xcodeproj`.
 
 ### Dialog
 
@@ -335,7 +335,7 @@ extension Controller: SPPermissionsDelegate {
 
 ## Localizations
 
-SPPermissions has ready-to-use localizations for:
+`SPPermissions` has ready-to-use localizations for:
 
 - English `en`
 - Arabic `ar`
@@ -391,11 +391,14 @@ If you use xliff localization export, keys will be create automatically. If you 
 
 ## Apple Review
 
-Apple changed its review guidelines in May/June 2021. When requesting permissions, apps should require users to always request and make a decision whether to allow or decline the permission. For this reason, the close button in SPPermissions is hidden by default. If you want to force show the close button, run the following code:
+Apple changed its review guidelines in May/June 2021. When requesting permissions, apps should require users to always request and make a decision whether to allow or decline the permission. For this reason, the close button in `SPPermissions` is hidden by default. If you want to force show the close button, run the following code:
 
 ```swift
-// Work for any style
+// Show & hide close button
 controller.showCloseButton = true
+
+// Enable or Disable drag intercation
+controller.allowSwipeDismiss = true
 ```
 
 Also changed title for button. Instead of  `allow` now using `continue`. The Apple Review Team asked for this. For details, check out[this issue](https://github.com/ivanvorobei/SPPermissions/issues/229). 
