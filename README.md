@@ -400,7 +400,7 @@ controller.showCloseButton = true
 controller.allowSwipeDismiss = true
 ```
 
-Also changed title for button. Instead of  `allow` now using `continue`. The Apple Review Team asked for this. For details, check out[this issue](https://github.com/ivanvorobei/SPPermissions/issues/229). 
+Also changed title for button. Instead of  `allow` now using `continue`. The Apple Review Team asked for this. For details, check out [this issue](https://github.com/ivanvorobei/SPPermissions/issues/229). 
 
 ## Сontribution
 
