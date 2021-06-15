@@ -3,11 +3,9 @@
 <img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/preview-v6.2.0.jpg" width="420"/>
 
 ### About
-`SPPermissions` is a library to improve the user flow when asking for iOS user permissions. You can also check state of permissions (available states are: `.authorized`, `.denied` & `.notDetermined`.)
+`SPPermissions` is a library to improve the user flow when asking for iOS user permissions. You can also check state of permissions. Available states are: `.authorized`, `.denied` & `.notDetermined`.
 
-The library has three ready-use controllers for requesting permissions: list, dialog & native. The library supports iPad, dark mode, and localization(s).  The interface has been developed in an Apple-style. 
-
-To get going with using the library, see [Quick Start](#quick-start).
+The library has three ready-use controllers for requesting permissions: list, dialog & native. The library supports iPad, dark mode, and localizations.  The interface has been developed in an Apple-style. To get going with using the library, see [Quick Start](#quick-start).
 
 If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
