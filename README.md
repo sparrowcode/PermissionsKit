@@ -322,7 +322,7 @@ func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionD
 
 ## Delegate
 
-To get "hidden", "allowed" or "denied" events , set the delegate with protocol `SPPermissionsDelegate`:
+To get `hidden`, `allowed` or `denied` events , set the delegate with protocol `SPPermissionsDelegate`:
 
 ```swift
 extension Controller: SPPermissionsDelegate {
