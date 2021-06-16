@@ -36,7 +36,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
      SPPermissions: Disable or allow dismiss dialog with gester.
      Default value is `true`.
      */
-    public var allowSwipeDismiss: Bool = false
+    public var allowSwipeDismiss: Bool = true
     
     /**
      SPPermissions: Manage bounce animation. If `false`,

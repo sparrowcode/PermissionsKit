@@ -36,7 +36,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
      SPPermissions: Disable or allow dismiss controller with swipe.
      Default value is `true`.
      */
-    public var allowSwipeDismiss: Bool = false
+    public var allowSwipeDismiss: Bool = true
     
     public weak var dataSource: SPPermissionsDataSource?
     public weak var delegate: SPPermissionsDelegate?
