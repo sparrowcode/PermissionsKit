@@ -326,9 +326,9 @@ To get `hidden`, `allowed` or `denied` events , set the delegate with protocol `
 ```swift
 extension Controller: SPPermissionsDelegate {
     
-    func didHidePermissions(_ permissions: [SPPermissions.Permission]) {}
-    func didAllowPermission(_ permission: SPPermissions.Permission) {}
-    func didDeniedPermission(_ permission: SPPermissions.Permission) {}
+    public func didHidePermissions(_ permissions: [SPPermissions.Permission]) {}
+    public func didAllowPermission(_ permission: SPPermissions.Permission) {}
+    public func didDeniedPermission(_ permission: SPPermissions.Permission) {}
 }
 ```
 
