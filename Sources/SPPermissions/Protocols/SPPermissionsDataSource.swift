@@ -42,7 +42,7 @@ public protocol SPPermissionsDataSource: AnyObject {
      
      - parameter permission: Text for this permission.
      */
-    func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts?
+    func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionsDeniedAlertTexts?
 }
 
 // Using like default for allow it like optional.

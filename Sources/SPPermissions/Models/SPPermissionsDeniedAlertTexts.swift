@@ -24,7 +24,7 @@ import UIKit
 /**
  SPPermissions: Content for denied alert.
  */
-public class SPPermissionDeniedAlertTexts: NSObject {
+public class SPPermissionsDeniedAlertTexts: NSObject {
     
     public var titleText = Texts.denied_alert_title
     public var descriptionText = Texts.denied_alert_description
@@ -44,7 +44,7 @@ public class SPPermissionDeniedAlertTexts: NSObject {
         super.init()
     }
     
-    public static var `default`: SPPermissionDeniedAlertTexts {
-        return SPPermissionDeniedAlertTexts()
+    public static var `default`: SPPermissionsDeniedAlertTexts {
+        return SPPermissionsDeniedAlertTexts()
     }
 }
