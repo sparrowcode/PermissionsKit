@@ -38,6 +38,14 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
      */
     public var allowSwipeDismiss: Bool = true
     
+    /**
+     SPPermissions: Manage dismising condition.
+     
+     By default dismiss controller hapen when all permission allowed.
+     If you need dismiss controller when all permissions has state determinated, change it to `allPermissionsDeterminated`.
+     */
+    public var dismissCondition: SPPermissionsDismissCondition = .default
+    
     public weak var dataSource: SPPermissionsDataSource?
     public weak var delegate: SPPermissionsDelegate?
     
@@ -132,28 +140,44 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
                 }
             }
             
-            // Check if all permissions allowed
-            
-            let allowedPermissions = self.permissions.filter { $0.authorized }
-            if allowedPermissions.count == self.permissions.count {
-                Delay.wait(0.2, closure: {
-                    self.dismiss(animated: true)
-                })
+            let dismissByCondition: () -> Bool = {
+                switch self.dismissCondition {
+                case .allPermissionsAuthorized:
+                    let allowedPermissions = self.permissions.filter { $0.authorized }
+                    if allowedPermissions.count == self.permissions.count {
+                        Delay.wait(0.2, closure: {
+                            self.dismiss(animated: true)
+                        })
+                        return true
+                    }
+                    
+                case .allPermissionsDeterminated:
+                    let determiatedPermissions = self.permissions.filter { !$0.notDetermined }
+                    if determiatedPermissions.count == self.permissions.count {
+                        Delay.wait(0.2, closure: {
+                            self.dismiss(animated: true)
+                        })
+                        return true
+                    }
+                }
+                
+                return false
             }
-            
+
             if permission.authorized {
                 self.delegate?.didAllowPermission(permission)
+                let _ = dismissByCondition()
             } else {
                 self.delegate?.didDeniedPermission(permission)
-                
-                if !firstRequest {
-                    
+                if firstRequest {
+                    let _ = dismissByCondition()
+                } else {
                     // Delay using for fix animation freeze.
                     Delay.wait(0.3, closure: { [weak self] in
                         guard let self = self else { return }
                         Presenter.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: self)
                     })
-                } 
+                }
             }
         }
     }
@@ -170,7 +194,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     }
     
     private func processDissmissedEvent() {
-        self.delegate?.didHidePermissions(permissions)
+        delegate?.didHidePermissions(permissions)
     }
 }
 

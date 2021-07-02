@@ -230,6 +230,12 @@ controller.footerText = "Footer Text"
 controller.dataSource = self
 controller.delegate = self
 
+// If you want auto dismiss controler,
+// when all permissions has any determinated state
+// set dismiss mode `allPermissionsDeterminated`.
+// By default dismiss controller happen only when all permission allowed.
+controller.dismissCondition = .allPermissionsDeterminated
+
 // Always use this method for present
 controller.present(on: self)
 ```
@@ -250,6 +256,12 @@ controller.footerText = "Footer Text"
 // By default using project texts and icons.
 controller.dataSource = self
 controller.delegate = self
+
+// If you want auto dismiss controler,
+// when all permissions has any determinated state
+// set dismiss mode `allPermissionsDeterminated`.
+// By default dismiss controller happen only when all permission allowed.
+controller.dismissCondition = .allPermissionsDeterminated
 
 // Always use this method for present
 controller.present(on: self)
@@ -299,7 +311,7 @@ extension Controller: SPPermissionsDataSource {
 If a permission is denied, you can provide an alert to the user with an option to open settings. An example of how you can customize the alert text:
 
 ```swift
-let texts = SPPermissionDeniedAlertTexts()
+let texts = SPPermissionsDeniedAlertTexts()
 texts.titleText = "Permission denied"
 texts.descriptionText = "Please, go to Settings and allow permission."
 texts.actionText = "Settings"
@@ -309,7 +321,7 @@ texts.cancelText = "Cancel"
 Next implement the following method and return:
 
 ```swift
-func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts? {
+func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionsDeniedAlertTexts? {
     
     // Custom texts:
     return texts

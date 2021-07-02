@@ -71,7 +71,6 @@ class RootController: SPTableViewController {
         let segmentedControl = UISegmentedControl(items: ["List", "Dialog", "Native"])
         navigationItem.titleView = segmentedControl
         segmentedControl.selectedSegmentIndex = 0
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .play, target: self, action: #selector(self.requestPermissions))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
@@ -128,7 +127,7 @@ extension RootController: SPPermissionsDataSource {
         */
     }
     
-    func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts? {
+    func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionsDeniedAlertTexts? {
         // You can create custom texts
         
         /*

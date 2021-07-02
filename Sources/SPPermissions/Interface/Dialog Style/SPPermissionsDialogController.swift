@@ -39,6 +39,14 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     public var allowSwipeDismiss: Bool = true
     
     /**
+     SPPermissions: Manage dismising condition.
+     
+     By default dismiss controller hapen when all permission allowed.
+     If you need dismiss controller when all permissions has state determinated, change it to `allPermissionsDeterminated`.
+     */
+    public var dismissCondition: SPPermissionsDismissCondition = .default
+    
+    /**
      SPPermissions: Manage bounce animation. If `false`,
      dialog can't be tracked. Default value is `true`.
      */
@@ -50,7 +58,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     public var titleText = Texts.header
     public var headerText = Texts.sub_header
     public var footerText = Texts.comment
-
+    
     private let dialogView = SPPermissionsDialogView()
     private let backgroundView = SPPermissionsDialogGradeBlurView()
     
@@ -178,29 +186,44 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
                 }
             }
             
-            // Check if all permissions allowed
-            
-            let allowedPermissions = self.permissions.filter { $0.authorized }
-            if allowedPermissions.count == self.permissions.count {
-                Delay.wait(0.2, closure: {
-                    self.dismiss(animated: true)
-                })
+            let dismissByCondition: () -> Bool = {
+                switch self.dismissCondition {
+                case .allPermissionsAuthorized:
+                    let allowedPermissions = self.permissions.filter { $0.authorized }
+                    if allowedPermissions.count == self.permissions.count {
+                        Delay.wait(0.2, closure: {
+                            self.dismiss(withDialog: true)
+                        })
+                        return true
+                    }
+                case .allPermissionsDeterminated:
+                    let determiatedPermissions = self.permissions.filter { !$0.notDetermined }
+                    if determiatedPermissions.count == self.permissions.count {
+                        Delay.wait(0.2, closure: {
+                            self.dismiss(withDialog: true)
+                        })
+                        return true
+                    }
+                }
+                
+                return false
             }
+            
             
             if permission.authorized {
                 self.delegate?.didAllowPermission(permission)
+                let _ = dismissByCondition()
             } else {
                 self.delegate?.didDeniedPermission(permission)
-                
-                if !firstRequest {
-                    
+                if firstRequest {
+                    let _ = dismissByCondition()
+                } else {
                     // Delay using for fix animation freeze.
                     Delay.wait(0.3, closure: { [weak self] in
                         guard let self = self else { return }
                         Presenter.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: self)
                     })
                 }
-                
             }
         }
     }
@@ -226,9 +249,16 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     }
     
     public override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        let shoudCallDelegate: Bool = {
+            if presentedViewController == nil { return true }
+            if presentedViewController is UIAlertController { return false }
+            return true
+        }()
         super.dismiss(animated: flag, completion: {
             completion?()
-            self.delegate?.didHidePermissions(self.permissions)
+            if shoudCallDelegate {
+                self.delegate?.didHidePermissions(self.permissions)
+            }
         })
     }
     
