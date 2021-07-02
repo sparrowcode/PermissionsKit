@@ -29,5 +29,5 @@ public enum SPPermissionsDismissCondition {
     case allPermissionsAuthorized
     case allPermissionsDeterminated
     
-    static var `default`: SPPermissionsDismissCondition { allPermissionsDeterminated }
+    static var `default`: SPPermissionsDismissCondition { allPermissionsAuthorized }
 }
