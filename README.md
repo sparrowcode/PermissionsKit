@@ -439,7 +439,8 @@ I have libraries with native interface and managing permissions. Also available 
 
 ## Russian Community
 
-Веду каналы об iOS разработке. Один с туториалами и новостями, другой с обзором библиотек. Со сложной задачей помогут в чате.
+Веду каналы об iOS разработке. Один с туториалами и новостями, другой с обзором библиотек.<br>
+Со сложной задачей помогут в чате.
 
 <p float="left">
     <a href="https://sparrowcode.by/telegram/channel">
