@@ -8,13 +8,9 @@
 
 The library has three ready-use controllers: list, dialog & native. Supports iPad, dark mode, and localizations. To get going with using the library, see [Quick Start](#quick-start).
 
-If you like the project, don't forget to `put star ★` and follow me on GitHub:
-
+If you like the project, don't forget to `put star ★`<br>Check out my other libraries:
 
 <p float="left">
-    <a href="https://github.com/ivanvorobei">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/follow-me-ivanvorobei.svg">
-    </a>
     <a href="https://opensource.ivanvorobei.by">
         <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/more-libraries.svg">
     </a>
