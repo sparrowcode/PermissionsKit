@@ -24,6 +24,7 @@ import UIKit
 /**
  SPPermissions: Protocol using for configure permission cell and alert texts.
  */
+@available(iOSApplicationExtension, unavailable)
 public protocol SPPermissionsDataSource: AnyObject {
     
     #if os(iOS)
@@ -46,7 +47,7 @@ public protocol SPPermissionsDataSource: AnyObject {
 }
 
 // Using like default for allow it like optional.
-
+@available(iOSApplicationExtension, unavailable)
 public extension SPPermissionsDataSource {
     
     #if os(iOS)

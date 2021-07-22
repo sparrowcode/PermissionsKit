@@ -22,7 +22,7 @@
 import UIKit
 
 #if os(iOS)
-
+@available(iOSApplicationExtension, unavailable)
 public class SPPermissionsDrawIconView: UIView {
     
     var permission: SPPermissions.Permission? {

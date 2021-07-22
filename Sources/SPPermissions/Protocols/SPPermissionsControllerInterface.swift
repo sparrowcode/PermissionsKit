@@ -24,6 +24,7 @@ import UIKit
 /**
  SPPermissions: Protocol using for implement all same properties for each interface style.
  */
+@available(iOSApplicationExtension, unavailable)
 protocol SPPermissionsControllerInterface {
     
     /**

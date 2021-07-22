@@ -24,6 +24,7 @@
 import SwiftUI
 
 @available(iOS 13.0, *)
+@available(iOSApplicationExtension, unavailable)
 public struct SPPermissionsList: UIViewControllerRepresentable {
     
     private weak var dataSource: SPPermissionsDataSource?

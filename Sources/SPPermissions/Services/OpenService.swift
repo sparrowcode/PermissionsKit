@@ -23,6 +23,7 @@ import UIKit
 
 enum OpenService {
     
+    @available(iOSApplicationExtension, unavailable)
     static func openSettings() {
         
         DispatchQueue.main.async {

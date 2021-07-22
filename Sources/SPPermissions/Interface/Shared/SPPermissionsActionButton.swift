@@ -22,7 +22,7 @@
 import UIKit
 
 #if os(iOS)
-
+@available(iOSApplicationExtension, unavailable)
 public class SPPermissionsActionButton: UIButton {
     
     var permission: SPPermissions.Permission?

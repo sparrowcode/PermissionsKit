@@ -79,6 +79,7 @@ extension UIColor {
         }
     }
     
+    @available(iOSApplicationExtension, unavailable)
     static var tint: UIColor {
         get {
             let value = UIApplication.shared.windows.first?.tintColor

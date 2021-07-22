@@ -22,7 +22,7 @@
 import UIKit
 
 #if os(iOS)
-
+@available(iOSApplicationExtension, unavailable)
 public class SPPermissionsTableViewCell: UITableViewCell {
     
     public let permissionTitleLabel = UILabel()
@@ -81,7 +81,7 @@ public class SPPermissionsTableViewCell: UITableViewCell {
         // Icons
         
         permissionIconView.frame = .init(x: contentView.layoutMargins.left - 2, y: contentView.layoutMargins.top, width: 36, height: 36)
-
+        
         // Button
         
         permissionButton.sizeToFit()
@@ -104,7 +104,7 @@ public class SPPermissionsTableViewCell: UITableViewCell {
         
         // RTL
         
-        if UIApplication.shared.userInterfaceRightToLeft {
+        if effectiveUserInterfaceLayoutDirection == .rightToLeft {
             permissionIconView.frame.origin.x = contentView.frame.width - contentView.layoutMargins.right - permissionIconView.frame.width
             permissionButton.frame.origin.x = contentView.layoutMargins.right
             permissionTitleLabel.frame.origin.x = permissionIconView.frame.origin.x - leftContentLeadingSpace - permissionTitleLabel.frame.width
