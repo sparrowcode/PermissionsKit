@@ -33,6 +33,7 @@ public enum SPPermissions {
      
      - parameter permissions: List if permissions for request, using model `SPPermissions.Permission`.
      */
+    @available(iOSApplicationExtension, unavailable)
     public static func native(_ permissions: [SPPermissions.Permission]) -> SPPermissionsNativeController {
         let controller = SPPermissionsNativeController(prepare(permissions))
         return controller
@@ -45,6 +46,7 @@ public enum SPPermissions {
      
      - parameter permissions: List if permissions for request, using model `SPPermissions.Permission`.
      */
+    @available(iOSApplicationExtension, unavailable)
     public static func list(_ permissions: [SPPermissions.Permission]) -> SPPermissionsListController {
         let controller = SPPermissionsListController(prepare(permissions))
         return controller
@@ -55,6 +57,7 @@ public enum SPPermissions {
      
      - parameter permissions: List if permissions for request, using model `SPPermissions.Permission`.
      */
+    @available(iOSApplicationExtension, unavailable)
     public static func dialog(_ permissions: [SPPermissions.Permission]) -> SPPermissionsDialogController {
         let controller = SPPermissionsDialogController(prepare(permissions))
         return controller

@@ -22,7 +22,7 @@
 #if os(iOS)
 
 import UIKit
-
+@available(iOSApplicationExtension, unavailable)
 public class SPPermissionsListController: UITableViewController, SPPermissionsControllerInterface {
     
     /**
@@ -199,7 +199,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
 }
 
 // MARK: - Table Data Source & Delegate
-
+@available(iOSApplicationExtension, unavailable)
 extension SPPermissionsListController {
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -230,7 +230,7 @@ extension SPPermissionsListController {
 }
 
 // MARK: - UIAdaptivePresentationControllerDelegate
-
+@available(iOSApplicationExtension, unavailable)
 extension SPPermissionsListController: UIAdaptivePresentationControllerDelegate {
     
     public func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {

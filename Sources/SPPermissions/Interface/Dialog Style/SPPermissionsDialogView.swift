@@ -109,7 +109,7 @@ class SPPermissionsDialogView: UIView {
         
         // RTL
         
-        if UIApplication.shared.userInterfaceRightToLeft {
+        if effectiveUserInterfaceLayoutDirection == .rightToLeft {
             closeButton.frame.origin.x = inset / 2.5
         }
     }

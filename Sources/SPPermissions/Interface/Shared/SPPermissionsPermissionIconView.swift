@@ -20,7 +20,7 @@
 // SOFTWARE.
 
 import UIKit
-
+@available(iOSApplicationExtension, unavailable)
 public class SPPermissionsPermissionIconView: UIView {
     
     // MARK: - Views

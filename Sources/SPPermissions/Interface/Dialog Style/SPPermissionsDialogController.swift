@@ -22,7 +22,7 @@
 import UIKit
 
 #if os(iOS)
-
+@available(iOSApplicationExtension, unavailable)
 public class SPPermissionsDialogController: UIViewController, SPPermissionsControllerInterface {
     
     /**
@@ -305,7 +305,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
 }
 
 // MARK: - Table Data Source & Delegate
-
+@available(iOSApplicationExtension, unavailable)
 extension SPPermissionsDialogController: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

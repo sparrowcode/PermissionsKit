@@ -20,7 +20,7 @@
 // SOFTWARE.
 
 import UIKit
-
+@available(iOSApplicationExtension, unavailable)
 public class SPPermissionsNativeController: NSObject, SPPermissionsControllerInterface {
     
     public weak var delegate: SPPermissionsDelegate?

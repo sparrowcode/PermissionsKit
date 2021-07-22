@@ -24,6 +24,7 @@ import UIKit
 /**
  SPPermissions: Get notifications about events.
  */
+@available(iOSApplicationExtension, unavailable)
 public protocol SPPermissionsDelegate: AnyObject {
     
     /**
@@ -49,7 +50,7 @@ public protocol SPPermissionsDelegate: AnyObject {
 }
 
 // Using like default for allow it like optional.
-
+@available(iOSApplicationExtension, unavailable)
 public extension SPPermissionsDelegate {
     
     func didAllowPermission(_ permission: SPPermissions.Permission) {}
