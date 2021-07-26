@@ -19,7 +19,7 @@
 		F47CBAEA265001FF00A8A00F /* RootControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBAE9265001FF00A8A00F /* RootControllerExtension.swift */; };
 		F47CBB10265182DD00A8A00F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47CBB0A265182DC00A8A00F /* Assets.xcassets */; };
 		F47CBB12265182DD00A8A00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBB0D265182DC00A8A00F /* AppDelegate.swift */; };
-		F47CBB13265182DD00A8A00F /* RootControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBB0F265182DC00A8A00F /* RootControllers.swift */; };
+		F47CBB13265182DD00A8A00F /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBB0F265182DC00A8A00F /* RootController.swift */; };
 		F47CBB152651830600A8A00F /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = F47CBB142651830600A8A00F /* Dependencies */; };
 		F47CBB17265186CD00A8A00F /* RootControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBB16265186CD00A8A00F /* RootControllerExtension.swift */; };
 		F4E350E42651BC8800D2CA45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E350E32651BC8800D2CA45 /* LaunchScreen.storyboard */; };
@@ -67,7 +67,7 @@
 		F47CBB052651826300A8A00F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47CBB0A265182DC00A8A00F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F47CBB0D265182DC00A8A00F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F47CBB0F265182DC00A8A00F /* RootControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootControllers.swift; sourceTree = "<group>"; };
+		F47CBB0F265182DC00A8A00F /* RootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
 		F47CBB16265186CD00A8A00F /* RootControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootControllerExtension.swift; sourceTree = "<group>"; };
 		F4C77E9E266D5A16001D5870 /* iOS Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS Example.entitlements"; sourceTree = "<group>"; };
 		F4E350E32651BC8800D2CA45 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 		F47CBB0E265182DC00A8A00F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F47CBB0F265182DC00A8A00F /* RootControllers.swift */,
+				F47CBB0F265182DC00A8A00F /* RootController.swift */,
 				F47CBB16265186CD00A8A00F /* RootControllerExtension.swift */,
 			);
 			path = Scenes;
@@ -383,7 +383,7 @@
 			files = (
 				F47CBB17265186CD00A8A00F /* RootControllerExtension.swift in Sources */,
 				F47CBB12265182DD00A8A00F /* AppDelegate.swift in Sources */,
-				F47CBB13265182DD00A8A00F /* RootControllers.swift in Sources */,
+				F47CBB13265182DD00A8A00F /* RootController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

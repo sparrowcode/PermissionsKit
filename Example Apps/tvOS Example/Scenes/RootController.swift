@@ -66,7 +66,7 @@ class RootController: SPTableViewController {
 
 extension RootController: SPPermissionsDataSource {
     
-    func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionDeniedAlertTexts? {
+    func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionsDeniedAlertTexts? {
         if permission.type == .notification {
             
             // If returned nil, alert will not show.
