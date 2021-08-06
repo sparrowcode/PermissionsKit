@@ -1,0 +1,89 @@
+"action allow" = "允許";
+
+"action allowed" = "已允許";
+
+"titles header" = "需要取用權限";
+
+"titles sub header" = "要求取用權限";
+
+"titles description" = "為了提供完整的服務，App 需要以下取用權限，請參考每個取用權限的說明。";
+
+"titles comment" = "App 需要取用權限才能得到最完整的體驗，推播通知不是必須的取用權限。";
+
+"permission camera name" = "相機";
+
+"permission camera description" = "允許 App 使用相機";
+
+"permission photoLibrary name" = "相簿";
+
+"permission photoLibrary description" = "允許 App 儲存照片到您的相簿";
+
+"permission microphone name" = "麥克風";
+
+"permission microphone description" = "允許 App 錄音";
+
+"permission calendar name" = "日曆";
+
+"permission calendar description" = "允許 App 新增行程至您的日曆";
+
+"permission contacts name" = "通訊錄";
+
+"permission contacts description" = "允許 App 取用您的聯絡人和電話號碼";
+
+"permission reminders name" = "提醒事項";
+
+"permission reminders description" = "允許 App 新增提醒事項";
+
+"permission speech name" = "語音辨識";
+
+"permission speech description" = "允許 App 分析您的聲音";
+
+"permission motion name" = "運動";
+
+"permission motion description" = "允許紀錄運動與相關資料";
+
+"permission media library name" = "媒體櫃";
+
+"permission media library description" = "允許取用您的媒體櫃";
+
+"permission bluetooth name" = "藍芽";
+
+"permission bluetooth description" = "允許使用藍芽";
+
+"permission notification name" = "推播通知";
+
+"permission notification description" = "在不打開 App 的情況下，取得重要通知";
+
+"permission location when in use name" = "在使用 App 期間取用位置";
+
+"permission location when in use description" = "取用您的位置";
+
+"permission location always name" = "總是取用位置";
+
+"permission location always description" = "取用您的位置";
+
+"permission tracking name" = "追蹤";
+
+"permission tracking description" = "允許追蹤您在其他公司的 App 和網站上的活動";
+
+"permission faceid name" = "FaceID";
+
+"permission faceid description" = "允許使用 Face ID";
+
+"permission siri name" = "Siri";
+
+"permission siri description" = "您將能夠使用 Siri";
+
+"permission health name" = "健康";
+
+"permission health description" = "允許取用健康的資料";
+
+"denied alert title" = "已拒絕取用";
+
+"denied alert description" = "請前往至「設定」並允許取用";
+
+"denied alert action" = "設定";
+
+"denied alert cancel" = "取消";
+
+"action denied" = "拒絕";
