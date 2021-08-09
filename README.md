@@ -70,7 +70,7 @@ SPPermisions is ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.  `
 
 The [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
 
-To integrate `SPPermissions` into your Xcode project using Xcode 12, specify it in `File > Swift Packages > Add Package Dependency...`:
+To integrate `SPPermissions` using Xcode 12, specify it in `File > Swift Packages > Add Package Dependency...`:
 
 ```ogdl
 https://github.com/ivanvorobei/SPPermissions
@@ -80,7 +80,7 @@ Next choose the permissions you need. But don't add all of them, because apple w
 
 ### CocoaPods:
 
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `SPPermissions` into your Xcode project using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `SPPermissions` using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 pod 'SPPermissions/Notification'
@@ -154,7 +154,7 @@ pod 'SPPermissions/Health'
 
 ### Manually
 
-If you prefer not to use any of dependency managers, you can integrate `SPPermissions` into your project manually. Copy code and add compile flags from [CONTRIBUTING.md](https://github.com/ivanvorobei/SPPermissions/blob/main/CONTRIBUTING.md) file.
+If you prefer not to use any of dependency managers, you can integrate `SPPermissions`  manually. Copy code and add compile flags from [CONTRIBUTING.md](https://github.com/ivanvorobei/SPPermissions/blob/main/CONTRIBUTING.md) file.
 
 ## Imports
 
@@ -436,8 +436,8 @@ I have libraries with native interface and managing permissions. Also available 
 
 ## Russian Community
 
-Веду каналы об iOS разработке. Один с туториалами и новостями, другой с обзором библиотек.<br>
-Со сложной задачей помогут в чате.
+Подписывайся в телеграмм-канал, если хочешь получать уведомления о новых туториалах.<br>
+Со сложными и непонятными задачами помогут в чате.
 
 <p float="left">
     <a href="https://sparrowcode.by/telegram/channel">
