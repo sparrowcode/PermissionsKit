@@ -79,12 +79,18 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
         if showCloseButton {
-            if #available(iOS 13.0, *) {
-                navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(dismissAnimated))
+            let closeBarButtonItem: UIBarButtonItem = {
+                if #available(iOS 13.0, *) {
+                    return UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(dismissAnimated))
+                } else {
+                    return UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissAnimated))
+                }
+            }()
+            if view.effectiveUserInterfaceLayoutDirection == .leftToRight {
+                navigationItem.rightBarButtonItem = closeBarButtonItem
             } else {
-                navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissAnimated))
+                navigationItem.leftBarButtonItem = closeBarButtonItem
             }
         }
         
