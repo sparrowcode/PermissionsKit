@@ -26,22 +26,39 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerInt
     public weak var delegate: SPPermissionsDelegate?
     public weak var dataSource: SPPermissionsDataSource?
     
+    // MARK: - Data
+    
     private var permissions: [SPPermissions.Permission]
+    private var proceseedPermissions: [SPPermissions.Permission] = []
+    private var memoryLocker: SPPermissionsNativeController? = nil
+    
+    // MARK: - Init
     
     init(_ permissions: [SPPermissions.Permission]) {
         self.permissions = permissions
         super.init()
     }
     
+    // MARK: - Public
+    
     public func present(on controller: UIViewController) {
+        self.memoryLocker = self
+        self.proceseedPermissions = permissions
         for permission in permissions {
             permission.request(completion: { [weak self] in
+                
+                self?.proceseedPermissions = self?.proceseedPermissions.filter({ $0 != permission }) ?? []
+                
                 guard let self = self else { return }
                 if permission.authorized {
                     self.delegate?.didAllowPermission(permission)
                 } else {
                     self.delegate?.didDeniedPermission(permission)
                     Presenter.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: controller)
+                }
+                
+                if self.proceseedPermissions.isEmpty {
+                    self.memoryLocker = nil
                 }
             })
         }
