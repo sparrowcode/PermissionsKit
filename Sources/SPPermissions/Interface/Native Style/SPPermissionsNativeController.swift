@@ -46,9 +46,7 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerInt
         self.proceseedPermissions = permissions
         for permission in permissions {
             permission.request(completion: { [weak self] in
-                
                 self?.proceseedPermissions = self?.proceseedPermissions.filter({ $0 != permission }) ?? []
-                
                 guard let self = self else { return }
                 if permission.authorized {
                     self.delegate?.didAllowPermission(permission)
@@ -59,6 +57,7 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerInt
                 
                 if self.proceseedPermissions.isEmpty {
                     self.memoryLocker = nil
+                    self.delegate?.didHidePermissions(self.permissions)
                 }
             })
         }

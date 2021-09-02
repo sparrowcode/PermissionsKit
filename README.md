@@ -440,17 +440,17 @@ I have libraries with native interface and managing permissions. Also available 
 Со сложными и непонятными задачами помогут в чате.
 
 <p float="left">
-    <a href="https://sparrowcode.by/telegram/channel">
+    <a href="https://tutorials.ivanvorobei.by/telegram/channel">
         <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-tutorials.svg">
     </a>
-    <a href="https://sparrowcode.by/telegram/libs">
+    <a href="https://tutorials.ivanvorobei.by/telegram/libs">
         <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-libraries.svg">
     </a>
-    <a href="https://sparrowcode.by/telegram/chat">
+    <a href="https://tutorials.ivanvorobei.by/telegram/chat">
         <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-chat.svg">
     </a>
 </p>
 
-Видео-туториалы выклыдываю на [YouTube](https://sparrowcode.by/youtube):
+Видео-туториалы выклыдываю на [YouTube](https://tutorials.ivanvorobei.by/youtube):
 
-[![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://sparrowcode.by/youtube)
+[![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://tutorials.ivanvorobei.by/youtube)
