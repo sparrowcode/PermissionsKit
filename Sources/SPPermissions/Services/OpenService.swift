@@ -25,13 +25,8 @@ enum OpenService {
     
     @available(iOSApplicationExtension, unavailable)
     static func openSettings() {
-        
         DispatchQueue.main.async {
-            
-            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                return
-            }
-            
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
             if UIApplication.shared.canOpenURL(settingsUrl) {
                 UIApplication.shared.open(settingsUrl, completionHandler: nil)
             }
