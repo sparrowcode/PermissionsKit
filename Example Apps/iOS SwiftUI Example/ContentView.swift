@@ -12,7 +12,7 @@ import SPPermissionsSpeechRecognizer
 import SPPermissionsLocationWhenInUse
 import SPPermissionsLocationAlways
 import SPPermissionsMotion
-import SPPermissionsMediaLibrary
+import SPPermissionsMusic
 import SPPermissionsBluetooth
 import SPPermissionsTracking
 
