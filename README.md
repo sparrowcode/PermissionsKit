@@ -446,7 +446,7 @@ I have libraries with native interface and managing permissions. Also available 
     <a href="https://tutorials.ivanvorobei.by/telegram/channel">
         <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/open-telegram-channel.svg">
     </a>
-    <a href="https://tutorials.ivanvorobei.by/telegram/libs">
+    <a href="https://tutorials.ivanvorobei.by/telegram/chat">
         <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-chat.svg">
     </a>
 </p>
