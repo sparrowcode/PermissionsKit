@@ -432,6 +432,9 @@ I have libraries with native interface and managing permissions. Also available 
     <a href="https://opensource.ivanvorobei.by">
         <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/more-libraries.svg">
     </a>
+        <a href="https://xcodeshop.ivanvorobei.by">
+        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/xcode-shop.svg">
+    </a>
 </p>
 
 ## Russian Community
@@ -441,12 +444,9 @@ I have libraries with native interface and managing permissions. Also available 
 
 <p float="left">
     <a href="https://tutorials.ivanvorobei.by/telegram/channel">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-tutorials.svg">
+        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/open-telegram-channel.svg.svg">
     </a>
     <a href="https://tutorials.ivanvorobei.by/telegram/libs">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-libraries.svg">
-    </a>
-    <a href="https://tutorials.ivanvorobei.by/telegram/chat">
         <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-chat.svg">
     </a>
 </p>
