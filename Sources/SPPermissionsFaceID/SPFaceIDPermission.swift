@@ -52,7 +52,7 @@ public class SPFaceIDPermission: SPPermissions.Permission {
         
         switch error?.code {
             case nil where isReady:
-                return .notDetermined
+                return .authorized
             case LAError.biometryNotAvailable.rawValue:
                 return .denied
             case LAError.biometryNotEnrolled.rawValue:
