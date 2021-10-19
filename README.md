@@ -73,7 +73,7 @@ The [Swift Package Manager](https://swift.org/package-manager/) is a tool for ma
 To integrate `SPPermissions` using Xcode 12, specify it in `File > Swift Packages > Add Package Dependency...`:
 
 ```ogdl
-https://github.com/ivanvorobei/SPPermissions
+https://github.com/ivanvorobei/SPPermissions.git
 ```
 
 Next choose the permissions you need. But don't add all of them, because apple will reject your app.
