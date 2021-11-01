@@ -2,6 +2,8 @@
 
 <img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/preview-v6.2.0.jpg" width="420"/>
 
+### About
+
 Improve the user flow when asking permissions. You can also check state of permissions, available are: `.authorized`, `.denied` & `.notDetermined`.
 
 The library has three ready-use controllers: list, dialog & native. Supports iPad, dark mode, and localizations. To get going with using the library, see [Quick Start](#quick-start).
