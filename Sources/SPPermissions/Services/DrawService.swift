@@ -23,7 +23,7 @@ import UIKit
 
 #if os(iOS)
 
-enum Draw {
+enum DrawService {
     
     public static func drawClose(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 28, height: 28), resizing: ResizingBehavior = .aspectFit, background: UIColor = UIColor(red: 0.937, green: 0.937, blue: 0.941, alpha: 1.000), element: UIColor = UIColor(red: 0.518, green: 0.518, blue: 0.533, alpha: 1.000)) {
         

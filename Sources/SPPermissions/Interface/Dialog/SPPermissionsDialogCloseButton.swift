@@ -21,12 +21,44 @@
 
 import UIKit
 
-enum Delay {
+#if os(iOS)
+
+class SPPermissionsDialogCloseButton: UIButton {
     
-    public static func wait(_ delay: Double, closure: @escaping ()->()) {
-        let when = DispatchTime.now() + delay
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            closure()
+    let iconView = CloseIconView()
+    
+    // MARK: - Init
+    
+    init() {
+        super.init(frame: .zero)
+        backgroundColor = .clear
+        iconView.backgroundColor = .clear
+        iconView.isUserInteractionEnabled = false
+        addSubview(iconView)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Layout
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        iconView.frame = bounds
+    }
+    
+    // MARK: - CloseIconView
+    
+    class CloseIconView: UIView {
+        
+        var elementColor: UIColor = UIColor.Compability.secondaryLabel
+        var areaColor: UIColor = UIColor.Compability.secondarySystemBackground
+        
+        override func draw(_ rect: CGRect) {
+            DrawService.drawClose(frame: rect, resizing: .aspectFit, background: areaColor, element: elementColor)
         }
     }
 }
+
+#endif

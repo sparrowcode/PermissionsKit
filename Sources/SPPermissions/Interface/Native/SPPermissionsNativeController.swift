@@ -52,7 +52,7 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerInt
                     self.delegate?.didAllowPermission(permission)
                 } else {
                     self.delegate?.didDeniedPermission(permission)
-                    Presenter.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: controller)
+                    PresenterService.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: controller)
                 }
                 
                 if self.proceseedPermissions.isEmpty {

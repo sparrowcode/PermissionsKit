@@ -44,7 +44,7 @@ public class SPPermissionsActionButton: UIButton {
     init() {
         super.init(frame: .zero)
         contentEdgeInsets = UIEdgeInsets.init(top: 5, left: 13, bottom: 5, right: 13)
-        titleLabel?.font = UIFont.preferredFont(forTextStyle: .body, weight: .bold, addPoints: -2)
+        titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
     }
     
     required init?(coder: NSCoder) {

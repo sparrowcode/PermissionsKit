@@ -26,7 +26,7 @@ import UIKit
 /**
  SPPermissions: Wrapper of native feedback generator.
  */
-enum Haptic {
+enum HapticService {
     
     static func impact(_ style: Style) {
         
