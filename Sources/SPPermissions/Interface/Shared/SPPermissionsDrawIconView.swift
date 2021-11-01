@@ -52,33 +52,33 @@ public class SPPermissionsDrawIconView: UIView {
         super.draw(rect)
         switch permission?.type {
         case .camera:
-            Draw.drawCamera(frame: rect, resizing: .aspectFit, color: tintColor)
+            DrawService.drawCamera(frame: rect, resizing: .aspectFit, color: tintColor)
         case .photoLibrary:
-            Draw.drawPhotos(frame: rect, resizing: .aspectFit, color: tintColor)
+            DrawService.drawPhotos(frame: rect, resizing: .aspectFit, color: tintColor)
         case .notification:
-            Draw.drawNotifications(frame: rect, resizing: .aspectFit, color: tintColor)
+            DrawService.drawNotifications(frame: rect, resizing: .aspectFit, color: tintColor)
         case .microphone:
-            Draw.drawMicrophone(frame: rect, resizing: .aspectFit, color: tintColor)
+            DrawService.drawMicrophone(frame: rect, resizing: .aspectFit, color: tintColor)
         case .calendar:
-            Draw.drawCalendar(frame: rect, resizing: .aspectFit, color: tintColor)
+            DrawService.drawCalendar(frame: rect, resizing: .aspectFit, color: tintColor)
         case .contacts:
-            Draw.drawContacts(frame: rect, resizing: .aspectFit, color: tintColor)
+            DrawService.drawContacts(frame: rect, resizing: .aspectFit, color: tintColor)
         case .reminders:
-            Draw.drawReminders(frame: rect, resizing: .aspectFit, color: tintColor)
+            DrawService.drawReminders(frame: rect, resizing: .aspectFit, color: tintColor)
         case .speech:
-            Draw.drawSpeech(frame: rect, resizing: .aspectFit, color: tintColor)
+            DrawService.drawSpeech(frame: rect, resizing: .aspectFit, color: tintColor)
         case .locationWhenInUse:
-            Draw.drawLocations(frame: rect, resizing: .aspectFit, color: tintColor)
+            DrawService.drawLocations(frame: rect, resizing: .aspectFit, color: tintColor)
         case .locationAlways:
-            Draw.drawLocations(frame: rect, resizing: .aspectFit, color: tintColor)
+            DrawService.drawLocations(frame: rect, resizing: .aspectFit, color: tintColor)
         case .motion:
-            Draw.drawMotion(frame: rect, resizing: .aspectFit, color: tintColor)
+            DrawService.drawMotion(frame: rect, resizing: .aspectFit, color: tintColor)
         case .mediaLibrary:
-            Draw.drawMedia(frame: rect, resizing: .aspectFit, color: tintColor)
+            DrawService.drawMedia(frame: rect, resizing: .aspectFit, color: tintColor)
         case .bluetooth:
-            Draw.drawBluetooth(frame: rect, resizing: .aspectFit, color: tintColor)
+            DrawService.drawBluetooth(frame: rect, resizing: .aspectFit, color: tintColor)
         case .tracking:
-            Draw.drawTracking(frame: rect, resizing: .aspectFit, color: tintColor)
+            DrawService.drawTracking(frame: rect, resizing: .aspectFit, color: tintColor)
         case .faceID, .siri, .health:
             // Not implemented old style icons.
             break

@@ -39,13 +39,13 @@ class SPPermissionsDialogView: UIView {
         insetsLayoutMarginsFromSafeArea = false
         
         titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.preferredFont(forTextStyle: .title1, weight: .bold, addPoints: 0)
+        titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
         titleLabel.textColor = UIColor.Compability.label
         
         addSubview(titleLabel)
         
         subtitleLabel.numberOfLines = 0
-        subtitleLabel.font = UIFont.preferredFont(forTextStyle: .body, weight: .medium, addPoints: -2)
+        subtitleLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         subtitleLabel.textColor = UIColor.Compability.secondaryLabel
         addSubview(subtitleLabel)
         

@@ -49,12 +49,12 @@ public class SPPermissionsTableViewCell: UITableViewCell {
         
         permissionTitleLabel.numberOfLines = 0
         permissionTitleLabel.textColor = UIColor.Compability.label
-        permissionTitleLabel.font = UIFont.preferredFont(forTextStyle: .title2, weight: .semibold)
+        permissionTitleLabel.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         addSubview(permissionTitleLabel)
         
         permissionDescriptionLabel.numberOfLines = 0
         permissionDescriptionLabel.textColor = UIColor.Compability.secondaryLabel
-        permissionDescriptionLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        permissionDescriptionLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         addSubview(permissionDescriptionLabel)
         
         addSubview(permissionButton)
@@ -109,6 +109,9 @@ public class SPPermissionsTableViewCell: UITableViewCell {
             permissionButton.frame.origin.x = contentView.layoutMargins.right
             permissionTitleLabel.frame.origin.x = permissionIconView.frame.origin.x - leftContentLeadingSpace - permissionTitleLabel.frame.width
             permissionDescriptionLabel.frame.origin.x = permissionTitleLabel.frame.origin.x
+            separatorInset.left = frame.width - permissionDescriptionLabel.frame.maxX
+        } else {
+            separatorInset.left = permissionIconView.frame.maxX + leftContentLeadingSpace
         }
     }
     
@@ -158,5 +161,4 @@ public class SPPermissionsTableViewCell: UITableViewCell {
         }
     }
 }
-
 #endif

@@ -21,44 +21,26 @@
 
 import UIKit
 
-#if os(iOS)
-
-class SPPermissionsDialogCloseButton: UIButton {
+enum PresenterService {
     
-    let iconView = CloseIconView()
-    
-    // MARK: - Init
-    
-    init() {
-        super.init(frame: .zero)
-        backgroundColor = .clear
-        iconView.backgroundColor = .clear
-        iconView.isUserInteractionEnabled = false
-        addSubview(iconView)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: - Layout
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        iconView.frame = bounds
-    }
-    
-    // MARK: - CloseIconView
-    
-    class CloseIconView: UIView {
+    @available(iOSApplicationExtension, unavailable)
+    static func presentAlertAboutDeniedPermission(_ permission: SPPermissions.Permission, dataSource: SPPermissionsDataSource?, on controller: UIViewController) {
         
-        var elementColor: UIColor = UIColor.Compability.secondaryLabel
-        var areaColor: UIColor = UIColor.Compability.secondarySystemBackground
+        let data = dataSource?.deniedAlertTexts(for: permission)
         
-        override func draw(_ rect: CGRect) {
-            Draw.drawClose(frame: rect, resizing: .aspectFit, background: areaColor, element: elementColor)
-        }
+        /*
+         Text is nil and data sources was set.
+         So developer special return nil for alert texts.
+         In this case developer don't want show alert.
+         */
+        if (data == nil) && (dataSource != nil) { return }
+        let texts = data ?? SPPermissionsDeniedAlertTexts.default
+        
+        let alertController = UIAlertController(title: texts.titleText, message: texts.descriptionText, preferredStyle: .alert)
+        alertController.addAction(.init(title: texts.cancelText, style: .cancel))
+        alertController.addAction(.init(title: texts.actionText, style: .default, handler: { _ in
+            OpenService.openSettings()
+        }))
+        controller.present(alertController, animated: true, completion: nil)
     }
 }
-
-#endif
