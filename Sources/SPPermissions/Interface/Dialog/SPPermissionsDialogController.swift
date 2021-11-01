@@ -113,6 +113,25 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        /**
+         Special layout call becouse table hasn't valid content size before appear for early ios 12 and lower.
+         Happen only if `bounceAnimationEnabled` set to false.
+         Related issue on github: https://github.com/ivanvorobei/SPPermissions/issues/262
+         */
+        if !bounceAnimationEnabled {
+            if #available(iOS 13, *) {
+                // All good for iOS 13+
+            } else {
+                DelayService.wait(0.2, closure: {
+                    self.dialogView.layout(in: self.view)
+                })
+            }
+        }
+    }
+    
     @objc func applicationDidBecomeActive() {
         dialogView.tableView.reloadData()
     }

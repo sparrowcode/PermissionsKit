@@ -90,8 +90,9 @@ class RootController: SPTableViewController {
             let controller = SPPermissions.dialog(selectedPermissions)
             controller.dataSource = self
             controller.delegate = self
-            // controller.allowSwipeDismiss = true
-            // controller.showCloseButton = true
+            //controller.bounceAnimationEnabled = false
+            //controller.allowSwipeDismiss = true
+            //controller.showCloseButton = true
             controller.present(on: self)
         case 2:
             let controller = SPPermissions.native(selectedPermissions)
