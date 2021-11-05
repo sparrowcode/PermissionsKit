@@ -166,4 +166,20 @@ Pod::Spec.new do |s|
     }
   end
 
+    s.subspec 'PreciseLocationWhenInUse' do |subspec|
+    subspec.dependency 'SPPermissions/Core'
+    subspec.source_files = "Sources/SPPermissionsPreciseLocationWhenInUse/**/*.swift"
+    subspec.pod_target_xcconfig = {
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_PRECISE_LOCATION_WHENINUSE SPPERMISSIONS_COCOAPODS"
+    }
+  end
+
+  s.subspec 'PreciseLocationAlways' do |subspec|
+    subspec.dependency 'SPPermissions/Core'
+    subspec.source_files = "Sources/SPPermissionsPreciseLocationAlways/**/*.swift"
+    subspec.pod_target_xcconfig = {
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_PRECISE_LOCATION_ALWAYS SPPERMISSIONS_COCOAPODS"
+    }
+  end
+
 end
