@@ -79,6 +79,14 @@ let package = Package(
             name: "SPPermissionsHealth",
             targets: ["SPPermissionsHealth"]
         ),
+        .library(
+            name: "SPPermissionsPreciseLocationWhenInUse",
+            targets: ["SPPermissionsPreciseLocationWhenInUse"]
+        ),
+        .library(
+            name: "SPPermissionsPreciseLocationAlways",
+            targets: ["SPPermissionsPreciseLocationAlways"]
+        ),
     ],
     dependencies: [],
     targets: [
@@ -226,7 +234,23 @@ let package = Package(
                 .define("SPPERMISSIONS_HEALTH"),
                 .define("SPPERMISSIONS_SPM")
             ]
-        )
+        ),
+        .target(
+            name: "SPPermissionsPreciseLocationWhenInUse",
+            dependencies: [.target(name: "SPPermissions")],
+            swiftSettings: [
+                .define("SPPERMISSIONS_PRECISE_LOCATION_WHENINUSE"),
+                .define("SPPERMISSIONS_SPM")
+            ]
+        ),
+        .target(
+            name: "SPPermissionsPreciseLocationAlways",
+            dependencies: [.target(name: "SPPermissions")],
+            swiftSettings: [
+                .define("SPPERMISSIONS_PRECISE_LOCATION_ALWAYS"),
+                .define("SPPERMISSIONS_SPM")
+            ]
+        ),
     ],
     swiftLanguageVersions: [.v5]
 )

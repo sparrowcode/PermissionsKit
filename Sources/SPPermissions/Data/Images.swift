@@ -59,6 +59,10 @@ enum Images {
             return UIImage.init(named: "Siri", in: bundle, compatibleWith: nil) ?? UIImage()
         case .health:
             return UIImage.init(named: "Health", in: bundle, compatibleWith: nil) ?? UIImage()
+        case .preciseLocationWhenInUse:
+            return UIImage.init(named: "Location", in: bundle, compatibleWith: nil) ?? UIImage()
+        case .preciseLocationAlways:
+            return UIImage.init(named: "Location", in: bundle, compatibleWith: nil) ?? UIImage()
         }
     }
     
