@@ -205,8 +205,8 @@ public enum SPPermissions {
         case faceID = 15
         case siri = 16
         case health = 17
-        case preciseLocationWhenInUse = 18
-        case preciseLocationAlways = 19
+        case locationWhenInUsePrecise = 18
+        case locationAlwaysPrecise = 19
         
         public var name: String {
             switch self {
@@ -244,9 +244,9 @@ public enum SPPermissions {
                 return "Siri"
             case .health:
                 return "Health"
-            case .preciseLocationWhenInUse:
+            case .locationWhenInUsePrecise:
                 return "Precise Location When Use "
-            case .preciseLocationAlways:
+            case .locationAlwaysPrecise:
                 return "Precise Location Always"
             }
         }
