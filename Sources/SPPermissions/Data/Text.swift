@@ -59,9 +59,9 @@ enum Texts {
             return NSLocalizedString("permission siri name", bundle: bundle, comment: "")
         case .health:
             return NSLocalizedString("permission health name", bundle: bundle, comment: "")
-        case .preciseLocationWhenInUse:
+        case .locationWhenInUsePrecise:
             return NSLocalizedString("permission precise location when in use name", bundle: bundle, comment: "")
-        case .preciseLocationAlways:
+        case .locationAlwaysPrecise:
             return NSLocalizedString("permission precise location always name", bundle: bundle, comment: "")
         }
     }
@@ -102,9 +102,9 @@ enum Texts {
             return NSLocalizedString("permission siri description", bundle: bundle, comment: "")
         case .health:
             return NSLocalizedString("permission health description", bundle: bundle, comment: "")
-        case .preciseLocationWhenInUse:
+        case .locationWhenInUsePrecise:
             return NSLocalizedString("permission precise location when in use description", bundle: bundle, comment: "")
-        case .preciseLocationAlways:
+        case .locationAlwaysPrecise:
             return NSLocalizedString("permission precise location always description", bundle: bundle, comment: "")
         }
     }

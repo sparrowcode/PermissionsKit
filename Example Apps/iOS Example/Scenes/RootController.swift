@@ -43,7 +43,7 @@ import SPPermissionsHealth
 
 class RootController: SPTableViewController {
     
-    var availablePermissions: [SPPermissions.Permission] = [.camera, .photoLibrary, .notification, .microphone, .calendar, .contacts, .reminders, .speech, .locationWhenInUse, .locationAlways, .preciseLocationWhenInUse, .preciseLocationAlways .motion, .mediaLibrary, .bluetooth, /*.tracking,*/ .faceID, .siri, .health]
+    var availablePermissions: [SPPermissions.Permission] = [.camera, .photoLibrary, .notification, .microphone, .calendar, .contacts, .reminders, .speech, .locationWhenInUse, .locationAlways, .locationWhenInUsePrecise, .locationAlwaysPrecise .motion, .mediaLibrary, .bluetooth, /*.tracking,*/ .faceID, .siri, .health]
     
     var selectedPermissions: [SPPermissions.Permission] = []
     

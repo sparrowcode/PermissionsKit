@@ -23,32 +23,22 @@
 import SPPermissions
 #endif
 
-#if os(iOS) && SPPERMISSIONS_PRECISE_LOCATION_ALWAYS
+#if SPPERMISSIONS_LOCATION_WHENINUSE
 
 import Foundation
 import MapKit
 
 public extension SPPermissions.Permission {
-
-    static var preciseLocationAlways: SPPreciseLocationAlwaysPermission {
-        return SPPreciseLocationAlwaysPermission()
+    
+    static var locationWhenInUsePrecise: SPLocationWhenInUsePrecisePermission  {
+        return SPLocationWhenInUsePrecisePermission ()
     }
 }
 
-public class SPPreciseLocationAlwaysPermission: SPPermissions.Permission {
-    
-    open override var type: SPPermissions.PermissionType { .preciseLocationAlways }
-    open var usageDescriptionKey: String? { "NSLocationAlwaysAndWhenInUseUsageDescription" }
+public class SPLocationWhenInUsePrecisePermission: SPLocationWhenInUsePermission {
     
     public override var status: SPPermissions.PermissionStatus {
-        let authorizationStatus: CLAuthorizationStatus = {
-            let locationManager = CLLocationManager()
-            if #available(iOS 14.0, tvOS 14.0, *) {
-                return locationManager.authorizationStatus
-            } else {
-                return CLLocationManager.authorizationStatus()
-            }
-        }()
+        let whenInUseAuthorizationStatus = SPLocationWhenInUsePermission().status
 
         let hasPrecision: Bool = {
             #if os(iOS)
@@ -59,26 +49,11 @@ public class SPPreciseLocationAlwaysPermission: SPPermissions.Permission {
             return true
         }()
         
-        switch authorizationStatus {
+        switch whenInUseAuthorizationStatus {
         #if os(iOS)
         case .authorized: return hasPrecision ? .authorized : .denied
         #endif
-        case .denied: return .denied
-        case .notDetermined: return .notDetermined
-        case .restricted: return .denied
-        case .authorizedAlways: return .authorized
-        case .authorizedWhenInUse: return .denied
-        @unknown default: return .denied
-        }
-    }
-    
-    public override func request(completion: @escaping () -> Void) {
-        SPPreciseLocationAlwaysHandler.shared = SPPreciseLocationAlwaysHandler()
-        SPPreciseLocationAlwaysHandler.shared?.requestPermission {
-            DispatchQueue.main.async {
-                completion()
-                SPPreciseLocationAlwaysHandler.shared = nil
-            }
+        default: return whenInUseAuthorizationStatus
         }
     }
 }
