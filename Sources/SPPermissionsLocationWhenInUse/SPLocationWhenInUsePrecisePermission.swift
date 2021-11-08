@@ -37,6 +37,8 @@ public extension SPPermissions.Permission {
 
 public class SPLocationWhenInUsePrecisePermission: SPLocationWhenInUsePermission {
     
+    public override var type: SPPermissions.PermissionType { .locationWhenInUsePrecise}
+    
     public override var status: SPPermissions.PermissionStatus {
         let whenInUseAuthorizationStatus = SPLocationWhenInUsePermission().status
 

@@ -37,6 +37,8 @@ public extension SPPermissions.Permission {
 
 public class SPLocationAlwaysPrecisePermission: SPLocationAlwaysPermission {
     
+    public override var type: SPPermissions.PermissionType { .locationAlwaysPrecise }
+    
     public override var status: SPPermissions.PermissionStatus {
         let alwaysAuthorizationStatus = SPLocationAlwaysPermission().status
 
