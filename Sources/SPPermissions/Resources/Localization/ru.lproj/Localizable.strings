@@ -62,6 +62,14 @@
 
 "permission location always description" = "Разрешить доступ к вашему местоположению";
 
+"permission location precise when in use name" = "Точное местоположение при использовании";
+
+"permission location precise always name" = "Точное местоположение всегда";
+
+"permission location precise when in use description" = "Разрешить доступ к вашему точному местоположению";
+
+"permission location precise always description" = "Разрешить доступ к вашему точному местоположению";
+
 "permission tracking name" = "Отслеживание";
 
 "permission tracking description" = "Разрешить отслеживание с помощью рекламного идентификатора";
