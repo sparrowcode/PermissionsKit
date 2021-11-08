@@ -226,7 +226,7 @@ let package = Package(
                 .define("SPPERMISSIONS_HEALTH"),
                 .define("SPPERMISSIONS_SPM")
             ]
-        )
+        ),
     ],
     swiftLanguageVersions: [.v5]
 )
