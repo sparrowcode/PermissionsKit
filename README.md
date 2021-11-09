@@ -439,18 +439,18 @@ I have libraries with native interface and managing permissions. Also available 
 
 ## Russian Community
 
-Подписывайся в телеграмм-канал, если хочешь получать уведомления о новых туториалах.<br>
+Подписывайся в телеграм-канал, если хочешь получать уведомления о новых туториалах.<br>
 Со сложными и непонятными задачами помогут в чате.
 
 <p float="left">
-    <a href="https://tutorials.ivanvorobei.by/telegram/channel">
+    <a href="https://sparrowcode.by/telegram">
         <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/open-telegram-channel.svg">
     </a>
-    <a href="https://tutorials.ivanvorobei.by/telegram/chat">
+    <a href="https://sparrowcode.by/telegram/chat">
         <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-chat.svg">
     </a>
 </p>
 
-Видео-туториалы выклыдываю на [YouTube](https://tutorials.ivanvorobei.by/youtube):
+Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/youtube):
 
 [![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://tutorials.ivanvorobei.by/youtube)
