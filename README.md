@@ -56,8 +56,6 @@ If you like the project, don't forget to `put star ★`<br>Check out my other li
 - [Localizations](#localizations)
 - [Keys in Info.plist](#keys-in-infoplist)
 - [Apple Review](#apple-review)
-- [Сontribution](#сontribution)
-- [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
 
 ## Installation
@@ -68,15 +66,17 @@ SPPermisions is ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.  `
 
 ### Swift Package Manager
 
-The [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
 
-To integrate `SPPermissions` using Xcode 12, specify it in `File > Swift Packages > Add Package Dependency...`:
+Once you have your Swift package set up, adding as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
 
-```ogdl
-https://github.com/ivanvorobei/SPPermissions
+```swift
+dependencies: [
+    .package(url: "https://github.com/ivanvorobei/SPPermissions", .upToNextMajor(from: "6.8.4"))
+]
 ```
 
-Next choose the permissions you need. But don't add all of them, because apple will reject your app.
+Next choose the permissions you need. But don't add all of them, because apple will reject app.
 
 ### CocoaPods:
 
@@ -224,7 +224,7 @@ This is a modal alert. I recommend using this alert style when you have less tha
 ```swift
 let controller = SPPermissions.dialog([.camera, .photoLibrary])
 
-// Ovveride texts in controller
+// Override texts in controller
 controller.titleText = "Title Text"
 controller.headerText = "Header Text"
 controller.footerText = "Footer Text"
@@ -287,7 +287,7 @@ controller.present(on: self)
 
 ## DataSource
 
-For data source using protocol `SPPermissionsDataSource`. You can customise the permission cells / provide denied alert texts.
+For data source using protocol `SPPermissionsDataSource`. You can customize the permission cells / provide denied alert texts.
 
 ```swift
 extension Controller: SPPermissionsDataSource {
@@ -312,7 +312,7 @@ extension Controller: SPPermissionsDataSource {
 
 ### Denied alert
 
-If a permission is denied, you can provide an alert to the user with an option to open settings. An example of how you can customize the alert text:
+If a permission is denied, you can provide an alert to the user with an option to open settings. An example of how you can customise the alert text:
 
 ```swift
 let texts = SPPermissionsDeniedAlertTexts()
@@ -399,7 +399,7 @@ List of keys:
 
 Do not use the description as the name of the key.
 
-If you use xliff localization export, keys will be create automatically. If you prefer do the localization file manually, you need to create `InfoPlist.strings`, select languages in the right side menu and add keys as keys in plist-file. See:
+If you use xliff localization export, keys will be create automatically. If you prefer do the localization file manually, you need to create `InfoPlist.strings`, select languages on the right side menu and add keys as keys in plist-file. See:
 
 ```
 "NSCameraUsageDescription" = "Here description of usage camera";
@@ -418,24 +418,6 @@ controller.allowSwipeDismiss = true
 ```
 
 Also changed title for button. Instead of  `allow` now using `continue`. The Apple Review Team asked for this. For details, check out [this issue](https://github.com/ivanvorobei/SPPermissions/issues/229). 
-
-## Сontribution
-
-My English is very bad. You can see this once you read the documentation. I would really like to have clean and nice documentation. If you see gramatical errors and can help fix the Readme, please contact me hello@ivanvorobei.by or make a Pull Request. Thank you in advance!
-
-## Other Projects
-
-I love being helpful. Here I have provided a list of libraries that I keep up to date. For see `video previews` of libraries without install open [opensource.ivanvorobei.by](https://opensource.ivanvorobei.by) website.<br>
-I have libraries with native interface and managing permissions. Also available pack of useful extensions for boost your development process.
-
-<p float="left">
-    <a href="https://opensource.ivanvorobei.by">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/more-libraries.svg">
-    </a>
-        <a href="https://xcodeshop.ivanvorobei.by">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/xcode-shop.svg">
-    </a>
-</p>
 
 ## Russian Community
 
