@@ -60,9 +60,9 @@ If you like the project, don't forget to `put star ★`<br>Check out my other li
 
 ## Installation
 
-SPPermisions is ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.  `SPPermissions` works with Swift 5+, and requires Xcode 12.0 or higher.
-
 <img align="right" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/spm-install-preview.png" width="490"/>
+
+SPPermisions is ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.  `SPPermissions` works with Swift 5+, and requires Xcode 12.0 or higher.
 
 ### Swift Package Manager
 
