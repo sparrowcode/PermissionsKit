@@ -1,6 +1,6 @@
 # SPPermissions
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/preview-v6.2.0.jpg" width="420"/>
+<img align="left" src="https://cdn.ivanvorobei.by/github/sppermissions/preview-v6.2.0.jpg" width="420"/>
 
 ### About
 
@@ -19,22 +19,22 @@ If you like the project, don't forget to `put star ★`<br>Check out my other li
 ### Permissions
 
 <p float="left">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/camera.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/photos.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/notifications.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/location.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/microphone.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/calendar.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/contacts.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/reminders.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/motion.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/music.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/speech.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/bluetooth.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/health.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/tracking.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/faceid.png" width="38">
-    <img src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Permissions/siri.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionscamera.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsphotos.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsnotifications.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionslocation.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsmicrophone.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionscalendar.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionscontacts.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsreminders.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsmotion.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsmusic.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsspeech.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsbluetooth.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionshealth.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionstracking.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsfaceid.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionssiri.png" width="38">
 </p>
 
 ## Navigate
@@ -60,7 +60,7 @@ If you like the project, don't forget to `put star ★`<br>Check out my other li
 
 ## Installation
 
-<img align="right" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/spm-install-preview.png" width="490"/>
+<img align="right" src="https://cdn.ivanvorobei.by/github/sppermissions/spm-install-preview.png" width="490"/>
 
 SPPermisions is ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.  `SPPermissions` works with Swift 5+, and requires Xcode 12.0 or higher.
 
@@ -308,7 +308,7 @@ extension Controller: SPPermissionsDataSource {
 }
 ```
 
-<img align="left" src="https://github.com/ivanvorobei/SPPermissions/blob/main/Assets/Readme/preview-denied-alert.png" width="320"/>
+<img align="left" src="https://cdn.ivanvorobei.by/github/sppermissions/preview-denied-alert.png" width="320"/>
 
 ### Denied alert
 
