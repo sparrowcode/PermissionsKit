@@ -19,22 +19,22 @@ If you like the project, don't forget to `put star ★`<br>Check out my other li
 ### Permissions
 
 <p float="left">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionscamera.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsphotos.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsnotifications.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionslocation.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsmicrophone.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionscalendar.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionscontacts.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsreminders.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsmotion.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsmusic.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsspeech.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsbluetooth.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionshealth.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionstracking.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionsfaceid.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissionssiri.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/camera.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/photos.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/notifications.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/location.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/microphone.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/calendar.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/contacts.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/reminders.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/motion.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/music.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/speech.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/bluetooth.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/health.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/tracking.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/faceid.png" width="38">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/siri.png" width="38">
 </p>
 
 ## Navigate
