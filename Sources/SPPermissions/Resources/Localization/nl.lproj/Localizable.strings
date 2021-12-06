@@ -2,11 +2,11 @@
 
 "action allowed" = "Toegestaan";
 
-"titles header" = "Machtiging vereist";
+"titles header" = "Toestemming vereist";
 
 "titles sub header" = "Machtigingsverzoek";
 
-"titles description" = "Dit zijn de machtigingen die de app nodig heeft om goed te werken. Zie de beschrijving voor elke toestemming.";
+"titles description" = "Dit zijn de machtigingen die de app nodig heeft om goed te werken. Zie de beschrijving voor elke machtiging.";
 
 "titles comment" = "Machtigingen zijn nodig om de toepassing correct te laten werken en uit te voeren. Push zijn geen vereiste machtigingen";
 
