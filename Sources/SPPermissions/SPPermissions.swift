@@ -154,6 +154,20 @@ public enum SPPermissions {
             preconditionFailure("This method must be overridden.")
         }
         
+        @available(iOSApplicationExtension, unavailable)
+        private func openSystemSettings() {
+            DispatchQueue.main.async {
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: nil)
+                }
+            }
+        }
+        
+        open func openSettingPage() {
+            self.openSystemSettings()
+        }
+        
         // MARK: Internal
         
         public static func == (lhs: SPPermissions.Permission, rhs: SPPermissions.Permission) -> Bool {
