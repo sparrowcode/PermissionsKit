@@ -1,9 +1,9 @@
 # SPPermissions
 
 <p aligment="left">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/table-style.png?version=1" height="280"/>
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/dialog-style.png?version=1" height="280"/>
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/native-style.png?version=1" height="280"/>
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/table-style.png?version=1" height="290"/>
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/dialog-style.png?version=1" height="290"/>
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/native-style.png?version=1" height="290"/>
 </p>
 
 Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode, and localizations. Also you can check state of permissions, available are: `.authorized`, `.denied` & `.notDetermined`.
@@ -299,11 +299,9 @@ extension Controller: SPPermissionsDataSource {
 }
 ```
 
-<img align="right" src="https://cdn.ivanvorobei.by/github/sppermissions/preview-denied-alert.png" width="320"/>
-
 ### Denied alert
 
-If a permission is denied, you can provide an alert to the user with an option to open settings. An example of how you can customise the alert text:
+If a permission is denied, you can provide [an alert](https://cdn.ivanvorobei.by/github/sppermissions/preview-denied-alert.png) to the user with an option to open settings. An example of how you can customise the alert text:
 
 ```swift
 let texts = SPPermissionsDeniedAlertTexts()
