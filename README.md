@@ -1,9 +1,9 @@
 # SPPermissions
 
 <p aligment="left">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/table-style.png" height="320"/>
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/dialog-style.png" height="320"/>
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/native-style.png?key-2" height="320"/>
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/table-style.png" height="280"/>
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/dialog-style.png" height="280"/>
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/native-style.png?key-2" height="280"/>
 </p>
 
 Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode, and localizations. Also you can check state of permissions, available are: `.authorized`, `.denied` & `.notDetermined`.
