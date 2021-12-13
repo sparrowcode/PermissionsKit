@@ -1,25 +1,14 @@
 # SPPermissions
 
-<p float="left">
-    <img src=https://cdn.ivanvorobei.by/github/sppermissions/v7/table-style.png">
-    <img src=https://cdn.ivanvorobei.by/github/sppermissions/v7/dialog-style.png">
-    <img src=https://cdn.ivanvorobei.by/github/sppermissions/v7/native-style.png">
-    <img src=https://cdn.ivanvorobei.by/github/sppermissions/v7/auth-state.png">
+<p aligment="left">
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/table-style.png" height="320"/>
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/dialog-style.png" height="320"/>
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/native-style.png?key-2" height="320"/>
 </p>
 
-Improve the user flow when asking permissions. You can also check state of permissions, available are: `.authorized`, `.denied` & `.notDetermined`.
+Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode, and localizations. Also you can check state of permissions, available are: `.authorized`, `.denied` & `.notDetermined`.
 
-The library has three ready-use controllers: list, dialog & native. Supports iPad, dark mode, and localizations. To get going with using the library, see [Quick Start](#quick-start).
-
-If you like the project, don't forget to `put star ★`<br>Check out my other libraries:
-
-<p float="left">
-    <a href="https://opensource.ivanvorobei.by">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/more-libraries.svg">
-    </a>
-</p>
-
-### Permissions
+### Supported Permissions
 
 <p float="left">
     <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/camera.png" width="38">
