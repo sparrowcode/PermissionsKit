@@ -136,7 +136,7 @@
 			children = (
 				F4C77E9E266D5A16001D5870 /* iOS Example.entitlements */,
 				F471BDC8264A5B5F000693BC /* App */,
-				F471BDFC264A629A000693BC /* Data */,
+				F471BDFC264A629A000693BC /* Recources */,
 				F471BDFB264A6291000693BC /* Scenes */,
 				F42F10C326524EA400D5B314 /* Localization */,
 				F471BDC4264A5995000693BC /* Info.plist */,
@@ -169,12 +169,12 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		F471BDFC264A629A000693BC /* Data */ = {
+		F471BDFC264A629A000693BC /* Recources */ = {
 			isa = PBXGroup;
 			children = (
 				F471BDBF264A5995000693BC /* Assets.xcassets */,
 			);
-			path = Data;
+			path = Recources;
 			sourceTree = "<group>";
 		};
 		F47CBAF82651826100A8A00F /* tvOS Example */ = {
