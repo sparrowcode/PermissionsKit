@@ -1,9 +1,9 @@
 # SPPermissions
 
 <p aligment="left">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/table-style.png" height="280"/>
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/dialog-style.png" height="280"/>
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/native-style.png?key-2" height="280"/>
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/table-style.png?version=1" height="280"/>
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/dialog-style.png?version=1" height="280"/>
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/native-style.png?version=1" height="280"/>
 </p>
 
 Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode, and localizations. Also you can check state of permissions, available are: `.authorized`, `.denied` & `.notDetermined`.
@@ -39,8 +39,8 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 - [Quick Start](#quick-start)
 - [Status](#status)
 - [Request](#request)
-    - [Dialog](#dialog)
     - [List](#list)
+    - [Dialog](#dialog)
     - [Native](#native)
 - [DataSource](#datasource)
     - [Denied alert](#denied-alert)
@@ -52,9 +52,7 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 
 ## Installation
 
-<img align="right" src="https://cdn.ivanvorobei.by/github/sppermissions/spm-install-preview.png" width="490"/>
-
-SPPermisions is ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.  `SPPermissions` works with Swift 5+, and requires Xcode 12.0 or higher.
+SPPermisions is ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.
 
 ### Swift Package Manager
 
@@ -72,7 +70,7 @@ Next choose the permissions you need. But don't add all of them, because apple w
 
 ### CocoaPods:
 
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `SPPermissions` using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org) is a dependency manager. For usage and installation instructions, visit their website. To integrate `SPPermissions` using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 pod 'SPPermissions/Notification'
@@ -86,7 +84,7 @@ pod 'SPPermissions/LocationAlways'
 pod 'SPPermissions/Microphone'
 ```
 
-<details><summary>Available subspecs</summary>
+<details><summary>Subspecs</summary>
 <p>
 
 ```ruby
@@ -158,13 +156,14 @@ import SPPermissionsCamera
 import SPPermissionsPhotoLibrary
 ```
 
+It's required because library split to modules. After importing you'll see available permissions by typing `SPPermissions.Permission.camera` for example.
 If you install via [CocoaPods](#cocoapods), you only need to import one class:
 
 ```swift
 import SPPermissions
 ```
 
-Its required because library split to modules. After importing you'll see available permissions by typing `SPPermissions.Permission.camera` for example.
+All other installed classes imported automatically.
 
 ## Quick Start
 
@@ -203,20 +202,20 @@ To check the state of any permission, call `SPPermissions.Permission`:
 let authorized = SPPermissions.Permission.calendar.authorized
 ```
 
-Also available are status for: `denied` & `notDetermined`.
+Also available are status for `denied` & `notDetermined`.
 
 ## Request
 
 `SPPermissions` has three presentation styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `Example Apps/SPPermissions.xcodeproj`.
 
-### Dialog
+### List
 
-This is a modal alert. I recommend using this alert style when you have less than three requested permissions. Usage example:
+Native `UITableViewController`. Use it when you have more than two permissions. An example of how it is used:
 
 ```swift
-let controller = SPPermissions.dialog([.camera, .photoLibrary])
+let controller = SPPermissions.list([.calendar, .camera, .contacts])
 
-// Override texts in controller
+// Ovveride texts in controller
 controller.titleText = "Title Text"
 controller.headerText = "Header Text"
 controller.footerText = "Footer Text"
@@ -236,14 +235,14 @@ controller.dismissCondition = .allPermissionsDeterminated
 controller.present(on: self)
 ```
 
-### List
+### Dialog
 
-Native `UITableViewController` with support for the iPad. Use it when you have more than two permissions. An example of how it is used:
+This is a modal alert. I recommend using this alert style when you have less than three requested permissions. Usage example:
 
 ```swift
-let controller = SPPermissions.list([.calendar, .camera, .contacts])
+let controller = SPPermissions.dialog([.camera, .photoLibrary])
 
-// Ovveride texts in controller
+// Override texts in controller
 controller.titleText = "Title Text"
 controller.headerText = "Header Text"
 controller.footerText = "Footer Text"
@@ -279,7 +278,7 @@ controller.present(on: self)
 
 ## DataSource
 
-For data source using protocol `SPPermissionsDataSource`. You can customize the permission cells / provide denied alert texts.
+For data source using protocol `SPPermissionsDataSource`. You can customize the permission cells and provide denied alert texts.
 
 ```swift
 extension Controller: SPPermissionsDataSource {
@@ -300,7 +299,7 @@ extension Controller: SPPermissionsDataSource {
 }
 ```
 
-<img align="left" src="https://cdn.ivanvorobei.by/github/sppermissions/preview-denied-alert.png" width="320"/>
+<img align="right" src="https://cdn.ivanvorobei.by/github/sppermissions/preview-denied-alert.png" width="320"/>
 
 ### Denied alert
 
@@ -357,7 +356,7 @@ extension Controller: SPPermissionsDelegate {
 - Italian `it`
 - Chinese Traditional `zh_Hant`
 
-If you want to add more, please, create folder `language_id.lproj` and make a pull request. If you want to use your custom strings, check the [DataSource](#datasource) section.
+If you want to add more, please, create folder `[language_id].lproj` and make a pull request. If you want to use your custom strings, check the [DataSource](#datasource) section.
 
 ## Keys in Info.plist
 
@@ -399,7 +398,7 @@ If you use xliff localization export, keys will be create automatically. If you 
 
 ## Apple Review
 
-Apple changed its review guidelines in May/June 2021. When requesting permissions, apps should require users to always request and make a decision whether to allow or decline the permission. For this reason, the close button in `SPPermissions` is hidden by default. If you want to force show the close button, run the following code:
+Apple changed its review guidelines in June 2021. When requesting permissions, apps should require users to always request and make a decision whether to allow or decline the permission. For this reason, the close button in `SPPermissions` is hidden by default. If you want to force show the close button, run the following code:
 
 ```swift
 // Show & hide close button
@@ -413,17 +412,8 @@ Also changed title for button. Instead of  `allow` now using `continue`. The App
 
 ## Russian Community
 
-Подписывайся в телеграм-канал, если хочешь получать уведомления о новых туториалах.<br>
-Со сложными и непонятными задачами помогут в чате.
-
-<p float="left">
-    <a href="https://sparrowcode.by/telegram">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/open-telegram-channel.svg">
-    </a>
-    <a href="https://sparrowcode.by/telegram/chat">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-chat.svg">
-    </a>
-</p>
+Я веду [телеграм канал](https://sparrowcode.by/telegram), там публикую новости и туториалы.
+С проблемой помогут [в нашем чате](https://sparrowcode.by/telegram/chat).
 
 Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/youtube):
 
