@@ -1,8 +1,11 @@
 # SPPermissions
 
-<img align="left" src="https://cdn.ivanvorobei.by/github/sppermissions/preview-v6.2.0.jpg" width="420"/>
-
-### About
+<p float="left">
+    <img src=https://cdn.ivanvorobei.by/github/sppermissions/v7/table-style.png">
+    <img src=https://cdn.ivanvorobei.by/github/sppermissions/v7/dialog-style.png">
+    <img src=https://cdn.ivanvorobei.by/github/sppermissions/v7/native-style.png">
+    <img src=https://cdn.ivanvorobei.by/github/sppermissions/v7/auth-state.png">
+</p>
 
 Improve the user flow when asking permissions. You can also check state of permissions, available are: `.authorized`, `.denied` & `.notDetermined`.
 
