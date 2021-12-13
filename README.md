@@ -301,7 +301,7 @@ extension Controller: SPPermissionsDataSource {
 
 ### Denied alert
 
-If a permission is denied, you can provide [an alert](https://cdn.ivanvorobei.by/github/sppermissions/preview-denied-alert.png) to the user with an option to open settings. An example of how you can customise the alert text:
+If a permission is denied, you can provide [an alert](https://cdn.ivanvorobei.by/github/sppermissions/v7/preview-denied-alert.png) to the user with an option to open settings. An example of how you can customise the alert text:
 
 ```swift
 let texts = SPPermissionsDeniedAlertTexts()
