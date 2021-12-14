@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Dependencies",
+    name: "AppImport",
     platforms: [
         .iOS(.v12),
         .tvOS(.v12),
@@ -11,8 +11,8 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Dependencies",
-            targets: ["Dependencies"]
+            name: "AppImport",
+            targets: ["AppImport"]
         ),
     ],
     dependencies: [
@@ -25,7 +25,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Dependencies",
+            name: "AppImport",
             dependencies: [
                 .product(name: "SparrowKit", package: "SparrowKit"),
                 .product(name: "SPPermissionsCamera", package: "SPPermissions"),
