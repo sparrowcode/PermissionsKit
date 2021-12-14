@@ -10,18 +10,11 @@ let package = Package(
         .watchOS(.v3)
     ],
     products: [
-        .library(
-            name: "AppImport",
-            targets: ["AppImport"]
-        ),
+        .library(name: "AppImport", targets: ["AppImport"]),
     ],
     dependencies: [
-        Package.Dependency.package(
-            name: "SparrowKit", url: "https://github.com/ivanvorobei/SparrowKit", .upToNextMajor(from: "3.4.3")
-        ),
-        Package.Dependency.package(
-            name: "SPPermissions", path: "SPPermissions"
-        )
+        .package(name: "SparrowKit", url: "https://github.com/ivanvorobei/SparrowKit", .upToNextMajor(from: "3.4.3")),
+        .package(name: "SPPermissions", path: "SPPermissions")
     ],
     targets: [
         .target(

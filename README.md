@@ -52,7 +52,7 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 
 ## Installation
 
-`SPPermissions` is ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.
+Ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.
 
 ### Swift Package Manager
 
@@ -70,7 +70,7 @@ Next choose the permissions you need. But don't add all of them, because apple [
 
 ### CocoaPods:
 
-[CocoaPods](https://cocoapods.org) is a dependency manager. For usage and installation instructions, visit their website. To integrate `SPPermissions` using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org) is a dependency manager. For usage and installation instructions, visit their website. To integrate using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 pod 'SPPermissions/Notification'
