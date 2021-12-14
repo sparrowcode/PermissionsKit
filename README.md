@@ -52,7 +52,7 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 
 ## Installation
 
-SPPermisions is ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.
+`SPPermissions` is ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.
 
 ### Swift Package Manager
 
@@ -66,7 +66,7 @@ dependencies: [
 ]
 ```
 
-Next choose the permissions you need. But don't add all of them, because apple will reject app.
+Next choose the permissions you need. But don't add all of them, because apple [will reject app](#apple-review).
 
 ### CocoaPods:
 
@@ -192,7 +192,7 @@ controller.present(on: self)
 let authorized = SPPermissions.Permission.calendar.authorized
 ```
 
-For more details check [Request](#Request) section.
+For more details see [Request](#Request) section.
 
 ## Status
 
@@ -210,7 +210,7 @@ Also available are status for `denied` & `notDetermined`.
 
 ### List
 
-Native `UITableViewController`. Use it when you have more than two permissions. An example of how it is used:
+It's native `UITableViewController`. Use it when you have more than two permissions. An example of how it is used:
 
 ```swift
 let controller = SPPermissions.list([.calendar, .camera, .contacts])
@@ -264,7 +264,7 @@ controller.present(on: self)
 
 ### Native
 
-Request permissions with native alerts. You can request many permissions at once:
+Request permissions with native `UIAlertController`. You can request many permissions at once:
 
 ```swift
 let controller = SPPermissions.native([.calendar, .camera, .contacts])
@@ -286,12 +286,10 @@ extension Controller: SPPermissionsDataSource {
     func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) {
         
         // Here you can customise cell, like texts or colors.
-        
         cell.permissionTitleLabel.text = "Title"
         cell.permissionDescriptionLabel.text = "Description"
         
         // If you need change icon, choose one of this:
-        
         cell.permissionIconView.setPermissionType(.bluetooth)
         cell.permissionIconView.setCustomImage(UIImage.init(named: "custom-name"))
         cell.permissionIconView.setCustomView(YourView())
@@ -410,8 +408,8 @@ Also changed title for button. Instead of  `allow` now using `continue`. The App
 
 ## Russian Community
 
-Я веду [телеграм канал](https://sparrowcode.by/telegram), там публикую новости и туториалы.
-С проблемой помогут [в нашем чате](https://sparrowcode.by/telegram/chat).
+Я веду [телеграм-канал](https://sparrowcode.by/telegram), там публикую новости и туториалы.<br>
+С проблемой помогут [в чате](https://sparrowcode.by/telegram/chat).
 
 Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/youtube):
 
