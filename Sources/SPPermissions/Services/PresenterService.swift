@@ -39,7 +39,7 @@ enum PresenterService {
         let alertController = UIAlertController(title: texts.titleText, message: texts.descriptionText, preferredStyle: .alert)
         alertController.addAction(.init(title: texts.cancelText, style: .cancel))
         alertController.addAction(.init(title: texts.actionText, style: .default, handler: { _ in
-            OpenService.openSettings()
+            permission.openSettingPage()
         }))
         controller.present(alertController, animated: true, completion: nil)
     }
