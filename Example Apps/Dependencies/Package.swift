@@ -17,7 +17,7 @@ let package = Package(
     ],
     dependencies: [
         Package.Dependency.package(
-            name: "SparrowKit", url: "https://github.com/ivanvorobei/SparrowKit", .branch("main")
+            name: "SparrowKit", url: "https://github.com/ivanvorobei/SparrowKit", .upToNextMajor(from: "3.4.3")
         ),
         Package.Dependency.package(
             name: "SPPermissions", path: "SPPermissions"

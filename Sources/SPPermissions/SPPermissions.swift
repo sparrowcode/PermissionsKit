@@ -131,6 +131,21 @@ public enum SPPermissions {
             return Images.permission_icon(for: type)
         }
         
+        /**
+         SPPermissions: Open settings page.
+         For most permissions its app page in settings app.
+         You can overide it if your permission need open custom page.
+         */
+        @available(iOSApplicationExtension, unavailable)
+        open func openSettingPage() {
+            DispatchQueue.main.async {
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: nil)
+                }
+            }
+        }
+        
         // MARK: Must Ovveride
         
         /**
@@ -152,20 +167,6 @@ public enum SPPermissions {
          */
         open func request(completion: @escaping ()->Void) {
             preconditionFailure("This method must be overridden.")
-        }
-        
-        @available(iOSApplicationExtension, unavailable)
-        private func openSystemSettings() {
-            DispatchQueue.main.async {
-                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
-                if UIApplication.shared.canOpenURL(settingsUrl) {
-                    UIApplication.shared.open(settingsUrl, completionHandler: nil)
-                }
-            }
-        }
-        
-        open func openSettingPage() {
-            self.openSystemSettings()
         }
         
         // MARK: Internal

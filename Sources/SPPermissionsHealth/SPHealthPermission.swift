@@ -59,7 +59,9 @@ public class SPHealthPermission: SPPermissions.Permission {
         }
     }
     
-    public override var canBePresentWithCustomInterface: Bool { return false }
+    
+    
+    public override var canBePresentWithCustomInterface: Bool { false }
     
     // MARK: - Locked
     
