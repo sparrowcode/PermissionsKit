@@ -6,7 +6,7 @@
     <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/native-request.png?version=8" height="260"/>
 </p>
 
-Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode, and localizations. Also you can check state of permissions, available are: `.authorized`, `.denied` & `.notDetermined`.
+Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode and has ready localizations. Also you can check state of permissions, available are: `.authorized`, `.denied` & `.notDetermined`.
 
 ### Supported Permissions
 
