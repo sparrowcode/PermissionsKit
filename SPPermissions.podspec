@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name = "SPPermissions"
   s.version = "7.0.1"
-  s.summary = "Ask permissions on Swift. Available List, Dialog & Native interface. Can check state permission. Support SwiftUI."
+  s.summary = "Ask permissions with ready-use interface. You can check status permission and if it has been requested before. Support SwiftUI."
   s.homepage = "https://github.com/ivanvorobei/SPPermissions"
   s.source = { :git => "https://github.com/ivanvorobei/SPPermissions.git", :tag => s.version }
   s.license = { :type => "MIT", :file => "LICENSE" }
