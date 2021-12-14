@@ -1,9 +1,9 @@
 # SPPermissions
 
 <p aligment="left">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/list-style.png?version=5" height="290"/>
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/dialog-style.png?version=5" height="290"/>
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/native-request.png?version=5" height="290"/>
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/list-style.png?version=6" height="290"/>
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/dialog-style.png?version=6" height="290"/>
+    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/native-request.png?version=6" height="290"/>
 </p>
 
 Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode, and localizations. Also you can check state of permissions, available are: `.authorized`, `.denied` & `.notDetermined`.
@@ -62,7 +62,7 @@ Once you have your Swift package set up, adding as a dependency is as easy as ad
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ivanvorobei/SPPermissions", .upToNextMajor(from: "6.8.4"))
+    .package(url: "https://github.com/ivanvorobei/SPPermissions", .upToNextMajor(from: "7.0.1"))
 ]
 ```
 
