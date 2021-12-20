@@ -2,10 +2,10 @@
 name: Question
 about: Something is not clear with the project
 title: ''
-labels: ''
+labels: question
 assignees: ivanvorobei
 
 ---
 
-**Describe the problem that you catch**
+**Describe the Problem**
 A clear and concise description of what you want to do.

@@ -6,10 +6,10 @@ labels: bug
 assignees: ivanvorobei
 ---
 
-**Summary**
- - iOS Version [e.g. 14.5.1]
- - Framework Version [e.g. 3.0.8]
+**Details**
+ - iOS Version [e.g. 15.2]
+ - Framework Version [e.g. 1.0.2]
  - Installed via [e.g. SPM, Cocoapods, Manually]
  
-**Describe the bug**
+**Describe the Bug**
 A clear and concise description of what the bug is.
