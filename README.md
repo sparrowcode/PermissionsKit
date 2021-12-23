@@ -414,3 +414,5 @@ Also changed title for button. Instead of  `allow` now using `continue`. The App
 Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/youtube):
 
 [![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://ivanvorobei.by/youtube)
+
+<a href="https://www.producthunt.com/posts/sppermissions-v7?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-sppermissions-v7" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=324065&theme=light" alt="SPPermissions V7 - Ask permissions and check its state with ready-use interface | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
