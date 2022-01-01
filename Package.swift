@@ -92,6 +92,12 @@ let package = Package(
             ]
         ),
         .target(
+            name: "SPPermissionsLocationExtension",
+            swiftSettings: [
+                .define("SPPERMISSIONS_SPM")
+            ]
+        ),
+        .target(
             name: "SPPermissionsCamera",
             dependencies: [.target(name: "SPPermissions")],
             swiftSettings: [
@@ -157,7 +163,10 @@ let package = Package(
         ),
         .target(
             name: "SPPermissionsLocationWhenInUse",
-            dependencies: [.target(name: "SPPermissions")],
+            dependencies: [
+                .target(name: "SPPermissions"),
+                .target(name: "SPPermissionsLocationExtension")
+            ],
             swiftSettings: [
                 .define("SPPERMISSIONS_LOCATION_WHENINUSE"),
                 .define("SPPERMISSIONS_SPM")
@@ -165,7 +174,10 @@ let package = Package(
         ),
         .target(
             name: "SPPermissionsLocationAlways",
-            dependencies: [.target(name: "SPPermissions")],
+            dependencies: [
+                .target(name: "SPPermissions"),
+                .target(name: "SPPermissionsLocationExtension")
+            ],
             swiftSettings: [
                 .define("SPPERMISSIONS_LOCATION_ALWAYS"),
                 .define("SPPERMISSIONS_SPM")

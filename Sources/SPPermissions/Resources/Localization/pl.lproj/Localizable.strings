@@ -62,14 +62,6 @@
 
 "permission location always description" = "Zezwalaj na dostęp do swojej lokalizacji";
 
-"permission location precise when in use name" = "Precyzyjna lokalizacja podczas użytkowania";
-
-"permission location precise always name" = "Dokładna lokalizacja zawsze";
-
-"permission location precise when in use description" = "Zezwalaj na dostęp do swojej dokładnej lokalizacji";
-
-"permission location precise always description" = "Zezwalaj na dostęp do swojej dokładnej lokalizacji";
-
 "permission tracking name" = "Śledzenie";
 
 "permission tracking description" = "Zezwalaj na dostęp do danych związanych z aplikacją";

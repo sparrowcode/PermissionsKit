@@ -19,12 +19,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_LOCATION_WHENINUSE
+#if SPPERMISSIONS_SPM
+import SPPermissions
+import SPPermissionsLocationExtension
+#endif
 
+#if SPPERMISSIONS_LOCATION_WHENINUSE
 import Foundation
 import MapKit
 
-class SLocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
+class SPLocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
         
     // MARK: - Location Manager
     
@@ -45,7 +49,6 @@ class SLocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
         self.completionHandler = completionHandler
         
         let status = CLLocationManager.authorizationStatus()
-        
         switch status {
         case .notDetermined:
             locationManager.delegate = self
@@ -60,7 +63,7 @@ class SLocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
     
     // MARK: - Init
     
-    static var shared: SLocationWhenInUseHandler?
+    static var shared: SPLocationWhenInUseHandler?
     
     override init() {
         super.init()

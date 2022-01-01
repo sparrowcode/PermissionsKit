@@ -19,8 +19,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS) && SPPERMISSIONS_LOCATION_ALWAYS
+#if SPPERMISSIONS_SPM
+import SPPermissions
+import SPPermissionsLocationExtension
+#endif
 
+#if os(iOS) && SPPERMISSIONS_LOCATION_ALWAYS
 import Foundation
 import MapKit
 

@@ -21,6 +21,7 @@
 
 #if SPPERMISSIONS_SPM
 import SPPermissions
+import SPPermissionsLocationExtension
 #endif
 
 #if os(iOS) && SPPERMISSIONS_LOCATION_ALWAYS
@@ -63,9 +64,22 @@ public class SPLocationAlwaysPermission: SPPermissions.Permission {
         }
     }
     
+    public var isPrecise: Bool {
+        #if os(iOS)
+        if #available(iOS 14.0, *) {
+            switch CLLocationManager().accuracyAuthorization {
+            case .fullAccuracy: return true
+            case .reducedAccuracy: return false
+            @unknown default: return false
+            }
+        }
+        #endif
+        return false
+    }
+    
     public override func request(completion: @escaping () -> Void) {
         SPLocationAlwaysHandler.shared = SPLocationAlwaysHandler()
-        SPLocationAlwaysHandler.shared?.requestPermission {
+        SPLocationAlwaysHandler.shared?.requestPermission() {
             DispatchQueue.main.async {
                 completion()
                 SPLocationAlwaysHandler.shared = nil

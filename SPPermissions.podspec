@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SPPermissions"
-  s.version = "7.0.1"
+  s.version = "7.1.0"
   s.summary = "Ask permissions with ready-use interface. You can check status permission and if it has been requested before. Support SwiftUI."
   s.homepage = "https://github.com/ivanvorobei/SPPermissions"
   s.source = { :git => "https://github.com/ivanvorobei/SPPermissions.git", :tag => s.version }
@@ -93,9 +93,14 @@ Pod::Spec.new do |s|
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_SPEECH SPPERMISSIONS_COCOAPODS"
     }
   end
+  
+  s.subspec 'LocationExtension' do |subspec|
+    subspec.source_files = "Sources/SPPermissionsLocationExtension/**/*.swift"
+  end
 
   s.subspec 'LocationWhenInUse' do |subspec|
     subspec.dependency 'SPPermissions/Core'
+    subspec.dependency 'SPPermissions/LocationExtension'
     subspec.source_files = "Sources/SPPermissionsLocationWhenInUse/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_LOCATION_WHENINUSE SPPERMISSIONS_COCOAPODS"
@@ -104,6 +109,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'LocationAlways' do |subspec|
     subspec.dependency 'SPPermissions/Core'
+    subspec.dependency 'SPPermissions/LocationExtension'
     subspec.source_files = "Sources/SPPermissionsLocationAlways/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSIONS_LOCATION_ALWAYS SPPERMISSIONS_COCOAPODS"

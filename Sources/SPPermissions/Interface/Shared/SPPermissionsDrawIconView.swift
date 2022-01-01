@@ -82,10 +82,6 @@ public class SPPermissionsDrawIconView: UIView {
         case .faceID, .siri, .health:
             // Not implemented old style icons.
             break
-        case .locationWhenInUsePrecise:
-            DrawService.drawLocations(frame: rect, resizing: .aspectFit, color: tintColor)
-        case .locationAlwaysPrecise:
-            DrawService.drawLocations(frame: rect, resizing: .aspectFit, color: tintColor)
         case .none:
             break
         }

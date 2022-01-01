@@ -38,6 +38,7 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 - [Imports](#imports)
 - [Quick Start](#quick-start)
 - [Status](#status)
+    - [Location](#location)
 - [Request](#request)
     - [List](#list)
     - [Dialog](#dialog)
@@ -53,7 +54,7 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 
 ## Installation
 
-Ready to use on iOS 11+, and supports iOS, tvOS, and SwiftUI.
+Ready to use on iOS 11+. Supports iOS, tvOS, and `SwiftUI`.
 
 ### Swift Package Manager
 
@@ -63,7 +64,7 @@ Once you have your Swift package set up, adding as a dependency is as easy as ad
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ivanvorobei/SPPermissions", .upToNextMajor(from: "7.0.1"))
+    .package(url: "https://github.com/ivanvorobei/SPPermissions", .upToNextMajor(from: "7.1.0"))
 ]
 ```
 
@@ -204,6 +205,16 @@ let authorized = SPPermissions.Permission.calendar.authorized
 ```
 
 Also available are status for `denied` & `notDetermined`.
+
+### Location
+
+For location user can granted `precise` or not. For get state for it, call this:
+
+```swift
+if SPPermissions.Permission.locationWhenInUse.isPrecise { ... }
+```
+
+Same for `.locationAlways`.
 
 ## Request
 

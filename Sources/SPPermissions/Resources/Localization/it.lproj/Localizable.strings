@@ -62,14 +62,6 @@
 
 "permission location always description" = "Consenti di accedere alla tua posizione";
 
-"permission location precise when in use name" = "Posizione precisa quando si usa";
-
-"permission location precise always name" = "Posizione precisa sempre";
-
-"permission location precise when in use description" = "Consenti di accedere alla tua posizione precisa";
-
-"permission location precise always description" = "Consenti di accedere alla tua posizione precisa";
-
 "permission tracking name" = "Tracking";
 
 "permission tracking description" = "Consenti di accedere ai dati relativi all'app";

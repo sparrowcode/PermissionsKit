@@ -62,14 +62,6 @@
 
 "permission location always description" = "访问您的位置";
 
-"permission location precise when in use name" = "使用时的精确定位";
-
-"permission location precise always name" = "始终保持精确的位置";
-
-"permission location precise when in use description" = "允许访问您的精确位置";
-
-"permission location precise always description" = "允许访问您的精确位置";
-
 "permission tracking name" = "跟踪";
 
 "permission tracking description" = "允许访问 App 相关的数据";

@@ -62,14 +62,6 @@
 
 "permission location always description" = "Allow to access your location";
 
-"permission location precise when in use name" = "Precise Location When Use";
-
-"permission location precise always name" = "Precise Location Always";
-
-"permission location precise when in use description" = "Allow to access your precise location";
-
-"permission location precise always description" = "Allow to access your precise location";
-
 "permission tracking name" = "Tracking";
 
 "permission tracking description" = "Allow to access app-related data";
