@@ -49,7 +49,6 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 - [Localizations](#localizations)
 - [Keys in Info.plist](#keys-in-infoplist)
 - [Apple Review](#apple-review)
-- [Social](#social)
 - [Russian Community](#russian-community)
 
 ## Installation
