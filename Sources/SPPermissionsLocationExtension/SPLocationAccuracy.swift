@@ -19,45 +19,40 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
-#endif
-
-#if SPPERMISSIONS_LOCATION_WHENINUSE
-
 import Foundation
 import MapKit
 
-public extension SPPermissions.Permission {
+extension CLLocationManager {
     
-    static var locationWhenInUsePrecise: SPLocationWhenInUsePrecisePermission  {
-        return SPLocationWhenInUsePrecisePermission ()
+    open func setAccuracy(_ value: SPLocationAccuracy) {
+        desiredAccuracy = value.coreLocationAccuracy
     }
 }
 
-public class SPLocationWhenInUsePrecisePermission: SPLocationWhenInUsePermission {
+public enum SPLocationAccuracy {
     
-    public override var type: SPPermissions.PermissionType { .locationWhenInUsePrecise}
+    case best
+    case bestForNavigation
+    case nearestTenMeters
+    case hundredMeters
+    case kilometer
+    case threeKilometers
+    case reduced
     
-    public override var status: SPPermissions.PermissionStatus {
-        let whenInUseAuthorizationStatus = SPLocationWhenInUsePermission().status
-
-        let hasPrecision: Bool = {
-            #if os(iOS)
-            if #available(iOS 14.0, *), CLLocationManager().accuracyAuthorization != .fullAccuracy {
-                return false
+    var coreLocationAccuracy: CLLocationAccuracy {
+        switch self {
+        case .best: return kCLLocationAccuracyBest
+        case .bestForNavigation: return  kCLLocationAccuracyBestForNavigation
+        case .nearestTenMeters: return kCLLocationAccuracyNearestTenMeters
+        case .hundredMeters: return kCLLocationAccuracyHundredMeters
+        case .kilometer: return kCLLocationAccuracyKilometer
+        case .threeKilometers: return  kCLLocationAccuracyThreeKilometers
+        case .reduced:
+            if #available(iOS 14.0, *) {
+                return kCLLocationAccuracyReduced
+            } else {
+                return kCLLocationAccuracyThreeKilometers
             }
-            #endif
-            return true
-        }()
-        
-        switch whenInUseAuthorizationStatus {
-        #if os(iOS)
-        case .authorized: return hasPrecision ? .authorized : .denied
-        #endif
-        default: return whenInUseAuthorizationStatus
         }
     }
 }
-
-#endif

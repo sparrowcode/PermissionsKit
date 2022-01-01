@@ -62,14 +62,6 @@
 
 "permission location always description" = "السماح للوصول إلى موقعك";
 
-"permission location precise when in use name" = "الموقع الدقيق عند الاستخدام";
-
-"permission location precise always name" = "الموقع الدقيق دائمًا";
-
-"permission location precise when in use description" = "اسمح بالوصول إلى موقعك الدقيق";
-
-"permission location precise always description" = "اسمح بالوصول إلى موقعك الدقيق";
-
 "permission tracking name" = "تتبع";
 
 "permission tracking description" = "السماح بالوصول إلى البيانات المتعلقة بالتطبيق";

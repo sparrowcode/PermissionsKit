@@ -21,10 +21,10 @@
 
 #if SPPERMISSIONS_SPM
 import SPPermissions
+import SPPermissionsLocationExtension
 #endif
 
 #if SPPERMISSIONS_LOCATION_WHENINUSE
-
 import Foundation
 import MapKit
 
@@ -63,12 +63,25 @@ public class SPLocationWhenInUsePermission: SPPermissions.Permission {
         }
     }
     
+    public var isPrecise: Bool {
+        #if os(iOS)
+        if #available(iOS 14.0, *) {
+            switch CLLocationManager().accuracyAuthorization {
+            case .fullAccuracy: return true
+            case .reducedAccuracy: return false
+            @unknown default: return false
+            }
+        }
+        #endif
+        return false
+    }
+    
     public override func request(completion: @escaping () -> Void) {
-        SLocationWhenInUseHandler.shared = SLocationWhenInUseHandler()
-        SLocationWhenInUseHandler.shared?.requestPermission {
+        SPLocationWhenInUseHandler.shared = SPLocationWhenInUseHandler()
+        SPLocationWhenInUseHandler.shared?.requestPermission() {
             DispatchQueue.main.async {
                 completion()
-                SLocationWhenInUseHandler.shared = nil
+                SPLocationWhenInUseHandler.shared = nil
             }
         }
     }

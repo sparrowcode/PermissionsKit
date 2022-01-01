@@ -43,7 +43,7 @@ import SPPermissionsHealth
 
 class RootController: SPTableViewController {
     
-    var availablePermissions: [SPPermissions.Permission] = [.camera, .photoLibrary, .notification, .microphone, .calendar, .contacts, .reminders, .speech, .locationWhenInUse, .locationAlways, .locationWhenInUsePrecise, .locationAlwaysPrecise, .motion, .mediaLibrary, .bluetooth, /*.tracking,*/ .faceID, .siri, .health]
+    var availablePermissions: [SPPermissions.Permission] = [.camera, .photoLibrary, .notification, .microphone, .calendar, .contacts, .reminders, .speech, .locationWhenInUse, .locationAlways, .motion, .mediaLibrary, .bluetooth, /*.tracking,*/ .faceID, .siri, .health]
     
     var selectedPermissions: [SPPermissions.Permission] = []
     
@@ -66,7 +66,7 @@ class RootController: SPTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Choose Style"
-        
+        SPPermissions.Permission.locationWhenInUse.isPrecise
         // Available styles: List, Dialog & Native.
         let segmentedControl = UISegmentedControl(items: ["List", "Dialog", "Native"])
         navigationItem.titleView = segmentedControl

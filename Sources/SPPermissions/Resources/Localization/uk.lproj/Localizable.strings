@@ -64,14 +64,6 @@
 
 "permission tracking name" = "Відстеження";
 
-"permission location precise when in use name" = "Точне розташування під час використання";
-
-"permission location precise always name" = "Завжди точне розташування";
-
-"permission location precise when in use description" = "Надайте доступ до вашого точного місцезнаходження";
-
-"permission location precise always description" = "Надайте доступ до вашого точного місцезнаходження";
-
 "permission tracking description" = "Дозволити доступ до даних, пов’язаних із додатками";
 
 "permission faceid name" = "FaceID";

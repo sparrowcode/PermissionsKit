@@ -62,14 +62,6 @@
 
 "permission location always description" = "Toegang tot uw locatie toestaan";
 
-"permission location precise when in use name" = "Exacte locatie tijdens gebruik";
-
-"permission location precise always name" = "Exacte Locatie Altijd";
-
-"permission location precise when in use description" = "Toegang tot uw exacte locatie toestaan";
-
-"permission location precise always description" = "Toegang tot uw exacte locatie toestaan";
-
 "permission tracking name" = "Volgen";
 
 "permission tracking description" = "Toegang geven tot app-gerelateerde gegevens";
