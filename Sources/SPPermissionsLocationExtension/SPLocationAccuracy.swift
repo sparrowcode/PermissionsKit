@@ -48,7 +48,7 @@ public enum SPLocationAccuracy {
         case .kilometer: return kCLLocationAccuracyKilometer
         case .threeKilometers: return  kCLLocationAccuracyThreeKilometers
         case .reduced:
-            if #available(iOS 14.0, *) {
+            if #available(iOS 14.0, tvOS 14.0, watchOS 7.0, *) {
                 return kCLLocationAccuracyReduced
             } else {
                 return kCLLocationAccuracyThreeKilometers
