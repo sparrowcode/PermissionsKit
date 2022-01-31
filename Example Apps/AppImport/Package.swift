@@ -13,7 +13,7 @@ let package = Package(
         .library(name: "AppImport", targets: ["AppImport"]),
     ],
     dependencies: [
-        .package(name: "SparrowKit", url: "https://github.com/ivanvorobei/SparrowKit", .upToNextMajor(from: "3.4.3")),
+        .package(name: "SparrowKit", url: "https://github.com/ivanvorobei/SparrowKit", .upToNextMajor(from: "3.5.1")),
         .package(name: "SPPermissions", path: "SPPermissions")
     ],
     targets: [

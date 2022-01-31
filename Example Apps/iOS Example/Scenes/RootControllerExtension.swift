@@ -52,6 +52,14 @@ extension RootController {
             cell?.accessoryType = .checkmark
             selectedPermissions.append(permission)
         }
+        
+        print("--- \(permission.localisedName) ---")
+        switch permission.status {
+        case .authorized: print("authorised")
+        case .denied: print("authorised")
+        case .notDetermined: print("notDetermined")
+        default: break
+        }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
