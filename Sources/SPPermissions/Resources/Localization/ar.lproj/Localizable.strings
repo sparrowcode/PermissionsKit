@@ -1,66 +1,66 @@
-"action allow" = "يكمل";
+"action allow" = "استمرار";
 
-"action allowed" = "مسموح";
+"action allowed" = "تم السماح";
 
-"titles header" = "تحتاج إذن";
+"titles header" = "إدارة الصلاحيات";
 
-"titles sub header" = "طلب أذونات";
+"titles sub header" = "الصلاحيات";
 
-"titles description" = "هذه هي الأذونات التي يتطلبها التطبيق للعمل بشكل صحيح. يرجى الاطلاع على وصف لكل إذن.";
+"titles description" = "هذه الصلاحيات التي يتطلبها التطبيق ليعمل بشكل صحيح.";
 
-"titles comment" = "الأذونات ضرورية للتطبيق لكي يعمل ويعمل بشكل صحيح. الدفع ليست أذونات مطلوبة";
+"titles comment" = "منح الصلاحيات يمكنك من تحقيق أقصى إستفادة من مميزات التطبيق";
 
-"permission camera name" = "آلة تصوير";
+"permission camera name" = "الكاميرا";
 
-"permission camera description" = "السماح للتطبيق باستخدام الكاميرا";
+"permission camera description" = "السماح للتطبيق بالوصول الى الكاميرا";
 
-"permission photoLibrary name" = "مكتبة الصور";
+"permission photoLibrary name" = "الاستوديو";
 
-"permission photoLibrary description" = "الوصول لحفظ الصور في معرض الصور الخاص بك";
+"permission photoLibrary description" = "ليتمكن التطبيق من حفظ او استيراد الصور من والى الاستوديو";
 
-"permission microphone name" = "ميكروفون";
+"permission microphone name" = "المايكروفون";
 
-"permission microphone description" = "السماح بتسجيل الصوت من التطبيق";
+"permission microphone description" = "السماح بإستخدام المايكروفون";
 
-"permission calendar name" = "تقويم";
+"permission calendar name" = "التقويم";
 
-"permission calendar description" = "يمكن للتطبيق إضافة الأحداث إلى التقويم";
+"permission calendar description" = "السماح بالوصول الكامل الى التقويم";
 
 "permission contacts name" = "جهات الاتصال";
 
-"permission contacts description" = "الوصول إلى جهات الاتصال والهواتف الخاصة بك";
+"permission contacts description" = "الوصول إلى جهات الاتصال";
 
-"permission reminders name" = "تذكير";
+"permission reminders name" = "التذكيرات";
 
-"permission reminders description" = "يمكن للتطبيق إنشاء مهمة جديدة";
+"permission reminders description" = "السماح للتطبيق بالوصول الكامل الى التذكيرات";
 
-"permission speech name" = "خطاب";
+"permission speech name" = "التحدث";
 
-"permission speech description" = "اسمح للتحقق من صوتك";
+"permission speech description" = "السماح بالتحقق من صوتك";
 
-"permission motion name" = "اقتراح";
+"permission motion name" = "الحركة";
 
 "permission motion description" = "السماح بتسجيل البيانات المتعلقة بالحركة والبيئة";
 
-"permission media library name" = "مكتبة الوسائط";
+"permission media library name" = "الموسيقى";
 
-"permission media library description" = "السماح للتحقق من وسائل الإعلام الخاصة بك";
+"permission media library description" = "السماح للوصول الى مكتبة الموسيقى";
 
-"permission bluetooth name" = "بلوتوث";
+"permission bluetooth name" = "البلوتوث";
 
-"permission bluetooth description" = "اسمح بالوصول إلى البلوتوث";
+"permission bluetooth description" = "السماح بإستخدام البلوتوث";
 
-"permission notification name" = "تنبيه";
+"permission notification name" = "الإشعارات";
 
-"permission notification description" = "احصل على معلومات مهمة دون فتح التطبيق.";
+"permission notification description" = "لإستقبال التنبيهات دون فتح التطبيق.";
 
 "permission location when in use name" = "الموقع عند الاستخدام";
 
-"permission location when in use description" = "السماح للوصول إلى موقعك";
+"permission location when in use description" = "السماح للوصول إلى موقعك عند استخدام التطبيق فقط";
 
 "permission location always name" = "الموقع دائما";
 
-"permission location always description" = "السماح للوصول إلى موقعك";
+"permission location always description" = "السماح دائماً للوصول إلى موقعك";
 
 "permission tracking name" = "تتبع";
 
@@ -68,22 +68,22 @@
 
 "permission faceid name" = "FaceID";
 
-"permission faceid description" = "السماح باستخدام هوية Face ID";
+"permission faceid description" = "السماح باستخدام بصمة الوجه Face ID";
 
-"permission siri name" = "Siri";
+"permission siri name" = "سيري";
 
-"permission siri description" = "ستتمكن من استخدام Siri";
+"permission siri description" = "تمكين استخدام سيري";
 
-"permission health name" = "صحة";
+"permission health name" = "الصحة";
 
 "permission health description" = "السماح بالوصول إلى البيانات الصحية";
 
-"denied alert title" = "طلب الاذن مرفوض";
+"denied alert title" = "تعديل الرفض";
 
-"denied alert description" = "من فضلك ، انتقل إلى الإعدادات واسمح بالإذن.";
+"denied alert description" = "لإعادة منح الصلاحيات يرجى الذهاب الى الإعدادات";
 
-"denied alert action" = "إعدادات";
+"denied alert action" = "الذهاب الى الإعدادات";
 
-"denied alert cancel" = "يلغي";
+"denied alert cancel" = "الغاء";
 
-"action denied" = "رفض";
+"action denied" = "تم الرفض";
