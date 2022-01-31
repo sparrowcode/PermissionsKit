@@ -70,7 +70,7 @@
 		F47CBB0D265182DC00A8A00F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F47CBB0F265182DC00A8A00F /* RootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
 		F47CBB16265186CD00A8A00F /* RootControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootControllerExtension.swift; sourceTree = "<group>"; };
-		F4C77E9E266D5A16001D5870 /* iOS Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS Example.entitlements"; sourceTree = "<group>"; };
+		F4C77E9E266D5A16001D5870 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		F4E350E32651BC8800D2CA45 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4FD4D2B2651008300B53BD9 /* SPPermissions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SPPermissions; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,12 +134,10 @@
 		F471BDB5264A5993000693BC /* iOS Example */ = {
 			isa = PBXGroup;
 			children = (
-				F4C77E9E266D5A16001D5870 /* iOS Example.entitlements */,
 				F471BDC8264A5B5F000693BC /* App */,
 				F471BDFC264A629A000693BC /* Recources */,
 				F471BDFB264A6291000693BC /* Scenes */,
 				F42F10C326524EA400D5B314 /* Localization */,
-				F471BDC4264A5995000693BC /* Info.plist */,
 			);
 			path = "iOS Example";
 			sourceTree = "<group>";
@@ -147,6 +145,8 @@
 		F471BDC8264A5B5F000693BC /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F471BDC4264A5995000693BC /* Info.plist */,
+				F4C77E9E266D5A16001D5870 /* Entitlements.entitlements */,
 				F471BDB6264A5993000693BC /* AppDelegate.swift */,
 				F4E350E32651BC8800D2CA45 /* LaunchScreen.storyboard */,
 			);
@@ -592,11 +592,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = "iOS Example/iOS Example.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "iOS Example/App/Entitlements.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5KKK9SKF79;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -613,7 +613,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "iOS Example/Info.plist";
+				INFOPLIST_FILE = "iOS Example/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -622,7 +622,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.opensource.sppermissions.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.opensource.sppermissions.ios2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(SPPERMISSIONS_FLAGS)";
@@ -668,11 +668,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = "iOS Example/iOS Example.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "iOS Example/App/Entitlements.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5KKK9SKF79;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -683,7 +683,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "iOS Example/Info.plist";
+				INFOPLIST_FILE = "iOS Example/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -691,7 +691,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.opensource.sppermissions.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.opensource.sppermissions.ios2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
