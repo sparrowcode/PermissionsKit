@@ -362,6 +362,7 @@ extension Controller: SPPermissionsDelegate {
 - Chinese Simplified Han `zh_Hans`
 - Italian `it`
 - Chinese Traditional `zh_Hant`
+- Persian `fa`
 
 If you want to add more, please, create folder `[language_id].lproj` and make a pull request. If you want to use your custom strings, check the [DataSource](#datasource) section.
 
