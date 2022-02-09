@@ -29,6 +29,8 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
     <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/siri.png" width="38">
 </p>
 
+Generate icons like in Settings with [SPSettingsIcons](https://github.com/sparrowcode/SPSettingsIcons).
+
 ## Navigate
 
 - [Installation](#installation)
