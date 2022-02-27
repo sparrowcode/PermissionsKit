@@ -1,9 +1,9 @@
 # SPPermissions
 
 <p aligment="left">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/list-style.png?version=8" height="260"/>
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/dialog-style.png?version=8" height="260"/>
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/v7/native-request.png?version=8" height="260"/>
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/v7/list-style.png?version=8" height="260"/>
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/v7/dialog-style.png?version=8" height="260"/>
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/v7/native-request.png?version=8" height="260"/>
 </p>
 
 Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode and has ready localizations. Also you can check state of permissions, available are `.authorized`, `.denied` & `.notDetermined`.
@@ -11,22 +11,22 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 ### Supported Permissions
 
 <p float="left">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/camera.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/photos.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/notifications.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/location.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/microphone.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/calendar.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/contacts.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/reminders.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/motion.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/music.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/speech.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/bluetooth.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/health.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/tracking.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/faceid.png" width="38">
-    <img src="https://cdn.ivanvorobei.by/github/sppermissions/permissions/siri.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/camera.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/photos.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/notifications.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/location.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/microphone.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/calendar.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/contacts.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/reminders.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/motion.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/music.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/speech.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/bluetooth.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/health.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/tracking.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/faceid.png" width="38">
+    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/siri.png" width="38">
 </p>
 
 Generate icons like in Settings with [SPSettingsIcons](https://github.com/sparrowcode/SPSettingsIcons).
@@ -312,7 +312,7 @@ extension Controller: SPPermissionsDataSource {
 
 ### Denied alert
 
-If a permission is denied, you can provide [an alert](https://cdn.ivanvorobei.by/github/sppermissions/v7/preview-denied-alert.png) to the user with an option to open settings. An example of how you can customise the alert text:
+If a permission is denied, you can provide [an alert](https://cdn.ivanvorobei.io/github/sppermissions/v7/preview-denied-alert.png) to the user with an option to open settings. An example of how you can customise the alert text:
 
 ```swift
 let texts = SPPermissionsDeniedAlertTexts()
@@ -425,6 +425,6 @@ Also changed title for button. Instead of  `allow` now using `continue`. The App
 Я веду [телеграм-канал](https://sparrowcode.io/telegram), там публикую новости и туториалы.<br>
 С проблемой помогут [в чате](https://sparrowcode.io/telegram/chat).
 
-Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/youtube):
+Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.io/youtube):
 
-[![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://ivanvorobei.by/youtube)
+[![Tutorials on YouTube](https://cdn.ivanvorobei.io/github/readme/youtube-preview.jpg)](https://ivanvorobei.io/youtube)

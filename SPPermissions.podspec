@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage = "https://github.com/ivanvorobei/SPPermissions"
   s.source = { :git => "https://github.com/ivanvorobei/SPPermissions.git", :tag => s.version }
   s.license = { :type => "MIT", :file => "LICENSE" }
-  s.author = { "Ivan Vorobei" => "hello@ivanvorobei.by" }
+  s.author = { "Ivan Vorobei" => "hello@ivanvorobei.io" }
 
   s.requires_arc = true
   s.ios.framework = 'UIKit'
