@@ -1,4 +1,4 @@
-# SPPermissions
+# SPPermissions [Sponsor via GitHub](https://github.com/sponsors/sparrowcode)
 
 <p aligment="left">
     <img src="https://cdn.ivanvorobei.io/github/sppermissions/v7/list-style.png?version=8" height="260"/>
