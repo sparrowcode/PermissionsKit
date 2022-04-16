@@ -31,13 +31,13 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 
 <p float="left">
     <a href="https://discord.gg/BfZQUG6pnh">
-        <img src="https://cdn.sparrowcode.io/github/badges/discord.png?version=1" height="52">
+        <img src="https://cdn.sparrowcode.io/github/badges/discord.png?version=2" height="52">
     </a>
     <a href="https://github.com/sponsors/sparrowcode">
-        <img src="https://cdn.sparrowcode.io/github/badges/github-sponsorship.png?version=1" height="52">
+        <img src="https://cdn.sparrowcode.io/github/badges/github-sponsorship.png?version=2" height="52">
     </a>
     <a href="https://sparrowcode.io/telegram/chat">
-        <img src="https://cdn.sparrowcode.io/github/badges/sparrowcode-telegram-chat.png?version=1" height="52">
+        <img src="https://cdn.sparrowcode.io/github/badges/sparrowcode-telegram-chat.png?version=2" height="52">
     </a>
 </p>
 
