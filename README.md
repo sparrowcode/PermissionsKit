@@ -35,13 +35,13 @@ Generate icons like in Settings with [SPSettingsIcons](https://github.com/sparro
 
 <p float="left">
     <a href="https://discord.gg/BfZQUG6pnh">
-        <img src="https://cdn.sparrowcode.io/github/badges/discord.png?version=1" height="40">
+        <img src="https://cdn.sparrowcode.io/github/badges/discord.png?version=1" height="60">
     </a>
     <a href="https://github.com/sponsors/sparrowcode">
-        <img src="https://cdn.sparrowcode.io/github/badges/github-sponsorship.png?version=1" height="40">
+        <img src="https://cdn.sparrowcode.io/github/badges/github-sponsorship.png?version=1" height="60">
     </a>
     <a href="https://sparrowcode.io/telegram/chat">
-        <img src="https://cdn.sparrowcode.io/github/badges/sparrowcode-telegram-chat.png?version=1" height="40">
+        <img src="https://cdn.sparrowcode.io/github/badges/sparrowcode-telegram-chat.png?version=1" height="60">
     </a>
 </p>
 
