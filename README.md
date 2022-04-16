@@ -74,7 +74,7 @@ Once you have your Swift package set up, adding as a dependency is as easy as ad
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ivanvorobei/PermissionsKit", .upToNextMajor(from: "8.0.0"))
+    .package(url: "https://github.com/sparrowcode/PermissionsKit", .upToNextMajor(from: "8.0.0"))
 ]
 ```
 
@@ -91,64 +91,64 @@ pod 'PermissionsKit/Notification', :git => 'https://github.com/sparrowcode/Permi
 Due to Apple's new policy regarding permission access you need to specifically define what kind of permissions you want to access using subspecs. For example if you want to access `Camera`, `Location` & `Microphone` you define the following:
 
 ```ruby
-pod 'PermissionsKit/Camera'
-pod 'PermissionsKit/LocationAlways'
-pod 'PermissionsKit/Microphone'
+pod 'PermissionsKit/CameraPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
+pod 'PermissionsKit/LocationAlwaysPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
+pod 'PermissionsKit/MicrophonePermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 
 <details><summary>Subspecs</summary>
 <p>
 
 ```ruby
-pod 'PermissionsKit/Camera'
+pod 'PermissionsKit/CameraPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/Contacts'
+pod 'PermissionsKit/ContactsPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/Calendar'
+pod 'PermissionsKit/CalendarPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/PhotoLibrary'
+pod 'PermissionsKit/PhotoLibraryPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/Notification'
+pod 'PermissionsKit/NotificationPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/Microphone'
+pod 'PermissionsKit/MicrophonePermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/Reminders'
+pod 'PermissionsKit/RemindersPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/SpeechRecognizer'
+pod 'PermissionsKit/SpeechRecognizerPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/LocationWhenInUse'
+pod 'PermissionsKit/LocationWhenInUsePermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/LocationAlways'
+pod 'PermissionsKit/LocationAlwaysPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/Motion'
+pod 'PermissionsKit/MotionPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/Music'
+pod 'PermissionsKit/MusicPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/Bluetooth'
+pod 'PermissionsKit/BluetoothPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/Tracking'
+pod 'PermissionsKit/TrackingPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/FaceID'
+pod 'PermissionsKit/FaceIDPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/Siri'
+pod 'PermissionsKit/SiriPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/Health'
+pod 'PermissionsKit/HealthPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 
 </p>
@@ -164,8 +164,8 @@ If you install via  [Swift Package Manager](#swift-package-manager), you shoud i
 
 ```swift
 import PermissionsKit
-import PermissionsKitCamera
-import PermissionsKitPhotoLibrary
+import CameraPermission
+import PhotoLibraryPermission
 ```
 
 It's required because library split to modules. After importing you'll see available permissions by typing `Permission.camera` for example.

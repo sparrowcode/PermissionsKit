@@ -17,7 +17,7 @@
                BlueprintIdentifier = "F4714D042652A46B00A8E4D2"
                BuildableName = "iOS SwiftUI Example.app"
                BlueprintName = "iOS SwiftUI Example"
-               ReferencedContainer = "container:SPPermissions.xcodeproj">
+               ReferencedContainer = "container:PermissionsKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "F4714D042652A46B00A8E4D2"
             BuildableName = "iOS SwiftUI Example.app"
             BlueprintName = "iOS SwiftUI Example"
-            ReferencedContainer = "container:SPPermissions.xcodeproj">
+            ReferencedContainer = "container:PermissionsKit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "F4714D042652A46B00A8E4D2"
             BuildableName = "iOS SwiftUI Example.app"
             BlueprintName = "iOS SwiftUI Example"
-            ReferencedContainer = "container:SPPermissions.xcodeproj">
+            ReferencedContainer = "container:PermissionsKit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

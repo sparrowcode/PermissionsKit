@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Camera' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitCamera/**/*.swift"
+    subspec.source_files = "Sources/CameraPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_CAMERA PERMISSIONSKIT_COCOAPODS"
     }
@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'PhotoLibrary' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitPhotoLibrary/**/*.swift"
+    subspec.source_files = "Sources/PhotoLibraryPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_PHOTOLIBRARY PERMISSIONSKIT_COCOAPODS"
     }
@@ -48,7 +48,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Notification' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitNotification/**/*.swift"
+    subspec.source_files = "Sources/NotificationPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_NOTIFICATION PERMISSIONSKIT_COCOAPODS"
     }
@@ -56,7 +56,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Microphone' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitMicrophone/**/*.swift"
+    subspec.source_files = "Sources/MicrophonePermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_MICROPHONE PERMISSIONSKIT_COCOAPODS"
     }
@@ -64,7 +64,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Calendar' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitCalendar/**/*.swift"
+    subspec.source_files = "Sources/CalendarPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_CALENDAR PERMISSIONSKIT_COCOAPODS"
     }
@@ -72,7 +72,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Contacts' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitContacts/**/*.swift"
+    subspec.source_files = "Sources/ContactsPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_CONTACTS PERMISSIONSKIT_COCOAPODS"
     }
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Reminders' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitReminders/**/*.swift"
+    subspec.source_files = "Sources/RemindersPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_REMINDERS PERMISSIONSKIT_COCOAPODS"
     }
@@ -88,20 +88,20 @@ Pod::Spec.new do |s|
 
   s.subspec 'SpeechRecognizer' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitSpeechRecognizer/**/*.swift"
+    subspec.source_files = "Sources/SpeechRecognizerPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_SPEECH PERMISSIONSKIT_COCOAPODS"
     }
   end
   
   s.subspec 'LocationExtension' do |subspec|
-    subspec.source_files = "Sources/PermissionsKitLocationExtension/**/*.swift"
+    subspec.source_files = "Sources/LocationExtension/**/*.swift"
   end
 
   s.subspec 'LocationWhenInUse' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.dependency 'PermissionsKit/LocationExtension'
-    subspec.source_files = "Sources/PermissionsKitLocationWhenInUse/**/*.swift"
+    subspec.source_files = "Sources/LocationWhenInUsePermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_LOCATION_WHENINUSE PERMISSIONSKIT_COCOAPODS"
     }
@@ -110,7 +110,7 @@ Pod::Spec.new do |s|
   s.subspec 'LocationAlways' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.dependency 'PermissionsKit/LocationExtension'
-    subspec.source_files = "Sources/PermissionsKitLocationAlways/**/*.swift"
+    subspec.source_files = "Sources/LocationAlwaysPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_LOCATION_ALWAYS PERMISSIONSKIT_COCOAPODS"
     }
@@ -118,7 +118,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Motion' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitMotion/**/*.swift"
+    subspec.source_files = "Sources/MotionPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_MOTION PERMISSIONSKIT_COCOAPODS"
     }
@@ -126,7 +126,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Music' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitMusic/**/*.swift"
+    subspec.source_files = "Sources/MusicPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_MUSIC PERMISSIONSKIT_COCOAPODS"
     }
@@ -134,7 +134,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Bluetooth' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitBluetooth/**/*.swift"
+    subspec.source_files = "Sources/BluetoothPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_BLUETOOTH PERMISSIONSKIT_COCOAPODS"
     }
@@ -142,7 +142,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Tracking' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitTracking/**/*.swift"
+    subspec.source_files = "Sources/TrackingPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_TRACKING PERMISSIONSKIT_COCOAPODS"
     }
@@ -150,7 +150,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'FaceID' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitFaceID/**/*.swift"
+    subspec.source_files = "Sources/FaceIDPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_FACEID PERMISSIONSKIT_COCOAPODS"
     }
@@ -158,7 +158,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'Siri' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitSiri/**/*.swift"
+    subspec.source_files = "Sources/SiriPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_SIRI PERMISSIONSKIT_COCOAPODS"
     }
@@ -166,7 +166,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'Health' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/PermissionsKitHealth/**/*.swift"
+    subspec.source_files = "Sources/HealthPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_HEALTH PERMISSIONSKIT_COCOAPODS"
     }

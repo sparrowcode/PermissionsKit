@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SPPermissions",
+    name: "PermissionsKit",
     defaultLocalization: "en",
     platforms: [
         .iOS(.v11),
@@ -12,231 +12,231 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "SPPermissionsCamera",
-            targets: ["SPPermissionsCamera"]
+            name: "CameraPermission",
+            targets: ["CameraPermission"]
         ),
         .library(
-            name: "SPPermissionsPhotoLibrary",
-            targets: ["SPPermissionsPhotoLibrary"]
+            name: "PhotoLibraryPermission",
+            targets: ["PhotoLibraryPermission"]
         ),
         .library(
-            name: "SPPermissionsNotification",
-            targets: ["SPPermissionsNotification"]
+            name: "NotificationPermission",
+            targets: ["NotificationPermission"]
         ),
         .library(
-            name: "SPPermissionsMicrophone",
-            targets: ["SPPermissionsMicrophone"]
+            name: "MicrophonePermission",
+            targets: ["MicrophonePermission"]
         ),
         .library(
-            name: "SPPermissionsCalendar",
-            targets: ["SPPermissionsCalendar"]
+            name: "CalendarPermission",
+            targets: ["CalendarPermission"]
         ),
         .library(
-            name: "SPPermissionsContacts",
-            targets: ["SPPermissionsContacts"]
+            name: "ContactsPermission",
+            targets: ["ContactsPermission"]
         ),
         .library(
-            name: "SPPermissionsReminders",
-            targets: ["SPPermissionsReminders"]
+            name: "RemindersPermission",
+            targets: ["RemindersPermission"]
         ),
         .library(
-            name: "SPPermissionsSpeechRecognizer",
-            targets: ["SPPermissionsSpeechRecognizer"]
+            name: "SpeechRecognizerPermission",
+            targets: ["SpeechRecognizerPermission"]
         ),
         .library(
-            name: "SPPermissionsLocationWhenInUse",
-            targets: ["SPPermissionsLocationWhenInUse"]
+            name: "LocationWhenInUsePermission",
+            targets: ["LocationWhenInUsePermission"]
         ),
         .library(
-            name: "SPPermissionsLocationAlways",
-            targets: ["SPPermissionsLocationAlways"]
+            name: "LocationAlwaysPermission",
+            targets: ["LocationAlwaysPermission"]
         ),
         .library(
-            name: "SPPermissionsMotion",
-            targets: ["SPPermissionsMotion"]
+            name: "MotionPermission",
+            targets: ["MotionPermission"]
         ),
         .library(
-            name: "SPPermissionsMusic",
-            targets: ["SPPermissionsMusic"]
+            name: "MusicPermission",
+            targets: ["MusicPermission"]
         ),
         .library(
-            name: "SPPermissionsBluetooth",
-            targets: ["SPPermissionsBluetooth"]
+            name: "BluetoothPermission",
+            targets: ["BluetoothPermission"]
         ),
         .library(
-            name: "SPPermissionsTracking",
-            targets: ["SPPermissionsTracking"]
+            name: "TrackingPermission",
+            targets: ["TrackingPermission"]
         ),
         .library(
-            name: "SPPermissionsFaceID",
-            targets: ["SPPermissionsFaceID"]
+            name: "FaceIDPermission",
+            targets: ["FaceIDPermission"]
         ),
         .library(
-            name: "SPPermissionsSiri",
-            targets: ["SPPermissionsSiri"]
+            name: "SiriPermission",
+            targets: ["SiriPermission"]
         ),
         .library(
-            name: "SPPermissionsHealth",
-            targets: ["SPPermissionsHealth"]
+            name: "HealthPermission",
+            targets: ["HealthPermission"]
         ),
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "SPPermissions",
+            name: "PermissionsKit",
             resources: [
                 .process("Resources")
             ],
             swiftSettings: [
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsLocationExtension",
+            name: "LocationExtension",
             swiftSettings: [
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsCamera",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "CameraPermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_CAMERA"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_CAMERA"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsPhotoLibrary",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "PhotoLibraryPermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_PHOTOLIBRARY"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_PHOTOLIBRARY"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsNotification",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "NotificationPermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_NOTIFICATION"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_NOTIFICATION"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsMicrophone",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "MicrophonePermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_MICROPHONE"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_MICROPHONE"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsCalendar",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "CalendarPermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_CALENDAR"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_CALENDAR"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsContacts",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "ContactsPermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_CONTACTS"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_CONTACTS"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsReminders",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "RemindersPermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_REMINDERS"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_REMINDERS"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsSpeechRecognizer",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "SpeechRecognizerPermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_SPEECH"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_SPEECH"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsLocationWhenInUse",
+            name: "LocationWhenInUsePermission",
             dependencies: [
-                .target(name: "SPPermissions"),
-                .target(name: "SPPermissionsLocationExtension")
+                .target(name: "PermissionsKit"),
+                .target(name: "LocationExtension")
             ],
             swiftSettings: [
-                .define("SPPERMISSIONS_LOCATION_WHENINUSE"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_LOCATION_WHENINUSE"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsLocationAlways",
+            name: "LocationAlwaysPermission",
             dependencies: [
-                .target(name: "SPPermissions"),
-                .target(name: "SPPermissionsLocationExtension")
+                .target(name: "PermissionsKit"),
+                .target(name: "LocationExtension")
             ],
             swiftSettings: [
-                .define("SPPERMISSIONS_LOCATION_ALWAYS"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_LOCATION_ALWAYS"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsMotion",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "MotionPermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_MOTION"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_MOTION"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsMusic",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "MusicPermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_MUSIC"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_MUSIC"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsBluetooth",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "BluetoothPermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_BLUETOOTH"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_BLUETOOTH"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsTracking",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "TrackingPermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_TRACKING"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_TRACKING"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsFaceID",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "FaceIDPermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_FACEID"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_FACEID"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsSiri",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "SiriPermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_SIRI"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_SIRI"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
         .target(
-            name: "SPPermissionsHealth",
-            dependencies: [.target(name: "SPPermissions")],
+            name: "HealthPermission",
+            dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("SPPERMISSIONS_HEALTH"),
-                .define("SPPERMISSIONS_SPM")
+                .define("PERMISSIONSKIT_HEALTH"),
+                .define("PERMISSIONSKIT_SPM")
             ]
         ),
     ],

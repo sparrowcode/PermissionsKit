@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F471BDB2264A5993000693BC"
-               BuildableName = "iOS Example.app"
-               BlueprintName = "iOS Example"
-               ReferencedContainer = "container:SPPermissions.xcodeproj">
+               BlueprintIdentifier = "F47CBAF62651826100A8A00F"
+               BuildableName = "tvOS Example.app"
+               BlueprintName = "tvOS Example"
+               ReferencedContainer = "container:PermissionsKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,7 +34,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = "en"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,10 +44,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F471BDB2264A5993000693BC"
-            BuildableName = "iOS Example.app"
-            BlueprintName = "iOS Example"
-            ReferencedContainer = "container:SPPermissions.xcodeproj">
+            BlueprintIdentifier = "F47CBAF62651826100A8A00F"
+            BuildableName = "tvOS Example.app"
+            BlueprintName = "tvOS Example"
+            ReferencedContainer = "container:PermissionsKit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,10 +61,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F471BDB2264A5993000693BC"
-            BuildableName = "iOS Example.app"
-            BlueprintName = "iOS Example"
-            ReferencedContainer = "container:SPPermissions.xcodeproj">
+            BlueprintIdentifier = "F47CBAF62651826100A8A00F"
+            BuildableName = "tvOS Example.app"
+            BlueprintName = "tvOS Example"
+            ReferencedContainer = "container:PermissionsKit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
