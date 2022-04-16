@@ -27,7 +27,7 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
     <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/siri.png" width="38">
 </p>
 
-### Comunity
+### Community
 
 <p float="left">
     <a href="https://discord.gg/BfZQUG6pnh">
