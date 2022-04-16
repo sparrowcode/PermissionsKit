@@ -3,7 +3,7 @@
 <p aligment="left">
     <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/v8/list-style.png?version=1" height="260"/>
     <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/v8/dialog-style.png?version=1" height="260"/>
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/v8/?version=1" height="260"/>
+    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/v8/native-request.png?version=1" height="260"/>
 </p>
 
 Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode and has ready localizations. Also you can check state of permissions, available are `.authorized`, `.denied` & `.notDetermined`.
@@ -34,9 +34,15 @@ Generate icons like in Settings with [SPSettingsIcons](https://github.com/sparro
 ### Comunity
 
 <p float="left">
-    [<img src="https://cdn.sparrowcode.io/github/badges/discord.png?version=1" height="80">](https://discord.gg/BfZQUG6pnh)
-    [<img src="https://cdn.sparrowcode.io/github/badges/github-sponsorship.png?version=1" height="80">](https://github.com/sponsors/sparrowcode)
-    [<img src="https://cdn.sparrowcode.io/github/badges/sparrowcode-telegram-chat.png?version=1" height="80">](https://sparrowcode.io/telegram/chat)
+    <a href="https://discord.gg/BfZQUG6pnh">
+        <img src="https://cdn.sparrowcode.io/github/badges/discord.png?version=1" height="80">
+    </a>
+    <a href="https://github.com/sponsors/sparrowcode">
+        <img src="https://cdn.sparrowcode.io/github/badges/github-sponsorship.png?version=1" height="80">
+    </a>
+    <a href="https://sparrowcode.io/telegram/chat">
+        <img src="https://cdn.sparrowcode.io/github/badges/sparrowcode-telegram-chat.png?version=1" height="80">
+    </a>
 </p>
 
 ## Navigate
