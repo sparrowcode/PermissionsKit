@@ -8,10 +8,6 @@
 
 Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode and has ready localizations. Also you can check state of permissions, available are `.authorized`, `.denied` & `.notDetermined`.
 
-### Supported Permissions
-
-Generate icons like in Settings with [SPSettingsIcons](https://github.com/sparrowcode/SPSettingsIcons).
-
 <p float="left">
     <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/camera.png" width="38">
     <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/photos.png" width="38">
