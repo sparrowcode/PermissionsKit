@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,17 +24,16 @@ import PermissionsKit
 #endif
 
 #if PERMISSIONSKIT_PHOTOLIBRARY
-
 import Photos
 
 public extension Permission {
-
-    static var photoLibrary: SPPhotoLibraryPermission {
-        return SPPhotoLibraryPermission()
+    
+    static var photoLibrary: PhotoLibraryPermission {
+        return PhotoLibraryPermission()
     }
 }
 
-public class SPPhotoLibraryPermission: Permission {
+public class PhotoLibraryPermission: Permission {
     
     open override var kind: Permission.Kind { .photoLibrary }
     

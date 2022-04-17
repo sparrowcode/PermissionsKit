@@ -1,20 +1,20 @@
 import SwiftUI
 
-import SPPermissions
-import SPPermissionsCamera
-import SPPermissionsPhotoLibrary
-import SPPermissionsNotification
-import SPPermissionsMicrophone
-import SPPermissionsCalendar
-import SPPermissionsContacts
-import SPPermissionsReminders
-import SPPermissionsSpeechRecognizer
-import SPPermissionsLocationWhenInUse
-import SPPermissionsLocationAlways
-import SPPermissionsMotion
-import SPPermissionsMusic
-import SPPermissionsBluetooth
-import SPPermissionsTracking
+import PermissionsKit
+import CameraPermission
+import PhotoLibraryPermission
+import NotificationPermission
+import MicrophonePermission
+import CalendarPermission
+import ContactsPermission
+import RemindersPermission
+import SpeechRecognizerPermission
+import LocationWhenInUsePermission
+import LocationAlwaysPermission
+import MotionPermission
+import MediaLibraryPermission
+import BluetoothPermission
+import TrackingPermission
 
 struct ContentView: View {
     
@@ -26,7 +26,7 @@ struct ContentView: View {
         }
         .padding()
         .sheet(isPresented: $showingPermisionsController) {
-            SPPermissionsList(permissions: [.camera, .contacts])
+            PermissionsList(permissions: [.camera, .contacts])
         }
     }
 }

@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,41 +21,27 @@
 
 import UIKit
 
-/**
- SPPermissions: Get notifications about events.
- */
-@available(iOSApplicationExtension, unavailable)
-public protocol SPPermissionsDelegate: AnyObject {
+public class DeniedPermissionAlertTexts: NSObject {
     
-    /**
-     SPPermissions: Called when permission allowed.
-     
-     - parameter permission: For which permission action invocation.
-     */
-    func didAllowPermission(_ permission: Permission)
+    public var titleText = Texts.denied_alert_title
+    public var descriptionText = Texts.denied_alert_description
+    public var actionText = Texts.denied_alert_action
+    public var cancelText = Texts.denied_alert_cancel
     
-    /**
-     SPPermissions: Called when permission denied.
-     
-     - parameter permission: For which permission action invocation.
-     */
-    func didDeniedPermission(_ permission: Permission)
+    public override init() {
+        super.init()
+    }
     
-    /**
-     SPPermissions: Called when permission hided.
-     
-     - parameter permission: For which permission action invocation.
-     */
-    func didHidePermissions(_ permissions: [Permission])
-}
-
-// Using like default for allow it like optional.
-@available(iOSApplicationExtension, unavailable)
-public extension SPPermissionsDelegate {
+    public init(title: String, description: String, action: String, cancel: String) {
+        self.titleText = title
+        
+        self.descriptionText = description
+        self.actionText = action
+        self.cancelText = cancel
+        super.init()
+    }
     
-    func didAllowPermission(_ permission: Permission) {}
-    
-    func didDeniedPermission(_ permission: Permission) {}
-    
-    func didHidePermissions(_ permissions: [Permission]) {}
+    public static var `default`: DeniedPermissionAlertTexts {
+        return DeniedPermissionAlertTexts()
+    }
 }

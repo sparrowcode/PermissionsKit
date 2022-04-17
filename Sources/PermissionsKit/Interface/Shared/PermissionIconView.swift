@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,8 +20,9 @@
 // SOFTWARE.
 
 import UIKit
+
 @available(iOSApplicationExtension, unavailable)
-public class SPPermissionsPermissionIconView: UIView {
+public class PermissionIconView: UIView {
     
     // MARK: - Views
     
@@ -62,11 +63,6 @@ public class SPPermissionsPermissionIconView: UIView {
     
     // MARK: - Helpers
     
-    /**
-     SPPermissions: Use it for set ready-use icon.
-     
-     - parameter type: Case from `SPPermissions.PermissionType`.
-     */
     public func setPermission(_ kind: Permission.Kind) {
         iconImageView.image = Images.permission_icon(for: kind)
         iconImageView.contentMode = .scaleAspectFit
@@ -80,11 +76,6 @@ public class SPPermissionsPermissionIconView: UIView {
         customView?.isHidden = true
     }
     
-    /**
-     SPPermissions: Set custom view.
-     
-     - parameter view: Your cusrom view, any class.
-     */
     public func setCustomView(_ view: UIView) {
         if let customView = self.customView {
             customView.removeFromSuperview()
@@ -98,11 +89,6 @@ public class SPPermissionsPermissionIconView: UIView {
         customView?.isHidden = false
     }
     
-    /**
-     SPPermissions: Set custom image.
-     
-     - parameter image: Image which will be set to internal `UIImageView` with aspect fit.
-     */
     public func setCustomImage(_ image: UIImage) {
         customImageView.contentMode = .scaleAspectFit
         customImageView.image = image

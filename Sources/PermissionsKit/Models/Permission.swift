@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,12 +21,6 @@
 
 import UIKit
 
-/**
- SPPermissions: Basic permission model.
- 
- Using like enum for list of permissions.
- All permissions will be adding to this class like static.
- */
 open class Permission: Equatable {
     
     open var authorized: Bool {
@@ -41,33 +35,20 @@ open class Permission: Equatable {
         return status == .notDetermined
     }
     
-    /**
-     SPPermissions: Internal name for permissions.
-     
-     Don't use it in your interface. Only for console debug.
-     */
     open var debugName: String {
         return kind.name
     }
     
-    /**
-     SPPermissions: Localized name of permission.
-     
-     Allowed using in interface.
-     */
     open var localisedName: String {
         return Texts.permission_name(for: kind)
     }
     
-    /**
-     SPPermissions: Icon of permission.
-     */
     open var iconImage: UIImage {
         return Images.permission_icon(for: kind)
     }
     
     /**
-     SPPermissions: Open settings page.
+     PermissionsKit: Open settings page.
      For most permissions its app page in settings app.
      You can overide it if your permission need open custom page.
      */
@@ -82,24 +63,15 @@ open class Permission: Equatable {
     }
     
     // MARK: Must Ovveride
-    
-    /**
-     SPPermissions: Permission type.
-     */
+
     open var kind: Permission.Kind {
         preconditionFailure("This method must be overridden.")
     }
     
-    /**
-     SPPermissions: Authorization status of permission.
-     */
     open var status: Permission.Status {
         preconditionFailure("This method must be overridden.")
     }
     
-    /**
-     SPPermissions: Call request of permission in system.
-     */
     open func request(completion: @escaping ()->Void) {
         preconditionFailure("This method must be overridden.")
     }
@@ -110,9 +82,6 @@ open class Permission: Equatable {
         return lhs.kind == rhs.kind
     }
     
-    /**
-     SPPermissions: If flag is `false`, permission will be filtered if try present in ready-use controllers.
-     */
     open var canBePresentWithCustomInterface: Bool {
         return true
     }
@@ -120,10 +89,7 @@ open class Permission: Equatable {
     public init() {}
     
     // MARK: - Models
-    
-    /**
-     SPPermissions: Permissions authorization status.
-     */
+   
     @objc public enum Status: Int {
         
         case authorized
@@ -132,11 +98,6 @@ open class Permission: Equatable {
         case notSupported
     }
     
-    /**
-     SPPermissions: Permissions type.
-     
-     Type using like identifier for each permission.
-     */
     @objc public enum Kind: Int {
         
         case camera = 0

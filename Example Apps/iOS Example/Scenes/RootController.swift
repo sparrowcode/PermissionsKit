@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -84,12 +84,12 @@ class RootController: SPTableViewController {
         guard let segmentControl = navigationItem.titleView as? UISegmentedControl else { return }
         switch segmentControl.selectedSegmentIndex {
         case 0:
-            let controller = SPPermissions.list(selectedPermissions)
+            let controller = PermissionsKit.list(selectedPermissions)
             controller.dataSource = self
             controller.delegate = self
             controller.present(on: self)
         case 1:
-            let controller = SPPermissions.dialog(selectedPermissions)
+            let controller = PermissionsKit.dialog(selectedPermissions)
             controller.dataSource = self
             controller.delegate = self
             //controller.bounceAnimationEnabled = false
@@ -97,7 +97,7 @@ class RootController: SPTableViewController {
             //controller.showCloseButton = true
             controller.present(on: self)
         case 2:
-            let controller = SPPermissions.native(selectedPermissions)
+            let controller = PermissionsKit.native(selectedPermissions)
             controller.delegate = self
             // controller.allowSwipeDismiss = true
             // controller.showCloseButton = true
@@ -108,11 +108,11 @@ class RootController: SPTableViewController {
     }
 }
 
-// MARK: - SPPermissions Data Source
+// MARK: - Permissions Data Source
 
-extension RootController: SPPermissionsDataSource {
+extension RootController: PermissionsDataSource {
     
-    func configure(_ cell: SPPermissionsTableViewCell, for permission: Permission) {
+    func configure(_ cell: PermissionTableViewCell, for permission: Permission) {
 
         // Here you can customise cell, like texts or colors.
         
@@ -130,11 +130,11 @@ extension RootController: SPPermissionsDataSource {
         */
     }
     
-    func deniedAlertTexts(for permission: Permission) -> SPPermissionsDeniedAlertTexts? {
+    func deniedPermissionAlertTexts(for permission: Permission) -> DeniedPermissionAlertTexts? {
         // You can create custom texts
         
         /*
-         let texts = SPPermissionDeniedAlertTexts()
+         let texts = DeniedPermissionAlertTexts()
          texts.titleText = "Permission denied"
          texts.descriptionText = "Please, go to Settings and allow permission."
          texts.actionText = "Settings"
@@ -151,9 +151,9 @@ extension RootController: SPPermissionsDataSource {
     }
 }
 
-// MARK: - SPPermissions Delegate
+// MARK: - Permissions Delegate
 
-extension RootController: SPPermissionsDelegate {
+extension RootController: PermissionsDelegate {
     
     func didHidePermissions(_ permissions: [Permission]) {
         print("Example App: did hide with permissions", permissions.map { $0.debugName })

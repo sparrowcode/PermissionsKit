@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,10 +22,9 @@
 import UIKit
 
 #if os(iOS)
-
-class SPPermissionsDialogView: UIView {
+class PermissionsDialogView: UIView {
     
-    let closeButton = SPPermissionsDialogCloseButton()
+    let closeButton = DialogCloseButton()
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
     let tableView = UITableView(frame: .zero, style: .plain)

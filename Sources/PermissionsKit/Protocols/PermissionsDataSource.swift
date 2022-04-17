@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,25 +22,37 @@
 import UIKit
 
 /**
- SPPermissions: Protocol using for implement all same properties for each interface style.
+ PermissionsKit: Protocol using for configure permission cell and alert texts.
  */
 @available(iOSApplicationExtension, unavailable)
-protocol SPPermissionsControllerInterface {
+public protocol PermissionsDataSource: AnyObject {
     
+    #if os(iOS)
     /**
-     SPPermissions: Data source object.
-     */
-    var dataSource: SPPermissionsDataSource? { get set }
-    
-    /**
-     SPPermissions: Delegate object.
-     */
-    var delegate: SPPermissionsDelegate? { get set }
-    
-    /**
-     SPPermissions: Using for process present logic.
+     PermissionsKit: After default configure you can apply your changes like texts or custom icon.
      
-     - Note: Better use native logic for custom presenting controller. Now added to next feature.
+     - parameter cell: Default cell object of class `PermissionTableViewCell`.
+     - parameter permission: For which permissions cell configuring.
      */
-    func present(on controller: UIViewController)
+    func configure(_ cell: PermissionTableViewCell, for permission: Permission)
+    #endif
+    
+    /**
+     PermissionsKit: Provide here alert texts if permission denied.
+     If you return `nil` for alert texts, alert won't show.
+     
+     - parameter permission: Text for this permission.
+     */
+    func deniedPermissionAlertTexts(for permission: Permission) -> DeniedPermissionAlertTexts?
 }
+
+// Using like default for allow it like optional.
+@available(iOSApplicationExtension, unavailable)
+public extension PermissionsDataSource {
+    
+    #if os(iOS)
+    func configure(_ cell: PermissionTableViewCell, for permission: Permission) -> PermissionTableViewCell { return cell }
+    #endif
+}
+
+

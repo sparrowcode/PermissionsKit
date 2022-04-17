@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,27 +22,35 @@
 import UIKit
 
 #if os(iOS)
-
-class SPPermissionsDialogTableFooterView: UITableViewHeaderFooterView {
+class PermissionsListFooterCommentView: UITableViewHeaderFooterView {
     
     let titleLabel = UILabel()
     
-    static var id = "SPPermissionsDialogFooterCommentView"
+    static var id = "PermissionsListFooterCommentView"
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-        titleLabel.textColor = UIColor.Compability.secondaryLabel.withAlphaComponent(0.5)
+        titleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        titleLabel.textColor = UIColor.Compability.secondaryLabel
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
-        titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: 2).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor).isActive = true
         
-        insetsLayoutMarginsFromSafeArea = false
-        contentView.insetsLayoutMarginsFromSafeArea = false
+        let leadingAnchorConstraint = titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor)
+        leadingAnchorConstraint.priority = .init(900)
+        leadingAnchorConstraint.isActive = true
+        
+        let trailingAnchorConstraint = titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
+        trailingAnchorConstraint.priority = .init(900)
+        trailingAnchorConstraint.isActive = true
+        
+        let topAnchorConstraint = titleLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: 3)
+        topAnchorConstraint.priority = .init(900)
+        topAnchorConstraint.isActive = true
+        
+        let bottomAnchorConstraint = titleLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
+        bottomAnchorConstraint.priority = .init(900)
+        bottomAnchorConstraint.isActive = true
     }
     
     required init?(coder: NSCoder) {

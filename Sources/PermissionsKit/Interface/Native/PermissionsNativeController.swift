@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,17 +20,18 @@
 // SOFTWARE.
 
 import UIKit
+
 @available(iOSApplicationExtension, unavailable)
-public class SPPermissionsNativeController: NSObject, SPPermissionsControllerInterface {
+public class PermissionsNativeController: NSObject, PermissionsControllerInterface {
     
-    public weak var delegate: SPPermissionsDelegate?
-    public weak var dataSource: SPPermissionsDataSource?
+    public weak var delegate: PermissionsDelegate?
+    public weak var dataSource: PermissionsDataSource?
     
     // MARK: - Data
     
     private var permissions: [Permission]
     private var proceseedPermissions: [Permission] = []
-    private var memoryLocker: SPPermissionsNativeController? = nil
+    private var memoryLocker: PermissionsNativeController? = nil
     
     // MARK: - Init
     

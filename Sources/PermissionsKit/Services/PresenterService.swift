@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,9 +24,9 @@ import UIKit
 enum PresenterService {
     
     @available(iOSApplicationExtension, unavailable)
-    static func presentAlertAboutDeniedPermission(_ permission: Permission, dataSource: SPPermissionsDataSource?, on controller: UIViewController) {
+    static func presentAlertAboutDeniedPermission(_ permission: Permission, dataSource: PermissionsDataSource?, on controller: UIViewController) {
         
-        let data = dataSource?.deniedAlertTexts(for: permission)
+        let data = dataSource?.deniedPermissionAlertTexts(for: permission)
         
         /*
          Text is nil and data sources was set.
@@ -34,7 +34,7 @@ enum PresenterService {
          In this case developer don't want show alert.
          */
         if (data == nil) && (dataSource != nil) { return }
-        let texts = data ?? SPPermissionsDeniedAlertTexts.default
+        let texts = data ?? DeniedPermissionAlertTexts.default
         
         let alertController = UIAlertController(title: texts.titleText, message: texts.descriptionText, preferredStyle: .alert)
         alertController.addAction(.init(title: texts.cancelText, style: .cancel))

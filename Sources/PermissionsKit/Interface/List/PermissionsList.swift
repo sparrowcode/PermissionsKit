@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,19 +20,18 @@
 // SOFTWARE.
 
 #if os(iOS) && canImport(SwiftUI)
-
 import SwiftUI
 
 @available(iOS 13.0, *)
 @available(iOSApplicationExtension, unavailable)
-public struct SPPermissionsList: UIViewControllerRepresentable {
+public struct PermissionsList: UIViewControllerRepresentable {
     
-    private weak var dataSource: SPPermissionsDataSource?
-    private weak var delegate: SPPermissionsDelegate?
+    private weak var dataSource: PermissionsDataSource?
+    private weak var delegate: PermissionsDelegate?
     
     private var permissions: [Permission]
     
-    public init(permissions: [Permission], dataSource: SPPermissionsDataSource? = nil, delegate: SPPermissionsDelegate? = nil) {
+    public init(permissions: [Permission], dataSource: PermissionsDataSource? = nil, delegate: PermissionsDelegate? = nil) {
         self.permissions = permissions
         self.dataSource = dataSource
         self.delegate = delegate
@@ -43,7 +42,7 @@ public struct SPPermissionsList: UIViewControllerRepresentable {
     public typealias UIViewControllerType = UINavigationController
     
     public func makeUIViewController(context: Context) -> UINavigationController {
-        let controller = SPPermissionsListController(permissions)
+        let controller = PermissionsListController(permissions)
         controller.dataSource = self.dataSource
         controller.delegate = self.delegate
         return UINavigationController(rootViewController: controller)

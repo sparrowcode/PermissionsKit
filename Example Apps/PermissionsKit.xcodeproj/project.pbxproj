@@ -12,7 +12,6 @@
 		F4714D0A2652A46B00A8E4D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4714D092652A46B00A8E4D2 /* ContentView.swift */; };
 		F4714D152652A4B700A8E4D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F471BDBF264A5995000693BC /* Assets.xcassets */; };
 		F4714D162652A4C000A8E4D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F471BDBF264A5995000693BC /* Assets.xcassets */; };
-		F4714D1A2652A7C600A8E4D2 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = F4714D192652A7C600A8E4D2 /* Dependencies */; };
 		F471BDB7264A5993000693BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDB6264A5993000693BC /* AppDelegate.swift */; };
 		F471BDBB264A5993000693BC /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471BDBA264A5993000693BC /* RootController.swift */; };
 		F471BDC0264A5995000693BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F471BDBF264A5995000693BC /* Assets.xcassets */; };
@@ -20,8 +19,9 @@
 		F47CBB10265182DD00A8A00F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47CBB0A265182DC00A8A00F /* Assets.xcassets */; };
 		F47CBB12265182DD00A8A00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBB0D265182DC00A8A00F /* AppDelegate.swift */; };
 		F47CBB13265182DD00A8A00F /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBB0F265182DC00A8A00F /* RootController.swift */; };
-		F47CBB152651830600A8A00F /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = F47CBB142651830600A8A00F /* Dependencies */; };
 		F47CBB17265186CD00A8A00F /* RootControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CBB16265186CD00A8A00F /* RootControllerExtension.swift */; };
+		F492461A280C0C6100750C30 /* Modules in Frameworks */ = {isa = PBXBuildFile; productRef = F4924619280C0C6100750C30 /* Modules */; };
+		F492461C280C0CAE00750C30 /* Modules in Frameworks */ = {isa = PBXBuildFile; productRef = F492461B280C0CAE00750C30 /* Modules */; };
 		F4DED98E280B4B5500F53F0B /* Modules in Frameworks */ = {isa = PBXBuildFile; productRef = F4DED98D280B4B5500F53F0B /* Modules */; };
 		F4E350E42651BC8800D2CA45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E350E32651BC8800D2CA45 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4714D1A2652A7C600A8E4D2 /* Dependencies in Frameworks */,
+				F492461A280C0C6100750C30 /* Modules in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F47CBB152651830600A8A00F /* Dependencies in Frameworks */,
+				F492461C280C0CAE00750C30 /* Modules in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +235,7 @@
 			);
 			name = "iOS SwiftUI Example";
 			packageProductDependencies = (
-				F4714D192652A7C600A8E4D2 /* Dependencies */,
+				F4924619280C0C6100750C30 /* Modules */,
 			);
 			productName = "iOS SwiftUI Example";
 			productReference = F4714D052652A46B00A8E4D2 /* iOS SwiftUI Example.app */;
@@ -277,7 +277,7 @@
 			);
 			name = "tvOS Example";
 			packageProductDependencies = (
-				F47CBB142651830600A8A00F /* Dependencies */,
+				F492461B280C0CAE00750C30 /* Modules */,
 			);
 			productName = "tvOS Example";
 			productReference = F47CBAF72651826100A8A00F /* tvOS Example.app */;
@@ -467,7 +467,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "iOS Example/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iOS SwiftUI Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -476,7 +476,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.opensource.sppermissions.ios.swiftui;
+				PRODUCT_BUNDLE_IDENTIFIER = io.sparrowcode.opensource.permissionskit.swiftui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -537,7 +537,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "iOS Example/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iOS SwiftUI Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -545,7 +545,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.opensource.sppermissions.ios.swiftui;
+				PRODUCT_BUNDLE_IDENTIFIER = io.sparrowcode.opensource.permissionskit.swiftui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -596,7 +596,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 5KKK9SKF79;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -622,10 +622,10 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.opensource.sppermissions.ios2;
+				PRODUCT_BUNDLE_IDENTIFIER = io.sparrowcode.opensource.permissionskit.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(SPPERMISSIONS_FLAGS)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(PERMISSIONKIT_FLAGS)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -672,7 +672,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5KKK9SKF79;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -691,7 +691,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.opensource.sppermissions.ios2;
+				PRODUCT_BUNDLE_IDENTIFIER = io.sparrowcode.opensource.permissionskit.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -765,7 +765,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.opensource.sppermissions.tvos;
+				PRODUCT_BUNDLE_IDENTIFIER = io.sparrowcode.opensource.permissionskit.tvos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -832,7 +832,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.opensource.sppermissions.tvos;
+				PRODUCT_BUNDLE_IDENTIFIER = io.sparrowcode.opensource.permissionskit.tvos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -954,13 +954,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F4714D192652A7C600A8E4D2 /* Dependencies */ = {
+		F4924619280C0C6100750C30 /* Modules */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Dependencies;
+			productName = Modules;
 		};
-		F47CBB142651830600A8A00F /* Dependencies */ = {
+		F492461B280C0CAE00750C30 /* Modules */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Dependencies;
+			productName = Modules;
 		};
 		F4DED98D280B4B5500F53F0B /* Modules */ = {
 			isa = XCSwiftPackageProductDependency;

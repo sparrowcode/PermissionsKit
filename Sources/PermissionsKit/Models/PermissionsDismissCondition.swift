@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,30 +21,10 @@
 
 import UIKit
 
-/**
- SPPermissions: Content for denied alert.
- */
-public class SPPermissionsDeniedAlertTexts: NSObject {
+public enum PermissionsDismissCondition {
     
-    public var titleText = Texts.denied_alert_title
-    public var descriptionText = Texts.denied_alert_description
-    public var actionText = Texts.denied_alert_action
-    public var cancelText = Texts.denied_alert_cancel
+    case allPermissionsAuthorized
+    case allPermissionsDeterminated
     
-    public override init() {
-        super.init()
-    }
-    
-    public init(title: String, description: String, action: String, cancel: String) {
-        self.titleText = title
-        
-        self.descriptionText = description
-        self.actionText = action
-        self.cancelText = cancel
-        super.init()
-    }
-    
-    public static var `default`: SPPermissionsDeniedAlertTexts {
-        return SPPermissionsDeniedAlertTexts()
-    }
+    static var `default`: PermissionsDismissCondition { allPermissionsAuthorized }
 }

@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,18 +19,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if os(iOS)
 import UIKit
 
-#if os(iOS)
 @available(iOSApplicationExtension, unavailable)
-public class SPPermissionsTableViewCell: UITableViewCell {
+public class PermissionTableViewCell: UITableViewCell {
     
     public let permissionTitleLabel = UILabel()
     public let permissionDescriptionLabel = UILabel()
-    public let permissionButton = SPPermissionsActionButton()
-    public let permissionIconView = SPPermissionsPermissionIconView()
+    public let permissionButton = PermissionActionButton()
+    public let permissionIconView = PermissionIconView()
     
-    static var id = "SPPermissionsTableViewCell"
+    static var id = "PermissionTableViewCell"
     
     // MARK: - Init
     

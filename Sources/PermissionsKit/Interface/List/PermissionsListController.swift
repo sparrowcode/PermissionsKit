@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,34 +20,17 @@
 // SOFTWARE.
 
 #if os(iOS)
-
 import UIKit
+
 @available(iOSApplicationExtension, unavailable)
-public class SPPermissionsListController: UITableViewController, SPPermissionsControllerInterface {
+public class PermissionsListController: UITableViewController, PermissionsControllerInterface {
     
-    /**
-     SPPermissions: Show or hide close button. By default `false`.
-     
-     New guidelines not allow has it, so for clean review you shoud left it `false`.
-     */
     public var showCloseButton: Bool = false
-    
-    /**
-     SPPermissions: Disable or allow dismiss controller with swipe.
-     Default value is `true`.
-     */
     public var allowSwipeDismiss: Bool = true
+    public var dismissCondition: PermissionsDismissCondition = .default
     
-    /**
-     SPPermissions: Manage dismising condition.
-     
-     By default dismiss controller hapen when all permission allowed.
-     If you need dismiss controller when all permissions has state determinated, change it to `allPermissionsDeterminated`.
-     */
-    public var dismissCondition: SPPermissionsDismissCondition = .default
-    
-    public weak var dataSource: SPPermissionsDataSource?
-    public weak var delegate: SPPermissionsDelegate?
+    public weak var dataSource: PermissionsDataSource?
+    public weak var delegate: PermissionsDelegate?
     
     public var titleText = Texts.header
     public var headerText = Texts.description
@@ -101,9 +84,9 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         
         tableView.delaysContentTouches = false
         tableView.allowsSelection = false
-        tableView.register(SPPermissionsTableViewCell.self, forCellReuseIdentifier: SPPermissionsTableViewCell.id)
-        tableView.register(SPPermissionsListHeaderView.self, forHeaderFooterViewReuseIdentifier: SPPermissionsListHeaderView.id)
-        tableView.register(SPPermissionsListFooterCommentView.self, forHeaderFooterViewReuseIdentifier: SPPermissionsListFooterCommentView.id)
+        tableView.register(PermissionTableViewCell.self, forCellReuseIdentifier: PermissionTableViewCell.id)
+        tableView.register(PermissionsListHeaderView.self, forHeaderFooterViewReuseIdentifier: PermissionsListHeaderView.id)
+        tableView.register(PermissionsListFooterCommentView.self, forHeaderFooterViewReuseIdentifier: PermissionsListFooterCommentView.id)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
@@ -121,13 +104,13 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         controller.present(navigationController, animated: true, completion: nil)
     }
     
-    @objc func process(button: SPPermissionsActionButton) {
+    @objc func process(button: PermissionActionButton) {
         guard let permission = button.permission else { return }
         let firstRequest = permission.status == .notDetermined
         permission.request { [weak self] in
             
             guard let self = self else { return }
-            if let cell = button.superview as? SPPermissionsTableViewCell {
+            if let cell = button.superview as? PermissionTableViewCell {
                 cell.updateInterface(animated: true)
             }
             
@@ -139,7 +122,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
             if permission.kind == .locationAlways {
                 if self.permissions.contains(where: { $0.kind == .locationWhenInUse }) {
                     if let index = self.permissions.firstIndex(where: { $0.kind == .locationWhenInUse }) {
-                        if let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? SPPermissionsTableViewCell {
+                        if let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? PermissionTableViewCell {
                             cell.updateInterface(animated: true)
                         }
                     }
@@ -169,7 +152,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
                 
                 return false
             }
-
+            
             if permission.authorized {
                 self.delegate?.didAllowPermission(permission)
                 let _ = dismissByCondition()
@@ -205,8 +188,9 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
 }
 
 // MARK: - Table Data Source & Delegate
+
 @available(iOSApplicationExtension, unavailable)
-extension SPPermissionsListController {
+extension PermissionsListController {
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return permissions.count
@@ -214,7 +198,7 @@ extension SPPermissionsListController {
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let permission = permissions[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionsTableViewCell.id, for: indexPath) as! SPPermissionsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PermissionTableViewCell.id, for: indexPath) as! PermissionTableViewCell
         cell.defaultConfigure(for: permission)
         dataSource?.configure(cell, for: permission)
         cell.permissionButton.addTarget(self, action: #selector(self.process(button:)), for: .touchUpInside)
@@ -223,21 +207,22 @@ extension SPPermissionsListController {
     }
     
     public override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SPPermissionsListHeaderView.id) as! SPPermissionsListHeaderView
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: PermissionsListHeaderView.id) as! PermissionsListHeaderView
         view.titleLabel.text = headerText
         return view
     }
     
     public override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SPPermissionsListFooterCommentView.id) as! SPPermissionsListFooterCommentView
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: PermissionsListFooterCommentView.id) as! PermissionsListFooterCommentView
         view.titleLabel.text = footerText
         return view
     }
 }
 
 // MARK: - UIAdaptivePresentationControllerDelegate
+
 @available(iOSApplicationExtension, unavailable)
-extension SPPermissionsListController: UIAdaptivePresentationControllerDelegate {
+extension PermissionsListController: UIAdaptivePresentationControllerDelegate {
     
     public func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
         return allowSwipeDismiss

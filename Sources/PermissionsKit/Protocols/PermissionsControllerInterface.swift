@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,19 +19,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
+import UIKit
 
-@available(*, deprecated, renamed: "Permission")
-public enum SPPermission {
+/**
+ PermissionsKit: Protocol using for implement all same properties for each interface style.
+ */
+@available(iOSApplicationExtension, unavailable)
+protocol PermissionsControllerInterface {
     
-    @available(*, deprecated, renamed: "Permission")
-    enum Permission {
-        
-    }
+    /**
+     PermissionsKit: Data source object.
+     */
+    var dataSource: PermissionsDataSource? { get set }
+    
+    /**
+     PermissionsKit: Delegate object.
+     */
+    var delegate: PermissionsDelegate? { get set }
+    
+    /**
+     PermissionsKit: Using for process present logic.
+     
+     - Note: Better use native logic for custom presenting controller. Now added to next feature.
+     */
+    func present(on controller: UIViewController)
 }
-
-@available(*, deprecated, renamed: "SPPermissionsTableViewCell")
-public class SPPermissionTableViewCell {}
-
-@available(*, deprecated, renamed: "SPPermissionDeniedAlertTexts")
-public class SPPermissionDeniedAlertData {}

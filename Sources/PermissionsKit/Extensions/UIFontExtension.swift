@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@ import UIKit
 
 extension UIFont {
     
-    static func preferredFont(forTextStyle style: TextStyle, weight: Weight, addPoints: CGFloat = 0) -> UIFont {
+    static func preferredFont(forTextStyle style: TextStyle, weight: Weight, addPoints: CGFloat = .zero) -> UIFont {
         let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)
         let font = UIFont.systemFont(ofSize: descriptor.pointSize + addPoints, weight: weight)
         let metrics = UIFontMetrics(forTextStyle: style)

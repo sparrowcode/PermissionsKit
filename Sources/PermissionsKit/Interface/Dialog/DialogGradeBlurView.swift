@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,11 +19,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if os(iOS)
 import UIKit
 
-#if os(iOS)
-
-class SPPermissionsDialogGradeBlurView: UIView {
+class DialogGradeBlurView: UIView {
     
     private var gradeView: UIView = UIView()
     private var blurView: UIView = UIView()
@@ -44,7 +43,7 @@ class SPPermissionsDialogGradeBlurView: UIView {
     }
     
     private func commonInit() {
-        blurView = SPPermissionsBlurView()
+        blurView = PermissionsBlurView()
         layer.masksToBounds = true
         addSubview(gradeView)
         addSubview(blurView)
@@ -61,7 +60,7 @@ class SPPermissionsDialogGradeBlurView: UIView {
     }
     
     func setBlurRadius(_ radius: CGFloat) {
-        if let blurView = self.blurView as? SPPermissionsBlurView {
+        if let blurView = self.blurView as? PermissionsBlurView {
             blurView.setBlurRadius(radius)
         }
     }
@@ -75,9 +74,10 @@ class SPPermissionsDialogGradeBlurView: UIView {
     }
 }
 
-public class SPPermissionsBlurView: UIVisualEffectView {
+public class PermissionsBlurView: UIVisualEffectView {
     
     private let blurEffect: UIBlurEffect
+    
     open var blurRadius: CGFloat {
         return blurEffect.value(forKeyPath: "blurRadius") as! CGFloat
     }

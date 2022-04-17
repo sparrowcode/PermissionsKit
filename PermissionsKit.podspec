@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage = "https://github.com/sparrowcode/PermissionsKit"
   s.source = { :git => "https://github.com/sparrowcode/PermissionsKit.git", :tag => s.version }
   s.license = { :type => "MIT", :file => "LICENSE" }
-  s.author = { "Ivan Vorobei" => "hello@ivanvorobei.io" }
+  s.author = { "Sparrow Code" => "hello@sparrowcode.io" }
 
   s.requires_arc = true
   s.ios.framework = 'UIKit'
@@ -128,7 +128,7 @@ Pod::Spec.new do |s|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/MediaLibraryPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_MEDIALIBRARY PERMISSIONSKIT_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_MEDIA_LIBRARY PERMISSIONSKIT_COCOAPODS"
     }
   end
 

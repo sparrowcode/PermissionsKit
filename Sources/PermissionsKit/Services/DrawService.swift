@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,6 @@
 import UIKit
 
 #if os(iOS)
-
 enum DrawService {
     
     public static func drawClose(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 28, height: 28), resizing: ResizingBehavior = .aspectFit, background: UIColor = UIColor(red: 0.937, green: 0.937, blue: 0.941, alpha: 1.000), element: UIColor = UIColor(red: 0.518, green: 0.518, blue: 0.533, alpha: 1.000)) {

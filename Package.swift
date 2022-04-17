@@ -195,7 +195,7 @@ let package = Package(
             name: "MediaLibraryPermission",
             dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("PERMISSIONSKIT_MEDIALIBRARY"),
+                .define("PERMISSIONSKIT_MEDIA_LIBRARY"),
                 .define("PERMISSIONSKIT_SPM")
             ]
         ),

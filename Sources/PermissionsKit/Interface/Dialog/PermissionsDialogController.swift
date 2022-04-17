@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,48 +19,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if os(iOS)
 import UIKit
 
-#if os(iOS)
 @available(iOSApplicationExtension, unavailable)
-public class SPPermissionsDialogController: UIViewController, SPPermissionsControllerInterface {
+public class PermissionsDialogController: UIViewController, PermissionsControllerInterface {
     
-    /**
-     SPPermissions: Show or hide close button. By default `false`.
-     
-     New guidelines not allow has it, so for clean review you shoud left it `false`.
-     */
     public var showCloseButton: Bool = false
-    
-    /**
-     SPPermissions: Disable or allow dismiss dialog with gester.
-     Default value is `true`.
-     */
     public var allowSwipeDismiss: Bool = true
-    
-    /**
-     SPPermissions: Manage dismising condition.
-     
-     By default dismiss controller hapen when all permission allowed.
-     If you need dismiss controller when all permissions has state determinated, change it to `allPermissionsDeterminated`.
-     */
-    public var dismissCondition: SPPermissionsDismissCondition = .default
-    
-    /**
-     SPPermissions: Manage bounce animation. If `false`,
-     dialog can't be tracked. Default value is `true`.
-     */
+    public var dismissCondition: PermissionsDismissCondition = .default
     public var bounceAnimationEnabled = true
     
-    public weak var dataSource: SPPermissionsDataSource?
-    public weak var delegate: SPPermissionsDelegate?
+    public weak var dataSource: PermissionsDataSource?
+    public weak var delegate: PermissionsDelegate?
     
     public var titleText = Texts.header
     public var headerText = Texts.sub_header
     public var footerText = Texts.comment
     
-    private let dialogView = SPPermissionsDialogView()
-    private let backgroundView = SPPermissionsDialogGradeBlurView()
+    private let dialogView = PermissionsDialogView()
+    private let backgroundView = DialogGradeBlurView()
     
     private var permissions: [Permission]
     
@@ -93,8 +71,8 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
         dialogView.alpha = 0
         dialogView.tableView.dataSource = self
         dialogView.tableView.delegate = self
-        dialogView.tableView.register(SPPermissionsDialogTableFooterView.self, forHeaderFooterViewReuseIdentifier: SPPermissionsDialogTableFooterView.id)
-        dialogView.tableView.register(SPPermissionsTableViewCell.self, forCellReuseIdentifier: SPPermissionsTableViewCell.id)
+        dialogView.tableView.register(DialogTableFooterView.self, forHeaderFooterViewReuseIdentifier: DialogTableFooterView.id)
+        dialogView.tableView.register(PermissionTableViewCell.self, forCellReuseIdentifier: PermissionTableViewCell.id)
         dialogView.closeButton.addTarget(self, action: #selector(self.dimissWithDialog), for: .touchUpInside)
         view.addSubview(dialogView)
         
@@ -119,7 +97,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
         /**
          Special layout call becouse table hasn't valid content size before appear for early ios 12 and lower.
          Happen only if `bounceAnimationEnabled` set to false.
-         Related issue on github: https://github.com/ivanvorobei/SPPermissions/issues/262
+         Related issue on github: https://github.com/sparrowcode/PermissionsKit/issues/262
          */
         if !bounceAnimationEnabled {
             if #available(iOS 13, *) {
@@ -180,13 +158,13 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
         })
     }
     
-    @objc func process(button: SPPermissionsActionButton) {
+    @objc func process(button: PermissionActionButton) {
         guard let permission = button.permission else { return }
         let firstRequest = permission.status == .notDetermined
         permission.request { [weak self] in
             
             guard let self = self else { return }
-            if let cell = button.superview as? SPPermissionsTableViewCell {
+            if let cell = button.superview as? PermissionTableViewCell {
                 cell.updateInterface(animated: true)
             }
             
@@ -198,7 +176,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
             if permission.kind == .locationAlways {
                 if self.permissions.contains(where: { $0.kind == .locationWhenInUse }) {
                     if let index = self.permissions.firstIndex(where: { $0.kind == .locationWhenInUse }) {
-                        if let cell = self.dialogView.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? SPPermissionsTableViewCell {
+                        if let cell = self.dialogView.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? PermissionTableViewCell {
                             cell.updateInterface(animated: true)
                         }
                     }
@@ -326,14 +304,14 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
 // MARK: - Table Data Source & Delegate
 
 @available(iOSApplicationExtension, unavailable)
-extension SPPermissionsDialogController: UITableViewDataSource, UITableViewDelegate {
+extension PermissionsDialogController: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return permissions.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SPPermissionsTableViewCell.id, for: indexPath) as! SPPermissionsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PermissionTableViewCell.id, for: indexPath) as! PermissionTableViewCell
         let permission = permissions[indexPath.row]
         cell.defaultConfigure(for: permission)
         cell.permissionDescriptionLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
@@ -344,7 +322,7 @@ extension SPPermissionsDialogController: UITableViewDataSource, UITableViewDeleg
     }
     
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SPPermissionsDialogTableFooterView.id) as! SPPermissionsDialogTableFooterView
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: DialogTableFooterView.id) as! DialogTableFooterView
         view.titleLabel.text = footerText
         view.contentView.backgroundColor = tableView.backgroundColor
         return view

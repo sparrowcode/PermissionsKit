@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,37 +22,40 @@
 import UIKit
 
 /**
- SPPermissions: Protocol using for configure permission cell and alert texts.
+ PermissionsKit: Get notifications about events.
  */
 @available(iOSApplicationExtension, unavailable)
-public protocol SPPermissionsDataSource: AnyObject {
-    
-    #if os(iOS)
-    /**
-     SPPermissions: After default configure you can apply your changes like texts or custom icon.
-     
-     - parameter cell: Default cell object of class `SPPermissionsTableViewCell`.
-     - parameter permission: For which permissions cell configuring.
-     */
-    func configure(_ cell: SPPermissionsTableViewCell, for permission: Permission)
-    #endif
+public protocol PermissionsDelegate: AnyObject {
     
     /**
-     SPPermissions: Provide here alert texts if permission denied.
-     If you return `nil` for alert texts, alert won't show.
+     PermissionsKit: Called when permission allowed.
      
-     - parameter permission: Text for this permission.
+     - parameter permission: For which permission action invocation.
      */
-    func deniedAlertTexts(for permission: Permission) -> SPPermissionsDeniedAlertTexts?
+    func didAllowPermission(_ permission: Permission)
+    
+    /**
+     PermissionsKit: Called when permission denied.
+     
+     - parameter permission: For which permission action invocation.
+     */
+    func didDeniedPermission(_ permission: Permission)
+    
+    /**
+     PermissionsKit: Called when permission hided.
+     
+     - parameter permission: For which permission action invocation.
+     */
+    func didHidePermissions(_ permissions: [Permission])
 }
 
 // Using like default for allow it like optional.
 @available(iOSApplicationExtension, unavailable)
-public extension SPPermissionsDataSource {
+public extension PermissionsDelegate {
     
-    #if os(iOS)
-    func configure(_ cell: SPPermissionsTableViewCell, for permission: Permission) -> SPPermissionsTableViewCell { return cell }
-    #endif
+    func didAllowPermission(_ permission: Permission) {}
+    
+    func didDeniedPermission(_ permission: Permission) {}
+    
+    func didHidePermissions(_ permissions: [Permission]) {}
 }
-
-
