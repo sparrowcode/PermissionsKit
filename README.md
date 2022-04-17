@@ -1,4 +1,6 @@
-# PermissionsKit [Before `SPPermissions`]
+# PermissionsKit 
+
+### Before `SPPermissions`, what happen?
 
 I put together a team that deals with opensource and gave the library to the company. It is now under a universal clean name. It will help develop the library more actively, even when I can't do it myself.
 
