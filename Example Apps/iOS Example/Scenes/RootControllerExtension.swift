@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -67,6 +67,6 @@ extension RootController {
     }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "All need keys added. When you add `SPPermissions` to your project, need add some keys in Info.plist. See Readme.md for details."
+        return "All need keys added. When you add `PermissionsKit` to your project, need add some keys in Info.plist. See Readme.md for details."
     }
 }

@@ -1,35 +1,49 @@
-# SPPermissions [Sponsor via GitHub](https://github.com/sponsors/sparrowcode)
+# PermissionsKit 
+
+### Before `SPPermissions`, what happen?
+
+I put together a team that deals with opensource and gave the library to the company. It is now under a universal clean name. It will help develop the library more actively, even when I can't do it myself.
 
 <p aligment="left">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/v7/list-style.png?version=8" height="260"/>
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/v7/dialog-style.png?version=8" height="260"/>
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/v7/native-request.png?version=8" height="260"/>
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/v8/list-style.png?version=1" height="260"/>
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/v8/dialog-style.png?version=1" height="260"/>
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/v8/native-request.png?version=1" height="260"/>
 </p>
 
 Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode and has ready localizations. Also you can check state of permissions, available are `.authorized`, `.denied` & `.notDetermined`.
 
-### Supported Permissions
-
 <p float="left">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/camera.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/photos.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/notifications.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/location.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/microphone.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/calendar.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/contacts.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/reminders.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/motion.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/music.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/speech.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/bluetooth.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/health.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/tracking.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/faceid.png" width="38">
-    <img src="https://cdn.ivanvorobei.io/github/sppermissions/permissions/siri.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/camera.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/photos.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/notifications.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/location.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/microphone.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/calendar.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/contacts.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/reminders.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/motion.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/music.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/speech.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/bluetooth.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/health.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/tracking.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/faceid.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/siri.png" width="38">
 </p>
 
-Generate icons like in Settings with [SPSettingsIcons](https://github.com/sparrowcode/SPSettingsIcons).
+### Community
+
+<p float="left">
+    <a href="https://discord.gg/BfZQUG6pnh">
+        <img src="https://cdn.sparrowcode.io/github/badges/discord.png?version=2" height="52">
+    </a>
+    <a href="#apps-using">
+        <img src="https://cdn.sparrowcode.io/github/badges/download-on-the-appstore.png?version=2" height="52">
+    </a>
+    <a href="https://github.com/sponsors/sparrowcode">
+        <img src="https://cdn.sparrowcode.io/github/badges/github-sponsor.png?version=3" height="52">
+    </a>
+</p>
 
 ## Navigate
 
@@ -51,7 +65,7 @@ Generate icons like in Settings with [SPSettingsIcons](https://github.com/sparro
 - [Localizations](#localizations)
 - [Keys in Info.plist](#keys-in-infoplist)
 - [Apple Review](#apple-review)
-- [Russian Community](#russian-community)
+- [Apps Using](#apps-using)
 
 ## Installation
 
@@ -65,7 +79,7 @@ Once you have your Swift package set up, adding as a dependency is as easy as ad
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ivanvorobei/SPPermissions", .upToNextMajor(from: "7.1.0"))
+    .package(url: "https://github.com/sparrowcode/PermissionsKit", .upToNextMajor(from: "8.0.0"))
 ]
 ```
 
@@ -76,70 +90,70 @@ Next choose the permissions you need. But don't add all of them, because apple [
 [CocoaPods](https://cocoapods.org) is a dependency manager. For usage and installation instructions, visit their website. To integrate using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'SPPermissions/Notification'
+pod 'PermissionsKit/Notification', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 
 Due to Apple's new policy regarding permission access you need to specifically define what kind of permissions you want to access using subspecs. For example if you want to access `Camera`, `Location` & `Microphone` you define the following:
 
 ```ruby
-pod 'SPPermissions/Camera'
-pod 'SPPermissions/LocationAlways'
-pod 'SPPermissions/Microphone'
+pod 'PermissionsKit/CameraPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
+pod 'PermissionsKit/LocationAlwaysPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
+pod 'PermissionsKit/MicrophonePermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 
 <details><summary>Subspecs</summary>
 <p>
 
 ```ruby
-pod 'SPPermissions/Camera'
+pod 'PermissionsKit/CameraPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/Contacts'
+pod 'PermissionsKit/ContactsPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/Calendar'
+pod 'PermissionsKit/CalendarPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/PhotoLibrary'
+pod 'PermissionsKit/PhotoLibraryPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/Notification'
+pod 'PermissionsKit/NotificationPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/Microphone'
+pod 'PermissionsKit/MicrophonePermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/Reminders'
+pod 'PermissionsKit/RemindersPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/SpeechRecognizer'
+pod 'PermissionsKit/SpeechRecognizerPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/LocationWhenInUse'
+pod 'PermissionsKit/LocationWhenInUsePermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/LocationAlways'
+pod 'PermissionsKit/LocationAlwaysPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/Motion'
+pod 'PermissionsKit/MotionPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/Music'
+pod 'PermissionsKit/MediaLibraryPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/Bluetooth'
+pod 'PermissionsKit/BluetoothPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/Tracking'
+pod 'PermissionsKit/TrackingPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/FaceID'
+pod 'PermissionsKit/FaceIDPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/Siri'
+pod 'PermissionsKit/SiriPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'SPPermissions/Health'
+pod 'PermissionsKit/HealthPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 
 </p>
@@ -147,23 +161,23 @@ pod 'SPPermissions/Health'
 
 ### Manually
 
-If you prefer not to use any of dependency managers, you can integrate `SPPermissions`  manually. Copy code and add compile flags from [CONTRIBUTING.md](https://github.com/ivanvorobei/SPPermissions/blob/main/CONTRIBUTING.md) file.
+If you prefer not to use any of dependency managers, you can integrate `PermissionsKit`  manually. Copy code and add compile flags from [CONTRIBUTING.md](https://github.com/sparrowcode/PermissionsKit/blob/main/CONTRIBUTING.md) file.
 
 ## Imports
 
 If you install via  [Swift Package Manager](#swift-package-manager), you shoud import each module:
 
 ```swift
-import SPPermissions
-import SPPermissionsCamera
-import SPPermissionsPhotoLibrary
+import PermissionsKit
+import CameraPermission
+import PhotoLibraryPermission
 ```
 
-It's required because library split to modules. After importing you'll see available permissions by typing `SPPermissions.Permission.camera` for example.
+It's required because library split to modules. After importing you'll see available permissions by typing `Permission.camera` for example.
 If you install via [CocoaPods](#cocoapods), you only need to import one class:
 
 ```swift
-import SPPermissions
+import PermissionsKit
 ```
 
 All other installed classes imported automatically.
@@ -174,35 +188,35 @@ All other installed classes imported automatically.
 
 // MARK: 1. Choose the permissions you need:
 
-let permissions: [SPPermissions.Permission] = [.camera, .notification]
+let permissions: [Permission] = [.camera, .notification]
 
 // MARK: 2. Choose present style:
 
 // 2a. List Style
-let controller = SPPermissions.list(permissions)
+let controller = PermissionsKit.list(permissions)
 controller.present(on: self)
 
 // 2b. Dialog Style
-let controller = SPPermissions.dialog(permissions)
+let controller = PermissionsKit.dialog(permissions)
 controller.present(on: self)
 
 // 2c. Native Style
-let controller = SPPermissions.native(permissions)
+let controller = PermissionsKit.native(permissions)
 controller.present(on: self)
 
 // MARK: 3. Optional: Check permission state (available `authorized`, `denied`, `notDetermined`):
 
-let authorized = SPPermissions.Permission.calendar.authorized
+let authorized = Permission.calendar.authorized
 ```
 
 For more details see [Request](#Request) section.
 
 ## Status
 
-To check the state of any permission, call `SPPermissions.Permission`: 
+To check the state of any permission, call `Permission` model: 
 
 ```swift
-let authorized = SPPermissions.Permission.calendar.authorized
+let authorized = Permission.calendar.authorized
 ```
 
 Also available are status for `denied` & `notDetermined`.
@@ -212,21 +226,21 @@ Also available are status for `denied` & `notDetermined`.
 For location user can granted `precise` or not. For get state for it, call this:
 
 ```swift
-if SPPermissions.Permission.locationWhenInUse.isPrecise { ... }
+if Permission.locationWhenInUse.isPrecise { ... }
 ```
 
 Same for `.locationAlways`.
 
 ## Request
 
-`SPPermissions` has three presentation styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `Example Apps/SPPermissions.xcodeproj`.
+`PermissionsKit` has three presentation styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `Example Apps/PermissionsKit.xcodeproj`.
 
 ### List
 
 It's native `UITableViewController`. Use it when you have more than two permissions. An example of how it is used:
 
 ```swift
-let controller = SPPermissions.list([.calendar, .camera, .contacts])
+let controller = PermissionsKit.list([.calendar, .camera, .contacts])
 
 // Ovveride texts in controller
 controller.titleText = "Title Text"
@@ -253,7 +267,7 @@ controller.present(on: self)
 This is a modal alert. I recommend using this alert style when you have less than three requested permissions. Usage example:
 
 ```swift
-let controller = SPPermissions.dialog([.camera, .photoLibrary])
+let controller = PermissionsKit.dialog([.camera, .photoLibrary])
 
 // Override texts in controller
 controller.titleText = "Title Text"
@@ -280,7 +294,7 @@ controller.present(on: self)
 Request permissions with native `UIAlertController`. You can request many permissions at once:
 
 ```swift
-let controller = SPPermissions.native([.calendar, .camera, .contacts])
+let controller = PermissionsKit.native([.calendar, .camera, .contacts])
 
 // Set `Delegate` if need. 
 controller.delegate = self
@@ -291,12 +305,12 @@ controller.present(on: self)
 
 ## DataSource
 
-For data source using protocol `SPPermissionsDataSource`. You can customize the permission cells and provide denied alert texts.
+For data source using protocol `PermissionsDataSource`. You can customize the permission cells and provide denied alert texts.
 
 ```swift
-extension Controller: SPPermissionsDataSource {
+extension Controller: PermissionsDataSource {
     
-    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) {
+    func configure(_ cell: PermissionTableViewCell, for permission: Permission) {
         
         // Here you can customise cell, like texts or colors.
         cell.permissionTitleLabel.text = "Title"
@@ -312,10 +326,10 @@ extension Controller: SPPermissionsDataSource {
 
 ### Denied alert
 
-If a permission is denied, you can provide [an alert](https://cdn.ivanvorobei.io/github/sppermissions/v7/preview-denied-alert.png) to the user with an option to open settings. An example of how you can customise the alert text:
+If a permission is denied, you can provide an alert to the user with an option to open settings. An example of how you can customise the alert text:
 
 ```swift
-let texts = SPPermissionsDeniedAlertTexts()
+let texts = PermissionDeniedAlertTexts()
 texts.titleText = "Permission denied"
 texts.descriptionText = "Please, go to Settings and allow permission."
 texts.actionText = "Settings"
@@ -325,7 +339,7 @@ texts.cancelText = "Cancel"
 Next implement the following method and return:
 
 ```swift
-func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionsDeniedAlertTexts? {
+func deniedPermissionAlertTexts(for permission: Permission) -> PermissionDeniedAlertTexts? {
     
     // Custom texts:
     return texts
@@ -337,20 +351,20 @@ func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissions
 
 ## Delegate
 
-To get `hidden`, `allowed` or `denied` events , set the delegate with protocol `SPPermissionsDelegate`:
+To get `hidden`, `allowed` or `denied` events , set the delegate with protocol `PermissionsDelegate`:
 
 ```swift
-extension Controller: SPPermissionsDelegate {
+extension Controller: PermissionsDelegate {
     
-    func didHidePermissions(_ permissions: [SPPermissions.Permission]) {}
-    func didAllowPermission(_ permission: SPPermissions.Permission) {}
-    func didDeniedPermission(_ permission: SPPermissions.Permission) {}
+    func didHidePermissions(_ permissions: [Permission]) {}
+    func didAllowPermission(_ permission: Permission) {}
+    func didDeniedPermission(_ permission: Permission) {}
 }
 ```
 
 ## Localizations
 
-`SPPermissions` has ready-to-use localizations for:
+`PermissionsKit` has ready-to-use localizations for:
 
 - English `en`
 - Arabic `ar`
@@ -373,7 +387,7 @@ If you want to add more, please, create folder `[language_id].lproj` and make a 
 You need to add some keys to the `Info.plist` file with descriptions, per Apple's requirement(s). You can get a plist of keys for permissions as follows:
 
 ```swift
-let key = SPPermissions.Permission.bluetooth.usageDescriptionKey
+let key = Permission.bluetooth.usageDescriptionKey
 ```
 
 List of keys:
@@ -408,7 +422,7 @@ If you use xliff localization export, keys will be create automatically. If you 
 
 ## Apple Review
 
-Apple changed its review guidelines in June 2021. When requesting permissions, apps should require users to always request and make a decision whether to allow or decline the permission. For this reason, the close button in `SPPermissions` is hidden by default. If you want to force show the close button, run the following code:
+Apple changed its review guidelines in June 2021. When requesting permissions, apps should require users to always request and make a decision whether to allow or decline the permission. For this reason, the close button in `PermissionsKit` is hidden by default. If you want to force show the close button, run the following code:
 
 ```swift
 // Show & hide close button
@@ -418,13 +432,15 @@ controller.showCloseButton = true
 controller.allowSwipeDismiss = true
 ```
 
-Also changed title for button. Instead of  `allow` now using `continue`. The Apple Review Team asked for this. For details, check out [this issue](https://github.com/ivanvorobei/SPPermissions/issues/229). 
+Also changed title for button. Instead of  `allow` now using `continue`. The Apple Review Team asked for this. For details, check out [this issue](https://github.com/sparrowcode/PermissionsKit/issues/229).
 
-## Russian Community
+## Apps Using
 
-Я веду [телеграм-канал](https://sparrowcode.io/telegram), там публикую новости и туториалы.<br>
-С проблемой помогут [в чате](https://sparrowcode.io/telegram/chat).
-
-Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.io/youtube):
-
-[![Tutorials on YouTube](https://cdn.ivanvorobei.io/github/readme/youtube-preview.jpg)](https://ivanvorobei.io/youtube)
+<p float="left">
+    <a href="https://apps.apple.com/app/id1487937127"><img src="https://cdn.sparrowcode.io/github/apps-using/craft.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1498041069"><img src="https://cdn.sparrowcode.io/github/apps-using/seqvoia.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id875280793"><img src="https://cdn.sparrowcode.io/github/apps-using/salat.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id743843090"><img src="https://cdn.sparrowcode.io/github/apps-using/athan.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id537070378"><img src="https://cdn.sparrowcode.io/github/apps-using/quran.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1596657751"><img src="https://cdn.sparrowcode.io/github/apps-using/run-tracker.png?version=2" height="65"></a>
+</p>

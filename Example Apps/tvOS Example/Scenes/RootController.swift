@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.io)
+// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,27 +22,27 @@
 import UIKit
 import SparrowKit
 
-import SPPermissions
-import SPPermissionsCamera
-import SPPermissionsPhotoLibrary
-import SPPermissionsNotification
-import SPPermissionsMicrophone
-import SPPermissionsCalendar
-import SPPermissionsContacts
-import SPPermissionsReminders
-import SPPermissionsSpeechRecognizer
-import SPPermissionsLocationWhenInUse
-import SPPermissionsLocationAlways
-import SPPermissionsMotion
-import SPPermissionsMusic
-import SPPermissionsBluetooth
-import SPPermissionsTracking
+import PermissionsKit
+import CameraPermission
+import PhotoLibraryPermission
+import NotificationPermission
+import MicrophonePermission
+import CalendarPermission
+import ContactsPermission
+import RemindersPermission
+import SpeechRecognizerPermission
+import LocationWhenInUsePermission
+import LocationAlwaysPermission
+import MotionPermission
+import MediaLibraryPermission
+import BluetoothPermission
+import TrackingPermission
 
 class RootController: SPTableViewController {
     
-    var availablePermissions: [SPPermissions.Permission] = [.photoLibrary, .notification, .locationWhenInUse, .bluetooth, /*.tracking*/]
+    var availablePermissions: [Permission] = [.photoLibrary, .notification, .locationWhenInUse, .bluetooth, /*.tracking*/]
     
-    var selectedPermissions: [SPPermissions.Permission] = []
+    var selectedPermissions: [Permission] = []
     
     // MARK: Lifecycle
     
@@ -56,18 +56,18 @@ class RootController: SPTableViewController {
     // MARK: Actions
     
     @objc func requestPermissions() {
-        let controller = SPPermissions.native(selectedPermissions)
+        let controller = PermissionsKit.native(selectedPermissions)
         controller.delegate = self
         controller.present(on: self)
     }
 }
 
-// MARK: - SPPermissions Data Source
+// MARK: - Permissions Data Source
 
-extension RootController: SPPermissionsDataSource {
+extension RootController: PermissionsDataSource {
     
-    func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionsDeniedAlertTexts? {
-        if permission.type == .notification {
+    func deniedPermissionAlertTexts(for permission: Permission) -> DeniedPermissionAlertTexts? {
+        if permission.kind == .notification {
             
             // If returned nil, alert will not show.
             
@@ -79,7 +79,7 @@ extension RootController: SPPermissionsDataSource {
             // You can create custom texts
             
             /*
-             let texts = SPPermissionDeniedAlertTexts()
+             let texts = DeniedPermissionAlertTexts()
              texts.titleText = "Permission denied"
              texts.descriptionText = "Please, go to Settings and allow permission."
              texts.actionText = "Settings"
@@ -94,19 +94,19 @@ extension RootController: SPPermissionsDataSource {
     }
 }
 
-// MARK: - SPPermissions Delegate
+// MARK: - Permissions Delegate
 
-extension RootController: SPPermissionsDelegate {
+extension RootController: PermissionsDelegate {
     
-    func didHidePermissions(_ permissions: [SPPermissions.Permission]) {
+    func didHidePermissions(_ permissions: [Permission]) {
         print("Example App: did hide with permissions", permissions.map { $0.debugName })
     }
     
-    func didAllowPermission(_ permission: SPPermissions.Permission) {
+    func didAllowPermission(_ permission: Permission) {
         print("Example App: did allow", permission.debugName)
     }
     
-    func didDeniedPermission(_ permission: SPPermissions.Permission) {
+    func didDeniedPermission(_ permission: Permission) {
         print("Example App: did denied", permission.debugName)
     }
 }
