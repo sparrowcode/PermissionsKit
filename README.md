@@ -338,7 +338,7 @@ texts.cancelText = "Cancel"
 Next implement the following method and return:
 
 ```swift
-func deniedAlertTexts(for permission: Permission) -> PermissionDeniedAlertTexts? {
+func deniedPermissionAlertTexts(for permission: Permission) -> PermissionDeniedAlertTexts? {
     
     // Custom texts:
     return texts
