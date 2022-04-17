@@ -37,12 +37,13 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
     <a href="https://discord.gg/BfZQUG6pnh">
         <img src="https://cdn.sparrowcode.io/github/badges/discord.png?version=2" height="52">
     </a>
-    <a href="https://sparrowcode.io/telegram/chat">
-        <img src="https://cdn.sparrowcode.io/github/badges/sparrowcode-telegram-chat.png?version=2" height="52">
+    <a href="#apps-using">
+        <img src="https://cdn.sparrowcode.io/github/badges/download-on-the-appstore.png?version=2" height="52">
     </a>
     <a href="https://github.com/sponsors/sparrowcode">
-        <img src="https://cdn.sparrowcode.io/github/badges/github-sponsorship.png?version=2" height="52">
+        <img src="https://cdn.sparrowcode.io/github/badges/github-sponsor.png?version=3" height="52">
     </a>
+    
 </p>
 
 ## Navigate
@@ -65,6 +66,7 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 - [Localizations](#localizations)
 - [Keys in Info.plist](#keys-in-infoplist)
 - [Apple Review](#apple-review)
+- [Apps Using](#apps-using)
 
 ## Installation
 
@@ -431,4 +433,8 @@ controller.showCloseButton = true
 controller.allowSwipeDismiss = true
 ```
 
-Also changed title for button. Instead of  `allow` now using `continue`. The Apple Review Team asked for this. For details, check out [this issue](https://github.com/sparrowcode/PermissionsKit/issues/229). 
+Also changed title for button. Instead of  `allow` now using `continue`. The Apple Review Team asked for this. For details, check out [this issue](https://github.com/sparrowcode/PermissionsKit/issues/229).
+
+## Apps Using
+
+
