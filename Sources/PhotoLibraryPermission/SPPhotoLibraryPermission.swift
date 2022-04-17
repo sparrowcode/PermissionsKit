@@ -19,24 +19,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
 #endif
 
-#if SPPERMISSIONS_PHOTOLIBRARY
+#if PERMISSIONSKIT_PHOTOLIBRARY
 
 import Photos
 
-public extension SPPermissions.Permission {
+public extension Permission {
 
     static var photoLibrary: SPPhotoLibraryPermission {
         return SPPhotoLibraryPermission()
     }
 }
 
-public class SPPhotoLibraryPermission: SPPermissions.Permission {
+public class SPPhotoLibraryPermission: Permission {
     
-    open override var type: SPPermissions.PermissionType { .photoLibrary }
+    open override var kind: Permission.Kind { .photoLibrary }
     
     open var fullAccessUsageDescriptionKey: String? {
         "NSPhotoLibraryUsageDescription"
@@ -46,7 +46,7 @@ public class SPPhotoLibraryPermission: SPPermissions.Permission {
         "NSPhotoLibraryAddUsageDescription"
     }
     
-    public override var status: SPPermissions.PermissionStatus {
+    public override var status: Permission.Status {
         switch PHPhotoLibrary.authorizationStatus() {
         case .authorized: return .authorized
         case .denied: return .denied
@@ -66,6 +66,5 @@ public class SPPhotoLibraryPermission: SPPermissions.Permission {
         })
     }
 }
-
 #endif
 

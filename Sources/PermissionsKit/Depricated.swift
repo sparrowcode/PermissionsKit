@@ -21,8 +21,14 @@
 
 import Foundation
 
-@available(*, deprecated, renamed: "SPPermissions.Permission")
-public enum SPPermission {}
+@available(*, deprecated, renamed: "Permission")
+public enum SPPermission {
+    
+    @available(*, deprecated, renamed: "Permission")
+    enum Permission {
+        
+    }
+}
 
 @available(*, deprecated, renamed: "SPPermissionsTableViewCell")
 public class SPPermissionTableViewCell {}

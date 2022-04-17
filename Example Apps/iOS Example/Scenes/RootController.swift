@@ -22,32 +22,32 @@
 import UIKit
 import SparrowKit
 
-import SPPermissions
-import SPPermissionsCamera
-import SPPermissionsPhotoLibrary
-import SPPermissionsNotification
-import SPPermissionsMicrophone
-import SPPermissionsCalendar
-import SPPermissionsContacts
-import SPPermissionsReminders
-import SPPermissionsSpeechRecognizer
-import SPPermissionsLocationWhenInUse
-import SPPermissionsLocationAlways
-import SPPermissionsMotion
-import SPPermissionsMusic
-import SPPermissionsBluetooth
-import SPPermissionsTracking
-import SPPermissionsFaceID
-import SPPermissionsSiri
-import SPPermissionsHealth
+import PermissionsKit
+import CameraPermission
+import PhotoLibraryPermission
+import NotificationPermission
+import MicrophonePermission
+import CalendarPermission
+import ContactsPermission
+import RemindersPermission
+import SpeechRecognizerPermission
+import LocationWhenInUsePermission
+import LocationAlwaysPermission
+import MotionPermission
+import MediaLibraryPermission
+import BluetoothPermission
+import TrackingPermission
+import FaceIDPermission
+import SiriPermission
+import HealthPermission
 
 import CoreLocation
 
 class RootController: SPTableViewController {
     
-    var availablePermissions: [SPPermissions.Permission] = [.camera, .photoLibrary, .notification, .microphone, .calendar, .contacts, .reminders, .speech, .locationWhenInUse, .locationAlways, .motion, .mediaLibrary, .bluetooth, /*.tracking,*/ .faceID, .siri, .health]
+    var availablePermissions: [Permission] = [.camera, .photoLibrary, .notification, .microphone, .calendar, .contacts, .reminders, .speech, .locationWhenInUse, .locationAlways, .motion, .mediaLibrary, .bluetooth, /*.tracking,*/ .faceID, .siri, .health]
     
-    var selectedPermissions: [SPPermissions.Permission] = []
+    var selectedPermissions: [Permission] = []
     
     // MARK: Init
     
@@ -112,7 +112,7 @@ class RootController: SPTableViewController {
 
 extension RootController: SPPermissionsDataSource {
     
-    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) {
+    func configure(_ cell: SPPermissionsTableViewCell, for permission: Permission) {
 
         // Here you can customise cell, like texts or colors.
         
@@ -130,7 +130,7 @@ extension RootController: SPPermissionsDataSource {
         */
     }
     
-    func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionsDeniedAlertTexts? {
+    func deniedAlertTexts(for permission: Permission) -> SPPermissionsDeniedAlertTexts? {
         // You can create custom texts
         
         /*
@@ -155,15 +155,15 @@ extension RootController: SPPermissionsDataSource {
 
 extension RootController: SPPermissionsDelegate {
     
-    func didHidePermissions(_ permissions: [SPPermissions.Permission]) {
+    func didHidePermissions(_ permissions: [Permission]) {
         print("Example App: did hide with permissions", permissions.map { $0.debugName })
     }
     
-    func didAllowPermission(_ permission: SPPermissions.Permission) {
+    func didAllowPermission(_ permission: Permission) {
         print("Example App: did allow", permission.debugName)
     }
     
-    func didDeniedPermission(_ permission: SPPermissions.Permission) {
+    func didDeniedPermission(_ permission: Permission) {
         print("Example App: did denied", permission.debugName)
     }
 }

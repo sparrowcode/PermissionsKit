@@ -19,28 +19,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
 #endif
 
-#if SPPERMISSIONS_BLUETOOTH
-
+#if PERMISSIONSKIT_BLUETOOTH
 import Foundation
 import CoreBluetooth
+import CloudKit
 
-public extension SPPermissions.Permission {
-
-    static var bluetooth: SPBluetoothPermission {
-        return SPBluetoothPermission()
+public extension Permission {
+    
+    static var bluetooth: BluetoothPermission {
+        return BluetoothPermission()
     }
 }
 
-public class SPBluetoothPermission: SPPermissions.Permission {
+public class BluetoothPermission: Permission {
     
-    open override var type: SPPermissions.PermissionType { .bluetooth }
+    open override var kind: Permission.Kind { .bluetooth }
     open var usageDescriptionKey: String? { "NSBluetoothAlwaysUsageDescription" }
     
-    public override var status: SPPermissions.PermissionStatus {
+    public override var status: Permission.Status {
         if #available(iOS 13.1, tvOS 13.1, *) {
             switch CBCentralManager.authorization {
             case .allowedAlways: return .authorized
@@ -69,10 +69,9 @@ public class SPBluetoothPermission: SPPermissions.Permission {
     }
     
     public override func request(completion: @escaping () -> Void) {
-        SPPermissionBluetoothHandler.shared.completion = completion
-        SPPermissionBluetoothHandler.shared.reqeustUpdate()
+        BluetoothHandler.shared.completion = completion
+        BluetoothHandler.shared.reqeustUpdate()
     }
 }
-
 #endif
 

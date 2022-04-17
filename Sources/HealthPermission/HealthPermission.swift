@@ -19,30 +19,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
 #endif
 
-#if os(iOS) && SPPERMISSIONS_HEALTH
-
+#if os(iOS) && PERMISSIONSKIT_HEALTH
 import Foundation
 import HealthKit
 
-public extension SPPermissions.Permission {
+public extension Permission {
     
-    static var health: SPHealthPermission {
-        return SPHealthPermission()
+    static var health: HealthPermission {
+        return HealthPermission()
     }
 }
 
-public class SPHealthPermission: SPPermissions.Permission {
+public class HealthPermission: Permission {
     
-    open override var type: SPPermissions.PermissionType { .health }
+    open override var kind: Permission.Kind { .health }
     
     open var readingUsageDescriptionKey: String? { "NSHealthUpdateUsageDescription" }
     open var writingUsageDescriptionKey: String? { "NSHealthShareUsageDescription" }
     
-    public static func status(for type: HKObjectType) -> SPPermissions.PermissionStatus {
+    public static func status(for type: HKObjectType) -> Permission.Status {
         switch HKHealthStore().authorizationStatus(for: type) {
         case .sharingAuthorized: return .authorized
         case .sharingDenied: return .denied
@@ -59,8 +58,6 @@ public class SPHealthPermission: SPPermissions.Permission {
         }
     }
     
-    
-    
     public override var canBePresentWithCustomInterface: Bool { false }
     
     // MARK: - Locked
@@ -75,10 +72,9 @@ public class SPHealthPermission: SPPermissions.Permission {
     open override var notDetermined: Bool { fatalError() }
     
     @available(*, unavailable)
-    public override var status: SPPermissions.PermissionStatus { fatalError() }
+    public override var status: Permission.Status { fatalError() }
     
     @available(*, unavailable)
     open override func request(completion: @escaping ()->Void) { fatalError() }
 }
-
 #endif

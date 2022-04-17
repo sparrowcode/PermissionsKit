@@ -114,5 +114,4 @@ class SPPermissionsDialogView: UIView {
         }
     }
 }
-
 #endif

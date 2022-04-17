@@ -62,11 +62,11 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     private let dialogView = SPPermissionsDialogView()
     private let backgroundView = SPPermissionsDialogGradeBlurView()
     
-    private var permissions: [SPPermissions.Permission]
+    private var permissions: [Permission]
     
     // MARK: - Init
     
-    init(_ permissions: [SPPermissions.Permission]) {
+    init(_ permissions: [Permission]) {
         self.permissions = permissions
         super.init(nibName: nil, bundle: nil)
     }
@@ -195,9 +195,9 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
             
             // Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
             
-            if permission.type == .locationAlways {
-                if self.permissions.contains(where: { $0.type == .locationWhenInUse }) {
-                    if let index = self.permissions.firstIndex(where: { $0.type == .locationWhenInUse }) {
+            if permission.kind == .locationAlways {
+                if self.permissions.contains(where: { $0.kind == .locationWhenInUse }) {
+                    if let index = self.permissions.firstIndex(where: { $0.kind == .locationWhenInUse }) {
                         if let cell = self.dialogView.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? SPPermissionsTableViewCell {
                             cell.updateInterface(animated: true)
                         }
@@ -350,5 +350,4 @@ extension SPPermissionsDialogController: UITableViewDataSource, UITableViewDeleg
         return view
     }
 }
-
 #endif

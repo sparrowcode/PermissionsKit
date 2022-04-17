@@ -62,5 +62,4 @@ enum HapticService {
         case warning
     }
 }
-
 #endif

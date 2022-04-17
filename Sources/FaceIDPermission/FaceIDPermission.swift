@@ -19,30 +19,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
 #endif
 
-#if os(iOS) && SPPERMISSIONS_FACEID
-
+#if os(iOS) && PERMISSIONSKIT_FACEID
 import Foundation
 import LocalAuthentication
 
-public extension SPPermissions.Permission {
-
-    static var faceID: SPFaceIDPermission {
-        return SPFaceIDPermission()
+public extension Permission {
+    
+    static var faceID: FaceIDPermission {
+        return FaceIDPermission()
     }
 }
 
-public class SPFaceIDPermission: SPPermissions.Permission {
+public class FaceIDPermission: Permission {
     
-    open override var type: SPPermissions.PermissionType { .faceID }
+    open override var kind: Permission.Kind { .faceID }
     open var usageDescriptionKey: String? { "NSFaceIDUsageDescription" }
     
-    public override var status: SPPermissions.PermissionStatus {
+    public override var status: Permission.Status {
         let context = LAContext()
-
+        
         var error: NSError?
         let isReady = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
         
@@ -51,14 +50,14 @@ public class SPFaceIDPermission: SPPermissions.Permission {
         }
         
         switch error?.code {
-            case nil where isReady:
-                return .notDetermined
-            case LAError.biometryNotAvailable.rawValue:
-                return .denied
-            case LAError.biometryNotEnrolled.rawValue:
-                return .notSupported
-            default:
-                return .notSupported
+        case nil where isReady:
+            return .notDetermined
+        case LAError.biometryNotAvailable.rawValue:
+            return .denied
+        case LAError.biometryNotEnrolled.rawValue:
+            return .notSupported
+        default:
+            return .notSupported
         }
     }
     
@@ -70,5 +69,4 @@ public class SPFaceIDPermission: SPPermissions.Permission {
         }
     }
 }
-
 #endif

@@ -34,7 +34,7 @@ public protocol SPPermissionsDataSource: AnyObject {
      - parameter cell: Default cell object of class `SPPermissionsTableViewCell`.
      - parameter permission: For which permissions cell configuring.
      */
-    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission)
+    func configure(_ cell: SPPermissionsTableViewCell, for permission: Permission)
     #endif
     
     /**
@@ -43,7 +43,7 @@ public protocol SPPermissionsDataSource: AnyObject {
      
      - parameter permission: Text for this permission.
      */
-    func deniedAlertTexts(for permission: SPPermissions.Permission) -> SPPermissionsDeniedAlertTexts?
+    func deniedAlertTexts(for permission: Permission) -> SPPermissionsDeniedAlertTexts?
 }
 
 // Using like default for allow it like optional.
@@ -51,7 +51,7 @@ public protocol SPPermissionsDataSource: AnyObject {
 public extension SPPermissionsDataSource {
     
     #if os(iOS)
-    func configure(_ cell: SPPermissionsTableViewCell, for permission: SPPermissions.Permission) -> SPPermissionsTableViewCell { return cell }
+    func configure(_ cell: SPPermissionsTableViewCell, for permission: Permission) -> SPPermissionsTableViewCell { return cell }
     #endif
 }
 

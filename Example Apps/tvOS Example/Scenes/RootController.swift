@@ -34,7 +34,7 @@ import SPPermissionsSpeechRecognizer
 import SPPermissionsLocationWhenInUse
 import SPPermissionsLocationAlways
 import SPPermissionsMotion
-import SPPermissionsMusic
+import SPPermissionsMediaLibrary
 import SPPermissionsBluetooth
 import SPPermissionsTracking
 

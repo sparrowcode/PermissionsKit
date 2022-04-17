@@ -19,28 +19,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
 #endif
 
-#if os(iOS) && SPPERMISSIONS_REMINDERS
+#if os(iOS) && PERMISSIONSKIT_REMINDERS
 
 import Foundation
 import EventKit
 
-public extension SPPermissions.Permission {
+public extension Permission {
 
     static var reminders: SPRemindersPermission {
         return SPRemindersPermission()
     }
 }
 
-public class SPRemindersPermission: SPPermissions.Permission {
+public class SPRemindersPermission: Permission {
     
-    open override var type: SPPermissions.PermissionType { .reminders }
+    open override var kind: Permission.Kind { .reminders }
     open var usageDescriptionKey: String? { "NSRemindersUsageDescription" }
     
-    public override var status: SPPermissions.PermissionStatus {
+    public override var status: Permission.Status {
         switch EKEventStore.authorizationStatus(for: EKEntityType.reminder) {
         case .authorized: return .authorized
         case .denied: return .denied
@@ -60,5 +60,4 @@ public class SPRemindersPermission: SPPermissions.Permission {
         })
     }
 }
-
 #endif

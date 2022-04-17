@@ -19,58 +19,45 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
 #endif
 
-#if SPPERMISSIONS_NOTIFICATION
+#if os(iOS) && PERMISSIONSKIT_CAMERA
+import Foundation
+import AVFoundation
 
-import UserNotifications
-
-public extension SPPermissions.Permission {
-
-    static var notification: SPNotificationPermission {
-        return SPNotificationPermission()
+@available(iOS 11.0, macCatalyst 14.0, *)
+public extension Permission {
+    
+    static var camera: CameraPermission {
+        return CameraPermission()
     }
 }
 
-public class SPNotificationPermission: SPPermissions.Permission {
+@available(iOS 11.0, macCatalyst 14.0, *)
+public class CameraPermission: Permission {
     
-    open override var type: SPPermissions.PermissionType { .notification }
+    open override var kind: Permission.Kind { .camera }
+    open var usageDescriptionKey: String? { "NSCameraUsageDescription" }
     
-    public override var status: SPPermissions.PermissionStatus {
-        guard let authorizationStatus = fetchAuthorizationStatus() else { return .notDetermined }
-        switch authorizationStatus {
+    public override var status: Permission.Status {
+        switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {
         case .authorized: return .authorized
         case .denied: return .denied
         case .notDetermined: return .notDetermined
-        case .provisional: return .authorized
-        case .ephemeral: return .authorized
+        case .restricted: return .denied
         @unknown default: return .denied
         }
     }
     
-    private func fetchAuthorizationStatus() -> UNAuthorizationStatus? {
-        var notificationSettings: UNNotificationSettings?
-        let semaphore = DispatchSemaphore(value: 0)
-        DispatchQueue.global().async {
-            UNUserNotificationCenter.current().getNotificationSettings { setttings in
-                notificationSettings = setttings
-                semaphore.signal()
-            }
-        }
-        semaphore.wait()
-        return notificationSettings?.authorizationStatus
-    }
-    
     public override func request(completion: @escaping () -> Void) {
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+        AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: {
+            finished in
             DispatchQueue.main.async {
                 completion()
             }
-        }
+        })
     }
 }
-
 #endif

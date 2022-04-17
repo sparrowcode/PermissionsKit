@@ -19,29 +19,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
 #endif
 
-#if os(iOS) && SPPERMISSIONS_MUSIC
-
+#if os(iOS) && PERMISSIONSKIT_MOTION
 import Foundation
-import MediaPlayer
+import CoreMotion
 
-public extension SPPermissions.Permission {
-
-    static var mediaLibrary: SPMediaLibraryPermission {
-        return SPMediaLibraryPermission()
+public extension Permission {
+    
+    static var motion: MotionPermission {
+        return MotionPermission()
     }
 }
 
-public class SPMediaLibraryPermission: SPPermissions.Permission {
+public class MotionPermission: Permission {
     
-    open override var type: SPPermissions.PermissionType { .mediaLibrary }
-    open var usageDescriptionKey: String? { "NSAppleMusicUsageDescription" }
+    open override var kind: Permission.Kind { .motion }
+    open var usageDescriptionKey: String? { "NSMotionUsageDescription" }
     
-    public override var status: SPPermissions.PermissionStatus {
-        switch MPMediaLibrary.authorizationStatus() {
+    public override var status: Permission.Status {
+        switch CMMotionActivityManager.authorizationStatus() {
         case .authorized: return .authorized
         case .denied: return .denied
         case .notDetermined: return .notDetermined
@@ -51,12 +50,13 @@ public class SPMediaLibraryPermission: SPPermissions.Permission {
     }
     
     public override func request(completion: @escaping () -> Void) {
-        MPMediaLibrary.requestAuthorization() { status in
-            DispatchQueue.main.async {
-                completion()
-            }
-        }
+        let manager = CMMotionActivityManager()
+        let today = Date()
+        
+        manager.queryActivityStarting(from: today, to: today, to: OperationQueue.main, withHandler: { (activities: [CMMotionActivity]?, error: Error?) -> () in
+            completion()
+            manager.stopActivityUpdates()
+        })
     }
 }
-
 #endif

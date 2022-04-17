@@ -23,8 +23,8 @@ import UIKit
 
 enum Texts {
     
-    static func permission_name(_ permission: SPPermissions.PermissionType) -> String {
-        switch permission {
+    static func permission_name(for kind: Permission.Kind) -> String {
+        switch kind {
         case .camera:
             return NSLocalizedString("permission camera name", bundle: bundle, comment: "")
         case .photoLibrary:
@@ -62,8 +62,8 @@ enum Texts {
         }
     }
     
-    static func permission_description(_ permission: SPPermissions.PermissionType) -> String {
-        switch permission {
+    static func permission_description(for kind: Permission.Kind) -> String {
+        switch kind {
         case .camera:
             return NSLocalizedString("permission camera description", bundle: bundle, comment: "")
         case .photoLibrary:
@@ -127,13 +127,13 @@ enum Texts {
         
         // If installed via SPM, will be available bundle .module.
         
-        #if SPPERMISSIONS_SPM
+        #if PERMISSIONSKIT_SPM
         return .module
         #else
         
         // If installed via Cocoapods, should use bundle from podspec.
         
-        let path = Bundle(for: SPPermissions.Permission.self).path(forResource: "SPPermissions", ofType: "bundle") ?? ""
+        let path = Bundle(for: Permission.self).path(forResource: "PermissionsKit", ofType: "bundle") ?? ""
         let bundle = Bundle(path: path) ?? Bundle.main
         return bundle
         #endif

@@ -19,28 +19,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
 #endif
 
-#if os(iOS) && SPPERMISSIONS_SIRI
+#if os(iOS) && PERMISSIONSKIT_SIRI
 
 import Foundation
 import Intents
 
-public extension SPPermissions.Permission {
+public extension Permission {
 
     static var siri: SPSiriPermission {
         return SPSiriPermission()
     }
 }
 
-public class SPSiriPermission: SPPermissions.Permission {
+public class SPSiriPermission: Permission {
     
-    open override var type: SPPermissions.PermissionType { .siri }
+    open override var kind: Permission.Kind { .siri }
     open var usageDescriptionKey: String? { "NSSiriUsageDescription" }
     
-    public override var status: SPPermissions.PermissionStatus {
+    public override var status: Permission.Status {
         switch INPreferences.siriAuthorizationStatus() {
         case .authorized: return .authorized
         case .denied: return .denied
@@ -58,5 +58,4 @@ public class SPSiriPermission: SPPermissions.Permission {
         }
     }
 }
-
 #endif

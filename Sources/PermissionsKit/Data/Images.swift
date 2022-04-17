@@ -23,8 +23,8 @@ import UIKit
 
 enum Images {
     
-    static func permission_icon(for permission: SPPermissions.PermissionType) -> UIImage {
-        switch permission {
+    static func permission_icon(for kind: Permission.Kind) -> UIImage {
+        switch kind {
         case .camera:
             return UIImage.init(named: "Camera", in: bundle, compatibleWith: nil) ?? UIImage()
         case .photoLibrary:
@@ -72,13 +72,13 @@ enum Images {
         
         // If installed via SPM, will be available bundle .module.
         
-        #if SPPERMISSIONS_SPM
+        #if PERMISSIONSKIT_SPM
         return .module
         #else
         
         // If installed via Cocoapods, should use bundle from podspec.
         
-        let path = Bundle(for: SPPermissions.Permission.self).path(forResource: "SPPermissions", ofType: "bundle") ?? ""
+        let path = Bundle(for: Permission.self).path(forResource: "PermissionsKit", ofType: "bundle") ?? ""
         let bundle = Bundle(path: path) ?? Bundle.main
         return bundle
         #endif

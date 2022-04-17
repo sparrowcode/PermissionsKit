@@ -30,9 +30,9 @@ public struct SPPermissionsList: UIViewControllerRepresentable {
     private weak var dataSource: SPPermissionsDataSource?
     private weak var delegate: SPPermissionsDelegate?
     
-    private var permissions: [SPPermissions.Permission]
+    private var permissions: [Permission]
     
-    public init(permissions: [SPPermissions.Permission], dataSource: SPPermissionsDataSource? = nil, delegate: SPPermissionsDelegate? = nil) {
+    public init(permissions: [Permission], dataSource: SPPermissionsDataSource? = nil, delegate: SPPermissionsDelegate? = nil) {
         self.permissions = permissions
         self.dataSource = dataSource
         self.delegate = delegate
@@ -43,13 +43,12 @@ public struct SPPermissionsList: UIViewControllerRepresentable {
     public typealias UIViewControllerType = UINavigationController
     
     public func makeUIViewController(context: Context) -> UINavigationController {
-        let permissionsController = SPPermissions.list(permissions)
-        permissionsController.dataSource = self.dataSource
-        permissionsController.delegate = self.delegate
-        return UINavigationController(rootViewController: permissionsController)
+        let controller = SPPermissionsListController(permissions)
+        controller.dataSource = self.dataSource
+        controller.delegate = self.delegate
+        return UINavigationController(rootViewController: controller)
     }
     
     public func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {}
 }
-
 #endif

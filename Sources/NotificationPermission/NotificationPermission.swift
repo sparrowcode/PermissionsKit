@@ -19,45 +19,56 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
 #endif
 
-#if os(iOS) && SPPERMISSIONS_CONTACTS
+#if PERMISSIONSKIT_NOTIFICATION
+import UserNotifications
 
-import Foundation
-import Contacts
-
-public extension SPPermissions.Permission {
-
-    static var contacts: SPContactsPermission {
-        return SPContactsPermission()
+public extension Permission {
+    
+    static var notification: NotificationPermission {
+        return NotificationPermission()
     }
 }
 
-public class SPContactsPermission: SPPermissions.Permission {
+public class NotificationPermission: Permission {
     
-    open override var type: SPPermissions.PermissionType { .contacts }
-    open var usageDescriptionKey: String? { "NSContactsUsageDescription" }
+    open override var kind: Permission.Kind { .notification }
     
-    public override var status: SPPermissions.PermissionStatus {
-        switch CNContactStore.authorizationStatus(for: .contacts) {
+    public override var status: Permission.Status {
+        guard let authorizationStatus = fetchAuthorizationStatus() else { return .notDetermined }
+        switch authorizationStatus {
         case .authorized: return .authorized
         case .denied: return .denied
         case .notDetermined: return .notDetermined
-        case .restricted: return .denied
+        case .provisional: return .authorized
+        case .ephemeral: return .authorized
         @unknown default: return .denied
         }
     }
     
+    private func fetchAuthorizationStatus() -> UNAuthorizationStatus? {
+        var notificationSettings: UNNotificationSettings?
+        let semaphore = DispatchSemaphore(value: 0)
+        DispatchQueue.global().async {
+            UNUserNotificationCenter.current().getNotificationSettings { setttings in
+                notificationSettings = setttings
+                semaphore.signal()
+            }
+        }
+        semaphore.wait()
+        return notificationSettings?.authorizationStatus
+    }
+    
     public override func request(completion: @escaping () -> Void) {
-        let store = CNContactStore()
-        store.requestAccess(for: .contacts, completionHandler: { (granted, error) in
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
             DispatchQueue.main.async {
                 completion()
             }
-        })
+        }
     }
 }
-
 #endif

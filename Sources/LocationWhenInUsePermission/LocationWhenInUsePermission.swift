@@ -19,28 +19,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
-import SPPermissionsLocationExtension
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
+import LocationExtension
 #endif
 
-#if SPPERMISSIONS_LOCATION_WHENINUSE
+#if PERMISSIONSKIT_LOCATION_WHENINUSE
 import Foundation
 import MapKit
 
-public extension SPPermissions.Permission {
+public extension Permission {
     
-    static var locationWhenInUse: SPLocationWhenInUsePermission {
-        return SPLocationWhenInUsePermission()
+    static var locationWhenInUse: LocationWhenInUsePermission {
+        return LocationWhenInUsePermission()
     }
 }
 
-public class SPLocationWhenInUsePermission: SPPermissions.Permission {
+public class LocationWhenInUsePermission: Permission {
     
-    open override var type: SPPermissions.PermissionType { .locationWhenInUse }
+    open override var kind: Permission.Kind { .locationWhenInUse }
     open var usageDescriptionKey: String? { "NSLocationAlwaysAndWhenInUseUsageDescription" }
     
-    public override var status: SPPermissions.PermissionStatus {
+    public override var status: Permission.Status {
         let authorizationStatus: CLAuthorizationStatus = {
             let locationManager = CLLocationManager()
             if #available(iOS 14.0, tvOS 14.0, *) {
@@ -77,14 +77,13 @@ public class SPLocationWhenInUsePermission: SPPermissions.Permission {
     }
     
     public override func request(completion: @escaping () -> Void) {
-        SPLocationWhenInUseHandler.shared = SPLocationWhenInUseHandler()
-        SPLocationWhenInUseHandler.shared?.requestPermission() {
+        LocationWhenInUseHandler.shared = LocationWhenInUseHandler()
+        LocationWhenInUseHandler.shared?.requestPermission() {
             DispatchQueue.main.async {
                 completion()
-                SPLocationWhenInUseHandler.shared = nil
+                LocationWhenInUseHandler.shared = nil
             }
         }
     }
 }
-
 #endif

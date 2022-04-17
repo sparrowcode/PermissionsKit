@@ -1,30 +1,30 @@
 # PermissionsKit
 
 <p aligment="left">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/v8/list-style.png?version=1" height="260"/>
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/v8/dialog-style.png?version=1" height="260"/>
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/v8/native-request.png?version=1" height="260"/>
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/v8/list-style.png?version=1" height="260"/>
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/v8/dialog-style.png?version=1" height="260"/>
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/v8/native-request.png?version=1" height="260"/>
 </p>
 
 Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode and has ready localizations. Also you can check state of permissions, available are `.authorized`, `.denied` & `.notDetermined`.
 
 <p float="left">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/camera.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/photos.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/notifications.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/location.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/microphone.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/calendar.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/contacts.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/reminders.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/motion.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/music.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/speech.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/bluetooth.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/health.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/tracking.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/faceid.png" width="38">
-    <img src="https://cdn.sparrowcode.io/frameworks/permissionskit/icons/siri.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/camera.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/photos.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/notifications.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/location.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/microphone.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/calendar.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/contacts.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/reminders.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/motion.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/music.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/speech.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/bluetooth.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/health.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/tracking.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/faceid.png" width="38">
+    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/siri.png" width="38">
 </p>
 
 ### Community
@@ -133,7 +133,7 @@ pod 'PermissionsKit/LocationAlwaysPermission', :git => 'https://github.com/sparr
 pod 'PermissionsKit/MotionPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
-pod 'PermissionsKit/MusicPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
+pod 'PermissionsKit/MediaLibraryPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 ```ruby
 pod 'PermissionsKit/BluetoothPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'

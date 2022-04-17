@@ -19,46 +19,40 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
-#endif
-
-#if os(iOS) && SPPERMISSIONS_CALENDAR
-
 import Foundation
-import EventKit
+import MapKit
 
-public extension SPPermissions.Permission {
-
-    static var calendar: SPCalendarPermission {
-        return SPCalendarPermission()
+extension CLLocationManager {
+    
+    open func setAccuracy(_ value: LocationAccuracy) {
+        desiredAccuracy = value.coreLocationAccuracy
     }
 }
 
-public class SPCalendarPermission: SPPermissions.Permission {
+public enum LocationAccuracy {
     
-    open override var type: SPPermissions.PermissionType { .calendar }
-    open var usageDescriptionKey: String? { "NSCalendarsUsageDescription" }
+    case best
+    case bestForNavigation
+    case nearestTenMeters
+    case hundredMeters
+    case kilometer
+    case threeKilometers
+    case reduced
     
-    public override var status: SPPermissions.PermissionStatus {
-        switch EKEventStore.authorizationStatus(for: EKEntityType.event) {
-        case .authorized: return .authorized
-        case .denied: return .denied
-        case .notDetermined: return .notDetermined
-        case .restricted: return .denied
-        @unknown default: return .denied
+    var coreLocationAccuracy: CLLocationAccuracy {
+        switch self {
+        case .best: return kCLLocationAccuracyBest
+        case .bestForNavigation: return  kCLLocationAccuracyBestForNavigation
+        case .nearestTenMeters: return kCLLocationAccuracyNearestTenMeters
+        case .hundredMeters: return kCLLocationAccuracyHundredMeters
+        case .kilometer: return kCLLocationAccuracyKilometer
+        case .threeKilometers: return  kCLLocationAccuracyThreeKilometers
+        case .reduced:
+            if #available(iOS 14.0, tvOS 14.0, watchOS 7.0, *) {
+                return kCLLocationAccuracyReduced
+            } else {
+                return kCLLocationAccuracyThreeKilometers
+            }
         }
     }
-    
-    public override func request(completion: @escaping () -> Void) {
-        let eventStore = EKEventStore()
-        eventStore.requestAccess(to: EKEntityType.event, completion: {
-            (accessGranted: Bool, error: Error?) in
-            DispatchQueue.main.async {
-                completion()
-            }
-        })
-    }
 }
-
-#endif

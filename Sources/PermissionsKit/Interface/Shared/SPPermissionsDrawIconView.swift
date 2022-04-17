@@ -25,7 +25,7 @@ import UIKit
 @available(iOSApplicationExtension, unavailable)
 public class SPPermissionsDrawIconView: UIView {
     
-    var permission: SPPermissions.Permission? {
+    var permission: Permission? {
         didSet {
             setNeedsDisplay()
         }
@@ -50,7 +50,7 @@ public class SPPermissionsDrawIconView: UIView {
     
     override public func draw(_ rect: CGRect) {
         super.draw(rect)
-        switch permission?.type {
+        switch permission?.kind {
         case .camera:
             DrawService.drawCamera(frame: rect, resizing: .aspectFit, color: tintColor)
         case .photoLibrary:
@@ -87,5 +87,4 @@ public class SPPermissionsDrawIconView: UIView {
         }
     }
 }
-
 #endif

@@ -28,13 +28,13 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerInt
     
     // MARK: - Data
     
-    private var permissions: [SPPermissions.Permission]
-    private var proceseedPermissions: [SPPermissions.Permission] = []
+    private var permissions: [Permission]
+    private var proceseedPermissions: [Permission] = []
     private var memoryLocker: SPPermissionsNativeController? = nil
     
     // MARK: - Init
     
-    init(_ permissions: [SPPermissions.Permission]) {
+    init(_ permissions: [Permission]) {
         self.permissions = permissions
         super.init()
     }

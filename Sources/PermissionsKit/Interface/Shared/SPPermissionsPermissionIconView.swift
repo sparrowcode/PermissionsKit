@@ -67,8 +67,8 @@ public class SPPermissionsPermissionIconView: UIView {
      
      - parameter type: Case from `SPPermissions.PermissionType`.
      */
-    public func setPermissionType(_ type: SPPermissions.PermissionType) {
-        iconImageView.image = Images.permission_icon(for: type)
+    public func setPermission(_ kind: Permission.Kind) {
+        iconImageView.image = Images.permission_icon(for: kind)
         iconImageView.contentMode = .scaleAspectFit
         
         iconMaskView.image = Images.app_icon_mask

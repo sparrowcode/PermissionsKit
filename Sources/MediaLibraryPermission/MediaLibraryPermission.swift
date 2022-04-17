@@ -19,31 +19,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
 #endif
 
-#if os(iOS) && SPPERMISSIONS_CAMERA
-
+#if os(iOS) && PERMISSIONSKIT_MEDIALIBRARY
 import Foundation
-import AVFoundation
+import MediaPlayer
 
-@available(iOS 11.0, macCatalyst 14.0, *)
-public extension SPPermissions.Permission {
+public extension Permission {
     
-    static var camera: SPCameraPermission {
-        return SPCameraPermission()
+    static var mediaLibrary: MediaLibraryPermission {
+        return MediaLibraryPermission()
     }
 }
 
-@available(iOS 11.0, macCatalyst 14.0, *)
-public class SPCameraPermission: SPPermissions.Permission {
+public class MediaLibraryPermission: Permission {
     
-    open override var type: SPPermissions.PermissionType { .camera }
-    open var usageDescriptionKey: String? { "NSCameraUsageDescription" }
+    open override var kind: Permission.Kind { .mediaLibrary }
+    open var usageDescriptionKey: String? { "NSAppleMusicUsageDescription" }
     
-    public override var status: SPPermissions.PermissionStatus {
-        switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {
+    public override var status: Permission.Status {
+        switch MPMediaLibrary.authorizationStatus() {
         case .authorized: return .authorized
         case .denied: return .denied
         case .notDetermined: return .notDetermined
@@ -53,13 +50,11 @@ public class SPCameraPermission: SPPermissions.Permission {
     }
     
     public override func request(completion: @escaping () -> Void) {
-        AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: {
-            finished in
+        MPMediaLibrary.requestAuthorization() { status in
             DispatchQueue.main.async {
                 completion()
             }
-        })
+        }
     }
 }
-
 #endif

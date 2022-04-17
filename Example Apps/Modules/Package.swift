@@ -13,7 +13,7 @@ let package = Package(
         .library(name: "Modules", targets: ["Modules"]),
     ],
     dependencies: [
-        .package(name: "SparrowKit", url: "https://github.com/ivanvorobei/SparrowKit", .upToNextMajor(from: "3.5.1")),
+        .package(name: "SparrowKit", url: "https://github.com/ivanvorobei/SparrowKit", .upToNextMajor(from: "3.6.1")),
         .package(name: "PermissionsKit", path: "PermissionsKit")
     ],
     targets: [
@@ -32,7 +32,7 @@ let package = Package(
                 .product(name: "LocationWhenInUsePermission", package: "PermissionsKit"),
                 .product(name: "LocationAlwaysPermission", package: "PermissionsKit"),
                 .product(name: "MotionPermission", package: "PermissionsKit"),
-                .product(name: "MusicPermission", package: "PermissionsKit"),
+                .product(name: "MediaLibraryPermission", package: "PermissionsKit"),
                 .product(name: "BluetoothPermission", package: "PermissionsKit"),
                 .product(name: "TrackingPermission", package: "PermissionsKit"),
                 .product(name: "FaceIDPermission", package: "PermissionsKit"),

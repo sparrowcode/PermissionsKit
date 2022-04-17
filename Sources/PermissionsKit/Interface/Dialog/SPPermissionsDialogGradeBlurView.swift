@@ -115,5 +115,4 @@ public class SPPermissionsBlurView: UIVisualEffectView {
         }
     }
 }
-
 #endif

@@ -60,5 +60,4 @@ class SPPermissionsDialogCloseButton: UIButton {
         }
     }
 }
-
 #endif

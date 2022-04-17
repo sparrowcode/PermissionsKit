@@ -19,44 +19,44 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
 #endif
 
-#if os(iOS) && SPPERMISSIONS_MICROPHONE
-
+#if os(iOS) && PERMISSIONSKIT_CALENDAR
 import Foundation
-import AVFoundation
+import EventKit
 
-public extension SPPermissions.Permission {
+public extension Permission {
 
-    static var microphone: SPMicrophonePermission {
-        return SPMicrophonePermission()
+    static var calendar: CalendarPermission {
+        return CalendarPermission()
     }
 }
 
-public class SPMicrophonePermission: SPPermissions.Permission {
+public class CalendarPermission: Permission {
     
-    open override var type: SPPermissions.PermissionType { .microphone }
-    open var usageDescriptionKey: String? { "NSMicrophoneUsageDescription" }
+    open override var kind: Permission.Kind { .calendar }
+    open var usageDescriptionKey: String? { "NSCalendarsUsageDescription" }
     
-    public override var status: SPPermissions.PermissionStatus {
-        switch  AVAudioSession.sharedInstance().recordPermission {
-        case .granted: return .authorized
+    public override var status: Permission.Status {
+        switch EKEventStore.authorizationStatus(for: EKEntityType.event) {
+        case .authorized: return .authorized
         case .denied: return .denied
-        case .undetermined: return .notDetermined
+        case .notDetermined: return .notDetermined
+        case .restricted: return .denied
         @unknown default: return .denied
         }
     }
     
     public override func request(completion: @escaping () -> Void) {
-        AVAudioSession.sharedInstance().requestRecordPermission {
-            granted in
+        let eventStore = EKEventStore()
+        eventStore.requestAccess(to: EKEntityType.event, completion: {
+            (accessGranted: Bool, error: Error?) in
             DispatchQueue.main.async {
                 completion()
             }
-        }
+        })
     }
 }
-
 #endif

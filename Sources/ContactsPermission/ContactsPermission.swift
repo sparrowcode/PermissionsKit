@@ -19,52 +19,43 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_BLUETOOTH
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
+#endif
 
+#if os(iOS) && PERMISSIONSKIT_CONTACTS
 import Foundation
-import CoreBluetooth
+import Contacts
 
-class SPPermissionBluetoothHandler: NSObject, CBCentralManagerDelegate {
-    
-    var completion: ()->Void = {}
-    
-    // MARK: - Init
-    
-    static let shared: SPPermissionBluetoothHandler = .init()
-    
-    override init() {
-        super.init()
-    }
-    
-    // MARK: - Manager
-    
-    var manager: CBCentralManager?
-    
-    func reqeustUpdate() {
-        if manager == nil {
-            self.manager = CBCentralManager(delegate: self, queue: nil, options: [:])
-        } else {
-            completion()
-        }
-    }
-    
-    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        if #available(iOS 13.0, tvOS 13, *) {
-            switch central.authorization {
-            case .notDetermined:
-                break
-            default:
-                self.completion()
-            }
-        } else {
-            switch CBPeripheralManager.authorizationStatus() {
-            case .notDetermined:
-                break
-            default:
-                self.completion()
-            }
-        }
+public extension Permission {
+
+    static var contacts: ContactsPermission {
+        return ContactsPermission()
     }
 }
 
+public class ContactsPermission: Permission {
+    
+    open override var kind: Permission.Kind { .contacts }
+    open var usageDescriptionKey: String? { "NSContactsUsageDescription" }
+    
+    public override var status: Permission.Status {
+        switch CNContactStore.authorizationStatus(for: .contacts) {
+        case .authorized: return .authorized
+        case .denied: return .denied
+        case .notDetermined: return .notDetermined
+        case .restricted: return .denied
+        @unknown default: return .denied
+        }
+    }
+    
+    public override func request(completion: @escaping () -> Void) {
+        let store = CNContactStore()
+        store.requestAccess(for: .contacts, completionHandler: { (granted, error) in
+            DispatchQueue.main.async {
+                completion()
+            }
+        })
+    }
+}
 #endif

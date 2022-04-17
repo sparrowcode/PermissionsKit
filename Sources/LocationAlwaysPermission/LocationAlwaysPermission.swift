@@ -19,29 +19,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
-import SPPermissionsLocationExtension
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
+import LocationExtension
 #endif
 
-#if os(iOS) && SPPERMISSIONS_LOCATION_ALWAYS
-
+#if os(iOS) && PERMISSIONSKIT_LOCATION_ALWAYS
 import Foundation
 import MapKit
 
-public extension SPPermissions.Permission {
+public extension Permission {
 
-    static var locationAlways: SPLocationAlwaysPermission {
-        return SPLocationAlwaysPermission()
+    static var locationAlways: LocationAlwaysPermission {
+        return LocationAlwaysPermission()
     }
 }
 
-public class SPLocationAlwaysPermission: SPPermissions.Permission {
+public class LocationAlwaysPermission: Permission {
     
-    open override var type: SPPermissions.PermissionType { .locationAlways }
+    open override var kind: Permission.Kind { .locationAlways }
     open var usageDescriptionKey: String? { "NSLocationAlwaysAndWhenInUseUsageDescription" }
     
-    public override var status: SPPermissions.PermissionStatus {
+    public override var status: Permission.Status {
         let authorizationStatus: CLAuthorizationStatus = {
             let locationManager = CLLocationManager()
             if #available(iOS 14.0, tvOS 14.0, *) {
@@ -78,14 +77,13 @@ public class SPLocationAlwaysPermission: SPPermissions.Permission {
     }
     
     public override func request(completion: @escaping () -> Void) {
-        SPLocationAlwaysHandler.shared = SPLocationAlwaysHandler()
-        SPLocationAlwaysHandler.shared?.requestPermission() {
+        LocationAlwaysHandler.shared = LocationAlwaysHandler()
+        LocationAlwaysHandler.shared?.requestPermission() {
             DispatchQueue.main.async {
                 completion()
-                SPLocationAlwaysHandler.shared = nil
+                LocationAlwaysHandler.shared = nil
             }
         }
     }
 }
-
 #endif

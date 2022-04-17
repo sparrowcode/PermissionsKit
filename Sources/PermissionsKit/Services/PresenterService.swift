@@ -24,7 +24,7 @@ import UIKit
 enum PresenterService {
     
     @available(iOSApplicationExtension, unavailable)
-    static func presentAlertAboutDeniedPermission(_ permission: SPPermissions.Permission, dataSource: SPPermissionsDataSource?, on controller: UIViewController) {
+    static func presentAlertAboutDeniedPermission(_ permission: Permission, dataSource: SPPermissionsDataSource?, on controller: UIViewController) {
         
         let data = dataSource?.deniedAlertTexts(for: permission)
         

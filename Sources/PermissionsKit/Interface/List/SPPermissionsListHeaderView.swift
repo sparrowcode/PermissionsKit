@@ -58,5 +58,4 @@ class SPPermissionsListHeaderView: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
 #endif

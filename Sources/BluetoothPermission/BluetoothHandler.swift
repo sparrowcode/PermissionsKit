@@ -19,46 +19,50 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
-#endif
-
-#if os(iOS) && SPPERMISSIONS_MOTION
-
+#if PERMISSIONSKIT_BLUETOOTH
 import Foundation
-import CoreMotion
+import CoreBluetooth
 
-public extension SPPermissions.Permission {
-
-    static var motion: SPMotionPermission {
-        return SPMotionPermission()
+class BluetoothHandler: NSObject, CBCentralManagerDelegate {
+    
+    var completion: ()->Void = {}
+    
+    // MARK: - Init
+    
+    static let shared: BluetoothHandler = .init()
+    
+    override init() {
+        super.init()
     }
-}
-
-public class SPMotionPermission: SPPermissions.Permission {
     
-    open override var type: SPPermissions.PermissionType { .motion }
-    open var usageDescriptionKey: String? { "NSMotionUsageDescription" }
+    // MARK: - Manager
     
-    public override var status: SPPermissions.PermissionStatus {
-        switch CMMotionActivityManager.authorizationStatus() {
-        case .authorized: return .authorized
-        case .denied: return .denied
-        case .notDetermined: return .notDetermined
-        case .restricted: return .denied
-        @unknown default: return .denied
+    var manager: CBCentralManager?
+    
+    func reqeustUpdate() {
+        if manager == nil {
+            self.manager = CBCentralManager(delegate: self, queue: nil, options: [:])
+        } else {
+            completion()
         }
     }
     
-    public override func request(completion: @escaping () -> Void) {
-        let manager = CMMotionActivityManager()
-        let today = Date()
-        
-        manager.queryActivityStarting(from: today, to: today, to: OperationQueue.main, withHandler: { (activities: [CMMotionActivity]?, error: Error?) -> () in
-            completion()
-            manager.stopActivityUpdates()
-        })
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        if #available(iOS 13.0, tvOS 13, *) {
+            switch central.authorization {
+            case .notDetermined:
+                break
+            default:
+                self.completion()
+            }
+        } else {
+            switch CBPeripheralManager.authorizationStatus() {
+            case .notDetermined:
+                break
+            default:
+                self.completion()
+            }
+        }
     }
 }
-
 #endif

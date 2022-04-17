@@ -124,11 +124,11 @@ Pod::Spec.new do |s|
     }
   end
 
-  s.subspec 'Music' do |subspec|
+  s.subspec 'MediaLibrary' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.source_files = "Sources/MusicPermission/**/*.swift"
+    subspec.source_files = "Sources/MediaLibraryPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_MUSIC PERMISSIONSKIT_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_MEDIALIBRARY PERMISSIONSKIT_COCOAPODS"
     }
   end
 

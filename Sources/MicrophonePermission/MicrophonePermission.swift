@@ -19,40 +19,42 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
-import MapKit
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
+#endif
 
-extension CLLocationManager {
+#if os(iOS) && PERMISSIONSKIT_MICROPHONE
+import Foundation
+import AVFoundation
+
+public extension Permission {
     
-    open func setAccuracy(_ value: SPLocationAccuracy) {
-        desiredAccuracy = value.coreLocationAccuracy
+    static var microphone: MicrophonePermission {
+        return MicrophonePermission()
     }
 }
 
-public enum SPLocationAccuracy {
+public class MicrophonePermission: Permission {
     
-    case best
-    case bestForNavigation
-    case nearestTenMeters
-    case hundredMeters
-    case kilometer
-    case threeKilometers
-    case reduced
+    open override var kind: Permission.Kind { .microphone }
+    open var usageDescriptionKey: String? { "NSMicrophoneUsageDescription" }
     
-    var coreLocationAccuracy: CLLocationAccuracy {
-        switch self {
-        case .best: return kCLLocationAccuracyBest
-        case .bestForNavigation: return  kCLLocationAccuracyBestForNavigation
-        case .nearestTenMeters: return kCLLocationAccuracyNearestTenMeters
-        case .hundredMeters: return kCLLocationAccuracyHundredMeters
-        case .kilometer: return kCLLocationAccuracyKilometer
-        case .threeKilometers: return  kCLLocationAccuracyThreeKilometers
-        case .reduced:
-            if #available(iOS 14.0, tvOS 14.0, watchOS 7.0, *) {
-                return kCLLocationAccuracyReduced
-            } else {
-                return kCLLocationAccuracyThreeKilometers
+    public override var status: Permission.Status {
+        switch  AVAudioSession.sharedInstance().recordPermission {
+        case .granted: return .authorized
+        case .denied: return .denied
+        case .undetermined: return .notDetermined
+        @unknown default: return .denied
+        }
+    }
+    
+    public override func request(completion: @escaping () -> Void) {
+        AVAudioSession.sharedInstance().requestRecordPermission {
+            granted in
+            DispatchQueue.main.async {
+                completion()
             }
         }
     }
 }
+#endif

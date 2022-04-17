@@ -56,8 +56,8 @@ let package = Package(
             targets: ["MotionPermission"]
         ),
         .library(
-            name: "MusicPermission",
-            targets: ["MusicPermission"]
+            name: "MediaLibraryPermission",
+            targets: ["MediaLibraryPermission"]
         ),
         .library(
             name: "BluetoothPermission",
@@ -192,10 +192,10 @@ let package = Package(
             ]
         ),
         .target(
-            name: "MusicPermission",
+            name: "MediaLibraryPermission",
             dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
-                .define("PERMISSIONSKIT_MUSIC"),
+                .define("PERMISSIONSKIT_MEDIALIBRARY"),
                 .define("PERMISSIONSKIT_SPM")
             ]
         ),

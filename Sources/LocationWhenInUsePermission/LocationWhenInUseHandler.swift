@@ -19,17 +19,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if SPPERMISSIONS_SPM
-import SPPermissions
-import SPPermissionsLocationExtension
+#if PERMISSIONSKIT_SPM
+import PermissionsKit
+import LocationExtension
 #endif
 
-#if SPPERMISSIONS_LOCATION_WHENINUSE
+#if PERMISSIONSKIT_LOCATION_WHENINUSE
 import Foundation
 import MapKit
 
-class SPLocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
-        
+class LocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
+    
     // MARK: - Location Manager
     
     lazy var locationManager = CLLocationManager()
@@ -63,7 +63,7 @@ class SPLocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
     
     // MARK: - Init
     
-    static var shared: SPLocationWhenInUseHandler?
+    static var shared: LocationWhenInUseHandler?
     
     override init() {
         super.init()
@@ -73,5 +73,4 @@ class SPLocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
         locationManager.delegate = nil
     }
 }
-
 #endif

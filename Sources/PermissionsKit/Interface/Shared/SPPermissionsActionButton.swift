@@ -25,7 +25,7 @@ import UIKit
 @available(iOSApplicationExtension, unavailable)
 public class SPPermissionsActionButton: UIButton {
     
-    var permission: SPPermissions.Permission?
+    var permission: Permission?
     
     public var allowTitle: String = Texts.allow_permission_action
     public var allowTitleColor: UIColor = UIColor.tint
@@ -87,5 +87,4 @@ public class SPPermissionsActionButton: UIButton {
         super.setTitle(title?.uppercased(), for: state)
     }
 }
-
 #endif

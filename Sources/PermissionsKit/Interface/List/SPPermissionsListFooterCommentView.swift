@@ -58,5 +58,4 @@ class SPPermissionsListFooterCommentView: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
 #endif

@@ -32,30 +32,30 @@ public protocol SPPermissionsDelegate: AnyObject {
      
      - parameter permission: For which permission action invocation.
      */
-    func didAllowPermission(_ permission: SPPermissions.Permission)
+    func didAllowPermission(_ permission: Permission)
     
     /**
      SPPermissions: Called when permission denied.
      
      - parameter permission: For which permission action invocation.
      */
-    func didDeniedPermission(_ permission: SPPermissions.Permission)
+    func didDeniedPermission(_ permission: Permission)
     
     /**
      SPPermissions: Called when permission hided.
      
      - parameter permission: For which permission action invocation.
      */
-    func didHidePermissions(_ permissions: [SPPermissions.Permission])
+    func didHidePermissions(_ permissions: [Permission])
 }
 
 // Using like default for allow it like optional.
 @available(iOSApplicationExtension, unavailable)
 public extension SPPermissionsDelegate {
     
-    func didAllowPermission(_ permission: SPPermissions.Permission) {}
+    func didAllowPermission(_ permission: Permission) {}
     
-    func didDeniedPermission(_ permission: SPPermissions.Permission) {}
+    func didDeniedPermission(_ permission: Permission) {}
     
-    func didHidePermissions(_ permissions: [SPPermissions.Permission]) {}
+    func didHidePermissions(_ permissions: [Permission]) {}
 }
