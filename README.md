@@ -50,10 +50,8 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
     - [Swift Package Manager](#swift-package-manager)
     - [CocoaPods](#cocoapods)
 - [Imports](#imports)
-- [Quick Start](#quick-start)
-- [Status](#status)
-    - [Location](#location)
-- [Request](#request)
+- [Request & Status](#request-status)
+- [Ready-use Interface](#ready-use-interface)
     - [List](#list)
     - [Dialog](#dialog)
     - [Native](#native)
@@ -159,56 +157,21 @@ import PermissionsKit
 
 All other installed classes imported automatically.
 
-## Quick Start
+## Request & Status
 
 ```swift
+import PermissionsKit
+import NotificationPermission
 
-// MARK: 1. Choose the permissions you need:
-
-let permissions: [Permission] = [.camera, .notification]
-
-// MARK: 2. Choose present style:
-
-// 2a. List Style
-let controller = PermissionsKit.list(permissions)
-controller.present(on: self)
-
-// 2b. Dialog Style
-let controller = PermissionsKit.dialog(permissions)
-controller.present(on: self)
-
-// 2c. Native Style
-let controller = PermissionsKit.native(permissions)
-controller.present(on: self)
-
-// MARK: 3. Optional: Check permission state (available `authorized`, `denied`, `notDetermined`):
-
-let authorized = Permission.calendar.authorized
+// Request permission.
+Permission.notification.request {
+    
+    // Get status
+    let authorized = Permission.notification.authorized
+}
 ```
 
-For more details see [Request](#Request) section.
-
-## Status
-
-To check the state of any permission, call `Permission` model: 
-
-```swift
-let authorized = Permission.calendar.authorized
-```
-
-Also available are status for `denied` & `notDetermined`.
-
-### Location
-
-For location user can granted `precise` or not. For get state for it, call this:
-
-```swift
-if Permission.locationWhenInUse.isPrecise { ... }
-```
-
-Same for `.locationAlways`.
-
-## Request
+## Ready-use Interface
 
 `PermissionsKit` has three presentation styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `Example Apps/PermissionsKit.xcodeproj`.
 
