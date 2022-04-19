@@ -66,7 +66,7 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 - [Apple Review](#apple-review)
 - [Apps Using](#apps-using)
 
-## Supported Types
+### Supported Types
 
 | Icon |  Permission | Key | Get Status | Make Request |
 | :--: | :---------- | --- | :--------: | :----------: |
