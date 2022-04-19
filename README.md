@@ -209,7 +209,7 @@ controller.present(on: self)
 
 ### Native
 
-<img align="left" src="https://cdn.sparrowcode.io/github/permissionskit/v8/native-request.png?version=1" height="340"/>
+<img align="left" src="https://cdn.sparrowcode.io/github/permissionskit/v8/native-request.png?version=2" height="240"/>
 
 Request permissions with native `UIAlertController`. You can request many permissions at once:
 
