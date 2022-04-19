@@ -49,7 +49,7 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 - [Installation](#installation)
     - [Swift Package Manager](#swift-package-manager)
     - [CocoaPods](#cocoapods)
-- [Request & Status](#request-status)
+- [Request & Status](#request--status)
 - [Ready-use Interface](#ready-use-interface)
     - [List](#list)
     - [Dialog](#dialog)
