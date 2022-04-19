@@ -49,7 +49,6 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 - [Installation](#installation)
     - [Swift Package Manager](#swift-package-manager)
     - [CocoaPods](#cocoapods)
-    - [Manually](#manually)
 - [Imports](#imports)
 - [Quick Start](#quick-start)
 - [Status](#status)
@@ -108,81 +107,38 @@ Next choose the permissions you need. But don't add all of them, because apple [
 
 ### CocoaPods:
 
+This is an outdated way of doing things. I advise you to use [SPM](#swift-package-manager). However, I will continue to support Cocoapods for some time.
+
+<details><summary>Cocoapods Instalation</summary>
+
 [CocoaPods](https://cocoapods.org) is a dependency manager. For usage and installation instructions, visit their website. To integrate using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'PermissionsKit/Notification', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-
-Due to Apple's new policy regarding permission access you need to specifically define what kind of permissions you want to access using subspecs. For example if you want to access `Camera`, `Location` & `Microphone` you define the following:
-
-```ruby
-pod 'PermissionsKit/CameraPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/LocationAlwaysPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/MicrophonePermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-
-<details><summary>Subspecs</summary>
-<p>
-
-```ruby
-pod 'PermissionsKit/CameraPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
-pod 'PermissionsKit/ContactsPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
-pod 'PermissionsKit/CalendarPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
-pod 'PermissionsKit/PhotoLibraryPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
 pod 'PermissionsKit/NotificationPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
+
+Due to Apple's new policy regarding permission access you need to specifically define what kind of permissions you want to access using subspecs.
+
 ```ruby
+pod 'PermissionsKit/CameraPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
+pod 'PermissionsKit/ContactsPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
+pod 'PermissionsKit/CalendarPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
+pod 'PermissionsKit/PhotoLibraryPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
+pod 'PermissionsKit/NotificationPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 pod 'PermissionsKit/MicrophonePermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
 pod 'PermissionsKit/RemindersPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
 pod 'PermissionsKit/SpeechRecognizerPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
 pod 'PermissionsKit/LocationWhenInUsePermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
 pod 'PermissionsKit/LocationAlwaysPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
 pod 'PermissionsKit/MotionPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
 pod 'PermissionsKit/MediaLibraryPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
 pod 'PermissionsKit/BluetoothPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
 pod 'PermissionsKit/TrackingPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
 pod 'PermissionsKit/FaceIDPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
 pod 'PermissionsKit/SiriPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-```ruby
 pod 'PermissionsKit/HealthPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
-
-</p>
 </details>
-
-### Manually
-
-If you prefer not to use any of dependency managers, you can integrate `PermissionsKit`  manually. Copy code and add compile flags from [CONTRIBUTING.md](https://github.com/sparrowcode/PermissionsKit/blob/main/CONTRIBUTING.md) file.
 
 ## Imports
 
