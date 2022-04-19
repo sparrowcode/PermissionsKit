@@ -64,8 +64,8 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 
 ### Permissions
 
-| Icon |  Permission | Key | Get Status | Make Request |
-| :--: | :---------- | --- | :--------: | :----------: |
+| Icon |  Permission | Key for `Info.plist` | Get Status | Make Request |
+| :--: | :---------- | :------------------- | :--------: | :----------: |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/bluetooth.png" width="38"> | Bluetooth | NSBluetoothAlwaysUsageDescription, NSBluetoothPeripheralUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/calendar.png" width="38"> | Calendar | NSCalendarsUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/camera.png" width="38"> | Camera | NSCameraUsageDescription | ✅ | ✅ |
