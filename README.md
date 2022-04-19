@@ -2,13 +2,7 @@
 
 > **It was called `SPPermissions`, what happen?** I put together a team that deals with opensource and gave the library to the company. It is now under a universal clean name. It will help develop the library more actively, even when I can't do it myself. Now I am doing 9 version with more permissions and new interface. Share with me your ideas.
 
-<p aligment="left">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/v8/list-style.png?version=1" height="260"/>
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/v8/dialog-style.png?version=1" height="260"/>
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/v8/native-request.png?version=1" height="260"/>
-</p>
-
-Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode and has ready localizations. Also you can check state of permissions, available are `.authorized`, `.denied` & `.notDetermined`.
+Universal API for querying the rarefaction and getting the current status `.authorized`, `.denied` & `.notDetermined`.. Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode and has ready localizations.
 
 <p float="left">
     <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/camera.png" width="38">
@@ -157,6 +151,8 @@ Permission.notification.request {
 
 ### List
 
+<img align="left" src="https://cdn.sparrowcode.io/github/permissionskit/v8/list-style.png?version=1" height="340"/>
+
 It's native `UITableViewController`. Use it when you have more than two permissions. An example of how it is used:
 
 ```swift
@@ -184,6 +180,8 @@ controller.present(on: self)
 
 ### Dialog
 
+<img align="left" src="https://cdn.sparrowcode.io/github/permissionskit/v8/dialog-style.png?version=1" height="340"/>
+
 This is a modal alert. I recommend using this alert style when you have less than three requested permissions. Usage example:
 
 ```swift
@@ -210,6 +208,8 @@ controller.present(on: self)
 ```
 
 ### Native
+
+<img align="left" src="https://cdn.sparrowcode.io/github/permissionskit/v8/native-request.png?version=1" height="340"/>
 
 Request permissions with native `UIAlertController`. You can request many permissions at once:
 
