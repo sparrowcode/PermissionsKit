@@ -390,25 +390,25 @@ let key = Permission.bluetooth.usageDescriptionKey
 
 List of keys:
 
-- NSCameraUsageDescription
-- NSContactsUsageDescription
-- NSCalendarsUsageDescription
-- NSMicrophoneUsageDescription
-- NSAppleMusicUsageDescription
-- NSRemindersUsageDescription
-- NSPhotoLibraryUsageDescription
-- NSPhotoLibraryAddUsageDescription
-- NSSpeechRecognitionUsageDescription
-- NSMotionUsageDescription
-- NSLocationWhenInUseUsageDescription
-- NSLocationAlwaysAndWhenInUseUsageDescription
-- NSBluetoothAlwaysUsageDescription
-- NSBluetoothPeripheralUsageDescription (iOS 12 and earlier)
-- NSUserTrackingUsageDescription
-- NSFaceIDUsageDescription
-- NSSiriUsageDescription
-- NSHealthUpdateUsageDescription
-- NSHealthShareUsageDescription
+| Icon |  Permission | Key | Get Status | Make Request |
+| :--: | :---------- | --- | :--------: | :----------: |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/bluetooth.png" width="38"> | Bluetooth | NSBluetoothAlwaysUsageDescription, NSBluetoothPeripheralUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/calendar.png" width="38"> | Calendar | NSCalendarsUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/camera.png" width="38"> | Camera | NSCameraUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/contacts.png" width="38"> | Contacts | NSContactsUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/faceid.png" width="38"> | FaceID | NSFaceIDUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/health.png" width="38"> | Health | NSHealthUpdateUsageDescription NSHealthShareUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/location.png" width="38"> | Location Always | NSLocationAlwaysAndWhenInUseUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/location.png" width="38"> | Location When In Use | NSLocationWhenInUseUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/music.png" width="38"> | Media Library | NSAppleMusicUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/microphone.png" width="38"> | Microphone | NSMicrophoneUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/motion.png" width="38"> | Motion | NSMotionUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/notifications.png" width="38"> | Notification | | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/photos.png" width="38"> | Photo Library | NSPhotoLibraryUsageDescription, NSPhotoLibraryAddUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/reminders.png" width="38"> | Reminders | NSRemindersUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/siri.png" width="38"> | Siri | NSSiriUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/speech.png" width="38"> | SpeechRecognizer | NSSpeechRecognitionUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/tracking.png" width="38"> | Tracking | NSUserTrackingUsageDescription | ✅ | ✅ |
 
 Do not use the description as the name of the key.
 
