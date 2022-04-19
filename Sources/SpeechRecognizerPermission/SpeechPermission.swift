@@ -24,18 +24,17 @@ import PermissionsKit
 #endif
 
 #if os(iOS) && PERMISSIONSKIT_SPEECH
-
 import Foundation
 import Speech
 
 public extension Permission {
 
-    static var speech: SPSpeechPermission {
-        return SPSpeechPermission()
+    static var speech: SpeechPermission {
+        return SpeechPermission()
     }
 }
 
-public class SPSpeechPermission: Permission {
+public class SpeechPermission: Permission {
     
     open override var kind: Permission.Kind { .speech }
     open var usageDescriptionKey: String? { "NSSpeechRecognitionUsageDescription" }

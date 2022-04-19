@@ -23,36 +23,34 @@
 import PermissionsKit
 #endif
 
-#if PERMISSIONSKIT_TRACKING
+#if os(iOS) && PERMISSIONSKIT_SIRI
+import Foundation
+import Intents
 
-import AppTrackingTransparency
-
-@available(iOS 14.5, tvOS 14.5, *)
 public extension Permission {
 
-    static var tracking: SPTrackingPermission {
-        return SPTrackingPermission()
+    static var siri: SiriPermission {
+        return SiriPermission()
     }
 }
 
-@available(iOS 14.5, tvOS 14.5, *)
-public class SPTrackingPermission: Permission {
+public class SiriPermission: Permission {
     
-    open override var kind: Permission.Kind { .tracking }
-    open var usageDescriptionKey: String? { "NSUserTrackingUsageDescription" }
+    open override var kind: Permission.Kind { .siri }
+    open var usageDescriptionKey: String? { "NSSiriUsageDescription" }
     
     public override var status: Permission.Status {
-        switch ATTrackingManager.trackingAuthorizationStatus {
+        switch INPreferences.siriAuthorizationStatus() {
         case .authorized: return .authorized
         case .denied: return .denied
         case .notDetermined: return .notDetermined
-        case .restricted : return .denied
+        case .restricted: return .denied
         @unknown default: return .denied
         }
     }
     
     public override func request(completion: @escaping () -> Void) {
-        ATTrackingManager.requestTrackingAuthorization { _ in
+        INPreferences.requestSiriAuthorization { _ in
             DispatchQueue.main.async {
                 completion()
             }

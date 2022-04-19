@@ -23,25 +23,24 @@
 import PermissionsKit
 #endif
 
-#if os(iOS) && PERMISSIONSKIT_SIRI
-
+#if os(iOS) && PERMISSIONSKIT_REMINDERS
 import Foundation
-import Intents
+import EventKit
 
 public extension Permission {
 
-    static var siri: SPSiriPermission {
-        return SPSiriPermission()
+    static var reminders: RemindersPermission {
+        return RemindersPermission()
     }
 }
 
-public class SPSiriPermission: Permission {
+public class RemindersPermission: Permission {
     
-    open override var kind: Permission.Kind { .siri }
-    open var usageDescriptionKey: String? { "NSSiriUsageDescription" }
+    open override var kind: Permission.Kind { .reminders }
+    open var usageDescriptionKey: String? { "NSRemindersUsageDescription" }
     
     public override var status: Permission.Status {
-        switch INPreferences.siriAuthorizationStatus() {
+        switch EKEventStore.authorizationStatus(for: EKEntityType.reminder) {
         case .authorized: return .authorized
         case .denied: return .denied
         case .notDetermined: return .notDetermined
@@ -51,11 +50,13 @@ public class SPSiriPermission: Permission {
     }
     
     public override func request(completion: @escaping () -> Void) {
-        INPreferences.requestSiriAuthorization { _ in
+        let eventStore = EKEventStore()
+        eventStore.requestAccess(to: EKEntityType.reminder, completion: {
+            (accessGranted: Bool, error: Error?) in
             DispatchQueue.main.async {
                 completion()
             }
-        }
+        })
     }
 }
 #endif

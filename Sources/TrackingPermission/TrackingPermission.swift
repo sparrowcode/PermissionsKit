@@ -23,41 +23,39 @@
 import PermissionsKit
 #endif
 
-#if os(iOS) && PERMISSIONSKIT_REMINDERS
+#if PERMISSIONSKIT_TRACKING
+import AppTrackingTransparency
 
-import Foundation
-import EventKit
-
+@available(iOS 14.5, tvOS 14.5, *)
 public extension Permission {
 
-    static var reminders: SPRemindersPermission {
-        return SPRemindersPermission()
+    static var tracking: TrackingPermission {
+        return TrackingPermission()
     }
 }
 
-public class SPRemindersPermission: Permission {
+@available(iOS 14.5, tvOS 14.5, *)
+public class TrackingPermission: Permission {
     
-    open override var kind: Permission.Kind { .reminders }
-    open var usageDescriptionKey: String? { "NSRemindersUsageDescription" }
+    open override var kind: Permission.Kind { .tracking }
+    open var usageDescriptionKey: String? { "NSUserTrackingUsageDescription" }
     
     public override var status: Permission.Status {
-        switch EKEventStore.authorizationStatus(for: EKEntityType.reminder) {
+        switch ATTrackingManager.trackingAuthorizationStatus {
         case .authorized: return .authorized
         case .denied: return .denied
         case .notDetermined: return .notDetermined
-        case .restricted: return .denied
+        case .restricted : return .denied
         @unknown default: return .denied
         }
     }
     
     public override func request(completion: @escaping () -> Void) {
-        let eventStore = EKEventStore()
-        eventStore.requestAccess(to: EKEntityType.reminder, completion: {
-            (accessGranted: Bool, error: Error?) in
+        ATTrackingManager.requestTrackingAuthorization { _ in
             DispatchQueue.main.async {
                 completion()
             }
-        })
+        }
     }
 }
 #endif
