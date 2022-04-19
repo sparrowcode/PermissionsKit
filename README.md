@@ -49,7 +49,6 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 - [Installation](#installation)
     - [Swift Package Manager](#swift-package-manager)
     - [CocoaPods](#cocoapods)
-- [Imports](#imports)
 - [Request & Status](#request-status)
 - [Ready-use Interface](#ready-use-interface)
     - [List](#list)
@@ -137,25 +136,6 @@ pod 'PermissionsKit/SiriPermission', :git => 'https://github.com/sparrowcode/Per
 pod 'PermissionsKit/HealthPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 </details>
-
-## Imports
-
-If you install via  [Swift Package Manager](#swift-package-manager), you shoud import each module:
-
-```swift
-import PermissionsKit
-import CameraPermission
-import PhotoLibraryPermission
-```
-
-It's required because library split to modules. After importing you'll see available permissions by typing `Permission.camera` for example.
-If you install via [CocoaPods](#cocoapods), you only need to import one class:
-
-```swift
-import PermissionsKit
-```
-
-All other installed classes imported automatically.
 
 ## Request & Status
 
