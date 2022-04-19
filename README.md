@@ -45,7 +45,7 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 
 ## Navigate
 
-- [Supported Types](#supported-types)
+- [Permissions](#permissions)
 - [Installation](#installation)
     - [Swift Package Manager](#swift-package-manager)
     - [CocoaPods](#cocoapods)
@@ -62,7 +62,7 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 - [Apple Review](#apple-review)
 - [Apps Using](#apps-using)
 
-### Supported Types
+### Permissions
 
 | Icon |  Permission | Key | Get Status | Make Request |
 | :--: | :---------- | --- | :--------: | :----------: |
