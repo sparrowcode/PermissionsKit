@@ -81,7 +81,7 @@ Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/photos.png" width="38"> | Photo Library | NSPhotoLibraryUsageDescription, NSPhotoLibraryAddUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/reminders.png" width="38"> | Reminders | NSRemindersUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/siri.png" width="38"> | Siri | NSSiriUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/speech.png" width="38"> | SpeechRecognizer | NSSpeechRecognitionUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/speech.png" width="38"> | Speech Recognizer | NSSpeechRecognitionUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/tracking.png" width="38"> | Tracking | NSUserTrackingUsageDescription | ✅ | ✅ |
 
 ## Installation
