@@ -2,7 +2,7 @@
 
 > **It was called `SPPermissions`, what happen?** I put together a team that deals with opensource and gave the library to the company. It is now under a universal clean name. It will help develop the library more actively, even when I can't do it myself. Now I am doing 9 version with more permissions and new interface. Share with me your ideas.
 
-Universal API for querying the rarefaction and getting the current status `.authorized`, `.denied` & `.notDetermined`.. Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode and has ready localizations.
+Universal API for querying the rarefaction and getting the current status `.authorized`, `.denied` & `.notDetermined`. Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode and has ready localizations.
 
 <p float="left">
     <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/camera.png" width="38">
