@@ -43,7 +43,7 @@ import HealthPermission
 
 import CoreLocation
 
-class RootController: SPTableViewController {
+class RootController: UITableViewController {
     
     var availablePermissions: [Permission] = [.camera, .photoLibrary, .notification, .microphone, .calendar, .contacts, .reminders, .speech, .locationWhenInUse, .locationAlways, .motion, .mediaLibrary, .bluetooth, /*.tracking,*/ .faceID, .siri, .health]
     
