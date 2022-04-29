@@ -117,6 +117,7 @@ open class Permission: Equatable {
         case faceID = 15
         case siri = 16
         case health = 17
+        case cloudKit = 18
         
         public var name: String {
             switch self {
@@ -154,6 +155,8 @@ open class Permission: Equatable {
                 return "Siri"
             case .health:
                 return "Health"
+            case .cloudKit:
+                return "CloudKit"
             }
         }
     }
