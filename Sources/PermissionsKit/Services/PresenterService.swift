@@ -24,7 +24,7 @@ import UIKit
 enum PresenterService {
     
     @available(iOSApplicationExtension, unavailable)
-    static func presentAlertAboutDeniedPermission(_ permission: Permission, dataSource: PermissionsDataSource?, on controller: UIViewController) {
+    static func presentAlertAboutDeniedPermission(_ permission: Permission, dataSource: PermissionsDataSource?, on controller: UIViewController, animated: Bool) {
         
         let data = dataSource?.deniedPermissionAlertTexts(for: permission)
         
@@ -41,6 +41,6 @@ enum PresenterService {
         alertController.addAction(.init(title: texts.actionText, style: .default, handler: { _ in
             permission.openSettingPage()
         }))
-        controller.present(alertController, animated: true, completion: nil)
+        controller.present(alertController, animated: animated, completion: nil)
     }
 }

@@ -97,11 +97,11 @@ public class PermissionsListController: UITableViewController, PermissionsContro
     
     // MARK: - Helpers
     
-    public func present(on controller: UIViewController) {
+    public func present(on controller: UIViewController, animated: Bool) {
         let navigationController = UINavigationController(rootViewController: self)
         navigationController.modalPresentationStyle = .formSheet
         navigationController.preferredContentSize = CGSize.init(width: 480, height: 560)
-        controller.present(navigationController, animated: true, completion: nil)
+        controller.present(navigationController, animated: animated, completion: nil)
     }
     
     @objc func process(button: PermissionActionButton) {
@@ -164,7 +164,7 @@ public class PermissionsListController: UITableViewController, PermissionsContro
                     // Delay using for fix animation freeze.
                     DelayService.wait(0.3, closure: { [weak self] in
                         guard let self = self else { return }
-                        PresenterService.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: self)
+                        PresenterService.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: self, animated: true)
                     })
                 }
             }

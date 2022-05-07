@@ -42,7 +42,7 @@ public class PermissionsNativeController: NSObject, PermissionsControllerInterfa
     
     // MARK: - Public
     
-    public func present(on controller: UIViewController) {
+    public func present(on controller: UIViewController, animated: Bool) {
         self.memoryLocker = self
         self.proceseedPermissions = permissions
         for permission in permissions {
@@ -53,7 +53,7 @@ public class PermissionsNativeController: NSObject, PermissionsControllerInterfa
                     self.delegate?.didAllowPermission(permission)
                 } else {
                     self.delegate?.didDeniedPermission(permission)
-                    PresenterService.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: controller)
+                    PresenterService.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: controller, animated: animated)
                 }
                 
                 if self.proceseedPermissions.isEmpty {

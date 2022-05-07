@@ -42,5 +42,5 @@ protocol PermissionsControllerInterface {
      
      - Note: Better use native logic for custom presenting controller. Now added to next feature.
      */
-    func present(on controller: UIViewController)
+    func present(on controller: UIViewController, animated: Bool)
 }

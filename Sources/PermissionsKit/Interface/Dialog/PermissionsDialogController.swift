@@ -228,7 +228,7 @@ public class PermissionsDialogController: UIViewController, PermissionsControlle
                     // Delay using for fix animation freeze.
                     DelayService.wait(0.3, closure: { [weak self] in
                         guard let self = self else { return }
-                        PresenterService.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: self)
+                        PresenterService.presentAlertAboutDeniedPermission(permission, dataSource: self.dataSource, on: self, animated: true)
                     })
                 }
             }
