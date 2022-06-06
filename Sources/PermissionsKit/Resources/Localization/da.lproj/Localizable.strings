@@ -1,0 +1,89 @@
+"action allow" = "Fortsæt";
+
+"action allowed" = "Tilladt";
+
+"titles header" = "Mangler adgang";
+
+"titles sub header" = "Anmodning om tilladelser";
+
+"titles description" = "Disse er tilladelserne appen krlver for at virke ordentligt. Læs venligst beskrivelsen for hver tilladelse.";
+
+"titles comment" = "Tilladelserne er påkrævet for at appen virker og opfører sig korrekt. Pushnotifikationer er ikke en påkrævet tilladelse";
+
+"permission camera name" = "Kamera";
+
+"permission camera description" = "Tillad appen at bruge kameraet";
+
+"permission photoLibrary name" = "Fotobibliotek";
+
+"permission photoLibrary description" = "Adgang til at gemme billeder i dit galleri";
+
+"permission microphone name" = "Mikrofon";
+
+"permission microphone description" = "Tillad lydoptagelse fra appen";
+
+"permission calendar name" = "Kalender";
+
+"permission calendar description" = "Appen kan tilføje begivenheder til din kalender";
+
+"permission contacts name" = "Kontakter";
+
+"permission contacts description" = "Adgang til dine kontakter og telefonnumre";
+
+"permission reminders name" = "Påmindelser";
+
+"permission reminders description" = "Appen kan oprette nye opgaver";
+
+"permission speech name" = "Tale";
+
+"permission speech description" = "Tillad udførsel af talegenkendelse";
+
+"permission motion name" = "Bævægelse";
+
+"permission motion description" = "Tillad registrering af bevægelse og miljørelaterede data";
+
+"permission media library name" = "Mediebibliotek";
+
+"permission media library description" = "Tillad adgang til dine medier";
+
+"permission bluetooth name" = "Bluetooth";
+
+"permission bluetooth description" = "Tillad adgang til bluetooth";
+
+"permission notification name" = "Notifikation";
+
+"permission notification description" = "Modtag vigtige opdateringer uden at åbne appen.";
+
+"permission location when in use name" = "Mens du bruger appen";
+
+"permission location when in use description" = "Tillad adgang til din lokation";
+
+"permission location always name" = "Altid";
+
+"permission location always description" = "Tillad adgang til din lokation";
+
+"permission tracking name" = "Sporing af aktivitet";
+
+"permission tracking description" = "Tillad adgang til app-relateret data";
+
+"permission faceid name" = "FaceID";
+
+"permission faceid description" = "Tillad brug af Face ID-identitet";
+
+"permission siri name" = "Siri";
+
+"permission siri description" = "Du vil være i stand til at bruge Siri";
+
+"permission health name" = "Sundhed";
+
+"permission health description" = "Tillad adgang til sundhedsdata";
+
+"denied alert title" = "Tilladelse afvist";
+
+"denied alert description" = "Åben venligst indstillinger, og giv tilladelse.";
+
+"denied alert action" = "Indstillinger";
+
+"denied alert cancel" = "Annuller";
+
+"action denied" = "Afist";
