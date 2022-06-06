@@ -288,6 +288,7 @@ extension Controller: PermissionsDelegate {
 
 - English `en`
 - Arabic `ar`
+- Danish `da`
 - German `de`
 - Spanish `es`
 - French `fr`
