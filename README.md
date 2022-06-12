@@ -1,8 +1,8 @@
 # PermissionsKit 
 
-> **It was called `SPPermissions`, what happen?** I put together a team that deals with opensource and gave the library to the company. It is now under a universal clean name. It will help develop the library more actively, even when I can't do it myself. Now I am doing 9 version with more permissions and new interface. Share with me your ideas.
+> **It was called `SPPermissions`, what happen?** I put together a team that deals with open source and gave the library to the company. It is now under a universal clean name. It will help develop the library more actively, even when I can't do it myself. Now I am doing version 9 with more permissions and a new interface. Share with me your ideas.
 
-Universal API for querying the rarefaction and getting the current status `.authorized`, `.denied` & `.notDetermined`. Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode and has ready localizations.
+Universal API for querying the rarefaction and getting the current status `.authorized`, `.denied` & `.notDetermined`. Available three ready-use interfaces - list, dialog & native. Supports iPad, dark mode, and has ready localizations.
 
 <p float="left">
     <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/camera.png" width="38">
@@ -86,7 +86,7 @@ Ready to use on iOS 11+. Supports iOS, tvOS, and `SwiftUI`.
 
 The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
 
-Once you have your Swift package set up, adding as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
+Once you have your Swift package set up, adding a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
 
 ```swift
 dependencies: [
@@ -94,7 +94,7 @@ dependencies: [
 ]
 ```
 
-Next choose the permissions you need. But don't add all of them, because apple [will reject app](#apple-review).
+Next, choose the permissions you need. But don't add all of them, because apple [will reject app](#apple-review).
 
 ### CocoaPods:
 
@@ -147,7 +147,7 @@ Permission.notification.request {
 
 ## Ready-use Interface
 
-`PermissionsKit` has three presentation styles: `Dialog`, `List` and `Native`. Each interface has delegates and a data source. If you want see an example app, open `Example Apps/PermissionsKit.xcodeproj`.
+`PermissionsKit` has three presentation styles: `Dialog`, `List`, and `Native`. Each interface has delegates and a data source. If you want see an example app, open `Example Apps/PermissionsKit.xcodeproj`.
 
 ### List
 
@@ -312,7 +312,7 @@ let key = Permission.bluetooth.usageDescriptionKey
 
 Do not use the description as the name of the key.
 
-If you use xliff localization export, keys will be create automatically. If you prefer do the localization file manually, you need to create `InfoPlist.strings`, select languages on the right side menu and add keys as keys in plist-file. See:
+If you use xliff localization export, keys will be created automatically. If you prefer to do the localization file manually, you need to create `InfoPlist.strings`, select languages on the right side menu, and add keys as keys in plist-file. See:
 
 ```
 "NSCameraUsageDescription" = "Here description of usage camera";
@@ -330,7 +330,7 @@ controller.showCloseButton = true
 controller.allowSwipeDismiss = true
 ```
 
-Also changed title for button. Instead of  `allow` now using `continue`. The Apple Review Team asked for this. For details, check out [this issue](https://github.com/sparrowcode/PermissionsKit/issues/229).
+Also changed the title for the button. Instead of  `allow` now use `continue`. The Apple Review Team asked for this. For details, check out [this issue](https://github.com/sparrowcode/PermissionsKit/issues/229).
 
 ## Apps Using
 
