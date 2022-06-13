@@ -91,7 +91,7 @@ dependencies: [
 ]
 ```
 
-Next choose the permissions you need. But don't add all of them, because apple [will reject app](#apple-review).
+Next, choose the permissions you need. But don't add all of them, because apple [will reject app](#apple-review).
 
 ### CocoaPods:
 
@@ -178,7 +178,7 @@ controller.showCloseButton = true
 controller.allowSwipeDismiss = true
 ```
 
-Also changed title for button. Instead of  `allow` now using `continue`. The Apple Review Team asked for this. For details, check out [this issue](https://github.com/sparrowcode/PermissionsKit/issues/229).
+Also changed the title for the button. Instead of  `allow` now use `continue`. The Apple Review Team asked for this. For details, check out [this issue](https://github.com/sparrowcode/PermissionsKit/issues/229).
 
 ## Apps Using
 
