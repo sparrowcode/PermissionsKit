@@ -45,6 +45,7 @@ Universal API for request permission and get its statuses. Available `.authorize
     - [Request Permission](#request-permission)
     - [Status Permission](#status-permission)
 - [Keys in Info.plist](#keys-in-infoplist)
+    - [Localisations](#localisation)
 - [Apple Review](#apple-review)
 - [Apps Using](#apps-using)
 
@@ -156,6 +157,8 @@ let key = Permission.bluetooth.usageDescriptionKey
 ```
 
 Do not use the description as the name of the key.
+
+### Localisation
 
 If you use xliff localization export, keys will be create automatically. If you prefer do the localization file manually, you need to create `InfoPlist.strings`, select languages on the right side menu and add keys as keys in plist-file. See:
 
