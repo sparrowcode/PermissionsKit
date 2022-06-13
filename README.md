@@ -149,7 +149,7 @@ let authorized = Permission.notification.authorized
 
 ## Keys in Info.plist
 
-You need to add some keys to the `Info.plist` file with descriptions, per Apple's requirement(s). You can get a plist of keys for permissions as follows:
+You need to add some keys to the `Info.plist` file with descriptions, per Apple's requirements. You can get a plist of keys for permissions as follows:
 
 ```swift
 let key = Permission.bluetooth.usageDescriptionKey
