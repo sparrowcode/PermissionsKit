@@ -22,6 +22,11 @@ Pod::Spec.new do |s|
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_COCOAPODS"
     }
+    subspec.resource_bundles = {
+        "PermissionsKit" => [
+            "Sources/PermissionsKit/Resources/Localization/*.lproj/*.strings"
+        ]
+    }
   end
 
   s.subspec 'CameraPermission' do |subspec|
