@@ -1,6 +1,6 @@
 # PermissionsKit 
 
-Universal API for querying the rarefaction and getting the current status `.authorized`, `.denied` & `.notDetermined`.
+Universal API request permission and get its statuses. Available `.authorized`, `.denied` & `.notDetermined`.
 
 <p float="left">
     <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/camera.png" width="38">
