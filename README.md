@@ -1,6 +1,6 @@
 # PermissionsKit 
 
-Universal API for querying the rarefaction and getting the current status `.authorized`, `.denied` & `.notDetermined`. Availalbe three ready-use interface - list, dialog & native. Supports iPad, dark mode and has ready localizations.
+Universal API for querying the rarefaction and getting the current status `.authorized`, `.denied` & `.notDetermined`.
 
 <p float="left">
     <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/camera.png" width="38">
@@ -41,7 +41,8 @@ Universal API for querying the rarefaction and getting the current status `.auth
 - [Installation](#installation)
     - [Swift Package Manager](#swift-package-manager)
     - [CocoaPods](#cocoapods)
-- [Request & Status](#request--status)
+- [Request Permission](#request-permission)
+- [Status Permission](#status-permission)
 - [Keys in Info.plist](#keys-in-infoplist)
 - [Apple Review](#apple-review)
 - [Apps Using](#apps-using)
@@ -121,18 +122,24 @@ pod 'PermissionsKit/HealthPermission', :git => 'https://github.com/sparrowcode/P
 ```
 </details>
 
-## Request & Status
+## Request Permission
 
 ```swift
 import PermissionsKit
 import NotificationPermission
 
-// Request permission.
 Permission.notification.request {
     
-    // Get status
-    let authorized = Permission.notification.authorized
 }
+```
+
+## Status Permission
+
+```swift
+import PermissionsKit
+import NotificationPermission
+
+let authorized = Permission.notification.authorized
 ```
 
 ## Keys in Info.plist
@@ -169,10 +176,13 @@ Also changed title for button. Instead of  `allow` now using `continue`. The App
 
 <p float="left">
     <a href="https://apps.apple.com/app/id1487937127"><img src="https://cdn.sparrowcode.io/github/apps-using/craft.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1498041069"><img src="https://cdn.sparrowcode.io/github/apps-using/seqvoia.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1624477055"><img src="https://cdn.sparrowcode.io/github/apps-using/seqvoia.png?version=2" height="65"></a>
     <a href="https://apps.apple.com/app/id875280793"><img src="https://cdn.sparrowcode.io/github/apps-using/salat.png?version=2" height="65"></a>
     <a href="https://apps.apple.com/app/id743843090"><img src="https://cdn.sparrowcode.io/github/apps-using/athan.png?version=2" height="65"></a>
     <a href="https://apps.apple.com/app/id537070378"><img src="https://cdn.sparrowcode.io/github/apps-using/quran.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1596657751"><img src="https://cdn.sparrowcode.io/github/apps-using/run-tracker.png?version=2" height="65"></a>
     <a href="https://apps.apple.com/app/id1570676244"><img src="https://cdn.sparrowcode.io/github/apps-using/debts.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1617055933"><img src="https://cdn.sparrowcode.io/github/apps-using/arabesque-kitchen.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1596657751"><img src="https://cdn.sparrowcode.io/github/apps-using/run-tracker.png?version=2" height="65"></a>
 </p>
+
+If you use a `PermissionsKit`, add your application via Pull Request.

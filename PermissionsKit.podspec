@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "PermissionsKit"
-  s.version = "8.0.0"
+  s.version = "9.0.0"
   s.summary = "Ask permissions with ready-use interface. You can check status permission and if it has been requested before. Support SwiftUI."
   s.homepage = "https://github.com/sparrowcode/PermissionsKit"
   s.source = { :git => "https://github.com/sparrowcode/PermissionsKit.git", :tag => s.version }
@@ -21,12 +21,6 @@ Pod::Spec.new do |s|
     subspec.source_files  = "Sources/PermissionsKit/**/*.swift"
     subspec.pod_target_xcconfig = {
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_COCOAPODS"
-    }
-    subspec.resource_bundles = {
-        "PermissionsKit" => [
-            "Sources/PermissionsKit/Resources/Localization/*.lproj/*.strings",
-            "Sources/PermissionsKit/Resources/Assets.xcassets",
-        ]
     }
   end
 

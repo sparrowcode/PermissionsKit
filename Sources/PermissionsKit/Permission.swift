@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
+// Copyright © 2022 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -80,10 +80,6 @@ open class Permission: Equatable {
     
     public static func == (lhs: Permission, rhs: Permission) -> Bool {
         return lhs.kind == rhs.kind
-    }
-    
-    open var canBePresentWithCustomInterface: Bool {
-        return true
     }
     
     public init() {}
