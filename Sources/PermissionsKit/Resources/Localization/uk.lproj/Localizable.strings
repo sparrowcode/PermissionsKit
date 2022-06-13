@@ -1,0 +1,89 @@
+"action allow" = "Дозвольте";
+
+"action allowed" = "Дозволено";
+
+"titles header" = "Потрібен дозвіл";
+
+"titles sub header" = "Запит на дозвіл";
+
+"titles description" = "Це дозволи, які вимагає програма для належної роботи. Будь ласка, див. Опис кожного дозволу.";
+
+"titles comment" = "Дозволи необхідні для того, щоб програма працювала та працювала правильно. Push не потрібні дозволи";
+
+"permission camera name" = "Камера";
+
+"permission camera description" = "Дозволити програмі використовувати камеру";
+
+"permission photoLibrary name" = "Фототека";
+
+"permission photoLibrary description" = "Доступ для збереження фотографій у вашій галереї";
+
+"permission microphone name" = "Мікрофон";
+
+"permission microphone description" = "Дозволити записувати голос із програми";
+
+"permission calendar name" = "Календар";
+
+"permission calendar description" = "Додаток може додавати події до календаря";
+
+"permission contacts name" = "Контакти";
+
+"permission contacts description" = "Доступ для ваших контактів і телефонів";
+
+"permission reminders name" = "Нагадування";
+
+"permission reminders description" = "Додаток може створити нове завдання";
+
+"permission speech name" = "Мовлення";
+
+"permission speech description" = "Дозвольте перевірити свій голос";
+
+"permission motion name" = "Рух";
+
+"permission motion description" = "Дозволити записувати дані про рух та навколишнє середовище";
+
+"permission media library name" = "Медіатека";
+
+"permission media library description" = "Дозвольте перевірити медіа";
+
+"permission bluetooth name" = "Bluetooth";
+
+"permission bluetooth description" = "Дозволити доступ до Bluetooth";
+
+"permission notification name" = "Повідомлення";
+
+"permission notification description" = "Отримуйте важливу інформацію, не відкриваючи додаток.";
+
+"permission location when in use name" = "Розташування під час використання";
+
+"permission location when in use description" = "Дозволити доступ до вашого місцезнаходження";
+
+"permission location always name" = "Розташування Завжди";
+
+"permission location always description" = "Дозволити доступ до вашого місцезнаходження";
+
+"permission tracking name" = "Відстеження";
+
+"permission tracking description" = "Дозволити доступ до даних, пов’язаних із додатками";
+
+"permission faceid name" = "FaceID";
+
+"permission faceid description" = "Дозволити використання ідентифікатора обличчя Face ID";
+
+"denied alert title" = "Дозвіл відмовлено";
+
+"permission siri name" = "Siri";
+
+"permission siri description" = "Ви зможете користуватися Siri";
+
+"permission health name" = "Здоров'я";
+
+"permission health description" = "Дозволити доступ до даних про стан здоров’я";
+
+"denied alert description" = "Перейдіть у Налаштування та надайте дозвіл.";
+
+"denied alert action" = "Налаштування";
+
+"denied alert cancel" = "Скасувати";
+
+"action denied" = "Заперечується";

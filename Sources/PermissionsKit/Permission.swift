@@ -43,10 +43,6 @@ open class Permission: Equatable {
         return Texts.permission_name(for: kind)
     }
     
-    open var iconImage: UIImage {
-        return Images.permission_icon(for: kind)
-    }
-    
     /**
      PermissionsKit: Open settings page.
      For most permissions its app page in settings app.
@@ -63,7 +59,7 @@ open class Permission: Equatable {
     }
     
     // MARK: Must Ovveride
-
+    
     open var kind: Permission.Kind {
         preconditionFailure("This method must be overridden.")
     }
@@ -76,6 +72,10 @@ open class Permission: Equatable {
         preconditionFailure("This method must be overridden.")
     }
     
+    open var canBePresentWithCustomInterface: Bool {
+        return true
+    }
+    
     // MARK: Internal
     
     public static func == (lhs: Permission, rhs: Permission) -> Bool {
@@ -85,7 +85,7 @@ open class Permission: Equatable {
     public init() {}
     
     // MARK: - Models
-   
+    
     @objc public enum Status: Int {
         
         case authorized

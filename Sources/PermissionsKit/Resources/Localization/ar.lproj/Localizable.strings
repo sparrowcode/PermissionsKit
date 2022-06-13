@@ -1,0 +1,89 @@
+"action allow" = "استمرار";
+
+"action allowed" = "تم السماح";
+
+"titles header" = "إدارة الصلاحيات";
+
+"titles sub header" = "الصلاحيات";
+
+"titles description" = "هذه الصلاحيات التي يتطلبها التطبيق ليعمل بشكل صحيح.";
+
+"titles comment" = "منح الصلاحيات يمكنك من تحقيق أقصى إستفادة من مميزات التطبيق";
+
+"permission camera name" = "الكاميرا";
+
+"permission camera description" = "السماح للتطبيق بالوصول الى الكاميرا";
+
+"permission photoLibrary name" = "الاستوديو";
+
+"permission photoLibrary description" = "ليتمكن التطبيق من حفظ او استيراد الصور من والى الاستوديو";
+
+"permission microphone name" = "المايكروفون";
+
+"permission microphone description" = "السماح بإستخدام المايكروفون";
+
+"permission calendar name" = "التقويم";
+
+"permission calendar description" = "السماح بالوصول الكامل الى التقويم";
+
+"permission contacts name" = "جهات الاتصال";
+
+"permission contacts description" = "الوصول إلى جهات الاتصال";
+
+"permission reminders name" = "التذكيرات";
+
+"permission reminders description" = "السماح للتطبيق بالوصول الكامل الى التذكيرات";
+
+"permission speech name" = "التحدث";
+
+"permission speech description" = "السماح بالتحقق من صوتك";
+
+"permission motion name" = "الحركة";
+
+"permission motion description" = "السماح بتسجيل البيانات المتعلقة بالحركة والبيئة";
+
+"permission media library name" = "الموسيقى";
+
+"permission media library description" = "السماح للوصول الى مكتبة الموسيقى";
+
+"permission bluetooth name" = "البلوتوث";
+
+"permission bluetooth description" = "السماح بإستخدام البلوتوث";
+
+"permission notification name" = "الإشعارات";
+
+"permission notification description" = "لإستقبال التنبيهات دون فتح التطبيق.";
+
+"permission location when in use name" = "الموقع عند الاستخدام";
+
+"permission location when in use description" = "السماح للوصول إلى موقعك عند استخدام التطبيق فقط";
+
+"permission location always name" = "الموقع دائما";
+
+"permission location always description" = "السماح دائماً للوصول إلى موقعك";
+
+"permission tracking name" = "تتبع";
+
+"permission tracking description" = "السماح بالوصول إلى البيانات المتعلقة بالتطبيق";
+
+"permission faceid name" = "FaceID";
+
+"permission faceid description" = "السماح باستخدام بصمة الوجه Face ID";
+
+"permission siri name" = "سيري";
+
+"permission siri description" = "تمكين استخدام سيري";
+
+"permission health name" = "الصحة";
+
+"permission health description" = "السماح بالوصول إلى البيانات الصحية";
+
+"denied alert title" = "تعديل الرفض";
+
+"denied alert description" = "لإعادة منح الصلاحيات يرجى الذهاب الى الإعدادات";
+
+"denied alert action" = "الذهاب الى الإعدادات";
+
+"denied alert cancel" = "الغاء";
+
+"action denied" = "تم الرفض";

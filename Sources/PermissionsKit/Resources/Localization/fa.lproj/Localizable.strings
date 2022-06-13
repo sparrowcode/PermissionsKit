@@ -1,0 +1,89 @@
+"action allow" = "ادامه";
+
+"action allowed" = "مجاز";
+
+"titles header" = "نیاز به مجوز";
+
+"titles sub header" = "درخواست مجوز";
+
+"titles description" = "اینها مجوزهایی هستند که برنامه برای درست کار کردن نیاز دارد. لطفاً توضیحات مربوط به هر مجوز را ببینید.";
+
+"titles comment" = "مجوزها برای کار و عملکرد صحیح برنامه ضروری هستند. اعلانات مجوزهای ضروری نیستند";
+
+"permission camera name" = "دوربین";
+
+"permission camera description" = "اجازه دادن به برنامه برای استفاده از دوربین";
+
+"permission photoLibrary name" = "گالری";
+
+"permission photoLibrary description" = "دسترسی برای ذخیره عکس ها در گالری";
+
+"permission microphone name" = "میکروفون";
+
+"permission microphone description" = "اجازه ضبط صدا به برنامه";
+
+"permission calendar name" = "تقویم";
+
+"permission calendar description" = "برنامه می تواند رویدادها را به تقویم اضافه کند";
+
+"permission contacts name" = "مخاطبین";
+
+"permission contacts description" = "دسترسی برای مخاطبین و تلفن های شما";
+
+"permission reminders name" = "یادآوری ها";
+
+"permission reminders description" = "برنامه می تواند تسک جدیدی ایجاد کند";
+
+"permission speech name" = "گفتار";
+
+"permission speech description" = "اجازه ضبط صدای شما";
+
+"permission motion name" = "حرکت";
+
+"permission motion description" = "اجازه ضبط حرکت و داده های مربوط به محیط را فراهم می کند";
+
+"permission media library name" = "مدیا";
+
+"permission media library description" = "اجازه بررسی مدیا شما";
+
+"permission bluetooth name" = "بلوتوث";
+
+"permission bluetooth description" = "اجازه دسترسی به بلوتوث";
+
+"permission notification name" = "اعلانات";
+
+"permission notification description" = "اطلاعات مهم را بدون باز کردن برنامه دریافت کنید.";
+
+"permission location when in use name" = "موقعیت مکانی هنگام استفاده";
+
+"permission location when in use description" = "اجازه دسترسی به موقعیت مکانی شما";
+
+"permission location always name" = "موقعیت مکانی همیشه";
+
+"permission location always description" = "اجازه دسترسی به موقعیت مکانی شما";
+
+"permission tracking name" = "ردیابی";
+
+"permission tracking description" = "اجازه دسترسی به داده های مربوط به برنامه";
+
+"permission faceid name" = "FaceID";
+
+"permission faceid description" = "اجازه استفاده از شناسه Face ID";
+
+"permission siri name" = "سیری";
+
+"permission siri description" = "شما می توانید از سیری استفاده کنید";
+
+"permission health name" = "سلامت";
+
+"permission health description" = "اجازه دسترسی به داده های سلامت";
+
+"denied alert title" = "مجوز رد شد";
+
+"denied alert description" = "لطفاً به تنظیمات بروید و مجوز بدهید.";
+
+"denied alert action" = "تنظیمات";
+
+"denied alert cancel" = "لغو";
+
+"action denied" = "رد شد";

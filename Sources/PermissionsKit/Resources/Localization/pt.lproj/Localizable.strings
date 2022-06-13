@@ -1,0 +1,89 @@
+"action allow" = "Prosseguir";
+
+"action allowed" = "Permitido";
+
+"titles header" = "Necessidade de Permissão";
+
+"titles sub header" = "Pedido de permissões";
+
+"titles description" = "Estas são as permissões de que o aplicativo necessita para funcionar correctamente. Por favor, ver descrição de cada permissão.";
+
+"titles comment" = "As permissões são necessárias para que a aplicação funcione e funcione correctamente. Não são necessárias permissões para a aplicação.";
+
+"permission camera name" = "Câmara";
+
+"permission camera description" = "Permitir o uso da câmara";
+
+"permission photoLibrary name" = "Biblioteca de fotos";
+
+"permission photoLibrary description" = "Acesso para guardar fotos na sua galeria";
+
+"permission microphone name" = "Microfone";
+
+"permission microphone description" = "Permitir a gravação de voz da app";
+
+"permission calendar name" = "Calendário";
+
+"permission calendar description" = "A aplicação pode adicionar eventos ao calendário";
+
+"permission contacts name" = "Contactos";
+
+"permission contacts description" = "Acesso para os seus contactos e telefones";
+
+"permission reminders name" = "Lembretes";
+
+"permission reminders description" = "A aplicação pode criar uma nova tarefa";
+
+"permission speech name" = "Discurso";
+
+"permission speech description" = "Permita verificar a sua voz";
+
+"permission motion name" = "Moção";
+
+"permission motion description" = "Permitir o registo de movimentos e dados relacionados com o ambiente";
+
+"permission media library name" = "Mediateca";
+
+"permission media library description" = "Permita verificar os seus meios de comunicação";
+
+"permission bluetooth name" = "Bluetooth";
+
+"permission bluetooth description" = "Permitir o acesso ao bluetooth";
+
+"permission notification name" = "Notificação";
+
+"permission notification description" = "Obter informações importantes sem abrir a aplicação.";
+
+"permission location when in use name" = "Localização Quando Usar";
+
+"permission location when in use description" = "Permitir o acesso à sua localização";
+
+"permission location always name" = "Localização Sempre";
+
+"permission location always description" = "Permitir o acesso à sua localização";
+
+"permission tracking name" = "Rastreamento";
+
+"permission tracking description" = "Permitir o acesso a dados relacionados com as aplicações";
+
+"permission faceid name" = "FaceID";
+
+"permission faceid description" = "Permitir a utilização da identidade de identificação facial";
+
+"permission siri name" = "Siri";
+
+"permission siri description" = "Poderá utilizar o Siri";
+
+"permission health name" = "Saúde";
+
+"permission health description" = "Permitir o acesso a dados de saúde";
+
+"denied alert title" = "Permissão negada";
+
+"denied alert description" = "Por favor, vá a Settings e permita a permissão.";
+
+"denied alert action" = "Definições";
+
+"denied alert cancel" = "Cancelar";
+
+"action denied" = "Negado";

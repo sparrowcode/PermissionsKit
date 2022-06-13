@@ -84,6 +84,9 @@ let package = Package(
     targets: [
         .target(
             name: "PermissionsKit",
+            resources: [
+                .process("Resources")
+            ],
             swiftSettings: [
                 .define("PERMISSIONSKIT_SPM")
             ]

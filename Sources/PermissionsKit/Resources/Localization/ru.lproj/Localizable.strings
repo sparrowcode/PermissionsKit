@@ -1,0 +1,89 @@
+"action allow" = "Разрешить";
+
+"action allowed" = "Готово";
+
+"titles header" = "Нужны разрешения";
+
+"titles sub header" = "Запрос";
+
+"titles description" = "Это разрешения, необходимые приложению для правильной работы. Гляньте описание каждого разрешения.";
+
+"titles comment" = "Разрешения необходимы для работы и правильной работы приложения. Уведомления не обязательны.";
+
+"permission camera name" = "Камера";
+
+"permission camera description" = "Разрешить доступ приложения к камере.";
+
+"permission photoLibrary name" = "Галерея";
+
+"permission photoLibrary description" = "Приложение сможет сохранять фото в галерею";
+
+"permission microphone name" = "Микрофон";
+
+"permission microphone description" = "Приложение сможет записывать голос";
+
+"permission calendar name" = "Календарь";
+
+"permission calendar description" = "Доступ к событиям в календаре";
+
+"permission contacts name" = "Контакты";
+
+"permission contacts description" = "Доступ к контактам из телефонной книжки";
+
+"permission reminders name" = "Напоминания";
+
+"permission reminders description" = "Приложение сможет создавать и редактировать напоминания";
+
+"permission speech name" = "Распознавание Речи";
+
+"permission speech description" = "Приложение сможет анализировать вашу речь";
+
+"permission motion name" = "Движение";
+
+"permission motion description" = "Позволяет записывать данные о движении и окружающей среде";
+
+"permission media library name" = "Медиа библиотека";
+
+"permission media library description" = "Доступ к вашим медиа";
+
+"permission bluetooth name" = "Bluetooth";
+
+"permission bluetooth description" = "Приложение будет иметь доступ к Bluetooth";
+
+"permission notification name" = "Уведомления";
+
+"permission notification description" = "Получайте важную информацию, не открывая приложение.";
+
+"permission location when in use name" = "Локация, когда открыто приложение";
+
+"permission location when in use description" = "Разрешить доступ к вашему местоположению";
+
+"permission location always name" = "Локация";
+
+"permission location always description" = "Разрешить доступ к вашему местоположению";
+
+"permission tracking name" = "Отслеживание";
+
+"permission tracking description" = "Разрешить отслеживание с помощью рекламного идентификатора";
+
+"permission faceid name" = "FaceID";
+
+"permission faceid description" = "Разрешите идентификацию с помощью Face ID";
+
+"denied alert title" = "Разрешение заблокировано";
+
+"permission siri name" = "Siri";
+
+"permission siri description" = "Вы сможете пользоваться Siri";
+
+"permission health name" = "Здоровье";
+
+"permission health description" = "Разрешить доступ к данным о здоровье";
+
+"denied alert description" = "Пожалуйста, перейдите в настройки и измените доступ к разрешению.";
+
+"denied alert action" = "Открыть Настройки";
+
+"denied alert cancel" = "Отменить";
+
+"action denied" = "Отклонено";

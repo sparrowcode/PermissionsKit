@@ -1,0 +1,89 @@
+"action allow" = "Doorgaan";
+
+"action allowed" = "Toegestaan";
+
+"titles header" = "Toestemming vereist";
+
+"titles sub header" = "Machtigingsverzoek";
+
+"titles description" = "Dit zijn de machtigingen die de app nodig heeft om goed te werken. Zie de beschrijving voor elke machtiging.";
+
+"titles comment" = "Machtigingen zijn nodig om de toepassing correct te laten werken en uit te voeren. Push zijn geen vereiste machtigingen";
+
+"permission camera name" = "Camera";
+
+"permission camera description" = "App toestaan ​​voor gebruik camera";
+
+"permission photoLibrary name" = "Foto Bibliotheek";
+
+"permission photoLibrary description" = "Toegang om foto's in uw galerij op te slaan";
+
+"permission microphone name" = "Microfoon";
+
+"permission microphone description" = "Opname stem vanuit app toestaan";
+
+"permission calendar name" = "Kalender";
+
+"permission calendar description" = "Applicatie kan evenementen toevoegen aan kalender";
+
+"permission contacts name" = "Contacten";
+
+"permission contacts description" = "Toegang tot uw contacten en telefoonnummers";
+
+"permission reminders name" = "Herinneringen";
+
+"permission reminders description" = "Toepassing kan nieuwe taak maken";
+
+"permission speech name" = "Spraak";
+
+"permission speech description" = "Sta toe om je stem te controleren";
+
+"permission motion name" = "Beweging";
+
+"permission motion description" = "Sta toe om bewegings- en omgevingsgerelateerde gegevens op te nemen";
+
+"permission media library name" = "Media Bibliotheek";
+
+"permission media library description" = "Toestaan ​​om uw media te controleren";
+
+"permission bluetooth name" = "Bluetooth";
+
+"permission bluetooth description" = "Toegang tot bluetooth toestaan";
+
+"permission notification name" = "Notificatie";
+
+"permission notification description" = "Krijg belangrijke informatie zonder de app te openen.";
+
+"permission location when in use name" = "Locatie tijdens gebruik";
+
+"permission location when in use description" = "Toegang tot uw locatie toestaan";
+
+"permission location always name" = "Locatie Altijd";
+
+"permission location always description" = "Toegang tot uw locatie toestaan";
+
+"permission tracking name" = "Volgen";
+
+"permission tracking description" = "Toegang geven tot app-gerelateerde gegevens";
+
+"permission faceid name" = "FaceID";
+
+"permission faceid description" = "Gebruik van Face ID-identiteit toestaan";
+
+"permission siri name" = "Siri";
+
+"permission siri description" = "U kunt Siri gebruiken";
+
+"permission health name" = "Gezondheid";
+
+"permission health description" = "Toegang geven tot gezondheidsgegevens";
+
+"denied alert title" = "Toestemming geweigerd";
+
+"denied alert description" = "Ga naar Instellingen en geef toestemming.";
+
+"denied alert action" = "Instellingen";
+
+"denied alert cancel" = "Annuleren";
+
+"action denied" = "Afgewezen";

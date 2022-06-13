@@ -1,0 +1,89 @@
+"action allow" = "允许";
+
+"action allowed" = "已允许";
+
+"titles header" = "需要授权";
+
+"titles sub header" = "授权请求";
+
+"titles description" = "为了提供更好的服务, App 需要如下权限. 请参考每个权限的说明.";
+
+"titles comment" = "App 需要权限才能正常工作和执行. 推送通知不是必需的权限";
+
+"permission camera name" = "相机";
+
+"permission camera description" = "允许 App 使用相机";
+
+"permission photoLibrary name" = "照片图库";
+
+"permission photoLibrary description" = "允许 App 将照片保存到您的图库";
+
+"permission microphone name" = "麦克风";
+
+"permission microphone description" = "允许 App 录制音频";
+
+"permission calendar name" = "日历";
+
+"permission calendar description" = "允许 App 添加活动至您的日历";
+
+"permission contacts name" = "通讯录";
+
+"permission contacts description" = "允许 App 获取您的联系人以及电话号码";
+
+"permission reminders name" = "提醒事项";
+
+"permission reminders description" = "允许 App 创建新的事件";
+
+"permission speech name" = "语音识别";
+
+"permission speech description" = "允许 App 分析您的语音";
+
+"permission motion name" = "运动";
+
+"permission motion description" = "允许记录运动以及环境相关信息";
+
+"permission media library name" = "媒体";
+
+"permission media library description" = "允许访问您的媒体";
+
+"permission bluetooth name" = "蓝牙";
+
+"permission bluetooth description" = "允许使用蓝牙";
+
+"permission notification name" = "通知";
+
+"permission notification description" = "不打开 App 情况下获取重要通知.";
+
+"permission location when in use name" = "使用 App 期间访问位置";
+
+"permission location when in use description" = "访问您的位置";
+
+"permission location always name" = "始终访问位置";
+
+"permission location always description" = "访问您的位置";
+
+"permission tracking name" = "跟踪";
+
+"permission tracking description" = "允许访问 App 相关的数据";
+
+"permission faceid name" = "FaceID";
+
+"permission faceid description" = "允许使用Face ID身份";
+
+"permission siri name" = "Siri";
+
+"permission siri description" = "你将能够使用Siri";
+
+"permission health name" = "健康";
+
+"permission health description" = "允许访问健康数据";
+
+"denied alert title" = "已拒绝授权";
+
+"denied alert description" = "请跳转至设置并允许授权";
+
+"denied alert action" = "设置";
+
+"denied alert cancel" = "取消";
+
+"action denied" = "拒绝";

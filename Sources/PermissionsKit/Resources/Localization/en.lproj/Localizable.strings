@@ -1,0 +1,89 @@
+"action allow" = "Continue";
+
+"action allowed" = "Allowed";
+
+"titles header" = "Need Permission";
+
+"titles sub header" = "Permissions request";
+
+"titles description" = "These are the permissions the app requires to work properly. Please see description for each permission.";
+
+"titles comment" = "Permissions are necessary for the application to work and perform correctly. Push are not required permissions";
+
+"permission camera name" = "Camera";
+
+"permission camera description" = "Allow app for use camera";
+
+"permission photoLibrary name" = "Photo Library";
+
+"permission photoLibrary description" = "Access for save photos in your gallery";
+
+"permission microphone name" = "Microphone";
+
+"permission microphone description" = "Allow record voice from app";
+
+"permission calendar name" = "Calendar";
+
+"permission calendar description" = "Application can add events to calendar";
+
+"permission contacts name" = "Contacts";
+
+"permission contacts description" = "Access for your contacts and phones";
+
+"permission reminders name" = "Reminders";
+
+"permission reminders description" = "Application can create new task";
+
+"permission speech name" = "Speech";
+
+"permission speech description" = "Allow to check your voice";
+
+"permission motion name" = "Motion";
+
+"permission motion description" = "Allow to record motion and environment-related data";
+
+"permission media library name" = "Media Library";
+
+"permission media library description" = "Allow to check your media";
+
+"permission bluetooth name" = "Bluetooth";
+
+"permission bluetooth description" = "Allow access to bluetooth";
+
+"permission notification name" = "Notification";
+
+"permission notification description" = "Get important information without opening app.";
+
+"permission location when in use name" = "Location When Use";
+
+"permission location when in use description" = "Allow to access your location";
+
+"permission location always name" = "Location Always";
+
+"permission location always description" = "Allow to access your location";
+
+"permission tracking name" = "Tracking";
+
+"permission tracking description" = "Allow to access app-related data";
+
+"permission faceid name" = "FaceID";
+
+"permission faceid description" = "Allow using Face ID identity";
+
+"permission siri name" = "Siri";
+
+"permission siri description" = "You will be able to use Siri";
+
+"permission health name" = "Health";
+
+"permission health description" = "Allow to access health data";
+
+"denied alert title" = "Permission denied";
+
+"denied alert description" = "Please, go to Settings and allow permission.";
+
+"denied alert action" = "Settings";
+
+"denied alert cancel" = "Cancel";
+
+"action denied" = "Denied";
