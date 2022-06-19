@@ -97,8 +97,8 @@ open class Permission: Equatable {
             switch self {
             case .authorized: return "authorized"
             case .denied: return "denied"
-            case .notDetermined: return "notDetermined"
-            case .notSupported: return "notSupported"
+            case .notDetermined: return "not determined"
+            case .notSupported: return "not supported"
             }
         }
     }
