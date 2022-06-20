@@ -86,12 +86,21 @@ open class Permission: Equatable {
     
     // MARK: - Models
     
-    @objc public enum Status: Int {
+    @objc public enum Status: Int, CustomStringConvertible {
         
         case authorized
         case denied
         case notDetermined
         case notSupported
+        
+        public var description: String {
+            switch self {
+            case .authorized: return "authorized"
+            case .denied: return "denied"
+            case .notDetermined: return "not determined"
+            case .notSupported: return "not supported"
+            }
+        }
     }
     
     @objc public enum Kind: Int {
