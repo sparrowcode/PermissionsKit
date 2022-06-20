@@ -191,6 +191,7 @@ Also changed the title for the button. Instead of  `allow` now use `continue`. T
     <a href="https://apps.apple.com/app/id1570676244"><img src="https://cdn.sparrowcode.io/github/apps-using/debts.png?version=2" height="65"></a>
     <a href="https://apps.apple.com/app/id1617055933"><img src="https://cdn.sparrowcode.io/github/apps-using/arabesque-kitchen.png?version=2" height="65"></a>
     <a href="https://apps.apple.com/app/id1596657751"><img src="https://cdn.sparrowcode.io/github/apps-using/run-tracker.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/us/app/id1459483980">Tesla Companion (add the image)</a>
 </p>
 
 If you use a `PermissionsKit`, add your application via Pull Request.
