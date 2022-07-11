@@ -1,6 +1,6 @@
-"action allow" = "Fortsetzen";
+"action allow" = "Erlauben";
 
-"action allowed" = "Dürfen";
+"action allowed" = "Genehmigt";
 
 "titles header" = "Benötigen Sie die Erlaubnis";
 
