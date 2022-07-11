@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
+// Copyright © 2022 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -43,10 +43,6 @@ open class Permission: Equatable {
         return Texts.permission_name(for: kind)
     }
     
-    open var iconImage: UIImage {
-        return Images.permission_icon(for: kind)
-    }
-    
     /**
      PermissionsKit: Open settings page.
      For most permissions its app page in settings app.
@@ -63,7 +59,7 @@ open class Permission: Equatable {
     }
     
     // MARK: Must Ovveride
-
+    
     open var kind: Permission.Kind {
         preconditionFailure("This method must be overridden.")
     }
@@ -76,26 +72,35 @@ open class Permission: Equatable {
         preconditionFailure("This method must be overridden.")
     }
     
+    open var canBePresentWithCustomInterface: Bool {
+        return true
+    }
+    
     // MARK: Internal
     
     public static func == (lhs: Permission, rhs: Permission) -> Bool {
         return lhs.kind == rhs.kind
     }
     
-    open var canBePresentWithCustomInterface: Bool {
-        return true
-    }
-    
     public init() {}
     
     // MARK: - Models
-   
-    @objc public enum Status: Int {
+    
+    @objc public enum Status: Int, CustomStringConvertible {
         
         case authorized
         case denied
         case notDetermined
         case notSupported
+        
+        public var description: String {
+            switch self {
+            case .authorized: return "authorized"
+            case .denied: return "denied"
+            case .notDetermined: return "not determined"
+            case .notSupported: return "not supported"
+            }
+        }
     }
     
     @objc public enum Kind: Int {
