@@ -153,7 +153,8 @@ You need to add some keys to the `Info.plist` file with descriptions, per Apple'
 let key = Permission.bluetooth.usageDescriptionKey
 ```
 
-Do not use the description as the name of the key.
+> **Warning**
+> Do not use the description as the name of the key.
 
 ### Localisation
 
@@ -162,20 +163,6 @@ If you use xliff localization export, keys will be create automatically. If you 
 ```
 "NSCameraUsageDescription" = "Here description of usage camera";
 ```
-
-## Apple Review
-
-Apple changed its review guidelines in June 2021. When requesting permissions, apps should require users to always request and make a decision whether to allow or decline the permission. For this reason, the close button in `PermissionsKit` is hidden by default. If you want to force show the close button, run the following code:
-
-```swift
-// Show & hide close button
-controller.showCloseButton = true
-
-// Enable or Disable drag intercation
-controller.allowSwipeDismiss = true
-```
-
-Also changed the title for the button. Instead of  `allow` now use `continue`. The Apple Review Team asked for this. For details, check out [this issue](https://github.com/sparrowcode/PermissionsKit/issues/229).
 
 ## Apps Using
 
