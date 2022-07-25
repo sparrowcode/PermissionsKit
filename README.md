@@ -70,7 +70,7 @@ Universal API for request permission and get its statuses. Available `.authorize
 
 ## Installation
 
-Ready to use on iOS 11+. Supports iOS, tvOS, and `SwiftUI`.
+Ready to use on iOS 11+. Supports iOS, tvOS and `SwiftUI`.
 
 ### Swift Package Manager
 
