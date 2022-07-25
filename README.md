@@ -43,7 +43,6 @@ Universal API for request permission and get its statuses. Available `.authorize
     - [Status Permission](#status-permission)
 - [Keys in Info.plist](#keys-in-infoplist)
     - [Localisations](#localisation)
-- [Apple Review](#apple-review)
 - [Apps Using](#apps-using)
 
 ### Permissions
