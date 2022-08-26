@@ -26,7 +26,7 @@ import PermissionsKit
 #if PERMISSIONSKIT_TRACKING
 import AppTrackingTransparency
 
-@available(iOS 14.5, tvOS 14.5, *)
+@available(iOS 14, tvOS 14, *)
 public extension Permission {
 
     static var tracking: TrackingPermission {
@@ -34,7 +34,7 @@ public extension Permission {
     }
 }
 
-@available(iOS 14.5, tvOS 14.5, *)
+@available(iOS 14, tvOS 14, *)
 public class TrackingPermission: Permission {
     
     open override var kind: Permission.Kind { .tracking }
