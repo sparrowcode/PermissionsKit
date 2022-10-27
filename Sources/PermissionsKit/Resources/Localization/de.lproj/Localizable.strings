@@ -6,13 +6,13 @@
 
 "titles sub header" = "Berechtigungsanfrage";
 
-"titles description" = "Dies sind die Berechtigungen, die die App benötigt, um richtig zu funktionieren. Bitte lesen Sie die Beschreibung für jede Berechtigung.";
+"titles description" = "Dies sind die Berechtigungen, die die App benötigt, um korrekt zu funktionieren. Bitte lesen Sie die Beschreibung für jede Berechtigung.";
 
 "titles comment" = "Berechtigungen sind notwendig, damit die Anwendung funktioniert und korrekt arbeitet.";
 
 "permission camera name" = "Kamera";
 
-"permission camera description" = "App zur Verwendung der Kamera zulassen";
+"permission camera description" = "Zugriff auf die Kamera gewähren";
 
 "permission photoLibrary name" = "Foto-Bibliothek";
 
@@ -30,7 +30,7 @@
 
 "permission contacts description" = "Zugriff für Ihre Kontakte und Telefone";
 
-"permission reminders name" = "Mahnungen";
+"permission reminders name" = "Erinnerungen";
 
 "permission reminders description" = "Anwendung kann neue Aufgabe erstellen";
 
@@ -68,7 +68,7 @@
 
 "permission faceid name" = "FaceID";
 
-"permission faceid description" = "Erlauben Sie die Verwendung der Face ID-Identität";
+"permission faceid description" = "Erlauben Sie die Verwendung von FaceID";
 
 "permission siri name" = "Siri";
 
