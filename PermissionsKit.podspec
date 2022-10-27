@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "PermissionsKit"
-  s.version = "8.0.0"
+  s.version = "9.0.1"
   s.summary = "Ask permissions with ready-use interface. You can check status permission and if it has been requested before. Support SwiftUI."
   s.homepage = "https://github.com/sparrowcode/PermissionsKit"
   s.source = { :git => "https://github.com/sparrowcode/PermissionsKit.git", :tag => s.version }
@@ -24,13 +24,12 @@ Pod::Spec.new do |s|
     }
     subspec.resource_bundles = {
         "PermissionsKit" => [
-            "Sources/PermissionsKit/Resources/Localization/*.lproj/*.strings",
-            "Sources/PermissionsKit/Resources/Assets.xcassets",
+            "Sources/PermissionsKit/Resources/Localization/*.lproj/*.strings"
         ]
     }
   end
 
-  s.subspec 'Camera' do |subspec|
+  s.subspec 'CameraPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/CameraPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
@@ -38,7 +37,7 @@ Pod::Spec.new do |s|
     }
   end
 
-  s.subspec 'PhotoLibrary' do |subspec|
+  s.subspec 'PhotoLibraryPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/PhotoLibraryPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
@@ -46,7 +45,7 @@ Pod::Spec.new do |s|
     }
   end
 
-  s.subspec 'Notification' do |subspec|
+  s.subspec 'NotificationPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/NotificationPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
@@ -54,7 +53,7 @@ Pod::Spec.new do |s|
     }
   end
 
-  s.subspec 'Microphone' do |subspec|
+  s.subspec 'MicrophonePermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/MicrophonePermission/**/*.swift"
     subspec.pod_target_xcconfig = {
@@ -62,7 +61,7 @@ Pod::Spec.new do |s|
     }
   end
 
-  s.subspec 'Calendar' do |subspec|
+  s.subspec 'CalendarPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/CalendarPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
@@ -70,7 +69,7 @@ Pod::Spec.new do |s|
     }
   end
 
-  s.subspec 'Contacts' do |subspec|
+  s.subspec 'ContactsPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/ContactsPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
@@ -78,7 +77,7 @@ Pod::Spec.new do |s|
     }
   end
 
-  s.subspec 'Reminders' do |subspec|
+  s.subspec 'RemindersPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/RemindersPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
@@ -86,7 +85,7 @@ Pod::Spec.new do |s|
     }
   end
 
-  s.subspec 'SpeechRecognizer' do |subspec|
+  s.subspec 'SpeechRecognizerPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/SpeechRecognizerPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
@@ -98,7 +97,7 @@ Pod::Spec.new do |s|
     subspec.source_files = "Sources/LocationExtension/**/*.swift"
   end
 
-  s.subspec 'LocationWhenInUse' do |subspec|
+  s.subspec 'LocationWhenInUsePermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.dependency 'PermissionsKit/LocationExtension'
     subspec.source_files = "Sources/LocationWhenInUsePermission/**/*.swift"
@@ -107,7 +106,7 @@ Pod::Spec.new do |s|
     }
   end
   
-  s.subspec 'LocationAlways' do |subspec|
+  s.subspec 'LocationAlwaysPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.dependency 'PermissionsKit/LocationExtension'
     subspec.source_files = "Sources/LocationAlwaysPermission/**/*.swift"
@@ -116,7 +115,7 @@ Pod::Spec.new do |s|
     }
   end
 
-  s.subspec 'Motion' do |subspec|
+  s.subspec 'MotionPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/MotionPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
@@ -124,7 +123,7 @@ Pod::Spec.new do |s|
     }
   end
 
-  s.subspec 'MediaLibrary' do |subspec|
+  s.subspec 'MediaLibraryPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/MediaLibraryPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
@@ -132,7 +131,7 @@ Pod::Spec.new do |s|
     }
   end
 
-  s.subspec 'Bluetooth' do |subspec|
+  s.subspec 'BluetoothPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/BluetoothPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
@@ -140,7 +139,7 @@ Pod::Spec.new do |s|
     }
   end
 
-  s.subspec 'Tracking' do |subspec|
+  s.subspec 'TrackingPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/TrackingPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
@@ -148,7 +147,7 @@ Pod::Spec.new do |s|
     }
   end
   
-  s.subspec 'FaceID' do |subspec|
+  s.subspec 'FaceIDPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/FaceIDPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
@@ -156,7 +155,7 @@ Pod::Spec.new do |s|
     }
   end
   
-  s.subspec 'Siri' do |subspec|
+  s.subspec 'SiriPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/SiriPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
@@ -164,7 +163,7 @@ Pod::Spec.new do |s|
     }
   end
   
-  s.subspec 'Health' do |subspec|
+  s.subspec 'HealthPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/HealthPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
