@@ -73,13 +73,14 @@ Ready to use on iOS 11+. Supports iOS, tvOS and `SwiftUI`.
 
 ### Swift Package Manager
 
-In Xcode go to `File` -> `Packages` -> `Update to Latest Package Versions` and insert url: 
+In Xcode go to Project -> Your Project Name -> `Package Dependencies` -> Tap *Plus*. Insert url:
 
 ```
 https://github.com/sparrowcode/PermissionsKit
 ```
 
-or adding it to the `dependencies` value of your `Package.swift`:
+Next, choose the permissions you need. But don't add all of them, because apple will reject app.
+Or adding it to the `dependencies` of your `Package.swift`:
 
 ```swift
 dependencies: [
@@ -87,7 +88,7 @@ dependencies: [
 ]
 ```
 
-Next, choose the permissions you need. But don't add all of them, because apple will reject app.
+and choose valid targets.
 
 ### CocoaPods:
 
