@@ -24,11 +24,11 @@ Universal API for request permission and get its statuses. Available `.authorize
 ### Community
 
 <p float="left">
-    <a href="#apps-using">
-        <img src="https://cdn.sparrowcode.io/github/badges/download-on-the-appstore.png?version=2" height="52">
+    <a href="https://twitter.com/sparrowcode_en">
+        <img src="https://cdn.sparrowcode.io/github%2Fbadges%2Ftwitter.png?version=4" height="52">
     </a>
-    <a href="https://github.com/sponsors/sparrowcode">
-        <img src="https://cdn.sparrowcode.io/github/badges/github-sponsor.png?version=3" height="52">
+    <a href="#apps-using">
+        <img src="https://cdn.sparrowcode.io/github/badges/download-on-the-appstore.png?version=4" height="52">
     </a>
 </p>
 
@@ -87,7 +87,7 @@ dependencies: [
 ]
 ```
 
-Next, choose the permissions you need. But don't add all of them, because apple [will reject app](#apple-review).
+Next, choose the permissions you need. But don't add all of them, because apple will reject app.
 
 ### CocoaPods:
 
