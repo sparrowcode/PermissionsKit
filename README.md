@@ -31,7 +31,7 @@ Universal API for request permission and get its statuses. Available `.authorize
         <img src="https://cdn.sparrowcode.io/github/badges/telegram.png?version=1" height="52">
     </a>
     <a href="https://mastodon.social/@sparrowcode_en">
-        <img src="https://cdn.sparrowcode.io/github/badges/mastodon.png?version=1" height="52">
+        <img src="https://cdn.sparrowcode.io/github/badges/mastodon.png?version=2" height="52">
     </a>
     <a href="#apps-using">
         <img src="https://cdn.sparrowcode.io/github/badges/download-on-the-appstore.png?version=4" height="52">
