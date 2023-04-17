@@ -24,7 +24,7 @@ import MapKit
 
 extension CLLocationManager {
     
-    open func setAccuracy(_ value: LocationAccuracy) {
+    public func setAccuracy(_ value: LocationAccuracy) {
         desiredAccuracy = value.coreLocationAccuracy
     }
 }
