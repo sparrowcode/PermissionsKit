@@ -1,6 +1,6 @@
 "permission camera name" = "Cámara";
 
-"permission photoLibrary name" = "Biblioteca fotográfica";
+"permission photoLibrary name" = "Fotos";
 
 "permission microphone name" = "Micrófono";
 
@@ -14,19 +14,19 @@
 
 "permission motion name" = "Movimiento";
 
-"permission media library name" = "Biblioteca de medios de comunicación";
+"permission media library name" = "Contenidos y Apple music";
 
 "permission bluetooth name" = "Bluetooth";
 
-"permission notification name" = "Notificación";
+"permission notification name" = "Notificaciones";
 
-"permission location when in use name" = "Ubicación cuando se usa";
+"permission location when in use name" = "Al usar la app";
 
-"permission location always name" = "Ubicación Siempre";
+"permission location always name" = "Siempre";
 
-"permission tracking name" = "Seguimiento de";
+"permission tracking name" = "Rastreo";
 
-"permission faceid name" = "FaceID";
+"permission faceid name" = "Face ID";
 
 "permission siri name" = "Siri";
 
