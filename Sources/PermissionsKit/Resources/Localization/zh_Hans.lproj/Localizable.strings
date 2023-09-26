@@ -4,6 +4,8 @@
 
 "permission microphone name" = "麦克风";
 
+"permission calendar write only access name" = "日历只写访问";
+
 "permission calendar name" = "日历";
 
 "permission contacts name" = "通讯录";

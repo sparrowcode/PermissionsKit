@@ -69,6 +69,14 @@ Pod::Spec.new do |s|
     }
   end
 
+  s.subspec 'CalendarWriteOnlyAccessPermission' do |subspec|
+    subspec.dependency 'PermissionsKit/Core'
+    subspec.source_files = "Sources/CalendarWriteOnlyAccessPermission/**/*.swift"
+    subspec.pod_target_xcconfig = {
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_CALENDAR PERMISSIONSKIT_COCOAPODS"
+    }
+  end
+
   s.subspec 'ContactsPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
     subspec.source_files = "Sources/ContactsPermission/**/*.swift"

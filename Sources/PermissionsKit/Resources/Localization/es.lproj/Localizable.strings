@@ -4,6 +4,8 @@
 
 "permission microphone name" = "Micrófono";
 
+"permission calendar write only access name" = "Calendario acceso solo escritura";
+
 "permission calendar name" = "Calendario";
 
 "permission contacts name" = "Contactos";

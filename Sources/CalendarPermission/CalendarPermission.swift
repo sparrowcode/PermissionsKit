@@ -37,9 +37,13 @@ public extension Permission {
 public class CalendarPermission: Permission {
     
     open override var kind: Permission.Kind { .calendar }
-    open var usageDescriptionKey: String? { "NSCalendarsUsageDescription" }
-    open var usageFullAccessDescriptionKey: String? { "NSCalendarsFullAccessUsageDescription" }
-    open var usageWriteOnlyAccessDescriptionKey: String? { "NSCalendarsWriteOnlyAccessUsageDescription" }
+    open var usageDescriptionKey: String? {
+        if #available(iOS 17.0, *) {
+            return "NSCalendarsFullAccessUsageDescription"
+        } else {
+            return "NSCalendarsUsageDescription"
+        }
+    }
     
     public override var status: Permission.Status {
         switch EKEventStore.authorizationStatus(for: EKEntityType.event) {
@@ -48,7 +52,7 @@ public class CalendarPermission: Permission {
         case .fullAccess: return .authorized
         case .notDetermined: return .notDetermined
         case .restricted: return .denied
-        case .writeOnly: return .authorized
+        case .writeOnly: return .denied
         @unknown default: return .denied
         }
     }

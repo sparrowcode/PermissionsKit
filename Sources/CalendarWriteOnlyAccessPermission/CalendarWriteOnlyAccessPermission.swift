@@ -23,33 +23,29 @@
 import PermissionsKit
 #endif
 
-#if os(iOS) && PERMISSIONSKIT_REMINDERS
+#if os(iOS) && PERMISSIONSKIT_CALENDAR_WRITEONLYACCESS
 import Foundation
 import EventKit
 
 public extension Permission {
 
-    static var reminders: RemindersPermission {
-        return RemindersPermission()
+    @available(iOS 17.0, *)
+    static var calendarWriteOnlyAccess: CalendarWriteOnlyAccessPermission {
+        return CalendarWriteOnlyAccessPermission()
     }
 }
 
-public class RemindersPermission: Permission {
+@available(iOS 17.0, *)
+public class CalendarWriteOnlyAccessPermission: Permission {
     
-    open override var kind: Permission.Kind { .reminders }
-    open var usageDescriptionKey: String? {
-        if #available(iOS 17.0, *) {
-            return "NSRemindersFullAccessUsageDescription"
-        } else {
-            return "NSRemindersUsageDescription"
-        }
-    }
+    open override var kind: Permission.Kind { .calendar }
+    open var usageDescriptionKey: String? { "NSCalendarsWriteOnlyAccessUsageDescription" }
     
     public override var status: Permission.Status {
-        switch EKEventStore.authorizationStatus(for: EKEntityType.reminder) {
+        switch EKEventStore.authorizationStatus(for: EKEntityType.event) {
         case .authorized: return .authorized
         case .denied: return .denied
-        case .fullAccess: return .authorized
+        case .fullAccess: return .denied
         case .notDetermined: return .notDetermined
         case .restricted: return .denied
         case .writeOnly: return .authorized
@@ -60,18 +56,9 @@ public class RemindersPermission: Permission {
     public override func request(completion: @escaping () -> Void) {
         
         let eventStore = EKEventStore()
-        
-        if #available(iOS 17.0, *) {
-            eventStore.requestFullAccessToReminders { (accessGranted: Bool, error: Error?) in
-                DispatchQueue.main.async {
-                    completion()
-                }
-            }
-        } else {
-            eventStore.requestAccess(to: EKEntityType.reminder) { (accessGranted: Bool, error: Error?) in
-                DispatchQueue.main.async {
-                    completion()
-                }
+        eventStore.requestWriteOnlyAccessToEvents { (accessGranted: Bool, error: Error?) in
+            DispatchQueue.main.async {
+                completion()
             }
         }
     }

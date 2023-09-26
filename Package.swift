@@ -32,6 +32,10 @@ let package = Package(
             targets: ["CalendarPermission"]
         ),
         .library(
+            name: "CalendarWriteOnlyAccessPermission",
+            targets: ["CalendarWriteOnlyAccessPermission"]
+        ),
+        .library(
             name: "ContactsPermission",
             targets: ["ContactsPermission"]
         ),
@@ -134,6 +138,14 @@ let package = Package(
             dependencies: [.target(name: "PermissionsKit")],
             swiftSettings: [
                 .define("PERMISSIONSKIT_CALENDAR"),
+                .define("PERMISSIONSKIT_SPM")
+            ]
+        ),
+        .target(
+            name: "CalendarWriteOnlyAccessPermission",
+            dependencies: [.target(name: "PermissionsKit")],
+            swiftSettings: [
+                .define("PERMISSIONSKIT_CALENDAR_WRITEONLYACCESS"),
                 .define("PERMISSIONSKIT_SPM")
             ]
         ),

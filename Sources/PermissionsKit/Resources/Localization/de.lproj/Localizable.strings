@@ -19,6 +19,8 @@
 
 "permission microphone name" = "Mikrofon";
 
+"permission calendar write only access name" = "Nur Schreibzugriff auf den Kalender";
+
 "permission calendar name" = "Kalender";
 
 "permission contacts name" = "Kontakte";

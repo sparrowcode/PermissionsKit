@@ -4,6 +4,8 @@
 
 "permission microphone name" = "Мікрофон";
 
+"permission calendar write only access name" = "доступ лише для запису в календарі";
+
 "permission calendar name" = "Календар";
 
 "permission contacts name" = "Контакти";
