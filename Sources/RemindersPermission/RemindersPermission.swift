@@ -38,25 +38,37 @@ public class RemindersPermission: Permission {
     
     open override var kind: Permission.Kind { .reminders }
     open var usageDescriptionKey: String? { "NSRemindersUsageDescription" }
+    open var usageFullAccessDescriptionKey: String? { "NSRemindersFullAccessUsageDescription" }
     
     public override var status: Permission.Status {
         switch EKEventStore.authorizationStatus(for: EKEntityType.reminder) {
         case .authorized: return .authorized
         case .denied: return .denied
+        case .fullAccess: return .authorized
         case .notDetermined: return .notDetermined
         case .restricted: return .denied
+        case .writeOnly: return .authorized
         @unknown default: return .denied
         }
     }
     
     public override func request(completion: @escaping () -> Void) {
+        
         let eventStore = EKEventStore()
-        eventStore.requestAccess(to: EKEntityType.reminder, completion: {
-            (accessGranted: Bool, error: Error?) in
-            DispatchQueue.main.async {
-                completion()
+        
+        if #available(iOS 17.0, *) {
+            eventStore.requestFullAccessToReminders { (accessGranted: Bool, error: Error?) in
+                DispatchQueue.main.async {
+                    completion()
+                }
             }
-        })
+        } else {
+            eventStore.requestAccess(to: EKEntityType.reminder) { (accessGranted: Bool, error: Error?) in
+                DispatchQueue.main.async {
+                    completion()
+                }
+            }
+        }
     }
 }
 #endif

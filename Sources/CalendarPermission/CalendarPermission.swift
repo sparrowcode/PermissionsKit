@@ -38,25 +38,38 @@ public class CalendarPermission: Permission {
     
     open override var kind: Permission.Kind { .calendar }
     open var usageDescriptionKey: String? { "NSCalendarsUsageDescription" }
+    open var usageFullAccessDescriptionKey: String? { "NSCalendarsFullAccessUsageDescription" }
+    open var usageWriteOnlyAccessDescriptionKey: String? { "NSCalendarsWriteOnlyAccessUsageDescription" }
     
     public override var status: Permission.Status {
         switch EKEventStore.authorizationStatus(for: EKEntityType.event) {
         case .authorized: return .authorized
         case .denied: return .denied
+        case .fullAccess: return .authorized
         case .notDetermined: return .notDetermined
         case .restricted: return .denied
+        case .writeOnly: return .authorized
         @unknown default: return .denied
         }
     }
     
     public override func request(completion: @escaping () -> Void) {
+        
         let eventStore = EKEventStore()
-        eventStore.requestAccess(to: EKEntityType.event, completion: {
-            (accessGranted: Bool, error: Error?) in
-            DispatchQueue.main.async {
-                completion()
+        
+        if #available(iOS 17.0, *) {
+            eventStore.requestFullAccessToEvents { (accessGranted: Bool, error: Error?) in
+                DispatchQueue.main.async {
+                    completion()
+                }
             }
-        })
+        } else {
+            eventStore.requestAccess(to: EKEntityType.event) { (accessGranted: Bool, error: Error?) in
+                DispatchQueue.main.async {
+                    completion()
+                }
+            }
+        }
     }
 }
 #endif
