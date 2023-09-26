@@ -40,6 +40,14 @@ class LocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
         }
         completionHandler()
     }
+  
+    @available(iOS 14.0, *)
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        if manager.authorizationStatus == .notDetermined {
+            return
+        }
+        completionHandler()
+    }
     
     // MARK: - Process
     
