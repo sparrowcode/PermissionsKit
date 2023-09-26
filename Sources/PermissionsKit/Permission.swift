@@ -110,9 +110,10 @@ open class Permission: Equatable {
         case photoLibrary = 1
         case microphone = 3
         case calendar = 4
-        case contacts = 5
-        case reminders = 6
-        case speech = 7
+        case calendarWriteOnly = 5
+        case contacts = 6
+        case reminders = 7
+        case speech = 8
         case locationWhenInUse = 9
         case locationAlways = 10
         case motion = 11
@@ -131,7 +132,8 @@ open class Permission: Equatable {
                 return "Photo Library"
             case .microphone:
                 return "Microphone"
-            case .calendar:
+            case .calendar,
+                 .calendarWriteOnly:
                 return "Calendar"
             case .contacts:
                 return "Contacts"

@@ -28,15 +28,27 @@ import Foundation
 import EventKit
 
 public extension Permission {
-
+    
     static var calendar: CalendarPermission {
-        return CalendarPermission()
+        return CalendarPermission(kind: .calendar)
+    }
+    
+    static var calendarWriteOnly: CalendarPermission {
+        return CalendarPermission(kind: .calendarWriteOnly)
     }
 }
 
 public class CalendarPermission: Permission {
     
-    open override var kind: Permission.Kind { .calendar }
+    private var _kind: Permission.Kind
+    
+    // MARK: - Init
+    
+    init(kind: Permission.Kind) {
+        self._kind = kind
+    }
+    
+    open override var kind: Permission.Kind { self._kind }
     open var usageDescriptionKey: String? { "NSCalendarsUsageDescription" }
     open var usageFullAccessDescriptionKey: String? { "NSCalendarsFullAccessUsageDescription" }
     open var usageWriteOnlyAccessDescriptionKey: String? { "NSCalendarsWriteOnlyAccessUsageDescription" }
@@ -58,9 +70,17 @@ public class CalendarPermission: Permission {
         let eventStore = EKEventStore()
         
         if #available(iOS 17.0, *) {
-            eventStore.requestFullAccessToEvents { (accessGranted: Bool, error: Error?) in
-                DispatchQueue.main.async {
-                    completion()
+            if self._kind == .calendarWriteOnly {
+                eventStore.requestWriteOnlyAccessToEvents { (accessGranted: Bool, error: Error?) in
+                    DispatchQueue.main.async {
+                        completion()
+                    }
+                }
+            } else {
+                eventStore.requestFullAccessToEvents { (accessGranted: Bool, error: Error?) in
+                    DispatchQueue.main.async {
+                        completion()
+                    }
                 }
             }
         } else {
