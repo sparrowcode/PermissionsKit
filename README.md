@@ -184,6 +184,7 @@ If you use xliff localization export, keys will be create automatically. If you 
     <a href="https://apps.apple.com/app/id1596657751"><img src="https://cdn.sparrowcode.io/github/apps-using/id1596657751.png?version=2" height="65"></a>
     <a href="https://apps.apple.com/app/id1459483980"><img src="https://cdn.sparrowcode.io/github/apps-using/id1459483980.png?version=2" height="65"></a>
     <a href="https://apps.apple.com/app/id1544749600"><img src="https://cdn.sparrowcode.io/github/apps-using/id1544749600.png" height="65"></a>
+    <a href="https://apps.apple.com/app/id6452079114"><img src="https://cdn.sparrowcode.io/github/apps-using/id6452079114.png" height="65"></a>
 </p>
 
 If you use a `PermissionsKit`, add your application via Pull Request.
