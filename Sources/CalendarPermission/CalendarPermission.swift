@@ -29,16 +29,8 @@ import EventKit
 
 public extension Permission {
     
-    static var calendar: CalendarPermission {
-        return CalendarPermission(kind: .calendar(access: .full))
-    }
-}
-
-@available(iOS 17.0, *)
-public extension Permission {
-    
-    static var calendarWriteOnly: CalendarPermission {
-        return CalendarPermission(kind: .calendar(access: .write))
+    static func calendar(access: CalendarAccess) -> CalendarPermission {
+        CalendarPermission(kind: .calendar(access: access))
     }
 }
 
