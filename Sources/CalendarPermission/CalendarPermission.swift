@@ -32,6 +32,10 @@ public extension Permission {
     static var calendar: CalendarPermission {
         return CalendarPermission(kind: .calendar)
     }
+}
+
+@available(iOS 17.0, *)
+public extension Permission {
     
     static var calendarWriteOnly: CalendarPermission {
         return CalendarPermission(kind: .calendarWriteOnly)
