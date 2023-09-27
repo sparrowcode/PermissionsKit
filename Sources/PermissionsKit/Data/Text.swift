@@ -31,8 +31,7 @@ enum Texts {
             return NSLocalizedString("permission photoLibrary name", bundle: bundle, comment: "")
         case .microphone:
             return NSLocalizedString("permission microphone name", bundle: bundle, comment: "")
-        case .calendar,
-             .calendarWriteOnly:
+        case .calendar(access: .full), .calendar(access: .write):
             return NSLocalizedString("permission calendar name", bundle: bundle, comment: "")
         case .contacts:
             return NSLocalizedString("permission contacts name", bundle: bundle, comment: "")

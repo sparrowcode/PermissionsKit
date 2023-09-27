@@ -21,7 +21,7 @@
 
 import UIKit
 
-open class Permission: Equatable {
+open class Permission {
     
     open var authorized: Bool {
         return status == .authorized
@@ -78,10 +78,6 @@ open class Permission: Equatable {
     
     // MARK: Internal
     
-    public static func == (lhs: Permission, rhs: Permission) -> Bool {
-        return lhs.kind == rhs.kind
-    }
-    
     public init() {}
     
     // MARK: - Models
@@ -103,26 +99,26 @@ open class Permission: Equatable {
         }
     }
     
-    @objc public enum Kind: Int {
+    public enum Kind {
         
-        case camera = 0
-        case notification = 2
-        case photoLibrary = 1
-        case microphone = 3
-        case calendar = 4
-        case calendarWriteOnly = 5
-        case contacts = 6
-        case reminders = 7
-        case speech = 8
-        case locationWhenInUse = 9
-        case locationAlways = 10
-        case motion = 11
-        case mediaLibrary = 12
-        case bluetooth = 13
-        case tracking = 14
-        case faceID = 15
-        case siri = 16
-        case health = 17
+        case camera
+        case notification
+        case photoLibrary
+        case microphone
+        case calendar(access: CalendarAccess)
+        case contacts
+        case reminders
+        case speech
+        // Upgrade location as calendar style
+        case locationWhenInUse
+        case locationAlways
+        case motion
+        case mediaLibrary
+        case bluetooth
+        case tracking
+        case faceID
+        case siri
+        case health
         
         public var name: String {
             switch self {
@@ -132,8 +128,7 @@ open class Permission: Equatable {
                 return "Photo Library"
             case .microphone:
                 return "Microphone"
-            case .calendar,
-                 .calendarWriteOnly:
+            case .calendar(access: .write), .calendar(access: .full):
                 return "Calendar"
             case .contacts:
                 return "Contacts"
@@ -163,5 +158,11 @@ open class Permission: Equatable {
                 return "Health"
             }
         }
+    }
+    
+    public enum CalendarAccess {
+        
+        case full
+        case write
     }
 }
