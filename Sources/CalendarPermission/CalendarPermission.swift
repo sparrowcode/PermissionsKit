@@ -105,7 +105,7 @@ public class CalendarPermission: Permission {
             }
             
             let requestFull = {
-                eventStore.requestWriteOnlyAccessToEvents { (accessGranted: Bool, error: Error?) in
+                eventStore.requestFullAccessToEvents { (accessGranted: Bool, error: Error?) in
                     DispatchQueue.main.async {
                         completion()
                     }
