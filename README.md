@@ -58,8 +58,7 @@ Universal API for request permission and get its statuses. Available `.authorize
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/contacts.png" width="38"> | Contacts | NSContactsUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/faceid.png" width="38"> | FaceID | NSFaceIDUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/health.png" width="38"> | Health | NSHealthUpdateUsageDescription, NSHealthShareUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/location.png" width="38"> | Location Always | NSLocationAlwaysAndWhenInUseUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/location.png" width="38"> | Location When In Use | NSLocationWhenInUseUsageDescription | ✅ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/location.png" width="38"> | Location | NSLocationAlwaysAndWhenInUseUsageDescription NSLocationWhenInUseUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/music.png" width="38"> | Media Library | NSAppleMusicUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/microphone.png" width="38"> | Microphone | NSMicrophoneUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/motion.png" width="38"> | Motion | NSMotionUsageDescription | ✅ | ✅ |

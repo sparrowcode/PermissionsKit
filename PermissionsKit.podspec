@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "PermissionsKit"
-  s.version = "9.2.2"
+  s.version = "10.0.0"
   s.summary = "Ask permissions with ready-use interface. You can check status permission and if it has been requested before. Support SwiftUI."
   s.homepage = "https://github.com/sparrowcode/PermissionsKit"
   s.source = { :git => "https://github.com/sparrowcode/PermissionsKit.git", :tag => s.version }
@@ -92,26 +92,12 @@ Pod::Spec.new do |s|
         "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_SPEECH PERMISSIONSKIT_COCOAPODS"
     }
   end
-  
-  s.subspec 'LocationExtension' do |subspec|
-    subspec.source_files = "Sources/LocationExtension/**/*.swift"
-  end
 
-  s.subspec 'LocationWhenInUsePermission' do |subspec|
+  s.subspec 'LocationPermission' do |subspec|
     subspec.dependency 'PermissionsKit/Core'
-    subspec.dependency 'PermissionsKit/LocationExtension'
-    subspec.source_files = "Sources/LocationWhenInUsePermission/**/*.swift"
+    subspec.source_files = "Sources/LocationPermission/**/*.swift"
     subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_LOCATION_WHENINUSE PERMISSIONSKIT_COCOAPODS"
-    }
-  end
-  
-  s.subspec 'LocationAlwaysPermission' do |subspec|
-    subspec.dependency 'PermissionsKit/Core'
-    subspec.dependency 'PermissionsKit/LocationExtension'
-    subspec.source_files = "Sources/LocationAlwaysPermission/**/*.swift"
-    subspec.pod_target_xcconfig = {
-        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_LOCATION_ALWAYS PERMISSIONSKIT_COCOAPODS"
+        "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSIONSKIT_LOCATION PERMISSIONSKIT_COCOAPODS"
     }
   end
 

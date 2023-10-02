@@ -47,9 +47,9 @@ enum Texts {
             return NSLocalizedString("permission bluetooth name", bundle: bundle, comment: "")
         case .notification:
             return NSLocalizedString("permission notification name", bundle: bundle, comment: "")
-        case .locationWhenInUse:
+        case .location(access: .whenInUse):
             return NSLocalizedString("permission location when in use name", bundle: bundle, comment: "")
-        case .locationAlways:
+        case .location(access: .always):
             return NSLocalizedString("permission location always name", bundle: bundle, comment: "")
         case .tracking:
             return NSLocalizedString("permission tracking name", bundle: bundle, comment: "")

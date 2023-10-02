@@ -109,9 +109,7 @@ open class Permission {
         case contacts
         case reminders
         case speech
-        // Upgrade location as calendar style
-        case locationWhenInUse
-        case locationAlways
+        case location(access: LocationAccess)
         case motion
         case mediaLibrary
         case bluetooth
@@ -128,7 +126,9 @@ open class Permission {
                 return "Photo Library"
             case .microphone:
                 return "Microphone"
-            case .calendar(access: .write), .calendar(access: .full):
+            case .calendar(access: .write):
+                return "Calendar Only Write"
+            case .calendar(access: .full):
                 return "Calendar"
             case .contacts:
                 return "Contacts"
@@ -136,8 +136,10 @@ open class Permission {
                 return "Reminders"
             case .speech:
                 return "Speech"
-            case .locationAlways:
+            case .location(access: .always):
                 return "Location Always"
+            case .location(access: .whenInUse):
+                return "Location When Use"
             case .motion:
                 return "Motion"
             case .mediaLibrary:
@@ -146,8 +148,6 @@ open class Permission {
                 return "Bluetooth"
             case .notification:
                 return "Notification"
-            case .locationWhenInUse:
-                return "Location When Use"
             case .tracking:
                 return "Tracking"
             case .faceID:
@@ -164,5 +164,11 @@ open class Permission {
         
         case full
         case write
+    }
+    
+    public enum LocationAccess {
+        
+        case whenInUse
+        case always
     }
 }

@@ -44,12 +44,8 @@ let package = Package(
             targets: ["SpeechRecognizerPermission"]
         ),
         .library(
-            name: "LocationWhenInUsePermission",
-            targets: ["LocationWhenInUsePermission"]
-        ),
-        .library(
-            name: "LocationAlwaysPermission",
-            targets: ["LocationAlwaysPermission"]
+            name: "LocationPermission",
+            targets: ["LocationPermission"]
         ),
         .library(
             name: "MotionPermission",
@@ -87,12 +83,6 @@ let package = Package(
             resources: [
                 .process("Resources")
             ],
-            swiftSettings: [
-                .define("PERMISSIONSKIT_SPM")
-            ]
-        ),
-        .target(
-            name: "LocationExtension",
             swiftSettings: [
                 .define("PERMISSIONSKIT_SPM")
             ]
@@ -162,24 +152,12 @@ let package = Package(
             ]
         ),
         .target(
-            name: "LocationWhenInUsePermission",
+            name: "LocationPermission",
             dependencies: [
-                .target(name: "PermissionsKit"),
-                .target(name: "LocationExtension")
+                .target(name: "PermissionsKit")
             ],
             swiftSettings: [
-                .define("PERMISSIONSKIT_LOCATION_WHENINUSE"),
-                .define("PERMISSIONSKIT_SPM")
-            ]
-        ),
-        .target(
-            name: "LocationAlwaysPermission",
-            dependencies: [
-                .target(name: "PermissionsKit"),
-                .target(name: "LocationExtension")
-            ],
-            swiftSettings: [
-                .define("PERMISSIONSKIT_LOCATION_ALWAYS"),
+                .define("PERMISSIONSKIT_LOCATION"),
                 .define("PERMISSIONSKIT_SPM")
             ]
         ),

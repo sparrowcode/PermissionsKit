@@ -21,14 +21,13 @@
 
 #if PERMISSIONSKIT_SPM
 import PermissionsKit
-import LocationExtension
 #endif
 
-#if PERMISSIONSKIT_LOCATION_WHENINUSE
+#if os(iOS) && PERMISSIONSKIT_LOCATION
 import Foundation
 import MapKit
 
-class LocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
+class LocationAlwaysHandler: NSObject, CLLocationManagerDelegate {
     
     // MARK: - Location Manager
     
@@ -57,13 +56,14 @@ class LocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
         self.completionHandler = completionHandler
         
         let status = CLLocationManager.authorizationStatus()
+        
         switch status {
         case .notDetermined:
             locationManager.delegate = self
-            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestAlwaysAuthorization()
         case .authorizedWhenInUse:
             locationManager.delegate = self
-            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestAlwaysAuthorization()
         default:
             self.completionHandler()
         }
@@ -71,7 +71,7 @@ class LocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
     
     // MARK: - Init
     
-    static var shared: LocationWhenInUseHandler?
+    static var shared: LocationAlwaysHandler?
     
     override init() {
         super.init()
