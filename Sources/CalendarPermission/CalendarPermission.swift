@@ -64,6 +64,9 @@ public class CalendarPermission: Permission {
     }
     
     public override var status: Permission.Status {
+        // Fix when status first time response with other state.
+        let _ = EKEventStore.authorizationStatus(for: EKEntityType.event)
+        
         switch EKEventStore.authorizationStatus(for: EKEntityType.event) {
         case .authorized: return .authorized
         case .denied: return .denied
