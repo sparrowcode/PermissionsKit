@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "PermissionsKit"
-  s.version = "10.0.0"
+  s.version = "10.0.1"
   s.summary = "Ask permissions with ready-use interface. You can check status permission and if it has been requested before. Support SwiftUI."
   s.homepage = "https://github.com/sparrowcode/PermissionsKit"
   s.source = { :git => "https://github.com/sparrowcode/PermissionsKit.git", :tag => s.version }
