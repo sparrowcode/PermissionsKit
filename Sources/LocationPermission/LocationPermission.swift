@@ -76,8 +76,16 @@ public class LocationPermission: Permission {
         case .denied: return .denied
         case .notDetermined: return .notDetermined
         case .restricted: return .denied
-        case .authorizedAlways: return .authorized
-        case .authorizedWhenInUse: return .denied
+        case .authorizedAlways:
+            if case .location(let access) = _kind, access == .always {
+                return .authorized
+            }
+            return .denied
+        case .authorizedWhenInUse:
+            if case .location(let access) = _kind, access == .whenInUse {
+                return .authorized
+            }
+            return .denied
         @unknown default: return .denied
         }
     }
