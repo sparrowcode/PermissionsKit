@@ -86,7 +86,7 @@ Or adding it to the `dependencies` of your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/sparrowcode/PermissionsKit", .upToNextMajor(from: "9.0.0"))
+    .package(url: "https://github.com/sparrowcode/PermissionsKit", .upToNextMajor(from: "10.0.1"))
 ]
 ```
 
