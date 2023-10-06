@@ -1,6 +1,6 @@
 # PermissionsKit 
 
-Universal API for request permission and get its statuses. Available `.authorized`, `.denied` & `.notDetermined`.
+Universal API for request permission and get its statuses - available `.authorized`, `.denied` & `.notDetermined`.
 
 <p float="left">
     <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/camera.png" width="38">
@@ -43,7 +43,7 @@ Universal API for request permission and get its statuses. Available `.authorize
     - [CocoaPods](#cocoapods)
 - [Usage](#request-permission)
     - [Request Permission](#request-permission)
-    - [Status Permission](#status-permission)
+    - [Get Status Permission](#get-status-permission)
 - [Keys in Info.plist](#keys-in-infoplist)
     - [Localisations](#localisation)
 - [Apps Using](#apps-using)
@@ -81,7 +81,7 @@ In Xcode go to Project -> Your Project Name -> `Package Dependencies` -> Tap *Pl
 https://github.com/sparrowcode/PermissionsKit
 ```
 
-Next, choose the permissions you need. But don't add all of them, because apple will reject app.
+Next, choose the permissions that you need. But don't add all of them, because apple will reject app.
 Or adding it to the `dependencies` of your `Package.swift`:
 
 ```swift
@@ -94,7 +94,7 @@ and choose valid targets.
 
 ### CocoaPods:
 
-This is an outdated way of doing things. I advise you to use [SPM](#swift-package-manager). However, I will continue to support Cocoapods for some time.
+This is an outdated way. I advise you to use [SPM](#swift-package-manager). However, I will continue to support Cocoapods for some time.
 
 <details><summary>Cocoapods Instalation</summary>
 
@@ -138,7 +138,7 @@ Permission.notification.request {
 }
 ```
 
-## Status Permission
+## Get Status Permission
 
 ```swift
 import PermissionsKit
@@ -147,16 +147,16 @@ import NotificationPermission
 let authorized = Permission.notification.authorized
 ```
 
-## Keys in Info.plist
+## Keys in `Info.plist`
 
-You need to add some keys to the `Info.plist` file with descriptions, per Apple's requirements. You can get a plist of keys for permissions as follows:
+You need to add some strings to the `Info.plist` file with descriptions per Apple's requirements. You can get a plist of keys for permissions as follows:
 
 ```swift
 let key = Permission.bluetooth.usageDescriptionKey
 ```
 
 > **Warning**
-> Do not use the description as the name of the key.
+> Do not use the description as the name of the key. Xcode can't build this.
 
 ### Localisation
 
