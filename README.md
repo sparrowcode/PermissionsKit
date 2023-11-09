@@ -156,6 +156,7 @@ import NotificationPermission
 let authorized = Permission.notification.authorized
 ```
 
+> **Warning**
 > For FaceID permission no way detect if request `.authorized` or `.notDetermined` accurate. Status `.denied` detect well. For now for both states return `.notDetermined`. 
 
 ## Keys in `Info.plist`
