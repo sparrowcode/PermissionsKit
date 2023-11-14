@@ -139,7 +139,10 @@ pod 'PermissionsKit/HealthPermission', :git => 'https://github.com/sparrowcode/P
 
 ## Why Modules
 
-If put all code to one package and compile it, Apple Review Team will see a lot of calls to permissions API and ask you provide reason why you really need it permissions. Modules allow compile only really using code parts. Just select only which you need. 
+If put all code to one package and compile it, Apple Review Team will see a lot of calls to permissions API and ask you provide reason why you really need it permissions. Modules allow compile only really using code parts. Just select only which you need.
+
+> **Warning**
+> Import only the permissions you really need.
 
 ## Request Permission
 
