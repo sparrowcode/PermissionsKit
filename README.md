@@ -141,7 +141,7 @@ pod 'PermissionsKit/HealthPermission', :git => 'https://github.com/sparrowcode/P
 
 If put all code to one package and compile it, Apple Review Team will see a lot of calls to permissions API and ask you provide reason why you really need it permissions. Modules allow compile only really using code parts. Just select only which you need.
 
-> **Warning**
+> [!WARNING]
 > Import only the permissions you really need.
 
 ## Request Permission
@@ -164,7 +164,7 @@ import NotificationPermission
 let authorized = Permission.notification.authorized
 ```
 
-> **Warning**
+> [!WARNING]
 > For FaceID permission no way detect if request `.authorized` or `.notDetermined` accurate. Status `.denied` detect well. For now for both states return `.notDetermined`. 
 
 ## Keys in `Info.plist`
@@ -175,7 +175,7 @@ You need to add some strings to the `Info.plist` file with descriptions per Appl
 let key = Permission.bluetooth.usageDescriptionKey
 ```
 
-> **Warning**
+> [!NOTE]
 > Do not use the description as the name of the key. Xcode can't build this.
 
 ### Localisation
