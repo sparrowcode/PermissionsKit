@@ -50,6 +50,7 @@ Universal API for request permission and get its statuses — available `.author
 - [Installation](#installation)
     - [Swift Package Manager](#swift-package-manager)
     - [CocoaPods](#cocoapods)
+    - [Why Modules](#why-modules)
 - [Usage](#request-permission)
     - [Request Permission](#request-permission)
     - [Get Status Permission](#get-status-permission)
@@ -135,6 +136,10 @@ pod 'PermissionsKit/SiriPermission', :git => 'https://github.com/sparrowcode/Per
 pod 'PermissionsKit/HealthPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 ```
 </details>
+
+## Why Modules
+
+If put all code to one package and compile it, Apple Review Team will see a lot of calls to permissions API and ask you provide reason why you really need it permissions. Modules allow compile only really using code parts. Just select only which you need. 
 
 ## Request Permission
 
