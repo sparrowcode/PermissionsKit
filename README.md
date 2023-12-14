@@ -54,7 +54,7 @@ Universal API for request permission and get its statuses — available `.author
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/calendar.png" width="38"> | Calendar | NSCalendarsUsageDescription, NSCalendarsFullAccessUsageDescription, NSCalendarsWriteOnlyAccessUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/camera.png" width="38"> | Camera | NSCameraUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/contacts.png" width="38"> | Contacts | NSContactsUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/faceid.png" width="38"> | FaceID | NSFaceIDUsageDescription | ☑️ | ✅ |
+| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/faceid.png" width="38"> | FaceID | NSFaceIDUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/health.png" width="38"> | Health | NSHealthUpdateUsageDescription, NSHealthShareUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/location.png" width="38"> | Location | NSLocationAlwaysAndWhenInUseUsageDescription NSLocationWhenInUseUsageDescription | ✅ | ✅ |
 | <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/music.png" width="38"> | Media Library | NSAppleMusicUsageDescription | ✅ | ✅ |
