@@ -27,15 +27,18 @@ import PermissionsKit
 import UserNotifications
 
 public extension Permission {
-    
-    static var notification: NotificationPermission {
-        return NotificationPermission()
+    static func notification(access: Set<NotificationAccess> = [.alert, .badge, .sound]) -> NotificationPermission {
+        return NotificationPermission(kind: .notification(access: access))
     }
 }
 
 public class NotificationPermission: Permission {
+    private var _kind: Permission.Kind
+    open override var kind: Permission.Kind { self._kind }
     
-    open override var kind: Permission.Kind { .notification }
+    init(kind: Permission.Kind) {
+        self._kind = kind
+    }
     
     public override var status: Permission.Status {
         guard let authorizationStatus = fetchAuthorizationStatus() else { return .notDetermined }
@@ -64,10 +67,15 @@ public class NotificationPermission: Permission {
     
     public override func request(completion: @escaping () -> Void) {
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
-            DispatchQueue.main.async {
-                completion()
+        switch _kind {
+        case .notification(let access):
+            center.requestAuthorization(options: UNAuthorizationOptions(access.map { $0.userNotifcationAuthorizationOptions })) { (granted, error) in
+                DispatchQueue.main.async {
+                    completion()
+                }
             }
+        default:
+            fatalError()
         }
     }
 }

@@ -102,7 +102,7 @@ open class Permission {
     public enum Kind {
         
         case camera
-        case notification
+        case notification(access: Set<NotificationAccess>)
         case photoLibrary
         case microphone
         case calendar(access: CalendarAccess)
@@ -170,5 +170,20 @@ open class Permission {
         
         case whenInUse
         case always
+    }
+    
+    public enum NotificationAccess {
+        case badge
+        case sound
+        case alert
+        case carPlay
+        case criticalAlert
+        case providesAppNotificationSettings
+        case provisional
+        
+        @available(iOS, introduced: 13.0, deprecated: 15.0, message: "Only from iOS 13.0 to 15.0")
+        case announcement
+        @available(iOS, introduced: 15.0, deprecated: 15.0, message: "Only with iOS 15.0")
+        case timeSensitive
     }
 }
