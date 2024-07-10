@@ -19,7 +19,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+import Foundation
+
+#if os(iOS)
 import UIKit
+#endif
 
 open class Permission {
     
@@ -48,6 +52,7 @@ open class Permission {
      For most permissions its app page in settings app.
      You can overide it if your permission need open custom page.
      */
+    #if os(iOS)
     @available(iOSApplicationExtension, unavailable)
     open func openSettingPage() {
         DispatchQueue.main.async {
@@ -57,6 +62,7 @@ open class Permission {
             }
         }
     }
+    #endif
     
     // MARK: Must Ovveride
     

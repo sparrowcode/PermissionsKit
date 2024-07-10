@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version: 5.9
 
 import PackageDescription
 
@@ -6,9 +6,10 @@ let package = Package(
     name: "PermissionsKit",
     defaultLocalization: "en",
     platforms: [
-        .iOS(.v11),
-        .tvOS(.v11),
-        .watchOS(.v3)
+        .iOS(.v12),
+        .tvOS(.v12),
+        .watchOS(.v4),
+        .macOS(.v13)
     ],
     products: [
         .library(
