@@ -69,7 +69,7 @@ Universal API for request permission and get its statuses — available `.author
 
 ## Installation
 
-Ready to use on iOS 11+. Supports iOS, tvOS. Working with `UIKit` and `SwiftUI`.
+Ready to use on iOS 12+. Supports iOS, macOS, visionOS, tvOS & watchOS. Working with `UIKit` and `SwiftUI`.
 
 ### Swift Package Manager
 
@@ -84,7 +84,7 @@ Or adding it to the `dependencies` of your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/sparrowcode/PermissionsKit", .upToNextMajor(from: "10.0.1"))
+    .package(url: "https://github.com/sparrowcode/PermissionsKit", .upToNextMajor(from: "11.0.0"))
 ]
 ```
 
