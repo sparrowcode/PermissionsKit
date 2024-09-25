@@ -40,7 +40,11 @@ public class ContactsPermission: Permission {
     open var usageDescriptionKey: String? { "NSContactsUsageDescription" }
     
     public override var status: Permission.Status {
-        switch CNContactStore.authorizationStatus(for: .contacts) {
+        let authorizationStatus = CNContactStore.authorizationStatus(for: .contacts)
+        if #available(iOS 18.0, *), authorizationStatus == .limited {
+            return .authorized
+        }
+        switch authorizationStatus {
         case .authorized: return .authorized
         case .denied: return .denied
         case .notDetermined: return .notDetermined
