@@ -69,7 +69,7 @@ Universal API for request permission and get its statuses — available `.author
 
 ## Installation
 
-Ready to use on iOS 11+. Supports iOS, tvOS. Working with `UIKit` and `SwiftUI`.
+Ready to use on iOS 12+. Supports iOS, macOS, visionOS, tvOS & watchOS. Working with `UIKit` and `SwiftUI`.
 
 ### Swift Package Manager
 
@@ -84,7 +84,7 @@ Or adding it to the `dependencies` of your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/sparrowcode/PermissionsKit", .upToNextMajor(from: "10.0.1"))
+    .package(url: "https://github.com/sparrowcode/PermissionsKit", .upToNextMajor(from: "11.0.0"))
 ]
 ```
 
@@ -113,8 +113,7 @@ pod 'PermissionsKit/NotificationPermission', :git => 'https://github.com/sparrow
 pod 'PermissionsKit/MicrophonePermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 pod 'PermissionsKit/RemindersPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 pod 'PermissionsKit/SpeechRecognizerPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/LocationWhenInUsePermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/LocationAlwaysPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
+pod 'PermissionsKit/LocationPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 pod 'PermissionsKit/MotionPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 pod 'PermissionsKit/MediaLibraryPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
 pod 'PermissionsKit/BluetoothPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
@@ -127,7 +126,7 @@ pod 'PermissionsKit/HealthPermission', :git => 'https://github.com/sparrowcode/P
 
 ## Why Modules
 
-If put all code to one package and compile it, Apple Review Team will see a lot of calls to permissions API and ask you provide reason why you really need it permissions. Modules allow compile only really using code parts. Just select only which you need.
+If you put all your code into one package and compile it, the Apple Review Team will see a lot of calls to the permissions API. Most likely, they will ask you to provide a valid reason for why you really need those permissions. Using modules allows you to compile only the parts of the code that are actually in use. Just select only what you need.
 
 > [!WARNING]
 > Import only the permissions you really need.
