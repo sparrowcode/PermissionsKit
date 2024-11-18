@@ -137,8 +137,8 @@ If you put all your code into one package and compile it, the Apple Review Team 
 import PermissionsKit
 import NotificationPermission
 
-Permission.notification.request {
-    
+PermissionsKit.Permission.notification([.alert, .badge, .sound]).request {
+
 }
 ```
 

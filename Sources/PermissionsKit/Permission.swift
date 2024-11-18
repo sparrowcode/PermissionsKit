@@ -179,6 +179,7 @@ open class Permission {
     }
     
     public enum NotificationAccess {
+        
         case badge
         case sound
         case alert

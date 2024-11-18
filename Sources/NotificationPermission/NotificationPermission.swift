@@ -27,12 +27,14 @@ import PermissionsKit
 import UserNotifications
 
 public extension Permission {
-    static func notification(access: Set<NotificationAccess> = [.alert, .badge, .sound]) -> NotificationPermission {
+    
+    static func notification(_ access: Set<NotificationAccess> = [.alert, .badge, .sound]) -> NotificationPermission {
         return NotificationPermission(kind: .notification(access: access))
     }
 }
 
 public class NotificationPermission: Permission {
+    
     private var _kind: Permission.Kind
     open override var kind: Permission.Kind { self._kind }
     
