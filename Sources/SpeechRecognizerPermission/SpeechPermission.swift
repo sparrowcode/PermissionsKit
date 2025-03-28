@@ -23,7 +23,7 @@
 import PermissionsKit
 #endif
 
-#if os(iOS) && PERMISSIONSKIT_SPEECH
+#if (os(iOS) || os(macOS)) && PERMISSIONSKIT_SPEECH
 import Foundation
 import Speech
 
