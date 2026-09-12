@@ -60,16 +60,7 @@ public class LocationPermission: Permission {
     }
     
     public override var status: Permission.Status {
-        let authorizationStatus: CLAuthorizationStatus = {
-            let locationManager = CLLocationManager()
-            if #available(iOS 14.0, tvOS 14.0, *) {
-                return locationManager.authorizationStatus
-            } else {
-                return CLLocationManager.authorizationStatus()
-            }
-        }()
-        
-        switch authorizationStatus {
+        switch CLLocationManager().authorizationStatus {
         #if os(iOS)
         case .authorized: return .authorized
         #endif
@@ -91,16 +82,11 @@ public class LocationPermission: Permission {
     }
     
     public var isPrecise: Bool {
-        #if os(iOS)
-        if #available(iOS 14.0, *) {
-            switch CLLocationManager().accuracyAuthorization {
-            case .fullAccuracy: return true
-            case .reducedAccuracy: return false
-            @unknown default: return false
-            }
+        switch CLLocationManager().accuracyAuthorization {
+        case .fullAccuracy: return true
+        case .reducedAccuracy: return false
+        @unknown default: return false
         }
-        #endif
-        return false
     }
     
     public override func request(completion: @escaping () -> Void) {

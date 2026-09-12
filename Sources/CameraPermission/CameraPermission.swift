@@ -27,7 +27,6 @@ import PermissionsKit
 import Foundation
 import AVFoundation
 
-@available(iOS 11.0, macCatalyst 14.0, *)
 public extension Permission {
     
     static var camera: CameraPermission {
@@ -35,7 +34,6 @@ public extension Permission {
     }
 }
 
-@available(iOS 11.0, macCatalyst 14.0, *)
 public class CameraPermission: Permission {
     
     open override var kind: Permission.Kind { .camera }

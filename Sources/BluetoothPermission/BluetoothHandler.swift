@@ -48,29 +48,11 @@ class BluetoothHandler: NSObject, CBCentralManagerDelegate {
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        if #available(iOS 13.0, tvOS 13, *) {
-            
-            let authorization: CBManagerAuthorization = {
-                #if os(visionOS)
-                return CBManager.authorization
-                #else
-                return central.authorization
-                #endif
-            }()
-            
-            switch authorization {
-            case .notDetermined:
-                break
-            default:
-                self.completion()
-            }
-        } else {
-            switch CBPeripheralManager.authorizationStatus() {
-            case .notDetermined:
-                break
-            default:
-                self.completion()
-            }
+        switch CBCentralManager.authorization {
+        case .notDetermined:
+            break
+        default:
+            self.completion()
         }
     }
 }

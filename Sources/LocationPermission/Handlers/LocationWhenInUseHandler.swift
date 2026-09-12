@@ -43,7 +43,6 @@ class LocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
     #endif
     
   
-    @available(iOS 14.0, macOS 11.0, watchOS 7.0, tvOS 14.0, visionOS 1.0, *)
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         if manager.authorizationStatus == .notDetermined {
             return
@@ -58,17 +57,7 @@ class LocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
     func requestPermission(_ completionHandler: @escaping () -> Void) {
         self.completionHandler = completionHandler
         
-        let status: CLAuthorizationStatus = {
-            #if os(visionOS)
-            locationManager.authorizationStatus
-            #elseif os(macOS)
-            locationManager.authorizationStatus
-            #else
-            CLLocationManager.authorizationStatus()
-            #endif
-        }()
-        
-        switch status {
+        switch locationManager.authorizationStatus {
         case .notDetermined:
             locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()

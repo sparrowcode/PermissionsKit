@@ -41,30 +41,12 @@ public class BluetoothPermission: Permission {
     open var usageDescriptionKey: String? { "NSBluetoothAlwaysUsageDescription" }
     
     public override var status: Permission.Status {
-        if #available(iOS 13.1, tvOS 13.1, *) {
-            switch CBCentralManager.authorization {
-            case .allowedAlways: return .authorized
-            case .notDetermined: return .notDetermined
-            case .restricted: return .denied
-            case .denied: return .denied
-            @unknown default: return .denied
-            }
-        } else if #available(iOS 13.0, tvOS 13.0, *) {
-            switch CBCentralManager().authorization {
-            case .allowedAlways: return .authorized
-            case .notDetermined: return .notDetermined
-            case .restricted: return .denied
-            case .denied: return .denied
-            @unknown default: return .denied
-            }
-        } else {
-            switch CBPeripheralManager.authorizationStatus() {
-            case .authorized: return .authorized
-            case .denied: return .denied
-            case .restricted: return .denied
-            case .notDetermined: return .notDetermined
-            @unknown default: return .denied
-            }
+        switch CBCentralManager.authorization {
+        case .allowedAlways: return .authorized
+        case .notDetermined: return .notDetermined
+        case .restricted: return .denied
+        case .denied: return .denied
+        @unknown default: return .denied
         }
     }
     
