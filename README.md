@@ -1,193 +1,78 @@
-# PermissionsKit 
+# PermissionsKit
 
-Universal API for request permission and get its statuses — available `.authorized`, `.denied` & `.notDetermined`.
-
-<p float="left">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/camera.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/photos.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/notifications.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/location.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/microphone.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/calendar.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/contacts.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/reminders.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/motion.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/music.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/speech.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/bluetooth.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/health.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/tracking.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/faceid.png" width="38">
-    <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/siri.png" width="38">
-</p>
-
-### iOS Dev Community
-
-<p float="left">
-    <a href="https://twitter.com/i/communities/1730194338489987403">
-        <img src="https://cdn.sparrowcode.io/github/badges/x-community.png?version=1" height="52">
-    </a>
-    <a href="#apps-using">
-        <img src="https://cdn.sparrowcode.io/github/badges/download-on-the-appstore.png?version=4" height="52">
-    </a>
-</p>
-
-## Navigate
-
-- [Permissions](#permissions)
-- [Installation](#installation)
-    - [Swift Package Manager](#swift-package-manager)
-    - [CocoaPods](#cocoapods)
-    - [Why Modules](#why-modules)
-- [Usage](#request-permission)
-    - [Request Permission](#request-permission)
-    - [Get Status Permission](#get-status-permission)
-- [Keys in Info.plist](#keys-in-infoplist)
-    - [Localisations](#localisation)
-- [Apps Using](#apps-using)
-
-### Permissions
-
-| Icon |  Permission | Key for `Info.plist` | Get Status | Make Request |
-| :--: | :---------- | :------------------- | :--------: | :----------: |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/bluetooth.png" width="38"> | Bluetooth | NSBluetoothAlwaysUsageDescription, NSBluetoothPeripheralUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/calendar.png" width="38"> | Calendar | NSCalendarsUsageDescription, NSCalendarsFullAccessUsageDescription, NSCalendarsWriteOnlyAccessUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/camera.png" width="38"> | Camera | NSCameraUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/contacts.png" width="38"> | Contacts | NSContactsUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/faceid.png" width="38"> | FaceID | NSFaceIDUsageDescription | ☑️ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/health.png" width="38"> | Health | NSHealthUpdateUsageDescription, NSHealthShareUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/location.png" width="38"> | Location | NSLocationAlwaysAndWhenInUseUsageDescription NSLocationWhenInUseUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/music.png" width="38"> | Media Library | NSAppleMusicUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/microphone.png" width="38"> | Microphone | NSMicrophoneUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/motion.png" width="38"> | Motion | NSMotionUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/notifications.png" width="38"> | Notification | | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/photos.png" width="38"> | Photo Library | NSPhotoLibraryUsageDescription, NSPhotoLibraryAddUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/reminders.png" width="38"> | Reminders | NSRemindersUsageDescription, NSRemindersFullAccessUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/siri.png" width="38"> | Siri | NSSiriUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/speech.png" width="38"> | Speech Recognizer | NSSpeechRecognitionUsageDescription | ✅ | ✅ |
-| <img src="https://cdn.sparrowcode.io/github/permissionskit/icons/tracking.png" width="38"> | Tracking | NSUserTrackingUsageDescription | ✅ | ✅ |
+Universal API for requesting permissions and reading their status — `.authorized`, `.denied` & `.notDetermined`. Each permission ships as a separate product, so the app compiles only the ones it actually uses.
 
 ## Installation
 
-Ready to use on iOS 12+. Supports iOS, macOS, visionOS, tvOS & watchOS. Working with `UIKit` and `SwiftUI`.
-
-### Swift Package Manager
-
-In Xcode go to Project -> Your Project Name -> `Package Dependencies` -> Tap *Plus*. Insert url:
+In Xcode: File → Add Package Dependencies → paste URL:
 
 ```
 https://github.com/sparrowcode/PermissionsKit
 ```
 
-Next, choose the permissions that you need. But don't add all of them, because apple will reject app.
-Or adding it to the `dependencies` of your `Package.swift`:
+Then pick the products you need. Add only those — every permission API you link is visible to App Review, and unused ones invite questions about why the app needs them.
 
-```swift
-dependencies: [
-    .package(url: "https://github.com/sparrowcode/PermissionsKit", .upToNextMajor(from: "11.0.0"))
-]
-```
+## Permissions
 
-and choose valid targets.
+| Permission | Product | Key for `Info.plist` |
+| :--------- | :------ | :------------------- |
+| Bluetooth | `BluetoothPermission` | NSBluetoothAlwaysUsageDescription, NSBluetoothPeripheralUsageDescription |
+| Calendar | `CalendarPermission` | NSCalendarsUsageDescription, NSCalendarsFullAccessUsageDescription, NSCalendarsWriteOnlyAccessUsageDescription |
+| Camera | `CameraPermission` | NSCameraUsageDescription |
+| Contacts | `ContactsPermission` | NSContactsUsageDescription |
+| FaceID | `FaceIDPermission` | NSFaceIDUsageDescription |
+| Health | `HealthPermission` | NSHealthUpdateUsageDescription, NSHealthShareUsageDescription |
+| Location | `LocationPermission` | NSLocationAlwaysAndWhenInUseUsageDescription, NSLocationWhenInUseUsageDescription |
+| Media Library | `MediaLibraryPermission` | NSAppleMusicUsageDescription |
+| Microphone | `MicrophonePermission` | NSMicrophoneUsageDescription |
+| Motion | `MotionPermission` | NSMotionUsageDescription |
+| Notification | `NotificationPermission` | — |
+| Photo Library | `PhotoLibraryPermission` | NSPhotoLibraryUsageDescription, NSPhotoLibraryAddUsageDescription |
+| Reminders | `RemindersPermission` | NSRemindersUsageDescription, NSRemindersFullAccessUsageDescription |
+| Siri | `SiriPermission` | NSSiriUsageDescription |
+| Speech Recognizer | `SpeechRecognizerPermission` | NSSpeechRecognitionUsageDescription |
+| Tracking | `TrackingPermission` | NSUserTrackingUsageDescription |
 
-### CocoaPods:
+## Usage
 
-This is an outdated way. I advise you to use [SPM](#swift-package-manager). However, I will continue to support Cocoapods for some time.
-
-<details><summary>Cocoapods Installation</summary>
-
-[CocoaPods](https://cocoapods.org) is a dependency manager. For usage and installation instructions, visit their website. To integrate using CocoaPods, specify it in your `Podfile`:
-
-```ruby
-pod 'PermissionsKit/NotificationPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-
-Due to Apple's new policy regarding permission access you need to specifically define what kind of permissions you want to access using subspecs.
-
-```ruby
-pod 'PermissionsKit/CameraPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/ContactsPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/CalendarPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/PhotoLibraryPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/NotificationPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/MicrophonePermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/RemindersPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/SpeechRecognizerPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/LocationPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/MotionPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/MediaLibraryPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/BluetoothPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/TrackingPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/FaceIDPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/SiriPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-pod 'PermissionsKit/HealthPermission', :git => 'https://github.com/sparrowcode/PermissionsKit'
-```
-</details>
-
-## Why Modules
-
-If you put all your code into one package and compile it, the Apple Review Team will see a lot of calls to the permissions API. Most likely, they will ask you to provide a valid reason for why you really need those permissions. Using modules allows you to compile only the parts of the code that are actually in use. Just select only what you need.
-
-> [!WARNING]
-> Import only the permissions you really need.
-
-## Request Permission
+Request a permission:
 
 ```swift
 import PermissionsKit
 import NotificationPermission
 
-PermissionsKit.Permission.notification([.alert, .badge, .sound]).request {
-
+Permission.notification([.alert, .badge, .sound]).request {
+    // Called once the user answers the system dialog.
 }
 ```
 
-## Get Status Permission
+Read its status:
 
 ```swift
 import PermissionsKit
-import NotificationPermission
+import CameraPermission
 
-let authorized = Permission.notification.authorized
+let authorized = Permission.camera.authorized
 ```
 
 > [!WARNING]
-> For FaceID permission no way detect if request `.authorized` or `.notDetermined` accurate. Status `.denied` detect well. For now for both states return `.notDetermined`. 
+> FaceID can't tell `.authorized` from `.notDetermined` — both come back as `.notDetermined`. Only `.denied` is reliable.
 
 ## Keys in `Info.plist`
 
-You need to add some strings to the `Info.plist` file with descriptions per Apple's requirements. You can get a plist of keys for permissions as follows:
+Apple requires a usage description for most permissions. Get the key for a permission:
 
 ```swift
 let key = Permission.bluetooth.usageDescriptionKey
 ```
 
 > [!NOTE]
-> Do not use the description as the name of the key. Xcode can't build this.
+> Use the key itself, not the description text — Xcode won't build otherwise.
 
 ### Localisation
 
-If you use xliff localization export, keys will be create automatically. If you prefer do the localization file manually, you need to create `InfoPlist.strings`, select languages on the right side menu and add keys as keys in plist-file. See:
+An xliff export creates the keys for you. Doing it by hand means adding an `InfoPlist.strings` file, selecting the languages in the inspector, and writing the keys there:
 
 ```
 "NSCameraUsageDescription" = "Here description of usage camera";
 ```
-
-## Apps Using
-
-<p float="left">
-    <a href="https://apps.apple.com/app/id1487937127"><img src="https://cdn.sparrowcode.io/github/apps-using/id1487937127.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1624477055"><img src="https://cdn.sparrowcode.io/github/apps-using/id1624477055.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1625641322"><img src="https://cdn.sparrowcode.io/github/apps-using/id1625641322.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1625641322"><img src="https://cdn.sparrowcode.io/github/apps-using/id6449774982.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id875280793"><img src="https://cdn.sparrowcode.io/github/apps-using/id875280793.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id743843090"><img src="https://cdn.sparrowcode.io/github/apps-using/id743843090.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id537070378"><img src="https://cdn.sparrowcode.io/github/apps-using/id537070378.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1617055933"><img src="https://cdn.sparrowcode.io/github/apps-using/id1617055933.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1596657751"><img src="https://cdn.sparrowcode.io/github/apps-using/id1596657751.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1459483980"><img src="https://cdn.sparrowcode.io/github/apps-using/id1459483980.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1544749600"><img src="https://cdn.sparrowcode.io/github/apps-using/id1544749600.png" height="65"></a>
-    <a href="https://apps.apple.com/app/id6452079114"><img src="https://cdn.sparrowcode.io/github/apps-using/id6452079114.png" height="65"></a>
-</p>
-
-If you use a `PermissionsKit`, add your app via Pull Request.
