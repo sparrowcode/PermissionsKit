@@ -26,14 +26,18 @@ public class MotionPermission: Permission {
         }
     }
     
+    /*
+     PermissionsKit: Core Motion has no request method of its own — reading
+     activity is what raises the system dialog, so the query asks for an empty
+     range and throws the result away.
+     */
     public override func request(completion: @escaping @MainActor () -> Void) {
         let manager = CMMotionActivityManager()
-        let today = Date()
+        let now = Date()
         
-        manager.queryActivityStarting(from: today, to: today, to: OperationQueue.main, withHandler: { (activities: [CMMotionActivity]?, error: Error?) -> () in
-            manager.stopActivityUpdates()
+        manager.queryActivityStarting(from: now, to: now, to: OperationQueue.main) { _, _ in
             Task { @MainActor in completion() }
-        })
+        }
     }
 }
 #endif

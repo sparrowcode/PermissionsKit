@@ -15,8 +15,8 @@ public class HealthPermission: Permission {
     
     open override var kind: Permission.Kind { .health }
     
-    open var readingUsageDescriptionKey: String? { "NSHealthUpdateUsageDescription" }
-    open var writingUsageDescriptionKey: String? { "NSHealthShareUsageDescription" }
+    open var readingUsageDescriptionKey: String? { "NSHealthShareUsageDescription" }
+    open var writingUsageDescriptionKey: String? { "NSHealthUpdateUsageDescription" }
     
     public static func status(for type: HKObjectType) -> Permission.Status {
         switch HKHealthStore().authorizationStatus(for: type) {
