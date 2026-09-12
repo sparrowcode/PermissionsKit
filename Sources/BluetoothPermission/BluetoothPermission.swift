@@ -1,7 +1,6 @@
 import PermissionsKit
 import Foundation
 import CoreBluetooth
-import CloudKit
 
 public extension Permission {
     

@@ -8,15 +8,6 @@ class LocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
     
     lazy var locationManager = CLLocationManager()
     
-    #if !os(visionOS)
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .notDetermined {
-            return
-        }
-        notifyCompletionHandler()
-    }
-    #endif
-    
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         if manager.authorizationStatus == .notDetermined {
             return

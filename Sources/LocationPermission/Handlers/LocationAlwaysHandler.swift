@@ -10,12 +10,6 @@ class LocationAlwaysHandler: NSObject, CLLocationManagerDelegate {
     
     lazy var locationManager = CLLocationManager()
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .notDetermined {
-            return
-        }
-        notifyCompletionHandler()
-    }
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         if manager.authorizationStatus == .notDetermined {
             return

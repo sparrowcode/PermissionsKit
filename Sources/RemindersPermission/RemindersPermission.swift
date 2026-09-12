@@ -19,9 +19,8 @@ public class RemindersPermission: Permission {
     
     public override var status: Permission.Status {
         switch EKEventStore.authorizationStatus(for: EKEntityType.reminder) {
-        case .authorized: return .authorized
-        case .denied: return .denied
         case .fullAccess: return .authorized
+        case .denied: return .denied
         case .notDetermined: return .notDetermined
         case .restricted: return .denied
         case .writeOnly: return .authorized

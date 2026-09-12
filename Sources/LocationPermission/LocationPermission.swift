@@ -2,58 +2,46 @@ import PermissionsKit
 
 #if os(iOS)
 import Foundation
-import EventKit
+import CoreLocation
 
 public extension Permission {
     
     static func location(access: LocationAccess) -> LocationPermission {
-        LocationPermission(kind: .location(access: access))
+        LocationPermission(access: access)
     }
 }
 
 public class LocationPermission: Permission {
     
-    private var _kind: Permission.Kind
+    private let access: LocationAccess
     
     // MARK: - Init
     
-    init(kind: Permission.Kind) {
-        self._kind = kind
+    init(access: LocationAccess) {
+        self.access = access
     }
     
-    open override var kind: Permission.Kind { self._kind }
+    open override var kind: Permission.Kind { .location(access: access) }
     open var usageDescriptionKey: String? {
-        switch _kind {
-        case .location(let access):
-            switch access {
-            case .whenInUse:
-                return "NSLocationWhenInUseUsageDescription"
-            case .always:
-                return "NSLocationAlwaysAndWhenInUseUsageDescription"
-            }
-        default:
-            fatalError()
+        switch access {
+        case .whenInUse:
+            return "NSLocationWhenInUseUsageDescription"
+        case .always:
+            return "NSLocationAlwaysAndWhenInUseUsageDescription"
         }
     }
     
     public override var status: Permission.Status {
         switch CLLocationManager().authorizationStatus {
-        #if os(iOS)
-        case .authorized: return .authorized
-        #endif
         case .denied: return .denied
         case .notDetermined: return .notDetermined
         case .restricted: return .denied
-        case .authorizedAlways:
-            if case .location(let access) = _kind, access == .always {
-                return .authorized
-            }
-            return .denied
-        case .authorizedWhenInUse:
-            if case .location(let access) = _kind, access == .whenInUse {
-                return .authorized
-            }
-            return .denied
+        /*
+         PermissionsKit: Always covers when-in-use as well, so it satisfies
+         either access level. When-in-use satisfies only its own.
+         */
+        case .authorizedAlways: return .authorized
+        case .authorizedWhenInUse: return access == .whenInUse ? .authorized : .denied
         @unknown default: return .denied
         }
     }
@@ -67,28 +55,23 @@ public class LocationPermission: Permission {
     }
     
     public override func request(completion: @escaping @MainActor () -> Void) {
-        switch _kind {
-        case .location(let access):
-            switch access {
-            case .whenInUse:
-                LocationWhenInUseHandler.shared = LocationWhenInUseHandler()
-                LocationWhenInUseHandler.shared?.requestPermission() {
-                    Task { @MainActor in
-                        completion()
-                        LocationWhenInUseHandler.shared = nil
-                    }
-                }
-            case .always:
-                LocationAlwaysHandler.shared = LocationAlwaysHandler()
-                LocationAlwaysHandler.shared?.requestPermission() {
-                    Task { @MainActor in
-                        completion()
-                        LocationAlwaysHandler.shared = nil
-                    }
+        switch access {
+        case .whenInUse:
+            LocationWhenInUseHandler.shared = LocationWhenInUseHandler()
+            LocationWhenInUseHandler.shared?.requestPermission() {
+                Task { @MainActor in
+                    completion()
+                    LocationWhenInUseHandler.shared = nil
                 }
             }
-        default:
-            fatalError()
+        case .always:
+            LocationAlwaysHandler.shared = LocationAlwaysHandler()
+            LocationAlwaysHandler.shared?.requestPermission() {
+                Task { @MainActor in
+                    completion()
+                    LocationAlwaysHandler.shared = nil
+                }
+            }
         }
     }
 }

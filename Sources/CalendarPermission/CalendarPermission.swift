@@ -7,36 +7,28 @@ import EventKit
 public extension Permission {
     
     static func calendar(access: CalendarAccess) -> CalendarPermission {
-        CalendarPermission(kind: .calendar(access: access))
+        CalendarPermission(access: access)
     }
 }
 
 public class CalendarPermission: Permission {
     
-    private var _kind: Permission.Kind
+    private let access: CalendarAccess
     
     // MARK: - Init
     
-    init(kind: Permission.Kind) {
-        self._kind = kind
+    init(access: CalendarAccess) {
+        self.access = access
     }
     
-    open override var kind: Permission.Kind { self._kind }
+    open override var kind: Permission.Kind { .calendar(access: access) }
     open var usageDescriptionKey: String? {
-        if #available(iOS 17, *) {
-            switch kind {
-            case .calendar(let access):
-                switch access {
-                case .full:
-                    return "NSCalendarsFullAccessUsageDescription"
-                case .write:
-                    return "NSCalendarsWriteOnlyAccessUsageDescription"
-                }
-            default:
-                fatalError()
-            }
-        } else {
-            return "NSCalendarsUsageDescription"
+        guard #available(iOS 17, *) else { return "NSCalendarsUsageDescription" }
+        switch access {
+        case .full:
+            return "NSCalendarsFullAccessUsageDescription"
+        case .write:
+            return "NSCalendarsWriteOnlyAccessUsageDescription"
         }
     }
     
@@ -45,27 +37,13 @@ public class CalendarPermission: Permission {
         let _ = EKEventStore.authorizationStatus(for: EKEntityType.event)
         
         switch EKEventStore.authorizationStatus(for: EKEntityType.event) {
-        case .authorized: return .authorized
-        case .denied: return .denied
         case .fullAccess: return .authorized
+        case .denied: return .denied
         case .notDetermined: return .notDetermined
         case .restricted: return .denied
         case .writeOnly:
-            if #available(iOS 17, *) {
-                switch kind {
-                case .calendar(let access):
-                    switch access {
-                    case .full:
-                        return .denied
-                    case .write:
-                        return .authorized
-                    }
-                default:
-                    fatalError()
-                }
-            } else {
-                return .authorized
-            }
+            guard #available(iOS 17, *) else { return .authorized }
+            return access == .write ? .authorized : .denied
         @unknown default: return .denied
         }
     }
@@ -75,32 +53,18 @@ public class CalendarPermission: Permission {
         let eventStore = EKEventStore()
         
         if #available(iOS 17.0, *) {
-            
-            let requestWriteOnly = {
+            if access == .write {
                 eventStore.requestWriteOnlyAccessToEvents { (accessGranted: Bool, error: Error?) in
                     Task { @MainActor in
                         completion()
                     }
                 }
-            }
-            
-            let requestFull = {
+            } else {
                 eventStore.requestFullAccessToEvents { (accessGranted: Bool, error: Error?) in
                     Task { @MainActor in
                         completion()
                     }
                 }
-            }
-            
-            switch kind {
-            case .calendar(let access):
-                if access == .write {
-                    requestWriteOnly()
-                } else {
-                    requestFull()
-                }
-            default:
-                requestFull()
             }
         } else {
             eventStore.requestAccess(to: EKEntityType.event) { (accessGranted: Bool, error: Error?) in
