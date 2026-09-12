@@ -6,9 +6,9 @@ let package = Package(
     name: "PermissionsKit",
     defaultLocalization: "en",
     platforms: [
-        .iOS(.v12),
-        .tvOS(.v12),
-        .watchOS(.v4),
+        .iOS(.v15),
+        .tvOS(.v15),
+        .watchOS(.v9),
         .macOS(.v13)
     ],
     products: [
