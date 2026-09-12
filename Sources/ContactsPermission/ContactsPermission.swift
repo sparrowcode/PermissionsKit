@@ -1,29 +1,6 @@
-// The MIT License (MIT)
-// Copyright © 2022 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
-
-#if PERMISSIONSKIT_SPM
 import PermissionsKit
-#endif
 
-#if os(iOS) && PERMISSIONSKIT_CONTACTS
+#if os(iOS)
 import Foundation
 import Contacts
 
@@ -39,24 +16,36 @@ public class ContactsPermission: Permission {
     open override var kind: Permission.Kind { .contacts }
     open var usageDescriptionKey: String? { "NSContactsUsageDescription" }
     
+    /*
+     PermissionsKit: `limited` exists only since iOS 18, and a switch case can't
+     be marked with availability. The iOS 18 branch keeps the exhaustive switch,
+     so the compiler still reports statuses added in future releases.
+     */
     public override var status: Permission.Status {
         let authorizationStatus = CNContactStore.authorizationStatus(for: .contacts)
-        if #available(iOS 18.0, *), authorizationStatus == .limited {
-            return .authorized
+        if #available(iOS 18.0, *) {
+            switch authorizationStatus {
+            case .authorized: return .authorized
+            case .limited: return .authorized
+            case .denied: return .denied
+            case .notDetermined: return .notDetermined
+            case .restricted: return .denied
+            @unknown default: return .denied
+            }
         }
         switch authorizationStatus {
         case .authorized: return .authorized
         case .denied: return .denied
         case .notDetermined: return .notDetermined
         case .restricted: return .denied
-        @unknown default: return .denied
+        default: return .denied
         }
     }
     
-    public override func request(completion: @escaping () -> Void) {
+    public override func request(completion: @escaping @MainActor () -> Void) {
         let store = CNContactStore()
         store.requestAccess(for: .contacts, completionHandler: { (granted, error) in
-            DispatchQueue.main.async {
+            Task { @MainActor in
                 completion()
             }
         })

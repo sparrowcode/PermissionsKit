@@ -1,29 +1,6 @@
-// The MIT License (MIT)
-// Copyright © 2022 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
-
-#if PERMISSIONSKIT_SPM
 import PermissionsKit
-#endif
 
-#if os(iOS) && PERMISSIONSKIT_LOCATION
+#if os(iOS)
 import Foundation
 import MapKit
 
@@ -37,21 +14,30 @@ class LocationAlwaysHandler: NSObject, CLLocationManagerDelegate {
         if status == .notDetermined {
             return
         }
-        completionHandler()
+        notifyCompletionHandler()
     }
-  
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         if manager.authorizationStatus == .notDetermined {
             return
         }
-        completionHandler()
+        notifyCompletionHandler()
     }
     
     // MARK: - Process
     
-    var completionHandler: () -> Void = {}
+    var completionHandler: @MainActor () -> Void = {}
     
-    func requestPermission(_ completionHandler: @escaping () -> Void) {
+    /*
+     PermissionsKit: System callbacks arrive off the main actor, so the closure
+     is copied into a local first — capturing it directly would send the handler
+     itself, which is not Sendable.
+     */
+    private func notifyCompletionHandler() {
+        let completionHandler = completionHandler
+        Task { @MainActor in completionHandler() }
+    }
+    
+    func requestPermission(_ completionHandler: @escaping @MainActor () -> Void) {
         self.completionHandler = completionHandler
         
         switch locationManager.authorizationStatus {
@@ -62,13 +48,13 @@ class LocationAlwaysHandler: NSObject, CLLocationManagerDelegate {
             locationManager.delegate = self
             locationManager.requestAlwaysAuthorization()
         default:
-            self.completionHandler()
+            notifyCompletionHandler()
         }
     }
     
     // MARK: - Init
     
-    static var shared: LocationAlwaysHandler?
+    nonisolated(unsafe) static var shared: LocationAlwaysHandler?
     
     override init() {
         super.init()

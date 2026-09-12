@@ -1,24 +1,3 @@
-// The MIT License (MIT)
-// Copyright © 2022 Sparrow Code LTD (https://sparrowcode.io, hello@sparrowcode.io)
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
-
 import Foundation
 
 #if os(iOS)
@@ -50,21 +29,20 @@ open class Permission {
     /**
      PermissionsKit: Open settings page.
      For most permissions its app page in settings app.
-     You can overide it if your permission need open custom page.
+     You can override it if your permission needs to open a custom page.
      */
     #if os(iOS)
     @available(iOSApplicationExtension, unavailable)
+    @MainActor
     open func openSettingPage() {
-        DispatchQueue.main.async {
-            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
-            if UIApplication.shared.canOpenURL(settingsUrl) {
-                UIApplication.shared.open(settingsUrl, completionHandler: nil)
-            }
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+        if UIApplication.shared.canOpenURL(settingsUrl) {
+            UIApplication.shared.open(settingsUrl, completionHandler: nil)
         }
     }
     #endif
     
-    // MARK: Must Ovveride
+    // MARK: - Must Override
     
     open var kind: Permission.Kind {
         preconditionFailure("This method must be overridden.")
@@ -74,7 +52,7 @@ open class Permission {
         preconditionFailure("This method must be overridden.")
     }
     
-    open func request(completion: @escaping ()->Void) {
+    open func request(completion: @escaping @MainActor () -> Void) {
         preconditionFailure("This method must be overridden.")
     }
     
@@ -189,6 +167,8 @@ open class Permission {
         case provisional
         
         @available(iOS, introduced: 13.0, deprecated: 15.0, message: "Only from iOS 13.0 to 15.0")
+        @available(macOS, unavailable)
+        @available(tvOS, unavailable)
         case announcement
         @available(iOS, introduced: 15.0, deprecated: 15.0, message: "Only with iOS 15.0")
         case timeSensitive
