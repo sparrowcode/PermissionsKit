@@ -18,29 +18,45 @@ public class MicrophonePermission: Permission {
     
     public override var status: Permission.Status {
         #if os(iOS)
-        switch  AVAudioSession.sharedInstance().recordPermission {
-        case .granted: return .authorized
-        case .denied: return .denied
-        case .undetermined: return .notDetermined
-        @unknown default: return .denied
+        if #available(iOS 17.0, *) {
+            switch AVAudioApplication.shared.recordPermission {
+            case .granted: return .authorized
+            case .denied: return .denied
+            case .undetermined: return .notDetermined
+            @unknown default: return .denied
+            }
+        } else {
+            switch AVAudioSession.sharedInstance().recordPermission {
+            case .granted: return .authorized
+            case .denied: return .denied
+            case .undetermined: return .notDetermined
+            @unknown default: return .denied
+            }
         }
         #elseif os(macOS)
         switch AVCaptureDevice.authorizationStatus(for: .audio) {
-            case .denied: return .denied
-            case .notDetermined: return .notDetermined
-            case .restricted: return .denied
-            case .authorized: return .authorized
-            @unknown default: return .denied
+        case .authorized: return .authorized
+        case .denied: return .denied
+        case .notDetermined: return .notDetermined
+        case .restricted: return .denied
+        @unknown default: return .denied
         }
         #endif
     }
     
     public override func request(completion: @escaping @MainActor () -> Void) {
         #if os(iOS)
-        AVAudioSession.sharedInstance().requestRecordPermission {
-            granted in
-            Task { @MainActor in
-                completion()
+        if #available(iOS 17.0, *) {
+            AVAudioApplication.requestRecordPermission { _ in
+                Task { @MainActor in
+                    completion()
+                }
+            }
+        } else {
+            AVAudioSession.sharedInstance().requestRecordPermission { _ in
+                Task { @MainActor in
+                    completion()
+                }
             }
         }
         #elseif os(macOS)

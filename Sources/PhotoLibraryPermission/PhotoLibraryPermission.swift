@@ -23,7 +23,7 @@ public class PhotoLibraryPermission: Permission {
     }
     
     public override var status: Permission.Status {
-        switch PHPhotoLibrary.authorizationStatus() {
+        switch PHPhotoLibrary.authorizationStatus(for: .readWrite) {
         case .authorized: return .authorized
         case .denied: return .denied
         case .notDetermined: return .notDetermined
@@ -34,12 +34,11 @@ public class PhotoLibraryPermission: Permission {
     }
     
     public override func request(completion: @escaping @MainActor () -> Void) {
-        PHPhotoLibrary.requestAuthorization({
-            finished in
+        PHPhotoLibrary.requestAuthorization(for: .readWrite) { _ in
             Task { @MainActor in
                 completion()
             }
-        })
+        }
     }
 }
 #endif
